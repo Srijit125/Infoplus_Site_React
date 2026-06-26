@@ -1,100 +1,26 @@
 import { Link } from "react-router";
-import {
-  Monitor,
-  Shield,
-  Briefcase,
-  Rocket,
-  BrainCircuit,
-  Activity,
-  Database,
-  Sparkles,
-  CheckCircle2,
-  ChevronRight,
-  MapPin,
-} from "lucide-react";
+import { ChevronRight, MapPin } from "lucide-react";
 import { ImageWithFallback } from "../components/helpers/ImageWithFallback";
 
 // Image Imports
-import imgAiRobot from "../assets/images/imgAiRobot.png";
 import imgWorkspace from "../assets/images/imgWorkspace.png";
-import imgGmr from "../assets/images/imgGmr.png";
-import imgShell from "../assets/images/imgShell.png";
-import imgLng from "../assets/images/imgLng.png";
-import imgToyota from "../assets/images/imgToyota.png";
-import imgGE from "../assets/images/imgGE.png";
-import imgBord from "../assets/images/imgBord.png";
-import imgBasrah from "../assets/images/imgBasrah.png";
-import imgSahara from "../assets/images/imgSahara.png";
+
 import imgMap from "../assets/images/imgMap.png";
-import OurValueCards from "../components/cards/OurValueCards";
 import {
   industries,
   ourSolutions,
   ourValues,
   services,
 } from "../assets/constants/types";
-import OurIndustryCards from "../components/cards/OurIndustryCards";
 import MultiUsageCard from "../components/cards/MultiUsageCard";
+import IndexBanner from "../components/shared/IndexBanner";
+import ClientCarousel from "../components/ui/ClientCarousel";
 
 function HomePage() {
   return (
     <div className="w-full font-['Inter']">
       {/* 1. Hero Section */}
-      <section
-        className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden pt-20"
-        style={{
-          backgroundImage:
-            "linear-gradient(240.463deg, rgb(56, 31, 85) 13.73%, rgb(102, 39, 169) 47.913%, rgb(69, 44, 148) 82.097%)",
-        }}
-      >
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-xl text-left">
-              <span className="inline-block bg-[#ecdaff] text-[#111111] px-4 py-1.5 rounded-full text-[14px] font-medium mb-6">
-                Infoplus Technologies
-              </span>
-              <h1 className="text-[44px] md:text-[56px] font-bold text-white leading-[1.1] mb-6 tracking-tight">
-                Artificial Intelligence Services
-              </h1>
-              <p className="text-[18px] text-white/90 leading-relaxed mb-10 font-normal">
-                More compelling and memorable products through simplicity in
-                design.
-              </p>
-
-              <div className="flex flex-wrap gap-4 items-center">
-                <Link
-                  to="/contact"
-                  className="bg-[#f85d37] text-white px-8 py-3.5 rounded-[8px] font-semibold text-[16px] hover:bg-[#e04f2c] transition-colors flex items-center gap-2 group"
-                >
-                  Get Started
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link
-                  to="/services"
-                  className="bg-transparent border border-white text-white px-8 py-3.5 rounded-[8px] font-semibold text-[16px] hover:bg-white/10 transition-colors"
-                >
-                  Our Services
-                </Link>
-              </div>
-            </div>
-
-            <div className="relative flex justify-center lg:justify-end">
-              <ImageWithFallback
-                src={imgAiRobot}
-                alt="AI Robot"
-                className="w-[500px] max-w-full h-auto object-contain animate-[float_6s_ease-in-out_infinite]"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Slider Dots Placeholder */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3">
-          <div className="w-3 h-3 rounded-full bg-white/30"></div>
-          <div className="w-8 h-3 rounded-full bg-[#e952b2]"></div>
-          <div className="w-3 h-3 rounded-full bg-white/30"></div>
-        </div>
-      </section>
+      <IndexBanner />
 
       {/* 2. About Section */}
       <section className="py-24 bg-white">
@@ -249,53 +175,7 @@ function HomePage() {
       </section>
 
       {/* 7. Clients Section */}
-      <section className="py-16 bg-[#f8f5ff] border-y border-slate-100 overflow-hidden">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="flex items-center justify-between gap-12 whitespace-nowrap animate-[scroll_30s_linear_infinite] w-max">
-            {[
-              imgGmr,
-              imgShell,
-              imgToyota,
-              imgGE,
-              imgBord,
-              imgBasrah,
-              imgSahara,
-              imgLng,
-            ].map((img, i) => (
-              <ImageWithFallback
-                key={i}
-                src={img}
-                alt="Client Logo"
-                className="h-10 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
-              />
-            ))}
-            {/* Duplicate for infinite effect */}
-            {[
-              imgGmr,
-              imgShell,
-              imgToyota,
-              imgGE,
-              imgBord,
-              imgBasrah,
-              imgSahara,
-              imgLng,
-            ].map((img, i) => (
-              <ImageWithFallback
-                key={`dup-${i}`}
-                src={img}
-                alt="Client Logo"
-                className="h-10 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
-              />
-            ))}
-          </div>
-        </div>
-        <style>{`
-          @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-        `}</style>
-      </section>
+      <ClientCarousel />
 
       {/* 8. Global Presence Map */}
       <section className="py-24 bg-white">
