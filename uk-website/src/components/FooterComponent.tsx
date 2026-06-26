@@ -1,0 +1,153 @@
+import { Link } from "react-router";
+import { Mail, Phone, ArrowRight } from "lucide-react";
+import { ImageWithFallback } from "./helpers/ImageWithFallback";
+import imgInfoplusLogo from "../assets/images/imgInfoplusLogo.png";
+import {
+  socialMediaLinks,
+  type SocialMedia,
+} from "../assets/constants/socialMedia";
+import { SocialIcon } from "react-social-icons";
+
+export function Footer() {
+  return (
+    <footer className="bg-[#261140] text-white pt-20 pb-8 font-['Inter']">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div className="space-y-6">
+            <Link to="/" className="inline-block">
+              <ImageWithFallback
+                src={imgInfoplusLogo}
+                alt="Infoplus Technologies"
+                className="h-12 w-auto object-contain"
+              />
+            </Link>
+            <p className="text-white/70 text-[14px] leading-[24px] font-normal">
+              Infoplus Technologies is a forward-looking Information technology
+              company focused on building products, services, staffing,
+              consulting, and digital transformation.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold text-[18px] mb-6">
+              Navigation
+            </h4>
+            <ul className="space-y-4">
+              {[
+                "Home",
+                "About Us",
+                "Careers",
+                "Contact",
+                "Carbon Reduction Plan",
+                "ISO 14001:2015",
+              ].map((item) => (
+                <li key={item}>
+                  <Link
+                    to={
+                      item === "Home"
+                        ? "/"
+                        : `/${item.toLowerCase().replace(/ /g, "-").replace(/:/g, "")}`
+                    }
+                    className="text-white/70 hover:text-white transition-colors text-[14px] font-normal"
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold text-[18px] mb-6">
+              Services
+            </h4>
+            <ul className="space-y-4">
+              {[
+                "Artificial Intelligence",
+                "Products",
+                "IT Services",
+                "Staffing & Consulting",
+                "New-Gen Services",
+              ].map((item) => (
+                <li key={item}>
+                  <Link
+                    to="/services"
+                    className="text-white/70 hover:text-white transition-colors text-[14px] font-normal"
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold text-[18px] mb-6">
+              Contact Us
+            </h4>
+            <ul className="space-y-4 mb-8">
+              <li>
+                <a
+                  href="mailto:uk@infoplusltd.co.uk"
+                  className="flex items-center gap-3 text-white/70 hover:text-white transition-colors text-[14px] font-normal"
+                >
+                  <Mail className="w-5 h-5 text-white/70" />
+                  uk@infoplusltd.co.uk
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+442082073474"
+                  className="flex items-center gap-3 text-white/70 hover:text-white transition-colors text-[14px] font-normal"
+                >
+                  <Phone className="w-5 h-5 text-white/70" />
+                  +44 20 8207 3474
+                </a>
+              </li>
+            </ul>
+
+            <h4 className="text-white font-semibold text-[18px] mb-4">
+              Newsletter
+            </h4>
+            <p className="text-[12px] text-white/70 mb-4 font-normal">
+              Subscribe to get latest news & updates
+            </p>
+            <form className="relative" onSubmit={(e) => e.preventDefault()}>
+              <input
+                type="email"
+                placeholder="Enter Your Email Address"
+                className="w-full bg-white rounded-[8px] py-[12px] pl-4 pr-12 text-[14px] text-[#111] focus:outline-none placeholder:text-[#555] transition-colors"
+                required
+              />
+              <button
+                type="submit"
+                className="absolute right-1 top-1 bottom-1 w-10 bg-[#261140] rounded-[6px] flex items-center justify-center text-white hover:bg-[#381f55] transition-colors"
+                aria-label="Subscribe Now"
+              >
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-white/70 text-[14px] font-normal">
+            © {new Date().getFullYear()} Infoplus Technologies. All rights
+            reserved.
+          </p>
+          <div className="flex items-center gap-4">
+            {socialMediaLinks.map((link: SocialMedia, idx: number) => (
+              <SocialIcon
+                key={idx}
+                url={link.url}
+                network={link.title.toLowerCase()}
+                aria-label={link.title}
+                className="w-[32px] h-[32px]  rounded-[4px] flex items-center justify-center text-[#261140] hover:bg-[#f85d37] hover:text-white transition-all w-4 h-4"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
