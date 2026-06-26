@@ -205,3 +205,15 @@ export const careerPositions = [
   { role: "Product Designer", team: "Design", location: "Remote" },
   { role: "Technical Account Manager", team: "Sales", location: "India" },
 ];
+
+export const infrastructurePoints = [
+  "Reduced IT operations cost",
+  "Increased operational efficiency",
+  "Improved productivity",
+  "Intelligent Collaboration",
+  "Peace of Mind",
+  "Enhanced IT Security",
+  "Rapid Response to your IT related issues",
+  "Additional Support",
+  "Improved user Experience",
+];

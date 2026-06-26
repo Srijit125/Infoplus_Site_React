@@ -10,6 +10,7 @@ import { ContactPage } from "./pages/ContactPage";
 import CareersPage from "./pages/CareersPage";
 import ProductsPage from "./pages/ProductsPage";
 import { ServicesPage } from "./pages/ServicesPage";
+import InfrastructureManagement from "./pages/InfrastructureManagement";
 
 function App() {
   return (
@@ -24,6 +25,15 @@ function App() {
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route
+            path="/services/infrastructure-management"
+            element={<InfrastructureManagement />}
+          />
+          <Route
+            path="/services/staffing-consulting"
+            element={<ServicesPage />}
+          />
+          <Route path="/services/new-generation" element={<ServicesPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
