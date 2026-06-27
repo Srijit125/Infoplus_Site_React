@@ -58,11 +58,17 @@ export function Header() {
             <div key={item.label} className="relative group">
               <NavLink
                 to={item.href}
-                className={`flex items-center gap-1 px-3 py-2 rounded-lg text-[14px] font-medium transition-colors duration-200 ${
+                end={item.href === "/"}
+                className={({ isActive }) => [
+                  "flex items-center gap-1 px-3 py-2 rounded-lg text-[14px] font-medium transition-all duration-200",
                   isScrolled
-                    ? "text-[#111111] hover:text-[#f85d37] hover:bg-black/5"
-                    : "text-white/90 hover:text-white hover:bg-white/10"
-                }`}
+                    ? isActive
+                      ? "text-[#6128a6] bg-[#f8f5ff] font-semibold"
+                      : "text-[#111111] hover:text-[#f85d37] hover:bg-black/5"
+                    : isActive
+                      ? "text-white bg-white/15 font-semibold"
+                      : "text-white/90 hover:text-white hover:bg-white/10",
+                ].join(" ")}
               >
                 {item.label}
                 {item.megaMenu && (

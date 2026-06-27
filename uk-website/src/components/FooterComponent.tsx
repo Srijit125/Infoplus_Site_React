@@ -1,12 +1,35 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { Mail, Phone, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./helpers/ImageWithFallback";
 import imgInfoplusLogo from "../assets/images/imgInfoplusLogo.png";
-import {
-  socialMediaLinks,
-  type SocialMedia,
-} from "../assets/constants/socialMedia";
-import { SocialIcon } from "react-social-icons";
+import { socialMediaLinks, type SocialMedia } from "../assets/constants/socialMedia";
+
+function SocialSvg({ name }: { name: string }) {
+  if (name === "facebook") return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  );
+  if (name === "twitter") return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+  if (name === "linkedin") return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+  if (name === "instagram") return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  );
+  return null;
+}
 
 export function Footer() {
   return (
@@ -110,7 +133,7 @@ export function Footer() {
               Newsletter
             </h4>
             <p className="text-[12px] text-white/70 mb-4 font-normal">
-              Subscribe to get latest news & updates
+              Subscribe to get latest news &amp; updates
             </p>
             <form className="relative" onSubmit={(e) => e.preventDefault()}>
               <input
@@ -132,18 +155,20 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/70 text-[14px] font-normal">
-            © {new Date().getFullYear()} Infoplus Technologies. All rights
-            reserved.
+            © {new Date().getFullYear()} Infoplus Technologies. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             {socialMediaLinks.map((link: SocialMedia, idx: number) => (
-              <SocialIcon
+              <a
                 key={idx}
-                url={link.url}
-                network={link.title.toLowerCase()}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={link.title}
-                className="w-[32px] h-[32px]  rounded-[4px] flex items-center justify-center text-[#261140] hover:bg-[#f85d37] hover:text-white transition-all w-4 h-4"
-              />
+                className="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/60 hover:bg-[#f85d37] hover:border-[#f85d37] hover:text-white transition-all duration-200"
+              >
+                <SocialSvg name={link.title.toLowerCase()} />
+              </a>
             ))}
           </div>
         </div>

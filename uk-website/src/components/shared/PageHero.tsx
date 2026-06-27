@@ -44,7 +44,7 @@ export function PageHero({
           }}
         />
         {/* gradient orb */}
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full bg-[#6128a6] opacity-20 blur-[120px] pointer-events-none" />
+        <div className="absolute top-0 left-0 w-150 h-150 rounded-full bg-[#6128a6] opacity-20 blur-[120px] pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -78,7 +78,7 @@ export function PageHero({
                 <img
                   src={image}
                   alt={title}
-                  className="w-full h-[540px] object-cover rounded-3xl shadow-2xl relative z-10"
+                  className="w-full h-135 object-cover rounded-3xl shadow-2xl relative z-10"
                 />
                 <div className="absolute inset-0 rounded-3xl ring-1 ring-white/10 z-20" />
               </div>
@@ -124,36 +124,39 @@ export function PageHero({
     );
   }
 
-  // Default: centered — light with dot grid + brand accent
+  // Default: centered — dark brand background (matches transparent white-text header)
   return (
-    <section className="relative pt-40 pb-20 lg:pt-52 lg:pb-28 overflow-hidden bg-white">
+    <section className="relative pt-40 pb-20 lg:pt-52 lg:pb-28 overflow-hidden bg-[#0d0517]">
+      {/* dot grid */}
       <div
-        className="absolute inset-0 opacity-40"
+        className="absolute inset-0 opacity-[0.06]"
         style={{
-          backgroundImage: "radial-gradient(circle, #e5e4e7 1px, transparent 1px)",
-          backgroundSize: "20px 20px",
+          backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
         }}
       />
-      {/* brand gradient wash from top */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-[#381f55] via-[#6128a6] to-[#f85d37]" />
+      {/* subtle orb */}
+      <div className="absolute top-[-10%] right-[-5%] w-125 h-125 rounded-full bg-[#6128a6] opacity-20 blur-[120px] pointer-events-none" />
+      {/* brand accent line at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#6128a6]/40 to-transparent" />
 
       <div className="container mx-auto px-6 max-w-4xl relative z-10 text-center">
         {badge && (
           <span
-            className="inline-block py-1.5 px-4 rounded-full bg-[#f8f5ff] border border-[#d9c8f0] text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-7"
+            className="inline-block py-1.5 px-4 rounded-full bg-white/10 border border-white/20 text-white/80 text-[11px] font-bold uppercase tracking-widest mb-7"
             style={heroStyle(80)}
           >
             {badge}
           </span>
         )}
         <h1
-          className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold text-[#111111] tracking-tight mb-6"
+          className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold text-white tracking-tight mb-6"
           style={heroStyle(200)}
         >
           {title}
         </h1>
         <p
-          className="text-[clamp(1rem,2vw,1.2rem)] text-[#555555] leading-relaxed mb-10 font-light"
+          className="text-[clamp(1rem,2vw,1.2rem)] text-white/60 leading-relaxed mb-10 font-light"
           style={heroStyle(320)}
         >
           {description}
