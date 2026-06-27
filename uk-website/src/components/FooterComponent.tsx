@@ -10,7 +10,7 @@ import { SocialIcon } from "react-social-icons";
 
 export function Footer() {
   return (
-    <footer className="bg-[#261140] text-white pt-20 pb-8 font-['Inter']">
+    <footer className="bg-[#261140] text-white pt-20 pb-8">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">

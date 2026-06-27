@@ -1,5 +1,4 @@
 import { type ReactNode } from "react";
-import { ArrowDown } from "lucide-react";
 
 interface PageHeroProps {
   title: string;
@@ -8,6 +7,21 @@ interface PageHeroProps {
   variant?: "centered" | "split" | "gradient";
   image?: string;
   children?: ReactNode;
+}
+
+const ease = "cubic-bezier(0.22, 1, 0.36, 1)";
+
+function heroStyle(delay: number, from: "up" | "down" | "fade" = "up") {
+  const transform =
+    from === "up"
+      ? "translateY(32px)"
+      : from === "down"
+      ? "translateY(-32px)"
+      : "none";
+  return {
+    animation: `heroEnter 750ms ${ease} ${delay}ms both`,
+    ["--hero-from" as string]: transform,
+  } as React.CSSProperties;
 }
 
 export function PageHero({
@@ -20,31 +34,53 @@ export function PageHero({
 }: PageHeroProps) {
   if (variant === "split") {
     return (
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-50">
+      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden bg-[#0d0517]">
+        {/* subtle dot grid */}
+        <div
+          className="absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+          }}
+        />
+        {/* gradient orb */}
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full bg-[#6128a6] opacity-20 blur-[120px] pointer-events-none" />
+
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="max-w-2xl">
               {badge && (
-                <span className="inline-block py-1.5 px-4 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold tracking-wide mb-6">
+                <span
+                  className="inline-block py-1.5 px-4 rounded-full bg-[#f85d37]/10 border border-[#f85d37]/30 text-[#f85d37] text-[11px] font-bold uppercase tracking-widest mb-7"
+                  style={heroStyle(80)}
+                >
                   {badge}
                 </span>
               )}
-              <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 tracking-tight mb-8 leading-[1.1]">
+              <h1
+                className="text-[clamp(2.25rem,5vw,3.5rem)] font-extrabold text-white leading-[1.1] mb-6"
+                style={heroStyle(200)}
+              >
                 {title}
               </h1>
-              <p className="text-xl text-slate-600 leading-relaxed mb-10">
+              <p
+                className="text-[clamp(1rem,2vw,1.2rem)] text-white/70 leading-relaxed mb-10"
+                style={heroStyle(310)}
+              >
                 {description}
               </p>
-              {children}
+              <div style={heroStyle(420)}>{children}</div>
             </div>
+
             {image && (
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-3xl transform translate-x-4 translate-y-4 opacity-20 blur-2xl"></div>
+              <div className="relative" style={heroStyle(280, "down")}>
+                <div className="absolute inset-0 bg-[#6128a6] rounded-3xl translate-x-4 translate-y-4 opacity-30 blur-2xl" />
                 <img
                   src={image}
                   alt={title}
-                  className="w-full h-[600px] object-cover rounded-3xl shadow-2xl relative z-10"
+                  className="w-full h-[540px] object-cover rounded-3xl shadow-2xl relative z-10"
                 />
+                <div className="absolute inset-0 rounded-3xl ring-1 ring-white/10 z-20" />
               </div>
             )}
           </div>
@@ -55,50 +91,74 @@ export function PageHero({
 
   if (variant === "gradient") {
     return (
-      <section className="relative pt-40 pb-32 lg:pt-56 lg:pb-40 overflow-hidden bg-slate-900 text-white">
+      <section className="relative pt-40 pb-32 lg:pt-56 lg:pb-40 overflow-hidden bg-[#0d0517] text-white">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[70%] bg-blue-600 rounded-full mix-blend-multiply filter blur-[120px] opacity-50"></div>
-          <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[70%] bg-purple-600 rounded-full mix-blend-multiply filter blur-[120px] opacity-50"></div>
-          <div className="absolute bottom-[-20%] left-[20%] w-[50%] h-[70%] bg-emerald-600 rounded-full mix-blend-multiply filter blur-[120px] opacity-50"></div>
+          <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[70%] bg-[#381f55] rounded-full blur-[120px] opacity-60" />
+          <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[70%] bg-[#6128a6] rounded-full blur-[120px] opacity-40" />
+          <div className="absolute bottom-[-20%] left-[20%] w-[50%] h-[70%] bg-[#f85d37] rounded-full blur-[140px] opacity-15" />
         </div>
         <div className="container mx-auto px-6 max-w-4xl relative z-10 text-center">
           {badge && (
-            <span className="inline-block py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-semibold tracking-wide mb-6">
+            <span
+              className="inline-block py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold uppercase tracking-widest mb-7"
+              style={heroStyle(80)}
+            >
               {badge}
             </span>
           )}
-          <h1 className="text-6xl lg:text-8xl font-black tracking-tighter mb-8 leading-none bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70">
+          <h1
+            className="text-[clamp(2.5rem,7vw,5rem)] font-black tracking-tight mb-8 leading-none text-white"
+            style={heroStyle(200)}
+          >
             {title}
           </h1>
-          <p className="text-2xl text-slate-300 font-light leading-relaxed mb-12 max-w-3xl mx-auto">
+          <p
+            className="text-[clamp(1rem,2vw,1.25rem)] text-white/60 font-light leading-relaxed mb-12 max-w-3xl mx-auto"
+            style={heroStyle(320)}
+          >
             {description}
           </p>
-          {children}
+          <div style={heroStyle(430)}>{children}</div>
         </div>
       </section>
     );
   }
 
-  // Default centered
+  // Default: centered — light with dot grid + brand accent
   return (
-    <section className="relative pt-40 pb-20 lg:pt-56 lg:pb-32 overflow-hidden bg-white">
-      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-50"></div>
+    <section className="relative pt-40 pb-20 lg:pt-52 lg:pb-28 overflow-hidden bg-white">
+      <div
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage: "radial-gradient(circle, #e5e4e7 1px, transparent 1px)",
+          backgroundSize: "20px 20px",
+        }}
+      />
+      {/* brand gradient wash from top */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-[#381f55] via-[#6128a6] to-[#f85d37]" />
+
       <div className="container mx-auto px-6 max-w-4xl relative z-10 text-center">
         {badge && (
-          <span className="inline-block py-1.5 px-4 rounded-full bg-slate-100 text-slate-600 text-sm font-semibold tracking-wide mb-8 border border-slate-200 shadow-sm">
+          <span
+            className="inline-block py-1.5 px-4 rounded-full bg-[#f8f5ff] border border-[#d9c8f0] text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-7"
+            style={heroStyle(80)}
+          >
             {badge}
           </span>
         )}
-        <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 tracking-tight mb-8">
+        <h1
+          className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold text-[#111111] tracking-tight mb-6"
+          style={heroStyle(200)}
+        >
           {title}
         </h1>
-        <p className="text-xl lg:text-2xl text-slate-600 leading-relaxed mb-12 font-light">
+        <p
+          className="text-[clamp(1rem,2vw,1.2rem)] text-[#555555] leading-relaxed mb-10 font-light"
+          style={heroStyle(320)}
+        >
           {description}
         </p>
-        {children}
-      </div>
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <ArrowDown className="w-6 h-6 text-slate-400" />
+        <div style={heroStyle(430)}>{children}</div>
       </div>
     </section>
   );

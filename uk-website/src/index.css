@@ -1,113 +1,258 @@
 @import "tailwindcss";
 
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
-  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
+/* ── Scroll-reveal keyframes ─────────────────────────────────
+   Defined OUTSIDE @layer so any element can reference them
+   via an inline animation: property.
+───────────────────────────────────────────────────────────── */
+@keyframes cardTiltIn {
+  0% {
+    opacity: 0;
+    transform: perspective(700px) rotateX(16deg) translateY(28px) scale(0.97);
+  }
+  60% { opacity: 1; }
+  100% {
+    opacity: 1;
+    transform: perspective(700px) rotateX(0deg) translateY(0px) scale(1);
   }
 }
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes revealDown {
+  from { opacity: 0; transform: translateY(-36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes revealLeft {
+  from { opacity: 0; transform: translateX(-36px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes revealRight {
+  from { opacity: 0; transform: translateX(36px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes revealFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes heroEnter {
+  from { opacity: 0; transform: var(--hero-from, translateY(32px)); }
+  to   { opacity: 1; transform: none; }
+}
 
+/* ════════════════════════════════════════════════════════════
+   DESIGN SYSTEM — Infoplus Technologies UK
+   ════════════════════════════════════════════════════════════
+
+   Layer order (low → high priority):
+     @layer base  →  @layer components  →  @layer utilities
+   Unlayered CSS sits ABOVE all layers, so base styles must
+   live in @layer base so Tailwind utilities can override them.
+   ════════════════════════════════════════════════════════════ */
+
+/* ── 1. Design tokens ──────────────────────────────────────── */
+:root {
+  /* Brand palette */
+  --color-brand:        #381f55;   /* primary purple — header, CTAs */
+  --color-brand-dark:   #261140;   /* footer, deep bg */
+  --color-brand-mid:    #6128a6;   /* card accents, section bgs */
+  --color-accent:       #f85d37;   /* CTA orange */
+  --color-accent-hover: #e04f2c;
+  --color-purple-light: #ecdaff;   /* badge fill */
+  --color-purple-glow:  #aa3bff;   /* glows, gradients */
+
+  /* Semantic surface colours */
+  --color-text:         #555555;   /* body copy */
+  --color-text-strong:  #111111;   /* headings */
+  --color-text-muted:   #888888;   /* captions, meta */
+  --color-bg:           #ffffff;
+  --color-bg-subtle:    #f8f5ff;   /* section alternating bg */
+  --color-border:       #e5e4e7;
+
+  /* CSS-var aliases kept for legacy component references */
+  --text:               var(--color-text);
+  --text-h:             var(--color-text-strong);
+  --bg:                 var(--color-bg);
+  --border:             var(--color-border);
+  --accent:             var(--color-purple-glow);
+  --accent-bg:          rgba(170, 59, 255, 0.1);
+  --accent-border:      rgba(170, 59, 255, 0.5);
+  --social-bg:          rgba(244, 243, 236, 0.5);
+  --code-bg:            #f4f3ec;
+  --shadow:             rgba(0,0,0,0.08) 0 10px 24px -4px,
+                        rgba(0,0,0,0.04) 0 4px 8px -2px;
+
+  /* ── 2. Spacing scale (4-point grid) ── */
+  --space-1:   0.25rem;  /*  4 px */
+  --space-2:   0.5rem;   /*  8 px */
+  --space-3:   0.75rem;  /* 12 px */
+  --space-4:   1rem;     /* 16 px */
+  --space-5:   1.25rem;  /* 20 px */
+  --space-6:   1.5rem;   /* 24 px */
+  --space-8:   2rem;     /* 32 px */
+  --space-10:  2.5rem;   /* 40 px */
+  --space-12:  3rem;     /* 48 px */
+  --space-16:  4rem;     /* 64 px */
+  --space-20:  5rem;     /* 80 px */
+  --space-24:  6rem;     /* 96 px */
+
+  /* ── 3. Typography spacing defaults ── */
+  /* These set the gap BELOW each element when no Tailwind   */
+  /* mb-* class is present. Tailwind utilities override them  */
+  /* because they live in @layer utilities > @layer base.     */
+  --mb-display:   var(--space-8);  /* h1 → 32 px */
+  --mb-h2:        var(--space-6);  /* h2 → 24 px */
+  --mb-h3:        var(--space-5);  /* h3 → 20 px */
+  --mb-h4:        var(--space-4);  /* h4 → 16 px */
+  --mb-h5:        var(--space-3);  /* h5 → 12 px */
+  --mb-h6:        var(--space-2);  /* h6 →  8 px */
+  --mb-p:         var(--space-5);  /* p  → 20 px */
+  --mb-label:     var(--space-3);  /* overline label → 12 px */
+
+  /* ── 4. Font stacks ── */
+  --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+          'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, Consolas,
+          'Courier New', monospace;
+
+  /* ── 5. Base document settings ── */
+  font-family:      var(--sans);
+  font-size:        16px;
+  line-height:      1.7;
+  letter-spacing:   -0.01em;
+  color:            var(--color-text);
+  background:       var(--color-bg);
+  color-scheme:     light dark;
+  font-synthesis:   none;
+  text-rendering:   optimizeLegibility;
+  -webkit-font-smoothing:  antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Inter optical features: alternate digits, punctuation */
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+/* Dark mode token overrides */
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+    --color-text:        #9ca3af;
+    --color-text-strong: #f3f4f6;
+    --color-bg:          #16171d;
+    --color-bg-subtle:   #1f2028;
+    --color-border:      #2e303a;
+    --color-purple-glow: #c084fc;
+    --accent-bg:         rgba(192, 132, 252, 0.15);
+    --accent-border:     rgba(192, 132, 252, 0.5);
+    --social-bg:         rgba(47, 48, 58, 0.5);
+    --shadow:            rgba(0,0,0,0.4) 0 10px 24px -4px,
+                         rgba(0,0,0,0.2) 0 4px 8px -2px;
   }
 }
 
+/* ── 6. Minimal global reset ─────────────────────────────────
+   Keep outside @layer so the reset always applies.
+─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+body  { margin: 0; }
+
 #root {
-  /* width: 1126px; */
   max-width: 100%;
   margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-}
+/* ── 7. Typography base — MUST be in @layer base ─────────────
+   @layer base is overridden by @layer utilities, so every
+   Tailwind class (text-white, mb-6, text-[36px], …) wins.
+   Without this layer, the raw h1/p rules beat Tailwind and
+   colour/spacing overrides silently stop working.
+─────────────────────────────────────────────────────────── */
+@layer base {
 
-/* h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-} */
-
-h1 { 
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+  /* Shared heading reset */
+  h1, h2, h3, h4, h5, h6 {
+    font-family:    var(--sans);
+    color:          var(--color-text-strong);
+    line-height:    1.2;
+    font-weight:    700;
+    letter-spacing: -0.02em;
+    margin-top:     0;
   }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
+
+  /* ── Type scale ──
+     clamp(min, fluid, max) gives smooth scaling between
+     mobile and desktop without breakpoint hacks.           */
+
+  /* Display / H1 — hero-level */
+  h1 {
+    font-size:      clamp(2.25rem, 5vw, 3.5rem);  /* 36 → 56 px */
+    font-weight:    800;
+    letter-spacing: -0.03em;
+    line-height:    1.1;
+    margin-bottom:  var(--mb-display);
   }
-}
-p {
-  margin: 0;
-}
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
+  /* Section heading */
+  h2 {
+    font-size:      clamp(1.625rem, 3.5vw, 2.25rem);  /* 26 → 36 px */
+    font-weight:    700;
+    letter-spacing: -0.025em;
+    margin-bottom:  var(--mb-h2);
+  }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+  /* Sub-section / card group heading */
+  h3 {
+    font-size:      clamp(1.25rem, 2.5vw, 1.5rem);  /* 20 → 24 px */
+    font-weight:    600;
+    letter-spacing: -0.02em;
+    margin-bottom:  var(--mb-h3);
+  }
+
+  /* Card / panel heading */
+  h4 {
+    font-size:      clamp(1.0625rem, 2vw, 1.25rem);  /* 17 → 20 px */
+    font-weight:    600;
+    letter-spacing: -0.015em;
+    margin-bottom:  var(--mb-h4);
+  }
+
+  /* Item label */
+  h5 {
+    font-size:      1.125rem;  /* 18 px */
+    font-weight:    600;
+    letter-spacing: -0.01em;
+    margin-bottom:  var(--mb-h5);
+  }
+
+  /* Micro heading */
+  h6 {
+    font-size:      1rem;  /* 16 px */
+    font-weight:    600;
+    letter-spacing: 0;
+    margin-bottom:  var(--mb-h6);
+  }
+
+  /* Body paragraph */
+  p {
+    margin-top:    0;
+    margin-bottom: var(--mb-p);
+    line-height:   1.75;
+  }
+
+  /* Last paragraph inside a block shouldn't add trailing space */
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Inline code */
+  code {
+    font-family:    var(--mono);
+    font-size:      0.875rem;
+    line-height:    1.5;
+    padding:        0.2em 0.45em;
+    border-radius:  4px;
+    background:     var(--code-bg);
+    color:          var(--color-text-strong);
+  }
 }

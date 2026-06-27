@@ -1,12 +1,20 @@
 import { PageHero } from "../components/shared/PageHero";
 import { Users, Target, Shield, Globe2 } from "lucide-react";
+import { ScrollReveal } from "../components/ui/ScrollReveal";
 
 function About() {
   const stats = [
-    { label: "Founded", value: "2006" },
-    { label: "Global Offices", value: "3" },
+    { label: "Founded",          value: "2006"  },
+    { label: "Global Offices",   value: "3"     },
     { label: "Enterprise Clients", value: "500+" },
-    { label: "Team Members", value: "1,200+" },
+    { label: "Team Members",     value: "1,200+" },
+  ];
+
+  const culture = [
+    { icon: Target,  title: "Mission Driven",    desc: "We follow the golden circle of Why, How, and What." },
+    { icon: Shield,  title: "Quality First",      desc: "We put quality first to deliver WOW services to all our clients." },
+    { icon: Users,   title: "Customer Empathy",   desc: "Developing strong client relationships through deep understanding." },
+    { icon: Globe2,  title: "Global Reach",       desc: "Headquartered in UK with presence in Germany and India." },
   ];
 
   return (
@@ -20,68 +28,50 @@ function About() {
       >
         <div className="grid grid-cols-2 gap-8 mt-12">
           {stats.map((stat, i) => (
-            <div key={i} className="border-l-2 border-blue-600 pl-4">
-              <div className="text-3xl font-black text-slate-900 mb-1">
-                {stat.value}
-              </div>
-              <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">
-                {stat.label}
-              </div>
+            <div key={i} className="border-l-2 border-[#6128a6] pl-4">
+              <div className="text-3xl font-black text-[#111111] mb-1">{stat.value}</div>
+              <div className="text-sm font-medium text-[#555555] uppercase tracking-wider">{stat.label}</div>
             </div>
           ))}
         </div>
       </PageHero>
 
+      {/* Culture & Vision */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">
-              Our Culture & Vision
-            </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              We combine the power of technology with our culture: Quality,
-              Innovation, and customer empathy. Infoplus Technologies UK Ltd is
-              at the forefront in providing a comprehensive portfolio of
-              services to cater to the needs of clients' strategies in the
-              evolving world of digital.
-            </p>
-          </div>
+
+          <ScrollReveal direction="up">
+            <div className="mb-14">
+              <span className="text-[#f85d37] text-[12px] font-semibold uppercase tracking-widest mb-3 block">
+                Who We Are
+              </span>
+              <h2 className="text-[36px] font-bold text-[#111111] mb-5">
+                Our Culture &amp; Vision
+              </h2>
+              <p className="text-[16px] text-[#555555] leading-[1.75] max-w-3xl text-justify">
+                We combine the power of technology with our culture: Quality,
+                Innovation, and customer empathy. Infoplus Technologies UK Ltd is
+                at the forefront in providing a comprehensive portfolio of services
+                to cater to the needs of clients' strategies in the evolving world
+                of digital.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: Target,
-                title: "Mission Driven",
-                desc: "We follow the golden circle of Why, How, and What.",
-              },
-              {
-                icon: Shield,
-                title: "Quality First",
-                desc: "We put quality first to deliver WOW services to all our clients.",
-              },
-              {
-                icon: Users,
-                title: "Customer Empathy",
-                desc: "Developing strong client relationships through deep understanding.",
-              },
-              {
-                icon: Globe2,
-                title: "Global Reach",
-                desc: "Headquartered in UK with presence in Germany and India.",
-              },
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-slate-50 rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300"
-              >
-                <item.icon className="w-10 h-10 text-blue-600 mb-6" />
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-slate-600">{item.desc}</p>
-              </div>
+            {culture.map((item, idx) => (
+              <ScrollReveal key={idx} variant="card" delay={idx * 100}>
+                <div className="group p-8 bg-[#f8f5ff] border border-[#e5e4e7] rounded-2xl hover:border-[#aa3bff]/30 hover:shadow-[0_8px_32px_rgba(97,40,166,0.10)] hover:-translate-y-1.5 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6 shadow-sm group-hover:bg-[#ecdaff] transition-colors">
+                    <item.icon className="w-6 h-6 text-[#6128a6]" strokeWidth={1.6} />
+                  </div>
+                  <h3 className="text-[17px] font-semibold text-[#111111] mb-3">{item.title}</h3>
+                  <p className="text-[14px] text-[#555555] leading-relaxed">{item.desc}</p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
+
         </div>
       </section>
     </div>
