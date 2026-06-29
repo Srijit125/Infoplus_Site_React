@@ -21,6 +21,9 @@ import CloudPage from "./pages/CloudPage";
 import StaffingPage from "./pages/StaffingPage";
 import ConsultingPage from "./pages/ConsultingPage";
 import UmbrellaPage from "./pages/UmbrellaPage";
+import TransformationPage from "./pages/TransformationPage";
+import EverythingDataPage from "./pages/EverythingDataPage";
+import AutomationPage from "./pages/AutomationPage";
 
 function App() {
   return (
@@ -46,6 +49,9 @@ function App() {
           <Route path="/services/staffing" element={<StaffingPage />} />
           <Route path="/services/consulting" element={<ConsultingPage />} />
           <Route path="/services/umbrella" element={<UmbrellaPage />} />
+          <Route path="/services/transformation" element={<TransformationPage />} />
+          <Route path="/services/data" element={<EverythingDataPage />} />
+          <Route path="/services/automation" element={<AutomationPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
