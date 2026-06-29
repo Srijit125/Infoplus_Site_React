@@ -18,6 +18,9 @@ import InfrastructurePage from "./pages/InfrastructurePage";
 import SAPPage from "./pages/SAPPage";
 import CyberSecurityPage from "./pages/CyberSecurityPage";
 import CloudPage from "./pages/CloudPage";
+import StaffingPage from "./pages/StaffingPage";
+import ConsultingPage from "./pages/ConsultingPage";
+import UmbrellaPage from "./pages/UmbrellaPage";
 
 function App() {
   return (
@@ -40,6 +43,9 @@ function App() {
           <Route path="/services/sap-consulting" element={<SAPPage />} />
           <Route path="/services/cyber-security" element={<CyberSecurityPage />} />
           <Route path="/services/cloud" element={<CloudPage />} />
+          <Route path="/services/staffing" element={<StaffingPage />} />
+          <Route path="/services/consulting" element={<ConsultingPage />} />
+          <Route path="/services/umbrella" element={<UmbrellaPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
