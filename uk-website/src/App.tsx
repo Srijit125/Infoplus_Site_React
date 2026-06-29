@@ -24,6 +24,7 @@ import UmbrellaPage from "./pages/UmbrellaPage";
 import TransformationPage from "./pages/TransformationPage";
 import EverythingDataPage from "./pages/EverythingDataPage";
 import AutomationPage from "./pages/AutomationPage";
+import MasterDataManagementPage from "./pages/MasterDataManagementPage";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
           <Route path="/services/transformation" element={<TransformationPage />} />
           <Route path="/services/data" element={<EverythingDataPage />} />
           <Route path="/services/automation" element={<AutomationPage />} />
+          <Route path="/products/master-data-management" element={<MasterDataManagementPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
