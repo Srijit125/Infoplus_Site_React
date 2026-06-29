@@ -15,6 +15,9 @@ import AIPage from "./pages/AIPage";
 import SoftwareDevelopmentPage from "./pages/SoftwareDevelopmentPage";
 import TestingPage from "./pages/TestingPage";
 import InfrastructurePage from "./pages/InfrastructurePage";
+import SAPPage from "./pages/SAPPage";
+import CyberSecurityPage from "./pages/CyberSecurityPage";
+import CloudPage from "./pages/CloudPage";
 
 function App() {
   return (
@@ -34,6 +37,9 @@ function App() {
           <Route path="/services/software-development" element={<SoftwareDevelopmentPage />} />
           <Route path="/services/testing" element={<TestingPage />} />
           <Route path="/services/infrastructure-management" element={<InfrastructurePage />} />
+          <Route path="/services/sap-consulting" element={<SAPPage />} />
+          <Route path="/services/cyber-security" element={<CyberSecurityPage />} />
+          <Route path="/services/cloud" element={<CloudPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
