@@ -12,6 +12,9 @@ import CareersPage from "./pages/CareersPage";
 import ProductsPage from "./pages/ProductsPage";
 import { ServicesPage } from "./pages/ServicesPage";
 import AIPage from "./pages/AIPage";
+import SoftwareDevelopmentPage from "./pages/SoftwareDevelopmentPage";
+import TestingPage from "./pages/TestingPage";
+import InfrastructurePage from "./pages/InfrastructurePage";
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/artificial-intelligence" element={<AIPage />} />
+          <Route path="/services/software-development" element={<SoftwareDevelopmentPage />} />
+          <Route path="/services/testing" element={<TestingPage />} />
+          <Route path="/services/infrastructure-management" element={<InfrastructurePage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
