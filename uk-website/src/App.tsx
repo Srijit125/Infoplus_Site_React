@@ -33,11 +33,13 @@ import NewGenServicesPage from "./pages/NewGenServicesPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import { CookieConsent } from "./components/ui/CookieConsent";
+import { ScrollToTop } from "./components/ui/ScrollToTop";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={<Index />} />

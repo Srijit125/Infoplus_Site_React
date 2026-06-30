@@ -13,6 +13,7 @@ export interface NavigationItem {
   label: string;
   href: string;
   megaMenu?: MenuCategory[];
+  noNavigate?: boolean;
 }
 
 export const navigation: NavigationItem[] = [
@@ -28,6 +29,7 @@ export const navigation: NavigationItem[] = [
   {
     label: "Services",
     href: "/services",
+    noNavigate: true,
     megaMenu: [
       {
         label: "IT Services",

@@ -286,7 +286,7 @@ export function ContactPage() {
       </section>
 
       {/* ── Global Offices ──────────────────────────────────────── */}
-      <section className="py-20 bg-[#f8f5ff]">
+      <section id="worldwide-presence" className="py-20 bg-[#f8f5ff]">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
