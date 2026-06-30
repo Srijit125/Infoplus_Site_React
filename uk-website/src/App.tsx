@@ -27,6 +27,9 @@ import AutomationPage from "./pages/AutomationPage";
 import MasterDataManagementPage from "./pages/MasterDataManagementPage";
 import EducationSolutionsPage from "./pages/EducationSolutionsPage";
 import CookiePolicyPage from "./pages/CookiePolicyPage";
+import ITServicesPage from "./pages/ITServicesPage";
+import StaffingConsultingPage from "./pages/StaffingConsultingPage";
+import NewGenServicesPage from "./pages/NewGenServicesPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import { CookieConsent } from "./components/ui/CookieConsent";
@@ -45,6 +48,9 @@ function App() {
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/it-services" element={<ITServicesPage />} />
+          <Route path="/services/staffing-consulting" element={<StaffingConsultingPage />} />
+          <Route path="/services/new-generation" element={<NewGenServicesPage />} />
           <Route path="/services/artificial-intelligence" element={<AIPage />} />
           <Route path="/services/software-development" element={<SoftwareDevelopmentPage />} />
           <Route path="/services/testing" element={<TestingPage />} />
