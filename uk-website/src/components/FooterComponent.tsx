@@ -57,27 +57,34 @@ export function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
-                "Home",
-                "About Us",
-                "Careers",
-                "Contact",
-                "Carbon Reduction Plan",
-                "ISO 14001:2015",
-                "Terms of Service",
-                "Privacy Policy",
-                "Cookie Policy",
+                { label: "Home",                 href: "/",                              external: false },
+                { label: "About Us",             href: "/about",                         external: false },
+                { label: "Careers",              href: "/careers",                       external: false },
+                { label: "Contact",              href: "/contact",                       external: false },
+                { label: "Carbon Reduction Plan",href: "/carbon-reduction-plan.pdf",     external: true  },
+                { label: "ISO 14001:2015",       href: "/iso-14001-2015.pdf",            external: true  },
+                { label: "Terms of Service",     href: "/terms-of-service",              external: false },
+                { label: "Privacy Policy",       href: "/privacy-policy",                external: false },
+                { label: "Cookie Policy",        href: "/cookie-policy",                 external: false },
               ].map((item) => (
-                <li key={item}>
-                  <Link
-                    to={
-                      item === "Home"
-                        ? "/"
-                        : `/${item.toLowerCase().replace(/ /g, "-").replace(/:/g, "")}`
-                    }
-                    className="text-white/70 hover:text-white transition-colors text-[14px] font-normal"
-                  >
-                    {item}
-                  </Link>
+                <li key={item.label}>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/70 hover:text-white transition-colors text-[14px] font-normal"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className="text-white/70 hover:text-white transition-colors text-[14px] font-normal"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
