@@ -63,6 +63,8 @@ export function Footer() {
                 "Contact",
                 "Carbon Reduction Plan",
                 "ISO 14001:2015",
+                "Terms of Service",
+                "Privacy Policy",
                 "Cookie Policy",
               ].map((item) => (
                 <li key={item}>
@@ -154,23 +156,47 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/70 text-[14px] font-normal">
-            © {new Date().getFullYear()} Infoplus Technologies. All rights reserved.
-          </p>
-          <div className="flex items-center gap-3">
-            {socialMediaLinks.map((link: SocialMedia, idx: number) => (
-              <a
-                key={idx}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={link.title}
-                className="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/60 hover:bg-[#f85d37] hover:border-[#f85d37] hover:text-white transition-all duration-200"
-              >
-                <SocialSvg name={link.title.toLowerCase()} />
-              </a>
+        <div className="pt-8 border-t border-white/10 space-y-4">
+          {/* Legal links row */}
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            {[
+              { label: "Terms of Service", to: "/terms-of-service" },
+              { label: "Privacy Policy",   to: "/privacy-policy" },
+              { label: "Cookie Policy",    to: "/cookie-policy" },
+            ].map((l, i, arr) => (
+              <span key={l.label} className="flex items-center gap-6">
+                <Link
+                  to={l.to}
+                  className="text-white/45 hover:text-white text-[13px] font-normal transition-colors duration-200"
+                >
+                  {l.label}
+                </Link>
+                {i < arr.length - 1 && (
+                  <span className="text-white/20 text-[10px]">·</span>
+                )}
+              </span>
             ))}
+          </div>
+
+          {/* Copyright + social */}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-white/70 text-[14px] font-normal">
+              © {new Date().getFullYear()} Infoplus Technologies. All rights reserved.
+            </p>
+            <div className="flex items-center gap-3">
+              {socialMediaLinks.map((link: SocialMedia, idx: number) => (
+                <a
+                  key={idx}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.title}
+                  className="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/60 hover:bg-[#f85d37] hover:border-[#f85d37] hover:text-white transition-all duration-200"
+                >
+                  <SocialSvg name={link.title.toLowerCase()} />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
