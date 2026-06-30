@@ -63,6 +63,7 @@ export function Footer() {
                 "Contact",
                 "Carbon Reduction Plan",
                 "ISO 14001:2015",
+                "Cookie Policy",
               ].map((item) => (
                 <li key={item}>
                   <Link
@@ -139,12 +140,12 @@ export function Footer() {
               <input
                 type="email"
                 placeholder="Enter Your Email Address"
-                className="w-full bg-white rounded-[8px] py-[12px] pl-4 pr-12 text-[14px] text-[#111] focus:outline-none placeholder:text-[#555] transition-colors"
+                className="w-full bg-white rounded-lg py-3 pl-4 pr-12 text-[14px] text-[#111] focus:outline-none placeholder:text-[#555] transition-colors"
                 required
               />
               <button
                 type="submit"
-                className="absolute right-1 top-1 bottom-1 w-10 bg-[#261140] rounded-[6px] flex items-center justify-center text-white hover:bg-[#381f55] transition-colors"
+                className="absolute right-1 top-1 bottom-1 w-10 bg-[#261140] rounded-md flex items-center justify-center text-white hover:bg-[#381f55] transition-colors"
                 aria-label="Subscribe Now"
               >
                 <ArrowRight className="w-4 h-4" />

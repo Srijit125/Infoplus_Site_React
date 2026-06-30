@@ -26,6 +26,8 @@ import EverythingDataPage from "./pages/EverythingDataPage";
 import AutomationPage from "./pages/AutomationPage";
 import MasterDataManagementPage from "./pages/MasterDataManagementPage";
 import EducationSolutionsPage from "./pages/EducationSolutionsPage";
+import CookiePolicyPage from "./pages/CookiePolicyPage";
+import { CookieConsent } from "./components/ui/CookieConsent";
 
 function App() {
   return (
@@ -56,8 +58,10 @@ function App() {
           <Route path="/services/automation" element={<AutomationPage />} />
           <Route path="/products/master-data-management" element={<MasterDataManagementPage />} />
           <Route path="/products/education-solutions" element={<EducationSolutionsPage />} />
+          <Route path="/cookie-policy" element={<CookiePolicyPage />} />
         </Routes>
         <Footer />
+        <CookieConsent />
       </BrowserRouter>
     </>
   );
