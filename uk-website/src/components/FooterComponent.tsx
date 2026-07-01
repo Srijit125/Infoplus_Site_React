@@ -63,9 +63,6 @@ export function Footer() {
                 { label: "Contact",              href: "/contact",                       external: false },
                 { label: "Carbon Reduction Plan",href: "/carbon-reduction-plan.pdf",     external: true  },
                 { label: "ISO 14001:2015",       href: "/iso-14001-2015.pdf",            external: true  },
-                { label: "Terms of Service",     href: "/terms-of-service",              external: false },
-                { label: "Privacy Policy",       href: "/privacy-policy",                external: false },
-                { label: "Cookie Policy",        href: "/cookie-policy",                 external: false },
               ].map((item) => (
                 <li key={item.label}>
                   {item.external ? (
@@ -186,10 +183,7 @@ export function Footer() {
           </div>
 
           {/* Copyright + social */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-white/70 text-[14px] font-normal">
-              © {new Date().getFullYear()} Infoplus Technologies. All rights reserved.
-            </p>
+          <div className="flex flex-col items-center justify-center gap-4">
             <div className="flex items-center gap-3">
               {socialMediaLinks.map((link: SocialMedia, idx: number) => (
                 <a
@@ -204,6 +198,9 @@ export function Footer() {
                 </a>
               ))}
             </div>
+            <p className="text-white/70 text-[14px] font-normal text-center">
+              © {new Date().getFullYear()} Infoplus Technologies. All rights reserved.
+            </p>
           </div>
         </div>
       </div>
