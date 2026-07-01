@@ -34,14 +34,15 @@ export function Header() {
     >
       <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between gap-4">
 
-        {/* Logo */}
-        <NavLink to="/" className="flex items-center gap-2 shrink-0">
-          <ImageWithFallback
-            src={imgInfoplusLogo}
-            alt="Infoplus Technologies"
-            className="h-10 w-auto object-contain transition-all duration-300"
-            style={isScrolled ? { filter: "brightness(0) saturate(100%)" } : undefined}
-          />
+        {/* Logo — wrapper fixes layout height so header bar stays unchanged */}
+        <NavLink to="/" className="flex items-center shrink-0">
+          <div className="h-14 flex items-center overflow-visible">
+            <ImageWithFallback
+              src={imgInfoplusLogo}
+              alt="Infoplus Technologies"
+              className="h-20 w-auto object-contain transition-all duration-300"
+            />
+          </div>
         </NavLink>
 
         {/* Desktop nav */}
@@ -115,7 +116,7 @@ export function Header() {
             to="/contact"
             className="flex items-center gap-2 bg-[#f85d37] text-white px-5 py-2.5 rounded-lg font-semibold text-[14px] hover:bg-[#e04f2c] transition-colors shrink-0"
           >
-            Free Demo <ChevronRight className="w-4 h-4" />
+            Get Started <ChevronRight className="w-4 h-4" />
           </NavLink>
         </div>
 
@@ -236,7 +237,7 @@ export function Header() {
             to="/contact"
             className="mt-3 flex items-center justify-center gap-2 bg-[#f85d37] text-white px-6 py-3 rounded-lg font-semibold text-[14px] hover:bg-[#e04f2c] transition-colors"
           >
-            Free Demo <ChevronRight className="w-4 h-4" />
+            Get Started <ChevronRight className="w-4 h-4" />
           </NavLink>
         </div>
       )}
