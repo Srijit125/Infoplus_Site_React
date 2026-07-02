@@ -142,13 +142,13 @@ function IndexBanner() {
       </div>
 
       {/* ── Main content ── */}
-      <div className="container mx-auto px-6 max-w-7xl relative z-10 pt-28 pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10 pt-20 pb-14">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
           {/* Left — copy */}
           <div className="max-w-xl text-left">
             {/* Badge */}
-            <div className="hero-fade-1 mb-6">
+            <div className="hero-fade-1 mb-4">
               <span
                 className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[13px] font-semibold text-[#ecdaff] border border-[#aa3bff]/35"
                 style={{
@@ -174,7 +174,7 @@ function IndexBanner() {
             </div>
 
             {/* Headline */}
-            <h1 className="hero-fade-2 text-[44px] md:text-[58px] font-bold text-white leading-[1.08] mb-6 tracking-tight">
+            <h1 className="hero-fade-2 text-[40px] md:text-[52px] font-bold text-white leading-[1.08] mb-4 tracking-tight">
               Artificial{" "}
               <span
                 style={{
@@ -193,7 +193,7 @@ function IndexBanner() {
               Services
             </h1>
 
-            <p className="hero-fade-3 text-[18px] text-white/70 leading-relaxed mb-10 font-normal">
+            <p className="hero-fade-3 text-[16px] text-white/70 leading-relaxed mb-7 font-normal">
               Proactively managed IT solutions that power smarter products,
               faster delivery, and lasting digital transformation.
             </p>
@@ -217,7 +217,7 @@ function IndexBanner() {
             </div>
 
             {/* Stats */}
-            <div className="hero-fade-5 mt-14 flex gap-8 flex-wrap">
+            <div className="hero-fade-5 mt-10 flex gap-8 flex-wrap">
               {STATS.map((s) => (
                 <div key={s.label} className="flex flex-col gap-1 border-l-2 border-[#aa3bff]/40 pl-4">
                   <span className="text-[28px] font-bold text-white leading-none">

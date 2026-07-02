@@ -25,9 +25,6 @@ const EXTRAS = [
 ];
 const SOLUTION_CARDS = ourSolutions.map((sol, i) => ({ ...sol, ...EXTRAS[i] }));
 
-/* ── AI service card accents ── */
-const AI_ACCENTS = ["#aa3bff", "#f85d37", "#6128a6", "#aa3bff"];
-
 /* ── Value card accents (cycles through 3 brand colours) ── */
 const VALUE_ACCENTS = ["#6128a6", "#aa3bff", "#f85d37", "#6128a6", "#aa3bff", "#f85d37", "#6128a6"];
 
@@ -378,8 +375,7 @@ function HomePage() {
           <ScrollReveal direction="up" delay={160}>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link to="/services/artificial-intelligence"
-                className="group/btn inline-flex items-center gap-2.5 px-9 py-4 rounded-xl font-bold text-[15px] text-white transition-all duration-300 shadow-[0_0_40px_rgba(248,93,55,0.20)] hover:shadow-[0_0_70px_rgba(248,93,55,0.45)]"
-                style={{ background: "linear-gradient(135deg, #f85d37 0%, #aa3bff 100%)" }}>
+                className="group/btn inline-flex items-center gap-2.5 px-9 py-4 rounded-xl bg-[#f85d37] hover:bg-[#e84d27] text-white font-bold text-[15px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]">
                 Explore AI Services
                 <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
               </Link>
@@ -401,127 +397,6 @@ function HomePage() {
           }
         `}</style>
       </section>
-
-      {/* ═══════════════════════════════════════════════════════
-          4. AI Services — NEW DESIGN
-          Brand purple bg, white cards on the right for contrast
-      ═══════════════════════════════════════════════════════ */}
-      <section className="py-28 bg-[#6128a6] relative overflow-hidden">
-        {/* Glow blobs */}
-        <div className="absolute top-[-20%] right-[-10%] w-130 h-130 rounded-full bg-[#aa3bff] opacity-20 blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-[-15%] left-[-8%] w-105 h-105 rounded-full bg-[#1e0a38] opacity-50 blur-[130px] pointer-events-none" />
-        {/* Subtle grid overlay */}
-        <div className="absolute inset-0 opacity-[0.06] pointer-events-none"
-          style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
-
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-16 items-center">
-
-            {/* Left: Headline + glass stat tiles + CTA */}
-            <ScrollReveal direction="left">
-              <span className="inline-block py-1 px-3 rounded-full bg-white/15 border border-white/25 text-white text-[11px] font-bold uppercase tracking-widest mb-6">
-                AI Services
-              </span>
-              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-white leading-tight mb-6">
-                Pioneering the Future{" "}<span className="text-[#f85d37]">with AI</span>
-              </h2>
-              <p className="text-[15px] text-white/80 leading-relaxed mb-10 text-justify">
-                Infoplus Technologies is at the forefront of Artificial Intelligence, helping organisations harness the power of AI to drive efficiency, innovation, and competitive advantage. Our dedicated AI Centre of Excellence combines deep technical expertise with industry knowledge.
-              </p>
-
-              {/* Micro-stats — glass pill tiles */}
-              <div className="grid grid-cols-3 gap-3 mb-10">
-                {[
-                  { value: "4×",   label: "Productivity Boost" },
-                  { value: "40%",  label: "Cost Reduction"     },
-                  { value: "24/7", label: "AI Availability"    },
-                ].map((s, i) => (
-                  <div key={i} className="bg-white/15 backdrop-blur-sm rounded-2xl px-3 py-4 border border-white/20 text-center">
-                    <p className="text-[26px] font-black text-white leading-none mb-1">{s.value}</p>
-                    <p className="text-[11px] text-white/65 font-medium leading-tight">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap gap-3">
-                <Link to="/services/artificial-intelligence"
-                  className="group/btn inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#f85d37] hover:bg-[#e84d27] text-white font-bold text-[14px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.40)]">
-                  Explore AI Services
-                  <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
-                </Link>
-                <Link to="/services"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white/15 hover:bg-white/25 border border-white/25 hover:border-white/40 text-white font-semibold text-[14px] transition-all duration-200">
-                  All Services
-                </Link>
-              </div>
-            </ScrollReveal>
-
-            {/* Right: White service cards on brand purple background */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {services.map((svc, i) => {
-                const accent = AI_ACCENTS[i];
-                return (
-                  <ScrollReveal key={svc.title} variant="card" delay={i * 90}>
-                    <div className="group bg-white rounded-2xl p-6 hover:shadow-[0_20px_48px_rgba(0,0,0,0.18)] hover:-translate-y-0.5 transition-all duration-300 h-full flex flex-col">
-                      {/* Icon */}
-                      <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 shrink-0 group-hover:scale-110 transition-transform duration-300"
-                        style={{ backgroundColor: `${accent}14`, color: accent }}>
-                        <svc.icon className="w-5 h-5" />
-                      </div>
-                      {/* Title */}
-                      <h4 className="text-[15px] font-bold text-[#0d0517] mb-2">{svc.title}</h4>
-                      {/* Expanding accent line */}
-                      <div className="w-8 h-0.5 rounded-full mb-3 group-hover:w-14 transition-all duration-300"
-                        style={{ backgroundColor: `${accent}80` }} />
-                      {/* Description */}
-                      <p className="text-[13px] text-[#555]/70 leading-relaxed mb-4 flex-1">{svc.description}</p>
-                      {/* Features */}
-                      <ul className="space-y-1.5">
-                        {svc.features.map((f, fi) => (
-                          <li key={fi} className="flex items-center gap-2 text-[12px] text-[#555]/55">
-                            <span className="w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: accent }} />
-                            {f}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </ScrollReveal>
-                );
-              })}
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      ═══ OLD AI SERVICES SECTION — BACKUP — START ═══
-      <section className="py-24 bg-[#6128a6] text-white">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <ScrollReveal direction="left" className="lg:col-span-5">
-              <div>
-                <span className="text-[#f85d37] text-[12px] font-semibold uppercase tracking-[0.1em] mb-3 block">AI Services</span>
-                <h2 className="text-[36px] font-bold mb-5 leading-tight">Pioneering the Future with AI</h2>
-                <p className="text-[16px] text-white/85 leading-[1.75] mb-10 text-justify">
-                  Infoplus Technologies is at the forefront of Artificial Intelligence, helping organisations harness the power of AI to drive efficiency, innovation, and competitive advantage. Our dedicated AI Centre of Excellence combines deep technical expertise with industry knowledge.
-                </p>
-                <Link to="/services" className="bg-[#f85d37] text-white px-8 py-3.5 rounded-lg font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors inline-flex items-center gap-2 group">
-                  Explore AI Services
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </ScrollReveal>
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {services.map((ai, idx) => (
-                <ScrollReveal key={idx} variant="card" delay={idx * 100}>
-                  <MultiUsageCard cardInfo={ai} type="services" />
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-      ═══ OLD AI SERVICES SECTION — BACKUP — END ═══
 
       {/* ═══════════════════════════════════════════════════════
           5. Our Values — NEW DESIGN
