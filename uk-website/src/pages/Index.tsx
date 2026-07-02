@@ -494,7 +494,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ═══ OLD AI SERVICES SECTION — BACKUP — START ═══
+      ═══ OLD AI SERVICES SECTION — BACKUP — START ═══
       <section className="py-24 bg-[#6128a6] text-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -521,7 +521,7 @@ function HomePage() {
           </div>
         </div>
       </section>
-      ═══ OLD AI SERVICES SECTION — BACKUP — END ═══ */}
+      ═══ OLD AI SERVICES SECTION — BACKUP — END ═══
 
       {/* ═══════════════════════════════════════════════════════
           5. Our Values — NEW DESIGN
