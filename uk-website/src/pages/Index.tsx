@@ -9,18 +9,19 @@ import {
   ourValues,
   services,
 } from "../assets/constants/types";
+// retained for commented-out backup sections — safe to ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import MultiUsageCard from "../components/cards/MultiUsageCard"; // retained for backup sections
+import MultiUsageCard from "../components/cards/MultiUsageCard";
 import IndexBanner from "../components/shared/IndexBanner";
 import ClientCarousel from "../components/ui/ClientCarousel";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 
 /* ── Solution cards — enhanced for Our Work section ── */
 const EXTRAS = [
-  { href: "/services/it-services",        accent: "#6128a6", glow: "rgba(97,40,166,0.25)",  number: "01" },
-  { href: "/products",                    accent: "#aa3bff", glow: "rgba(170,59,255,0.25)", number: "02" },
-  { href: "/services/staffing-consulting",accent: "#f85d37", glow: "rgba(248,93,55,0.25)",  number: "03" },
-  { href: "/services/new-generation",     accent: "#aa3bff", glow: "rgba(170,59,255,0.25)", number: "04" },
+  { href: "/services/it-services",        accent: "#f85d37", glow: "rgba(248,93,55,0.28)",  number: "01" },
+  { href: "/products",                    accent: "#aa3bff", glow: "rgba(170,59,255,0.28)", number: "02" },
+  { href: "/services/staffing-consulting",accent: "#f59e0b", glow: "rgba(245,158,11,0.28)",  number: "03" },
+  { href: "/services/new-generation",     accent: "#10b981", glow: "rgba(16,185,129,0.28)", number: "04" },
 ];
 const SOLUTION_CARDS = ourSolutions.map((sol, i) => ({ ...sol, ...EXTRAS[i] }));
 
@@ -259,6 +260,147 @@ function HomePage() {
         </div>
       </section>
       ═══ OLD OUR WORK SECTION — BACKUP — END ═══ */}
+
+      {/* ═══════════════════════════════════════════════════════
+          4b. AI Services — CINEMATIC REDESIGN
+          Deep dark bg, layered atmospheric lighting, gradient-border
+          glass cards, sweep animation, gradient headline
+      ═══════════════════════════════════════════════════════ */}
+      <section className="py-32 bg-[#080010] relative overflow-hidden">
+
+        {/* ── Atmospheric lighting ── */}
+        <div className="absolute inset-0 pointer-events-none select-none">
+          {/* Orange-violet burst — top right */}
+          <div className="absolute -top-60 -right-40 w-200 h-200 rounded-full blur-[180px] opacity-20 animate-[pulse_7s_ease-in-out_infinite]"
+            style={{ background: "radial-gradient(circle, #f85d37 0%, #aa3bff 50%, transparent 75%)" }} />
+          {/* Deep violet — bottom left */}
+          <div className="absolute -bottom-60 -left-40 w-175 h-175 rounded-full bg-[#6128a6] blur-[180px] opacity-[0.15] animate-[pulse_9s_ease-in-out_infinite_3s]" />
+          {/* Subtle center orb */}
+          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-100 h-100 rounded-full bg-[#aa3bff] blur-[160px] opacity-[0.07] animate-[pulse_11s_ease-in-out_infinite_5s]" />
+          {/* Dot grid */}
+          <div className="absolute inset-0 opacity-[0.025]"
+            style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+          {/* Sweeping glow line */}
+          <div className="absolute left-0 right-0 h-px bg-linear-to-r from-transparent via-[#aa3bff]/40 to-transparent animate-[ai-sweep_10s_ease-in-out_infinite]" />
+        </div>
+
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+
+          {/* ── Cinematic headline ── */}
+          <ScrollReveal direction="up">
+            <div className="text-center mb-16">
+              <span className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#f85d37]/25 bg-[#f85d37]/8 text-[#f85d37] text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#f85d37] animate-pulse shrink-0" />
+                Artificial Intelligence
+              </span>
+              <h2 className="text-[clamp(2.25rem,5.5vw,4.5rem)] font-black leading-[1.05] tracking-tight text-white mb-6">
+                Pioneering the Future
+                <br />
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#f85d37] via-[#aa3bff] to-[#6128a6]">
+                  with Artificial Intelligence
+                </span>
+              </h2>
+              <p className="text-[16px] text-white/50 max-w-2xl mx-auto leading-relaxed">
+                Infoplus Technologies is at the forefront of AI, helping organisations harness the power of intelligence to drive efficiency, innovation, and competitive advantage.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* ── Stats filmstrip ── */}
+          <ScrollReveal direction="up" delay={80}>
+            <div className="grid grid-cols-3 mb-16 rounded-2xl overflow-hidden border border-white/6">
+              {[
+                { value: "4×",   label: "Productivity Boost", accent: "#f85d37" },
+                { value: "40%",  label: "Cost Reduction",     accent: "#aa3bff" },
+                { value: "24/7", label: "AI Availability",    accent: "#10b981" },
+              ].map((s, i) => (
+                <div key={i} className={`group flex flex-col items-center py-10 px-6 bg-white/2 hover:bg-white/5 transition-all duration-300 cursor-default ${i > 0 ? "border-l border-white/6" : ""}`}>
+                  <p className="text-[44px] font-black leading-none mb-2 tabular-nums" style={{ color: s.accent }}>{s.value}</p>
+                  <p className="text-[11px] text-white/35 font-semibold uppercase tracking-[0.15em]">{s.label}</p>
+                  <div className="mt-5 h-0.5 w-8 rounded-full group-hover:w-20 transition-all duration-500" style={{ backgroundColor: s.accent }} />
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+
+          {/* ── Service cards — gradient-border glass style ── */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-16">
+            {services.map((svc, i) => {
+              const ACCENTS = ["#aa3bff", "#f85d37", "#10b981", "#06b6d4"];
+              const accent = ACCENTS[i];
+              return (
+                <ScrollReveal key={svc.title} variant="card" delay={i * 110}>
+                  {/* Gradient border wrapper */}
+                  <div className="relative p-px rounded-2xl h-full"
+                    style={{ background: `linear-gradient(135deg, ${accent}55 0%, transparent 45%, ${accent}22 100%)` }}>
+                    <div className="group relative bg-[#080010] rounded-2xl p-7 h-full flex flex-col overflow-hidden hover:bg-[#0d0220] transition-all duration-500">
+                      {/* Corner glow on hover */}
+                      <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full opacity-0 group-hover:opacity-100 blur-[60px] transition-opacity duration-500 pointer-events-none"
+                        style={{ backgroundColor: accent }} />
+                      {/* Number watermark */}
+                      <span className="absolute -bottom-3 -right-2 text-[90px] font-black leading-none select-none pointer-events-none opacity-[0.05]"
+                        style={{ color: accent }}>
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      {/* Icon with pulsing ring */}
+                      <div className="relative w-12 h-12 mb-5 shrink-0">
+                        <div className="w-12 h-12 rounded-xl flex items-center justify-center"
+                          style={{ backgroundColor: `${accent}18` }}>
+                          <svc.icon className="w-5 h-5" style={{ color: accent }} />
+                        </div>
+                        <span className="absolute inset-0 rounded-xl border-2 animate-ping opacity-20"
+                          style={{ borderColor: accent }} />
+                      </div>
+                      {/* Title */}
+                      <h4 className="text-[17px] font-bold text-white mb-1 relative z-10">{svc.title}</h4>
+                      {/* Expanding accent line */}
+                      <div className="w-8 h-0.5 rounded-full mb-4 group-hover:w-16 transition-all duration-500 relative z-10"
+                        style={{ backgroundColor: accent }} />
+                      {/* Description */}
+                      <p className="text-[13px] text-white/45 leading-relaxed mb-5 flex-1 relative z-10">{svc.description}</p>
+                      {/* Features */}
+                      <ul className="space-y-2 relative z-10">
+                        {svc.features.map((f, fi) => (
+                          <li key={fi} className="flex items-center gap-2.5 text-[12px] text-white/35 group-hover:text-white/60 transition-colors duration-300">
+                            <span className="w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: accent }} />
+                            {f}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
+          </div>
+
+          {/* ── CTAs ── */}
+          <ScrollReveal direction="up" delay={160}>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link to="/services/artificial-intelligence"
+                className="group/btn inline-flex items-center gap-2.5 px-9 py-4 rounded-xl font-bold text-[15px] text-white transition-all duration-300 shadow-[0_0_40px_rgba(248,93,55,0.20)] hover:shadow-[0_0_70px_rgba(248,93,55,0.45)]"
+                style={{ background: "linear-gradient(135deg, #f85d37 0%, #aa3bff 100%)" }}>
+                Explore AI Services
+                <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
+              </Link>
+              <Link to="/services"
+                className="inline-flex items-center gap-2 px-9 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/12 hover:border-white/25 text-white font-semibold text-[15px] transition-all duration-300">
+                All Services
+              </Link>
+            </div>
+          </ScrollReveal>
+
+        </div>
+
+        <style>{`
+          @keyframes ai-sweep {
+            0%   { top: 0%;   opacity: 0; }
+            5%   { opacity: 1; }
+            95%  { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+          }
+        `}</style>
+      </section>
 
       {/* ═══════════════════════════════════════════════════════
           4. AI Services — NEW DESIGN
@@ -598,11 +740,6 @@ function HomePage() {
                 <ChevronRight className="w-4 h-4 group-hover/loc:translate-x-1 transition-transform duration-200" />
               </Link>
 
-              {/* Response time badge */}
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#6128a6]/8 border border-[#6128a6]/15">
-                <span className="w-2 h-2 rounded-full bg-[#6128a6] animate-pulse shrink-0" />
-                <span className="text-[12px] font-semibold text-[#6128a6]">We respond within 1 business day</span>
-              </div>
             </ScrollReveal>
 
             {/* Right: form card */}
