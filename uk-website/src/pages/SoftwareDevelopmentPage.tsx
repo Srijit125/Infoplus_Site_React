@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
 import {
-  Globe, Smartphone, Eye, Wifi, GitBranch,
-  FileText, Video, Code2, CheckCircle2, ArrowRight,
-  ChevronRight, type LucideIcon,
+  Globe,
+  Smartphone,
+  Eye,
+  Wifi,
+  GitBranch,
+  FileText,
+  Video,
+  Code2,
+  CheckCircle2,
+  ArrowRight,
+  ChevronRight,
+  type LucideIcon,
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
@@ -38,9 +47,18 @@ const SERVICES: Service[] = [
     ],
     techLabel: "Technologies & Frameworks",
     techStack: [
-      "HTML", "CSS", "PHP", "ASP.NET",
-      "ColdFusion", "Ruby on Rails", "JavaScript",
-      "Ajax", "Perl", "Python", "jQuery", "Dojo Toolkit",
+      "HTML",
+      "CSS",
+      "PHP",
+      "ASP.NET",
+      "ColdFusion",
+      "Ruby on Rails",
+      "JavaScript",
+      "Ajax",
+      "Perl",
+      "Python",
+      "jQuery",
+      "Dojo Toolkit",
     ],
   },
   {
@@ -62,8 +80,14 @@ const SERVICES: Service[] = [
     ],
     techLabel: "Core Technologies",
     techStack: [
-      "Node.JS", "JS Framework", "CSS Framework",
-      "PHP", "HTML", "Swift", "C++", "JAVA",
+      "Node.JS",
+      "JS Framework",
+      "CSS Framework",
+      "PHP",
+      "HTML",
+      "Swift",
+      "C++",
+      "JAVA",
     ],
   },
   {
@@ -84,8 +108,12 @@ const SERVICES: Service[] = [
     ],
     techLabel: "AR / VR Platforms",
     techStack: [
-      "Google ARCore", "Apple ARKit", "MaxST",
-      "Unity", "Unreal Engine 4", "CryEngine",
+      "Google ARCore",
+      "Apple ARKit",
+      "MaxST",
+      "Unity",
+      "Unreal Engine 4",
+      "CryEngine",
     ],
   },
   {
@@ -106,8 +134,11 @@ const SERVICES: Service[] = [
     ],
     techLabel: "Device Ecosystem",
     techStack: [
-      "Computer Devices", "Wireless Sensors",
-      "Industrial Equipment", "Medical Devices", "Mobile Devices",
+      "Computer Devices",
+      "Wireless Sensors",
+      "Industrial Equipment",
+      "Medical Devices",
+      "Mobile Devices",
     ],
   },
   {
@@ -138,7 +169,12 @@ const SERVICES: Service[] = [
 
 const CORE_VALUES = ["Availability", "Scalability", "Reliability", "Lucidity"];
 
-const ENGAGE_STEPS: { icon: LucideIcon; step: string; title: string; desc: string }[] = [
+const ENGAGE_STEPS: {
+  icon: LucideIcon;
+  step: string;
+  title: string;
+  desc: string;
+}[] = [
   {
     icon: FileText,
     step: "01",
@@ -190,7 +226,9 @@ export default function SoftwareDevelopmentPage() {
         </div>
         {/* Animated scroll indicator */}
         <div className="mt-16 flex flex-col items-center gap-2 opacity-40">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-white">Scroll</p>
+          <p className="text-[10px] font-bold uppercase tracking-widest text-white">
+            Scroll
+          </p>
           <div className="w-px h-12 bg-linear-to-b from-white to-transparent" />
         </div>
       </PageHero>
@@ -208,18 +246,24 @@ export default function SoftwareDevelopmentPage() {
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-3 leading-tight">
                 Pioneer in Innovative &<br />
-                <span className="text-[#6128a6]">Mission-Critical Software</span>
+                <span className="text-[#6128a6]">
+                  Mission-Critical Software
+                </span>
               </h2>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mt-6">
-                Our development teams are based in Europe and India to fulfil the needs of different
-                delivery models of our clients. Infoplus is a pioneer in designing, developing, and
-                deployment of innovative and customised business-critical software systems and solutions.
+                Our development teams are based in Europe and India to fulfil
+                the needs of different delivery models of our clients. Infoplus
+                is a pioneer in designing, developing, and deployment of
+                innovative and customised business-critical software systems and
+                solutions.
               </p>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mt-4">
-                With more than two decades of operation, Infoplus Technologies has grown into an
-                internationally recognised staffing service provider because of its innovative technical
-                savvy engineering teams. Through a clear vision and a customised plan, these teams provide
-                cutting-edge services to industry giants, mid-sized companies, and unicorns.
+                With more than two decades of operation, Infoplus Technologies
+                has grown into an internationally recognised staffing service
+                provider because of its innovative technical savvy engineering
+                teams. Through a clear vision and a customised plan, these teams
+                provide cutting-edge services to industry giants, mid-sized
+                companies, and unicorns.
               </p>
             </ScrollReveal>
 
@@ -241,15 +285,18 @@ export default function SoftwareDevelopmentPage() {
                         }}
                       >
                         <span className="w-2 h-2 rounded-full bg-[#aa3bff] shrink-0" />
-                        <span className="text-[14px] font-semibold text-white">{v}</span>
+                        <span className="text-[14px] font-semibold text-white">
+                          {v}
+                        </span>
                       </div>
                     ))}
                   </div>
                   <div className="border-t border-white/10 pt-6">
                     <p className="text-[13px] text-white/50 leading-relaxed">
-                      Infoplus consistently considers not only current trends, but also carefully
-                      performs research on the future of software development. Our services are
-                      predominantly focused on these four core values.
+                      Infoplus consistently considers not only current trends,
+                      but also carefully performs research on the future of
+                      software development. Our services are predominantly
+                      focused on these four core values.
                     </p>
                   </div>
                 </div>
@@ -296,7 +343,7 @@ export default function SoftwareDevelopmentPage() {
                   <ScrollReveal
                     direction={isEven ? "left" : "right"}
                     duration={720}
-                    style={{ direction: "ltr" } as React.CSSProperties}
+                    // style={{ direction: "ltr" } as React.CSSProperties}
                   >
                     <div style={{ direction: "ltr" }}>
                       {/* Service number + icon */}
@@ -317,7 +364,9 @@ export default function SoftwareDevelopmentPage() {
                       <h2 className="text-[32px] font-bold text-[#111] leading-tight mb-5">
                         {svc.title}
                       </h2>
-                      <p className="text-[15.5px] text-[#555] leading-[1.8] mb-7">{svc.intro}</p>
+                      <p className="text-[15.5px] text-[#555] leading-[1.8] mb-7">
+                        {svc.intro}
+                      </p>
 
                       {/* Highlights */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -327,7 +376,9 @@ export default function SoftwareDevelopmentPage() {
                               className="w-4 h-4 shrink-0"
                               style={{ color: svc.accentColor }}
                             />
-                            <span className="text-[13.5px] text-[#444] font-medium">{h}</span>
+                            <span className="text-[13.5px] text-[#444] font-medium">
+                              {h}
+                            </span>
                           </div>
                         ))}
                       </div>
@@ -355,11 +406,12 @@ export default function SoftwareDevelopmentPage() {
                                 style={{
                                   backgroundColor: `${svc.accentColor}15`,
                                   borderColor: `${svc.accentColor}35`,
-                                  color: svc.accentColor === "#14b8a6"
-                                    ? "#5eead4"
-                                    : svc.accentColor === "#3b82f6"
-                                    ? "#93c5fd"
-                                    : "#d4b4fe",
+                                  color:
+                                    svc.accentColor === "#14b8a6"
+                                      ? "#5eead4"
+                                      : svc.accentColor === "#3b82f6"
+                                        ? "#93c5fd"
+                                        : "#d4b4fe",
                                   animation: `revealFade 400ms ease ${k * 60 + 100}ms both`,
                                 }}
                               >
@@ -402,7 +454,8 @@ export default function SoftwareDevelopmentPage() {
         <div
           className="absolute inset-0 opacity-[0.05]"
           style={{
-            backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+            backgroundImage:
+              "radial-gradient(circle, #ffffff 1px, transparent 1px)",
             backgroundSize: "28px 28px",
           }}
         />
@@ -413,11 +466,14 @@ export default function SoftwareDevelopmentPage() {
               <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
                 Getting Started
               </span>
-              <h2 className="text-[36px] font-bold text-white mt-3">How To Engage?</h2>
+              <h2 className="text-[36px] font-bold text-white mt-3">
+                How To Engage?
+              </h2>
               <p className="text-[16px] text-white/50 max-w-2xl mx-auto mt-4 leading-relaxed">
-                Based on the client's requirement, we suggest and choose the best model that fits.
-                Our Software development team possesses specialist knowledge of all leading
-                software development methodologies.
+                Based on the client's requirement, we suggest and choose the
+                best model that fits. Our Software development team possesses
+                specialist knowledge of all leading software development
+                methodologies.
               </p>
             </div>
           </ScrollReveal>
@@ -428,7 +484,12 @@ export default function SoftwareDevelopmentPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {ENGAGE_STEPS.map(({ icon: StepIcon, step, title, desc }, i) => (
-                <ScrollReveal key={i} direction="up" variant="card" delay={i * 130}>
+                <ScrollReveal
+                  key={i}
+                  direction="up"
+                  variant="card"
+                  delay={i * 130}
+                >
                   <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/8 hover:border-[#6128a6]/40 transition-all duration-300 group">
                     {/* Step number badge */}
                     <div className="flex items-center gap-3 mb-6">
@@ -445,7 +506,9 @@ export default function SoftwareDevelopmentPage() {
                     <h3 className="text-[18px] font-bold text-white mb-3 leading-snug">
                       {title}
                     </h3>
-                    <p className="text-[14px] text-white/50 leading-relaxed">{desc}</p>
+                    <p className="text-[14px] text-white/50 leading-relaxed">
+                      {desc}
+                    </p>
 
                     <div className="mt-6 flex items-center gap-1.5 text-[12px] font-semibold text-[#aa3bff] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       Learn More <ChevronRight className="w-3.5 h-3.5" />
@@ -474,8 +537,9 @@ export default function SoftwareDevelopmentPage() {
                   Let's Build Something Remarkable
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
-                  Partner with Infoplus Technologies UK Ltd to bring your software vision to life.
-                  Our teams in Europe and India are ready to deliver high-quality, scalable solutions.
+                  Partner with Infoplus Technologies UK Ltd to bring your
+                  software vision to life. Our teams in Europe and India are
+                  ready to deliver high-quality, scalable solutions.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
                   <Link

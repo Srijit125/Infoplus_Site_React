@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
 import {
-  Globe, Zap, Shield, Layers, Activity, Search,
-  RefreshCcw, Target, Users, AlertCircle,
-  CheckCircle2, ArrowRight, ChevronRight,
+  Globe,
+  Zap,
+  Shield,
+  Layers,
+  Activity,
+  Search,
+  RefreshCcw,
+  Target,
+  Users,
+  AlertCircle,
+  CheckCircle2,
+  ArrowRight,
   type LucideIcon,
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
@@ -147,7 +156,9 @@ export default function TestingPage() {
           </Link>
         </div>
         <div className="mt-16 flex flex-col items-center gap-2 opacity-40">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-white">Scroll</p>
+          <p className="text-[10px] font-bold uppercase tracking-widest text-white">
+            Scroll
+          </p>
           <div className="w-px h-12 bg-linear-to-b from-white to-transparent" />
         </div>
       </PageHero>
@@ -164,10 +175,11 @@ export default function TestingPage() {
               Quality Is Not an Act, It's a Habit
             </h2>
             <p className="text-[16px] text-[#555] leading-[1.85] max-w-3xl mx-auto">
-              Infoplus Testing Center of Excellence believes the following, and the team ensures
-              that it practises these tenets every time. As offerings, Infoplus delivers testing
-              services across different types of testing — built on a foundation of precision,
-              automation, and an unwavering commitment to quality.
+              Infoplus Testing Center of Excellence believes the following, and
+              the team ensures that it practises these tenets every time. As
+              offerings, Infoplus delivers testing services across different
+              types of testing — built on a foundation of precision, automation,
+              and an unwavering commitment to quality.
             </p>
           </ScrollReveal>
         </div>
@@ -191,7 +203,12 @@ export default function TestingPage() {
             {TESTING_TYPES.map((t, i) => {
               const TIcon = t.icon;
               return (
-                <ScrollReveal key={i} direction="up" variant="card" delay={i * 90}>
+                <ScrollReveal
+                  key={i}
+                  direction="up"
+                  variant="card"
+                  delay={i * 90}
+                >
                   <div className="group bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.12)] hover:-translate-y-1 hover:border-[#6128a6]/25 transition-all duration-300">
                     <div className={`h-1.5 bg-linear-to-r ${t.gradient}`} />
                     <div className="p-7">
@@ -203,7 +220,9 @@ export default function TestingPage() {
                       <h3 className="text-[16px] font-bold text-[#111] mb-3 leading-snug group-hover:text-[#6128a6] transition-colors">
                         {t.title}
                       </h3>
-                      <p className="text-[13.5px] text-[#666] leading-relaxed">{t.desc}</p>
+                      <p className="text-[13.5px] text-[#666] leading-relaxed">
+                        {t.desc}
+                      </p>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -222,7 +241,8 @@ export default function TestingPage() {
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+            backgroundImage:
+              "radial-gradient(circle, #ffffff 1px, transparent 1px)",
             backgroundSize: "28px 28px",
           }}
         />
@@ -233,9 +253,12 @@ export default function TestingPage() {
               <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
                 Why Testing Matters
               </span>
-              <h2 className="text-[36px] font-bold text-white mt-2">Our Solutions</h2>
+              <h2 className="text-[36px] font-bold text-white mt-2">
+                Our Solutions
+              </h2>
               <p className="text-[15px] text-white/45 max-w-2xl mx-auto mt-4">
-                Software Testing Is Important. So, Do Not Start From Scratch Again.
+                Software Testing Is Important. So, Do Not Start From Scratch
+                Again.
               </p>
             </div>
           </ScrollReveal>
@@ -255,7 +278,9 @@ export default function TestingPage() {
                   <h3 className="text-[15px] font-bold text-white mt-4 mb-2 leading-snug">
                     {title}
                   </h3>
-                  <p className="text-[13px] text-white/45 leading-relaxed italic">{tagline}</p>
+                  <p className="text-[13px] text-white/45 leading-relaxed italic">
+                    {tagline}
+                  </p>
                 </div>
               </ScrollReveal>
             ))}
@@ -276,13 +301,15 @@ export default function TestingPage() {
                   Our Process
                 </span>
                 <h2 className="text-[36px] font-bold text-[#111] mt-3 leading-tight">
-                  Our Strategy for<br />
+                  Our Strategy for
+                  <br />
                   <span className="text-[#6128a6]">Flawless Delivery</span>
                 </h2>
                 <p className="text-[15.5px] text-[#555] leading-[1.85] mt-5">
-                  A structured, repeatable testing strategy tailored to your environment.
-                  Every engagement follows this proven eight-step process to ensure
-                  complete coverage and zero-surprise deployments.
+                  A structured, repeatable testing strategy tailored to your
+                  environment. Every engagement follows this proven eight-step
+                  process to ensure complete coverage and zero-surprise
+                  deployments.
                 </p>
                 {/* Decorative stat */}
                 <div className="flex gap-8 mt-8 pt-8 border-t border-[#f0eff5]">
@@ -291,8 +318,12 @@ export default function TestingPage() {
                     { value: "100%", label: "Coverage Goal" },
                   ].map(({ value, label }) => (
                     <div key={label}>
-                      <p className="text-[36px] font-black text-[#6128a6] leading-none">{value}</p>
-                      <p className="text-[12px] text-[#888] mt-1 font-medium">{label}</p>
+                      <p className="text-[36px] font-black text-[#6128a6] leading-none">
+                        {value}
+                      </p>
+                      <p className="text-[12px] text-[#888] mt-1 font-medium">
+                        {label}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -306,7 +337,12 @@ export default function TestingPage() {
 
               <div className="space-y-1">
                 {STRATEGY_STEPS.map((step, i) => (
-                  <ScrollReveal key={i} direction="right" delay={i * 90} duration={600}>
+                  <ScrollReveal
+                    key={i}
+                    direction="right"
+                    delay={i * 90}
+                    duration={600}
+                  >
                     <div className="flex gap-5 pb-6 group">
                       {/* Circle on the line */}
                       <div className="relative shrink-0 mt-1">
@@ -352,12 +388,18 @@ export default function TestingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {WHY_COE.map((point, i) => (
-              <ScrollReveal key={i} direction={i % 2 === 0 ? "left" : "right"} delay={i * 70}>
+              <ScrollReveal
+                key={i}
+                direction={i % 2 === 0 ? "left" : "right"}
+                delay={i * 70}
+              >
                 <div className="flex items-start gap-4 bg-white border border-[#e5e4e7] rounded-xl p-5 hover:border-[#6128a6]/30 hover:shadow-[0_8px_24px_-4px_rgba(97,40,166,0.08)] transition-all duration-300">
                   <div className="w-8 h-8 rounded-lg bg-[#ecdaff] flex items-center justify-center shrink-0 mt-0.5">
                     <CheckCircle2 className="w-4 h-4 text-[#6128a6]" />
                   </div>
-                  <p className="text-[14.5px] text-[#333] font-medium leading-relaxed">{point}</p>
+                  <p className="text-[14.5px] text-[#333] font-medium leading-relaxed">
+                    {point}
+                  </p>
                 </div>
               </ScrollReveal>
             ))}
@@ -383,8 +425,9 @@ export default function TestingPage() {
                   Ship Software You Can Trust
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
-                  Partner with Infoplus Testing CoE to ensure your software meets the highest
-                  quality standards — on time and within budget.
+                  Partner with Infoplus Testing CoE to ensure your software
+                  meets the highest quality standards — on time and within
+                  budget.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
                   <Link

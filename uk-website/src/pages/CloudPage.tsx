@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 import {
-  Cloud, Server, Layers, BarChart2, Shield,
-  Settings, CheckCircle2, ArrowRight, ChevronRight,
-  Globe, Zap, type LucideIcon,
+  Cloud,
+  Server,
+  Layers,
+  BarChart2,
+  Shield,
+  Settings,
+  CheckCircle2,
+  ArrowRight,
+  ChevronRight,
+  Zap,
+  type LucideIcon,
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
@@ -71,9 +79,21 @@ const OUR_SOLUTIONS = [
 ];
 
 const CLOUD_PROVIDERS = [
-  { name: "AWS", desc: "Amazon Web Services", gradient: "from-[#f59e0b] to-[#f85d37]" },
-  { name: "Azure", desc: "Microsoft Azure", gradient: "from-[#1e3a8a] to-[#3b82f6]" },
-  { name: "GCP", desc: "Google Cloud Platform", gradient: "from-[#0f766e] to-[#14b8a6]" },
+  {
+    name: "AWS",
+    desc: "Amazon Web Services",
+    gradient: "from-[#f59e0b] to-[#f85d37]",
+  },
+  {
+    name: "Azure",
+    desc: "Microsoft Azure",
+    gradient: "from-[#1e3a8a] to-[#3b82f6]",
+  },
+  {
+    name: "GCP",
+    desc: "Google Cloud Platform",
+    gradient: "from-[#0f766e] to-[#14b8a6]",
+  },
 ];
 
 export default function CloudPage() {
@@ -113,7 +133,9 @@ export default function CloudPage() {
           ))}
         </div>
         <div className="mt-12 flex flex-col items-center gap-2 opacity-40">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-white">Scroll</p>
+          <p className="text-[10px] font-bold uppercase tracking-widest text-white">
+            Scroll
+          </p>
           <div className="w-px h-12 bg-linear-to-b from-white to-transparent" />
         </div>
       </PageHero>
@@ -128,18 +150,22 @@ export default function CloudPage() {
                 Enterprise Cloud
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
-                Secure, Scalable Cloud<br />
+                Secure, Scalable Cloud
+                <br />
                 <span className="text-[#6128a6]">for Modern Enterprises</span>
               </h2>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
-                Infoplus cloud portfolio is an enterprise cloud service offering secure and scalable
-                cloud solutions, including private, public, and managed cloud services. We help you
-                meet compliance, security, and business continuity goals.
+                Infoplus cloud portfolio is an enterprise cloud service offering
+                secure and scalable cloud solutions, including private, public,
+                and managed cloud services. We help you meet compliance,
+                security, and business continuity goals.
               </p>
               <p className="text-[15.5px] text-[#555] leading-[1.85]">
-                Our experts at Infoplus cloud portfolio have successfully collaborated with many
-                industry giants to modernise their applications and infrastructure. We offer services
-                through all the available cloud delivery models such as AWS, Azure, and Google Cloud.
+                Our experts at Infoplus cloud portfolio have successfully
+                collaborated with many industry giants to modernise their
+                applications and infrastructure. We offer services through all
+                the available cloud delivery models such as AWS, Azure, and
+                Google Cloud.
               </p>
             </ScrollReveal>
 
@@ -154,13 +180,19 @@ export default function CloudPage() {
                     <div
                       key={i}
                       className={`flex items-center gap-4 py-4 ${i < 2 ? "border-b border-white/8" : ""}`}
-                      style={{ animation: `revealFade 500ms ease ${i * 130 + 200}ms both` }}
+                      style={{
+                        animation: `revealFade 500ms ease ${i * 130 + 200}ms both`,
+                      }}
                     >
-                      <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center shrink-0`}>
+                      <div
+                        className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center shrink-0`}
+                      >
                         <Cloud className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="text-[16px] font-black text-white">{name}</p>
+                        <p className="text-[16px] font-black text-white">
+                          {name}
+                        </p>
                         <p className="text-[12px] text-white/40">{desc}</p>
                       </div>
                       <CheckCircle2 className="w-4 h-4 text-[#aa3bff] ml-auto shrink-0" />
@@ -168,7 +200,8 @@ export default function CloudPage() {
                   ))}
                   <div className="mt-6 pt-5 border-t border-white/8 text-center">
                     <p className="text-[11px] text-white/30 font-medium">
-                      Through innovative solutions, we support you anywhere at any time.
+                      Through innovative solutions, we support you anywhere at
+                      any time.
                     </p>
                   </div>
                 </div>
@@ -186,40 +219,54 @@ export default function CloudPage() {
               <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
                 Service Models
               </span>
-              <h2 className="text-[36px] font-bold text-[#111] mt-2">Our Cloud Services</h2>
+              <h2 className="text-[36px] font-bold text-[#111] mt-2">
+                Our Cloud Services
+              </h2>
               <p className="text-[16px] text-[#555] max-w-2xl mx-auto mt-4 leading-relaxed">
-                A complete cloud portfolio spanning all delivery models — delivered with agility,
-                security, and deep subject matter expertise.
+                A complete cloud portfolio spanning all delivery models —
+                delivered with agility, security, and deep subject matter
+                expertise.
               </p>
             </div>
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {CLOUD_SERVICES.map(({ icon: SIcon, gradient, tag, title, desc }, i) => (
-              <ScrollReveal key={i} direction="up" variant="card" delay={i * 85}>
-                <div className="group bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:border-[#6128a6]/30 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.12)] hover:-translate-y-1 transition-all duration-300 h-full">
-                  {/* Accent gradient bar */}
-                  <div className={`h-1.5 bg-linear-to-r ${gradient}`} />
-                  <div className="p-7 flex flex-col h-full">
-                    <div className="flex items-start justify-between mb-5">
-                      <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center`}>
-                        <SIcon className="w-6 h-6 text-white" />
+            {CLOUD_SERVICES.map(
+              ({ icon: SIcon, gradient, tag, title, desc }, i) => (
+                <ScrollReveal
+                  key={i}
+                  direction="up"
+                  variant="card"
+                  delay={i * 85}
+                >
+                  <div className="group bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:border-[#6128a6]/30 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.12)] hover:-translate-y-1 transition-all duration-300 h-full">
+                    {/* Accent gradient bar */}
+                    <div className={`h-1.5 bg-linear-to-r ${gradient}`} />
+                    <div className="p-7 flex flex-col h-full">
+                      <div className="flex items-start justify-between mb-5">
+                        <div
+                          className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center`}
+                        >
+                          <SIcon className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="text-[10px] font-black uppercase tracking-widest text-[#888] bg-[#f8f5ff] border border-[#e5e4e7] rounded-full px-3 py-1">
+                          {tag}
+                        </span>
                       </div>
-                      <span className="text-[10px] font-black uppercase tracking-widest text-[#888] bg-[#f8f5ff] border border-[#e5e4e7] rounded-full px-3 py-1">
-                        {tag}
-                      </span>
-                    </div>
-                    <h3 className="text-[16px] font-bold text-[#111] mb-3 group-hover:text-[#6128a6] transition-colors leading-snug">
-                      {title}
-                    </h3>
-                    <p className="text-[13.5px] text-[#666] leading-relaxed flex-1">{desc}</p>
-                    <div className="flex items-center gap-1 text-[12px] font-semibold text-[#6128a6] group-hover:text-[#f85d37] transition-colors mt-5 pt-5 border-t border-[#f0eff5]">
-                      Learn More <ChevronRight className="w-3.5 h-3.5" />
+                      <h3 className="text-[16px] font-bold text-[#111] mb-3 group-hover:text-[#6128a6] transition-colors leading-snug">
+                        {title}
+                      </h3>
+                      <p className="text-[13.5px] text-[#666] leading-relaxed flex-1">
+                        {desc}
+                      </p>
+                      <div className="flex items-center gap-1 text-[12px] font-semibold text-[#6128a6] group-hover:text-[#f85d37] transition-colors mt-5 pt-5 border-t border-[#f0eff5]">
+                        Learn More <ChevronRight className="w-3.5 h-3.5" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              ),
+            )}
           </div>
         </div>
       </section>
@@ -230,7 +277,11 @@ export default function CloudPage() {
         <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#f85d37]/10 blur-[100px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
         />
 
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -246,8 +297,9 @@ export default function CloudPage() {
                   <span className="text-[#aa3bff]">Delivery Standards</span>
                 </h2>
                 <p className="text-[15px] text-white/50 leading-relaxed mb-8">
-                  All services and solutions are delivered in an agile and flexible approach with
-                  strong subject matter expertise and a commitment to continuous improvement.
+                  All services and solutions are delivered in an agile and
+                  flexible approach with strong subject matter expertise and a
+                  commitment to continuous improvement.
                 </p>
                 {/* Mini stats */}
                 <div className="grid grid-cols-2 gap-3">
@@ -260,10 +312,16 @@ export default function CloudPage() {
                     <div
                       key={i}
                       className="bg-white/5 border border-white/8 rounded-xl p-4"
-                      style={{ animation: `revealFade 500ms ease ${i * 100 + 200}ms both` }}
+                      style={{
+                        animation: `revealFade 500ms ease ${i * 100 + 200}ms both`,
+                      }}
                     >
-                      <p className="text-[22px] font-black text-white leading-none mb-1">{value}</p>
-                      <p className="text-[11px] text-white/35 font-medium">{label}</p>
+                      <p className="text-[22px] font-black text-white leading-none mb-1">
+                        {value}
+                      </p>
+                      <p className="text-[11px] text-white/35 font-medium">
+                        {label}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -277,7 +335,12 @@ export default function CloudPage() {
 
               <div className="space-y-2">
                 {OUR_SOLUTIONS.map((sol, i) => (
-                  <ScrollReveal key={i} direction="right" delay={i * 90} duration={600}>
+                  <ScrollReveal
+                    key={i}
+                    direction="right"
+                    delay={i * 90}
+                    duration={600}
+                  >
                     <div className="flex gap-5 pb-2 group">
                       {/* Circle on the line */}
                       <div className="shrink-0 mt-1">
@@ -312,12 +375,14 @@ export default function CloudPage() {
                   Move to the Cloud
                 </span>
                 <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight">
-                  Modernise Your Infrastructure<br className="hidden md:block" />
+                  Modernise Your Infrastructure
+                  <br className="hidden md:block" />
                   with Confidence
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
-                  Partner with Infoplus Technologies UK Ltd for your cloud transformation.
-                  Secure, scalable, and agile cloud solutions delivered around the clock.
+                  Partner with Infoplus Technologies UK Ltd for your cloud
+                  transformation. Secure, scalable, and agile cloud solutions
+                  delivered around the clock.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
                   <Link

@@ -14,28 +14,27 @@ import {
   Zap,
   Globe,
   TrendingUp,
-  Lock,
 } from "lucide-react";
 
 /* ── Our Solutions ──────────────────────────────────────────── */
 const SOLUTIONS = [
-  { icon: Search,        label: "Data Cleaning & Standardization" },
-  { icon: Database,      label: "Material Master Consultancy" },
-  { icon: Users,         label: "Vendor Master Cleaning" },
+  { icon: Search, label: "Data Cleaning & Standardization" },
+  { icon: Database, label: "Material Master Consultancy" },
+  { icon: Users, label: "Vendor Master Cleaning" },
   { icon: ClipboardList, label: "Physical Verification" },
-  { icon: Package,       label: "Plant Asset Management" },
-  { icon: Shield,        label: "Data Governance" },
-  { icon: Layers,        label: "Service Masters" },
-  { icon: BarChart3,     label: "Product Master Management" },
-  { icon: CheckCircle2,  label: "Consultancy Support" },
+  { icon: Package, label: "Plant Asset Management" },
+  { icon: Shield, label: "Data Governance" },
+  { icon: Layers, label: "Service Masters" },
+  { icon: BarChart3, label: "Product Master Management" },
+  { icon: CheckCircle2, label: "Consultancy Support" },
 ];
 
 /* ── Core Values ────────────────────────────────────────────── */
 const CORE_VALUES = [
-  { icon: Zap,       label: "Availability",  color: "#f85d37" },
-  { icon: TrendingUp,label: "Scalability",   color: "#aa3bff" },
-  { icon: Shield,    label: "Reliability",   color: "#6128a6" },
-  { icon: Globe,     label: "Lucidity",      color: "#f85d37" },
+  { icon: Zap, label: "Availability", color: "#f85d37" },
+  { icon: TrendingUp, label: "Scalability", color: "#aa3bff" },
+  { icon: Shield, label: "Reliability", color: "#6128a6" },
+  { icon: Globe, label: "Lucidity", color: "#f85d37" },
 ];
 
 /* ── Detailed Solutions ─────────────────────────────────────── */
@@ -180,18 +179,23 @@ export default function MasterDataManagementPage() {
                 </span>
                 <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-[#0d0517] leading-tight mb-6">
                   Pioneering innovative, customised&nbsp;
-                  <span className="text-[#6128a6]">business-critical solutions</span>
+                  <span className="text-[#6128a6]">
+                    business-critical solutions
+                  </span>
                 </h2>
                 <p className="text-[16px] text-[#0d0517]/70 leading-relaxed mb-6 text-justify">
-                  Our development teams are based in Europe and India to fulfill the needs of different delivery
-                  models of our clients. Infoplus is a pioneer in designing, developing, and deployment of
-                  innovative and customized business-critical software systems and solutions.
+                  Our development teams are based in Europe and India to fulfill
+                  the needs of different delivery models of our clients.
+                  Infoplus is a pioneer in designing, developing, and deployment
+                  of innovative and customized business-critical software
+                  systems and solutions.
                 </p>
                 <p className="text-[16px] text-[#0d0517]/70 leading-relaxed text-justify">
-                  With more than two decades of operation, Infoplus Technologies has grown into an internationally
-                  recognized staffing service provider. Through a clear vision and a customized plan, our
-                  engineering teams provide cutting-edge services to all IT companies including industry giants,
-                  mid-sized, and unicorns.
+                  With more than two decades of operation, Infoplus Technologies
+                  has grown into an internationally recognized staffing service
+                  provider. Through a clear vision and a customized plan, our
+                  engineering teams provide cutting-edge services to all IT
+                  companies including industry giants, mid-sized, and unicorns.
                 </p>
               </div>
             </ScrollReveal>
@@ -206,15 +210,22 @@ export default function MasterDataManagementPage() {
                   >
                     <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      style={{ background: `radial-gradient(circle at 30% 30%, ${v.color}08 0%, transparent 70%)` }}
+                      style={{
+                        background: `radial-gradient(circle at 30% 30%, ${v.color}08 0%, transparent 70%)`,
+                      }}
                     />
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
-                      style={{ backgroundColor: `${v.color}15`, color: v.color }}
+                      style={{
+                        backgroundColor: `${v.color}15`,
+                        color: v.color,
+                      }}
                     >
                       <v.icon className="w-5 h-5" />
                     </div>
-                    <p className="font-bold text-[#0d0517] text-[15px]">{v.label}</p>
+                    <p className="font-bold text-[#0d0517] text-[15px]">
+                      {v.label}
+                    </p>
                     <div
                       className="w-8 h-0.5 rounded-full mt-2"
                       style={{ backgroundColor: v.color }}
@@ -235,7 +246,11 @@ export default function MasterDataManagementPage() {
         {/* dot grid */}
         <div
           className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
         />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -250,11 +265,14 @@ export default function MasterDataManagementPage() {
                 <span className="text-[#aa3bff]">truth</span>
               </h2>
               <p className="text-[16px] text-white/60 leading-relaxed text-center">
-                Asset-intensive industries operate in a fast-paced environment with dizzying volumes of data. Lack
-                of data standards, controls, and structured governance processes leads inexorably to inaccurate,
-                inconsistent, and non-compliant data. Infoplus master data management solutions craft a single
-                version of the truth and allow your master data to achieve the strategic foundational goal of
-                providing accurate and reusable information, seamlessly syndicated across your organization.
+                Asset-intensive industries operate in a fast-paced environment
+                with dizzying volumes of data. Lack of data standards, controls,
+                and structured governance processes leads inexorably to
+                inaccurate, inconsistent, and non-compliant data. Infoplus
+                master data management solutions craft a single version of the
+                truth and allow your master data to achieve the strategic
+                foundational goal of providing accurate and reusable
+                information, seamlessly syndicated across your organization.
               </p>
             </ScrollReveal>
           </div>
@@ -287,8 +305,13 @@ export default function MasterDataManagementPage() {
 
       {/* ── Detailed Solutions (alternating) ─────────────────── */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "32px 32px" }}
+        <div
+          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, #6128a6 1px, transparent 1px)",
+            backgroundSize: "32px 32px",
+          }}
         />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -331,8 +354,13 @@ export default function MasterDataManagementPage() {
                   </ScrollReveal>
 
                   {/* Highlights card */}
-                  <ScrollReveal direction={isRtl ? "left" : "right"} delay={180}>
-                    <div className={`relative ${isRtl ? "lg:col-start-1 lg:row-start-1" : ""}`}>
+                  <ScrollReveal
+                    direction={isRtl ? "left" : "right"}
+                    delay={180}
+                  >
+                    <div
+                      className={`relative ${isRtl ? "lg:col-start-1 lg:row-start-1" : ""}`}
+                    >
                       {/* giant faded number */}
                       <span
                         className="absolute -top-8 -right-4 text-[160px] font-black leading-none pointer-events-none select-none"
@@ -353,12 +381,16 @@ export default function MasterDataManagementPage() {
                             <li
                               key={i}
                               className="flex items-start gap-3"
-                              style={{ animation: `revealFade 400ms ease ${i * 70 + 200}ms both` }}
+                              style={{
+                                animation: `revealFade 400ms ease ${i * 70 + 200}ms both`,
+                              }}
                             >
                               <div className="w-5 h-5 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/30 flex items-center justify-center shrink-0 mt-0.5">
                                 <CheckCircle2 className="w-3 h-3 text-[#6128a6]" />
                               </div>
-                              <span className="text-[14px] text-[#0d0517]/75 leading-snug">{h}</span>
+                              <span className="text-[14px] text-[#0d0517]/75 leading-snug">
+                                {h}
+                              </span>
                             </li>
                           ))}
                         </ul>
@@ -378,7 +410,11 @@ export default function MasterDataManagementPage() {
         <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[#6128a6] opacity-20 blur-[100px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "24px 24px" }}
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+          }}
         />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -392,15 +428,20 @@ export default function MasterDataManagementPage() {
                 <span className="text-[#aa3bff]">dimension</span>
               </h2>
               <p className="text-[16px] text-white/50 mt-4 max-w-2xl mx-auto">
-                Our MDM solutions deliver measurable improvements in data quality, process efficiency,
-                enterprise visibility, and bottom-line commercial results.
+                Our MDM solutions deliver measurable improvements in data
+                quality, process efficiency, enterprise visibility, and
+                bottom-line commercial results.
               </p>
             </div>
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {BENEFITS.map((benefit, idx) => (
-              <ScrollReveal key={benefit.category} variant="card" delay={idx * 100}>
+              <ScrollReveal
+                key={benefit.category}
+                variant="card"
+                delay={idx * 100}
+              >
                 <div
                   className="group relative h-full bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-opacity-60 transition-all duration-400 overflow-hidden"
                   style={{
@@ -410,14 +451,19 @@ export default function MasterDataManagementPage() {
                   {/* hover glow */}
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"
-                    style={{ background: `radial-gradient(ellipse at 20% 20%, ${benefit.glowColor} 0%, transparent 65%)` }}
+                    style={{
+                      background: `radial-gradient(ellipse at 20% 20%, ${benefit.glowColor} 0%, transparent 65%)`,
+                    }}
                   />
 
                   {/* icon + heading */}
                   <div className="relative z-10 flex items-center gap-4 mb-7">
                     <div
                       className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
-                      style={{ backgroundColor: `${benefit.accentColor}20`, color: benefit.accentColor }}
+                      style={{
+                        backgroundColor: `${benefit.accentColor}20`,
+                        color: benefit.accentColor,
+                      }}
                     >
                       <benefit.icon className="w-6 h-6" />
                     </div>
@@ -438,10 +484,7 @@ export default function MasterDataManagementPage() {
                   {/* benefit list */}
                   <ul className="relative z-10 space-y-3">
                     {benefit.items.map((item, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-3"
-                      >
+                      <li key={i} className="flex items-start gap-3">
                         <div
                           className="w-1.5 h-1.5 rounded-full shrink-0 mt-[7px]"
                           style={{ backgroundColor: benefit.accentColor }}
@@ -461,8 +504,13 @@ export default function MasterDataManagementPage() {
 
       {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, #6128a6 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
         />
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
           <ScrollReveal variant="card">
@@ -478,8 +526,9 @@ export default function MasterDataManagementPage() {
                 Ready to achieve golden data?
               </h2>
               <p className="relative z-10 text-[16px] text-white/65 leading-relaxed mb-10 max-w-2xl mx-auto">
-                Let Infoplus MDM craft a single version of the truth for your enterprise — accurate, consistent,
-                and syndicated across every business unit and geography.
+                Let Infoplus MDM craft a single version of the truth for your
+                enterprise — accurate, consistent, and syndicated across every
+                business unit and geography.
               </p>
               <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <a
