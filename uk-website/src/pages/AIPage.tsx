@@ -452,7 +452,7 @@ export default function AIPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Get Started Today
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight">
+                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   Ready to Transform Your<br className="hidden md:block" /> Business with AI?
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">

@@ -3,6 +3,7 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronRight, ChevronDown } from "lucide-react";
 import { ImageWithFallback } from "../helpers/ImageWithFallback";
 import imgInfoplusLogo from "../../assets/images/imgInfoplusLogo.png";
+import imgInfoplusLogoColor from "../../assets/images/imgInfoplusLogoColor.png";
 import MegaMenu from "./MegaMenu";
 import { navigation } from "../../data/navigate";
 
@@ -11,6 +12,7 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
   const location = useLocation();
+  const isServicesActive = location.pathname.startsWith("/services");
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 40);
@@ -28,8 +30,8 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white shadow-[0_2px_24px_rgba(0,0,0,0.10)] py-3"
-          : "bg-transparent py-5"
+          ? "bg-white shadow-[0_2px_24px_rgba(0,0,0,0.10)] py-2"
+          : "bg-transparent py-3"
       }`}
     >
       <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between gap-4">
@@ -38,9 +40,9 @@ export function Header() {
         <NavLink to="/" className="flex items-center shrink-0">
           <div className="h-14 flex items-center overflow-visible">
             <ImageWithFallback
-              src={imgInfoplusLogo}
+              src={isScrolled ? imgInfoplusLogoColor : imgInfoplusLogo}
               alt="Infoplus Technologies"
-              className="h-20 w-auto object-contain transition-all duration-300"
+              className="h-14 w-auto object-contain transition-all duration-300"
             />
           </div>
         </NavLink>
@@ -56,8 +58,12 @@ export function Header() {
                   className={[
                     "flex items-center gap-1 px-3 py-2 rounded-lg text-[14px] font-medium transition-all duration-200 cursor-default select-none",
                     isScrolled
-                      ? "text-[#111111] hover:text-[#f85d37] hover:bg-black/5"
-                      : "text-white/90 hover:text-white hover:bg-white/10",
+                      ? isServicesActive
+                        ? "text-[#6128a6] bg-[#f8f5ff] font-semibold"
+                        : "text-[#111111] hover:text-[#f85d37] hover:bg-black/5"
+                      : isServicesActive
+                        ? "text-white bg-white/15 font-semibold"
+                        : "text-white/90 hover:text-white hover:bg-white/10",
                   ].join(" ")}
                 >
                   {item.label}
@@ -157,8 +163,12 @@ export function Header() {
                     className={[
                       "w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[15px] font-medium transition-colors",
                       isScrolled
-                        ? "text-[#111111] hover:text-[#f85d37] hover:bg-black/5"
-                        : "text-white/85 hover:text-white hover:bg-white/10",
+                        ? item.noNavigate && isServicesActive
+                          ? "text-[#6128a6] bg-[#f8f5ff] font-semibold"
+                          : "text-[#111111] hover:text-[#f85d37] hover:bg-black/5"
+                        : item.noNavigate && isServicesActive
+                          ? "text-white bg-white/15 font-semibold"
+                          : "text-white/85 hover:text-white hover:bg-white/10",
                     ].join(" ")}
                   >
                     {item.label}

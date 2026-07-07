@@ -41,7 +41,7 @@ export function Footer() {
               <ImageWithFallback
                 src={imgInfoplusLogo}
                 alt="Infoplus Technologies"
-                className="h-12 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
             </Link>
             <p className="text-white/70 text-[14px] leading-[24px] font-normal">

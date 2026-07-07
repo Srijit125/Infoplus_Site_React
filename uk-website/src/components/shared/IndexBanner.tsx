@@ -142,7 +142,7 @@ function IndexBanner() {
       </div>
 
       {/* ── Main content ── */}
-      <div className="container mx-auto px-6 max-w-7xl relative z-10 pt-20 pb-14">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10 pt-28 pb-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
           {/* Left — copy */}

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import {
   Shield, FileText, CheckCircle2, Settings,
   TrendingUp, Zap, Users, Globe, ArrowRight,
@@ -19,13 +19,13 @@ const WHAT_WE_HANDLE: ServiceCard[] = [
     icon: FileText,
     gradient: "from-[#381f55] to-[#6128a6]",
     title: "Invoicing & Collections",
-    desc: "We handle all invoicing, chasing, and collecting of your hard-earned cash from your agency or end client — so you never have to chase payments yourself.",
+    desc: "We handle all invoicing, chasing, and collecting of your hard-earned cash from your agency or end client â€” so you never have to chase payments yourself.",
   },
   {
     icon: Settings,
     gradient: "from-[#1e3a8a] to-[#3b82f6]",
     title: "Tax & NI Calculations",
-    desc: "We calculate your Tax and National Insurance contributions at source — accurately and compliantly, so you are completely protected at all times.",
+    desc: "We calculate your Tax and National Insurance contributions at source â€” accurately and compliantly, so you are completely protected at all times.",
   },
   {
     icon: Shield,
@@ -37,7 +37,7 @@ const WHAT_WE_HANDLE: ServiceCard[] = [
     icon: CheckCircle2,
     gradient: "from-[#78350f] to-[#f59e0b]",
     title: "Full Compliance",
-    desc: "Your payments are calculated correctly and you are completely protected and compliant — eliminating the stress and risk of running your own company structure.",
+    desc: "Your payments are calculated correctly and you are completely protected and compliant â€” eliminating the stress and risk of running your own company structure.",
   },
 ];
 
@@ -50,7 +50,7 @@ const WHY_INFOPLUS = [
   {
     icon: Users,
     title: "Improve Digital Customer Experience",
-    desc: "A modern, seamless experience for contractors and agencies alike — fast, transparent, and always on.",
+    desc: "A modern, seamless experience for contractors and agencies alike â€” fast, transparent, and always on.",
   },
   {
     icon: Zap,
@@ -60,7 +60,7 @@ const WHY_INFOPLUS = [
   {
     icon: Globe,
     title: "Establish an Agile & Innovative Culture",
-    desc: "Join an umbrella service that continuously innovates — keeping you ahead of regulatory and market changes.",
+    desc: "Join an umbrella service that continuously innovates â€” keeping you ahead of regulatory and market changes.",
   },
   {
     icon: Shield,
@@ -70,9 +70,9 @@ const WHY_INFOPLUS = [
 ];
 
 const BENEFITS = [
-  "No personal liability — Infoplus acts as your employer",
+  "No personal liability â€” Infoplus acts as your employer",
   "No company formation, accounting, or tax returns required",
-  "Immediate payroll setup — start contracting in days",
+  "Immediate payroll setup â€” start contracting in days",
   "Full employment rights including statutory benefits",
   "Experts handle all the hassle so you can focus on delivery",
   "Safe, compliant, and HMRC-recognised umbrella structure",
@@ -81,7 +81,7 @@ const BENEFITS = [
 export default function UmbrellaPage() {
   return (
     <div className="w-full overflow-x-hidden">
-      {/* ── Hero ─────────────────────────────────────────────── */}
+      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         title="Umbrella Service"
         description="We Take Care of All the Bits"
@@ -109,7 +109,7 @@ export default function UmbrellaPage() {
         </div>
       </PageHero>
 
-      {/* ── What Is an Umbrella Company ──────────────────────── */}
+      {/* â”€â”€ What Is an Umbrella Company â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -129,12 +129,12 @@ export default function UmbrellaPage() {
               </p>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
                 In simple terms, an umbrella company acts as an employer for independent contractors
-                who work under temporary contracts — very often through an employment agency, but also
+                who work under temporary contracts â€” very often through an employment agency, but also
                 directly with end clients. As an Infoplus employee, you really will be looked after.
               </p>
               <p className="text-[15.5px] text-[#555] leading-[1.85]">
                 Umbrella companies like Infoplus are brilliant at offering contractors a first-class
-                work-life balance — they take away the bulk of the stressful and time-consuming
+                work-life balance â€” they take away the bulk of the stressful and time-consuming
                 administration, paperwork, and hassle that's often associated with running your own
                 company, without losing the financial benefit this style of working provides.
               </p>
@@ -169,7 +169,7 @@ export default function UmbrellaPage() {
         </div>
       </section>
 
-      {/* ── What We Handle — 4 Cinematic Cards ──────────────── */}
+      {/* â”€â”€ What We Handle â€” 4 Cinematic Cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-[#f8f5ff]">
         <div className="container mx-auto px-6 max-w-6xl">
           <ScrollReveal direction="fade">
@@ -208,7 +208,7 @@ export default function UmbrellaPage() {
         </div>
       </section>
 
-      {/* ── Why Infoplus — Cinematic dark rows ───────────────── */}
+      {/* â”€â”€ Why Infoplus â€” Cinematic dark rows â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#6128a6]/15 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#f85d37]/8 blur-[100px] pointer-events-none" />
@@ -261,7 +261,7 @@ export default function UmbrellaPage() {
         </div>
       </section>
 
-      {/* ── Simple Steps ─────────────────────────────────────── */}
+      {/* â”€â”€ Simple Steps â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-16 bg-[#f8f5ff] border-y border-[#e5e4e7]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
@@ -273,7 +273,7 @@ export default function UmbrellaPage() {
             {[
               { step: "01", title: "Contact Us", desc: "Fill in your details on the contact page or call us directly." },
               { step: "02", title: "We Set You Up", desc: "Our team handles all the onboarding paperwork and setup quickly." },
-              { step: "03", title: "Start Contracting", desc: "Get paid accurately, compliantly, and on time — every time." },
+              { step: "03", title: "Start Contracting", desc: "Get paid accurately, compliantly, and on time â€” every time." },
             ].map(({ step, title, desc }, i) => (
               <ScrollReveal key={i} direction="up" delay={i * 100} variant="card">
                 <div className="relative flex flex-col items-center text-center p-6 bg-white border border-[#e5e4e7] rounded-2xl hover:border-[#6128a6]/25 hover:shadow-[0_8px_24px_-4px_rgba(97,40,166,0.08)] transition-all duration-300">
@@ -289,7 +289,7 @@ export default function UmbrellaPage() {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────── */}
+      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
@@ -300,13 +300,13 @@ export default function UmbrellaPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Join Infoplus Umbrella
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight">
+                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   Focus on Your Work.<br className="hidden md:block" />
                   Leave the Rest to Us.
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
                   The safest, most reliable umbrella service for contractors and agencies alike.
-                  Join Infoplus today — setup is fast, compliance is guaranteed.
+                  Join Infoplus today â€” setup is fast, compliance is guaranteed.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
                   <Link
@@ -331,3 +331,4 @@ export default function UmbrellaPage() {
     </div>
   );
 }
+

@@ -19,6 +19,10 @@ export default defineConfig({
       "Access-Control-Allow-Headers":
         "X-Requested-With, content-type, Authorization",
     },
+    watch: {
+      usePolling: true,
+      interval: 300,
+    },
   },
   resolve: {
     alias: {

@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { ChevronRight, MapPin, Mail, Phone } from "lucide-react";
 import { ImageWithFallback } from "../components/helpers/ImageWithFallback";
-import imgWorkspace from "../assets/images/imgWorkspace.png";
+import imgAboutUs from "../assets/images/Info_Landing_AboutSection.jpg";
 import imgMap from "../assets/images/imgMap.png";
 import {
   industries,
@@ -99,7 +99,7 @@ function HomePage() {
         />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-14 xl:gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-14 xl:gap-20 items-start">
             {/* Left: Copy */}
             <ScrollReveal direction="left">
               <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-6">
@@ -166,7 +166,7 @@ function HomePage() {
               <div className="flex flex-col gap-3">
                 <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(97,40,166,0.14)]">
                   <ImageWithFallback
-                    src={imgWorkspace}
+                    src={imgAboutUs}
                     alt="Infoplus Office Workspace"
                     className="w-full h-[220px] object-cover"
                   />
@@ -199,16 +199,16 @@ function HomePage() {
                     </p>
                   </div>
                 </div>
-                <div className="bg-linear-to-r from-[#f85d37] to-[#ff7a58] rounded-2xl p-4 flex items-center gap-4 shadow-[0_8px_24px_rgba(248,93,55,0.28)]">
-                  <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+                <div className="bg-linear-to-r from-[#f85d37] to-[#ff7a58] rounded-2xl p-4 flex items-start gap-4 shadow-[0_8px_24px_rgba(248,93,55,0.28)]">
+                  <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0 mt-0.5">
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
                   <div>
                     <p className="text-white font-bold text-[14px]">
-                      3 Global Offices
+                      17 Global Offices
                     </p>
-                    <p className="text-white/70 text-[12px] mt-0.5">
-                      United Kingdom · India · Germany
+                    <p className="text-white/70 text-[13px] mt-1 leading-[1.6]">
+                      London · Manchester · Birmingham · Frankfurt · Paris · Amsterdam · New York · Chicago · San Francisco · Toronto · Sydney · Singapore · Tokyo · Chennai · Bangalore · Mumbai · Dubai
                     </p>
                   </div>
                 </div>
@@ -753,14 +753,14 @@ function HomePage() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
-            <div className="mb-14">
+            <div className="mb-14 text-center">
               <span className="text-[#f85d37] text-[12px] font-semibold uppercase tracking-[0.1em] mb-3 block">
                 Global Reach
               </span>
               <h2 className="text-[36px] font-bold text-[#111111] mb-5">
                 Our Presence Worldwide
               </h2>
-              <p className="text-[16px] text-[#555555] leading-[1.75] max-w-2xl text-justify">
+              <p className="text-[16px] text-[#555555] leading-[1.75] max-w-2xl mx-auto">
                 We have a global reach with offices and operations across three
                 countries — delivering world-class technology solutions wherever
                 our clients need us.

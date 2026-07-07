@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import {
   Settings,
   Users,
@@ -62,7 +62,7 @@ const GOALS: Goal[] = [
     icon: Network,
     gradient: "from-[#78350f] to-[#f59e0b]",
     title: "Launch New Value Networks & Ecosystems",
-    desc: "Extend reach by participating in — and leading — digital ecosystems that create new opportunities, partnerships, and revenue streams.",
+    desc: "Extend reach by participating in â€” and leading â€” digital ecosystems that create new opportunities, partnerships, and revenue streams.",
   },
 ];
 
@@ -125,7 +125,7 @@ const MATURITY_AREAS = ["Vision", "Culture", "Adoption", "Execution", "Growth"];
 export default function TransformationPage() {
   return (
     <div className="w-full overflow-x-hidden">
-      {/* ── Hero ─────────────────────────────────────────────── */}
+      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         title="Enterprise Transformation"
         description="We Enable Digital Across the World"
@@ -164,7 +164,7 @@ export default function TransformationPage() {
         </div>
       </PageHero>
 
-      {/* ── Intro ────────────────────────────────────────────── */}
+      {/* â”€â”€ Intro â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -183,14 +183,14 @@ export default function TransformationPage() {
               <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
                 Our Generation Z engineers in the digital transformation team
                 strongly believe that for today's enterprise, adapting to the
-                latest technologies is not enough — it's about using "digital"
+                latest technologies is not enough â€” it's about using "digital"
                 across the entire organisation. We enable digital across the
                 world by integrating Information, Process, Work, and People.
               </p>
               <p className="text-[15.5px] text-[#555] leading-[1.85]">
                 It is a known fact that transformations are hard, and digital
                 ones are even harder. But we have carefully devised 20 success
-                factors to make Digital Transformations successful — for the
+                factors to make Digital Transformations successful â€” for the
                 first time and every time.
               </p>
             </ScrollReveal>
@@ -237,7 +237,7 @@ export default function TransformationPage() {
         </div>
       </section>
 
-      {/* ── 4 Integration Pillars ─────────────────────────────── */}
+      {/* â”€â”€ 4 Integration Pillars â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#6128a6]/20 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#f85d37]/10 blur-[100px] pointer-events-none" />
@@ -293,7 +293,7 @@ export default function TransformationPage() {
         </div>
       </section>
 
-      {/* ── Top 5 Goals — Cinematic numbered cards ───────────── */}
+      {/* â”€â”€ Top 5 Goals â€” Cinematic numbered cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
         <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-[#ecdaff]/60 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -350,7 +350,7 @@ export default function TransformationPage() {
         </div>
       </section>
 
-      {/* ── Strategy — 6-Step Vertical Timeline ──────────────── */}
+      {/* â”€â”€ Strategy â€” 6-Step Vertical Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-5xl relative z-10">
@@ -370,7 +370,7 @@ export default function TransformationPage() {
                 </h2>
                 <p className="text-[15.5px] text-[#555] leading-[1.85]">
                   A proven six-step approach to make your digital transformation
-                  successful — from initial assessment through to validated,
+                  successful â€” from initial assessment through to validated,
                   scalable execution.
                 </p>
                 <div className="mt-8 flex items-center gap-2 text-[13px] font-semibold text-[#6128a6]">
@@ -418,7 +418,7 @@ export default function TransformationPage() {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────── */}
+      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-[#f8f5ff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
@@ -429,14 +429,14 @@ export default function TransformationPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Begin Your Digital Journey
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight">
+                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   Transform Your Enterprise.
                   <br className="hidden md:block" />
                   Lead the Digital Era.
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
                   Partner with Infoplus Technologies UK Ltd to drive a
-                  successful digital transformation — guided by 20 proven
+                  successful digital transformation â€” guided by 20 proven
                   success factors and our Generation Z engineers.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
@@ -462,3 +462,4 @@ export default function TransformationPage() {
     </div>
   );
 }
+

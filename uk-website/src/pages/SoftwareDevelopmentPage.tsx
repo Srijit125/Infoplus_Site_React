@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import {
   Globe,
   Smartphone,
@@ -191,14 +191,14 @@ const ENGAGE_STEPS: {
     icon: Code2,
     step: "03",
     title: "Free Prototype",
-    desc: "We develop a prototype for your solution without any cost — so you can validate the concept and experience our quality before making a commitment.",
+    desc: "We develop a prototype for your solution without any cost â€” so you can validate the concept and experience our quality before making a commitment.",
   },
 ];
 
 export default function SoftwareDevelopmentPage() {
   return (
     <div className="w-full overflow-x-hidden">
-      {/* ── Hero ─────────────────────────────────────────────── */}
+      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         title="Software Development"
         description="Emerging into High Technology Trends"
@@ -233,7 +233,7 @@ export default function SoftwareDevelopmentPage() {
         </div>
       </PageHero>
 
-      {/* ── Intro / Mission ───────────────────────────────────── */}
+      {/* â”€â”€ Intro / Mission â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-white relative overflow-hidden">
         {/* faint orb */}
         <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
@@ -306,7 +306,7 @@ export default function SoftwareDevelopmentPage() {
         </div>
       </section>
 
-      {/* ── Service Sections (Cinematic Alternating) ─────────── */}
+      {/* â”€â”€ Service Sections (Cinematic Alternating) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div id="sd-services" style={{ scrollMarginTop: "88px" }}>
         {SERVICES.map((svc, i) => {
           const SvcIcon = svc.icon;
@@ -445,7 +445,7 @@ export default function SoftwareDevelopmentPage() {
         })}
       </div>
 
-      {/* ── How to Engage ────────────────────────────────────── */}
+      {/* â”€â”€ How to Engage â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         {/* Background orbs */}
         <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#6128a6]/20 blur-[120px] pointer-events-none" />
@@ -521,7 +521,7 @@ export default function SoftwareDevelopmentPage() {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────── */}
+      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-[#f8f5ff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
@@ -533,7 +533,7 @@ export default function SoftwareDevelopmentPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Ready to Build?
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight">
+                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   Let's Build Something Remarkable
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -564,3 +564,4 @@ export default function SoftwareDevelopmentPage() {
     </div>
   );
 }
+

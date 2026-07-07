@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import {
   Database,
   BarChart2,
@@ -85,7 +85,7 @@ const WHY_SAP = [
   "Highly cost-effective competitive rates for support services",
   "Completed several projects and supported a number of professional augmentation challenges",
   "Access our well experienced 500+ SAP functional and technical consultants worldwide",
-  "Consistent SAP All-in-One™ system support, covering the full range of SAP functions with great flexibility",
+  "Consistent SAP All-in-Oneâ„¢ system support, covering the full range of SAP functions with great flexibility",
   "The SAP Knowledge Transfer",
   "The Complete Annual Support Package",
   "Extensive yet flexible 3 delivery support models",
@@ -115,7 +115,7 @@ const DELIVERY_MODELS: DeliveryModel[] = [
 export default function SAPPage() {
   return (
     <div className="w-full overflow-x-hidden">
-      {/* ── Hero ─────────────────────────────────────────────── */}
+      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         title="SAP Consulting & Implementation"
         description="We have a large pool of certified SAP experts"
@@ -145,7 +145,7 @@ export default function SAPPage() {
         </div>
       </PageHero>
 
-      {/* ── 4 Key Benefits strip ─────────────────────────────── */}
+      {/* â”€â”€ 4 Key Benefits strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-14 bg-white border-b border-[#f0eff5]">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -167,7 +167,7 @@ export default function SAPPage() {
         </div>
       </section>
 
-      {/* ── About SAP CoE ────────────────────────────────────── */}
+      {/* â”€â”€ About SAP CoE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -185,7 +185,7 @@ export default function SAPPage() {
               </h2>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
                 Our SAP Consulting and Implementation approach at Infoplus
-                clears many reservations and myths — such as SAP is only for big
+                clears many reservations and myths â€” such as SAP is only for big
                 organisations or SAP is expensive. Many small, medium, and large
                 organisations have experienced clear benefits through our
                 customised SAP solutions.
@@ -239,7 +239,7 @@ export default function SAPPage() {
         </div>
       </section>
 
-      {/* ── SAP All-in-One ERP Suite ──────────────────────────── */}
+      {/* â”€â”€ SAP All-in-One ERP Suite â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
         <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-[#ecdaff]/60 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -247,7 +247,7 @@ export default function SAPPage() {
             <ScrollReveal direction="left" duration={700}>
               <div className="lg:sticky lg:top-[120px]">
                 <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
-                  01 — ERP Suite
+                  01 â€” ERP Suite
                 </span>
                 <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                   SAP All-in-One
@@ -290,21 +290,21 @@ export default function SAPPage() {
         </div>
       </section>
 
-      {/* ── SAP Implementations — Horizontal Timeline ─────────── */}
+      {/* â”€â”€ SAP Implementations â€” Horizontal Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-16">
               <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
-                02 — Implementations
+                02 â€” Implementations
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-3">
                 SAP Implementations
               </h2>
               <p className="text-[15px] text-[#555] max-w-2xl mx-auto mt-4 leading-relaxed">
                 Since 2000 we have been implementing, supporting, and providing
-                stabilisation and maintenance support on SAP All-in-One™ to
+                stabilisation and maintenance support on SAP All-in-Oneâ„¢ to
                 Small and Medium Enterprises (SMEs) worldwide. Our pre-defined
                 standard implementation model encompasses the following stages.
               </p>
@@ -349,7 +349,7 @@ export default function SAPPage() {
         </div>
       </section>
 
-      {/* ── Outsourcing Managed Services ─────────────────────── */}
+      {/* â”€â”€ Outsourcing Managed Services â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#6128a6]/20 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#f85d37]/10 blur-[100px] pointer-events-none" />
@@ -453,7 +453,7 @@ export default function SAPPage() {
                       Infoplus Delivery
                     </p>
                     <p className="text-[18px] font-black text-white">
-                      Any Location · Any Model
+                      Any Location Â· Any Model
                     </p>
                   </div>
                 </div>
@@ -463,7 +463,7 @@ export default function SAPPage() {
         </div>
       </section>
 
-      {/* ── SAP NetWeaver BI ──────────────────────────────────── */}
+      {/* â”€â”€ SAP NetWeaver BI â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
         <div className="absolute top-20 right-0 w-80 h-80 rounded-full bg-[#ecdaff]/50 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -481,7 +481,7 @@ export default function SAPPage() {
                   satisfy the diverse needs of end-users, IT professionals, and
                   senior management. It brings together a powerful business
                   intelligence infrastructure, comprehensive tools, planning and
-                  simulation capabilities, and data-warehousing functionality —
+                  simulation capabilities, and data-warehousing functionality â€”
                   delivered through enterprise portal technology.
                 </p>
                 <p className="text-[15.5px] text-[#555] leading-[1.85]">
@@ -522,7 +522,7 @@ export default function SAPPage() {
         </div>
       </section>
 
-      {/* ── Why Infoplus + Delivery Models ───────────────────── */}
+      {/* â”€â”€ Why Infoplus + Delivery Models â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-6xl">
           <ScrollReveal direction="fade">
@@ -593,7 +593,7 @@ export default function SAPPage() {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────── */}
+      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-[#f8f5ff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
@@ -604,11 +604,11 @@ export default function SAPPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Start Your SAP Journey
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight">
+                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   Optimise Your Business with SAP
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
-                  Partner with Infoplus Technologies UK Ltd — your trusted SAP
+                  Partner with Infoplus Technologies UK Ltd â€” your trusted SAP
                   partner with 20+ years of proven expertise and 500+ certified
                   consultants ready to serve you.
                 </p>
@@ -635,3 +635,4 @@ export default function SAPPage() {
     </div>
   );
 }
+

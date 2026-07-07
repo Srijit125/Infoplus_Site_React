@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import {
   Globe,
   Zap,
@@ -133,7 +133,7 @@ const WHY_COE = [
 export default function TestingPage() {
   return (
     <div className="w-full overflow-x-hidden">
-      {/* ── Hero ─────────────────────────────────────────────── */}
+      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         title="Testing"
         description="We're Delivering Quality Products & Services"
@@ -163,7 +163,7 @@ export default function TestingPage() {
         </div>
       </PageHero>
 
-      {/* ── CoE Intro ────────────────────────────────────────── */}
+      {/* â”€â”€ CoE Intro â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center">
@@ -178,14 +178,14 @@ export default function TestingPage() {
               Infoplus Testing Center of Excellence believes the following, and
               the team ensures that it practises these tenets every time. As
               offerings, Infoplus delivers testing services across different
-              types of testing — built on a foundation of precision, automation,
+              types of testing â€” built on a foundation of precision, automation,
               and an unwavering commitment to quality.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* ── Testing Types ─────────────────────────────────────── */}
+      {/* â”€â”€ Testing Types â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-[#f8f5ff]">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="fade">
@@ -232,7 +232,7 @@ export default function TestingPage() {
         </div>
       </section>
 
-      {/* ── Our Solutions ─────────────────────────────────────── */}
+      {/* â”€â”€ Our Solutions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-[#0d0517] relative overflow-hidden">
         {/* Background orbs */}
         <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#6128a6]/20 blur-[100px] pointer-events-none" />
@@ -288,7 +288,7 @@ export default function TestingPage() {
         </div>
       </section>
 
-      {/* ── Strategy — Cinematic Vertical Timeline ────────────── */}
+      {/* â”€â”€ Strategy â€” Cinematic Vertical Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
 
@@ -370,7 +370,7 @@ export default function TestingPage() {
         </div>
       </section>
 
-      {/* ── Why Infoplus CoE ──────────────────────────────────── */}
+      {/* â”€â”€ Why Infoplus CoE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-[#f8f5ff] relative overflow-hidden">
         <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-[#ecdaff]/60 blur-[100px] pointer-events-none" />
 
@@ -410,7 +410,7 @@ export default function TestingPage() {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────── */}
+      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
@@ -421,12 +421,12 @@ export default function TestingPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Ready to Test?
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight">
+                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   Ship Software You Can Trust
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
                   Partner with Infoplus Testing CoE to ensure your software
-                  meets the highest quality standards — on time and within
+                  meets the highest quality standards â€” on time and within
                   budget.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
@@ -452,3 +452,4 @@ export default function TestingPage() {
     </div>
   );
 }
+
