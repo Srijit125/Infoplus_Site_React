@@ -1,4 +1,4 @@
-import { PageHero } from "../components/shared/PageHero";
+﻿import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
   Code2,
@@ -16,30 +16,30 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-/* ── Service cards ────────────────────────────────────────────── */
+/* â”€â”€ Service cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const SERVICES = [
   {
     icon: Code2,
     title: "Software Development",
-    href: "/services/software-development",
+    href: "/services/it-services/software-development",
     accent: "#6128a6",
     glow: "rgba(97,40,166,0.22)",
     tag: "IT Services",
-    desc: "Our development teams are based in Europe and India to fulfil the needs of different delivery models. We design, develop, and deploy innovative, customised business-critical software systems — web, mobile, AR&VR, and IoT solutions that make technology a true asset to your business.",
+    desc: "Our development teams are based in Europe and India to fulfil the needs of different delivery models. We design, develop, and deploy innovative, customised business-critical software systems â€” web, mobile, AR&VR, and IoT solutions that make technology a true asset to your business.",
   },
   {
     icon: FlaskConical,
     title: "Testing",
-    href: "/services/testing",
+    href: "/services/it-services/testing",
     accent: "#aa3bff",
     glow: "rgba(170,59,255,0.22)",
     tag: "IT Services",
-    desc: "Infoplus Testing Center of Excellence believes that quality isn't just checking for defects — it is preventing them. Our structured test methodologies cover functional, performance, security, and automation testing to ensure your product launches flawlessly.",
+    desc: "Infoplus Testing Center of Excellence believes that quality isn't just checking for defects â€” it is preventing them. Our structured test methodologies cover functional, performance, security, and automation testing to ensure your product launches flawlessly.",
   },
   {
     icon: Server,
     title: "Infrastructure Management",
-    href: "/services/infrastructure-management",
+    href: "/services/it-services/infrastructure-management",
     accent: "#6128a6",
     glow: "rgba(97,40,166,0.22)",
     tag: "IT Services",
@@ -48,25 +48,25 @@ const SERVICES = [
   {
     icon: Database,
     title: "SAP Consulting & Implementation",
-    href: "/services/sap-consulting",
+    href: "/services/it-services/sap-consulting",
     accent: "#aa3bff",
     glow: "rgba(170,59,255,0.22)",
     tag: "IT Services",
-    desc: "Our SAP Consulting and Implementation approach at Infoplus clearly focuses on delivering business value. We cover the full SAP landscape — ERP, BI, S/4HANA — providing design, build, and rollout services tailored to your industry and delivery model.",
+    desc: "Our SAP Consulting and Implementation approach at Infoplus clearly focuses on delivering business value. We cover the full SAP landscape â€” ERP, BI, S/4HANA â€” providing design, build, and rollout services tailored to your industry and delivery model.",
   },
   {
     icon: ShieldCheck,
     title: "Cyber Security",
-    href: "/services/cyber-security",
+    href: "/services/it-services/cyber-security",
     accent: "#f85d37",
     glow: "rgba(248,93,55,0.22)",
     tag: "IT Services",
-    desc: "Infoplus cyber security services include a Security Operations Centre, vulnerability scanning, penetration testing, compliance management, and incident response — providing end-to-end protection so your organisation stays resilient against evolving threats.",
+    desc: "Infoplus cyber security services include a Security Operations Centre, vulnerability scanning, penetration testing, compliance management, and incident response â€” providing end-to-end protection so your organisation stays resilient against evolving threats.",
   },
   {
     icon: Cloud,
     title: "Cloud Portfolio",
-    href: "/services/cloud",
+    href: "/services/it-services/cloud-portfolio",
     accent: "#6128a6",
     glow: "rgba(97,40,166,0.22)",
     tag: "IT Services",
@@ -75,7 +75,7 @@ const SERVICES = [
   {
     icon: BrainCircuit,
     title: "Artificial Intelligence",
-    href: "/services/artificial-intelligence",
+    href: "/services/it-services/artificial-intelligence",
     accent: "#aa3bff",
     glow: "rgba(170,59,255,0.22)",
     tag: "IT Services",
@@ -84,7 +84,7 @@ const SERVICES = [
   },
 ];
 
-/* ── Stats ────────────────────────────────────────────────────── */
+/* â”€â”€ Stats â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const STATS = [
   { value: "7",    label: "IT Service Verticals",  color: "#aa3bff" },
   { value: "20+",  label: "Years of Expertise",    color: "#f85d37" },
@@ -95,11 +95,11 @@ const STATS = [
 export default function ITServicesPage() {
   return (
     <div className="w-full">
-      {/* ── Hero ─────────────────────────────────────────────── */}
+      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         badge="IT SERVICES"
         title="We are Providing the Best Services for Clients"
-        description="Supporting IT is not just enough — it must be strategically led and proactively managed. Our forward-thinking IT CoE team designs end-to-end solutions so organisations gain a technology edge and stay ahead of the curve."
+        description="Supporting IT is not just enough â€” it must be strategically led and proactively managed. Our forward-thinking IT CoE team designs end-to-end solutions so organisations gain a technology edge and stay ahead of the curve."
         variant="gradient"
       >
         <div className="flex flex-wrap justify-center gap-3">
@@ -119,7 +119,7 @@ export default function ITServicesPage() {
         </div>
       </PageHero>
 
-      {/* ── Intro + Vision ───────────────────────────────────── */}
+      {/* â”€â”€ Intro + Vision â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#ecdaff] opacity-50 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -137,14 +137,14 @@ export default function ITServicesPage() {
                 </h2>
                 <p className="text-[15px] text-[#0d0517]/65 leading-relaxed mb-5 text-justify">
                   In order for a business to strive and to meet its planned objectives, supporting IT is not just
-                  enough — it must be strategically led and proactively managed. Our forward-thinking IT service
+                  enough â€” it must be strategically led and proactively managed. Our forward-thinking IT service
                   CoE (Center of Excellence) team has been designing end-to-end solutions for organisations to
                   have a technology edge and to be ahead of the curve while running their operations seriously,
                   thus making their infrastructure highly available.
                 </p>
                 <p className="text-[15px] text-[#0d0517]/65 leading-relaxed text-justify">
                   Infoplus Technologies has carefully structured different business verticals to cater to the
-                  needs of every IT service requirement at any time — from software development and AI to
+                  needs of every IT service requirement at any time â€” from software development and AI to
                   infrastructure management and cyber security.
                 </p>
               </div>
@@ -171,7 +171,7 @@ export default function ITServicesPage() {
                     </p>
                     <div className="mt-5 h-px bg-linear-to-r from-[#6128a6]/60 via-[#aa3bff]/40 to-transparent" />
                     <p className="mt-3 text-[12px] text-white/40 font-semibold uppercase tracking-widest">
-                      — Infoplus Technologies IT CoE
+                      â€” Infoplus Technologies IT CoE
                     </p>
                   </div>
                 </div>
@@ -204,7 +204,7 @@ export default function ITServicesPage() {
         </div>
       </section>
 
-      {/* ── Stats strip ──────────────────────────────────────── */}
+      {/* â”€â”€ Stats strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-14 bg-[#1e0a38] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.04]"
@@ -226,7 +226,7 @@ export default function ITServicesPage() {
         </div>
       </section>
 
-      {/* ── Services Grid ────────────────────────────────────── */}
+      {/* â”€â”€ Services Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-[-10%] left-[-5%] w-[600px] h-[600px] rounded-full bg-[#381f55] opacity-35 blur-[130px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[#6128a6] opacity-15 blur-[120px] pointer-events-none" />
@@ -246,12 +246,12 @@ export default function ITServicesPage() {
                 <span className="text-[#aa3bff]">IT excellence</span>
               </h2>
               <p className="text-[15px] text-white/50 mt-4 max-w-2xl mx-auto">
-                Each vertical is purpose-built and CoE-backed — click any service to explore the full offering.
+                Each vertical is purpose-built and CoE-backed â€” click any service to explore the full offering.
               </p>
             </div>
           </ScrollReveal>
 
-          {/* Flex wrap — 7 cards auto-centre the last item */}
+          {/* Flex wrap â€” 7 cards auto-centre the last item */}
           <div className="flex flex-wrap justify-center gap-6">
             {SERVICES.map((svc, i) => (
               <ScrollReveal
@@ -324,7 +324,7 @@ export default function ITServicesPage() {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────── */}
+      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -368,3 +368,5 @@ export default function ITServicesPage() {
     </div>
   );
 }
+
+

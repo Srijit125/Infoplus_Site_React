@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+﻿import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Footer } from "./components/FooterComponent";
 // import Header from "./components/Header";
@@ -53,19 +53,19 @@ function App() {
           <Route path="/services/it-services" element={<ITServicesPage />} />
           <Route path="/services/staffing-consulting" element={<StaffingConsultingPage />} />
           <Route path="/services/new-generation" element={<NewGenServicesPage />} />
-          <Route path="/services/artificial-intelligence" element={<AIPage />} />
-          <Route path="/services/software-development" element={<SoftwareDevelopmentPage />} />
-          <Route path="/services/testing" element={<TestingPage />} />
-          <Route path="/services/infrastructure-management" element={<InfrastructurePage />} />
-          <Route path="/services/sap-consulting" element={<SAPPage />} />
-          <Route path="/services/cyber-security" element={<CyberSecurityPage />} />
-          <Route path="/services/cloud" element={<CloudPage />} />
-          <Route path="/services/staffing" element={<StaffingPage />} />
-          <Route path="/services/consulting" element={<ConsultingPage />} />
-          <Route path="/services/umbrella" element={<UmbrellaPage />} />
-          <Route path="/services/transformation" element={<TransformationPage />} />
-          <Route path="/services/data" element={<EverythingDataPage />} />
-          <Route path="/services/automation" element={<AutomationPage />} />
+          <Route path="/services/it-services/artificial-intelligence" element={<AIPage />} />
+          <Route path="/services/it-services/software-development" element={<SoftwareDevelopmentPage />} />
+          <Route path="/services/it-services/testing" element={<TestingPage />} />
+          <Route path="/services/it-services/infrastructure-management" element={<InfrastructurePage />} />
+          <Route path="/services/it-services/sap-consulting" element={<SAPPage />} />
+          <Route path="/services/it-services/cyber-security" element={<CyberSecurityPage />} />
+          <Route path="/services/it-services/cloud-portfolio" element={<CloudPage />} />
+          <Route path="/services/staffing-consulting/it-staffing-solutions" element={<StaffingPage />} />
+          <Route path="/services/staffing-consulting/it-consulting-solutions" element={<ConsultingPage />} />
+          <Route path="/services/staffing-consulting/umbrella-service" element={<UmbrellaPage />} />
+          <Route path="/services/new-generation/enterprise-transformation" element={<TransformationPage />} />
+          <Route path="/services/new-generation/everything-data" element={<EverythingDataPage />} />
+          <Route path="/services/new-generation/automation" element={<AutomationPage />} />
           <Route path="/products/master-data-management" element={<MasterDataManagementPage />} />
           <Route path="/products/education-solutions" element={<EducationSolutionsPage />} />
           <Route path="/cookie-policy" element={<CookiePolicyPage />} />
@@ -80,3 +80,5 @@ function App() {
 }
 
 export default App;
+
+

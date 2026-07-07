@@ -1,4 +1,4 @@
-export interface MenuItem {
+﻿export interface MenuItem {
   label: string;
   href: string;
 }
@@ -35,43 +35,31 @@ export const navigation: NavigationItem[] = [
         label: "IT Services",
         href: "/services/it-services",
         items: [
-          {
-            label: "Artificial Intelligence",
-            href: "/services/artificial-intelligence",
-          },
-          {
-            label: "Software Development",
-            href: "/services/software-development",
-          },
-          { label: "Testing", href: "/services/testing" },
-          {
-            label: "Infrastructure Management",
-            href: "/services/infrastructure-management",
-          },
-          { label: "SAP Consulting", href: "/services/sap-consulting" },
-          { label: "Cyber Security", href: "/services/cyber-security" },
-          { label: "Cloud Portfolio", href: "/services/cloud" },
+          { label: "Artificial Intelligence",    href: "/services/it-services/artificial-intelligence" },
+          { label: "Software Development",        href: "/services/it-services/software-development" },
+          { label: "Testing",                     href: "/services/it-services/testing" },
+          { label: "Infrastructure Management",   href: "/services/it-services/infrastructure-management" },
+          { label: "SAP Consulting",              href: "/services/it-services/sap-consulting" },
+          { label: "Cyber Security",              href: "/services/it-services/cyber-security" },
+          { label: "Cloud Portfolio",             href: "/services/it-services/cloud-portfolio" },
         ],
       },
       {
         label: "Staffing & Consulting",
         href: "/services/staffing-consulting",
         items: [
-          { label: "IT Staffing Solutions", href: "/services/staffing" },
-          { label: "IT Consulting Solutions", href: "/services/consulting" },
-          { label: "Umbrella Service", href: "/services/umbrella" },
+          { label: "IT Staffing Solutions",  href: "/services/staffing-consulting/it-staffing-solutions" },
+          { label: "IT Consulting Solutions", href: "/services/staffing-consulting/it-consulting-solutions" },
+          { label: "Umbrella Service",        href: "/services/staffing-consulting/umbrella-service" },
         ],
       },
       {
         label: "New-Gen Services",
         href: "/services/new-generation",
         items: [
-          {
-            label: "Enterprise Transformation",
-            href: "/services/transformation",
-          },
-          { label: "Everything Data", href: "/services/data" },
-          { label: "Automation", href: "/services/automation" },
+          { label: "Enterprise Transformation", href: "/services/new-generation/enterprise-transformation" },
+          { label: "Everything Data",          href: "/services/new-generation/everything-data" },
+          { label: "Automation",               href: "/services/new-generation/automation" },
         ],
       },
     ],
@@ -113,3 +101,5 @@ export const navigation: NavigationItem[] = [
     href: "/contact",
   },
 ];
+
+

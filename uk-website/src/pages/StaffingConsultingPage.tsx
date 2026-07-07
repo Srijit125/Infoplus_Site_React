@@ -1,4 +1,4 @@
-import { PageHero } from "../components/shared/PageHero";
+﻿import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
   Users,
@@ -14,21 +14,21 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-/* ── Services ─────────────────────────────────────────────────── */
+/* â”€â”€ Services â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const SERVICES = [
   {
     icon: Users,
     title: "IT Staffing Solutions",
-    href: "/services/staffing",
+    href: "/services/staffing-consulting/it-staffing-solutions",
     accent: "#6128a6",
     glow: "rgba(97,40,166,0.22)",
-    desc: "With more than two decades of operation, Infoplus Technologies has grown into an internationally recognised staffing service provider. Through a clear vision and a customised plan, our engineering teams provide cutting-edge staffing services to all IT companies — from industry giants to mid-sized and unicorn firms.",
+    desc: "With more than two decades of operation, Infoplus Technologies has grown into an internationally recognised staffing service provider. Through a clear vision and a customised plan, our engineering teams provide cutting-edge staffing services to all IT companies â€” from industry giants to mid-sized and unicorn firms.",
     highlights: ["Contract Staffing", "Contract-to-Hire", "Permanent Placement", "Partnership Models"],
   },
   {
     icon: Lightbulb,
     title: "IT Consulting Solutions",
-    href: "/services/consulting",
+    href: "/services/staffing-consulting/it-consulting-solutions",
     accent: "#aa3bff",
     glow: "rgba(170,59,255,0.22)",
     desc: "Infoplus Technologies uses deep expertise and technical background to provide consulting solutions across multiple technology stacks and business domains. Our consultants combine industry best practices with hands-on delivery experience to drive measurable outcomes for your organisation.",
@@ -37,7 +37,7 @@ const SERVICES = [
   {
     icon: Umbrella,
     title: "Umbrella Service",
-    href: "/services/umbrella",
+    href: "/services/staffing-consulting/umbrella-service",
     accent: "#f85d37",
     glow: "rgba(248,93,55,0.22)",
     desc: "Whether you're new to contracting or are an old hand, an umbrella service through Infoplus simplifies your working life. We handle all payroll, compliance, and administrative requirements so you can focus entirely on your contract work with complete peace of mind.",
@@ -45,7 +45,7 @@ const SERVICES = [
   },
 ];
 
-/* ── Stats ────────────────────────────────────────────────────── */
+/* â”€â”€ Stats â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const STATS = [
   { value: "20+",  label: "Years of Staffing Experience", color: "#aa3bff" },
   { value: "500+", label: "Placements Delivered",         color: "#f85d37" },
@@ -53,7 +53,7 @@ const STATS = [
   { value: "2",    label: "Continents, 1 Delivery Team",  color: "#f85d37" },
 ];
 
-/* ── Differentiators ─────────────────────────────────────────── */
+/* â”€â”€ Differentiators â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const DIFFERENTIATORS = [
   { icon: Globe,     label: "Global Reach",        sub: "Europe & India delivery hubs" },
   { icon: TrendingUp,label: "Proven Process",      sub: "Two decades of refinement" },
@@ -64,7 +64,7 @@ const DIFFERENTIATORS = [
 export default function StaffingConsultingPage() {
   return (
     <div className="w-full">
-      {/* ── Hero ─────────────────────────────────────────────── */}
+      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         badge="STAFFING & CONSULTING"
         title="We are Providing the Best Staff for Clients"
@@ -88,7 +88,7 @@ export default function StaffingConsultingPage() {
         </div>
       </PageHero>
 
-      {/* ── Intro + Differentiators ──────────────────────────── */}
+      {/* â”€â”€ Intro + Differentiators â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#ecdaff] opacity-50 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -139,7 +139,7 @@ export default function StaffingConsultingPage() {
         </div>
       </section>
 
-      {/* ── Stats ────────────────────────────────────────────── */}
+      {/* â”€â”€ Stats â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-14 bg-[#1e0a38] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.04]"
@@ -161,7 +161,7 @@ export default function StaffingConsultingPage() {
         </div>
       </section>
 
-      {/* ── Services Cards ───────────────────────────────────── */}
+      {/* â”€â”€ Services Cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#381f55] opacity-35 blur-[130px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[#6128a6] opacity-15 blur-[110px] pointer-events-none" />
@@ -181,7 +181,7 @@ export default function StaffingConsultingPage() {
                 <span className="text-[#aa3bff]">serve you</span>
               </h2>
               <p className="text-[15px] text-white/50 mt-4 max-w-2xl mx-auto">
-                From placing the right talent to guiding your technology strategy — click any service to explore in depth.
+                From placing the right talent to guiding your technology strategy â€” click any service to explore in depth.
               </p>
             </div>
           </ScrollReveal>
@@ -253,7 +253,7 @@ export default function StaffingConsultingPage() {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────── */}
+      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -298,3 +298,5 @@ export default function StaffingConsultingPage() {
     </div>
   );
 }
+
+

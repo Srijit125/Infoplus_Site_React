@@ -1,4 +1,4 @@
-import { PageHero } from "../components/shared/PageHero";
+﻿import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
   Database,
@@ -16,7 +16,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 
-/* ── Our Solutions ──────────────────────────────────────────── */
+/* â”€â”€ Our Solutions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const SOLUTIONS = [
   { icon: Search, label: "Data Cleaning & Standardization" },
   { icon: Database, label: "Material Master Consultancy" },
@@ -29,7 +29,7 @@ const SOLUTIONS = [
   { icon: CheckCircle2, label: "Consultancy Support" },
 ];
 
-/* ── Core Values ────────────────────────────────────────────── */
+/* â”€â”€ Core Values â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const CORE_VALUES = [
   { icon: Zap, label: "Availability", color: "#f85d37" },
   { icon: TrendingUp, label: "Scalability", color: "#aa3bff" },
@@ -37,7 +37,7 @@ const CORE_VALUES = [
   { icon: Globe, label: "Lucidity", color: "#f85d37" },
 ];
 
-/* ── Detailed Solutions ─────────────────────────────────────── */
+/* â”€â”€ Detailed Solutions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const DETAIL_SOLUTIONS = [
   {
     number: "01",
@@ -56,7 +56,7 @@ const DETAIL_SOLUTIONS = [
   {
     number: "02",
     title: "Material Master Data Governance",
-    body: "Legacy data-cleaning addresses one piece of the master data jigsaw. Master data governance is equally essential. Every organization and ERP implementation is unique, and it is vital that your governance strategy is applicable to your specific business needs. Using our standard and highly configurable workflow software, our team of professionals design, build and implement appropriate master data governance solutions for large manufacturing and asset-intensive organizations. These strategies have a number of parts — standards, processes, software, and resources — that we advise upon and implement alongside your team. The Infoplus MDM approach, grounded in the reality that you have multiple consumers of data, has the long-term firmly in focus and includes data from global to warehouse levels across your entire operational business system and all entities.",
+    body: "Legacy data-cleaning addresses one piece of the master data jigsaw. Master data governance is equally essential. Every organization and ERP implementation is unique, and it is vital that your governance strategy is applicable to your specific business needs. Using our standard and highly configurable workflow software, our team of professionals design, build and implement appropriate master data governance solutions for large manufacturing and asset-intensive organizations. These strategies have a number of parts â€” standards, processes, software, and resources â€” that we advise upon and implement alongside your team. The Infoplus MDM approach, grounded in the reality that you have multiple consumers of data, has the long-term firmly in focus and includes data from global to warehouse levels across your entire operational business system and all entities.",
     highlights: [
       "Consistent, accurate material master data",
       "Approved corporate processes and controls",
@@ -83,7 +83,7 @@ const DETAIL_SOLUTIONS = [
   },
 ];
 
-/* ── Benefits ───────────────────────────────────────────────── */
+/* â”€â”€ Benefits â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const BENEFITS = [
   {
     category: "Data Quality",
@@ -142,11 +142,11 @@ const BENEFITS = [
 export default function MasterDataManagementPage() {
   return (
     <div className="w-full">
-      {/* ── Hero ─────────────────────────────────────────────── */}
+      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         badge="PRODUCTS"
         title="Master Data Management"
-        description="We fulfill the needs of different delivery models — crafting a single version of the truth so your master data achieves the strategic foundational goal of providing accurate, reusable, and seamlessly syndicated information."
+        description="We fulfill the needs of different delivery models â€” crafting a single version of the truth so your master data achieves the strategic foundational goal of providing accurate, reusable, and seamlessly syndicated information."
         variant="gradient"
       >
         <div className="flex flex-wrap justify-center gap-3">
@@ -167,7 +167,7 @@ export default function MasterDataManagementPage() {
         </div>
       </PageHero>
 
-      {/* ── Intro section ────────────────────────────────────── */}
+      {/* â”€â”€ Intro section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#ecdaff] opacity-50 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -238,7 +238,7 @@ export default function MasterDataManagementPage() {
         </div>
       </section>
 
-      {/* ── MDM Overview + Solutions Grid ────────────────────── */}
+      {/* â”€â”€ MDM Overview + Solutions Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         {/* background orbs */}
         <div className="absolute top-0 left-[-10%] w-[500px] h-[500px] rounded-full bg-[#381f55] opacity-40 blur-[120px] pointer-events-none" />
@@ -303,7 +303,7 @@ export default function MasterDataManagementPage() {
         </div>
       </section>
 
-      {/* ── Detailed Solutions (alternating) ─────────────────── */}
+      {/* â”€â”€ Detailed Solutions (alternating) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -404,7 +404,7 @@ export default function MasterDataManagementPage() {
         </div>
       </section>
 
-      {/* ── Benefits ─────────────────────────────────────────── */}
+      {/* â”€â”€ Benefits â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-[-15%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#381f55] opacity-50 blur-[130px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[#6128a6] opacity-20 blur-[100px] pointer-events-none" />
@@ -502,7 +502,7 @@ export default function MasterDataManagementPage() {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────── */}
+      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.04]"
@@ -527,7 +527,7 @@ export default function MasterDataManagementPage() {
               </h2>
               <p className="relative z-10 text-[16px] text-white/65 leading-relaxed mb-10 max-w-2xl mx-auto">
                 Let Infoplus MDM craft a single version of the truth for your
-                enterprise — accurate, consistent, and syndicated across every
+                enterprise â€” accurate, consistent, and syndicated across every
                 business unit and geography.
               </p>
               <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
@@ -539,7 +539,7 @@ export default function MasterDataManagementPage() {
                   <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
                 </a>
                 <a
-                  href="/services/data"
+                  href="/services/new-generation/everything-data"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 text-white font-semibold text-[15px] transition-all duration-200"
                 >
                   Explore Everything Data
@@ -552,3 +552,5 @@ export default function MasterDataManagementPage() {
     </div>
   );
 }
+
+

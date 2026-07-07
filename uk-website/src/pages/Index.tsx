@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+﻿import { Link } from "react-router";
 import { ChevronRight, MapPin, Mail, Phone } from "lucide-react";
 import { ImageWithFallback } from "../components/helpers/ImageWithFallback";
 import imgAboutUs from "../assets/images/Info_Landing_AboutSection.jpg";
@@ -9,14 +9,14 @@ import {
   ourValues,
   services,
 } from "../assets/constants/types";
-// retained for commented-out backup sections — safe to ignore
+// retained for commented-out backup sections â€” safe to ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 // import MultiUsageCard from "../components/cards/MultiUsageCard";
 import IndexBanner from "../components/shared/IndexBanner";
 import ClientCarousel from "../components/ui/ClientCarousel";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 
-/* ── Solution cards — enhanced for Our Work section ── */
+/* â”€â”€ Solution cards â€” enhanced for Our Work section â”€â”€ */
 const EXTRAS = [
   {
     href: "/services/it-services",
@@ -45,7 +45,7 @@ const EXTRAS = [
 ];
 const SOLUTION_CARDS = ourSolutions.map((sol, i) => ({ ...sol, ...EXTRAS[i] }));
 
-/* ── Value card accents (cycles through 3 brand colours) ── */
+/* â”€â”€ Value card accents (cycles through 3 brand colours) â”€â”€ */
 const VALUE_ACCENTS = [
   "#6128a6",
   "#aa3bff",
@@ -56,7 +56,7 @@ const VALUE_ACCENTS = [
   "#6128a6",
 ];
 
-/* ── Office locations ── */
+/* â”€â”€ Office locations â”€â”€ */
 const LOCATIONS = [
   {
     country: "United Kingdom",
@@ -82,10 +82,10 @@ function HomePage() {
       {/* 1. Hero */}
       <IndexBanner />
 
-      {/* ═══════════════════════════════════════════════════════
-          2. About Us — NEW DESIGN
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+          2. About Us â€” NEW DESIGN
           Bento-stack right column: image card + stat tiles + location strip
-      ═══════════════════════════════════════════════════════ */}
+      â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <section className="py-28 bg-white relative overflow-hidden">
         <div className="absolute top-[-10%] left-[-8%] w-[560px] h-[560px] rounded-full bg-[#ecdaff] opacity-55 blur-[130px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[#f8f5ff] opacity-80 blur-[100px] pointer-events-none" />
@@ -119,7 +119,7 @@ function HomePage() {
                 </p>
                 <p className="text-[16px] text-[#555555] leading-[1.75] text-justify">
                   We combine the power of technology with our culture: Quality,
-                  Innovation, and customer empathy — at the forefront of
+                  Innovation, and customer empathy â€” at the forefront of
                   providing a comprehensive portfolio of services for clients'
                   evolving digital strategies.
                 </p>
@@ -218,7 +218,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ═══ OLD ABOUT SECTION — BACKUP — START ═══
+      {/* â•â•â• OLD ABOUT SECTION â€” BACKUP â€” START â•â•â•
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -252,12 +252,12 @@ function HomePage() {
           </div>
         </div>
       </section>
-      ═══ OLD ABOUT SECTION — BACKUP — END ═══ */}
+      â•â•â• OLD ABOUT SECTION â€” BACKUP â€” END â•â•â• */}
 
-      {/* ═══════════════════════════════════════════════════════
-          3. Our Work — NEW DESIGN
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+          3. Our Work â€” NEW DESIGN
           Dark section rides up over the white About section.
-      ═══════════════════════════════════════════════════════ */}
+      â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <section className="py-28 bg-[#0d0517] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-[-15%] right-[-8%] w-[600px] h-[600px] rounded-full bg-[#381f55] opacity-35 blur-[150px] pointer-events-none" />
         <div className="absolute bottom-[-10%] left-[-5%] w-[450px] h-[450px] rounded-full bg-[#6128a6] opacity-12 blur-[120px] pointer-events-none" />
@@ -356,7 +356,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ═══ OLD OUR WORK SECTION — BACKUP — START ═══
+      {/* â•â•â• OLD OUR WORK SECTION â€” BACKUP â€” START â•â•â•
       <section className="py-24 bg-[#f8f5ff]">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
@@ -377,17 +377,17 @@ function HomePage() {
           </div>
         </div>
       </section>
-      ═══ OLD OUR WORK SECTION — BACKUP — END ═══ */}
+      â•â•â• OLD OUR WORK SECTION â€” BACKUP â€” END â•â•â• */}
 
-      {/* ═══════════════════════════════════════════════════════
-          4b. AI Services — CINEMATIC REDESIGN
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+          4b. AI Services â€” CINEMATIC REDESIGN
           Deep dark bg, layered atmospheric lighting, gradient-border
           glass cards, sweep animation, gradient headline
-      ═══════════════════════════════════════════════════════ */}
+      â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <section className="py-32 bg-[#080010] relative overflow-hidden">
-        {/* ── Atmospheric lighting ── */}
+        {/* â”€â”€ Atmospheric lighting â”€â”€ */}
         <div className="absolute inset-0 pointer-events-none select-none">
-          {/* Orange-violet burst — top right */}
+          {/* Orange-violet burst â€” top right */}
           <div
             className="absolute -top-60 -right-40 w-200 h-200 rounded-full blur-[180px] opacity-20 animate-[pulse_7s_ease-in-out_infinite]"
             style={{
@@ -395,7 +395,7 @@ function HomePage() {
                 "radial-gradient(circle, #f85d37 0%, #aa3bff 50%, transparent 75%)",
             }}
           />
-          {/* Deep violet — bottom left */}
+          {/* Deep violet â€” bottom left */}
           <div className="absolute -bottom-60 -left-40 w-175 h-175 rounded-full bg-[#6128a6] blur-[180px] opacity-[0.15] animate-[pulse_9s_ease-in-out_infinite_3s]" />
           {/* Subtle center orb */}
           <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-100 h-100 rounded-full bg-[#aa3bff] blur-[160px] opacity-[0.07] animate-[pulse_11s_ease-in-out_infinite_5s]" />
@@ -413,7 +413,7 @@ function HomePage() {
         </div>
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          {/* ── Cinematic headline ── */}
+          {/* â”€â”€ Cinematic headline â”€â”€ */}
           <ScrollReveal direction="up">
             <div className="text-center mb-16">
               <span className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#f85d37]/25 bg-[#f85d37]/8 text-[#f85d37] text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
@@ -435,11 +435,11 @@ function HomePage() {
             </div>
           </ScrollReveal>
 
-          {/* ── Stats filmstrip ── */}
+          {/* â”€â”€ Stats filmstrip â”€â”€ */}
           <ScrollReveal direction="up" delay={80}>
             <div className="grid grid-cols-3 mb-16 rounded-2xl overflow-hidden border border-white/6">
               {[
-                { value: "4×", label: "Productivity Boost", accent: "#f85d37" },
+                { value: "4Ã—", label: "Productivity Boost", accent: "#f85d37" },
                 { value: "40%", label: "Cost Reduction", accent: "#aa3bff" },
                 { value: "24/7", label: "AI Availability", accent: "#10b981" },
               ].map((s, i) => (
@@ -465,7 +465,7 @@ function HomePage() {
             </div>
           </ScrollReveal>
 
-          {/* ── Service cards — gradient-border glass style ── */}
+          {/* â”€â”€ Service cards â€” gradient-border glass style â”€â”€ */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-16">
             {services.map((svc, i) => {
               const ACCENTS = ["#aa3bff", "#f85d37", "#10b981", "#06b6d4"];
@@ -543,11 +543,11 @@ function HomePage() {
             })}
           </div>
 
-          {/* ── CTAs ── */}
+          {/* â”€â”€ CTAs â”€â”€ */}
           <ScrollReveal direction="up" delay={160}>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
-                to="/services/artificial-intelligence"
+                to="/services/it-services/artificial-intelligence"
                 className="group/btn inline-flex items-center gap-2.5 px-9 py-4 rounded-xl bg-[#f85d37] hover:bg-[#e84d27] text-white font-bold text-[15px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
               >
                 Explore AI Services
@@ -573,11 +573,11 @@ function HomePage() {
         `}</style>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          5. Our Values — NEW DESIGN
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+          5. Our Values â€” NEW DESIGN
           White, rides up over the dark-purple AI section.
           Numbered watermark cards in a 4-col flex-wrap layout.
-      ═══════════════════════════════════════════════════════ */}
+      â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <section className="py-28 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-30">
         <div className="absolute top-[-5%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[#ecdaff] opacity-50 blur-[120px] pointer-events-none" />
         <div
@@ -650,7 +650,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ═══ OLD OUR VALUES SECTION — BACKUP — START ═══
+      {/* â•â•â• OLD OUR VALUES SECTION â€” BACKUP â€” START â•â•â•
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
@@ -668,13 +668,13 @@ function HomePage() {
           </div>
         </div>
       </section>
-      ═══ OLD OUR VALUES SECTION — BACKUP — END ═══ */}
+      â•â•â• OLD OUR VALUES SECTION â€” BACKUP â€” END â•â•â• */}
 
-      {/* ═══════════════════════════════════════════════════════
-          6. Our Industries — NEW DESIGN
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+          6. Our Industries â€” NEW DESIGN
           Dark section rides up over white Values.
           14 industries in a 7-col icon grid.
-      ═══════════════════════════════════════════════════════ */}
+      â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <section className="py-28 bg-[#0d0517] relative overflow-hidden -mt-10 rounded-t-[3rem] z-40">
         <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#381f55] opacity-40 blur-[140px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[#6128a6] opacity-18 blur-[120px] pointer-events-none" />
@@ -697,7 +697,7 @@ function HomePage() {
                 Industries <span className="text-[#aa3bff]">We Serve</span>
               </h2>
               <p className="text-[15px] text-white/45 max-w-xl mx-auto leading-relaxed">
-                From pharmaceuticals to fintech — our expertise spans every
+                From pharmaceuticals to fintech â€” our expertise spans every
                 major vertical.
               </p>
             </div>
@@ -720,7 +720,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ═══ OLD OUR INDUSTRIES SECTION — BACKUP — START ═══
+      {/* â•â•â• OLD OUR INDUSTRIES SECTION â€” BACKUP â€” START â•â•â•
       <section className="py-24 bg-[#6128a6]">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
@@ -738,18 +738,18 @@ function HomePage() {
           </div>
         </div>
       </section>
-      ═══ OLD OUR INDUSTRIES SECTION — BACKUP — END ═══ */}
+      â•â•â• OLD OUR INDUSTRIES SECTION â€” BACKUP â€” END â•â•â• */}
 
-      {/* ──────────────────────────────────────────────
+      {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
           7. Clients carousel (unchanged)
-      ────────────────────────────────────────────── */}
+      â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <ScrollReveal direction="fade">
         <ClientCarousel />
       </ScrollReveal>
 
-      {/* ──────────────────────────────────────────────
+      {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
           8. Global Presence (unchanged)
-      ────────────────────────────────────────────── */}
+      â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
@@ -762,7 +762,7 @@ function HomePage() {
               </h2>
               <p className="text-[16px] text-[#555555] leading-[1.75] max-w-2xl mx-auto">
                 We have a global reach with offices and operations across three
-                countries — delivering world-class technology solutions wherever
+                countries â€” delivering world-class technology solutions wherever
                 our clients need us.
               </p>
             </div>
@@ -779,10 +779,10 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          9. Get in Touch — NEW DESIGN
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+          9. Get in Touch â€” NEW DESIGN
           Light purple bg, premium location cards + polished form.
-      ═══════════════════════════════════════════════════════ */}
+      â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <section className="py-28 bg-[#f8f5ff] relative overflow-hidden">
         <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[#ecdaff] opacity-60 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-[#f8f5ff] opacity-80 blur-[100px] pointer-events-none" />
@@ -808,7 +808,7 @@ function HomePage() {
               </h2>
               <p className="text-[16px] text-[#555555] leading-[1.75] mb-10 text-justify">
                 We'd love to hear from you. Fill out our form or drop us a
-                direct message — we get back within one business day.
+                direct message â€” we get back within one business day.
               </p>
 
               {/* Location cards */}
@@ -942,7 +942,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ═══ OLD GET IN TOUCH SECTION — BACKUP — START ═══
+      {/* â•â•â• OLD GET IN TOUCH SECTION â€” BACKUP â€” START â•â•â•
       <section className="py-24 bg-[#f8f5ff]">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -1001,9 +1001,10 @@ function HomePage() {
           </div>
         </div>
       </section>
-      ═══ OLD GET IN TOUCH SECTION — BACKUP — END ═══ */}
+      â•â•â• OLD GET IN TOUCH SECTION â€” BACKUP â€” END â•â•â• */}
     </div>
   );
 }
 
 export default HomePage;
+

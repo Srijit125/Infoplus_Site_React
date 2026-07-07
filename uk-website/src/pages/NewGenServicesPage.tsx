@@ -1,4 +1,4 @@
-import { PageHero } from "../components/shared/PageHero";
+﻿import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
   Rocket,
@@ -15,21 +15,21 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-/* ── Services ─────────────────────────────────────────────────── */
+/* â”€â”€ Services â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const SERVICES = [
   {
     icon: TrendingUp,
     title: "Enterprise Transformations",
-    href: "/services/transformation",
+    href: "/services/new-generation/enterprise-transformation",
     accent: "#6128a6",
     glow: "rgba(97,40,166,0.22)",
-    desc: "Our Generation Z engineers in the digital transformation team specialise in re-architecting and modernising legacy systems into agile, lean platforms. We guide organisations through every phase — strategy, roadmap, execution, and change management — so transformation is lasting, not just surface-level.",
+    desc: "Our Generation Z engineers in the digital transformation team specialise in re-architecting and modernising legacy systems into agile, lean platforms. We guide organisations through every phase â€” strategy, roadmap, execution, and change management â€” so transformation is lasting, not just surface-level.",
     highlights: ["Legacy Modernisation", "Change Management", "Agile Adoption", "Digital Roadmaps"],
   },
   {
     icon: Database,
     title: "Everything Data",
-    href: "/services/data",
+    href: "/services/new-generation/everything-data",
     accent: "#aa3bff",
     glow: "rgba(170,59,255,0.22)",
     desc: "Using data is NO longer limited to big companies. It is now widely accessible and the primary driver of competitive advantage. Infoplus helps organisations build end-to-end data pipelines, analytics platforms, and governance frameworks that turn raw data into strategic business intelligence at scale.",
@@ -38,7 +38,7 @@ const SERVICES = [
   {
     icon: Cpu,
     title: "Automation",
-    href: "/services/automation",
+    href: "/services/new-generation/automation",
     accent: "#f85d37",
     glow: "rgba(248,93,55,0.22)",
     desc: "Automation is the next critical step in IT maturity, building the bridge between today's operations and tomorrow's intelligent enterprise. Infoplus designs and implements RPA, intelligent process automation, and AI-driven workflow solutions that eliminate manual bottlenecks and free your teams for higher-value work.",
@@ -46,7 +46,7 @@ const SERVICES = [
   },
 ];
 
-/* ── Stats ────────────────────────────────────────────────────── */
+/* â”€â”€ Stats â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const STATS = [
   { value: "3",   label: "New-Gen Service Verticals",   color: "#aa3bff" },
   { value: "CoE", label: "Digital Center of Excellence", color: "#f85d37" },
@@ -54,7 +54,7 @@ const STATS = [
   { value: "0",   label: "Tolerance for Legacy Drag",   color: "#f85d37" },
 ];
 
-/* ── Why next-gen ─────────────────────────────────────────────── */
+/* â”€â”€ Why next-gen â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const WHY_NEXTGEN = [
   { icon: Rocket,    label: "Ahead of the Curve",    sub: "Stay ahead of competitors who delay" },
   { icon: RefreshCw, label: "Legacy to Agile",       sub: "Streamline outdated models into lean" },
@@ -65,7 +65,7 @@ const WHY_NEXTGEN = [
 export default function NewGenServicesPage() {
   return (
     <div className="w-full">
-      {/* ── Hero ─────────────────────────────────────────────── */}
+      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         badge="NEW-GEN SOLUTIONS"
         title="We are Providing the Best Solutions for Clients"
@@ -89,7 +89,7 @@ export default function NewGenServicesPage() {
         </div>
       </PageHero>
 
-      {/* ── Intro + Why New-Gen ──────────────────────────────── */}
+      {/* â”€â”€ Intro + Why New-Gen â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#ecdaff] opacity-50 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -144,7 +144,7 @@ export default function NewGenServicesPage() {
         </div>
       </section>
 
-      {/* ── Stats ────────────────────────────────────────────── */}
+      {/* â”€â”€ Stats â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-14 bg-[#1e0a38] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.04]"
@@ -166,7 +166,7 @@ export default function NewGenServicesPage() {
         </div>
       </section>
 
-      {/* ── Services Cards ───────────────────────────────────── */}
+      {/* â”€â”€ Services Cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#381f55] opacity-35 blur-[130px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[#6128a6] opacity-15 blur-[110px] pointer-events-none" />
@@ -186,7 +186,7 @@ export default function NewGenServicesPage() {
                 <span className="text-[#aa3bff]">next-gen innovation</span>
               </h2>
               <p className="text-[15px] text-white/50 mt-4 max-w-2xl mx-auto">
-                Each service is delivered by our Digital CoE — specialist engineers who live at the intersection of
+                Each service is delivered by our Digital CoE â€” specialist engineers who live at the intersection of
                 strategy and execution. Click any service to explore in depth.
               </p>
             </div>
@@ -259,7 +259,7 @@ export default function NewGenServicesPage() {
         </div>
       </section>
 
-      {/* ── Digital CoE spotlight ────────────────────────────── */}
+      {/* â”€â”€ Digital CoE spotlight â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-[#f8f5ff] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -277,7 +277,7 @@ export default function NewGenServicesPage() {
               {
                 icon: Zap,
                 title: "Speed of Execution",
-                desc: "Transformation-centric methodologies let us move fast without sacrificing quality — agile by design, not just by name.",
+                desc: "Transformation-centric methodologies let us move fast without sacrificing quality â€” agile by design, not just by name.",
                 accent: "#aa3bff",
               },
               {
@@ -304,7 +304,7 @@ export default function NewGenServicesPage() {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────── */}
+      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-[#381f55] opacity-40 blur-[130px] pointer-events-none" />
         <div
@@ -349,3 +349,5 @@ export default function NewGenServicesPage() {
     </div>
   );
 }
+
+
