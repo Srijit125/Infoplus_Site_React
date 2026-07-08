@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Monitor, Activity, Clock, BarChart2, Shield,
@@ -105,6 +106,11 @@ const INFRA_SERVICES: InfraService[] = [
 export default function InfrastructurePage() {
   return (
     <div className="w-full overflow-x-hidden">
+      <PageMeta
+        title="IT Infrastructure Management Services"
+        description="Ensure business continuity with Infoplus Technologies UK's infrastructure management. We provide proactive monitoring, support, and optimisation for your IT environment."
+        path="/services/it-services/infrastructure-management"
+      />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
         title="Infrastructure Management"

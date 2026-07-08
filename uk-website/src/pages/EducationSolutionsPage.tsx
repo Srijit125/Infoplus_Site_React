@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { useState } from "react";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
@@ -215,6 +216,11 @@ export default function EducationSolutionsPage() {
 
   return (
     <div className="w-full">
+      <PageMeta
+        title="Education Technology Solutions"
+        description="Discover Infoplus Technologies UK's education solutions — a comprehensive EdTech platform designed to streamline learning management, student engagement, and institutional efficiency."
+        path="/products/education-solutions"
+      />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
         badge="PRODUCTS"

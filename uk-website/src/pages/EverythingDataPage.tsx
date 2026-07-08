@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   BarChart2,
@@ -117,6 +118,11 @@ const DATA_TOOLS = [
 export default function EverythingDataPage() {
   return (
     <div className="w-full overflow-x-hidden">
+      <PageMeta
+        title="Data Analytics &amp; Management Services"
+        description="Unlock the value of your data with Infoplus Technologies UK. Our data analytics, data management, and business intelligence services help organisations make smarter decisions."
+        path="/services/new-generation/everything-data"
+      />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
         title="Everything Data"

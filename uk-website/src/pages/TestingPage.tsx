@@ -1,4 +1,5 @@
-﻿import { Link } from "react-router-dom";
+﻿import { PageMeta } from "../components/shared/PageMeta";
+import { Link } from "react-router-dom";
 import {
   Globe,
   Zap,
@@ -133,6 +134,11 @@ const WHY_COE = [
 export default function TestingPage() {
   return (
     <div className="w-full overflow-x-hidden">
+      <PageMeta
+        title="Software Testing &amp; QA Services"
+        description="Ensure software quality with Infoplus Technologies UK's testing services. Our QA experts deliver functional, performance, security, and automation testing for reliable software."
+        path="/services/it-services/testing"
+      />
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         title="Testing"

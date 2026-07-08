@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
@@ -229,6 +230,12 @@ const SECTIONS = [
 export default function TermsOfServicePage() {
   return (
     <div className="w-full">
+      <PageMeta
+        title="Terms of Service"
+        description="Read the Infoplus Technologies UK Terms of Service to understand the terms and conditions governing the use of our website and services."
+        path="/terms-of-service"
+        noIndex
+      />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
         badge="LEGAL"

@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { PageHero } from "../components/shared/PageHero";
 import { Database, GraduationCap, CheckCircle2 } from "lucide-react";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
@@ -22,6 +23,11 @@ function ProductsPage() {
 
   return (
     <div className="w-full">
+      <PageMeta
+        title="Products | IT Software Solutions"
+        description="Discover Infoplus Technologies UK's product portfolio including Master Data Management and Education Solutions — purpose-built software for enterprise efficiency and digital transformation."
+        path="/products"
+      />
       <PageHero
         title="Software built for the future"
         description="Transforming dizzying volumes of data into structured, actionable insights with our suite of enterprise products."

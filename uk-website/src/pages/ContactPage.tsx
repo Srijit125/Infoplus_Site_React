@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { useState, useRef } from "react";
 import { PageHero } from "../components/shared/PageHero";
 import {
@@ -92,6 +93,11 @@ export function ContactPage() {
 
   return (
     <div className="w-full">
+      <PageMeta
+        title="Contact Us"
+        description="Get in touch with Infoplus Technologies UK. Whether you need managed IT services, AI solutions, or staffing support, our team is ready to help you achieve your goals."
+        path="/contact"
+      />
       <PageHero
         title="Contact Us"
         description="Keep touch with Us — We'd love to hear from you! Brief us of your requirements below, and let's connect."

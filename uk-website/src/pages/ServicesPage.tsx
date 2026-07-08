@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { PageHero } from "../components/shared/PageHero";
 import { BrainCircuit, Code2, Database, Rocket, Briefcase, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -44,6 +45,11 @@ export function ServicesPage() {
 
   return (
     <div className="w-full">
+      <PageMeta
+        title="IT Services &amp; Technology Solutions"
+        description="Discover Infoplus Technologies UK's comprehensive services: managed IT, AI, cloud, cyber security, SAP consulting, digital transformation, staffing, and consulting solutions."
+        path="/services"
+      />
       <PageHero
         title="Proactively Managed IT Solutions"
         description="We design end-to-end solutions for organizations to have a technology edge and stay ahead of the curve while running operations seamlessly."

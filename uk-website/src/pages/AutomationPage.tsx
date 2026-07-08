@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Target,
@@ -166,6 +167,11 @@ const AUTO_TOOLS = [
 export default function AutomationPage() {
   return (
     <div className="w-full overflow-x-hidden">
+      <PageMeta
+        title="Automation &amp; Intelligent Process Automation"
+        description="Accelerate operational efficiency with Infoplus Technologies UK's automation services. We implement RPA, intelligent process automation, and workflow solutions tailored to your business."
+        path="/services/new-generation/automation"
+      />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
         title="Automation"

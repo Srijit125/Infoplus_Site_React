@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
@@ -104,6 +105,12 @@ export default function CookiePolicyPage() {
 
   return (
     <div className="w-full">
+      <PageMeta
+        title="Cookie Policy"
+        description="Read the Infoplus Technologies UK Cookie Policy to understand how we use cookies and similar technologies on our website to improve your experience."
+        path="/cookie-policy"
+        noIndex
+      />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
         badge="LEGAL"

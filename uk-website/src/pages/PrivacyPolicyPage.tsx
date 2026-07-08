@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
@@ -249,6 +250,12 @@ const SECTIONS = [
 export default function PrivacyPolicyPage() {
   return (
     <div className="w-full">
+      <PageMeta
+        title="Privacy Policy"
+        description="Read the Infoplus Technologies UK Privacy Policy to understand how we collect, use, and protect your personal data in compliance with UK GDPR and data protection regulations."
+        path="/privacy-policy"
+        noIndex
+      />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
         badge="LEGAL"

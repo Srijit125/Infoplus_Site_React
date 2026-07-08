@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { PageHero } from "../components/shared/PageHero";
@@ -82,6 +83,11 @@ function Blog() {
 
   return (
     <div className="w-full">
+      <PageMeta
+        title="IT Insights &amp; Technology Blog"
+        description="Explore the Infoplus Technologies UK blog for expert insights on AI, cloud computing, cyber security, digital transformation, and the latest enterprise IT trends."
+        path="/blog"
+      />
       <PageHero
         title="Insights & Perspectives"
         description="Explore our latest thinking on technology trends, digital transformation, and business strategy."

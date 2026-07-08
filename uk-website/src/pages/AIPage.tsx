@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -174,6 +175,11 @@ export default function AIPage() {
 
   return (
     <div className="w-full">
+      <PageMeta
+        title="Artificial Intelligence Services"
+        description="Harness the power of AI with Infoplus Technologies UK. Our artificial intelligence services deliver intelligent automation, machine learning, and data-driven insights for UK enterprises."
+        path="/services/it-services/artificial-intelligence"
+      />
       {/* ── Hero ──────────────────────────────────────────────── */}
       <PageHero
         title="Turning Data into Business Value"

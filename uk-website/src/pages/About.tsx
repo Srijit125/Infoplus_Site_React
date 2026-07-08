@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { PageHero } from "../components/shared/PageHero";
 import {
   Users, Target, Shield, Globe2,
@@ -57,6 +58,11 @@ function About() {
 
   return (
     <div className="w-full">
+      <PageMeta
+        title="About Infoplus Technologies UK"
+        description="Learn about Infoplus Technologies UK — a global IT company founded in 2006 with offices worldwide, delivering managed IT services, AI, cloud computing, and digital transformation."
+        path="/about"
+      />
 
       {/* ── 1. HERO (EXISTING) ─────────────────────────── */}
       <PageHero

@@ -1,4 +1,5 @@
-﻿import { PageHero } from "../components/shared/PageHero";
+﻿import { PageMeta } from "../components/shared/PageMeta";
+import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
   Database,
@@ -142,6 +143,11 @@ const BENEFITS = [
 export default function MasterDataManagementPage() {
   return (
     <div className="w-full">
+      <PageMeta
+        title="Master Data Management Solutions"
+        description="Streamline your enterprise data with Infoplus Technologies UK's Master Data Management platform. Achieve data accuracy, consistency, and governance across your organisation."
+        path="/products/master-data-management"
+      />
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         badge="PRODUCTS"

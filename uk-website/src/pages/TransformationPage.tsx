@@ -1,4 +1,5 @@
-﻿import { Link } from "react-router-dom";
+﻿import { PageMeta } from "../components/shared/PageMeta";
+import { Link } from "react-router-dom";
 import {
   Settings,
   Users,
@@ -125,6 +126,11 @@ const MATURITY_AREAS = ["Vision", "Culture", "Adoption", "Execution", "Growth"];
 export default function TransformationPage() {
   return (
     <div className="w-full overflow-x-hidden">
+      <PageMeta
+        title="Enterprise Digital Transformation Services"
+        description="Accelerate your digital journey with Infoplus Technologies UK's enterprise transformation services. We help organisations modernise, innovate, and thrive in a digital landscape."
+        path="/services/new-generation/enterprise-transformation"
+      />
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         title="Enterprise Transformation"

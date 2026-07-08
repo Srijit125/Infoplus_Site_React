@@ -1,4 +1,5 @@
-﻿import { Link } from "react-router-dom";
+﻿import { PageMeta } from "../components/shared/PageMeta";
+import { Link } from "react-router-dom";
 import {
   Database,
   BarChart2,
@@ -115,6 +116,11 @@ const DELIVERY_MODELS: DeliveryModel[] = [
 export default function SAPPage() {
   return (
     <div className="w-full overflow-x-hidden">
+      <PageMeta
+        title="SAP Consulting Services"
+        description="Maximise your SAP investment with Infoplus Technologies UK's SAP consulting services. From implementation to support, our experts deliver end-to-end SAP solutions across the UK."
+        path="/services/it-services/sap-consulting"
+      />
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         title="SAP Consulting & Implementation"

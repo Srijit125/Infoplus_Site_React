@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Shield,
@@ -90,6 +91,11 @@ const AI_CAPABILITIES = [
 export default function CyberSecurityPage() {
   return (
     <div className="w-full overflow-x-hidden">
+      <PageMeta
+        title="Cyber Security Services &amp; Solutions"
+        description="Protect your organisation with Infoplus Technologies UK's cyber security services. We provide threat detection, risk management, compliance, and end-to-end security solutions."
+        path="/services/it-services/cyber-security"
+      />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
         title="Cyber Security"

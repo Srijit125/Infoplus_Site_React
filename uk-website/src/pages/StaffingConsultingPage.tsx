@@ -1,4 +1,5 @@
-﻿import { PageHero } from "../components/shared/PageHero";
+﻿import { PageMeta } from "../components/shared/PageMeta";
+import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
   Users,
@@ -64,6 +65,11 @@ const DIFFERENTIATORS = [
 export default function StaffingConsultingPage() {
   return (
     <div className="w-full">
+      <PageMeta
+        title="IT Staffing &amp; Consulting Services"
+        description="Find the right talent and expertise with Infoplus Technologies UK's staffing and consulting services. We place skilled IT professionals for permanent, contract, and umbrella roles."
+        path="/services/staffing-consulting"
+      />
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         badge="STAFFING & CONSULTING"

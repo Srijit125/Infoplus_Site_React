@@ -1,4 +1,5 @@
-﻿import { PageHero } from "../components/shared/PageHero";
+﻿import { PageMeta } from "../components/shared/PageMeta";
+import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
   Code2,
@@ -95,6 +96,11 @@ const STATS = [
 export default function ITServicesPage() {
   return (
     <div className="w-full">
+      <PageMeta
+        title="IT Services | Managed IT Solutions"
+        description="Explore Infoplus Technologies UK's full range of IT services including AI, software development, testing, infrastructure management, SAP consulting, cyber security, and cloud solutions."
+        path="/services/it-services"
+      />
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         badge="IT SERVICES"

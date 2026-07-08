@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { useState, useEffect } from "react";
 import { PageHero } from "../components/shared/PageHero";
 import { Coffee, Heart, Globe, Zap, MapPin, Briefcase, X, ChevronRight, CheckCircle2 } from "lucide-react";
@@ -115,6 +116,11 @@ function CareersPage() {
 
   return (
     <div className="w-full">
+      <PageMeta
+        title="Careers at Infoplus Technologies UK"
+        description="Join Infoplus Technologies UK and build your career in a leading global IT company. Explore opportunities in AI, cloud, cyber security, SAP consulting, and IT staffing."
+        path="/careers"
+      />
 
       {/* ── 1. HERO ───────────────────────────────────── */}
       <PageHero

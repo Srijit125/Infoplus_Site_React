@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { POSTS, CAT_COLORS, CAT_GRADIENT } from "../data/blogPosts";
@@ -48,6 +49,11 @@ export default function BlogDetail() {
 
   return (
     <div className="w-full">
+      <PageMeta
+        title={post.title}
+        description={post.excerpt}
+        path={`/blog/${post.id}`}
+      />
       {/* Article Hero */}
       <section className="bg-[#0d0517] relative overflow-hidden pt-40 pb-16">
         {/* Dot grid */}

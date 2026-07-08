@@ -1,4 +1,5 @@
-﻿import { PageHero } from "../components/shared/PageHero";
+﻿import { PageMeta } from "../components/shared/PageMeta";
+import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
   Rocket,
@@ -65,6 +66,11 @@ const WHY_NEXTGEN = [
 export default function NewGenServicesPage() {
   return (
     <div className="w-full">
+      <PageMeta
+        title="New Generation IT Services"
+        description="Lead your digital future with Infoplus Technologies UK's new generation services — enterprise transformation, data analytics, and intelligent automation for the modern enterprise."
+        path="/services/new-generation"
+      />
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         badge="NEW-GEN SOLUTIONS"

@@ -1,4 +1,5 @@
-﻿import { Link } from "react-router-dom";
+﻿import { PageMeta } from "../components/shared/PageMeta";
+import { Link } from "react-router-dom";
 import {
   Shield, FileText, CheckCircle2, Settings,
   TrendingUp, Zap, Users, Globe, ArrowRight,
@@ -81,6 +82,11 @@ const BENEFITS = [
 export default function UmbrellaPage() {
   return (
     <div className="w-full overflow-x-hidden">
+      <PageMeta
+        title="Umbrella Company Services"
+        description="Simplify your contracting with Infoplus Technologies UK's umbrella company service. We provide compliant, hassle-free payroll and employment solutions for IT contractors across the UK."
+        path="/services/staffing-consulting/umbrella-service"
+      />
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         title="Umbrella Service"

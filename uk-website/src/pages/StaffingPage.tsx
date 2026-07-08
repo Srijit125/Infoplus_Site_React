@@ -1,4 +1,5 @@
-﻿import { Link } from "react-router-dom";
+﻿import { PageMeta } from "../components/shared/PageMeta";
+import { Link } from "react-router-dom";
 import {
   Clock, Zap, Users, Database, Globe,
   FileText, RefreshCcw, UserCheck, Network,
@@ -113,6 +114,11 @@ const APPROACH_STEPS: ApproachStep[] = [
 export default function StaffingPage() {
   return (
     <div className="w-full overflow-x-hidden">
+      <PageMeta
+        title="IT Staffing Solutions"
+        description="Access skilled IT professionals through Infoplus Technologies UK's staffing solutions. We specialise in placing expert talent across AI, cloud, cyber security, SAP, and software development."
+        path="/services/staffing-consulting/it-staffing-solutions"
+      />
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         title="IT Staffing Solutions"

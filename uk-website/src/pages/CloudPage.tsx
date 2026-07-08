@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Cloud,
@@ -99,6 +100,11 @@ const CLOUD_PROVIDERS = [
 export default function CloudPage() {
   return (
     <div className="w-full overflow-x-hidden">
+      <PageMeta
+        title="Cloud Computing Services &amp; Solutions"
+        description="Transform your business with Infoplus Technologies UK's cloud services. We deliver cloud strategy, migration, and management across AWS, Azure, and Google Cloud platforms."
+        path="/services/it-services/cloud-portfolio"
+      />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
         title="Cloud Portfolio"

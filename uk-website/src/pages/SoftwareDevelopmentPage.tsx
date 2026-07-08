@@ -1,4 +1,5 @@
-﻿import { Link } from "react-router-dom";
+﻿import { PageMeta } from "../components/shared/PageMeta";
+import { Link } from "react-router-dom";
 import {
   Globe,
   Smartphone,
@@ -198,6 +199,11 @@ const ENGAGE_STEPS: {
 export default function SoftwareDevelopmentPage() {
   return (
     <div className="w-full overflow-x-hidden">
+      <PageMeta
+        title="Custom Software Development Services"
+        description="Build compelling, scalable software with Infoplus Technologies UK. Our development team delivers bespoke web, mobile, and enterprise applications tailored to your vision and goals."
+        path="/services/it-services/software-development"
+      />
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         title="Software Development"

@@ -9,10 +9,34 @@ import {
   ourValues,
   services,
 } from "../assets/constants/types";
-// retained for commented-out backup sections â€” safe to ignore
+// retained for commented-out backup sections – safe to ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 // import MultiUsageCard from "../components/cards/MultiUsageCard";
 import IndexBanner from "../components/shared/IndexBanner";
+import { PageMeta } from "../components/shared/PageMeta";
+
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.infoplustechnologies.co.uk/#organization",
+      "name": "Infoplus Technologies UK",
+      "url": "https://www.infoplustechnologies.co.uk",
+      "description": "Infoplus Technologies UK provides managed IT services, AI solutions, cloud computing, cyber security, SAP consulting and IT staffing across the United Kingdom.",
+      "address": { "@type": "PostalAddress", "addressCountry": "GB" },
+      "contactPoint": { "@type": "ContactPoint", "contactType": "customer service" },
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.infoplustechnologies.co.uk/#website",
+      "url": "https://www.infoplustechnologies.co.uk",
+      "name": "Infoplus Technologies UK",
+      "publisher": { "@id": "https://www.infoplustechnologies.co.uk/#organization" }
+    }
+  ]
+};
 import ClientCarousel from "../components/ui/ClientCarousel";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 
@@ -79,6 +103,12 @@ const LOCATIONS = [
 function HomePage() {
   return (
     <div className="w-full">
+      <PageMeta
+        title="Managed IT Services &amp; AI Solutions"
+        description="Infoplus Technologies UK delivers expert managed IT services including AI, cloud computing, cyber security, SAP consulting and IT staffing solutions across the United Kingdom."
+        path="/"
+        jsonLd={homeJsonLd}
+      />
       {/* 1. Hero */}
       <IndexBanner />
 

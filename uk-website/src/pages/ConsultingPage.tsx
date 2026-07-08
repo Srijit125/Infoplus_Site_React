@@ -1,3 +1,4 @@
+import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Briefcase,
@@ -127,6 +128,11 @@ const STRATEGY_STEPS: StrategyStep[] = [
 export default function ConsultingPage() {
   return (
     <div className="w-full overflow-x-hidden">
+      <PageMeta
+        title="IT Consulting Solutions"
+        description="Empower your organisation with expert IT consulting from Infoplus Technologies UK. From strategy to implementation, our consultants deliver measurable business outcomes."
+        path="/services/staffing-consulting/it-consulting-solutions"
+      />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
         title="IT Consulting Solutions"
