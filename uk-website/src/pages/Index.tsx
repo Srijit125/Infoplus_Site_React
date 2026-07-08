@@ -41,7 +41,7 @@ const homeJsonLd = {
 import ClientCarousel from "../components/ui/ClientCarousel";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 
-/* â”€â”€ Solution cards â€” enhanced for Our Work section â”€â”€ */
+/* â”€â”€ Solution cards enhanced for Our Work section â”€â”€ */
 const EXTRAS = [
   {
     href: "/services/it-services",
@@ -124,7 +124,7 @@ function HomePage() {
   return (
     <div className="w-full">
       <PageMeta
-        title="Managed IT Services &amp; AI Solutions"
+        title="Managed IT Services & AI Solutions"
         description="Infoplus Technologies UK delivers expert managed IT services including AI, cloud computing, cyber security, SAP consulting and IT staffing solutions across the United Kingdom."
         path="/"
         jsonLd={homeJsonLd}
@@ -133,7 +133,7 @@ function HomePage() {
       <IndexBanner />
 
       {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-          2. About Us â€” NEW DESIGN
+          2. About Us NEW DESIGN
           Bento-stack right column: image card + stat tiles + location strip
       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <section className="py-28 bg-white relative overflow-hidden">
@@ -169,7 +169,7 @@ function HomePage() {
                 </p>
                 <p className="text-[16px] text-[#555555] leading-[1.75] text-justify">
                   We combine the power of technology with our culture: Quality,
-                  Innovation, and customer empathy â€” at the forefront of
+                  Innovation, and customer empathy at the forefront of
                   providing a comprehensive portfolio of services for clients'
                   evolving digital strategies.
                 </p>
@@ -268,7 +268,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* â•â•â• OLD ABOUT SECTION â€” BACKUP â€” START â•â•â•
+      {/* â•â•â• OLD ABOUT SECTION BACKUP START â•â•â•
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -302,10 +302,10 @@ function HomePage() {
           </div>
         </div>
       </section>
-      â•â•â• OLD ABOUT SECTION â€” BACKUP â€” END â•â•â• */}
+      â•â•â• OLD ABOUT SECTION BACKUP END â•â•â• */}
 
       {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-          3. Our Work â€” NEW DESIGN
+          3. Our Work NEW DESIGN
           Dark section rides up over the white About section.
       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <section className="py-28 bg-[#0d0517] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
@@ -406,7 +406,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* â•â•â• OLD OUR WORK SECTION â€” BACKUP â€” START â•â•â•
+      {/* â•â•â• OLD OUR WORK SECTION BACKUP START â•â•â•
       <section className="py-24 bg-[#f8f5ff]">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
@@ -427,17 +427,17 @@ function HomePage() {
           </div>
         </div>
       </section>
-      â•â•â• OLD OUR WORK SECTION â€” BACKUP â€” END â•â•â• */}
+      â•â•â• OLD OUR WORK SECTION BACKUP END â•â•â• */}
 
       {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-          4b. AI Services â€” CINEMATIC REDESIGN
+          4b. AI Services CINEMATIC REDESIGN
           Deep dark bg, layered atmospheric lighting, gradient-border
           glass cards, sweep animation, gradient headline
       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <section className="py-32 bg-[#080010] relative overflow-hidden">
         {/* â”€â”€ Atmospheric lighting â”€â”€ */}
         <div className="absolute inset-0 pointer-events-none select-none">
-          {/* Orange-violet burst â€” top right */}
+          {/* Orange-violet burst top right */}
           <div
             className="absolute -top-60 -right-40 w-200 h-200 rounded-full blur-[180px] opacity-20 animate-[pulse_7s_ease-in-out_infinite]"
             style={{
@@ -445,7 +445,7 @@ function HomePage() {
                 "radial-gradient(circle, #f85d37 0%, #aa3bff 50%, transparent 75%)",
             }}
           />
-          {/* Deep violet â€” bottom left */}
+          {/* Deep violet bottom left */}
           <div className="absolute -bottom-60 -left-40 w-175 h-175 rounded-full bg-[#6128a6] blur-[180px] opacity-[0.15] animate-[pulse_9s_ease-in-out_infinite_3s]" />
           {/* Subtle center orb */}
           <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-100 h-100 rounded-full bg-[#aa3bff] blur-[160px] opacity-[0.07] animate-[pulse_11s_ease-in-out_infinite_5s]" />
@@ -489,7 +489,7 @@ function HomePage() {
           <ScrollReveal direction="up" delay={80}>
             <div className="grid grid-cols-3 mb-16 rounded-2xl overflow-hidden border border-white/6">
               {[
-                { value: "4Ã—", label: "Productivity Boost", accent: "#f85d37" },
+                { value: "4x", label: "Productivity Boost", accent: "#f85d37" },
                 { value: "40%", label: "Cost Reduction", accent: "#aa3bff" },
                 { value: "24/7", label: "AI Availability", accent: "#10b981" },
               ].map((s, i) => (
@@ -515,7 +515,7 @@ function HomePage() {
             </div>
           </ScrollReveal>
 
-          {/* â”€â”€ Service cards â€” gradient-border glass style â”€â”€ */}
+          {/* â”€â”€ Service cards gradient-border glass style â”€â”€ */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-16">
             {services.map((svc, i) => {
               const ACCENTS = ["#aa3bff", "#f85d37", "#10b981", "#06b6d4"];
@@ -624,7 +624,7 @@ function HomePage() {
       </section>
 
       {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-          5. Our Values â€” NEW DESIGN
+          5. Our Values NEW DESIGN
           White, rides up over the dark-purple AI section.
           Numbered watermark cards in a 4-col flex-wrap layout.
       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
@@ -700,7 +700,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* â•â•â• OLD OUR VALUES SECTION â€” BACKUP â€” START â•â•â•
+      {/* â•â•â• OLD OUR VALUES SECTION BACKUP START â•â•â•
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
@@ -718,10 +718,10 @@ function HomePage() {
           </div>
         </div>
       </section>
-      â•â•â• OLD OUR VALUES SECTION â€” BACKUP â€” END â•â•â• */}
+      â•â•â• OLD OUR VALUES SECTION BACKUP END â•â•â• */}
 
       {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-          6. Our Industries â€” NEW DESIGN
+          6. Our Industries NEW DESIGN
           Dark section rides up over white Values.
           14 industries in a 7-col icon grid.
       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
@@ -747,7 +747,7 @@ function HomePage() {
                 Industries <span className="text-[#aa3bff]">We Serve</span>
               </h2>
               <p className="text-[15px] text-white/45 max-w-xl mx-auto leading-relaxed">
-                From pharmaceuticals to fintech â€” our expertise spans every
+                From pharmaceuticals to fintech our expertise spans every
                 major vertical.
               </p>
             </div>
@@ -770,7 +770,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* â•â•â• OLD OUR INDUSTRIES SECTION â€” BACKUP â€” START â•â•â•
+      {/* â•â•â• OLD OUR INDUSTRIES SECTION BACKUP START â•â•â•
       <section className="py-24 bg-[#6128a6]">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
@@ -788,7 +788,7 @@ function HomePage() {
           </div>
         </div>
       </section>
-      â•â•â• OLD OUR INDUSTRIES SECTION â€” BACKUP â€” END â•â•â• */}
+      â•â•â• OLD OUR INDUSTRIES SECTION BACKUP END â•â•â• */}
 
       {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
           7. Clients carousel (unchanged)
@@ -812,7 +812,7 @@ function HomePage() {
               </h2>
               <p className="text-[16px] text-[#555555] leading-[1.75] max-w-2xl mx-auto">
                 We have a global reach with offices and operations across three
-                countries — delivering world-class technology solutions wherever
+                countries delivering world-class technology solutions wherever
                 our clients need us.
               </p>
             </div>
@@ -830,7 +830,7 @@ function HomePage() {
       </section>
 
       {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-          9. Get in Touch â€” NEW DESIGN
+          9. Get in Touch NEW DESIGN
           Light purple bg, premium location cards + polished form.
       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <section className="py-28 bg-[#f8f5ff] relative overflow-hidden">
@@ -858,7 +858,7 @@ function HomePage() {
               </h2>
               <p className="text-[16px] text-[#555555] leading-[1.75] mb-10 text-justify">
                 We'd love to hear from you. Fill out our form or drop us a
-                direct message â€” we get back within one business day.
+                direct message we get back within one business day.
               </p>
 
               {/* Location cards */}
@@ -1013,7 +1013,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* â•â•â• OLD GET IN TOUCH SECTION â€” BACKUP â€” START â•â•â•
+      {/* â•â•â• OLD GET IN TOUCH SECTION BACKUP START â•â•â•
       <section className="py-24 bg-[#f8f5ff]">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -1072,7 +1072,7 @@ function HomePage() {
           </div>
         </div>
       </section>
-      â•â•â• OLD GET IN TOUCH SECTION â€” BACKUP â€” END â•â•â• */}
+      â•â•â• OLD GET IN TOUCH SECTION BACKUP END â•â•â• */}
     </div>
   );
 }

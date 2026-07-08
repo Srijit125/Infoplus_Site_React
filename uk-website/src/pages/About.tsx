@@ -6,6 +6,7 @@ import {
   CheckCircle2, ArrowRight, Eye,
 } from "lucide-react";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
+import imgAboutHero from "../assets/images/about us hero.webp";
 
 function About() {
   /* ── Existing data (kept) ─────────────────────────── */
@@ -60,7 +61,7 @@ function About() {
     <div className="w-full">
       <PageMeta
         title="About Infoplus Technologies UK"
-        description="Learn about Infoplus Technologies UK — a global IT company founded in 2006 with offices worldwide, delivering managed IT services, AI, cloud computing, and digital transformation."
+        description="Learn about Infoplus Technologies UK a global IT company founded in 2006 with offices worldwide, delivering managed IT services, AI, cloud computing, and digital transformation."
         path="/about"
       />
 
@@ -70,7 +71,7 @@ function About() {
         description="Infoplus Technologies UK Ltd is a forward-looking Information technology company focused on building products, services, staffing, consulting, and digital transformation."
         badge="ABOUT US"
         variant="split"
-        image="https://images.unsplash.com/photo-1758518731468-98e90ffd7430?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDb3Jwb3JhdGUlMjBUZWFtJTIwTW9kZXJufGVufDF8fHx8MTc4MTUyNzMxNHww&ixlib=rb-4.1.0&q=80&w=1080"
+        image={imgAboutHero}
       >
         <div className="grid grid-cols-2 gap-8 mt-12">
           {stats.map((stat, i) => (
@@ -135,7 +136,7 @@ function About() {
                 {/* Accent blockquote */}
                 <div className="mt-8 pl-5 border-l-4 border-[#aa3bff] bg-[#f8f5ff] rounded-r-2xl py-4 pr-6">
                   <p className="text-[15px] text-[#381f55] font-semibold leading-relaxed italic">
-                    "Combining the power of technology with Quality, Innovation, and customer empathy — at the forefront of the evolving digital world."
+                    "Combining the power of technology with Quality, Innovation, and customer empathy at the forefront of the evolving digital world."
                   </p>
                 </div>
               </div>
@@ -252,7 +253,7 @@ function About() {
         </div>
       </section>
 
-      {/* ── 5. CULTURE & VISION CARDS (EXISTING — kept) ── */}
+      {/* ── 5. CULTURE & VISION CARDS (EXISTING kept) ── */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
 

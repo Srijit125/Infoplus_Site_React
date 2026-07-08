@@ -192,7 +192,7 @@ const ENGAGE_STEPS: {
     icon: Code2,
     step: "03",
     title: "Free Prototype",
-    desc: "We develop a prototype for your solution without any cost â€” so you can validate the concept and experience our quality before making a commitment.",
+    desc: "We develop a prototype for your solution without any cost so you can validate the concept and experience our quality before making a commitment.",
   },
 ];
 

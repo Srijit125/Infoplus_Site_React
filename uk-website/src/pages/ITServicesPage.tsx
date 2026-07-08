@@ -26,7 +26,7 @@ const SERVICES = [
     accent: "#6128a6",
     glow: "rgba(97,40,166,0.22)",
     tag: "IT Services",
-    desc: "Our development teams are based in Europe and India to fulfil the needs of different delivery models. We design, develop, and deploy innovative, customised business-critical software systems â€” web, mobile, AR&VR, and IoT solutions that make technology a true asset to your business.",
+    desc: "Our development teams are based in Europe and India to fulfil the needs of different delivery models. We design, develop, and deploy innovative, customised business-critical software systems web, mobile, AR&VR, and IoT solutions that make technology a true asset to your business.",
   },
   {
     icon: FlaskConical,
@@ -35,7 +35,7 @@ const SERVICES = [
     accent: "#aa3bff",
     glow: "rgba(170,59,255,0.22)",
     tag: "IT Services",
-    desc: "Infoplus Testing Center of Excellence believes that quality isn't just checking for defects â€” it is preventing them. Our structured test methodologies cover functional, performance, security, and automation testing to ensure your product launches flawlessly.",
+    desc: "Infoplus Testing Center of Excellence believes that quality isn't just checking for defects it is preventing them. Our structured test methodologies cover functional, performance, security, and automation testing to ensure your product launches flawlessly.",
   },
   {
     icon: Server,
@@ -53,7 +53,7 @@ const SERVICES = [
     accent: "#aa3bff",
     glow: "rgba(170,59,255,0.22)",
     tag: "IT Services",
-    desc: "Our SAP Consulting and Implementation approach at Infoplus clearly focuses on delivering business value. We cover the full SAP landscape â€” ERP, BI, S/4HANA â€” providing design, build, and rollout services tailored to your industry and delivery model.",
+    desc: "Our SAP Consulting and Implementation approach at Infoplus clearly focuses on delivering business value. We cover the full SAP landscape ERP, BI, S/4HANA providing design, build, and rollout services tailored to your industry and delivery model.",
   },
   {
     icon: ShieldCheck,
@@ -62,7 +62,7 @@ const SERVICES = [
     accent: "#f85d37",
     glow: "rgba(248,93,55,0.22)",
     tag: "IT Services",
-    desc: "Infoplus cyber security services include a Security Operations Centre, vulnerability scanning, penetration testing, compliance management, and incident response â€” providing end-to-end protection so your organisation stays resilient against evolving threats.",
+    desc: "Infoplus cyber security services include a Security Operations Centre, vulnerability scanning, penetration testing, compliance management, and incident response providing end-to-end protection so your organisation stays resilient against evolving threats.",
   },
   {
     icon: Cloud,
@@ -105,7 +105,7 @@ export default function ITServicesPage() {
       <PageHero
         badge="IT SERVICES"
         title="We are Providing the Best Services for Clients"
-        description="Supporting IT is not just enough â€” it must be strategically led and proactively managed. Our forward-thinking IT CoE team designs end-to-end solutions so organisations gain a technology edge and stay ahead of the curve."
+        description="Supporting IT is not just enough it must be strategically led and proactively managed. Our forward-thinking IT CoE team designs end-to-end solutions so organisations gain a technology edge and stay ahead of the curve."
         variant="gradient"
       >
         <div className="flex flex-wrap justify-center gap-3">
@@ -143,14 +143,14 @@ export default function ITServicesPage() {
                 </h2>
                 <p className="text-[15px] text-[#0d0517]/65 leading-relaxed mb-5 text-justify">
                   In order for a business to strive and to meet its planned objectives, supporting IT is not just
-                  enough â€” it must be strategically led and proactively managed. Our forward-thinking IT service
+                  enough it must be strategically led and proactively managed. Our forward-thinking IT service
                   CoE (Center of Excellence) team has been designing end-to-end solutions for organisations to
                   have a technology edge and to be ahead of the curve while running their operations seriously,
                   thus making their infrastructure highly available.
                 </p>
                 <p className="text-[15px] text-[#0d0517]/65 leading-relaxed text-justify">
                   Infoplus Technologies has carefully structured different business verticals to cater to the
-                  needs of every IT service requirement at any time â€” from software development and AI to
+                  needs of every IT service requirement at any time from software development and AI to
                   infrastructure management and cyber security.
                 </p>
               </div>
@@ -177,7 +177,7 @@ export default function ITServicesPage() {
                     </p>
                     <div className="mt-5 h-px bg-linear-to-r from-[#6128a6]/60 via-[#aa3bff]/40 to-transparent" />
                     <p className="mt-3 text-[12px] text-white/40 font-semibold uppercase tracking-widest">
-                      â€” Infoplus Technologies IT CoE
+                      Infoplus Technologies IT CoE
                     </p>
                   </div>
                 </div>
@@ -252,12 +252,12 @@ export default function ITServicesPage() {
                 <span className="text-[#aa3bff]">IT excellence</span>
               </h2>
               <p className="text-[15px] text-white/50 mt-4 max-w-2xl mx-auto">
-                Each vertical is purpose-built and CoE-backed â€” click any service to explore the full offering.
+                Each vertical is purpose-built and CoE-backed click any service to explore the full offering.
               </p>
             </div>
           </ScrollReveal>
 
-          {/* Flex wrap â€” 7 cards auto-centre the last item */}
+          {/* Flex wrap 7 cards auto-centre the last item */}
           <div className="flex flex-wrap justify-center gap-6">
             {SERVICES.map((svc, i) => (
               <ScrollReveal

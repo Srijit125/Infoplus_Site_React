@@ -45,7 +45,7 @@ const INFRA_SERVICES: InfraService[] = [
     icon: Activity,
     gradient: "from-[#1e3a8a] to-[#3b82f6]",
     title: "Application Monitoring & Management",
-    desc: "End-to-end visibility into application health, performance metrics, and availability — ensuring your apps run at peak efficiency.",
+    desc: "End-to-end visibility into application health, performance metrics, and availability ensuring your apps run at peak efficiency.",
   },
   {
     icon: Clock,
@@ -80,7 +80,7 @@ const INFRA_SERVICES: InfraService[] = [
   {
     icon: Layers,
     gradient: "from-[#381f55] to-[#6128a6]",
-    title: "SIAM — System Integration & Asset Management",
+    title: "SIAM System Integration & Asset Management",
     desc: "Centralised governance of multi-vendor service relationships and complete visibility over your technology asset inventory.",
   },
   {
@@ -99,7 +99,7 @@ const INFRA_SERVICES: InfraService[] = [
     icon: Server,
     gradient: "from-[#9a2600] to-[#f85d37]",
     title: "Data Center Migrations",
-    desc: "End-to-end migration planning and execution — from on-premises to cloud or hybrid environments — with minimal disruption to operations.",
+    desc: "End-to-end migration planning and execution from on-premises to cloud or hybrid environments with minimal disruption to operations.",
   },
 ];
 
@@ -145,7 +145,7 @@ export default function InfrastructurePage() {
 
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
-            {/* Text — 3 cols */}
+            {/* Text 3 cols */}
             <div className="lg:col-span-3">
               <ScrollReveal direction="left" duration={700}>
                 <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
@@ -170,7 +170,7 @@ export default function InfrastructurePage() {
               </ScrollReveal>
             </div>
 
-            {/* Stats card — 2 cols */}
+            {/* Stats card 2 cols */}
             <div className="lg:col-span-2">
               <ScrollReveal direction="right" duration={700} delay={150}>
                 <div className="bg-[#0d0517] rounded-3xl p-8 relative overflow-hidden">
@@ -246,7 +246,7 @@ export default function InfrastructurePage() {
         </div>
       </section>
 
-      {/* ── Our Services — Cinematic alternating cards ─────────── */}
+      {/* ── Our Services Cinematic alternating cards ─────────── */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
         <div className="absolute top-20 right-0 w-80 h-80 rounded-full bg-[#ecdaff]/60 blur-[100px] pointer-events-none" />
 
@@ -264,7 +264,7 @@ export default function InfrastructurePage() {
             </div>
           </ScrollReveal>
 
-          {/* Two-column service layout — cinematic reveal */}
+          {/* Two-column service layout cinematic reveal */}
           <div className="space-y-4">
             {INFRA_SERVICES.map(({ icon: SIcon, gradient, title, desc }, i) => {
               const isEven = i % 2 === 0;
@@ -322,7 +322,7 @@ export default function InfrastructurePage() {
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
                   Let Infoplus handle your IT infrastructure so you can focus on what matters most
-                  — growing your business. Our teams are available around the clock.
+                  growing your business. Our teams are available around the clock.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
                   <Link

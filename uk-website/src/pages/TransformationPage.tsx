@@ -63,7 +63,7 @@ const GOALS: Goal[] = [
     icon: Network,
     gradient: "from-[#78350f] to-[#f59e0b]",
     title: "Launch New Value Networks & Ecosystems",
-    desc: "Extend reach by participating in â€” and leading â€” digital ecosystems that create new opportunities, partnerships, and revenue streams.",
+    desc: "Extend reach by participating in and leading digital ecosystems that create new opportunities, partnerships, and revenue streams.",
   },
 ];
 
@@ -189,14 +189,14 @@ export default function TransformationPage() {
               <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
                 Our Generation Z engineers in the digital transformation team
                 strongly believe that for today's enterprise, adapting to the
-                latest technologies is not enough â€” it's about using "digital"
+                latest technologies is not enough it's about using "digital"
                 across the entire organisation. We enable digital across the
                 world by integrating Information, Process, Work, and People.
               </p>
               <p className="text-[15.5px] text-[#555] leading-[1.85]">
                 It is a known fact that transformations are hard, and digital
                 ones are even harder. But we have carefully devised 20 success
-                factors to make Digital Transformations successful â€” for the
+                factors to make Digital Transformations successful for the
                 first time and every time.
               </p>
             </ScrollReveal>
@@ -299,7 +299,7 @@ export default function TransformationPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Top 5 Goals â€” Cinematic numbered cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â”€â”€ Top 5 Goals Cinematic numbered cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
         <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-[#ecdaff]/60 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -356,7 +356,7 @@ export default function TransformationPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Strategy â€” 6-Step Vertical Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â”€â”€ Strategy 6-Step Vertical Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-5xl relative z-10">
@@ -376,7 +376,7 @@ export default function TransformationPage() {
                 </h2>
                 <p className="text-[15.5px] text-[#555] leading-[1.85]">
                   A proven six-step approach to make your digital transformation
-                  successful â€” from initial assessment through to validated,
+                  successful from initial assessment through to validated,
                   scalable execution.
                 </p>
                 <div className="mt-8 flex items-center gap-2 text-[13px] font-semibold text-[#6128a6]">
@@ -442,7 +442,7 @@ export default function TransformationPage() {
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
                   Partner with Infoplus Technologies UK Ltd to drive a
-                  successful digital transformation â€” guided by 20 proven
+                  successful digital transformation guided by 20 proven
                   success factors and our Generation Z engineers.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">

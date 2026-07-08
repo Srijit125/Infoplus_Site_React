@@ -29,21 +29,21 @@ const PRODUCT_TYPES = [
   {
     icon: BookOpen,
     title: "Content Products",
-    desc: "We are open to change and maintaining flexibility — rich multimedia content built for every technical student and professional.",
+    desc: "We are open to change and maintaining flexibility rich multimedia content built for every technical student and professional.",
     color: "#6128a6",
     glow: "rgba(97,40,166,0.25)",
   },
   {
     icon: MessageSquare,
     title: "Q & A Products",
-    desc: "We value our people, encourage their development and reward their performance — targeted Q&A tools built around exam success.",
+    desc: "We value our people, encourage their development and reward their performance targeted Q&A tools built around exam success.",
     color: "#aa3bff",
     glow: "rgba(170,59,255,0.25)",
   },
   {
     icon: Layers,
     title: "Learning Objects",
-    desc: "We put quality first to deliver WOW services — modular, reusable learning objects designed for deeper conceptual understanding.",
+    desc: "We put quality first to deliver WOW services modular, reusable learning objects designed for deeper conceptual understanding.",
     color: "#f85d37",
     glow: "rgba(248,93,55,0.25)",
   },
@@ -81,13 +81,13 @@ const APPROACH_STEPS = [
 const MODEL_QUADRANTS = [
   {
     label: "Two Quadrant Approach",
-    desc: "Concepts & Fundamentals (Indian method) paired with Products & Applications (Western method) — two complementary halves of deep engineering mastery.",
+    desc: "Concepts & Fundamentals (Indian method) paired with Products & Applications (Western method) two complementary halves of deep engineering mastery.",
     quads: ["Concepts", "Fundamentals", "Products", "Applications"],
     accent: "#6128a6",
   },
   {
     label: "Four Quadrant Approach",
-    desc: "An extended model integrating Theory, Practice, Demonstration, and Assessment — all four pillars necessary for a complete engineering education journey.",
+    desc: "An extended model integrating Theory, Practice, Demonstration, and Assessment all four pillars necessary for a complete engineering education journey.",
     quads: ["Theory", "Practice", "Demonstration", "Assessment"],
     accent: "#aa3bff",
   },
@@ -112,7 +112,7 @@ const DEPTH_METHODS = [
     num: "02",
     title: "Demonstration Hub (D-Hub)",
     subtitle: "200+ 3D/2D Demonstrations",
-    desc: "The D-Hub in the Home panel provides a collection of all the 3D/2D demonstrations arranged topic-wise. It is a single-point access for all visual demonstrations available for the subject — approximately 200+ per subject.",
+    desc: "The D-Hub in the Home panel provides a collection of all the 3D/2D demonstrations arranged topic-wise. It is a single-point access for all visual demonstrations available for the subject approximately 200+ per subject.",
     features: [
       "All demos arranged topic-wise in one place",
       "3D and 2D visual formats",
@@ -187,8 +187,8 @@ const BENEFIT_GROUPS = [
       "Best practices by experienced teachers for conducting class",
       "Better quality of material available for explanation",
       "Standardization of course content with flexibility",
-      "Time to complete course is reduced — more time for tutorials",
-      "Less blackboard writing — more time for problem-solving",
+      "Time to complete course is reduced more time for tutorials",
+      "Less blackboard writing more time for problem-solving",
       "Discussing university examination papers made easier",
       "Fast-tracks development of effective and efficient teachers",
     ],
@@ -205,8 +205,8 @@ const BENEFIT_GROUPS = [
       "Complements lack of adequate infrastructure with equipment models",
       "Pleasantly compels completion of syllabus within duration",
       "Improved attendance across institutions",
-      "Classroom content standardization — including remote locations",
-      "3D/2D visuals annotated in simple English — language-independent",
+      "Classroom content standardization including remote locations",
+      "3D/2D visuals annotated in simple English language-independent",
     ],
   },
 ];
@@ -218,14 +218,14 @@ export default function EducationSolutionsPage() {
     <div className="w-full">
       <PageMeta
         title="Education Technology Solutions"
-        description="Discover Infoplus Technologies UK's education solutions — a comprehensive EdTech platform designed to streamline learning management, student engagement, and institutional efficiency."
+        description="Discover Infoplus Technologies UK's education solutions a comprehensive EdTech platform designed to streamline learning management, student engagement, and institutional efficiency."
         path="/products/education-solutions"
       />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
         badge="PRODUCTS"
         title="Education Solutions"
-        description="One-step learning solution for every technical student and professional. Learnengg is proud to be part of the NEAT initiative by MHRD & AICTE — bringing the best technological products in education on a single platform for the convenience of learners."
+        description="One-step learning solution for every technical student and professional. Learnengg is proud to be part of the NEAT initiative by MHRD & AICTE bringing the best technological products in education on a single platform for the convenience of learners."
         variant="gradient"
       >
         <div className="flex flex-wrap justify-center gap-3">
@@ -261,7 +261,7 @@ export default function EducationSolutionsPage() {
               <p className="text-[16px] text-[#0d0517]/60 mt-4 max-w-3xl mx-auto">
                 Technology Products using Artificial Intelligence for customized
                 learning or e-content in niche areas having highly employable
-                skills — identified and showcased on the NEAT portal.
+                skills identified and showcased on the NEAT portal.
               </p>
             </div>
           </ScrollReveal>
@@ -327,7 +327,7 @@ export default function EducationSolutionsPage() {
                   </span>
                 </h2>
                 <p className="text-[16px] text-white/60 leading-relaxed mb-10">
-                  Learning can happen anywhere — both online and offline — with
+                  Learning can happen anywhere both online and offline with
                   our Content Product and Important Question & Answers on any
                   device, featuring enhanced navigation and faster streaming for
                   any-time learning.
@@ -387,7 +387,7 @@ export default function EducationSolutionsPage() {
                       <span className="text-[#f85d37] font-bold">
                         NEAT Initiative
                       </span>{" "}
-                      — MHRD & AICTE certified platform
+                      MHRD & AICTE certified platform
                     </p>
                   </div>
                 </div>
@@ -846,7 +846,7 @@ export default function EducationSolutionsPage() {
               </h2>
               <p className="relative z-10 text-[16px] text-white/65 leading-relaxed mb-10 max-w-2xl mx-auto">
                 Join the NEAT initiative and bring AI-powered, multimedia-rich
-                engineering education to your institution — available online and
+                engineering education to your institution available online and
                 offline, on every device.
               </p>
               <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center">

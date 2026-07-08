@@ -100,7 +100,7 @@ export function ContactPage() {
       />
       <PageHero
         title="Contact Us"
-        description="Keep touch with Us — We'd love to hear from you! Brief us of your requirements below, and let's connect."
+        description="Keep touch with Us We'd love to hear from you! Brief us of your requirements below, and let's connect."
         badge="GET IN TOUCH"
         variant="centered"
       />

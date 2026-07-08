@@ -90,7 +90,7 @@ const SVC: AIService[] = [
     title: "AI Agentic Operations",
     shortDesc: "Empower your business with AI agents that perform tasks, analyze data, and support decisions automatically.",
     tagline: "The Future of Business Operations Powered by AI Agents",
-    desc: "AI Agentic Operations represent the next stage of enterprise automation where intelligent systems perform tasks, make decisions, and coordinate workflows with minimal human intervention. Infoplus helps organizations implement AI agents that analyze information, trigger processes, and support operational efficiency across departments — continuously learning and improving over time.",
+    desc: "AI Agentic Operations represent the next stage of enterprise automation where intelligent systems perform tasks, make decisions, and coordinate workflows with minimal human intervention. Infoplus helps organizations implement AI agents that analyze information, trigger processes, and support operational efficiency across departments continuously learning and improving over time.",
     items: ["Autonomous Workflows", "AI Decision-Making", "Multi-Agent Systems", "Self-Learning Processes", "Process Orchestration", "AIOps", "Human-AI Collaboration", "Resource Allocation"],
     why: "Infoplus combines enterprise system expertise with advanced AI development capabilities to deliver reliable AI agent solutions aligned with business goals, ensuring smooth integration and strong security practices.",
     featureTitle: "Autonomous AI Agents",
@@ -136,7 +136,7 @@ const SVC: AIService[] = [
     icon: FileSearch,
     gradient: "from-[#1e293b] to-[#475569]",
     title: "AI Document Analysis",
-    shortDesc: "Automate document processing — extract, classify, and analyze large volumes with AI precision.",
+    shortDesc: "Automate document processing extract, classify, and analyze large volumes with AI precision.",
     tagline: "Automate Document Processing with AI Precision",
     desc: "Organisations generate and manage large volumes of documents every day, including contracts, reports, invoices, and operational records. Infoplus provides AI Document Analysis solutions that help businesses extract valuable insights from these documents quickly and accurately. Our AI systems automatically read, classify, and analyze documents across different formats, continuously improving accuracy over time through adaptive learning models.",
     items: ["Intelligent Capture", "OCR Technology", "Data Extraction", "Document Classification", "Invoice Processing", "Contract Analysis", "Compliance Processing", "Fraud Detection"],
@@ -229,7 +229,7 @@ export default function AIPage() {
               <h2 className="text-[36px] font-bold text-[#111] mt-2">Our AI Services</h2>
             </div>
             <p className="text-[16px] text-[#555] text-center max-w-3xl mx-auto mb-14 leading-relaxed">
-              The successful implementation of AI is not just about the technology — it is about the
+              The successful implementation of AI is not just about the technology it is about the
               strategy, the infrastructure, and the experts who can deliver the power of data as a
               significant business outcome.
             </p>

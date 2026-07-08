@@ -35,7 +35,7 @@ const TOWERS: Tower[] = [
     accentColor: "#6128a6",
     number: "01",
     title: "Enterprise Consulting",
-    desc: "We help enterprises store, manage, and access critical data online efficiently — letting stakeholders access insights from any browser, on any device, at any time.",
+    desc: "We help enterprises store, manage, and access critical data online efficiently letting stakeholders access insights from any browser, on any device, at any time.",
     tags: [
       "Enterprise Architecture",
       "Digital Strategy",
@@ -80,7 +80,7 @@ const TOWERS: Tower[] = [
     accentColor: "#f59e0b",
     number: "04",
     title: "Technology Consulting",
-    desc: "Deep-dive technical consulting across the full infrastructure and data stack — from storage and backup to enterprise platforms and cutting-edge technologies.",
+    desc: "Deep-dive technical consulting across the full infrastructure and data stack from storage and backup to enterprise platforms and cutting-edge technologies.",
     tags: [
       "Storage",
       "Backup",
@@ -114,7 +114,7 @@ const STRATEGY_STEPS: StrategyStep[] = [
   {
     step: "03",
     title: "Introduction with the Right Talent",
-    desc: "The directors identify the right experts for your business needs within 48 hours and introduce them to you — no delays, no guesswork.",
+    desc: "The directors identify the right experts for your business needs within 48 hours and introduce them to you no delays, no guesswork.",
     highlight: "Within 48 hours",
   },
   {
@@ -223,7 +223,7 @@ export default function ConsultingPage() {
         </div>
       </section>
 
-      {/* ── 4 Sub-Towers — Cinematic alternating ─────────────── */}
+      {/* ── 4 Sub-Towers Cinematic alternating ─────────────── */}
       <section className="py-20 bg-[#f8f5ff] relative overflow-hidden">
         <div className="absolute top-20 right-0 w-80 h-80 rounded-full bg-[#ecdaff]/60 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -314,7 +314,7 @@ export default function ConsultingPage() {
         </div>
       </section>
 
-      {/* ── Strategy — 4-Step Numbered Timeline ──────────────── */}
+      {/* ── Strategy 4-Step Numbered Timeline ──────────────── */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-5xl relative z-10">
           <ScrollReveal direction="fade">
@@ -397,7 +397,7 @@ export default function ConsultingPage() {
                   On Demand.
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
-                  From enterprise strategy to deep technical delivery — Infoplus
+                  From enterprise strategy to deep technical delivery Infoplus
                   Technologies connects you with the right experts in 48 hours.
                   Pay only if satisfied.
                 </p>

@@ -135,7 +135,7 @@ export default function TestingPage() {
   return (
     <div className="w-full overflow-x-hidden">
       <PageMeta
-        title="Software Testing &amp; QA Services"
+        title="Software Testing & QA Services"
         description="Ensure software quality with Infoplus Technologies UK's testing services. Our QA experts deliver functional, performance, security, and automation testing for reliable software."
         path="/services/it-services/testing"
       />
@@ -184,7 +184,7 @@ export default function TestingPage() {
               Infoplus Testing Center of Excellence believes the following, and
               the team ensures that it practises these tenets every time. As
               offerings, Infoplus delivers testing services across different
-              types of testing â€” built on a foundation of precision, automation,
+              types of testing built on a foundation of precision, automation,
               and an unwavering commitment to quality.
             </p>
           </ScrollReveal>
@@ -294,7 +294,7 @@ export default function TestingPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Strategy â€” Cinematic Vertical Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â”€â”€ Strategy Cinematic Vertical Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
 
@@ -432,7 +432,7 @@ export default function TestingPage() {
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
                   Partner with Infoplus Testing CoE to ensure your software
-                  meets the highest quality standards â€” on time and within
+                  meets the highest quality standards on time and within
                   budget.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">

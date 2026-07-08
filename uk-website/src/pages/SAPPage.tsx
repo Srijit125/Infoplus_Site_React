@@ -191,7 +191,7 @@ export default function SAPPage() {
               </h2>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
                 Our SAP Consulting and Implementation approach at Infoplus
-                clears many reservations and myths â€” such as SAP is only for big
+                clears many reservations and myths such as SAP is only for big
                 organisations or SAP is expensive. Many small, medium, and large
                 organisations have experienced clear benefits through our
                 customised SAP solutions.
@@ -253,7 +253,7 @@ export default function SAPPage() {
             <ScrollReveal direction="left" duration={700}>
               <div className="lg:sticky lg:top-[120px]">
                 <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
-                  01 â€” ERP Suite
+                  01 ERP Suite
                 </span>
                 <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                   SAP All-in-One
@@ -296,14 +296,14 @@ export default function SAPPage() {
         </div>
       </section>
 
-      {/* â”€â”€ SAP Implementations â€” Horizontal Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â”€â”€ SAP Implementations Horizontal Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-16">
               <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
-                02 â€” Implementations
+                02 Implementations
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-3">
                 SAP Implementations
@@ -487,7 +487,7 @@ export default function SAPPage() {
                   satisfy the diverse needs of end-users, IT professionals, and
                   senior management. It brings together a powerful business
                   intelligence infrastructure, comprehensive tools, planning and
-                  simulation capabilities, and data-warehousing functionality â€”
+                  simulation capabilities, and data-warehousing functionality 
                   delivered through enterprise portal technology.
                 </p>
                 <p className="text-[15.5px] text-[#555] leading-[1.85]">
@@ -614,7 +614,7 @@ export default function SAPPage() {
                   Optimise Your Business with SAP
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
-                  Partner with Infoplus Technologies UK Ltd â€” your trusted SAP
+                  Partner with Infoplus Technologies UK Ltd your trusted SAP
                   partner with 20+ years of proven expertise and 500+ certified
                   consultants ready to serve you.
                 </p>

@@ -56,7 +56,7 @@ const CYBER_SERVICES: CyberService[] = [
     gradient: "from-[#0f766e] to-[#14b8a6]",
     accentColor: "#5eead4",
     title: "Vulnerability Remediation",
-    desc: "We work with you to identify and fix only security vulnerabilities in your infrastructure, applications, and networks — prioritised by risk severity and business impact.",
+    desc: "We work with you to identify and fix only security vulnerabilities in your infrastructure, applications, and networks prioritised by risk severity and business impact.",
     features: [
       "Vulnerability scanning",
       "Risk-based prioritisation",
@@ -92,7 +92,7 @@ export default function CyberSecurityPage() {
   return (
     <div className="w-full overflow-x-hidden">
       <PageMeta
-        title="Cyber Security Services &amp; Solutions"
+        title="Cyber Security Services & Solutions"
         description="Protect your organisation with Infoplus Technologies UK's cyber security services. We provide threat detection, risk management, compliance, and end-to-end security solutions."
         path="/services/it-services/cyber-security"
       />
@@ -151,7 +151,7 @@ export default function CyberSecurityPage() {
                 Our dedicated security teams have proven expertise in
                 cryptography, malware, and software exploits. One standout
                 value-add we provide is applying AI and Machine Learning
-                technologies to get insights from human behaviour — helping
+                technologies to get insights from human behaviour helping
                 industry-leading organisations provide secure access while
                 improving employee value-proposition.
               </p>
@@ -207,7 +207,7 @@ export default function CyberSecurityPage() {
         </div>
       </section>
 
-      {/* ── 4 Core Security Services — Cinematic Cards ───────── */}
+      {/* ── 4 Core Security Services Cinematic Cards ───────── */}
       <section className="py-20 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#6128a6]/15 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#f85d37]/8 blur-[100px] pointer-events-none" />
@@ -350,7 +350,7 @@ export default function CyberSecurityPage() {
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
                   Partner with Infoplus Cyber Security to build a resilient,
                   proactive security posture. Our expert team is ready to
-                  protect your organisation — round the clock.
+                  protect your organisation round the clock.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
                   <Link

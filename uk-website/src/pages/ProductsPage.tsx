@@ -25,7 +25,7 @@ function ProductsPage() {
     <div className="w-full">
       <PageMeta
         title="Products | IT Software Solutions"
-        description="Discover Infoplus Technologies UK's product portfolio including Master Data Management and Education Solutions — purpose-built software for enterprise efficiency and digital transformation."
+        description="Discover Infoplus Technologies UK's product portfolio including Master Data Management and Education Solutions purpose-built software for enterprise efficiency and digital transformation."
         path="/products"
       />
       <PageHero

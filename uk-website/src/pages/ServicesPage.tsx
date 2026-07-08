@@ -46,7 +46,7 @@ export function ServicesPage() {
   return (
     <div className="w-full">
       <PageMeta
-        title="IT Services &amp; Technology Solutions"
+        title="IT Services & Technology Solutions"
         description="Discover Infoplus Technologies UK's comprehensive services: managed IT, AI, cloud, cyber security, SAP consulting, digital transformation, staffing, and consulting solutions."
         path="/services"
       />

@@ -36,7 +36,7 @@ export function Header() {
     >
       <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between gap-4">
 
-        {/* Logo — wrapper fixes layout height so header bar stays unchanged */}
+        {/* Logo wrapper fixes layout height so header bar stays unchanged */}
         <NavLink to="/" className="flex items-center shrink-0">
           <div className="h-14 flex items-center overflow-visible">
             <ImageWithFallback
@@ -97,7 +97,7 @@ export function Header() {
                 </NavLink>
               )}
 
-              {/* Invisible hover bridge — prevents gap closing the menu */}
+              {/* Invisible hover bridge prevents gap closing the menu */}
               {item.megaMenu && (
                 <div className="absolute top-full left-0 h-4 w-full" />
               )}

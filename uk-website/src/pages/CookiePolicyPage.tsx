@@ -249,7 +249,7 @@ export default function CookiePolicyPage() {
                 <span className="text-[#aa3bff]">use</span>
               </h2>
               <p className="text-[15px] text-white/50 mt-4 max-w-2xl mx-auto">
-                We deploy four distinct categories of cookies — only strictly necessary cookies are
+                We deploy four distinct categories of cookies only strictly necessary cookies are
                 always active; the remaining categories can be controlled through your preferences.
               </p>
             </div>

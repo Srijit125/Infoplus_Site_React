@@ -23,7 +23,7 @@ const SERVICES = [
     href: "/services/staffing-consulting/it-staffing-solutions",
     accent: "#6128a6",
     glow: "rgba(97,40,166,0.22)",
-    desc: "With more than two decades of operation, Infoplus Technologies has grown into an internationally recognised staffing service provider. Through a clear vision and a customised plan, our engineering teams provide cutting-edge staffing services to all IT companies â€” from industry giants to mid-sized and unicorn firms.",
+    desc: "With more than two decades of operation, Infoplus Technologies has grown into an internationally recognised staffing service provider. Through a clear vision and a customised plan, our engineering teams provide cutting-edge staffing services to all IT companies from industry giants to mid-sized and unicorn firms.",
     highlights: ["Contract Staffing", "Contract-to-Hire", "Permanent Placement", "Partnership Models"],
   },
   {
@@ -66,7 +66,7 @@ export default function StaffingConsultingPage() {
   return (
     <div className="w-full">
       <PageMeta
-        title="IT Staffing &amp; Consulting Services"
+        title="IT Staffing & Consulting Services"
         description="Find the right talent and expertise with Infoplus Technologies UK's staffing and consulting services. We place skilled IT professionals for permanent, contract, and umbrella roles."
         path="/services/staffing-consulting"
       />
@@ -187,7 +187,7 @@ export default function StaffingConsultingPage() {
                 <span className="text-[#aa3bff]">serve you</span>
               </h2>
               <p className="text-[15px] text-white/50 mt-4 max-w-2xl mx-auto">
-                From placing the right talent to guiding your technology strategy â€” click any service to explore in depth.
+                From placing the right talent to guiding your technology strategy click any service to explore in depth.
               </p>
             </div>
           </ScrollReveal>

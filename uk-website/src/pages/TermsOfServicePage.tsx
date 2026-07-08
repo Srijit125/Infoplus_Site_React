@@ -75,7 +75,7 @@ const SECTIONS = [
     intro:
       "Infoplus Technologies Ltd provides a comprehensive suite of information technology services. Specific scope, deliverables, timelines, and commercial terms for each engagement are defined in individual contracts or Statements of Work (SOW).",
     bullets: [
-      "Software Development — web, mobile, AR&VR, and IoT solutions",
+      "Software Development web, mobile, AR&VR, and IoT solutions",
       "Artificial Intelligence & Machine Learning solutions",
       "Testing & Quality Assurance services",
       "Infrastructure Management & Cloud Portfolio",
@@ -93,7 +93,7 @@ const SECTIONS = [
     title: "Intellectual Property Rights",
     accent: "#6128a6",
     intro:
-      "All content on this website — including text, graphics, logos, icons, images, and software — is the exclusive property of Infoplus Technologies Ltd or its content suppliers, protected by applicable copyright, trademark, and intellectual property laws.",
+      "All content on this website including text, graphics, logos, icons, images, and software is the exclusive property of Infoplus Technologies Ltd or its content suppliers, protected by applicable copyright, trademark, and intellectual property laws.",
     bullets: [
       "You may not reproduce or distribute content without prior written permission",
       "Client deliverables are governed by IP provisions in the relevant contract",
@@ -170,7 +170,7 @@ const SECTIONS = [
       "Our total aggregate liability shall not exceed fees paid in the preceding 12 months",
       "We do not guarantee uninterrupted or completely error-free service",
       "We are not responsible for third-party products, services, or linked websites",
-      "Force majeure events — including pandemics and natural disasters — are excluded",
+      "Force majeure events including pandemics and natural disasters are excluded",
     ],
     highlight:
       "Nothing in these terms excludes liability for death or personal injury caused by our negligence, or for fraud or fraudulent misrepresentation.",

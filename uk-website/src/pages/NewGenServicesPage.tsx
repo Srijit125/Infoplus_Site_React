@@ -24,7 +24,7 @@ const SERVICES = [
     href: "/services/new-generation/enterprise-transformation",
     accent: "#6128a6",
     glow: "rgba(97,40,166,0.22)",
-    desc: "Our Generation Z engineers in the digital transformation team specialise in re-architecting and modernising legacy systems into agile, lean platforms. We guide organisations through every phase â€” strategy, roadmap, execution, and change management â€” so transformation is lasting, not just surface-level.",
+    desc: "Our Generation Z engineers in the digital transformation team specialise in re-architecting and modernising legacy systems into agile, lean platforms. We guide organisations through every phase strategy, roadmap, execution, and change management so transformation is lasting, not just surface-level.",
     highlights: ["Legacy Modernisation", "Change Management", "Agile Adoption", "Digital Roadmaps"],
   },
   {
@@ -68,7 +68,7 @@ export default function NewGenServicesPage() {
     <div className="w-full">
       <PageMeta
         title="New Generation IT Services"
-        description="Lead your digital future with Infoplus Technologies UK's new generation services — enterprise transformation, data analytics, and intelligent automation for the modern enterprise."
+        description="Lead your digital future with Infoplus Technologies UK's new generation services enterprise transformation, data analytics, and intelligent automation for the modern enterprise."
         path="/services/new-generation"
       />
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
@@ -192,7 +192,7 @@ export default function NewGenServicesPage() {
                 <span className="text-[#aa3bff]">next-gen innovation</span>
               </h2>
               <p className="text-[15px] text-white/50 mt-4 max-w-2xl mx-auto">
-                Each service is delivered by our Digital CoE â€” specialist engineers who live at the intersection of
+                Each service is delivered by our Digital CoE specialist engineers who live at the intersection of
                 strategy and execution. Click any service to explore in depth.
               </p>
             </div>
@@ -283,7 +283,7 @@ export default function NewGenServicesPage() {
               {
                 icon: Zap,
                 title: "Speed of Execution",
-                desc: "Transformation-centric methodologies let us move fast without sacrificing quality â€” agile by design, not just by name.",
+                desc: "Transformation-centric methodologies let us move fast without sacrificing quality agile by design, not just by name.",
                 accent: "#aa3bff",
               },
               {

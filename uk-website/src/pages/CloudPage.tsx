@@ -30,14 +30,14 @@ const CLOUD_SERVICES: CloudService[] = [
     gradient: "from-[#381f55] to-[#6128a6]",
     tag: "SaaS",
     title: "Software-as-a-Service",
-    desc: "Our SaaS solutions help you store data online efficiently and let you access it from a browser on any device — no installation, no maintenance, no upfront infrastructure cost.",
+    desc: "Our SaaS solutions help you store data online efficiently and let you access it from a browser on any device no installation, no maintenance, no upfront infrastructure cost.",
   },
   {
     icon: Server,
     gradient: "from-[#1e3a8a] to-[#3b82f6]",
     tag: "IaaS",
     title: "Infrastructure-as-a-Service",
-    desc: "Cost-optimised solutions that powerfully virtualise your entire computing infrastructure and successfully manage it over the Internet — on demand, at scale.",
+    desc: "Cost-optimised solutions that powerfully virtualise your entire computing infrastructure and successfully manage it over the Internet on demand, at scale.",
   },
   {
     icon: Layers,
@@ -51,7 +51,7 @@ const CLOUD_SERVICES: CloudService[] = [
     gradient: "from-[#4c1d95] to-[#7c3aed]",
     tag: "Analytics",
     title: "Big Data Analytics Solutions",
-    desc: "Your big data will be stored on the right cloud platform and Infoplus Analytics solutions process that data effectively — turning raw information into actionable business insights.",
+    desc: "Your big data will be stored on the right cloud platform and Infoplus Analytics solutions process that data effectively turning raw information into actionable business insights.",
   },
   {
     icon: Settings,
@@ -65,7 +65,7 @@ const CLOUD_SERVICES: CloudService[] = [
     gradient: "from-[#9a2600] to-[#f85d37]",
     tag: "Security",
     title: "Data Governance & Cyber Security",
-    desc: "Increase your data security to protect sensitive data from cyber threats and ensure compliance with data governance frameworks — across all cloud environments.",
+    desc: "Increase your data security to protect sensitive data from cyber threats and ensure compliance with data governance frameworks across all cloud environments.",
   },
 ];
 
@@ -101,7 +101,7 @@ export default function CloudPage() {
   return (
     <div className="w-full overflow-x-hidden">
       <PageMeta
-        title="Cloud Computing Services &amp; Solutions"
+        title="Cloud Computing Services & Solutions"
         description="Transform your business with Infoplus Technologies UK's cloud services. We deliver cloud strategy, migration, and management across AWS, Azure, and Google Cloud platforms."
         path="/services/it-services/cloud-portfolio"
       />
@@ -217,7 +217,7 @@ export default function CloudPage() {
         </div>
       </section>
 
-      {/* ── 6 Cloud Service Cards — Cinematic grid ───────────── */}
+      {/* ── 6 Cloud Service Cards Cinematic grid ───────────── */}
       <section className="py-20 bg-[#f8f5ff]">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="fade">
@@ -229,7 +229,7 @@ export default function CloudPage() {
                 Our Cloud Services
               </h2>
               <p className="text-[16px] text-[#555] max-w-2xl mx-auto mt-4 leading-relaxed">
-                A complete cloud portfolio spanning all delivery models —
+                A complete cloud portfolio spanning all delivery models 
                 delivered with agility, security, and deep subject matter
                 expertise.
               </p>
@@ -277,7 +277,7 @@ export default function CloudPage() {
         </div>
       </section>
 
-      {/* ── Our Solutions — Cinematic dark list ──────────────── */}
+      {/* ── Our Solutions Cinematic dark list ──────────────── */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#6128a6]/20 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#f85d37]/10 blur-[100px] pointer-events-none" />

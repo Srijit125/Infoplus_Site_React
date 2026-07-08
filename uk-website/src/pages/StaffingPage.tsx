@@ -55,7 +55,7 @@ const STAFFING_MODELS: StaffingModel[] = [
     accentColor: "#5eead4",
     tag: "Model 03",
     title: "Permanent Placement",
-    desc: "It is inevitable that every organisation will need to increase staff for new business or replace an employee due to reorg or restructuring. Infoplus comes handy here â€” a business relationship manager with strong technical talent works with the client on an end-to-end process.",
+    desc: "It is inevitable that every organisation will need to increase staff for new business or replace an employee due to reorg or restructuring. Infoplus comes handy here a business relationship manager with strong technical talent works with the client on an end-to-end process.",
   },
   {
     icon: Network,
@@ -190,7 +190,7 @@ export default function StaffingPage() {
                 We add value to our clients' staffing requirements, coming from different business
                 spectrums. We have different engagement models tailored for every business and
                 industry need. These engagements are clearly documented and adhered to through
-                Master Service Agreements (MSA) â€” highly customisable based on client needs.
+                Master Service Agreements (MSA) highly customisable based on client needs.
               </p>
             </ScrollReveal>
 
@@ -221,7 +221,7 @@ export default function StaffingPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Staffing Models â€” Cinematic Cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â”€â”€ Staffing Models Cinematic Cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#6128a6]/15 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#f85d37]/8 blur-[100px] pointer-events-none" />
@@ -352,7 +352,7 @@ export default function StaffingPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Our Approach â€” Cinematic Flow â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â”€â”€ Our Approach Cinematic Flow â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-5xl relative z-10">
@@ -363,7 +363,7 @@ export default function StaffingPage() {
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-2">Our Approach</h2>
               <p className="text-[15px] text-[#555] max-w-2xl mx-auto mt-4 leading-relaxed">
-                Our simple and effective staffing strategy is not just about hiring employees â€”
+                Our simple and effective staffing strategy is not just about hiring employees 
                 it's about making the best staffing choices to address the core business needs of
                 our clients.
               </p>
@@ -426,7 +426,7 @@ export default function StaffingPage() {
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
                   Partner with Infoplus Technologies UK Ltd for your IT staffing needs. With 100K+
-                  profiles, 10 global offices, and 1-day deployment â€” we're ready when you are.
+                  profiles, 10 global offices, and 1-day deployment we're ready when you are.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
                   <Link

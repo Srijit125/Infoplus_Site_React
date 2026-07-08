@@ -39,7 +39,7 @@ const OUTCOMES = [
     gradient: "from-[#381f55] to-[#6128a6]",
     accentColor: "#aa3bff",
     title: "Highly Resilient Systems",
-    desc: "Our solutions make IT systems highly resilient by detecting, avoiding, healing, and remediating any deviations from normal, healthy business function — before users are ever impacted.",
+    desc: "Our solutions make IT systems highly resilient by detecting, avoiding, healing, and remediating any deviations from normal, healthy business function before users are ever impacted.",
     bullets: [
       "Proactive anomaly detection",
       "Self-healing remediation",
@@ -52,7 +52,7 @@ const OUTCOMES = [
     gradient: "from-[#9a2600] to-[#f85d37]",
     accentColor: "#f85d37",
     title: "Experimentation Platforms",
-    desc: "They also make a platform for efficient experimentation so that businesses can react faster to failures and successes — and pivot accordingly without excess wasted resources.",
+    desc: "They also make a platform for efficient experimentation so that businesses can react faster to failures and successes and pivot accordingly without excess wasted resources.",
     bullets: [
       "Rapid iteration cycles",
       "Failure-safe testing environments",
@@ -68,7 +68,7 @@ const PILLARS: Pillar[] = [
     gradient: "from-[#381f55] to-[#6128a6]",
     num: "01",
     title: "Recommend Level of Automation",
-    desc: "Assess and recommend the right degree of automation for each business process — balancing investment, risk, and business value delivered.",
+    desc: "Assess and recommend the right degree of automation for each business process balancing investment, risk, and business value delivered.",
   },
   {
     icon: Search,
@@ -103,7 +103,7 @@ const AUTO_SERVICES: AutoService[] = [
   {
     icon: Server,
     gradient: "from-[#1e3a8a] to-[#3b82f6]",
-    title: "IT Automation — Load Balancing & Auto-Scaling",
+    title: "IT Automation Load Balancing & Auto-Scaling",
     desc: "Intelligent resource orchestration that automatically adjusts infrastructure capacity in real time to match demand.",
   },
   {
@@ -122,7 +122,7 @@ const AUTO_SERVICES: AutoService[] = [
     icon: Cpu,
     gradient: "from-[#78350f] to-[#f59e0b]",
     title: "Robotic Process Automation (RPA)",
-    desc: "Software bots that replicate repetitive human tasks across applications — freeing your workforce for higher-value work.",
+    desc: "Software bots that replicate repetitive human tasks across applications freeing your workforce for higher-value work.",
   },
   {
     icon: Layers,
@@ -168,7 +168,7 @@ export default function AutomationPage() {
   return (
     <div className="w-full overflow-x-hidden">
       <PageMeta
-        title="Automation &amp; Intelligent Process Automation"
+        title="Automation & Intelligent Process Automation"
         description="Accelerate operational efficiency with Infoplus Technologies UK's automation services. We implement RPA, intelligent process automation, and workflow solutions tailored to your business."
         path="/services/new-generation/automation"
       />
@@ -245,7 +245,7 @@ export default function AutomationPage() {
                   </p>
                   <p className="text-[13px] text-white/45 leading-relaxed mb-6">
                     Every automation roadmap starts with 10 key looming
-                    questions — from "where to start?" to "what's the winning
+                    questions from "where to start?" to "what's the winning
                     recipe for success?" We've derived our strategy from these.
                   </p>
                   <div className="flex items-center gap-4 mb-5">
@@ -287,7 +287,7 @@ export default function AutomationPage() {
         </div>
       </section>
 
-      {/* ── Two Outcomes — Split Cinematic Cards ─────────────── */}
+      {/* ── Two Outcomes Split Cinematic Cards ─────────────── */}
       <section className="py-20 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#6128a6]/20 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#f85d37]/10 blur-[100px] pointer-events-none" />
@@ -462,7 +462,7 @@ export default function AutomationPage() {
         </div>
       </section>
 
-      {/* ── Benefits + Tools — Dark section ───────────────────── */}
+      {/* ── Benefits + Tools Dark section ───────────────────── */}
       <section className="py-20 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#6128a6]/15 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#f85d37]/8 blur-[100px] pointer-events-none" />

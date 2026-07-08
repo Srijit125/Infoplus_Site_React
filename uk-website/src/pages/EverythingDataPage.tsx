@@ -93,7 +93,7 @@ const DATA_SERVICES: DataService[] = [
     icon: Target,
     gradient: "from-[#78350f] to-[#f59e0b]",
     title: "Business Problem Definition",
-    desc: "What business problems to solve — helping you choose the right data problem to focus on.",
+    desc: "What business problems to solve helping you choose the right data problem to focus on.",
     details:
       "We work with your leadership team to identify and frame the right problems before investing in solutions.",
   },
@@ -119,7 +119,7 @@ export default function EverythingDataPage() {
   return (
     <div className="w-full overflow-x-hidden">
       <PageMeta
-        title="Data Analytics &amp; Management Services"
+        title="Data Analytics & Management Services"
         description="Unlock the value of your data with Infoplus Technologies UK. Our data analytics, data management, and business intelligence services help organisations make smarter decisions."
         path="/services/new-generation/everything-data"
       />
@@ -252,7 +252,7 @@ export default function EverythingDataPage() {
         </div>
       </section>
 
-      {/* ── 8-Step Process — Cinematic horizontal pills ─────── */}
+      {/* ── 8-Step Process Cinematic horizontal pills ─────── */}
       <section className="py-20 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#6128a6]/15 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#f85d37]/8 blur-[100px] pointer-events-none" />
@@ -433,7 +433,7 @@ export default function EverythingDataPage() {
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">
                   Partner with Infoplus Technologies UK Ltd to build a robust
-                  data strategy that drives real business outcomes — from
+                  data strategy that drives real business outcomes from
                   quality standards to live analytics.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">

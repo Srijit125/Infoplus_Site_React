@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ImageWithFallback } from "../helpers/ImageWithFallback";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import imgAiRobot from "../../assets/images/imgAiRobot.png";
+import "./hero-animations.css";
 
 interface Slide {
   titlePart1: string;
@@ -47,7 +48,7 @@ const SLIDES: Slide[] = [
     titlePart1:  "Cyber ",
     titleHL:     "Security",
     titlePart2:  "Services",
-    description: "Shield your organisation with end-to-end cyber protection — Security Operations Centre, vulnerability management, penetration testing, and 24/7 incident response.",
+    description: "Shield your organisation with end-to-end cyber protection Security Operations Centre, vulnerability management, penetration testing, and 24/7 incident response.",
     bg:      "linear-gradient(135deg, #0a0000 0%, #180000 25%, #2e0808 60%, #200505 100%)",
     orb1: "#ef4444", orb2: "#b91c1c", orb3: "#f97316",
     accent: "#ef4444", sh1: "#fca5a5", sh2: "#fb923c",
@@ -78,7 +79,7 @@ const SLIDES: Slide[] = [
     titlePart1:  "Staffing & ",
     titleHL:     "Consulting",
     titlePart2:  "Solutions",
-    description: "Connect with pre-vetted IT professionals who deliver from day one — permanent placements, contract roles, umbrella services, and specialist consulting for every engagement.",
+    description: "Connect with pre-vetted IT professionals who deliver from day one permanent placements, contract roles, umbrella services, and specialist consulting for every engagement.",
     bg:      "linear-gradient(135deg, #001a0f 0%, #002a18 25%, #003d28 60%, #002e1e 100%)",
     orb1: "#10b981", orb2: "#059669", orb3: "#34d399",
     accent: "#10b981", sh1: "#6ee7b7", sh2: "#34d399",
@@ -264,14 +265,14 @@ function IndexBanner() {
       if (toIdx === active || transitioning.current) return;
       transitioning.current = true;
 
-      // Phase 1 — exit current + fire flash
+      // Phase 1 exit current + fire flash
       setExitingIdx(active);
       setFlashKey((k) => k + 1);
       prevIdxRef.current = active;
 
       if (exitTimer.current) clearTimeout(exitTimer.current);
       exitTimer.current = setTimeout(() => {
-        // Phase 2 — swap & enter
+        // Phase 2 swap & enter
         setActive(toIdx);
         setBgKey((k) => k + 1);
         setEnterKey((k) => k + 1);
@@ -300,236 +301,6 @@ function IndexBanner() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* ── CSS ── */}
-      <style>{`
-        /* ── Ambient orbs ── */
-        @keyframes orb1 {
-          0%,100% { transform: translate(0px,   0px) scale(1);    }
-          33%      { transform: translate(50px, -70px) scale(1.12); }
-          66%      { transform: translate(-35px, 45px) scale(0.9);  }
-        }
-        @keyframes orb2 {
-          0%,100% { transform: translate(0px,    0px) scale(1);    }
-          40%      { transform: translate(-60px,  35px) scale(1.18); }
-          70%      { transform: translate( 40px, -55px) scale(0.85); }
-        }
-        @keyframes orb3 {
-          0%,100% { transform: translate(0px,  0px) scale(1);    }
-          50%      { transform: translate(25px, 25px) scale(1.06); }
-        }
-
-        /* ── Looping effects ── */
-        @keyframes float {
-          0%,100% { transform: translateY(0px);   }
-          50%      { transform: translateY(-22px); }
-        }
-        @keyframes pulseRing {
-          0%,100% { transform: scale(1);    opacity: 0.25; }
-          50%      { transform: scale(1.1); opacity: 0.08; }
-        }
-        @keyframes rotateSlow {
-          from { transform: rotate(0deg);   }
-          to   { transform: rotate(360deg); }
-        }
-        @keyframes shimmer {
-          0%   { background-position: -200% center; }
-          100% { background-position:  200% center; }
-        }
-        @keyframes dotPulse {
-          0%,100% { opacity: 0.05; }
-          50%      { opacity: 0.12; }
-        }
-
-        /* ── Background cinematic transition ── */
-        @keyframes bgZoomIn {
-          0%   { opacity: 0; transform: scale(1.10); }
-          100% { opacity: 1; transform: scale(1);    }
-        }
-        @keyframes bgZoomOut {
-          0%   { opacity: 1; transform: scale(1);    filter: blur(0px); }
-          100% { opacity: 0; transform: scale(0.92); filter: blur(4px); }
-        }
-
-        /* ── Cinematic light sweep ── */
-        @keyframes lightSweep {
-          0%   { transform: translateX(-160%) skewX(-22deg); opacity: 1;   }
-          100% { transform: translateX(320%)  skewX(-22deg); opacity: 0.1; }
-        }
-
-        /* ── Content exit (old slide flies up + blurs) ── */
-        @keyframes contentExit {
-          0%   { opacity: 1; transform: translateY(0px)   scale(1);    filter: blur(0px); }
-          100% { opacity: 0; transform: translateY(-48px) scale(0.95); filter: blur(8px); }
-        }
-
-        /* ── Content enter (spring curve: overshoot then settle) ── */
-        @keyframes cinematicIn {
-          0%   { opacity: 0; transform: translateY(68px)  scale(0.93); filter: blur(10px); }
-          40%  {             filter: blur(0px); }
-          74%  {             transform: translateY(-5px)  scale(1.005); }
-          100% { opacity: 1; transform: translateY(0px)   scale(1);    filter: blur(0px); }
-        }
-
-        /* ── Image cinematic enter (slide + spring) ── */
-        @keyframes imgCinema {
-          0%   { opacity: 0; transform: translateX(55px) scale(0.84); filter: blur(8px); }
-          50%  { filter: blur(0px); }
-          76%  { transform: translateX(-7px) scale(1.03); }
-          100% { opacity: 1; transform: translateX(0px)  scale(1);   filter: blur(0px); }
-        }
-
-        /* ── Staggered content enter classes ── */
-        .hero-cin-1 { animation: cinematicIn 0.72s cubic-bezier(0.16,1,0.3,1) 0.00s both; }
-        .hero-cin-2 { animation: cinematicIn 0.72s cubic-bezier(0.16,1,0.3,1) 0.08s both; }
-        .hero-cin-3 { animation: cinematicIn 0.72s cubic-bezier(0.16,1,0.3,1) 0.16s both; }
-        .hero-cin-4 { animation: cinematicIn 0.72s cubic-bezier(0.16,1,0.3,1) 0.24s both; }
-        .hero-cin-5 { animation: cinematicIn 0.72s cubic-bezier(0.16,1,0.3,1) 0.32s both; }
-        .hero-cin-6 { animation: cinematicIn 0.72s cubic-bezier(0.16,1,0.3,1) 0.40s both; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        /*
-        ════════════════════════════════════════════════════════════════
-        ANIMATION OPTION BACKUPS — swap in by replacing the active
-        keyframes above with any block below.
-        ════════════════════════════════════════════════════════════════
-
-        ── OPTION A: Kinetic Spring (CURRENTLY ACTIVE) ──────────────
-        bgZoomIn / bgZoomOut  +  lightSweep  +  contentExit  +  cinematicIn  +  imgCinema
-        (keyframes already defined above — this is the active option)
-
-        ── OPTION B: Film Rail ──────────────────────────────────────
-        Replace bgZoomIn with bgSlideIn, bgZoomOut with bgSlideOut.
-        Replace contentExit with contentExitLeft, cinematicIn with contentEnterRight.
-        Replace imgCinema with imgRail.
-        Remove lightSweep flash overlay from JSX.
-
-        @keyframes bgSlideIn {
-          0%   { opacity: 0; transform: translateX(40px); }
-          100% { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes bgSlideOut {
-          0%   { opacity: 1; transform: translateX(0); }
-          100% { opacity: 0; transform: translateX(-40px); }
-        }
-        @keyframes contentExitLeft {
-          0%   { opacity: 1; transform: translateX(0); }
-          100% { opacity: 0; transform: translateX(-50px); }
-        }
-        @keyframes contentEnterRight {
-          0%   { opacity: 0; transform: translateX(50px); }
-          100% { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes imgRail {
-          0%   { opacity: 0; transform: translateX(60px); }
-          100% { opacity: 1; transform: translateX(0); }
-        }
-        .hero-cin-1 { animation: contentEnterRight 0.56s cubic-bezier(0.25,0.46,0.45,0.94) 0.00s both; }
-        .hero-cin-2 { animation: contentEnterRight 0.56s cubic-bezier(0.25,0.46,0.45,0.94) 0.07s both; }
-        .hero-cin-3 { animation: contentEnterRight 0.56s cubic-bezier(0.25,0.46,0.45,0.94) 0.14s both; }
-        .hero-cin-4 { animation: contentEnterRight 0.56s cubic-bezier(0.25,0.46,0.45,0.94) 0.21s both; }
-        .hero-cin-5 { animation: contentEnterRight 0.56s cubic-bezier(0.25,0.46,0.45,0.94) 0.28s both; }
-        .hero-cin-6 { animation: contentEnterRight 0.56s cubic-bezier(0.25,0.46,0.45,0.94) 0.34s both; }
-
-        ── OPTION C: Iris Burst ─────────────────────────────────────
-        Keep bgZoomIn/bgZoomOut. Replace contentExit/cinematicIn with iris versions.
-        Remove lightSweep. EXIT_MS → 500.
-
-        @keyframes contentExitIris {
-          0%   { opacity: 1; clip-path: circle(150% at 50% 45%); transform: scale(1); }
-          70%  { opacity: 0.3; clip-path: circle(10% at 50% 45%); transform: scale(0.9); }
-          100% { opacity: 0;   clip-path: circle(0%  at 50% 45%); transform: scale(0.85); }
-        }
-        @keyframes contentEnterIris {
-          0%   { opacity: 0.9; clip-path: circle(0%   at 50% 45%); }
-          100% { opacity: 1;   clip-path: circle(150% at 50% 45%); }
-        }
-        @keyframes imgIris {
-          0%   { opacity: 0; clip-path: circle(0%   at 50% 50%); }
-          100% { opacity: 1; clip-path: circle(150% at 50% 50%); }
-        }
-        .hero-cin-1 { animation: contentEnterIris 0.72s cubic-bezier(0.16,1,0.3,1) 0.00s both; }
-        .hero-cin-2 { animation: contentEnterIris 0.72s cubic-bezier(0.16,1,0.3,1) 0.10s both; }
-        .hero-cin-3 { animation: contentEnterIris 0.72s cubic-bezier(0.16,1,0.3,1) 0.18s both; }
-        .hero-cin-4 { animation: contentEnterIris 0.72s cubic-bezier(0.16,1,0.3,1) 0.26s both; }
-        .hero-cin-5 { animation: contentEnterIris 0.72s cubic-bezier(0.16,1,0.3,1) 0.34s both; }
-        .hero-cin-6 { animation: contentEnterIris 0.72s cubic-bezier(0.16,1,0.3,1) 0.40s both; }
-
-        ── OPTION D: Velocity Zoom ──────────────────────────────────
-        Replace contentExit with contentExitZoom, cinematicIn with contentEnterZoom.
-        Replace bgZoomOut with bgBlastOut, bgZoomIn with bgPunchIn.
-        Flash overlay should be white (rgba(255,255,255,0.22)). EXIT_MS → 350.
-
-        @keyframes contentExitZoom {
-          0%   { opacity: 1; transform: scale(1);    filter: blur(0); }
-          35%  { opacity: 0.4; }
-          100% { opacity: 0; transform: scale(2.5); filter: blur(18px); }
-        }
-        @keyframes contentEnterZoom {
-          0%   { opacity: 0; transform: scale(0.32); filter: blur(16px); }
-          55%  { filter: blur(0); }
-          76%  { transform: scale(1.04); }
-          100% { opacity: 1; transform: scale(1);    filter: blur(0); }
-        }
-        @keyframes imgZoom {
-          0%   { opacity: 0; transform: scale(0.4); filter: blur(14px); }
-          60%  { filter: blur(0); }
-          80%  { transform: scale(1.05); }
-          100% { opacity: 1; transform: scale(1);  filter: blur(0); }
-        }
-        @keyframes bgBlastOut {
-          0%   { opacity: 1; transform: scale(1);   filter: blur(0); }
-          100% { opacity: 0; transform: scale(3.5); filter: blur(20px); }
-        }
-        @keyframes bgPunchIn {
-          0%   { opacity: 0; transform: scale(0.5); }
-          100% { opacity: 1; transform: scale(1);   }
-        }
-        .hero-cin-1 { animation: contentEnterZoom 0.72s cubic-bezier(0.16,1,0.3,1) 0.00s both; }
-        .hero-cin-2 { animation: contentEnterZoom 0.72s cubic-bezier(0.16,1,0.3,1) 0.09s both; }
-        .hero-cin-3 { animation: contentEnterZoom 0.72s cubic-bezier(0.16,1,0.3,1) 0.17s both; }
-        .hero-cin-4 { animation: contentEnterZoom 0.72s cubic-bezier(0.16,1,0.3,1) 0.25s both; }
-        .hero-cin-5 { animation: contentEnterZoom 0.72s cubic-bezier(0.16,1,0.3,1) 0.33s both; }
-        .hero-cin-6 { animation: contentEnterZoom 0.72s cubic-bezier(0.16,1,0.3,1) 0.40s both; }
-
-        ── OPTION E: Glitch Frame ───────────────────────────────────
-        Replace contentExit with contentExitGlitch, cinematicIn with contentEnterGlitch.
-        Keep bgZoomIn/bgZoomOut. Flash overlay: rgba(0,255,200,0.08). EXIT_MS → 400.
-        Optionally add 2 absolutely-positioned <div> glitch bars in JSX.
-
-        @keyframes contentExitGlitch {
-          0%   { opacity:1; transform:none; filter:none; }
-          20%  { transform:translateX(-6px) skewX(3deg);  filter:hue-rotate(80deg)  brightness(1.5); }
-          40%  { transform:translateX( 5px) skewX(-2deg); filter:hue-rotate(200deg) brightness(2); }
-          65%  { transform:translateX(-3px);               filter:hue-rotate(320deg) brightness(0.7); }
-          80%  { opacity:0.3; transform:translateX(2px) scaleY(0.97); filter:none; }
-          100% { opacity:0; transform:none; filter:none; }
-        }
-        @keyframes contentEnterGlitch {
-          0%   { opacity:0; transform:translateX(6px) skewX(-4deg); filter:hue-rotate(260deg) brightness(2); }
-          25%  { transform:translateX(-4px) skewX(2deg); filter:hue-rotate(120deg); }
-          55%  { transform:translateX( 2px);              filter:hue-rotate(30deg); }
-          75%  { transform:translateX(-1px);               filter:none; }
-          100% { opacity:1; transform:none; filter:none; }
-        }
-        @keyframes imgGlitch {
-          0%   { opacity:0; transform:translateX(5px) skewX(-3deg); filter:hue-rotate(240deg) brightness(1.8); }
-          40%  { filter:none; }
-          70%  { transform:translateX(-3px); }
-          100% { opacity:1; transform:none; filter:none; }
-        }
-        .hero-cin-1 { animation: contentEnterGlitch 0.55s steps(6) 0.00s both; }
-        .hero-cin-2 { animation: contentEnterGlitch 0.55s steps(6) 0.07s both; }
-        .hero-cin-3 { animation: contentEnterGlitch 0.55s steps(6) 0.13s both; }
-        .hero-cin-4 { animation: contentEnterGlitch 0.55s steps(6) 0.19s both; }
-        .hero-cin-5 { animation: contentEnterGlitch 0.55s steps(6) 0.25s both; }
-        .hero-cin-6 { animation: contentEnterGlitch 0.55s steps(6) 0.30s both; }
-
-        ════════════════════════════════════════════════════════════════
-        END BACKUP OPTIONS
-        ════════════════════════════════════════════════════════════════
-        */
-      `}</style>
-
       {/* ── Background gradient layers ── */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Previous gradient zooms out + blurs */}
@@ -584,7 +355,7 @@ function IndexBanner() {
       <div className="container mx-auto px-6 max-w-7xl relative z-10 pt-28 pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
-          {/* Left column — stacked exit + enter */}
+          {/* Left column stacked exit + enter */}
           <div className="relative">
             {/* Exiting slide (absolutely positioned, plays exit anim) */}
             {exitingIdx !== null && (
@@ -612,7 +383,7 @@ function IndexBanner() {
             />
           </div>
 
-          {/* Right — image (re-keyed for cinematic re-entrance) */}
+          {/* Right image (re-keyed for cinematic re-entrance) */}
           <div
             key={`img-${enterKey}`}
             className="relative flex justify-center lg:justify-end"

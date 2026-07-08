@@ -84,7 +84,7 @@ function Blog() {
   return (
     <div className="w-full">
       <PageMeta
-        title="IT Insights &amp; Technology Blog"
+        title="IT Insights & Technology Blog"
         description="Explore the Infoplus Technologies UK blog for expert insights on AI, cloud computing, cyber security, digital transformation, and the latest enterprise IT trends."
         path="/blog"
       />
