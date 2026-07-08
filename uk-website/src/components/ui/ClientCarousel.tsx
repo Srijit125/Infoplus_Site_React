@@ -1,4 +1,4 @@
-import { ImageWithFallback } from "../helpers/ImageWithFallback";
+﻿import { ImageWithFallback } from "../helpers/ImageWithFallback";
 import imgGmr from "../../assets/images/client_2_GMR.png";
 import imgShell from "../../assets/images/client_3_Shell.png";
 import imgLng from "../../assets/images/client_7_LNG.png";
@@ -19,7 +19,7 @@ function ClientCarousel() {
       {/* Right fade mask */}
       <div className="absolute right-0 top-0 bottom-0 w-44 bg-linear-to-l from-[#f8f5ff] via-[#f8f5ff]/80 to-transparent z-10 pointer-events-none" />
 
-      {/* Scroll track — full width, no container constraint */}
+      {/* Scroll track full width, no container constraint */}
       <div className="flex items-center gap-20 whitespace-nowrap animate-[scroll_32s_linear_infinite] w-max">
         {LOGOS.map((img, i) => (
           <ImageWithFallback

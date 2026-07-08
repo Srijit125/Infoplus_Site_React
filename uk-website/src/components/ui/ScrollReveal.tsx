@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+﻿import { useEffect, useRef, useState, type ReactNode } from "react";
 
 type Direction = "up" | "down" | "left" | "right" | "fade";
 type Variant   = "slide" | "card";
@@ -6,7 +6,7 @@ type Variant   = "slide" | "card";
 interface ScrollRevealProps {
   children:   ReactNode;
   className?: string;
-  /** Extra delay before the animation starts — use for staggering siblings */
+  /** Extra delay before the animation starts use for staggering siblings */
   delay?:     number;
   /** Slide direction (ignored when variant="card") */
   direction?: Direction;
@@ -15,8 +15,8 @@ interface ScrollRevealProps {
   /** How many px from the bottom viewport edge to trigger */
   offset?:    number;
   /**
-   * "slide" — simple translate + fade (default)
-   * "card"  — 3-D perspective tilt-in reveal
+   * "slide" simple translate + fade (default)
+   * "card"  3-D perspective tilt-in reveal
    */
   variant?:   Variant;
 }

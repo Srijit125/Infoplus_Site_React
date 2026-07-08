@@ -1,4 +1,4 @@
-import { type ReactNode } from "react";
+﻿import { type ReactNode } from "react";
 
 interface PageHeroProps {
   title: string;
@@ -124,7 +124,7 @@ export function PageHero({
     );
   }
 
-  // Default: centered — dark brand background (matches transparent white-text header)
+  // Default: centered dark brand background (matches transparent white-text header)
   return (
     <section className="relative pt-40 pb-20 lg:pt-52 lg:pb-28 overflow-hidden bg-[#0d0517]">
       {/* dot grid */}

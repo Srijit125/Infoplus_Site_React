@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Cookie, X, ShieldCheck, BarChart3, Settings2, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -130,7 +130,7 @@ export function CookieConsent() {
           </div>
         </div>
 
-        {/* X close — treats as "reject" */}
+        {/* X close treats as "reject" */}
         <button
           onClick={() => dismiss("rejected")}
           aria-label="Close cookie banner"

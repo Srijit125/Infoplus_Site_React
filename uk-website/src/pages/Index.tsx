@@ -1,4 +1,5 @@
-﻿import { Link } from "react-router";
+﻿import { useState, type FormEvent } from "react";
+import { Link } from "react-router";
 import { ChevronRight, MapPin, Mail, Phone } from "lucide-react";
 import { ImageWithFallback } from "../components/helpers/ImageWithFallback";
 import imgAboutUs from "../assets/images/Info_Landing_AboutSection.jpg";
@@ -80,7 +81,7 @@ const VALUE_ACCENTS = [
   "#6128a6",
 ];
 
-/* â”€â”€ Office locations â”€â”€ */
+/* â”€â”€ Office locations (contact strip) â”€â”€ */
 const LOCATIONS = [
   {
     country: "United Kingdom",
@@ -101,6 +102,25 @@ const LOCATIONS = [
 ];
 
 function HomePage() {
+  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", message: "" });
+  const [errors, setErrors] = useState({ firstName: "", lastName: "", email: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+
+  const validate = () => {
+    const errs = { firstName: "", lastName: "", email: "", message: "" };
+    if (!form.firstName.trim()) errs.firstName = "First name is required.";
+    if (!form.email.trim()) errs.email = "Email address is required.";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errs.email = "Enter a valid email address.";
+    return errs;
+  };
+
+  const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
+    const errs = validate();
+    setErrors(errs);
+    if (Object.values(errs).every((v) => !v)) setSubmitted(true);
+  };
+
   return (
     <div className="w-full">
       <PageMeta
@@ -229,15 +249,15 @@ function HomePage() {
                     </p>
                   </div>
                 </div>
-                <div className="bg-linear-to-r from-[#f85d37] to-[#ff7a58] rounded-2xl p-4 flex items-start gap-4 shadow-[0_8px_24px_rgba(248,93,55,0.28)]">
-                  <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0 mt-0.5">
-                    <MapPin className="w-5 h-5 text-white" />
+                <div className="bg-[#f0e8ff] border border-[#ecdaff] rounded-2xl p-4 flex items-start gap-4 shadow-[0_8px_24px_rgba(97,40,166,0.10)]">
+                  <div className="w-10 h-10 rounded-xl bg-[#6128a6]/14 flex items-center justify-center shrink-0 mt-0.5">
+                    <MapPin className="w-5 h-5 text-[#6128a6]" />
                   </div>
                   <div>
-                    <p className="text-white font-bold text-[14px]">
+                    <p className="text-[#0d0517] font-bold text-[14px]">
                       17 Global Offices
                     </p>
-                    <p className="text-white/70 text-[13px] mt-1 leading-[1.6]">
+                    <p className="text-[#0d0517]/55 text-[13px] mt-1 leading-[1.6]">
                       London · Manchester · Birmingham · Frankfurt · Paris · Amsterdam · New York · Chicago · San Francisco · Toronto · Sydney · Singapore · Tokyo · Chennai · Bangalore · Mumbai · Dubai
                     </p>
                   </div>
@@ -792,7 +812,7 @@ function HomePage() {
               </h2>
               <p className="text-[16px] text-[#555555] leading-[1.75] max-w-2xl mx-auto">
                 We have a global reach with offices and operations across three
-                countries â€” delivering world-class technology solutions wherever
+                countries — delivering world-class technology solutions wherever
                 our clients need us.
               </p>
             </div>
@@ -890,20 +910,31 @@ function HomePage() {
                   Tell us about your project and we'll be in touch.
                 </p>
 
-                <form
-                  className="space-y-5"
-                  onSubmit={(e) => e.preventDefault()}
-                >
+                {submitted ? (
+                  <div className="flex flex-col items-center justify-center py-12 text-center">
+                    <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                      <svg className="w-7 h-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h4 className="text-[20px] font-bold text-[#0d0517] mb-2">Message Sent!</h4>
+                    <p className="text-[14px] text-[#555]/65">We'll get back to you within one business day.</p>
+                  </div>
+                ) : (
+                <form className="space-y-5" onSubmit={handleSubmit} noValidate>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-[11px] font-bold uppercase tracking-widest text-[#6128a6] mb-2">
-                        First Name
+                        First Name <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="text"
                         placeholder="John"
-                        className="w-full bg-[#f8f5ff] border border-[#ecdaff] rounded-xl px-4 py-3.5 text-[15px] text-[#0d0517] placeholder:text-[#bbb] focus:outline-none focus:border-[#6128a6] focus:shadow-[0_0_0_3px_rgba(97,40,166,0.09)] transition-all duration-200"
+                        value={form.firstName}
+                        onChange={(e) => setForm({ ...form, firstName: e.target.value })}
+                        className={`w-full bg-[#f8f5ff] border rounded-xl px-4 py-3.5 text-[15px] text-[#0d0517] placeholder:text-[#bbb] focus:outline-none transition-all duration-200 ${errors.firstName ? "border-red-400 focus:border-red-400 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.09)]" : "border-[#ecdaff] focus:border-[#6128a6] focus:shadow-[0_0_0_3px_rgba(97,40,166,0.09)]"}`}
                       />
+                      {errors.firstName && <p className="mt-1.5 text-[12px] text-red-500 font-medium">{errors.firstName}</p>}
                     </div>
                     <div>
                       <label className="block text-[11px] font-bold uppercase tracking-widest text-[#6128a6] mb-2">
@@ -912,19 +943,25 @@ function HomePage() {
                       <input
                         type="text"
                         placeholder="Doe"
-                        className="w-full bg-[#f8f5ff] border border-[#ecdaff] rounded-xl px-4 py-3.5 text-[15px] text-[#0d0517] placeholder:text-[#bbb] focus:outline-none focus:border-[#6128a6] focus:shadow-[0_0_0_3px_rgba(97,40,166,0.09)] transition-all duration-200"
+                        value={form.lastName}
+                        onChange={(e) => setForm({ ...form, lastName: e.target.value })}
+                        className={`w-full bg-[#f8f5ff] border rounded-xl px-4 py-3.5 text-[15px] text-[#0d0517] placeholder:text-[#bbb] focus:outline-none transition-all duration-200 ${errors.lastName ? "border-red-400 focus:border-red-400 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.09)]" : "border-[#ecdaff] focus:border-[#6128a6] focus:shadow-[0_0_0_3px_rgba(97,40,166,0.09)]"}`}
                       />
+                      {errors.lastName && <p className="mt-1.5 text-[12px] text-red-500 font-medium">{errors.lastName}</p>}
                     </div>
                   </div>
                   <div>
                     <label className="block text-[11px] font-bold uppercase tracking-widest text-[#6128a6] mb-2">
-                      Email Address
+                      Email Address <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
                       placeholder="john@company.com"
-                      className="w-full bg-[#f8f5ff] border border-[#ecdaff] rounded-xl px-4 py-3.5 text-[15px] text-[#0d0517] placeholder:text-[#bbb] focus:outline-none focus:border-[#6128a6] focus:shadow-[0_0_0_3px_rgba(97,40,166,0.09)] transition-all duration-200"
+                      value={form.email}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      className={`w-full bg-[#f8f5ff] border rounded-xl px-4 py-3.5 text-[15px] text-[#0d0517] placeholder:text-[#bbb] focus:outline-none transition-all duration-200 ${errors.email ? "border-red-400 focus:border-red-400 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.09)]" : "border-[#ecdaff] focus:border-[#6128a6] focus:shadow-[0_0_0_3px_rgba(97,40,166,0.09)]"}`}
                     />
+                    {errors.email && <p className="mt-1.5 text-[12px] text-red-500 font-medium">{errors.email}</p>}
                   </div>
                   <div>
                     <label className="block text-[11px] font-bold uppercase tracking-widest text-[#6128a6] mb-2">
@@ -933,17 +970,21 @@ function HomePage() {
                     <textarea
                       rows={4}
                       placeholder="Tell us about your project or inquiry..."
-                      className="w-full bg-[#f8f5ff] border border-[#ecdaff] rounded-xl px-4 py-3.5 text-[15px] text-[#0d0517] placeholder:text-[#bbb] focus:outline-none focus:border-[#6128a6] focus:shadow-[0_0_0_3px_rgba(97,40,166,0.09)] transition-all duration-200 resize-none"
+                      value={form.message}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      className={`w-full bg-[#f8f5ff] border rounded-xl px-4 py-3.5 text-[15px] text-[#0d0517] placeholder:text-[#bbb] focus:outline-none transition-all duration-200 resize-none ${errors.message ? "border-red-400 focus:border-red-400 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.09)]" : "border-[#ecdaff] focus:border-[#6128a6] focus:shadow-[0_0_0_3px_rgba(97,40,166,0.09)]"}`}
                     />
+                    {errors.message && <p className="mt-1.5 text-[12px] text-red-500 font-medium">{errors.message}</p>}
                   </div>
                   <button
                     type="submit"
-                    className="group/sub w-full bg-linear-to-r from-[#f85d37] to-[#ff7a58] text-white rounded-xl py-4 font-bold text-[16px] hover:shadow-[0_8px_28px_rgba(248,93,55,0.40)] transition-all duration-300 flex items-center justify-center gap-2"
+                    className="group/sub w-full bg-linear-to-r from-[#f85d37] to-[#ff7a58] text-white rounded-xl py-4 font-bold text-[16px] hover:shadow-[0_8px_28px_rgba(248,93,55,0.40)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     Send Message
                     <ChevronRight className="w-5 h-5 group-hover/sub:translate-x-1 transition-transform duration-200" />
                   </button>
                 </form>
+                )}
 
                 {/* Direct contact */}
                 <div className="mt-8 pt-7 border-t border-[#ecdaff] grid grid-cols-1 sm:grid-cols-2 gap-3">

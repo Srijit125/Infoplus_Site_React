@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ChevronRight, ArrowRight } from "lucide-react";
 import { type MenuCategory } from "../../data/navigate";
@@ -16,7 +16,7 @@ export default function MegaMenu({ categories }: Props) {
     <div className="w-[680px] rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.22)] border border-[#381f55]/20">
       <div className={`grid ${showLeftPanel ? "grid-cols-[210px_1fr]" : "grid-cols-1"}`}>
 
-        {/* Left panel — only when multiple categories */}
+        {/* Left panel only when multiple categories */}
         {showLeftPanel && (
           <div className="bg-[#1e0a38] py-2">
             {categories.map((category) => {
@@ -49,7 +49,7 @@ export default function MegaMenu({ categories }: Props) {
 
         {/* Right panel */}
         <div className="bg-white p-6">
-          {/* Category hub header — links to the hub page */}
+          {/* Category hub header links to the hub page */}
           <div className="mb-4 pb-3.5 border-b border-[#ecdaff]">
             <NavLink
               to={activeCategory.href}

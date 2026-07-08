@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import type { Industry, OurValue, Service, Solution } from "../../assets/constants/types";
 import { CheckCircle2, ChevronRight } from "lucide-react";
 
@@ -41,7 +41,7 @@ function MultiUsageCard({ cardInfo, type }: MultiUsageCardProps) {
           {cardInfo.description}
         </p>
 
-        {/* Bottom accent bar — slides in on hover */}
+        {/* Bottom accent bar slides in on hover */}
         <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#381f55] via-[#6128a6] to-[#aa3bff] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
       </div>
     );

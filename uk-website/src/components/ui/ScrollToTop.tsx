@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 export function ScrollToTop() {
@@ -6,7 +6,7 @@ export function ScrollToTop() {
 
   useEffect(() => {
     if (hash) {
-      // Hash link (e.g. /contact#worldwide-presence) — let the page render first,
+      // Hash link (e.g. /contact#worldwide-presence) let the page render first,
       // then smooth-scroll to the target element.
       const id = hash.slice(1);
       const timer = setTimeout(() => {
