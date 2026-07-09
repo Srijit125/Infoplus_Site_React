@@ -1,0 +1,23 @@
+name: Company Website CI/CD
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy Website
+
+        run: |
+          docker compose up -d --build
+
+      - name: Show Running Containers
+
+        run: |
+          docker ps
