@@ -6,7 +6,7 @@ import {
   CheckCircle2, ArrowRight, Eye,
 } from "lucide-react";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
-import imgAboutHero from "../assets/images/about us hero.webp";
+import imgAboutHero from "../assets/images/About Us Hero.png";
 
 function About() {
   /* ── Existing data (kept) ─────────────────────────── */

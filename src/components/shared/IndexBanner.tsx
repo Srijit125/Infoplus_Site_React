@@ -2,7 +2,12 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ImageWithFallback } from "../helpers/ImageWithFallback";
 import { ChevronRight, ChevronLeft } from "lucide-react";
-import imgAiRobot from "../../assets/images/imgAiRobot.png";
+import imgSlide1 from "../../assets/images/AI Service Slide 1.png";
+import imgSlide2 from "../../assets/images/Global IT Company Slide 2.png";
+import imgSlide3 from "../../assets/images/Product Development Slide 3.png";
+import imgSlide4 from "../../assets/images/IT Services Slide 4.png";
+import imgSlide5 from "../../assets/images/Digital Capability Slide 5.png";
+import imgSlide6 from "../../assets/images/Staffing & Consulting Slide 6.png";
 import "./hero-animations.css";
 
 interface Slide {
@@ -20,6 +25,7 @@ interface Slide {
   btnColor?: string;
   serviceHref: string;
   serviceLabel: string;
+  image: string;
 }
 
 const SLIDES: Slide[] = [
@@ -27,12 +33,13 @@ const SLIDES: Slide[] = [
     titlePart1:  "Artificial ",
     titleHL:     "Intelligence",
     titlePart2:  "Services",
-    description: "Proactively managed IT solutions that power smarter products, faster delivery, and lasting digital transformation.",
+    description: "Harness the power of AI to transform your business.",
     bg:      "linear-gradient(135deg, #0d0517 0%, #1e0a38 25%, #381f55 55%, #4a1a6e 80%, #261140 100%)",
     orb1: "#aa3bff", orb2: "#6128a6", orb3: "#f85d37",
     accent: "#aa3bff", sh1: "#c084fc", sh2: "#f85d37",
     btnColor: "#f85d37",
     serviceHref: "/services/it-services/artificial-intelligence", serviceLabel: "AI Services",
+    image: imgSlide1,
   },
   {
     titlePart1:  "Global IT ",
@@ -43,17 +50,19 @@ const SLIDES: Slide[] = [
     orb1: "#3b82f6", orb2: "#1d4ed8", orb3: "#06b6d4",
     accent: "#3b82f6", sh1: "#60a5fa", sh2: "#06b6d4",
     serviceHref: "/services", serviceLabel: "Our Services",
+    image: imgSlide2,
   },
   {
-    titlePart1:  "Cyber ",
-    titleHL:     "Security",
-    titlePart2:  "Services",
-    description: "Shield your organisation with end-to-end cyber protection Security Operations Centre, vulnerability management, penetration testing, and 24/7 incident response.",
+    titlePart1:  "Product ",
+    titleHL:     "Development",
+    titlePart2:  "",
+    description: "More Compelling and Memorable products through simplicity in design.",
     bg:      "linear-gradient(135deg, #0a0000 0%, #180000 25%, #2e0808 60%, #200505 100%)",
     orb1: "#ef4444", orb2: "#b91c1c", orb3: "#f97316",
     accent: "#ef4444", sh1: "#fca5a5", sh2: "#fb923c",
     btnColor: "#f85d37",
     serviceHref: "/services/it-services/cyber-security", serviceLabel: "Cyber Security",
+    image: imgSlide3,
   },
   {
     titlePart1:  "IT ",
@@ -64,6 +73,7 @@ const SLIDES: Slide[] = [
     orb1: "#f85d37", orb2: "#ea580c", orb3: "#f59e0b",
     accent: "#f85d37", sh1: "#fb923c", sh2: "#f59e0b",
     serviceHref: "/services/it-services", serviceLabel: "IT Services",
+    image: imgSlide4,
   },
   {
     titlePart1:  "Digital ",
@@ -74,17 +84,19 @@ const SLIDES: Slide[] = [
     orb1: "#818cf8", orb2: "#6366f1", orb3: "#a78bfa",
     accent: "#818cf8", sh1: "#a5b4fc", sh2: "#c084fc",
     serviceHref: "/services/new-generation", serviceLabel: "New-Gen Services",
+    image: imgSlide5,
   },
   {
     titlePart1:  "Staffing & ",
     titleHL:     "Consulting",
-    titlePart2:  "Solutions",
+    titlePart2:  "",
     description: "Connect with pre-vetted IT professionals who deliver from day one permanent placements, contract roles, umbrella services, and specialist consulting for every engagement.",
     bg:      "linear-gradient(135deg, #001a0f 0%, #002a18 25%, #003d28 60%, #002e1e 100%)",
     orb1: "#10b981", orb2: "#059669", orb3: "#34d399",
     accent: "#10b981", sh1: "#6ee7b7", sh2: "#34d399",
     btnColor: "#f85d37",
     serviceHref: "/services/staffing-consulting", serviceLabel: "Staffing & Consulting",
+    image: imgSlide6,
   },
 ];
 
@@ -402,8 +414,8 @@ function IndexBanner() {
             </div>
 
             <ImageWithFallback
-              src={imgAiRobot}
-              alt="Hero visual"
+              src={s.image}
+              alt={`${s.titlePart1}${s.titleHL} visual`}
               className="relative z-10 w-120 max-w-full h-auto object-contain drop-shadow-2xl"
               style={{ animation: "float 6s ease-in-out infinite" }}
             />
