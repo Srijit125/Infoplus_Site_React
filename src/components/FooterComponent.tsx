@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Mail, Phone, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./helpers/ImageWithFallback";
 import imgInfoplusLogo from "../assets/images/imgInfoplusLogo.png";
+import imgCert1 from "../assets/images/certified-1.png";
+import imgCert2 from "../assets/images/certified-2.png";
 import { socialMediaLinks, type SocialMedia } from "../assets/constants/socialMedia";
 
 function SocialSvg({ name }: { name: string }) {
@@ -49,6 +51,18 @@ export function Footer() {
               company focused on building products, services, staffing,
               consulting, and digital transformation.
             </p>
+            <div className="flex items-center gap-4">
+              <ImageWithFallback
+                src={imgCert1}
+                alt="Certification 1"
+                className="h-16 w-auto object-contain"
+              />
+              <ImageWithFallback
+                src={imgCert2}
+                alt="Certification 2"
+                className="h-16 w-auto object-contain"
+              />
+            </div>
           </div>
 
           <div>

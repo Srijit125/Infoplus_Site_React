@@ -1,7 +1,7 @@
 import { PageMeta } from "../components/shared/PageMeta";
 import { useState, useEffect } from "react";
 import { PageHero } from "../components/shared/PageHero";
-import { Coffee, Heart, Globe, Zap, MapPin, Briefcase, X, ChevronRight, CheckCircle2 } from "lucide-react";
+import { Coffee, Heart, Globe, Zap, MapPin, Briefcase, X, ChevronRight, CheckCircle2, Shield } from "lucide-react";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 
 /* ── Types ─────────────────────────────────────────── */
@@ -577,6 +577,10 @@ function CareersPage() {
                   >
                     Submit Application
                   </button>
+                  <div className="flex items-start gap-2 text-[12px] text-[#888] mt-2">
+                    <Shield className="w-4 h-4 text-[#6128a6]/50 shrink-0 mt-0.5" />
+                    <span>We respect your privacy. We promise we won't spam you :)</span>
+                  </div>
                 </form>
               )}
             </div>

@@ -1,6 +1,6 @@
 ﻿import { useState, type FormEvent } from "react";
 import { Link } from "react-router";
-import { ChevronRight, MapPin, Mail, Phone } from "lucide-react";
+import { ChevronRight, MapPin, Mail, Phone, Shield } from "lucide-react";
 import { ImageWithFallback } from "../components/helpers/ImageWithFallback";
 import imgAboutUs from "../assets/images/Info_Landing_AboutSection.jpg";
 import imgMap from "../assets/images/imgMap.png";
@@ -102,15 +102,16 @@ const LOCATIONS = [
 ];
 
 function HomePage() {
-  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", message: "" });
-  const [errors, setErrors] = useState({ firstName: "", lastName: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", requirement: "" });
+  const [errors, setErrors] = useState({ name: "", email: "", phone: "", requirement: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const validate = () => {
-    const errs = { firstName: "", lastName: "", email: "", message: "" };
-    if (!form.firstName.trim()) errs.firstName = "First name is required.";
+    const errs = { name: "", email: "", phone: "", requirement: "" };
+    if (!form.name.trim()) errs.name = "Name is required.";
     if (!form.email.trim()) errs.email = "Email address is required.";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errs.email = "Enter a valid email address.";
+    if (!form.phone.trim()) errs.phone = "Contact number is required.";
     return errs;
   };
 
@@ -226,7 +227,7 @@ function HomePage() {
                     ISO 14001:2015 Certified
                   </span>
                   <span className="absolute bottom-4 right-4 text-white/40 text-[11px] font-semibold uppercase tracking-widest">
-                    Est. 2003
+                    Est. 2000
                   </span>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
@@ -800,7 +801,7 @@ function HomePage() {
       {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
           8. Global Presence (unchanged)
       â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-24 bg-white">
+      <section className="pt-24 pb-10 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
             <div className="mb-14 text-center">
@@ -811,7 +812,7 @@ function HomePage() {
                 Our Presence Worldwide
               </h2>
               <p className="text-[16px] text-[#555555] leading-[1.75] max-w-2xl mx-auto">
-                We have a global reach with offices and operations across three
+                We have a global reach with offices and operations across 11
                 countries delivering world-class technology solutions wherever
                 our clients need us.
               </p>
@@ -922,59 +923,56 @@ function HomePage() {
                   </div>
                 ) : (
                 <form className="space-y-5" onSubmit={handleSubmit} noValidate>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-[11px] font-bold uppercase tracking-widest text-[#6128a6] mb-2">
-                        First Name <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="John"
-                        value={form.firstName}
-                        onChange={(e) => setForm({ ...form, firstName: e.target.value })}
-                        className={`w-full bg-[#f8f5ff] border rounded-xl px-4 py-3.5 text-[15px] text-[#0d0517] placeholder:text-[#bbb] focus:outline-none transition-all duration-200 ${errors.firstName ? "border-red-400 focus:border-red-400 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.09)]" : "border-[#ecdaff] focus:border-[#6128a6] focus:shadow-[0_0_0_3px_rgba(97,40,166,0.09)]"}`}
-                      />
-                      {errors.firstName && <p className="mt-1.5 text-[12px] text-red-500 font-medium">{errors.firstName}</p>}
-                    </div>
-                    <div>
-                      <label className="block text-[11px] font-bold uppercase tracking-widest text-[#6128a6] mb-2">
-                        Last Name
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="Doe"
-                        value={form.lastName}
-                        onChange={(e) => setForm({ ...form, lastName: e.target.value })}
-                        className={`w-full bg-[#f8f5ff] border rounded-xl px-4 py-3.5 text-[15px] text-[#0d0517] placeholder:text-[#bbb] focus:outline-none transition-all duration-200 ${errors.lastName ? "border-red-400 focus:border-red-400 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.09)]" : "border-[#ecdaff] focus:border-[#6128a6] focus:shadow-[0_0_0_3px_rgba(97,40,166,0.09)]"}`}
-                      />
-                      {errors.lastName && <p className="mt-1.5 text-[12px] text-red-500 font-medium">{errors.lastName}</p>}
-                    </div>
+                  <div>
+                    <label className="block text-[13px] font-semibold text-[#333] mb-1.5">
+                      Your Name <span className="text-[#f85d37]">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="John Smith"
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      className={`w-full px-4 py-3.5 rounded-xl border text-[15px] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:ring-2 transition-all ${errors.name ? "border-red-400 focus:ring-red-200 focus:border-red-400" : "border-[#e5e4e7] bg-[#fafafa] focus:ring-[#6128a6]/20 focus:border-[#6128a6]"}`}
+                    />
+                    {errors.name && <p className="mt-1.5 text-[12px] text-red-500 font-medium">{errors.name}</p>}
                   </div>
                   <div>
-                    <label className="block text-[11px] font-bold uppercase tracking-widest text-[#6128a6] mb-2">
-                      Email Address <span className="text-red-500">*</span>
+                    <label className="block text-[13px] font-semibold text-[#333] mb-1.5">
+                      Email Address <span className="text-[#f85d37]">*</span>
                     </label>
                     <input
                       type="email"
                       placeholder="john@company.com"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className={`w-full bg-[#f8f5ff] border rounded-xl px-4 py-3.5 text-[15px] text-[#0d0517] placeholder:text-[#bbb] focus:outline-none transition-all duration-200 ${errors.email ? "border-red-400 focus:border-red-400 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.09)]" : "border-[#ecdaff] focus:border-[#6128a6] focus:shadow-[0_0_0_3px_rgba(97,40,166,0.09)]"}`}
+                      className={`w-full px-4 py-3.5 rounded-xl border text-[15px] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:ring-2 transition-all ${errors.email ? "border-red-400 focus:ring-red-200 focus:border-red-400" : "border-[#e5e4e7] bg-[#fafafa] focus:ring-[#6128a6]/20 focus:border-[#6128a6]"}`}
                     />
                     {errors.email && <p className="mt-1.5 text-[12px] text-red-500 font-medium">{errors.email}</p>}
                   </div>
                   <div>
-                    <label className="block text-[11px] font-bold uppercase tracking-widest text-[#6128a6] mb-2">
+                    <label className="block text-[13px] font-semibold text-[#333] mb-1.5">
+                      Contact Number <span className="text-[#f85d37]">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="+44 20 0000 0000"
+                      value={form.phone}
+                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                      className={`w-full px-4 py-3.5 rounded-xl border text-[15px] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:ring-2 transition-all ${errors.phone ? "border-red-400 focus:ring-red-200 focus:border-red-400" : "border-[#e5e4e7] bg-[#fafafa] focus:ring-[#6128a6]/20 focus:border-[#6128a6]"}`}
+                    />
+                    {errors.phone && <p className="mt-1.5 text-[12px] text-red-500 font-medium">{errors.phone}</p>}
+                  </div>
+                  <div>
+                    <label className="block text-[13px] font-semibold text-[#333] mb-1.5">
                       Message
                     </label>
                     <textarea
-                      rows={4}
-                      placeholder="Tell us about your project or inquiry..."
-                      value={form.message}
-                      onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className={`w-full bg-[#f8f5ff] border rounded-xl px-4 py-3.5 text-[15px] text-[#0d0517] placeholder:text-[#bbb] focus:outline-none transition-all duration-200 resize-none ${errors.message ? "border-red-400 focus:border-red-400 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.09)]" : "border-[#ecdaff] focus:border-[#6128a6] focus:shadow-[0_0_0_3px_rgba(97,40,166,0.09)]"}`}
+                      rows={5}
+                      placeholder="Tell us about your project, challenge, or what you'd like to achieve…"
+                      value={form.requirement}
+                      onChange={(e) => setForm({ ...form, requirement: e.target.value })}
+                      className="w-full px-4 py-3.5 rounded-xl border border-[#e5e4e7] bg-[#fafafa] text-[15px] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:ring-2 focus:ring-[#6128a6]/20 focus:border-[#6128a6] transition-all resize-none"
                     />
-                    {errors.message && <p className="mt-1.5 text-[12px] text-red-500 font-medium">{errors.message}</p>}
                   </div>
                   <button
                     type="submit"
@@ -983,6 +981,10 @@ function HomePage() {
                     Send Message
                     <ChevronRight className="w-5 h-5 group-hover/sub:translate-x-1 transition-transform duration-200" />
                   </button>
+                  <div className="flex items-start gap-2 text-[12px] text-[#888] mt-2">
+                    <Shield className="w-5 h-5 text-[#6128a6]/50 shrink-0 mt-0.5" />
+                    <span>We respect your privacy. We promise we won't spam you :)</span>
+                  </div>
                 </form>
                 )}
 

@@ -62,6 +62,9 @@ export default defineConfig({
       "Content-Security-Policy": "frame-ancestors 'none'",
     },
   },
+  build: {
+    assetsInlineLimit: 10240,
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),

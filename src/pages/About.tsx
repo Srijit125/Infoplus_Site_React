@@ -11,9 +11,9 @@ import imgAboutHero from "../assets/images/About Us Hero.png";
 function About() {
   /* ── Existing data (kept) ─────────────────────────── */
   const stats = [
-    { label: "Founded",           value: "2006"   },
-    { label: "Global Offices",    value: "3"      },
-    { label: "Enterprise Clients", value: "500+"  },
+    { label: "Founded",           value: "2000"   },
+    { label: "Global Offices",    value: "17"     },
+    { label: "Enterprise Clients", value: "120+"  },
     { label: "Team Members",      value: "1,200+" },
   ];
 
@@ -35,14 +35,14 @@ function About() {
   ];
 
   const keyStats = [
-    { val: "16+",  label: "Countries"     },
+    { val: "11",   label: "Countries"     },
     { val: "120+", label: "Customers"     },
     { val: "20+",  label: "Years"         },
-    { val: "2",    label: "Global Offices" },
+    { val: "17",   label: "Global Offices" },
   ];
 
   const factBullets = [
-    "Operating in 16 Countries.",
+    "Operating in 11 Countries.",
     "Preferred IT partner for many leading organizations.",
     "2 Decades with 120+ customers.",
     "State-of-art infrastructure in the UK and India.",
@@ -61,7 +61,7 @@ function About() {
     <div className="w-full">
       <PageMeta
         title="About Infoplus Technologies UK"
-        description="Learn about Infoplus Technologies UK a global IT company founded in 2006 with offices worldwide, delivering managed IT services, AI, cloud computing, and digital transformation."
+        description="Learn about Infoplus Technologies UK a global IT company founded in 2000 with offices worldwide, delivering managed IT services, AI, cloud computing, and digital transformation."
         path="/about"
       />
 

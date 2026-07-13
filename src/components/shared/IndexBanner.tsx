@@ -101,8 +101,8 @@ const SLIDES: Slide[] = [
 ];
 
 const STATS = [
-  { value: "15+",  label: "Years Experience" },
-  { value: "200+", label: "Clients Served"   },
+  { value: "20+",  label: "Years Experience" },
+  { value: "120+", label: "Clients Served"   },
   { value: "98%",  label: "Client Retention" },
 ];
 

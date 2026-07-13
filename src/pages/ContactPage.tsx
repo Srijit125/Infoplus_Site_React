@@ -58,8 +58,12 @@ const FAQS = [
   },
 ];
 
-const inputCls =
-  "w-full px-4 py-3.5 rounded-xl border border-[#e5e4e7] bg-[#fafafa] text-[15px] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:ring-2 focus:ring-[#6128a6]/20 focus:border-[#6128a6] transition-all";
+const fieldCls = (err: string) =>
+  `w-full px-4 py-3.5 rounded-xl border text-[15px] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:ring-2 transition-all ${
+    err
+      ? "border-red-400 bg-white focus:ring-red-200 focus:border-red-400"
+      : "border-[#e5e4e7] bg-[#fafafa] focus:ring-[#6128a6]/20 focus:border-[#6128a6]"
+  }`;
 
 const labelCls = "block text-[13px] font-semibold text-[#333] mb-1.5";
 
@@ -67,10 +71,21 @@ export function ContactPage() {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [errors, setErrors] = useState({ name: "", email: "", phone: "" });
 
   const handleSubmit = async (e: { preventDefault(): void }) => {
     e.preventDefault();
     if (!formRef.current) return;
+
+    const data = Object.fromEntries(new FormData(formRef.current)) as Record<string, string>;
+    const errs = { name: "", email: "", phone: "" };
+    if (!data.name?.trim()) errs.name = "Name is required.";
+    if (!data.email?.trim()) errs.email = "Email address is required.";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) errs.email = "Enter a valid email address.";
+    if (!data.phone?.trim()) errs.phone = "Contact number is required.";
+    setErrors(errs);
+    if (Object.values(errs).some((v) => v)) return;
+
     setStatus("sending");
     try {
       const formData = new FormData(formRef.current);
@@ -146,9 +161,9 @@ export function ContactPage() {
                         type="text"
                         name="name"
                         placeholder="John Smith"
-                        required
-                        className={inputCls}
+                        className={fieldCls(errors.name)}
                       />
+                      {errors.name && <p className="mt-1.5 text-[12px] text-red-500 font-medium">{errors.name}</p>}
                     </div>
                     <div>
                       <label className={labelCls}>
@@ -158,9 +173,9 @@ export function ContactPage() {
                         type="email"
                         name="email"
                         placeholder="john@company.com"
-                        required
-                        className={inputCls}
+                        className={fieldCls(errors.email)}
                       />
+                      {errors.email && <p className="mt-1.5 text-[12px] text-red-500 font-medium">{errors.email}</p>}
                     </div>
                     <div>
                       <label className={labelCls}>
@@ -170,20 +185,19 @@ export function ContactPage() {
                         type="tel"
                         name="phone"
                         placeholder="+44 20 0000 0000"
-                        required
-                        className={inputCls}
+                        className={fieldCls(errors.phone)}
                       />
+                      {errors.phone && <p className="mt-1.5 text-[12px] text-red-500 font-medium">{errors.phone}</p>}
                     </div>
                     <div>
                       <label className={labelCls}>
-                        Your Requirement <span className="text-[#f85d37]">*</span>
+                        Message
                       </label>
                       <textarea
                         name="requirement"
                         rows={5}
                         placeholder="Tell us about your project, challenge, or what you'd like to achieve…"
-                        required
-                        className={`${inputCls} resize-none`}
+                        className={`${fieldCls("")} resize-none`}
                       />
                     </div>
 
@@ -263,8 +277,8 @@ export function ContactPage() {
               <ScrollReveal variant="card" delay={320}>
                 <div className="bg-[#1e0a38] rounded-2xl p-6 text-white">
                   <div className="flex items-center gap-2 mb-5">
-                    <Clock className="w-5 h-5 text-[#aa3bff]" />
-                    <h4 className="text-[16px] font-bold">Office Hours (GMT)</h4>
+                    <Clock className="w-5 h-5 text-[#aa3bff] shrink-0" />
+                    <h4 className="text-[16px] font-bold text-white mb-0">Office Hours (GMT)</h4>
                   </div>
                   <div className="space-y-3 text-[14px]">
                     {[

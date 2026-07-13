@@ -1,4 +1,4 @@
-import { Send } from "lucide-react";
+import { Send, Shield } from "lucide-react";
 import { useState, type SubmitEvent } from "react";
 function contactUsForm() {
   const [result, setResult] = useState<string>("");
@@ -86,6 +86,10 @@ function contactUsForm() {
           Send Message
         </button>
         <div className="text-center text-sm text-blue-600 mt-4">{result}</div>
+        <div className="flex items-start gap-2 text-[12px] text-[#888] mt-2">
+          <Shield className="w-4 h-4 text-[#6128a6]/50 shrink-0 mt-0.5" />
+          <span>We respect your privacy. We promise we won't spam you :)</span>
+        </div>
       </form>
     </div>
   );

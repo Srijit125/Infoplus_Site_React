@@ -1,5 +1,5 @@
 import { PageMeta } from "../components/shared/PageMeta";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Target, Sparkles, Zap, MessageSquare, Network, Bot,
@@ -161,17 +161,32 @@ const SVC: AIService[] = [
 export default function AIPage() {
   const [activeIdx, setActiveIdx] = useState(0);
   const detailRef = useRef<HTMLDivElement>(null);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const goToDetail = (idx: number) => {
-    setActiveIdx(idx);
     setTimeout(
-      () => detailRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
+      () => sectionRefs.current[idx]?.scrollIntoView({ behavior: "smooth", block: "start" }),
       50
     );
   };
 
-  const svc = SVC[activeIdx];
-  const SvcIcon = svc.icon;
+  useEffect(() => {
+    const OFFSET = 140;
+    const onScroll = () => {
+      if (!detailRef.current) return;
+      const { top, bottom } = detailRef.current.getBoundingClientRect();
+      // Only run spy while the section is actually on screen
+      if (top > OFFSET || bottom <= 0) return;
+      let next = 0;
+      for (let i = 0; i < sectionRefs.current.length; i++) {
+        const el = sectionRefs.current[i];
+        if (el && el.getBoundingClientRect().top <= OFFSET) next = i;
+      }
+      setActiveIdx(next);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div className="w-full">
@@ -208,7 +223,7 @@ export default function AIPage() {
           {[
             { value: "11+", label: "AI Service Areas" },
             { value: "100+", label: "AI Implementations" },
-            { value: "50+", label: "Enterprise Clients" },
+            { value: "120+", label: "Enterprise Clients" },
           ].map(({ value, label }) => (
             <div key={label} className="text-center">
               <p className="text-[38px] font-black text-white leading-none mb-1">{value}</p>
@@ -294,7 +309,7 @@ export default function AIPage() {
             </div>
           </ScrollReveal>
 
-          {/* Mobile pill tabs */}
+          {/* Mobile pill tabs — scroll-to anchors */}
           <div
             className="lg:hidden flex gap-2 overflow-x-auto pb-3 mb-8"
             style={{ scrollbarWidth: "none" }}
@@ -302,7 +317,7 @@ export default function AIPage() {
             {SVC.map((s, i) => (
               <button
                 key={i}
-                onClick={() => setActiveIdx(i)}
+                onClick={() => goToDetail(i)}
                 className={`shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-[12px] font-semibold transition-all border ${
                   activeIdx === i
                     ? "bg-[#1e0a38] text-white border-[#1e0a38]"
@@ -318,8 +333,8 @@ export default function AIPage() {
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8 items-start">
-            {/* Desktop sidebar */}
-            <div className="hidden lg:block w-72 shrink-0 sticky top-[100px]">
+            {/* Sticky sidebar — highlights active section as user scrolls */}
+            <div className="hidden lg:block w-72 shrink-0 sticky top-25 self-start">
               <div className="bg-[#f8f5ff] border border-[#e5e4e7] rounded-2xl p-3">
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#888] px-3 py-2">
                   AI Services
@@ -328,7 +343,7 @@ export default function AIPage() {
                   {SVC.map((s, i) => (
                     <button
                       key={i}
-                      onClick={() => setActiveIdx(i)}
+                      onClick={() => goToDetail(i)}
                       className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-left transition-all duration-200 ${
                         activeIdx === i
                           ? "bg-[#1e0a38] text-white"
@@ -351,95 +366,72 @@ export default function AIPage() {
               </div>
             </div>
 
-            {/* Content panel */}
+            {/* All content sections rendered vertically */}
             <div className="flex-1 min-w-0">
-              <div
-                key={activeIdx}
-                style={{ animation: "revealFade 350ms ease both" }}
-              >
-                {/* Service header */}
-                <div className="flex items-start gap-4 mb-7 pb-7 border-b border-[#f0eff5]">
+              {SVC.map((s, i) => {
+                const Icon = s.icon;
+                return (
                   <div
-                    className={`w-14 h-14 rounded-2xl bg-linear-to-br ${svc.gradient} flex items-center justify-center shrink-0`}
+                    key={i}
+                    ref={(el) => { sectionRefs.current[i] = el; }}
+                    style={{ scrollMarginTop: "140px" }}
+                    className={i < SVC.length - 1 ? "mb-20 pb-20 border-b border-[#f0eff5]" : ""}
                   >
-                    <SvcIcon className="w-7 h-7 text-white" />
-                  </div>
-                  <div>
-                    <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
-                      Service {String(activeIdx + 1).padStart(2, "0")} of 11
-                    </span>
-                    <h3 className="text-[26px] font-bold text-[#111] mt-0.5 leading-tight">
-                      {svc.title}
-                    </h3>
-                    <p className="text-[14px] text-[#6128a6] font-medium italic mt-1">
-                      "{svc.tagline}"
-                    </p>
-                  </div>
-                </div>
-
-                {/* Description */}
-                <p className="text-[15.5px] text-[#444] leading-[1.8] mb-8">{svc.desc}</p>
-
-                {/* Services offered */}
-                <div className="mb-8">
-                  <h4 className="text-[12px] font-bold uppercase tracking-widest text-[#888] mb-4">
-                    Services Offered
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {svc.items.map((item, j) => (
-                      <div
-                        key={j}
-                        className="flex items-center gap-2.5 p-3 bg-[#f8f5ff] rounded-xl border border-[#e8e0f7]"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-[#6128a6] shrink-0" />
-                        <span className="text-[13.5px] text-[#333] font-medium">{item}</span>
+                    {/* Service header */}
+                    <div className="flex items-start gap-4 mb-7 pb-7 border-b border-[#f0eff5]">
+                      <div className={`w-14 h-14 rounded-2xl bg-linear-to-br ${s.gradient} flex items-center justify-center shrink-0`}>
+                        <Icon className="w-7 h-7 text-white" />
                       </div>
-                    ))}
-                  </div>
-                </div>
+                      <div>
+                        <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+                          Service {String(i + 1).padStart(2, "0")} of {SVC.length}
+                        </span>
+                        <h3 className="text-[26px] font-bold text-[#111] mt-0.5 leading-tight">{s.title}</h3>
+                        <p className="text-[14px] text-[#6128a6] font-medium italic mt-1">"{s.tagline}"</p>
+                      </div>
+                    </div>
 
-                {/* Why Infoplus */}
-                <div className="bg-[#0d0517] rounded-2xl p-7">
-                  <h4 className="text-[12px] font-bold uppercase tracking-widest text-[#aa3bff] mb-3">
-                    Why Infoplus?
-                  </h4>
-                  <p className="text-[14px] text-white/65 leading-relaxed mb-6">{svc.why}</p>
-                  <div className="border-t border-white/10 pt-5">
-                    <p className="text-[11px] font-bold uppercase tracking-widest text-white/30 mb-4">
-                      {svc.featureTitle}
-                    </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                      {svc.features.map((f, k) => (
-                        <div key={k} className="flex items-start gap-2 text-[13px] text-white/60">
-                          <ChevronRight className="w-3.5 h-3.5 text-[#aa3bff] shrink-0 mt-0.5" />
-                          {f}
+                    {/* Description */}
+                    <p className="text-[15.5px] text-[#444] leading-[1.8] mb-8">{s.desc}</p>
+
+                    {/* Services offered */}
+                    <div className="mb-8">
+                      <h4 className="text-[12px] font-bold uppercase tracking-widest text-[#888] mb-4">
+                        Services Offered
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        {s.items.map((item, j) => (
+                          <div key={j} className="flex items-center gap-2.5 p-3 bg-[#f8f5ff] rounded-xl border border-[#e8e0f7]">
+                            <CheckCircle2 className="w-4 h-4 text-[#6128a6] shrink-0" />
+                            <span className="text-[13.5px] text-[#333] font-medium">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Why Infoplus */}
+                    <div className="bg-[#0d0517] rounded-2xl p-7">
+                      <h4 className="text-[12px] font-bold uppercase tracking-widest text-[#aa3bff] mb-3">
+                        Why Infoplus?
+                      </h4>
+                      <p className="text-[14px] text-white/65 leading-relaxed mb-6">{s.why}</p>
+                      <div className="border-t border-white/10 pt-5">
+                        <p className="text-[11px] font-bold uppercase tracking-widest text-white/30 mb-4">
+                          {s.featureTitle}
+                        </p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                          {s.features.map((f, k) => (
+                            <div key={k} className="flex items-start gap-2 text-[13px] text-white/60">
+                              <ChevronRight className="w-3.5 h-3.5 text-[#aa3bff] shrink-0 mt-0.5" />
+                              {f}
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-
-                {/* Nav between services */}
-                <div className="flex items-center justify-between mt-8 pt-6 border-t border-[#f0eff5]">
-                  <button
-                    onClick={() => setActiveIdx((p) => Math.max(0, p - 1))}
-                    disabled={activeIdx === 0}
-                    className="flex items-center gap-2 text-[13px] font-semibold text-[#555] hover:text-[#6128a6] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                  >
-                    ← Previous Service
-                  </button>
-                  <span className="text-[12px] text-[#aaa]">
-                    {activeIdx + 1} / {SVC.length}
-                  </span>
-                  <button
-                    onClick={() => setActiveIdx((p) => Math.min(SVC.length - 1, p + 1))}
-                    disabled={activeIdx === SVC.length - 1}
-                    className="flex items-center gap-2 text-[13px] font-semibold text-[#555] hover:text-[#6128a6] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                  >
-                    Next Service →
-                  </button>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
         </div>

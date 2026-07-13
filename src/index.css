@@ -43,6 +43,11 @@
   to   { opacity: 1; transform: none; }
 }
 
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* ════════════════════════════════════════════════════════════
    DESIGN SYSTEM — Infoplus Technologies UK
    ════════════════════════════════════════════════════════════
