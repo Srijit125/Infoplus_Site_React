@@ -148,10 +148,10 @@ export default function StaffingPage() {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {STATS.map(({ icon: SIcon, value, label }, i) => (
-              <ScrollReveal key={i} direction="up" delay={i * 80}>
-                <div className="group flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-[#f8f5ff] border border-[#e8e0f7] hover:bg-white hover:shadow-[0_8px_32px_-8px_rgba(97,40,166,0.14)] hover:-translate-y-1 transition-all duration-300">
-                  <div className="w-11 h-11 rounded-xl bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center mb-1">
-                    <SIcon className="w-5 h-5 text-white" />
+              <ScrollReveal key={i} direction="up" delay={i * 80} className="h-full">
+                <div className="group h-full flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-[#f8f5ff] border border-[#e8e0f7] hover:bg-white hover:shadow-[0_8px_32px_-8px_rgba(97,40,166,0.14)] hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-11 h-11 rounded-xl bg-[#ecdaff] flex items-center justify-center mb-1 shrink-0">
+                    <SIcon className="w-5 h-5 text-[#6128a6]" />
                   </div>
                   <p className="text-[28px] font-black text-[#6128a6] leading-none">{value}</p>
                   <p className="text-[12px] text-[#666] font-medium leading-snug">{label}</p>
@@ -191,22 +191,22 @@ export default function StaffingPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" duration={720} delay={150}>
-              <div className="bg-[#0d0517] rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/30 blur-[60px] pointer-events-none" />
+              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/8 blur-[60px] pointer-events-none" />
                 <div className="relative z-10">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#aa3bff] mb-5">
+                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] mb-5">
                     Our Global Presence
                   </p>
                   <div className="grid grid-cols-1 gap-2">
                     {COUNTRIES.map((country, i) => (
                       <div
                         key={i}
-                        className="flex items-center gap-3 py-2.5 border-b border-white/8 last:border-0"
+                        className="flex items-center gap-3 py-2.5 border-b border-[#e8e0f7] last:border-0"
                         style={{ animation: `revealFade 400ms ease ${i * 70 + 200}ms both` }}
                       >
                         <Globe className="w-4 h-4 text-[#6128a6] shrink-0" />
-                        <span className="text-[13.5px] text-white/70 font-medium">{country}</span>
-                        <ChevronRight className="w-3.5 h-3.5 text-white/20 ml-auto" />
+                        <span className="text-[13.5px] text-[#444] font-medium">{country}</span>
+                        <ChevronRight className="w-3.5 h-3.5 text-[#6128a6]/30 ml-auto" />
                       </div>
                     ))}
                   </div>
@@ -301,10 +301,10 @@ export default function StaffingPage() {
             <ScrollReveal direction="left" duration={700}>
               <div className="bg-white border border-[#e5e4e7] rounded-2xl p-8 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.10)] hover:border-[#6128a6]/30 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center">
-                    <Briefcase className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 rounded-xl bg-[#ecdaff] flex items-center justify-center shrink-0">
+                    <Briefcase className="w-5 h-5 text-[#6128a6]" />
                   </div>
-                  <h3 className="text-[18px] font-bold text-[#111]">Core Staffing Activities</h3>
+                  <h3 className="text-[18px] font-bold text-[#111] m-0">Core Staffing Activities</h3>
                 </div>
                 <div className="space-y-3">
                   {STAFFING_ACTIVITIES.core.map((item, i) => (
@@ -325,10 +325,10 @@ export default function StaffingPage() {
             <ScrollReveal direction="right" duration={700} delay={100}>
               <div className="bg-white border border-[#e5e4e7] rounded-2xl p-8 hover:shadow-[0_16px_48px_-8px_rgba(248,93,55,0.08)] hover:border-[#f85d37]/25 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-linear-to-br from-[#9a2600] to-[#f85d37] flex items-center justify-center">
-                    <Users className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 rounded-xl bg-[#fff3ef] border border-[#f85d37]/20 flex items-center justify-center shrink-0">
+                    <Users className="w-5 h-5 text-[#f85d37]" />
                   </div>
-                  <h3 className="text-[18px] font-bold text-[#111]">Support Activities</h3>
+                  <h3 className="text-[18px] font-bold text-[#111] m-0">Support Activities</h3>
                 </div>
                 <div className="space-y-3">
                   {STAFFING_ACTIVITIES.support.map((item, i) => (

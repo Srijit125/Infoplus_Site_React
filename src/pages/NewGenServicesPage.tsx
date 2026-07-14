@@ -22,8 +22,7 @@ const SERVICES = [
     icon: TrendingUp,
     title: "Enterprise Transformations",
     href: "/services/new-generation/enterprise-transformation",
-    accent: "#6128a6",
-    glow: "rgba(97,40,166,0.22)",
+    gradient: "from-[#381f55] to-[#6128a6]",
     desc: "Our Generation Z engineers in the digital transformation team specialise in re-architecting and modernising legacy systems into agile, lean platforms. We guide organisations through every phase strategy, roadmap, execution, and change management so transformation is lasting, not just surface-level.",
     highlights: ["Legacy Modernisation", "Change Management", "Agile Adoption", "Digital Roadmaps"],
   },
@@ -31,8 +30,7 @@ const SERVICES = [
     icon: Database,
     title: "Everything Data",
     href: "/services/new-generation/everything-data",
-    accent: "#aa3bff",
-    glow: "rgba(170,59,255,0.22)",
+    gradient: "from-[#381f55] to-[#6128a6]",
     desc: "Using data is NO longer limited to big companies. It is now widely accessible and the primary driver of competitive advantage. Infoplus helps organisations build end-to-end data pipelines, analytics platforms, and governance frameworks that turn raw data into strategic business intelligence at scale.",
     highlights: ["Data Pipelines", "Analytics Platforms", "Data Governance", "BI & Reporting"],
   },
@@ -40,8 +38,7 @@ const SERVICES = [
     icon: Cpu,
     title: "Automation",
     href: "/services/new-generation/automation",
-    accent: "#f85d37",
-    glow: "rgba(248,93,55,0.22)",
+    gradient: "from-[#381f55] to-[#6128a6]",
     desc: "Automation is the next critical step in IT maturity, building the bridge between today's operations and tomorrow's intelligent enterprise. Infoplus designs and implements RPA, intelligent process automation, and AI-driven workflow solutions that eliminate manual bottlenecks and free your teams for higher-value work.",
     highlights: ["RPA Implementation", "Intelligent Workflows", "Process Mining", "AI Automation"],
   },
@@ -203,33 +200,21 @@ export default function NewGenServicesPage() {
               <ScrollReveal key={svc.title} variant="card" delay={i * 100}>
                 <Link
                   to={svc.href}
-                  className="group relative flex flex-col h-full bg-white/5 border border-white/10 rounded-3xl p-7 hover:border-opacity-60 hover:shadow-[0_16px_48px_rgba(0,0,0,0.3)] transition-all duration-400 overflow-hidden"
+                  className="group relative flex flex-col h-full bg-white/4 border border-white/8 rounded-3xl p-7 hover:bg-white/7 hover:border-[#6128a6]/30 hover:-translate-y-1 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.20)] transition-all duration-300 overflow-hidden"
                 >
                   {/* Glow */}
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"
-                    style={{ background: `radial-gradient(ellipse at 20% 20%, ${svc.glow} 0%, transparent 65%)` }}
-                  />
+                  <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/10 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   {/* Icon */}
-                  <div
-                    className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shrink-0 group-hover:scale-110 transition-transform duration-300"
-                    style={{ backgroundColor: `${svc.accent}20`, color: svc.accent }}
-                  >
-                    <svc.icon className="w-6 h-6" />
+                  <div className={`w-12 h-12 rounded-2xl bg-linear-to-br ${svc.gradient} flex items-center justify-center mb-5 shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                    <svc.icon className="w-6 h-6 text-white" />
                   </div>
 
                   {/* Title */}
-                  <h3
-                    className="text-[19px] font-bold mb-2"
-                    style={{ color: svc.accent }}
-                  >
+                  <h3 className="text-[19px] font-bold text-white mb-2 group-hover:text-[#aa3bff] transition-colors duration-300">
                     {svc.title}
                   </h3>
-                  <div
-                    className="w-8 h-0.5 rounded-full mb-5 group-hover:w-16 transition-all duration-400"
-                    style={{ backgroundColor: `${svc.accent}60` }}
-                  />
+                  <div className="w-8 h-0.5 rounded-full mb-5 bg-[#6128a6]/50 group-hover:w-16 transition-all duration-300" />
 
                   {/* Description */}
                   <p className="text-[14px] text-white/55 leading-relaxed flex-1 group-hover:text-white/70 transition-colors duration-300">
@@ -244,17 +229,14 @@ export default function NewGenServicesPage() {
                         className="flex items-center gap-1.5"
                         style={{ animation: `revealFade 300ms ease ${hi * 50 + 200}ms both` }}
                       >
-                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: svc.accent }} />
-                        <span className="text-[12px] text-white/45 leading-tight">{h}</span>
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#aa3bff] shrink-0" />
+                        <span className="text-[12px] text-white/50 leading-tight">{h}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* Read More */}
-                  <div
-                    className="mt-6 flex items-center gap-1.5 text-[13px] font-semibold"
-                    style={{ color: svc.accent }}
-                  >
+                  <div className="mt-6 flex items-center gap-1.5 text-[13px] font-semibold text-[#f85d37]">
                     Read More
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
@@ -267,10 +249,7 @@ export default function NewGenServicesPage() {
 
       {/* â”€â”€ Digital CoE spotlight â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-[#f8f5ff] relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "28px 28px" }}
-        />
+        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#ecdaff]/60 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {[
@@ -278,31 +257,25 @@ export default function NewGenServicesPage() {
                 icon: BarChart3,
                 title: "Data-Driven Decisions",
                 desc: "Every transformation recommendation is backed by data, not assumptions. We measure outcomes and iterate continuously.",
-                accent: "#6128a6",
               },
               {
                 icon: Zap,
                 title: "Speed of Execution",
                 desc: "Transformation-centric methodologies let us move fast without sacrificing quality agile by design, not just by name.",
-                accent: "#aa3bff",
               },
               {
                 icon: Globe,
                 title: "Future-Ready Architecture",
                 desc: "Solutions are built with extensibility at their core, ensuring your platform can evolve as quickly as your business does.",
-                accent: "#f85d37",
               },
             ].map((card, i) => (
               <ScrollReveal key={card.title} variant="card" delay={i * 100}>
-                <div className="group bg-white border border-[#ecdaff] rounded-3xl p-8 hover:border-[#6128a6]/30 hover:shadow-[0_12px_40px_rgba(97,40,166,0.10)] transition-all duration-400 h-full">
-                  <div
-                    className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300"
-                    style={{ backgroundColor: `${card.accent}12`, color: card.accent }}
-                  >
-                    <card.icon className="w-6 h-6" />
+                <div className="group h-full bg-white border border-[#e5e4e7] rounded-3xl p-8 hover:border-[#6128a6]/25 hover:shadow-[0_12px_40px_-4px_rgba(97,40,166,0.10)] hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-2xl bg-[#ecdaff] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <card.icon className="w-6 h-6 text-[#6128a6]" />
                   </div>
-                  <h3 className="text-[17px] font-bold text-[#0d0517] mb-3">{card.title}</h3>
-                  <p className="text-[14px] text-[#0d0517]/60 leading-relaxed">{card.desc}</p>
+                  <h3 className="text-[17px] font-bold text-[#111] mb-3 group-hover:text-[#6128a6] transition-colors duration-300">{card.title}</h3>
+                  <p className="text-[14px] text-[#555] leading-relaxed">{card.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -311,12 +284,8 @@ export default function NewGenServicesPage() {
       </section>
 
       {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-24 bg-[#0d0517] relative overflow-hidden">
-        <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-[#381f55] opacity-40 blur-[130px] pointer-events-none" />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }}
-        />
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
           <ScrollReveal variant="card">
             <div className="relative bg-linear-to-br from-[#1e0a38] via-[#381f55] to-[#6128a6] rounded-3xl p-10 md:p-14 text-center overflow-hidden shadow-[0_32px_80px_rgba(97,40,166,0.35)]">

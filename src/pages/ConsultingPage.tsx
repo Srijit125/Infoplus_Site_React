@@ -186,10 +186,10 @@ export default function ConsultingPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" duration={720} delay={150}>
-              <div className="bg-[#0d0517] rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/30 blur-[60px] pointer-events-none" />
+              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/8 blur-[60px] pointer-events-none" />
                 <div className="relative z-10">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#aa3bff] mb-6">
+                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] mb-6">
                     Why Our Consultants
                   </p>
                   {[
@@ -199,13 +199,13 @@ export default function ConsultingPage() {
                   ].map(({ value, label }, i) => (
                     <div
                       key={i}
-                      className={`flex items-center justify-between py-4 ${i < 2 ? "border-b border-white/8" : ""}`}
+                      className={`flex items-center justify-between py-4 ${i < 2 ? "border-b border-[#e8e0f7]" : ""}`}
                       style={{
                         animation: `revealFade 500ms ease ${i * 130 + 200}ms both`,
                       }}
                     >
-                      <p className="text-[13px] text-white/50">{label}</p>
-                      <p className="text-[24px] font-black text-white">
+                      <p className="text-[14px] text-[#444]">{label}</p>
+                      <p className="text-[24px] font-black text-[#111]">
                         {value}
                       </p>
                     </div>
@@ -218,15 +218,24 @@ export default function ConsultingPage() {
       </section>
 
       {/* ── 4 Sub-Towers Cinematic alternating ─────────────── */}
-      <section className="py-20 bg-[#f8f5ff] relative overflow-hidden">
-        <div className="absolute top-20 right-0 w-80 h-80 rounded-full bg-[#ecdaff]/60 blur-[100px] pointer-events-none" />
+      <section className="py-20 bg-[#0d0517] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#6128a6]/15 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#f85d37]/8 blur-[100px] pointer-events-none" />
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+        />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-14">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/20 border border-[#6128a6]/30 text-[#aa3bff] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Consulting Coverage
               </span>
-              <h2 className="text-[36px] font-bold text-[#111] mt-2">
+              <h2 className="text-[36px] font-bold text-white mt-2">
                 Our 4 Sub-Towers
               </h2>
             </div>
@@ -254,7 +263,7 @@ export default function ConsultingPage() {
                     duration={700}
                     delay={60}
                   >
-                    <div className="group bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:border-[#6128a6]/25 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.10)] hover:-translate-y-0.5 transition-all duration-300">
+                    <div className="group bg-white/4 border border-white/8 rounded-2xl overflow-hidden hover:bg-white/7 hover:border-[#6128a6]/30 hover:-translate-y-0.5 transition-all duration-300">
                       {/* Top gradient accent */}
                       <div className={`h-1 bg-linear-to-r ${gradient}`} />
                       <div className="p-7 flex flex-col sm:flex-row gap-6 items-start">
@@ -265,20 +274,17 @@ export default function ConsultingPage() {
                           >
                             <TIcon className="w-7 h-7 text-white" />
                           </div>
-                          <p className="text-[11px] font-black text-[#ccc] mt-2 text-center">
+                          <p className="text-[11px] font-black text-white/30 mt-2 text-center">
                             {number}
                           </p>
                         </div>
 
                         {/* Content */}
                         <div className="flex-1">
-                          <h3
-                            className="text-[19px] font-bold mb-3 leading-snug group-hover:text-[#6128a6] transition-colors"
-                            style={{ color: "#111" }}
-                          >
+                          <h3 className="text-[19px] font-bold text-white mb-3 leading-snug group-hover:text-[#aa3bff] transition-colors">
                             {title}
                           </h3>
-                          <p className="text-[14px] text-[#666] leading-relaxed mb-5">
+                          <p className="text-[14px] text-white/55 leading-relaxed mb-5">
                             {desc}
                           </p>
                           <div className="flex flex-wrap gap-2">
@@ -287,7 +293,7 @@ export default function ConsultingPage() {
                                 key={j}
                                 className="px-3 py-1.5 rounded-lg text-[11.5px] font-semibold border"
                                 style={{
-                                  backgroundColor: `${accentColor}10`,
+                                  backgroundColor: `${accentColor}15`,
                                   borderColor: `${accentColor}30`,
                                   color: accentColor,
                                   animation: `revealFade 350ms ease ${j * 50 + 200}ms both`,
@@ -328,7 +334,7 @@ export default function ConsultingPage() {
 
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-[19px] top-6 bottom-6 w-px bg-linear-to-b from-[#6128a6] via-[#6128a6]/50 to-transparent lg:left-[31px]" />
+            <div className="absolute left-4.75 top-6 bottom-6 w-px bg-linear-to-b from-[#6128a6] via-[#6128a6]/50 to-transparent lg:left-7.75" />
 
             <div className="space-y-3">
               {STRATEGY_STEPS.map(({ step, title, desc, highlight }, i) => (

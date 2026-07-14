@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {
   Shield, FileText, CheckCircle2, Settings,
   TrendingUp, Zap, Users, Globe, ArrowRight,
-  ChevronRight, type LucideIcon,
+  type LucideIcon,
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
@@ -144,10 +144,10 @@ export default function UmbrellaPage() {
 
             {/* Benefits visual */}
             <ScrollReveal direction="right" duration={720} delay={150}>
-              <div className="bg-[#0d0517] rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/30 blur-[60px] pointer-events-none" />
+              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/8 blur-[60px] pointer-events-none" />
                 <div className="relative z-10">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#aa3bff] mb-6">
+                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] mb-6">
                     Contractor Benefits
                   </p>
                   <div className="space-y-3">
@@ -157,10 +157,10 @@ export default function UmbrellaPage() {
                         className="flex items-start gap-3"
                         style={{ animation: `revealFade 400ms ease ${i * 80 + 200}ms both` }}
                       >
-                        <div className="w-5 h-5 rounded-full bg-[#6128a6]/30 border border-[#6128a6]/50 flex items-center justify-center shrink-0 mt-0.5">
-                          <CheckCircle2 className="w-3 h-3 text-[#aa3bff]" />
+                        <div className="w-5 h-5 rounded-full bg-[#ecdaff] flex items-center justify-center shrink-0 mt-0.5">
+                          <CheckCircle2 className="w-3 h-3 text-[#6128a6]" />
                         </div>
-                        <p className="text-[13px] text-white/65 leading-relaxed">{b}</p>
+                        <p className="text-[13.5px] text-[#444] leading-relaxed">{b}</p>
                       </div>
                     ))}
                   </div>
@@ -235,30 +235,25 @@ export default function UmbrellaPage() {
             </div>
           </ScrollReveal>
 
-          <div className="space-y-4">
-            {WHY_INFOPLUS.map(({ icon: WIcon, title, desc }, i) => {
-              const isEven = i % 2 === 0;
-              return (
-                <ScrollReveal key={i} direction={isEven ? "left" : "right"} duration={680} delay={60}>
-                  <div className="group flex flex-col sm:flex-row gap-5 items-start bg-white/4 border border-white/8 rounded-2xl p-6 hover:bg-white/7 hover:border-[#6128a6]/30 transition-all duration-300 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#6128a6]/8 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {WHY_INFOPLUS.map(({ icon: WIcon, title, desc }, i) => (
+              <ScrollReveal key={i} direction="up" duration={680} delay={Math.floor(i / 2) * 80 + (i % 2) * 60}>
+                <div className="group h-full flex flex-col sm:flex-row gap-5 items-start bg-white/4 border border-white/8 rounded-2xl p-6 hover:bg-white/7 hover:border-[#6128a6]/30 transition-all duration-300 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#6128a6]/8 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                    <div className="shrink-0">
-                      <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <WIcon className="w-6 h-6 text-white" />
-                      </div>
+                  <div className="shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <WIcon className="w-6 h-6 text-white" />
                     </div>
-
-                    <div className="flex-1 relative z-10">
-                      <h3 className="text-[17px] font-bold text-white mb-2 leading-snug">{title}</h3>
-                      <p className="text-[13.5px] text-white/50 leading-relaxed">{desc}</p>
-                    </div>
-
-                    <ChevronRight className="w-5 h-5 text-white/15 group-hover:text-[#aa3bff] group-hover:translate-x-1 transition-all duration-300 shrink-0 self-center hidden sm:block" />
                   </div>
-                </ScrollReveal>
-              );
-            })}
+
+                  <div className="flex-1 relative z-10">
+                    <h3 className="text-[17px] font-bold text-white mb-2 leading-snug">{title}</h3>
+                    <p className="text-[13.5px] text-white/55 leading-relaxed">{desc}</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
@@ -267,7 +262,7 @@ export default function UmbrellaPage() {
       <section className="py-16 bg-[#f8f5ff] border-y border-[#e5e4e7]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
-            <p className="text-[12px] font-bold uppercase tracking-widest text-[#888] text-center mb-8">
+            <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] text-center mb-8">
               Getting started is easy
             </p>
           </ScrollReveal>
@@ -282,8 +277,8 @@ export default function UmbrellaPage() {
                   <div className="w-14 h-14 rounded-full bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center mb-4 shadow-[0_8px_24px_-4px_rgba(97,40,166,0.35)]">
                     <span className="text-[13px] font-black text-white">{step}</span>
                   </div>
-                  <h3 className="text-[15px] font-bold text-[#111] mb-2">{title}</h3>
-                  <p className="text-[13px] text-[#666] leading-relaxed">{desc}</p>
+                  <h3 className="text-[16px] font-bold text-[#111] mb-2">{title}</h3>
+                  <p className="text-[13.5px] text-[#555] leading-relaxed">{desc}</p>
                 </div>
               </ScrollReveal>
             ))}

@@ -23,64 +23,49 @@ const SERVICES = [
     icon: Code2,
     title: "Software Development",
     href: "/services/it-services/software-development",
-    accent: "#6128a6",
-    glow: "rgba(97,40,166,0.22)",
-    tag: "IT Services",
+    gradient: "from-[#381f55] to-[#6128a6]",
     desc: "Our development teams are based in Europe and India to fulfil the needs of different delivery models. We design, develop, and deploy innovative, customised business-critical software systems web, mobile, AR&VR, and IoT solutions that make technology a true asset to your business.",
   },
   {
     icon: FlaskConical,
     title: "Testing",
     href: "/services/it-services/testing",
-    accent: "#aa3bff",
-    glow: "rgba(170,59,255,0.22)",
-    tag: "IT Services",
+    gradient: "from-[#381f55] to-[#6128a6]",
     desc: "Infoplus Testing Center of Excellence believes that quality isn't just checking for defects it is preventing them. Our structured test methodologies cover functional, performance, security, and automation testing to ensure your product launches flawlessly.",
   },
   {
     icon: Server,
     title: "Infrastructure Management",
     href: "/services/it-services/infrastructure-management",
-    accent: "#6128a6",
-    glow: "rgba(97,40,166,0.22)",
-    tag: "IT Services",
+    gradient: "from-[#381f55] to-[#6128a6]",
     desc: "Infoplus has built its reputation helping leading global organisations achieve optimal IT infrastructure performance. From 24/7 monitoring and incident management to cloud migration and disaster recovery, we keep your operations highly available.",
   },
   {
     icon: Database,
     title: "SAP Consulting & Implementation",
     href: "/services/it-services/sap-consulting",
-    accent: "#aa3bff",
-    glow: "rgba(170,59,255,0.22)",
-    tag: "IT Services",
+    gradient: "from-[#381f55] to-[#6128a6]",
     desc: "Our SAP Consulting and Implementation approach at Infoplus clearly focuses on delivering business value. We cover the full SAP landscape ERP, BI, S/4HANA providing design, build, and rollout services tailored to your industry and delivery model.",
   },
   {
     icon: ShieldCheck,
     title: "Cyber Security",
     href: "/services/it-services/cyber-security",
-    accent: "#f85d37",
-    glow: "rgba(248,93,55,0.22)",
-    tag: "IT Services",
+    gradient: "from-[#381f55] to-[#6128a6]",
     desc: "Infoplus cyber security services include a Security Operations Centre, vulnerability scanning, penetration testing, compliance management, and incident response providing end-to-end protection so your organisation stays resilient against evolving threats.",
   },
   {
     icon: Cloud,
     title: "Cloud Portfolio",
     href: "/services/it-services/cloud-portfolio",
-    accent: "#6128a6",
-    glow: "rgba(97,40,166,0.22)",
-    tag: "IT Services",
+    gradient: "from-[#381f55] to-[#6128a6]",
     desc: "Infoplus Cloud Portfolio is an enterprise cloud service offering spanning AWS, Azure, and GCP. From cloud strategy and migration to managed operations and cost optimisation, we guide your cloud journey from inception to full production scale.",
   },
   {
     icon: BrainCircuit,
     title: "Artificial Intelligence",
     href: "/services/it-services/artificial-intelligence",
-    accent: "#aa3bff",
-    glow: "rgba(170,59,255,0.22)",
-    tag: "IT Services",
-    featured: true,
+    gradient: "from-[#381f55] to-[#6128a6]",
     desc: "Infoplus Technologies is at the forefront of Artificial Intelligence innovation. Our AI CoE delivers machine learning, NLP, generative AI, computer vision, and intelligent automation solutions that transform raw data into strategic business intelligence.",
   },
 ];
@@ -268,37 +253,31 @@ export default function ITServicesPage() {
               >
                 <Link
                   to={svc.href}
-                  className="group relative flex flex-col h-full rounded-3xl p-7 transition-all duration-400 overflow-hidden border border-[#6128a6]/25 hover:border-[#aa3bff]/55 hover:shadow-[0_20px_56px_rgba(97,40,166,0.28)]"
-                  style={{ background: "linear-gradient(135deg, #0d0517 0%, #1a0830 55%, #261140 100%)" }}
+                  className="group relative flex flex-col h-full bg-white/4 border border-white/8 rounded-3xl p-7 hover:bg-white/7 hover:border-[#6128a6]/30 hover:-translate-y-1 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.20)] transition-all duration-300 overflow-hidden"
                 >
                   {/* Hover glow */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"
-                    style={{ background: "radial-gradient(ellipse at 20% 20%, rgba(170,59,255,0.18) 0%, transparent 65%)" }}
-                  />
-
+                  <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/10 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   {/* Icon */}
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shrink-0 group-hover:scale-110 transition-transform duration-300"
-                    style={{ background: "linear-gradient(135deg, #6128a6 0%, #aa3bff 100%)" }}
-                  >
+                  <div className={`w-12 h-12 rounded-2xl bg-linear-to-br ${svc.gradient} flex items-center justify-center mb-5 shrink-0 group-hover:scale-110 transition-transform duration-300`}>
                     <svc.icon className="w-6 h-6 text-white" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-[18px] font-bold mb-2 text-[#ecdaff] group-hover:text-white transition-colors duration-300">
+                  <h3 className="text-[19px] font-bold text-white mb-2 group-hover:text-[#aa3bff] transition-colors duration-300">
                     {svc.title}
                   </h3>
 
                   {/* Accent line */}
-                  <div className="w-8 h-0.5 rounded-full mb-4 bg-[#aa3bff] group-hover:w-16 transition-all duration-400" />
+                  <div className="w-8 h-0.5 rounded-full mb-5 bg-[#6128a6]/50 group-hover:w-16 transition-all duration-300" />
 
                   {/* Description */}
-                  <p className="text-[14px] text-white/55 leading-relaxed flex-1 group-hover:text-white/70 transition-colors duration-300 line-clamp-4">
+                  <p className="text-[14px] text-white/55 leading-relaxed flex-1 group-hover:text-white/70 transition-colors duration-300">
                     {svc.desc}
                   </p>
 
                   {/* Read More link */}
-                  <div className="mt-6 flex items-center gap-1.5 text-[13px] font-semibold text-[#f85d37] transition-all duration-300">
+                  <div className="mt-6 flex items-center gap-1.5 text-[13px] font-semibold text-[#f85d37]">
                     Read More
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>

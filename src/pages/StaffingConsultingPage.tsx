@@ -21,8 +21,7 @@ const SERVICES = [
     icon: Users,
     title: "IT Staffing Solutions",
     href: "/services/staffing-consulting/it-staffing-solutions",
-    accent: "#6128a6",
-    glow: "rgba(97,40,166,0.22)",
+    gradient: "from-[#381f55] to-[#6128a6]",
     desc: "With more than two decades of operation, Infoplus Technologies has grown into an internationally recognised staffing service provider. Through a clear vision and a customised plan, our engineering teams provide cutting-edge staffing services to all IT companies from industry giants to mid-sized and unicorn firms.",
     highlights: ["Contract Staffing", "Contract-to-Hire", "Permanent Placement", "Partnership Models"],
   },
@@ -30,8 +29,7 @@ const SERVICES = [
     icon: Lightbulb,
     title: "IT Consulting Solutions",
     href: "/services/staffing-consulting/it-consulting-solutions",
-    accent: "#aa3bff",
-    glow: "rgba(170,59,255,0.22)",
+    gradient: "from-[#381f55] to-[#6128a6]",
     desc: "Infoplus Technologies uses deep expertise and technical background to provide consulting solutions across multiple technology stacks and business domains. Our consultants combine industry best practices with hands-on delivery experience to drive measurable outcomes for your organisation.",
     highlights: ["Technology Strategy", "Architecture Review", "Digital Transformation", "CoE Setup"],
   },
@@ -39,8 +37,7 @@ const SERVICES = [
     icon: Umbrella,
     title: "Umbrella Service",
     href: "/services/staffing-consulting/umbrella-service",
-    accent: "#f85d37",
-    glow: "rgba(248,93,55,0.22)",
+    gradient: "from-[#381f55] to-[#6128a6]",
     desc: "Whether you're new to contracting or are an old hand, an umbrella service through Infoplus simplifies your working life. We handle all payroll, compliance, and administrative requirements so you can focus entirely on your contract work with complete peace of mind.",
     highlights: ["Payroll Management", "Tax Compliance", "IR35 Guidance", "Contractor Support"],
   },
@@ -197,33 +194,21 @@ export default function StaffingConsultingPage() {
               <ScrollReveal key={svc.title} variant="card" delay={i * 100}>
                 <Link
                   to={svc.href}
-                  className="group relative flex flex-col h-full bg-white/5 border border-white/10 rounded-3xl p-7 hover:border-opacity-60 hover:shadow-[0_16px_48px_rgba(0,0,0,0.3)] transition-all duration-400 overflow-hidden"
+                  className="group relative flex flex-col h-full bg-white/4 border border-white/8 rounded-3xl p-7 hover:bg-white/7 hover:border-[#6128a6]/30 hover:-translate-y-1 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.20)] transition-all duration-300 overflow-hidden"
                 >
                   {/* Glow */}
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"
-                    style={{ background: `radial-gradient(ellipse at 20% 20%, ${svc.glow} 0%, transparent 65%)` }}
-                  />
+                  <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/10 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   {/* Icon */}
-                  <div
-                    className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shrink-0 group-hover:scale-110 transition-transform duration-300"
-                    style={{ backgroundColor: `${svc.accent}20`, color: svc.accent }}
-                  >
-                    <svc.icon className="w-6 h-6" />
+                  <div className={`w-12 h-12 rounded-2xl bg-linear-to-br ${svc.gradient} flex items-center justify-center mb-5 shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                    <svc.icon className="w-6 h-6 text-white" />
                   </div>
 
                   {/* Title */}
-                  <h3
-                    className="text-[19px] font-bold mb-2"
-                    style={{ color: svc.accent }}
-                  >
+                  <h3 className="text-[19px] font-bold text-white mb-2 group-hover:text-[#aa3bff] transition-colors duration-300">
                     {svc.title}
                   </h3>
-                  <div
-                    className="w-8 h-0.5 rounded-full mb-5 group-hover:w-16 transition-all duration-400"
-                    style={{ backgroundColor: `${svc.accent}60` }}
-                  />
+                  <div className="w-8 h-0.5 rounded-full bg-[#6128a6]/50 mb-5 group-hover:w-16 transition-all duration-300" />
 
                   {/* Description */}
                   <p className="text-[14px] text-white/55 leading-relaxed flex-1 group-hover:text-white/70 transition-colors duration-300">
@@ -238,17 +223,14 @@ export default function StaffingConsultingPage() {
                         className="flex items-center gap-1.5"
                         style={{ animation: `revealFade 300ms ease ${hi * 50 + 200}ms both` }}
                       >
-                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: svc.accent }} />
-                        <span className="text-[12px] text-white/45 leading-tight">{h}</span>
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#aa3bff] shrink-0" />
+                        <span className="text-[12px] text-white/50 leading-tight">{h}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* Read More */}
-                  <div
-                    className="mt-6 flex items-center gap-1.5 text-[13px] font-semibold"
-                    style={{ color: svc.accent }}
-                  >
+                  <div className="mt-6 flex items-center gap-1.5 text-[13px] font-semibold text-[#f85d37]">
                     Read More
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
