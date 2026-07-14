@@ -1,6 +1,7 @@
 import { PageMeta } from "../components/shared/PageMeta";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
+import { useState, useEffect } from "react";
 import {
   FileText,
   Briefcase,
@@ -228,6 +229,24 @@ const SECTIONS = [
 ];
 
 export default function TermsOfServicePage() {
+  const [activeId, setActiveId] = useState<string>(SECTIONS[0].id);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveId(entry.target.id);
+        });
+      },
+      { rootMargin: "-15% 0px -75% 0px", threshold: 0 },
+    );
+    SECTIONS.forEach((s) => {
+      const el = document.getElementById(s.id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="w-full">
       <PageMeta
@@ -304,7 +323,7 @@ export default function TermsOfServicePage() {
       </section>
 
       {/* ── Full Sections ────────────────────────────────────── */}
-      <section className="py-20 bg-[#f8f5ff] relative overflow-hidden">
+      <section className="py-20 bg-[#f8f5ff] relative">
         <div
           className="absolute inset-0 opacity-[0.025] pointer-events-none"
           style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "32px 32px" }}
@@ -314,17 +333,26 @@ export default function TermsOfServicePage() {
 
             {/* Sticky TOC */}
             <aside className="lg:sticky lg:top-[100px] lg:self-start hidden lg:block">
-              <ScrollReveal direction="left">
-                <div className="bg-white border border-[#ecdaff] rounded-2xl p-5 shadow-[0_4px_24px_rgba(97,40,166,0.07)]">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#6128a6] mb-4">
+              <div className="bg-white border border-[#ecdaff] rounded-2xl shadow-[0_4px_24px_rgba(97,40,166,0.07)] overflow-hidden flex flex-col" style={{ maxHeight: "calc(100vh - 120px)" }}>
+                <div className="px-5 pt-5 pb-3 shrink-0 border-b border-[#ecdaff]">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#6128a6]">
                     Contents
                   </p>
-                  <ul className="space-y-1">
+                </div>
+                <div className="overflow-y-auto px-3 py-3">
+                  <ul className="space-y-0.5">
                     {SECTIONS.map((s) => (
                       <li key={s.id}>
                         <a
                           href={`#${s.id}`}
-                          className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-[12px] text-[#0d0517]/55 hover:text-[#6128a6] hover:bg-[#6128a6]/06 transition-all duration-200 group"
+                          className={[
+                            "flex items-center gap-2 px-2 py-1.5 rounded-lg text-[12px] transition-all duration-200",
+                            activeId === s.id ? "font-semibold" : "hover:bg-[#6128a6]/06",
+                          ].join(" ")}
+                          style={{
+                            color: activeId === s.id ? s.accent : "#444",
+                            backgroundColor: activeId === s.id ? `${s.accent}12` : undefined,
+                          }}
                         >
                           <span
                             className="text-[10px] font-black w-5 shrink-0"
@@ -332,15 +360,16 @@ export default function TermsOfServicePage() {
                           >
                             {s.num}
                           </span>
-                          <span className="group-hover:translate-x-0.5 transition-transform duration-200">
-                            {s.title}
-                          </span>
+                          <span className="leading-snug flex-1">{s.title}</span>
+                          {activeId === s.id && (
+                            <ChevronRight className="w-3 h-3 shrink-0" style={{ color: s.accent }} />
+                          )}
                         </a>
                       </li>
                     ))}
                   </ul>
                 </div>
-              </ScrollReveal>
+              </div>
             </aside>
 
             {/* Content */}
@@ -349,7 +378,7 @@ export default function TermsOfServicePage() {
                 <ScrollReveal key={s.id} direction="up" delay={i * 40}>
                   <div
                     id={s.id}
-                    className="group bg-white border border-[#ecdaff] rounded-2xl p-7 hover:border-[#6128a6]/30 hover:shadow-[0_8px_40px_rgba(97,40,166,0.09)] transition-all duration-400 scroll-mt-[100px] relative overflow-hidden"
+                    className="group bg-white border border-[#ecdaff] rounded-2xl p-7 hover:border-[#6128a6]/30 hover:shadow-[0_8px_40px_rgba(97,40,166,0.09)] transition-all duration-400 scroll-mt-25 relative overflow-hidden"
                   >
                     {/* Left accent bar */}
                     <div
@@ -374,7 +403,7 @@ export default function TermsOfServicePage() {
                     </div>
 
                     {/* Intro */}
-                    <p className="text-[14px] text-[#0d0517]/65 leading-relaxed mb-4 pl-4">
+                    <p className="text-[15px] text-[#0d0517]/65 leading-relaxed mb-4 pl-4">
                       {s.intro}
                     </p>
 
@@ -391,7 +420,7 @@ export default function TermsOfServicePage() {
                               className="w-4 h-4 shrink-0 mt-0.5"
                               style={{ color: s.accent }}
                             />
-                            <span className="text-[13.5px] text-[#0d0517]/65 leading-snug">{b}</span>
+                            <span className="text-[14.5px] text-[#0d0517]/65 leading-snug">{b}</span>
                           </li>
                         ))}
                       </ul>
@@ -404,7 +433,7 @@ export default function TermsOfServicePage() {
                         style={{ backgroundColor: `${s.accent}08`, borderLeft: `3px solid ${s.accent}50` }}
                       >
                         <Info className="w-4 h-4 shrink-0 mt-0.5" style={{ color: s.accent }} />
-                        <p className="text-[13px] leading-relaxed" style={{ color: `${s.accent}cc` }}>
+                        <p className="text-[14px] leading-relaxed" style={{ color: `${s.accent}cc` }}>
                           {s.highlight}
                         </p>
                       </div>
@@ -418,11 +447,11 @@ export default function TermsOfServicePage() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="py-24 bg-[#0d0517] relative overflow-hidden">
-        <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-[#381f55] opacity-40 blur-[130px] pointer-events-none" />
+      <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#ecdaff]/60 blur-[120px] pointer-events-none" />
         <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+          className="absolute inset-0 opacity-[0.03]"
+          style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "28px 28px" }}
         />
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
           <ScrollReveal variant="card">

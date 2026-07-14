@@ -43,8 +43,8 @@ const CATEGORIES = [
     icon: Settings2,
     title: "Functionality Cookies",
     category: "Preferences",
-    accent: "#6128a6",
-    glow: "rgba(97,40,166,0.22)",
+    accent: "#f85d37",
+    glow: "rgba(248,93,55,0.22)",
     canOptOut: true,
     desc: "These are used to recognize you when you return to our website. This enables us to personalize our content for you, greet you by name, and remember your preferences (for example, your choice of language or region).",
   },
@@ -52,8 +52,8 @@ const CATEGORIES = [
     icon: Target,
     title: "Targeting Cookies",
     category: "Marketing",
-    accent: "#f85d37",
-    glow: "rgba(248,93,55,0.22)",
+    accent: "#f59e0b",
+    glow: "rgba(245,158,11,0.22)",
     canOptOut: true,
     desc: "These cookies record your visit to our website, the pages you have visited, and the links you have followed. We will use this information to make our website and the advertising displayed on it more relevant to your interests. We may also share this information with third parties for this purpose.",
   },
@@ -178,28 +178,29 @@ export default function CookiePolicyPage() {
                     <Cookie className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-[16px] font-bold text-[#0d0517] mb-5">How cookies work</h3>
-                  <div className="space-y-4">
+                  <div>
                     {[
                       { step: "1", text: "You visit our website for the first time" },
                       { step: "2", text: "Our server sends a small cookie to your browser" },
                       { step: "3", text: "Your browser stores it on your device" },
                       { step: "4", text: "On return visits, the cookie is sent back to us" },
                       { step: "5", text: "We use it to recognise you and improve your experience" },
-                    ].map((s, i) => (
+                    ].map((s, i, arr) => (
                       <div
                         key={s.step}
-                        className="flex items-start gap-3"
-                        style={{ animation: `revealFade 350ms ease ${i * 80 + 300}ms both` }}
+                        className="flex items-start gap-3 relative"
+                        style={{ animation: `revealFade 350ms ease ${i * 80 + 300}ms both`, paddingBottom: i < arr.length - 1 ? "16px" : "0" }}
                       >
-                        <div className="w-6 h-6 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/25 flex items-center justify-center shrink-0">
+                        {i < arr.length - 1 && (
+                          <div className="absolute left-3 top-6 bottom-0 w-px bg-[#6128a6]/15 pointer-events-none" />
+                        )}
+                        <div className="w-6 h-6 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/25 flex items-center justify-center shrink-0 relative z-10">
                           <span className="text-[10px] font-bold text-[#6128a6]">{s.step}</span>
                         </div>
                         <p className="text-[13px] text-[#0d0517]/65 leading-snug mt-0.5">{s.text}</p>
                       </div>
                     ))}
                   </div>
-                  {/* connecting line */}
-                  <div className="absolute left-[50px] top-[104px] bottom-[68px] w-px bg-[#6128a6]/15 pointer-events-none" />
                 </div>
               </div>
             </ScrollReveal>
@@ -241,7 +242,7 @@ export default function CookiePolicyPage() {
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
             <div className="text-center mb-16">
-              <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white/70 text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/20 border border-[#6128a6]/30 text-[#aa3bff] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Cookie Categories
               </span>
               <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-white leading-tight">
@@ -379,10 +380,10 @@ export default function CookiePolicyPage() {
       </section>
 
       {/* ── Manage Your Preferences ──────────────────────────── */}
-      <section className="py-20 bg-[#0d0517] relative overflow-hidden">
+      <section className="py-20 bg-[#f8f5ff] relative overflow-hidden">
         <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "24px 24px" }}
+          className="absolute inset-0 opacity-[0.03]"
+          style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "24px 24px" }}
         />
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
           <ScrollReveal variant="card">

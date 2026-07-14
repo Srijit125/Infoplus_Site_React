@@ -102,7 +102,7 @@ export default function BlogDetail() {
                 {initials(post.author)}
               </div>
               <div>
-                <p className="text-white text-[14px] font-semibold">{post.author}</p>
+                <p className="text-white text-[14px] font-semibold mb-0">{post.author}</p>
                 <p className="text-white/40 text-[12px]">Author</p>
               </div>
             </div>

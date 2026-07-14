@@ -22,6 +22,7 @@ import {
   Star,
   BookMarked,
   Brain,
+  Image,
 } from "lucide-react";
 
 /* ── Product Cards ─────────────────────────────────────────── */
@@ -55,6 +56,16 @@ const DEVICES = [
   { icon: Laptop, label: "Laptop" },
   { icon: Tablet, label: "TAB" },
   { icon: Smartphone, label: "Mobile" },
+];
+
+/* ── Uniqueness Stats ──────────────────────────────────────── */
+const UNIQUENESS_STATS = [
+  { value: "4.5K", label: "Lecture Hours of Digital Content", accent: "#6128a6" },
+  { value: "1.00L", label: "3D/2D Demonstrations", accent: "#aa3bff" },
+  { value: "6.75L", label: "Page of Content", accent: "#f85d37" },
+  { value: "8.25K", label: "Solved Tutorial Problems", accent: "#6128a6" },
+  { value: "1.80L", label: "Multiple Choice Questions", accent: "#aa3bff" },
+  { value: "250", label: "Question & Answers APPs", accent: "#f85d37" },
 ];
 
 /* ── Tabs ──────────────────────────────────────────────────── */
@@ -299,6 +310,50 @@ export default function EducationSolutionsPage() {
         </div>
       </section>
 
+      {/* ── Our Uniqueness ───────────────────────────────────── */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#ecdaff]/60 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#f8f5ff] blur-[100px] pointer-events-none" />
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          <ScrollReveal direction="up">
+            <div className="text-center mb-14">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                Our Uniqueness
+              </span>
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-[#111] leading-tight">
+                Scale that sets us{" "}
+                <span className="text-[#6128a6]">apart</span>
+              </h2>
+            </div>
+          </ScrollReveal>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+            {UNIQUENESS_STATS.map((stat, i) => (
+              <ScrollReveal key={stat.label} direction="up" delay={i * 80}>
+                <div className="group relative bg-[#f8f5ff] border border-[#e8e0f7] rounded-2xl p-7 hover:bg-white hover:border-[#6128a6]/25 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.12)] hover:-translate-y-1 transition-all duration-300 text-center overflow-hidden">
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
+                    style={{ background: `radial-gradient(ellipse at 50% 30%, ${stat.accent}12 0%, transparent 70%)` }}
+                  />
+                  <p
+                    className="text-[clamp(2rem,4vw,2.75rem)] font-black leading-none mb-3 relative z-10"
+                    style={{ color: stat.accent }}
+                  >
+                    {stat.value}
+                  </p>
+                  <div
+                    className="w-10 h-0.5 rounded-full mx-auto mb-3"
+                    style={{ backgroundColor: `${stat.accent}40` }}
+                  />
+                  <p className="text-[13.5px] text-[#555] leading-snug relative z-10">
+                    {stat.label}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Limitless Learning ───────────────────────────────── */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-0 left-[-10%] w-[500px] h-[500px] rounded-full bg-[#381f55] opacity-40 blur-[120px] pointer-events-none" />
@@ -398,7 +453,7 @@ export default function EducationSolutionsPage() {
       </section>
 
       {/* ── Tabbed Explorer ──────────────────────────────────── */}
-      <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
+      <section className="bg-[#f8f5ff] relative">
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
           style={{
@@ -407,9 +462,9 @@ export default function EducationSolutionsPage() {
             backgroundSize: "32px 32px",
           }}
         />
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        <div className="pt-24 container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
-            <div className="text-center mb-14">
+            <div className="text-center mb-10">
               <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Explore the Platform
               </span>
@@ -418,16 +473,18 @@ export default function EducationSolutionsPage() {
               </h2>
             </div>
           </ScrollReveal>
+        </div>
 
-          {/* Tab bar */}
-          <ScrollReveal direction="up" delay={80}>
-            <div className="flex flex-wrap justify-center gap-2 mb-12">
+        {/* Sticky tab bar */}
+        <div className="sticky top-16 z-30 bg-[#f8f5ff]/95 backdrop-blur-sm border-b border-[#e8e0f7]">
+          <div className="container mx-auto px-6 max-w-7xl py-4">
+            <div className="flex flex-wrap justify-center gap-2">
               {TABS.map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={[
-                    "px-5 py-2.5 rounded-xl text-[14px] font-semibold transition-all duration-250",
+                    "px-5 py-2.5 rounded-xl text-[14px] font-semibold transition-all duration-250 cursor-pointer",
                     activeTab === tab
                       ? "bg-[#6128a6] text-white shadow-[0_8px_24px_rgba(97,40,166,0.30)]"
                       : "bg-white border border-[#ecdaff] text-[#0d0517]/60 hover:border-[#6128a6]/40 hover:text-[#6128a6]",
@@ -437,8 +494,10 @@ export default function EducationSolutionsPage() {
                 </button>
               ))}
             </div>
-          </ScrollReveal>
+          </div>
+        </div>
 
+        <div className="pt-12 pb-24 container mx-auto px-6 max-w-7xl relative z-10">
           {/* Tab content panel */}
           <div
             key={activeTab}
@@ -462,21 +521,38 @@ export default function EducationSolutionsPage() {
                   {APPROACH_STEPS.map((step, i) => (
                     <div
                       key={step.label}
-                      className="group relative bg-white border border-[#ecdaff] rounded-2xl p-7 hover:border-[#6128a6]/40 hover:shadow-[0_8px_32px_rgba(97,40,166,0.10)] transition-all duration-300 overflow-hidden"
+                      className="group relative bg-white border border-[#ecdaff] rounded-2xl overflow-hidden hover:border-[#6128a6]/40 hover:shadow-[0_8px_32px_rgba(97,40,166,0.10)] transition-all duration-300"
                       style={{
                         animation: `cardTiltIn 500ms cubic-bezier(0.22,1,0.36,1) ${i * 80}ms both`,
                       }}
                     >
-                      <div className="absolute top-4 right-4 text-[48px] font-black text-[#6128a6] opacity-[0.06] leading-none select-none pointer-events-none">
-                        {step.num}
+                      {/* Image placeholder */}
+                      <div className="h-44 bg-[#6128a6]/5 border-b border-[#ecdaff] flex items-center justify-center relative overflow-hidden">
+                        <div
+                          className="absolute inset-0 opacity-[0.04]"
+                          style={{
+                            backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)",
+                            backgroundSize: "16px 16px",
+                          }}
+                        />
+                        <div className="flex flex-col items-center gap-2 text-[#6128a6]/25 relative z-10">
+                          <Image className="w-10 h-10" />
+                          <span className="text-[10px] font-bold uppercase tracking-widest">Image Placeholder</span>
+                        </div>
                       </div>
-                      <div className="w-11 h-11 rounded-xl bg-[#6128a6]/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <step.icon className="w-5 h-5 text-[#6128a6]" />
+                      {/* Card body */}
+                      <div className="p-7 relative">
+                        <div className="absolute top-4 right-4 text-[48px] font-black text-[#6128a6] opacity-[0.06] leading-none select-none pointer-events-none">
+                          {step.num}
+                        </div>
+                        <div className="w-11 h-11 rounded-xl bg-[#6128a6]/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                          <step.icon className="w-5 h-5 text-[#6128a6]" />
+                        </div>
+                        <p className="text-[15px] font-bold text-[#0d0517]">
+                          {step.label}
+                        </p>
+                        <div className="w-8 h-0.5 rounded-full bg-[#6128a6]/40 mt-3 group-hover:w-full transition-all duration-500" />
                       </div>
-                      <p className="text-[15px] font-bold text-[#0d0517]">
-                        {step.label}
-                      </p>
-                      <div className="w-8 h-0.5 rounded-full bg-[#6128a6]/40 mt-3 group-hover:w-full transition-all duration-500" />
                     </div>
                   ))}
                 </div>
@@ -501,36 +577,55 @@ export default function EducationSolutionsPage() {
                   {MODEL_QUADRANTS.map((model, i) => (
                     <div
                       key={model.label}
-                      className="bg-white border border-[#ecdaff] rounded-3xl p-8 hover:shadow-[0_16px_48px_rgba(97,40,166,0.10)] transition-all duration-400"
+                      className="bg-white border border-[#ecdaff] rounded-3xl overflow-hidden hover:shadow-[0_16px_48px_rgba(97,40,166,0.10)] transition-all duration-400"
                       style={{
                         animation: `revealFade 400ms ease ${i * 120}ms both`,
                       }}
                     >
-                      <h4
-                        className="text-[18px] font-bold mb-3"
-                        style={{ color: model.accent }}
+                      {/* Image placeholder */}
+                      <div
+                        className="h-44 flex items-center justify-center relative overflow-hidden border-b border-[#ecdaff]"
+                        style={{ background: `linear-gradient(135deg, ${model.accent}0d 0%, ${model.accent}05 100%)` }}
                       >
-                        {model.label}
-                      </h4>
-                      <p className="text-[14px] text-[#0d0517]/65 leading-relaxed mb-7">
-                        {model.desc}
-                      </p>
-                      {/* Quadrant grid */}
-                      <div className="grid grid-cols-2 gap-2">
-                        {model.quads.map((q, qi) => (
-                          <div
-                            key={q}
-                            className="rounded-xl border text-center py-4 px-3 text-[13px] font-semibold transition-all duration-300 hover:scale-105"
-                            style={{
-                              borderColor: `${model.accent}30`,
-                              backgroundColor: `${model.accent}08`,
-                              color: model.accent,
-                              animation: `revealFade 300ms ease ${qi * 60 + 200}ms both`,
-                            }}
-                          >
-                            {q}
-                          </div>
-                        ))}
+                        <div
+                          className="absolute inset-0 opacity-[0.04]"
+                          style={{
+                            backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)",
+                            backgroundSize: "16px 16px",
+                          }}
+                        />
+                        <div className="flex flex-col items-center gap-2 relative z-10" style={{ color: `${model.accent}40` }}>
+                          <Image className="w-10 h-10" />
+                          <span className="text-[10px] font-bold uppercase tracking-widest">Image Placeholder</span>
+                        </div>
+                      </div>
+                      <div className="p-8">
+                        <h4
+                          className="text-[18px] font-bold mb-3"
+                          style={{ color: model.accent }}
+                        >
+                          {model.label}
+                        </h4>
+                        <p className="text-[14px] text-[#0d0517]/65 leading-relaxed mb-7">
+                          {model.desc}
+                        </p>
+                        {/* Quadrant grid */}
+                        <div className="grid grid-cols-2 gap-2">
+                          {model.quads.map((q, qi) => (
+                            <div
+                              key={q}
+                              className="rounded-xl border text-center py-4 px-3 text-[13px] font-semibold transition-all duration-300 hover:scale-105"
+                              style={{
+                                borderColor: `${model.accent}30`,
+                                backgroundColor: `${model.accent}08`,
+                                color: model.accent,
+                                animation: `revealFade 300ms ease ${qi * 60 + 200}ms both`,
+                              }}
+                            >
+                              {q}
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -540,7 +635,16 @@ export default function EducationSolutionsPage() {
 
             {/* ─ DEPTH OF CONTENT ─ */}
             {activeTab === "Depth of Content" && (
-              <div className="max-w-5xl mx-auto space-y-8">
+              <div className="max-w-5xl mx-auto">
+                <div className="text-center mb-12">
+                  <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d0517] mb-4">
+                    Depth of Content
+                  </h3>
+                  <p className="text-[16px] text-[#0d0517]/65 max-w-3xl mx-auto">
+                    Our content is structured with precision — from university-aligned hierarchies and 3D/2D visual demonstrations to targeted Q&A examination tools, every layer is designed to deepen understanding and improve outcomes.
+                  </p>
+                </div>
+                <div className="space-y-8">
                 {DEPTH_METHODS.map((method, i) => (
                   <div
                     key={method.num}
@@ -611,6 +715,7 @@ export default function EducationSolutionsPage() {
                     </div>
                   </div>
                 ))}
+                </div>
               </div>
             )}
 

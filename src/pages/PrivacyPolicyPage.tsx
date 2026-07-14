@@ -1,551 +1,374 @@
+import { useState, useEffect } from "react";
 import { PageMeta } from "../components/shared/PageMeta";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
   Shield,
+  Users,
   Database,
   Settings2,
   Scale,
+  Mail,
+  Share2,
   Globe,
-  UserCheck,
   Lock,
   Clock,
-  Cookie,
-  Mail,
+  UserCheck,
+  ExternalLink,
   ChevronRight,
-  CheckCircle2,
-  Info,
-  Eye,
-  Trash2,
-  Download,
-  Ban,
-  Edit3,
-  AlertCircle,
+  Phone,
 } from "lucide-react";
-import { Link } from "react-router-dom";
 
-/* ── Summary highlights ──────────────────────────────────────── */
-const HIGHLIGHTS = [
-  {
-    icon: Shield,
-    label: "GDPR Compliant",
-    sub: "UK & EU data protection law",
-    color: "#6128a6",
-  },
-  {
-    icon: Lock,
-    label: "Secure Processing",
-    sub: "Encrypted, access-controlled",
-    color: "#aa3bff",
-  },
-  {
-    icon: Globe,
-    label: "International Transfers",
-    sub: "Europe & India offices",
-    color: "#f85d37",
-  },
-  {
-    icon: UserCheck,
-    label: "Your Rights",
-    sub: "Access, erase, port, object",
-    color: "#6128a6",
-  },
-];
-
-/* ── GDPR Rights ─────────────────────────────────────────────── */
-const GDPR_RIGHTS = [
-  { icon: Eye,       right: "Right to Access",       desc: "Request a copy of the personal data we hold about you." },
-  { icon: Edit3,     right: "Right to Rectification", desc: "Have inaccurate or incomplete data corrected." },
-  { icon: Trash2,    right: "Right to Erasure",       desc: "Request deletion of your data where no longer necessary." },
-  { icon: Ban,       right: "Right to Restriction",   desc: "Restrict how we process your data in certain circumstances." },
-  { icon: Download,  right: "Right to Portability",   desc: "Receive your data in a structured, machine-readable format." },
-  { icon: AlertCircle, right: "Right to Object",      desc: "Object to processing based on legitimate interests or direct marketing." },
-];
-
-/* ── Sections ─────────────────────────────────────────────────── */
+/* ── Sections data ────────────────────────────────────────────── */
 const SECTIONS = [
   {
-    id: "introduction",
+    id: "who-we-are",
     num: "01",
-    icon: Shield,
-    title: "Introduction & Data Controller",
+    icon: Users,
+    title: "Who we are",
     accent: "#6128a6",
-    intro:
-      "Infoplus Technologies Ltd is committed to protecting and respecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you use our website or engage our services. We act as Data Controller for personal data processed in connection with our business activities.",
-    bullets: [
-      "Data Controller: Infoplus Technologies Ltd, registered in England and Wales",
-      "We comply with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018",
-      "This policy applies to all personal data collected through our website, services, and communications",
-      "We may update this policy periodically the revision date at the top reflects the latest version",
+    paragraphs: [
+      "InfoPlus Technologies UK Ltd is a UK recruitment & Staffing Firm. We do a fair bit - IT solutions, software development, AI work, digital transformation, consulting, cloud services, cyber-security, and general business support - for clients here in the UK",
     ],
-    highlight: null,
   },
   {
-    id: "data-collected",
+    id: "information-we-collect",
     num: "02",
     icon: Database,
-    title: "Information We Collect",
+    title: "The information we collect",
     accent: "#aa3bff",
-    intro:
-      "We collect personal data through various interactions with our website and during service engagements. The categories of data we may collect include:",
-    bullets: [
-      "Identity Data name, username, title, company name",
-      "Contact Data email address, phone number, postal address",
-      "Professional Data job title, skills, employment history (for staffing services)",
-      "Technical Data IP address, browser type, device identifiers, cookies",
-      "Usage Data pages visited, time on site, click patterns, referral sources",
-      "Communications Data emails, enquiry forms, and correspondence with us",
-      "Financial Data billing information, payment records (processed securely via third parties)",
-      "Recruitment Data CVs, application forms, and right-to-work documentation",
+    paragraphs: [
+      "Most of what we hold about you comes from you directly. If you fill in a form on our site, ask us for a quote, get in touch about a project, or apply for a role with us, you'll typically be giving us your name, maybe your business name and job title, an email address or phone number, and some details about what you need. Sometimes people share more than that, which is fine - we just take what's relevant.",
+      "There's also the technical stuff that gets collected automatically when you browse our site, things like your IP address, what browser and device you're using, which pages you visited and for how long, and where you came from before you landed here. This isn't unique to us - almost every website does this - and it mainly helps us keep things running smoothly and catch anything suspicious.",
     ],
-    highlight:
-      "We only collect data that is necessary for the specified purpose. We do not sell personal data to third parties.",
   },
   {
-    id: "how-we-use",
+    id: "what-we-do",
     num: "03",
     icon: Settings2,
-    title: "How We Use Your Data",
-    accent: "#6128a6",
-    intro:
-      "We use personal data for specific, legitimate purposes. We do not use your data in ways that are incompatible with those purposes. Our primary uses include:",
-    bullets: [
-      "Providing and managing our IT services and staffing engagements",
-      "Responding to enquiries, proposals, and communications",
-      "Processing applications for employment or contractor placements",
-      "Sending service updates, invoices, and contract-related notifications",
-      "Improving our website functionality and user experience via analytics",
-      "Complying with legal and regulatory obligations",
-      "Preventing fraud and ensuring platform security",
-      "Marketing our services to business contacts where we have a legitimate interest or consent",
+    title: "What we do with it",
+    accent: "#f85d37",
+    paragraphs: [
+      "Broadly speaking, we use your information to respond to whatever you've contacted us about, put together quotes or proposals, actually deliver the services you've asked for, and provide support if something needs sorting out. We also look at how people use our website so we can improve it over time, and where you've agreed to it, we'll send you updates about our work or things we think might interest you.",
+      "We also have to use information sometimes just to stay compliant with legal and regulatory requirements, or to keep our systems secure. We won't process your data unless we've actually got a proper reason to.",
     ],
-    highlight: null,
   },
   {
     id: "legal-basis",
     num: "04",
     icon: Scale,
-    title: "Legal Basis for Processing",
-    accent: "#aa3bff",
-    intro:
-      "Under UK GDPR, we must have a lawful basis for every processing activity. The basis we rely on depends on the specific purpose:",
-    bullets: [
-      "Contract Performance processing necessary to fulfil our service contracts",
-      "Legitimate Interests business analytics, security, and B2B marketing where balanced against your rights",
-      "Legal Obligation complying with tax, employment, and regulatory requirements",
-      "Consent optional marketing emails, non-essential cookies, and recruitment processing",
-      "Vital Interests in emergency situations to protect life",
-    ],
-    highlight:
-      "Where we rely on consent, you have the right to withdraw it at any time. Withdrawal does not affect the lawfulness of processing prior to withdrawal.",
-  },
-  {
-    id: "sharing",
-    num: "05",
-    icon: Globe,
-    title: "Data Sharing & International Transfers",
-    accent: "#f85d37",
-    intro:
-      "We do not sell your personal data. We may share it with carefully selected third parties for the purposes described in this policy. All sharing is governed by appropriate data protection agreements.",
-    bullets: [
-      "Service Providers IT infrastructure, hosting, analytics, and CRM platforms",
-      "Staffing Clients candidate data shared with client organisations for placement purposes (with consent)",
-      "Professional Advisors accountants, legal counsel, and auditors under strict confidentiality",
-      "Regulatory Authorities HMRC, ICO, or other bodies where legally required",
-      "Business Transfers in connection with a merger, acquisition, or asset sale",
-    ],
-    highlight:
-      "Data may be transferred to our offices in India under appropriate international transfer mechanisms (Standard Contractual Clauses or adequacy decisions).",
-  },
-  {
-    id: "security",
-    num: "07",
-    icon: Lock,
-    title: "Data Security",
+    title: "Why we're allowed to use it",
     accent: "#6128a6",
-    intro:
-      "We implement robust technical and organisational measures to protect your personal data against unauthorised access, loss, destruction, or disclosure. Our security framework includes:",
-    bullets: [
-      "TLS/SSL encryption for all data in transit",
-      "Access controls and role-based permissions for internal systems",
-      "Regular security audits and penetration testing",
-      "Employee training on data protection and information security",
-      "Incident response procedures and breach notification protocols",
-      "Secure data disposal and destruction policies",
+    paragraphs: [
+      "Under UK data protection law, we can only process personal information where there's a legal basis for doing so. In our case that's usually one of the following: you've given us consent, we need it to carry out a contract with you, we're legally obliged to, or we have a legitimate business interest that doesn't unfairly override your own rights.",
     ],
-    highlight:
-      "Despite our best efforts, no transmission over the internet is 100% secure. Please notify us immediately at uk@infoplusltd.co.uk if you suspect any breach.",
+  },
+  {
+    id: "marketing",
+    num: "05",
+    icon: Mail,
+    title: "Marketing emails",
+    accent: "#aa3bff",
+    paragraphs: [
+      "If you've said yes to hearing from us, we might send the odd email about our services, something happening in the industry, or an event we're running. Not interested anymore? Just click unsubscribe on any of those emails, or tell us directly and we'll take you off the list.",
+    ],
+  },
+  {
+    id: "data-sharing",
+    num: "06",
+    icon: Share2,
+    title: "Do we share your data with anyone?",
+    accent: "#f85d37",
+    paragraphs: [
+      "We don't sell it. We don't rent it out. What we do sometimes do is share information with the people who help us run things behind the scenes - our IT providers, service partners, that sort of thing. They only get what they need to do their job, and they're required to look after it properly.",
+      "Occasionally we might need to disclose information because the law says so, or because we're dealing with a legal claim of some kind.",
+    ],
+  },
+  {
+    id: "data-transfers",
+    num: "07",
+    icon: Globe,
+    title: "When data crosses borders",
+    accent: "#6128a6",
+    paragraphs: [
+      "We work with people outside the UK, so your data might occasionally be processed elsewhere. When that happens, we make sure there are proper safeguards in place so it's still protected the way it should be.",
+    ],
+  },
+  {
+    id: "data-security",
+    num: "08",
+    icon: Lock,
+    title: "How we keep it safe",
+    accent: "#aa3bff",
+    paragraphs: [
+      "We've got technical and organizational measures in place to stop your information from being accessed, lost, or misused. That said, nothing sent over the internet or stored on a server is ever 100% risk-free - we won't pretend otherwise - but we do take reasonable, sensible steps to protect it.",
+    ],
   },
   {
     id: "retention",
-    num: "08",
-    icon: Clock,
-    title: "Data Retention",
-    accent: "#aa3bff",
-    intro:
-      "We retain personal data only for as long as necessary to fulfil the purposes for which it was collected, including legal, accounting, and reporting obligations:",
-    bullets: [
-      "Client data 7 years after contract end (tax and legal compliance)",
-      "Candidate/recruitment data 1 year if no placement, 7 years if placed",
-      "Website analytics data 26 months (anonymised after 6 months)",
-      "Marketing consent records until consent is withdrawn, plus 3 years",
-      "Security logs 12 months",
-      "CCTV footage (office premises) 30 days unless required for an incident",
-    ],
-    highlight: null,
-  },
-  {
-    id: "cookies",
     num: "09",
-    icon: Cookie,
-    title: "Cookies & Tracking Technologies",
+    icon: Clock,
+    title: "How long we hold onto it",
     accent: "#f85d37",
-    intro:
-      "Our website uses cookies and similar tracking technologies to enhance your experience and analyse traffic. For full details on the types of cookies we use and your choices:",
-    bullets: [
-      "Strictly necessary cookies are always active and cannot be disabled",
-      "Analytical and performance cookies help us understand how visitors use the site",
-      "Functionality cookies remember your preferences and personalise content",
-      "Targeting cookies are used to deliver relevant advertising",
+    paragraphs: [
+      "We keep personal data for as long as we actually need it - to do what we said we'd do, meet legal obligations, or deal with any disputes - and no longer than that. Once it's served its purpose, we delete it or anonymize it.",
     ],
-    highlight: null,
-    cookieLink: true,
   },
   {
-    id: "changes",
+    id: "your-rights",
     num: "10",
-    icon: Settings2,
-    title: "Changes to This Policy",
+    icon: UserCheck,
+    title: "Your rights",
     accent: "#6128a6",
-    intro:
-      "We may update this Privacy Policy from time to time to reflect changes in our practices, services, or legal requirements. We will provide notice of material changes:",
-    bullets: [
-      "The effective date at the top of this page will be updated",
-      "For significant changes, we will notify you by email or prominent website notice",
-      "Continued use of our services after the effective date constitutes acceptance",
-      "We encourage you to review this policy periodically",
+    paragraphs: [
+      "You've got a say in how your data is used. Depending on the circumstances, you can ask us to let you see what we hold about you, correct something that's wrong, delete your data altogether, limit how we use it, object to certain processing, withdraw consent you'd previously given, or send you a copy of your data that you can take elsewhere. Just reach out and we'll sort it out in line with the law.",
     ],
-    highlight: null,
   },
   {
-    id: "contact",
+    id: "other-websites",
     num: "11",
-    icon: Mail,
-    title: "Contact, Complaints & DPO",
+    icon: ExternalLink,
+    title: "Other websites",
     accent: "#aa3bff",
-    intro:
-      "If you have any questions about this Privacy Policy, wish to exercise your rights, or have a complaint about how we handle your data, please contact us:",
-    bullets: [
-      "Email: uk@infoplusltd.co.uk",
-      "Phone: +44 20 8207 3474",
-      "Post: Infoplus Technologies Ltd, United Kingdom",
-      "We aim to respond to all requests within 30 days",
-      "You also have the right to lodge a complaint with the ICO at ico.org.uk",
+    paragraphs: [
+      "You might come across links to other sites while browsing ours. Once you click through, you're on their turf - we've got no control over what they do with your data, so it's worth checking their own privacy policy before you share anything.",
     ],
-    highlight:
-      "For data protection enquiries, please mark your communication 'Data Protection' to ensure it reaches the appropriate team member.",
   },
 ];
 
 export default function PrivacyPolicyPage() {
+  const [activeId, setActiveId] = useState<string>(SECTIONS[0].id);
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    SECTIONS.forEach((s) => {
+      const el = document.getElementById(s.id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveId(s.id);
+        },
+        { rootMargin: "-15% 0px -75% 0px" }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
   return (
     <div className="w-full">
       <PageMeta
         title="Privacy Policy"
-        description="Read the Infoplus Technologies UK Privacy Policy to understand how we collect, use, and protect your personal data in compliance with UK GDPR and data protection regulations."
+        description="Read how Infoplus Technologies UK Ltd collects, uses and protects your personal information when you visit our site or work with us."
         path="/privacy-policy"
         noIndex
       />
+
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
         badge="LEGAL"
         title="Privacy Policy"
-        description="Infoplus Technologies Ltd is committed to protecting your privacy and personal data. This policy explains what data we collect, how we use it, and your rights under UK GDPR."
+        description="We know privacy policies aren't the most exciting thing to read, but this one matters, so please take a few minutes to go through it."
         variant="centered"
       >
         <div className="flex flex-wrap justify-center gap-3">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/70 text-[12px] font-semibold">
             <Shield className="w-3.5 h-3.5 text-[#aa3bff]" />
-            Effective Date: June 2025
-          </span>
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f85d37]/10 border border-[#f85d37]/30 text-[#f85d37] text-[12px] font-semibold">
-            <UserCheck className="w-3.5 h-3.5" />
             UK GDPR Compliant
           </span>
         </div>
       </PageHero>
 
-      {/* ── At a Glance ──────────────────────────────────────── */}
-      <section className="py-20 bg-[#f8f5ff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[#ecdaff] opacity-50 blur-[100px] pointer-events-none" />
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+      {/* ── Intro + Full Sections ─────────────────────────────── */}
+      <section className="bg-[#f8f5ff] relative -mt-10 rounded-t-[3rem] z-20">
+        <div className="absolute top-0 right-0 w-125 h-125 rounded-full bg-[#ecdaff] opacity-40 blur-[120px] pointer-events-none" />
+        <div
+          className="absolute inset-0 opacity-[0.025] pointer-events-none rounded-t-[3rem]"
+          style={{
+            backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)",
+            backgroundSize: "32px 32px",
+          }}
+        />
+
+        {/* Intro callout */}
+        <div className="container mx-auto px-6 max-w-4xl relative z-10 pt-16 pb-10">
           <ScrollReveal direction="up">
-            <div className="text-center mb-12">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-4">
-                At a Glance
-              </span>
-              <h2 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d0517]">
-                Key privacy commitments
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
-            {HIGHLIGHTS.map((h, i) => (
-              <ScrollReveal key={h.label} variant="card" delay={i * 80}>
-                <div className="group bg-white border border-[#ecdaff] rounded-2xl p-6 text-center hover:shadow-[0_8px_32px_rgba(97,40,166,0.10)] transition-all duration-300 h-full">
-                  <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300"
-                    style={{ backgroundColor: `${h.color}15`, color: h.color }}
-                  >
-                    <h.icon className="w-5 h-5" />
-                  </div>
-                  <p className="text-[14px] font-bold text-[#0d0517] mb-1">{h.label}</p>
-                  <p className="text-[12px] text-[#0d0517]/50">{h.sub}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal direction="up" delay={80}>
-            <div className="flex items-start gap-3 bg-[#6128a6]/06 border border-[#6128a6]/15 rounded-2xl px-5 py-4 max-w-3xl mx-auto">
-              <Info className="w-5 h-5 text-[#6128a6] shrink-0 mt-0.5" />
-              <p className="text-[14px] text-[#0d0517]/65 leading-relaxed">
-                We never sell your personal data. We process only what is necessary and hold it only as long as
-                legally required. You can exercise your rights at any time by contacting{" "}
-                <a href="mailto:uk@infoplusltd.co.uk" className="text-[#6128a6] hover:underline">
-                  uk@infoplusltd.co.uk
-                </a>.
+            <div className="bg-white border border-[#e8e0f7] rounded-2xl px-8 py-7 shadow-[0_4px_24px_rgba(97,40,166,0.06)]">
+              <p className="text-[15px] text-[#555] leading-relaxed">
+                We, Infoplus Technologies UK Pvt ltd know privacy policies aren't the most exciting
+                thing to read, but this one matters, so please take a few minutes to go through it.
+                It explains what InfoPlus Technologies UK Ltd does with your personal information
+                when you visit our site, reach out to us, or work with us in any capacity.
               </p>
             </div>
           </ScrollReveal>
         </div>
-      </section>
 
-      {/* ── GDPR Rights spotlight ────────────────────────────── */}
-      <section className="py-20 bg-[#0d0517] relative overflow-hidden">
-        <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#381f55] opacity-40 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[#6128a6] opacity-20 blur-[100px] pointer-events-none" />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }}
-        />
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <ScrollReveal direction="up">
-            <div className="text-center mb-14">
-              <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white/70 text-[11px] font-bold uppercase tracking-widest mb-5">
-                Section 06
-              </span>
-              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-white leading-tight">
-                Your&nbsp;
-                <span className="text-[#aa3bff]">GDPR Rights</span>
-              </h2>
-              <p className="text-[15px] text-white/50 mt-4 max-w-2xl mx-auto">
-                Under UK GDPR you have the following rights in respect of the personal data we hold about you.
-                All requests are free of charge and will be actioned within 30 days.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {GDPR_RIGHTS.map((r, i) => (
-              <ScrollReveal key={r.right} variant="card" delay={i * 80}>
-                <div className="group h-full bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 hover:border-[#aa3bff]/35 hover:shadow-[0_8px_32px_rgba(170,59,255,0.12)] transition-all duration-300">
-                  <div className="w-10 h-10 rounded-xl bg-[#aa3bff]/15 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <r.icon className="w-5 h-5 text-[#aa3bff]" />
-                  </div>
-                  <h3 className="text-[15px] font-bold text-white mb-2">{r.right}</h3>
-                  <p className="text-[13px] text-white/55 leading-relaxed">{r.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal direction="up" delay={200}>
-            <div className="mt-10 text-center">
-              <p className="text-[13px] text-white/40 mb-4">
-                To exercise any of these rights, contact us at
-              </p>
-              <a
-                href="mailto:uk@infoplusltd.co.uk"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#aa3bff]/15 border border-[#aa3bff]/30 text-[#aa3bff] text-[13px] font-semibold hover:bg-[#aa3bff]/25 transition-colors"
-              >
-                <Mail className="w-4 h-4" />
-                uk@infoplusltd.co.uk
-              </a>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ── Full Sections ────────────────────────────────────── */}
-      <section className="py-20 bg-[#f8f5ff] relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.025] pointer-events-none"
-          style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "32px 32px" }}
-        />
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-10">
+        {/* TOC + Sections — no overflow-hidden so sticky works */}
+        <div className="container mx-auto px-6 max-w-7xl relative z-10 pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10">
 
             {/* Sticky TOC */}
-            <aside className="lg:sticky lg:top-[100px] lg:self-start hidden lg:block">
-              <ScrollReveal direction="left">
-                <div className="bg-white border border-[#ecdaff] rounded-2xl p-5 shadow-[0_4px_24px_rgba(97,40,166,0.07)]">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#6128a6] mb-4">
+            <aside
+              className="hidden lg:block lg:sticky lg:self-start"
+              style={{ top: "100px" }}
+            >
+              <div
+                className="bg-white border border-[#ecdaff] rounded-2xl shadow-[0_4px_24px_rgba(97,40,166,0.07)] flex flex-col overflow-hidden"
+                style={{ maxHeight: "calc(100vh - 120px)" }}
+              >
+                <div className="shrink-0 px-5 pt-5 pb-4 border-b border-[#ecdaff]">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#6128a6]">
                     Contents
                   </p>
-                  <ul className="space-y-1">
-                    {SECTIONS.map((s) => (
-                      <li key={s.id}>
-                        <a
-                          href={`#${s.id}`}
-                          className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-[12px] text-[#0d0517]/55 hover:text-[#6128a6] hover:bg-[#6128a6]/06 transition-all duration-200 group"
-                        >
-                          <span className="text-[10px] font-black w-5 shrink-0" style={{ color: s.accent }}>
-                            {s.num}
-                          </span>
-                          <span className="group-hover:translate-x-0.5 transition-transform duration-200">
-                            {s.title}
-                          </span>
-                        </a>
-                      </li>
-                    ))}
-
-                    {/* GDPR link */}
-                    <li>
-                      <a
-                        href="#gdpr-rights"
-                        className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-[12px] text-[#6128a6] font-semibold hover:bg-[#6128a6]/06 transition-all duration-200"
-                      >
-                        <span className="text-[10px] font-black w-5 shrink-0 text-[#aa3bff]">06</span>
-                        Your GDPR Rights ↑
-                      </a>
-                    </li>
-                  </ul>
                 </div>
-              </ScrollReveal>
-            </aside>
-
-            {/* Content */}
-            <div className="space-y-8">
-              {SECTIONS.map((s, i) => (
-                <ScrollReveal key={s.id} direction="up" delay={i * 40}>
-                  <div
-                    id={s.id}
-                    className="group bg-white border border-[#ecdaff] rounded-2xl p-7 hover:border-[#6128a6]/30 hover:shadow-[0_8px_40px_rgba(97,40,166,0.09)] transition-all duration-400 scroll-mt-[100px] relative overflow-hidden"
-                  >
-                    {/* Left accent bar */}
-                    <div
-                      className="absolute left-0 top-6 bottom-6 w-1 rounded-r-full"
-                      style={{ backgroundColor: s.accent }}
-                    />
-
-                    {/* Header */}
-                    <div className="flex items-center gap-3 mb-4 pl-4">
-                      <div
-                        className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
-                        style={{ backgroundColor: `${s.accent}15`, color: s.accent }}
+                <ul className="overflow-y-auto px-3 py-3 space-y-0.5">
+                  {SECTIONS.map((s) => (
+                    <li key={s.id}>
+                      <a
+                        href={`#${s.id}`}
+                        className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-[12px] transition-all duration-200"
+                        style={{
+                          color: activeId === s.id ? s.accent : "#444",
+                          backgroundColor:
+                            activeId === s.id ? `${s.accent}12` : undefined,
+                        }}
                       >
-                        <s.icon className="w-4.5 h-4.5" />
-                      </div>
-                      <div>
-                        <span className="text-[10px] font-black tracking-widest" style={{ color: s.accent }}>
+                        <span
+                          className="text-[10px] font-black w-5 shrink-0"
+                          style={{ color: s.accent }}
+                        >
                           {s.num}
                         </span>
-                        <h2 className="text-[17px] font-bold text-[#0d0517] leading-tight">{s.title}</h2>
-                      </div>
+                        <span className="flex-1">{s.title}</span>
+                        {activeId === s.id && (
+                          <ChevronRight
+                            className="w-3 h-3 shrink-0"
+                            style={{ color: s.accent }}
+                          />
+                        )}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
+
+            {/* Section cards */}
+            <div className="space-y-6">
+              {SECTIONS.map((s) => (
+                <div
+                  key={s.id}
+                  id={s.id}
+                  className="group bg-white border border-[#e8e0f7] rounded-2xl p-7 hover:border-[#6128a6]/30 hover:shadow-[0_8px_40px_rgba(97,40,166,0.09)] transition-all duration-300 scroll-mt-25 relative overflow-hidden"
+                >
+                  {/* Left accent bar */}
+                  <div
+                    className="absolute left-0 top-6 bottom-6 w-1 rounded-r-full"
+                    style={{ backgroundColor: s.accent }}
+                  />
+
+                  {/* Header */}
+                  <div className="flex items-center gap-3 mb-5 pl-4">
+                    <div
+                      className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                      style={{ backgroundColor: `${s.accent}15`, color: s.accent }}
+                    >
+                      <s.icon className="w-4.5 h-4.5" />
                     </div>
-
-                    <p className="text-[14px] text-[#0d0517]/65 leading-relaxed mb-4 pl-4">{s.intro}</p>
-
-                    {s.bullets.length > 0 && (
-                      <ul className="space-y-2 pl-4 mb-4">
-                        {s.bullets.map((b, bi) => (
-                          <li
-                            key={bi}
-                            className="flex items-start gap-2.5"
-                            style={{ animation: `revealFade 300ms ease ${bi * 40 + 100}ms both` }}
-                          >
-                            <CheckCircle2
-                              className="w-4 h-4 shrink-0 mt-0.5"
-                              style={{ color: s.accent }}
-                            />
-                            <span className="text-[13.5px] text-[#0d0517]/65 leading-snug">{b}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-
-                    {s.highlight && (
-                      <div
-                        className="flex items-start gap-2.5 rounded-xl px-4 py-3 ml-4"
-                        style={{ backgroundColor: `${s.accent}08`, borderLeft: `3px solid ${s.accent}50` }}
+                    <div>
+                      <span
+                        className="text-[10px] font-black tracking-widest block"
+                        style={{ color: s.accent }}
                       >
-                        <Info className="w-4 h-4 shrink-0 mt-0.5" style={{ color: s.accent }} />
-                        <p className="text-[13px] leading-relaxed" style={{ color: `${s.accent}cc` }}>
-                          {s.highlight}
-                        </p>
-                      </div>
-                    )}
-
-                    {/* Cookie policy link for section 09 */}
-                    {"cookieLink" in s && (s as { cookieLink?: boolean }).cookieLink && (
-                      <div className="ml-4 mt-4">
-                        <Link
-                          to="/cookie-policy"
-                          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#f85d37]/08 border border-[#f85d37]/25 text-[#f85d37] text-[13px] font-semibold hover:bg-[#f85d37]/14 transition-colors"
-                        >
-                          <Cookie className="w-3.5 h-3.5" />
-                          View Full Cookie Policy
-                          <ChevronRight className="w-3.5 h-3.5" />
-                        </Link>
-                      </div>
-                    )}
+                        {s.num}
+                      </span>
+                      <h2 className="text-[17px] font-bold text-[#0d0517] leading-tight">
+                        {s.title}
+                      </h2>
+                    </div>
                   </div>
-                </ScrollReveal>
+
+                  {/* Body */}
+                  <div className="pl-4 space-y-3">
+                    {s.paragraphs.map((p, pi) => (
+                      <p key={pi} className="text-[14.5px] text-[#555] leading-relaxed">
+                        {p}
+                      </p>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="py-24 bg-[#0d0517] relative overflow-hidden">
-        <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-[#381f55] opacity-40 blur-[130px] pointer-events-none" />
+      {/* ── Questions? ───────────────────────────────────────── */}
+      <section className="py-20 bg-white relative border-t border-[#e8e0f7]">
+        <div className="absolute top-0 left-0 w-100 h-100 rounded-full bg-[#ecdaff] opacity-30 blur-[100px] pointer-events-none" />
         <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+          className="absolute inset-0 opacity-[0.025] pointer-events-none"
+          style={{
+            backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)",
+            backgroundSize: "32px 32px",
+          }}
         />
-        <div className="container mx-auto px-6 max-w-4xl relative z-10">
-          <ScrollReveal variant="card">
-            <div className="relative bg-linear-to-br from-[#1e0a38] via-[#381f55] to-[#6128a6] rounded-3xl p-10 md:p-14 text-center overflow-hidden shadow-[0_32px_80px_rgba(97,40,166,0.35)]">
-              <div className="absolute top-[-30%] right-[-10%] w-72 h-72 rounded-full bg-[#aa3bff] opacity-20 blur-[80px] pointer-events-none" />
-              <div className="absolute bottom-[-20%] left-[-10%] w-60 h-60 rounded-full bg-[#f85d37] opacity-12 blur-[80px] pointer-events-none" />
-
-              <span className="relative z-10 inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white/70 text-[11px] font-bold uppercase tracking-widest mb-5">
-                Your Privacy Matters
+        <div className="container mx-auto px-6 max-w-3xl relative z-10">
+          <ScrollReveal direction="up">
+            <div className="text-center mb-10">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-4">
+                Questions?
               </span>
-              <h2 className="relative z-10 text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-white mb-4">
-                Questions about your data?
+              <h2 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d0517] mb-4">
+                Happy to help
               </h2>
-              <p className="relative z-10 text-[15px] text-white/60 mb-8 max-w-xl mx-auto">
-                Contact our team for any privacy-related enquiries, data subject access requests,
-                or to lodge a complaint. We aim to respond within 30 days.
+              <p className="text-[15px] text-[#555]">
+                Happy to help if anything here needs clarifying, or if you just want to know more
+                about how we handle your information.
               </p>
-              <div className="relative z-10 flex flex-col sm:flex-row gap-3 justify-center">
-                <Link
-                  to="/contact"
-                  className="group/btn inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#f85d37] hover:bg-[#e84d27] text-white font-bold text-[14px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={80}>
+            <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-2xl p-8 shadow-[0_4px_24px_rgba(97,40,166,0.06)]">
+              <p className="text-[14.5px] font-bold text-[#0d0517] mb-6">
+                InfoPlus Technologies UK Ltd
+              </p>
+              <div className="space-y-4">
+                <a
+                  href="mailto:contact@infoplusltd.co.uk"
+                  className="flex items-center gap-3 text-[14.5px] text-[#555] hover:text-[#6128a6] transition-colors group"
                 >
-                  Contact Us
-                  <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
-                </Link>
-                <Link
-                  to="/terms-of-service"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 text-white font-semibold text-[14px] transition-all duration-200"
+                  <div className="w-9 h-9 rounded-xl bg-[#6128a6]/10 flex items-center justify-center shrink-0 group-hover:bg-[#6128a6]/20 transition-colors">
+                    <Mail className="w-4 h-4 text-[#6128a6]" />
+                  </div>
+                  <span>contact@infoplusltd.co.uk</span>
+                </a>
+                <div className="flex items-center gap-3 text-[14.5px] text-[#555]">
+                  <div className="w-9 h-9 rounded-xl bg-[#6128a6]/10 flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4 text-[#6128a6]" />
+                  </div>
+                  <span>+44 20 8207 3474</span>
+                </div>
+                <a
+                  href="https://www.infoplusltd.co.uk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-[14.5px] text-[#555] hover:text-[#6128a6] transition-colors group"
                 >
-                  Terms of Service
-                </Link>
+                  <div className="w-9 h-9 rounded-xl bg-[#6128a6]/10 flex items-center justify-center shrink-0 group-hover:bg-[#6128a6]/20 transition-colors">
+                    <ExternalLink className="w-4 h-4 text-[#6128a6]" />
+                  </div>
+                  <span>https://www.infoplusltd.co.uk</span>
+                </a>
+              </div>
+              <div className="mt-6 pt-6 border-t border-[#e8e0f7]">
+                <p className="text-[14px] text-[#888]">
+                  We try to get back to privacy queries quickly.
+                </p>
               </div>
             </div>
           </ScrollReveal>

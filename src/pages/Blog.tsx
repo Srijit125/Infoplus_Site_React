@@ -237,7 +237,7 @@ function Blog() {
                         {initials(featuredPost.author)}
                       </div>
                       <div>
-                        <p className="text-[13px] font-semibold text-[#222]">{featuredPost.author}</p>
+                        <p className="text-[13px] font-semibold text-[#222] mb-0">{featuredPost.author}</p>
                         <p className="text-[11px] text-[#aaa]">Author</p>
                       </div>
                     </div>
