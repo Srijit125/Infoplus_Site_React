@@ -309,34 +309,32 @@ export default function AIPage() {
             </div>
           </ScrollReveal>
 
-          {/* Mobile pill tabs — scroll-to anchors */}
+          {/* Mobile pill tabs — visible only below md (tablet+desktop get sidebar) */}
           <div
-            className="lg:hidden flex gap-2 overflow-x-auto pb-3 mb-8"
+            className="md:hidden flex gap-2 overflow-x-auto pb-3 mb-6"
             style={{ scrollbarWidth: "none" }}
           >
             {SVC.map((s, i) => (
               <button
                 key={i}
                 onClick={() => goToDetail(i)}
-                className={`shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-[12px] font-semibold transition-all border ${
+                className={`shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all border ${
                   activeIdx === i
                     ? "bg-[#1e0a38] text-white border-[#1e0a38]"
                     : "bg-white text-[#555] border-[#e5e4e7] hover:border-[#6128a6]/40"
                 }`}
               >
-                <span className="text-[10px] opacity-60">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+                <span className="text-[9px] opacity-50">{String(i + 1).padStart(2, "0")}</span>
                 {s.title.split(" ").slice(0, 2).join(" ")}
               </button>
             ))}
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8 items-start">
-            {/* Sticky sidebar — highlights active section as user scrolls */}
-            <div className="hidden lg:block w-72 shrink-0 sticky top-25 self-start">
-              <div className="bg-[#f8f5ff] border border-[#e5e4e7] rounded-2xl p-3">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-[#888] px-3 py-2">
+          <div className="flex flex-col md:flex-row gap-6 items-start">
+            {/* Sticky sidebar — visible from tablet up */}
+            <div className="hidden md:block md:w-52 lg:w-60 shrink-0 sticky top-25 self-start">
+              <div className="bg-[#f8f5ff] border border-[#e5e4e7] rounded-xl p-2.5">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-[#aaa] px-2.5 pt-1.5 pb-1">
                   AI Services
                 </p>
                 <div className="space-y-0.5">
@@ -344,14 +342,14 @@ export default function AIPage() {
                     <button
                       key={i}
                       onClick={() => goToDetail(i)}
-                      className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-left transition-all duration-200 ${
+                      className={`w-full flex items-center gap-2 px-2.5 py-2 rounded-lg text-left transition-all duration-200 ${
                         activeIdx === i
                           ? "bg-[#1e0a38] text-white"
                           : "text-[#555] hover:bg-white hover:text-[#6128a6]"
                       }`}
                     >
                       <span
-                        className={`w-6 h-6 rounded-lg flex items-center justify-center text-[10px] font-bold shrink-0 ${
+                        className={`w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold shrink-0 ${
                           activeIdx === i
                             ? "bg-white/20 text-white"
                             : "bg-[#ecdaff] text-[#6128a6]"
@@ -359,7 +357,7 @@ export default function AIPage() {
                       >
                         {i + 1}
                       </span>
-                      <span className="text-[13px] font-medium leading-tight">{s.title}</span>
+                      <span className="text-[12.5px] font-medium leading-tight">{s.title}</span>
                     </button>
                   ))}
                 </div>

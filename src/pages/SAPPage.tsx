@@ -1,4 +1,6 @@
 ﻿import { PageMeta } from "../components/shared/PageMeta";
+import imgSapCapabilities from "../assets/images/SAP-Capabilities.png";
+import { ImageWithFallback } from "../components/helpers/ImageWithFallback";
 import { Link } from "react-router-dom";
 import {
   Database,
@@ -405,64 +407,14 @@ export default function SAPPage() {
               </div>
             </ScrollReveal>
 
-            {/* Decorative managed services visual */}
+            {/* SAP Capabilities image */}
             <ScrollReveal direction="right" duration={700} delay={180}>
-              <div className="bg-[#1e0a38] border border-white/10 rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#6128a6]/30 blur-[50px] pointer-events-none" />
-                <div className="relative z-10">
-                  {/* Typography visual */}
-                  <div className="grid grid-cols-2 gap-3 mb-4">
-                    {[
-                      {
-                        label: "Data Center",
-                        sublabel: "Managed",
-                        dot: "#6128a6",
-                      },
-                      {
-                        label: "Co-Location",
-                        sublabel: "Facility",
-                        dot: "#f85d37",
-                      },
-                      {
-                        label: "Private Cloud",
-                        sublabel: "Hosted",
-                        dot: "#14b8a6",
-                      },
-                      {
-                        label: "On-Premises",
-                        sublabel: "Support",
-                        dot: "#3b82f6",
-                      },
-                    ].map(({ label, sublabel, dot }, i) => (
-                      <div
-                        key={i}
-                        className="bg-white/5 border border-white/8 rounded-xl p-4 relative overflow-hidden"
-                        style={{
-                          animation: `revealFade 500ms ease ${i * 100 + 200}ms both`,
-                        }}
-                      >
-                        <div
-                          className="w-2 h-2 rounded-full mb-2"
-                          style={{ background: dot }}
-                        />
-                        <p className="text-[14px] font-bold text-white leading-tight">
-                          {label}
-                        </p>
-                        <p className="text-[11px] text-white/35 mt-0.5">
-                          {sublabel}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="bg-white/5 border border-white/8 rounded-xl p-4 text-center">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#aa3bff] mb-1">
-                      Infoplus Delivery
-                    </p>
-                    <p className="text-[18px] font-black text-white">
-                      Any Location Â· Any Model
-                    </p>
-                  </div>
-                </div>
+              <div className="rounded-2xl overflow-hidden border border-white/10">
+                <ImageWithFallback
+                  src={imgSapCapabilities}
+                  alt="SAP Capabilities"
+                  className="w-full h-auto object-contain"
+                />
               </div>
             </ScrollReveal>
           </div>

@@ -268,50 +268,35 @@ export default function ITServicesPage() {
               >
                 <Link
                   to={svc.href}
-                  className="group relative flex flex-col h-full bg-white/5 border border-white/10 rounded-3xl p-7 hover:border-opacity-60 hover:shadow-[0_16px_48px_rgba(0,0,0,0.3)] transition-all duration-400 overflow-hidden"
-                  style={{ ["--accent" as string]: svc.accent }}
+                  className="group relative flex flex-col h-full rounded-3xl p-7 transition-all duration-400 overflow-hidden border border-[#6128a6]/25 hover:border-[#aa3bff]/55 hover:shadow-[0_20px_56px_rgba(97,40,166,0.28)]"
+                  style={{ background: "linear-gradient(135deg, #0d0517 0%, #1a0830 55%, #261140 100%)" }}
                 >
                   {/* Hover glow */}
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"
-                    style={{ background: `radial-gradient(ellipse at 20% 20%, ${svc.glow} 0%, transparent 65%)` }}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"
+                    style={{ background: "radial-gradient(ellipse at 20% 20%, rgba(170,59,255,0.18) 0%, transparent 65%)" }}
                   />
 
                   {/* Featured badge */}
                   {svc.featured && (
-                    <span
-                      className="absolute top-4 right-4 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest"
-                      style={{
-                        backgroundColor: `${svc.accent}20`,
-                        border: `1px solid ${svc.accent}40`,
-                        color: svc.accent,
-                      }}
-                    >
+                    <span className="absolute top-4 right-4 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-[#f85d37]/20 border border-[#f85d37]/40 text-[#f85d37]">
                       Flagship
                     </span>
                   )}
 
                   {/* Icon */}
-                  <div
-                    className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shrink-0 group-hover:scale-110 transition-transform duration-300"
-                    style={{ backgroundColor: `${svc.accent}20`, color: svc.accent }}
+                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shrink-0 group-hover:scale-110 transition-transform duration-300"
+                    style={{ background: "linear-gradient(135deg, #6128a6 0%, #aa3bff 100%)" }}
                   >
-                    <svc.icon className="w-6 h-6" />
+                    <svc.icon className="w-6 h-6 text-white" />
                   </div>
 
                   {/* Title */}
-                  <h3
-                    className="text-[18px] font-bold mb-2 transition-colors duration-300 group-hover:text-white"
-                    style={{ color: `${svc.accent}` }}
-                  >
+                  <h3 className="text-[18px] font-bold mb-2 text-[#ecdaff] group-hover:text-white transition-colors duration-300">
                     {svc.title}
                   </h3>
 
                   {/* Accent line */}
-                  <div
-                    className="w-8 h-0.5 rounded-full mb-4 group-hover:w-16 transition-all duration-400"
-                    style={{ backgroundColor: `${svc.accent}60` }}
-                  />
+                  <div className="w-8 h-0.5 rounded-full mb-4 bg-[#aa3bff] group-hover:w-16 transition-all duration-400" />
 
                   {/* Description */}
                   <p className="text-[14px] text-white/55 leading-relaxed flex-1 group-hover:text-white/70 transition-colors duration-300 line-clamp-4">
@@ -319,7 +304,7 @@ export default function ITServicesPage() {
                   </p>
 
                   {/* Read More link */}
-                  <div className="mt-6 flex items-center gap-1.5 text-[13px] font-semibold transition-all duration-300" style={{ color: svc.accent }}>
+                  <div className="mt-6 flex items-center gap-1.5 text-[13px] font-semibold text-[#f85d37] transition-all duration-300">
                     Read More
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>

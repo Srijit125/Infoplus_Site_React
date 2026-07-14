@@ -1,4 +1,4 @@
-﻿import { type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 interface PageHeroProps {
   title: string;
@@ -34,7 +34,7 @@ export function PageHero({
 }: PageHeroProps) {
   if (variant === "split") {
     return (
-      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden bg-[#0d0517]">
+      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden bg-[#0d0517]">
         {/* subtle dot grid */}
         <div
           className="absolute inset-0 opacity-[0.06]"
@@ -91,7 +91,7 @@ export function PageHero({
 
   if (variant === "gradient") {
     return (
-      <section className="relative pt-40 pb-32 lg:pt-56 lg:pb-40 overflow-hidden bg-[#0d0517] text-white">
+      <section className="relative pt-28 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-[#0d0517] text-white">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[70%] bg-[#381f55] rounded-full blur-[120px] opacity-60" />
           <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[70%] bg-[#6128a6] rounded-full blur-[120px] opacity-40" />
@@ -124,9 +124,9 @@ export function PageHero({
     );
   }
 
-  // Default: centered dark brand background (matches transparent white-text header)
+  // Default: centered dark brand background
   return (
-    <section className="relative pt-40 pb-20 lg:pt-52 lg:pb-28 overflow-hidden bg-[#0d0517]">
+    <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-20 overflow-hidden bg-[#0d0517]">
       {/* dot grid */}
       <div
         className="absolute inset-0 opacity-[0.06]"

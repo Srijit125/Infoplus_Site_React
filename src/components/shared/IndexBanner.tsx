@@ -271,6 +271,12 @@ function IndexBanner() {
   const prevIdxRef                    = useRef<number | null>(null);
   const transitioning                 = useRef(false);
   const exitTimer                     = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const heroRef                       = useRef<HTMLElement>(null);
+
+  const handleScrollDown = () => {
+    const next = heroRef.current?.nextElementSibling as HTMLElement | null;
+    next?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   const goTo = useCallback(
     (toIdx: number) => {
@@ -309,6 +315,7 @@ function IndexBanner() {
 
   return (
     <section
+      ref={heroRef}
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -430,16 +437,18 @@ function IndexBanner() {
       />
 
       {/* Scroll indicator */}
-      <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+      <button
+        onClick={handleScrollDown}
+        aria-label="Scroll to content"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer text-white/30 hover:text-white/60 transition-colors duration-300 z-10"
         style={{ animation: "fadeIn 1s ease 1.2s both" }}
       >
-        <span className="text-white/30 text-[10px] tracking-[0.2em] uppercase">Scroll</span>
+        <span className="text-[10px] tracking-[0.2em] uppercase">Scroll</span>
         <div
-          className="w-px h-10 bg-linear-to-b from-white/25 to-transparent"
+          className="w-px h-10 bg-linear-to-b from-current to-transparent"
           style={{ animation: "float 2s ease-in-out infinite" }}
         />
-      </div>
+      </button>
     </section>
   );
 }
