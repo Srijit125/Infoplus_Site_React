@@ -231,43 +231,43 @@ export default function AutomationPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" duration={720} delay={150}>
-              <div className="bg-[#0d0517] rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/30 blur-[60px] pointer-events-none" />
+              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/8 blur-[60px] pointer-events-none" />
                 <div className="relative z-10">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#aa3bff] mb-5">
+                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] mb-5">
                     Our Automation Questions Framework
                   </p>
-                  <p className="text-[13px] text-white/45 leading-relaxed mb-6">
+                  <p className="text-[14px] text-[#555] leading-relaxed mb-6">
                     Every automation roadmap starts with 10 key looming
                     questions from "where to start?" to "what's the winning
                     recipe for success?" We've derived our strategy from these.
                   </p>
                   <div className="flex items-center gap-4 mb-5">
-                    <div className="text-[48px] font-black text-white leading-none">
+                    <div className="text-[48px] font-black text-[#111] leading-none">
                       10
                     </div>
                     <div>
-                      <p className="text-[13px] font-bold text-white">
+                      <p className="text-[14px] font-bold text-[#111] mb-1">
                         Key Questions
                       </p>
-                      <p className="text-[11px] text-white/35">
+                      <p className="text-[13px] text-[#888]">
                         → 4 strategic pillars
                       </p>
                     </div>
                   </div>
-                  <div className="h-px bg-white/10 mb-5" />
+                  <div className="h-px bg-[#e8e0f7] mb-5" />
                   <div className="grid grid-cols-2 gap-2">
                     {["Detect", "Avoid", "Heal", "Remediate"].map(
                       (action, i) => (
                         <div
                           key={i}
-                          className="flex items-center gap-2 bg-white/5 border border-white/8 rounded-lg px-3 py-2"
+                          className="flex items-center gap-2 bg-white border border-[#e8e0f7] rounded-lg px-3 py-2"
                           style={{
                             animation: `revealFade 400ms ease ${i * 80 + 300}ms both`,
                           }}
                         >
-                          <Zap className="w-3.5 h-3.5 text-[#aa3bff] shrink-0" />
-                          <span className="text-[12px] text-white/60 font-medium">
+                          <Zap className="w-3.5 h-3.5 text-[#6128a6] shrink-0" />
+                          <span className="text-[13px] text-[#444] font-medium">
                             {action}
                           </span>
                         </div>
@@ -297,7 +297,7 @@ export default function AutomationPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/20 border border-[#6128a6]/30 text-[#aa3bff] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Core Business Outcomes
               </span>
               <h2 className="text-[36px] font-bold text-white mt-2">
@@ -474,7 +474,7 @@ export default function AutomationPage() {
             {/* Benefits */}
             <div>
               <ScrollReveal direction="left" duration={700}>
-                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/20 border border-[#6128a6]/30 text-[#aa3bff] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Additional Benefits
                 </span>
                 <h2 className="text-[28px] font-bold text-white mt-3 mb-8">
@@ -503,7 +503,7 @@ export default function AutomationPage() {
             {/* Tools */}
             <div>
               <ScrollReveal direction="right" duration={700}>
-                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/20 border border-[#6128a6]/30 text-[#aa3bff] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Technology Estate
                 </span>
                 <h2 className="text-[28px] font-bold text-white mt-3 mb-8">
@@ -538,7 +538,7 @@ export default function AutomationPage() {
               <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#6128a6]/25 blur-[100px] pointer-events-none" />
               <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#f85d37]/10 blur-[80px] pointer-events-none" />
               <div className="relative z-10">
-                <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
+                <span className="inline-block px-4 py-1.5 rounded-full bg-[#6128a6]/20 border border-[#6128a6]/30 text-[11px] font-bold uppercase tracking-widest text-[#aa3bff] mb-6">
                   Automate with Confidence
                 </span>
                 <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">

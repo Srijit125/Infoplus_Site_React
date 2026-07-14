@@ -87,55 +87,59 @@ const DETAIL_SOLUTIONS = [
 /* â”€â”€ Benefits â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const BENEFITS = [
   {
-    category: "Data Quality",
+    number: “01”,
+    category: “Data Quality”,
     icon: Database,
-    accentColor: "#6128a6",
-    glowColor: "rgba(97,40,166,0.25)",
+    accentColor: “#6128a6”,
+    glowColor: “rgba(97,40,166,0.28)”,
     items: [
-      "Consistent, structured, and compliant data",
-      "Defined dictionary templates and common naming conventions",
-      "Harmonized descriptions across all regions",
-      "Elimination of duplicates",
-      "A single source of the truth",
+      “Consistent, structured, and compliant data”,
+      “Defined dictionary templates and common naming conventions”,
+      “Harmonized descriptions across all regions”,
+      “Elimination of duplicates”,
+      “A single source of the truth”,
     ],
   },
   {
-    category: "Process",
+    number: “02”,
+    category: “Process”,
     icon: Layers,
-    accentColor: "#aa3bff",
-    glowColor: "rgba(170,59,255,0.25)",
+    accentColor: “#aa3bff”,
+    glowColor: “rgba(170,59,255,0.28)”,
     items: [
-      "Automated defined workflows and approval processes",
-      "Structured and fully configurable workflow",
-      "Fully integrated workflow",
-      "Faster request processing and turnaround times",
-      "Specialist catalogers liberate your front-line resources",
+      “Automated defined workflows and approval processes”,
+      “Structured and fully configurable workflow”,
+      “Fully integrated workflow”,
+      “Faster request processing and turnaround times”,
+      “Specialist catalogers liberate your front-line resources”,
     ],
   },
   {
-    category: "Visibility & Control",
+    number: “03”,
+    category: “Visibility & Control”,
     icon: Globe,
-    accentColor: "#f85d37",
-    glowColor: "rgba(248,93,55,0.25)",
+    accentColor: “#f85d37”,
+    glowColor: “rgba(248,93,55,0.28)”,
     items: [
-      "Enterprise-wide master view enables data analytics",
-      "Prevents unnecessary purchases, optimizes inventory",
-      "Full visibility of workflows and material request status",
-      "Improved spend analytics for strategic sourcing",
-      "Improved searching, finding, reporting, and monitoring",
+      “Enterprise-wide master view enables data analytics”,
+      “Prevents unnecessary purchases, optimizes inventory”,
+      “Full visibility of workflows and material request status”,
+      “Improved spend analytics for strategic sourcing”,
+      “Improved searching, finding, reporting, and monitoring”,
     ],
   },
   {
-    category: "Commercial",
+    number: “04”,
+    category: “Commercial”,
     icon: TrendingUp,
-    accentColor: "#aa3bff",
-    glowColor: "rgba(170,59,255,0.25)",
+    accentColor: “#f59e0b”,
+    glowColor: “rgba(245,158,11,0.28)”,
     items: [
-      "Reduce corporate spend on engineering spare parts",
-      "Reduce free-text and off-contract spend",
-      "Reduce stock holding and transfer surplus stock",
-      "Reduce processing time",
-      "Conduct strategic sourcing events with suppliers",
+      “Reduce corporate spend on engineering spare parts”,
+      “Reduce free-text and off-contract spend”,
+      “Reduce stock holding and transfer surplus stock”,
+      “Reduce processing time”,
+      “Conduct strategic sourcing events with suppliers”,
     ],
   },
 ];
@@ -426,7 +430,7 @@ export default function MasterDataManagementPage() {
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
             <div className="text-center mb-16">
-              <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white/70 text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/20 border border-[#6128a6]/30 text-[#aa3bff] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Benefits
               </span>
               <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-white leading-tight">
@@ -441,61 +445,59 @@ export default function MasterDataManagementPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {BENEFITS.map((benefit, idx) => (
               <ScrollReveal
                 key={benefit.category}
                 variant="card"
                 delay={idx * 100}
               >
-                <div
-                  className="group relative h-full bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-opacity-60 transition-all duration-400 overflow-hidden"
-                  style={{
-                    ["--accent" as string]: benefit.accentColor,
-                  }}
-                >
+                <div className="group relative flex flex-col h-full bg-white/4 border border-white/10 rounded-3xl p-6 hover:border-white/20 hover:shadow-[0_20px_56px_rgba(0,0,0,0.35)] transition-all duration-300 overflow-hidden">
                   {/* hover glow */}
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"
                     style={{
-                      background: `radial-gradient(ellipse at 20% 20%, ${benefit.glowColor} 0%, transparent 65%)`,
+                      background: `radial-gradient(ellipse at 25% 20%, ${benefit.glowColor} 0%, transparent 65%)`,
                     }}
                   />
+                  {/* faded background number */}
+                  <span
+                    aria-hidden
+                    className="absolute top-2 right-4 font-black text-[80px] leading-none select-none pointer-events-none"
+                    style={{ color: `${benefit.accentColor}0d` }}
+                  >
+                    {benefit.number}
+                  </span>
 
-                  {/* icon + heading */}
-                  <div className="relative z-10 flex items-center gap-4 mb-7">
-                    <div
-                      className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
-                      style={{
-                        backgroundColor: `${benefit.accentColor}20`,
-                        color: benefit.accentColor,
-                      }}
-                    >
-                      <benefit.icon className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h3
-                        className="text-[18px] font-bold"
-                        style={{ color: benefit.accentColor }}
-                      >
-                        {benefit.category}
-                      </h3>
-                      <div
-                        className="w-10 h-0.5 rounded-full mt-1"
-                        style={{ backgroundColor: `${benefit.accentColor}50` }}
-                      />
-                    </div>
+                  {/* icon */}
+                  <div
+                    className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4 shrink-0 group-hover:scale-110 transition-transform duration-300"
+                    style={{
+                      backgroundColor: `${benefit.accentColor}1a`,
+                      color: benefit.accentColor,
+                    }}
+                  >
+                    <benefit.icon className="w-6 h-6" />
                   </div>
 
+                  {/* title + accent bar */}
+                  <h3 className="text-[17px] font-bold text-white mb-1 relative z-10">
+                    {benefit.category}
+                  </h3>
+                  <div
+                    className="w-8 h-0.5 rounded-full mb-4 group-hover:w-14 transition-all duration-300"
+                    style={{ backgroundColor: `${benefit.accentColor}70` }}
+                  />
+
                   {/* benefit list */}
-                  <ul className="relative z-10 space-y-3">
+                  <ul className="relative z-10 space-y-2.5">
                     {benefit.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
+                      <li key={i} className="flex items-start gap-2.5">
                         <div
                           className="w-1.5 h-1.5 rounded-full shrink-0 mt-[7px]"
                           style={{ backgroundColor: benefit.accentColor }}
                         />
-                        <span className="text-[14px] text-white/65 leading-snug group-hover:text-white/80 transition-colors duration-300">
+                        <span className="text-[13px] text-white/60 leading-snug group-hover:text-white/75 transition-colors duration-300">
                           {item}
                         </span>
                       </li>

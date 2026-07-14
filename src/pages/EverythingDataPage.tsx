@@ -2,12 +2,13 @@ import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   BarChart2,
+  BarChart3,
   Database,
   Target,
   ArrowRight,
-  ChevronRight,
   Eye,
   Zap,
+  Code2,
   type LucideIcon,
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
@@ -108,11 +109,11 @@ const DATA_SERVICES: DataService[] = [
 ];
 
 const DATA_TOOLS = [
-  { name: "Informatica", desc: "Enterprise data integration & management" },
-  { name: "Quick View", desc: "Rapid data access & reporting" },
-  { name: "Microsoft Power BI", desc: "Business intelligence & visualisation" },
-  { name: "Tableau", desc: "Interactive data visualisation" },
-  { name: "D3.JS", desc: "Custom data-driven visualisations" },
+  { icon: Database,  name: "Informatica",        desc: "Enterprise data integration & management" },
+  { icon: Eye,       name: "Quick View",          desc: "Rapid data access & reporting" },
+  { icon: BarChart2, name: "Microsoft Power BI",  desc: "Business intelligence & visualisation" },
+  { icon: BarChart3, name: "Tableau",             desc: "Interactive data visualisation" },
+  { icon: Code2,     name: "D3.JS",               desc: "Custom data-driven visualisations" },
 ];
 
 export default function EverythingDataPage() {
@@ -182,38 +183,24 @@ export default function EverythingDataPage() {
 
             {/* Data flow visual */}
             <ScrollReveal direction="right" duration={720} delay={150}>
-              <div className="bg-[#0d0517] rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/30 blur-[60px] pointer-events-none" />
+              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/8 blur-[60px] pointer-events-none" />
                 <div className="relative z-10">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#aa3bff] mb-6">
+                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] mb-6">
                     Data Solution Flow
                   </p>
                   {/* Pipeline visual */}
                   <div className="space-y-2 mb-6">
                     {[
-                      {
-                        label: "Raw Data",
-                        sub: "Sources & ingestion",
-                        w: "35%",
-                      },
-                      {
-                        label: "Processing",
-                        sub: "Transform & cleanse",
-                        w: "60%",
-                      },
-                      { label: "Analytics", sub: "Insights & BI", w: "80%" },
-                      {
-                        label: "Decision",
-                        sub: "Actions & outcomes",
-                        w: "100%",
-                      },
+                      { label: "Raw Data",   sub: "Sources & ingestion",  w: "35%"  },
+                      { label: "Processing", sub: "Transform & cleanse",  w: "60%"  },
+                      { label: "Analytics",  sub: "Insights & BI",        w: "80%"  },
+                      { label: "Decision",   sub: "Actions & outcomes",   w: "100%" },
                     ].map(({ label, sub, w }, i) => (
                       <div
                         key={i}
                         className="flex items-center gap-3"
-                        style={{
-                          animation: `revealFade 450ms ease ${i * 100 + 200}ms both`,
-                        }}
+                        style={{ animation: `revealFade 450ms ease ${i * 100 + 200}ms both` }}
                       >
                         <div
                           className="h-8 rounded-lg bg-linear-to-r from-[#381f55] to-[#6128a6] flex items-center px-3 min-w-[90px]"
@@ -223,19 +210,19 @@ export default function EverythingDataPage() {
                             {label}
                           </span>
                         </div>
-                        <span className="text-[11px] text-white/30">{sub}</span>
+                        <span className="text-[12px] text-[#555]">{sub}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="border-t border-white/10 pt-5 grid grid-cols-3 gap-3 text-center">
+                  <div className="border-t border-[#e8e0f7] pt-5 grid grid-cols-3 gap-3 text-center">
                     {[
                       ["Robust", "Information"],
-                      ["Deep", "Analysis"],
-                      ["Sharp", "Insights"],
+                      ["Deep",   "Analysis"],
+                      ["Sharp",  "Insights"],
                     ].map(([v, l], i) => (
                       <div key={i}>
-                        <p className="text-[14px] font-black text-white">{v}</p>
-                        <p className="text-[10px] text-white/30 mt-0.5">{l}</p>
+                        <p className="text-[14px] font-black text-[#111] mb-0.5">{v}</p>
+                        <p className="text-[10px] text-[#888]">{l}</p>
                       </div>
                     ))}
                   </div>
@@ -285,21 +272,17 @@ export default function EverythingDataPage() {
                 delay={i * 70}
               >
                 <div className="group bg-white/5 border border-white/8 rounded-2xl p-6 hover:bg-white/9 hover:border-[#6128a6]/40 transition-all duration-300 h-full">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-[11px] font-black text-white">
                         {num}
                       </span>
                     </div>
-                    {/* Step connector line */}
-                    {i < 3 || (i >= 4 && i < 7) ? (
-                      <div className="hidden lg:block flex-1 h-px bg-[#6128a6]/25" />
-                    ) : null}
+                    <h3 className="text-[14px] font-bold text-white leading-snug group-hover:text-[#aa3bff] transition-colors m-0">
+                      {title}
+                    </h3>
                   </div>
-                  <h3 className="text-[14px] font-bold text-white mb-2 leading-snug group-hover:text-[#aa3bff] transition-colors">
-                    {title}
-                  </h3>
-                  <p className="text-[12.5px] text-white/45 leading-relaxed">
+                  <p className="text-[12.5px] text-white/45 leading-relaxed pl-13">
                     {desc}
                   </p>
                 </div>
@@ -324,86 +307,78 @@ export default function EverythingDataPage() {
             </div>
           </ScrollReveal>
 
-          <div className="space-y-4">
-            {DATA_SERVICES.map(
-              ({ icon: SIcon, gradient, title, desc, details }, i) => {
-                const isEven = i % 2 === 0;
-                return (
-                  <ScrollReveal
-                    key={i}
-                    direction={isEven ? "left" : "right"}
-                    duration={700}
-                    delay={60}
-                  >
-                    <div className="group bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:border-[#6128a6]/25 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.10)] hover:-translate-y-0.5 transition-all duration-300">
-                      <div className={`h-1 bg-linear-to-r ${gradient}`} />
-                      <div className="p-6 flex flex-col sm:flex-row gap-5 items-start">
-                        <div
-                          className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}
-                        >
-                          <SIcon className="w-6 h-6 text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-[16px] font-bold text-[#111] mb-1.5 group-hover:text-[#6128a6] transition-colors">
-                            {title}
-                          </h3>
-                          <p className="text-[13.5px] text-[#666] leading-relaxed mb-2">
-                            {desc}
-                          </p>
-                          <p className="text-[12.5px] text-[#888] italic leading-relaxed">
-                            {details}
-                          </p>
-                        </div>
-                        <ChevronRight className="w-5 h-5 text-[#ccc] group-hover:text-[#6128a6] group-hover:translate-x-1 transition-all duration-300 shrink-0 self-center hidden sm:block" />
-                      </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {DATA_SERVICES.map(({ icon: SIcon, gradient, title, desc, details }, i) => (
+              <ScrollReveal
+                key={i}
+                direction="up"
+                duration={700}
+                delay={Math.floor(i / 2) * 80 + (i % 2) * 60}
+              >
+                <div className="group h-full bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:border-[#6128a6]/25 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.10)] hover:-translate-y-0.5 transition-all duration-300">
+                  <div className={`h-1 bg-linear-to-r ${gradient}`} />
+                  <div className="p-6 flex flex-col sm:flex-row gap-5 items-start">
+                    <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                      <SIcon className="w-6 h-6 text-white" />
                     </div>
-                  </ScrollReveal>
-                );
-              },
-            )}
+                    <div className="flex-1">
+                      <h3 className="text-[16px] font-bold text-[#111] mb-3 group-hover:text-[#6128a6] transition-colors">
+                        {title}
+                      </h3>
+                      <p className="text-[13.5px] text-[#666] leading-relaxed mb-2">
+                        {desc}
+                      </p>
+                      <p className="text-[12.5px] text-[#888] italic leading-relaxed">
+                        {details}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ── Tools & Technologies ──────────────────────────────── */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 max-w-5xl">
+      <section className="py-20 bg-[#0d0517] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#6128a6]/15 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#f85d37]/8 blur-[100px] pointer-events-none" />
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+        />
+        <div className="container mx-auto px-6 max-w-5xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/20 border border-[#6128a6]/30 text-[#aa3bff] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Technology Stack
               </span>
-              <h2 className="text-[34px] font-bold text-[#111] mt-2">
+              <h2 className="text-[34px] font-bold text-white mt-2">
                 Tools, Technologies & Frameworks
               </h2>
             </div>
           </ScrollReveal>
 
           <ScrollReveal direction="fade" delay={100}>
-            <div className="bg-[#0d0517] rounded-3xl p-10 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[#6128a6]/20 blur-[80px] pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-[#f85d37]/10 blur-[60px] pointer-events-none" />
-              <div className="relative z-10">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {DATA_TOOLS.map(({ name, desc }, i) => (
-                    <div
-                      key={i}
-                      className="group bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/9 hover:border-[#6128a6]/40 transition-all duration-300"
-                      style={{
-                        animation: `revealFade 450ms ease ${i * 90 + 200}ms both`,
-                      }}
-                    >
-                      <div className="w-8 h-8 rounded-lg bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                        <BarChart2 className="w-4 h-4 text-white" />
-                      </div>
-                      <p className="text-[14px] font-bold text-white mb-1">
-                        {name}
-                      </p>
-                      <p className="text-[12px] text-white/40">{desc}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {DATA_TOOLS.map(({ icon: ToolIcon, name, desc }, i) => (
+                <div
+                  key={i}
+                  className="group bg-white/4 border border-white/8 rounded-2xl p-6 hover:bg-white/7 hover:border-[#6128a6]/30 hover:-translate-y-1 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.20)] transition-all duration-300"
+                  style={{ animation: `revealFade 450ms ease ${i * 90 + 200}ms both` }}
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <ToolIcon className="w-5 h-5 text-white" />
                     </div>
-                  ))}
+                    <p className="text-[15px] font-bold text-white group-hover:text-[#aa3bff] transition-colors duration-300">
+                      {name}
+                    </p>
+                  </div>
+                  <p className="text-[13px] text-white/50">{desc}</p>
                 </div>
-              </div>
+              ))}
             </div>
           </ScrollReveal>
         </div>

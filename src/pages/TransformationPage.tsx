@@ -8,7 +8,6 @@ import {
   Server,
   RefreshCcw,
   ArrowRight,
-  ChevronRight,
   Target,
   type LucideIcon,
 } from "lucide-react";
@@ -155,8 +154,8 @@ export default function TransformationPage() {
         </div>
         {/* 20 Success Factors badge */}
         <div className="mt-10 flex items-center justify-center">
-          <span className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 border border-white/20 text-white/70 text-[12px] font-semibold">
-            <span className="w-6 h-6 rounded-full bg-[#f85d37] flex items-center justify-center text-[10px] font-black text-white">
+          <span className="flex items-center gap-2.5 px-6 py-3 rounded-full bg-white/10 border border-white/20 text-white/80 text-[13px] font-semibold">
+            <span className="w-8 h-8 rounded-full bg-[#f85d37] flex items-center justify-center text-[12px] font-black text-white shrink-0">
               20
             </span>
             Carefully devised success factors for Digital Transformation
@@ -197,10 +196,10 @@ export default function TransformationPage() {
 
             {/* Maturity Areas card */}
             <ScrollReveal direction="right" duration={720} delay={150}>
-              <div className="bg-[#0d0517] rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/30 blur-[60px] pointer-events-none" />
+              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/8 blur-[60px] pointer-events-none" />
                 <div className="relative z-10">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#aa3bff] mb-5">
+                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] mb-5">
                     5 Digital Maturity Areas
                   </p>
                   <div className="space-y-3 mb-7">
@@ -216,17 +215,17 @@ export default function TransformationPage() {
                           className="h-2 rounded-full bg-linear-to-r from-[#6128a6] to-[#aa3bff] transition-all duration-300"
                           style={{ width: `${100 - i * 8}%` }}
                         />
-                        <span className="text-[13px] text-white/65 font-medium shrink-0">
+                        <span className="text-[13px] text-[#444] font-medium shrink-0">
                           {area}
                         </span>
                       </div>
                     ))}
                   </div>
-                  <div className="border-t border-white/10 pt-6 text-center">
-                    <p className="text-[32px] font-black text-white leading-none">
+                  <div className="border-t border-[#e8e0f7] pt-6 text-center">
+                    <p className="text-[32px] font-black text-[#111] leading-none">
                       20
                     </p>
-                    <p className="text-[12px] text-white/35 mt-1">
+                    <p className="text-[12px] text-[#888] mt-1">
                       Transformation Success Factors
                     </p>
                   </div>
@@ -308,44 +307,40 @@ export default function TransformationPage() {
             </div>
           </ScrollReveal>
 
-          <div className="space-y-4">
-            {GOALS.map(({ num, icon: GIcon, gradient, title, desc }, i) => {
-              const isEven = i % 2 === 0;
-              return (
-                <ScrollReveal
-                  key={i}
-                  direction={isEven ? "left" : "right"}
-                  duration={700}
-                  delay={60}
-                >
-                  <div className="group bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:border-[#6128a6]/25 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.10)] hover:-translate-y-0.5 transition-all duration-300">
-                    <div className={`h-1 bg-linear-to-r ${gradient}`} />
-                    <div className="p-7 flex flex-col sm:flex-row gap-5 items-start">
-                      {/* Icon + Number */}
-                      <div className="shrink-0 flex items-center gap-4">
-                        <div
-                          className={`w-13 h-13 rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
-                        >
-                          <GIcon className="w-6 h-6 text-white" />
-                        </div>
-                        <span className="text-[40px] font-black text-[#f0eff5] leading-none select-none">
-                          {num}
-                        </span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {GOALS.map(({ num, icon: GIcon, gradient, title, desc }, i) => (
+              <ScrollReveal
+                key={i}
+                direction="up"
+                duration={700}
+                delay={Math.floor(i / 2) * 80 + (i % 2) * 60}
+              >
+                <div className="group h-full bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:border-[#6128a6]/25 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.10)] hover:-translate-y-0.5 transition-all duration-300">
+                  <div className={`h-1 bg-linear-to-r ${gradient}`} />
+                  <div className="p-7 flex flex-col sm:flex-row gap-5 items-start">
+                    {/* Icon + Number */}
+                    <div className="shrink-0 flex items-center gap-4">
+                      <div
+                        className={`w-13 h-13 rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+                      >
+                        <GIcon className="w-6 h-6 text-white" />
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-[18px] font-bold text-[#111] mb-2 group-hover:text-[#6128a6] transition-colors leading-snug">
-                          {title}
-                        </h3>
-                        <p className="text-[14px] text-[#666] leading-relaxed">
-                          {desc}
-                        </p>
-                      </div>
-                      <ChevronRight className="w-5 h-5 text-[#ccc] group-hover:text-[#6128a6] group-hover:translate-x-1 transition-all duration-300 shrink-0 self-center hidden sm:block" />
+                      <span className="text-[40px] font-black text-[#f0eff5] leading-none select-none">
+                        {num}
+                      </span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-[18px] font-bold text-[#111] mb-2 group-hover:text-[#6128a6] transition-colors leading-snug">
+                        {title}
+                      </h3>
+                      <p className="text-[14px] text-[#666] leading-relaxed">
+                        {desc}
+                      </p>
                     </div>
                   </div>
-                </ScrollReveal>
-              );
-            })}
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
