@@ -17,7 +17,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 
-/* â”€â”€ Our Solutions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* â"€â"€ Our Solutions â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */
 const SOLUTIONS = [
   { icon: Search, label: "Data Cleaning & Standardization" },
   { icon: Database, label: "Material Master Consultancy" },
@@ -30,7 +30,7 @@ const SOLUTIONS = [
   { icon: CheckCircle2, label: "Consultancy Support" },
 ];
 
-/* â”€â”€ Core Values â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* â"€â"€ Core Values â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */
 const CORE_VALUES = [
   { icon: Zap, label: "Availability", color: "#f85d37" },
   { icon: TrendingUp, label: "Scalability", color: "#aa3bff" },
@@ -38,7 +38,7 @@ const CORE_VALUES = [
   { icon: Globe, label: "Lucidity", color: "#f85d37" },
 ];
 
-/* â”€â”€ Detailed Solutions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* â"€â"€ Detailed Solutions â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */
 const DETAIL_SOLUTIONS = [
   {
     number: "01",
@@ -84,62 +84,69 @@ const DETAIL_SOLUTIONS = [
   },
 ];
 
-/* â”€â”€ Benefits â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-const BENEFITS = [
+/* â"€â"€ Benefits â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */
+const BENEFITS: {
+  number: string;
+  category: string;
+  icon: React.ElementType;
+  accentColor: string;
+  glowColor: string;
+  items: string[];
+}[] = [
   {
-    number: “01”,
-    category: “Data Quality”,
+    number: "01",
+    category: "Data Quality",
     icon: Database,
-    accentColor: “#6128a6”,
-    glowColor: “rgba(97,40,166,0.28)”,
+    accentColor: "#6128a6",
+    glowColor: "rgba(97,40,166,0.28)",
     items: [
-      “Consistent, structured, and compliant data”,
-      “Defined dictionary templates and common naming conventions”,
-      “Harmonized descriptions across all regions”,
-      “Elimination of duplicates”,
-      “A single source of the truth”,
+      "Consistent, structured, and compliant data",
+      "Defined dictionary templates and common naming conventions",
+      "Harmonized descriptions across all regions",
+      "Elimination of duplicates",
+      "A single source of the truth",
     ],
   },
   {
-    number: “02”,
-    category: “Process”,
+    number: "02",
+    category: "Process",
     icon: Layers,
-    accentColor: “#aa3bff”,
-    glowColor: “rgba(170,59,255,0.28)”,
+    accentColor: "#aa3bff",
+    glowColor: "rgba(170,59,255,0.28)",
     items: [
-      “Automated defined workflows and approval processes”,
-      “Structured and fully configurable workflow”,
-      “Fully integrated workflow”,
-      “Faster request processing and turnaround times”,
-      “Specialist catalogers liberate your front-line resources”,
+      "Automated defined workflows and approval processes",
+      "Structured and fully configurable workflow",
+      "Fully integrated workflow",
+      "Faster request processing and turnaround times",
+      "Specialist catalogers liberate your front-line resources",
     ],
   },
   {
-    number: “03”,
-    category: “Visibility & Control”,
+    number: "03",
+    category: "Visibility & Control",
     icon: Globe,
-    accentColor: “#f85d37”,
-    glowColor: “rgba(248,93,55,0.28)”,
+    accentColor: "#f85d37",
+    glowColor: "rgba(248,93,55,0.28)",
     items: [
-      “Enterprise-wide master view enables data analytics”,
-      “Prevents unnecessary purchases, optimizes inventory”,
-      “Full visibility of workflows and material request status”,
-      “Improved spend analytics for strategic sourcing”,
-      “Improved searching, finding, reporting, and monitoring”,
+      "Enterprise-wide master view enables data analytics",
+      "Prevents unnecessary purchases, optimizes inventory",
+      "Full visibility of workflows and material request status",
+      "Improved spend analytics for strategic sourcing",
+      "Improved searching, finding, reporting, and monitoring",
     ],
   },
   {
-    number: “04”,
-    category: “Commercial”,
+    number: "04",
+    category: "Commercial",
     icon: TrendingUp,
-    accentColor: “#f59e0b”,
-    glowColor: “rgba(245,158,11,0.28)”,
+    accentColor: "#f59e0b",
+    glowColor: "rgba(245,158,11,0.28)",
     items: [
-      “Reduce corporate spend on engineering spare parts”,
-      “Reduce free-text and off-contract spend”,
-      “Reduce stock holding and transfer surplus stock”,
-      “Reduce processing time”,
-      “Conduct strategic sourcing events with suppliers”,
+      "Reduce corporate spend on engineering spare parts",
+      "Reduce free-text and off-contract spend",
+      "Reduce stock holding and transfer surplus stock",
+      "Reduce processing time",
+      "Conduct strategic sourcing events with suppliers",
     ],
   },
 ];
@@ -152,7 +159,7 @@ export default function MasterDataManagementPage() {
         description="Streamline your enterprise data with Infoplus Technologies UK's Master Data Management platform. Achieve data accuracy, consistency, and governance across your organisation."
         path="/products/master-data-management"
       />
-      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Hero â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <PageHero
         badge="PRODUCTS"
         title="Master Data Management"
@@ -177,7 +184,7 @@ export default function MasterDataManagementPage() {
         </div>
       </PageHero>
 
-      {/* â”€â”€ Intro section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Intro section â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#ecdaff] opacity-50 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -248,7 +255,7 @@ export default function MasterDataManagementPage() {
         </div>
       </section>
 
-      {/* â”€â”€ MDM Overview + Solutions Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ MDM Overview + Solutions Grid â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         {/* background orbs */}
         <div className="absolute top-0 left-[-10%] w-[500px] h-[500px] rounded-full bg-[#381f55] opacity-40 blur-[120px] pointer-events-none" />
@@ -313,7 +320,7 @@ export default function MasterDataManagementPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Detailed Solutions (alternating) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Detailed Solutions (alternating) â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -414,7 +421,7 @@ export default function MasterDataManagementPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Benefits â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Benefits â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-[-15%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#381f55] opacity-50 blur-[130px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[#6128a6] opacity-20 blur-[100px] pointer-events-none" />
@@ -510,7 +517,7 @@ export default function MasterDataManagementPage() {
         </div>
       </section>
 
-      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.04]"
