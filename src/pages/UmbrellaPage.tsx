@@ -1,4 +1,4 @@
-﻿import { PageMeta } from "../components/shared/PageMeta";
+import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Shield, FileText, CheckCircle2, Settings,
@@ -109,10 +109,6 @@ export default function UmbrellaPage() {
             Talk to Our Team
           </Link>
         </div>
-        <div className="mt-16 flex flex-col items-center gap-2 opacity-40">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-white">Scroll</p>
-          <div className="w-px h-12 bg-linear-to-b from-white to-transparent" />
-        </div>
       </PageHero>
 
       {/* â”€â”€ What Is an Umbrella Company â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
@@ -121,7 +117,7 @@ export default function UmbrellaPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left" duration={720}>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 What We Do
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
@@ -180,7 +176,7 @@ export default function UmbrellaPage() {
         <div className="container mx-auto px-6 max-w-6xl">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 All Handled For You
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-2">What We Take Care Of</h2>
@@ -226,7 +222,7 @@ export default function UmbrellaPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-14">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 The Infoplus Difference
               </span>
               <h2 className="text-[36px] font-bold text-white mt-2">

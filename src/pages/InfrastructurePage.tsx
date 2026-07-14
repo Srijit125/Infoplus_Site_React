@@ -4,7 +4,7 @@ import {
   Monitor, Activity, Clock, BarChart2, Shield,
   Globe, Layers, Server, TrendingUp, Users,
   Target, MessageSquare, Lock, CheckCircle2,
-  ArrowRight, ChevronRight, type LucideIcon,
+  ArrowRight, type LucideIcon,
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
@@ -133,10 +133,6 @@ export default function InfrastructurePage() {
             Talk to Experts
           </Link>
         </div>
-        <div className="mt-16 flex flex-col items-center gap-2 opacity-40">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-white">Scroll</p>
-          <div className="w-px h-12 bg-linear-to-b from-white to-transparent" />
-        </div>
       </PageHero>
 
       {/* ── Intro ────────────────────────────────────────────── */}
@@ -148,7 +144,7 @@ export default function InfrastructurePage() {
             {/* Text 3 cols */}
             <div className="lg:col-span-3">
               <ScrollReveal direction="left" duration={700}>
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                   About Our Practice
                 </span>
                 <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
@@ -173,29 +169,26 @@ export default function InfrastructurePage() {
             {/* Stats card 2 cols */}
             <div className="lg:col-span-2">
               <ScrollReveal direction="right" duration={700} delay={150}>
-                <div className="bg-[#0d0517] rounded-3xl p-8 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/30 blur-[60px] pointer-events-none" />
-                  <div className="relative z-10">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#aa3bff] mb-6">
-                      Client-Proven Results
-                    </p>
-                    {[
-                      { value: "40%", label: "Average cost reduction" },
-                      { value: "99.9%", label: "Uptime SLA target" },
-                      { value: "24/7", label: "Follow-the-sun support" },
-                    ].map(({ value, label }, i) => (
-                      <div
-                        key={i}
-                        className={`flex items-center justify-between py-4 ${
-                          i < 2 ? "border-b border-white/8" : ""
-                        }`}
-                        style={{ animation: `revealFade 500ms ease ${i * 120 + 200}ms both` }}
-                      >
-                        <p className="text-[13px] text-white/50">{label}</p>
-                        <p className="text-[22px] font-black text-white">{value}</p>
-                      </div>
-                    ))}
-                  </div>
+                <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#6128a6] mb-6">
+                    Client-Proven Results
+                  </p>
+                  {[
+                    { value: "40%", label: "Average cost reduction" },
+                    { value: "99.9%", label: "Uptime SLA target" },
+                    { value: "24/7", label: "Follow-the-sun support" },
+                  ].map(({ value, label }, i) => (
+                    <div
+                      key={i}
+                      className={`flex items-center justify-between py-4 ${
+                        i < 2 ? "border-b border-[#e8e0f7]" : ""
+                      }`}
+                      style={{ animation: `revealFade 500ms ease ${i * 120 + 200}ms both` }}
+                    >
+                      <p className="text-[13px] text-[#888]">{label}</p>
+                      <p className="text-[22px] font-black text-[#111]">{value}</p>
+                    </div>
+                  ))}
                 </div>
               </ScrollReveal>
             </div>
@@ -218,7 +211,7 @@ export default function InfrastructurePage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Immediate Impact
               </span>
               <h2 className="text-[36px] font-bold text-white mt-2">Key Benefits</h2>
@@ -253,7 +246,7 @@ export default function InfrastructurePage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-14">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 What We Deliver
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-2">Our Services</h2>
@@ -264,43 +257,34 @@ export default function InfrastructurePage() {
             </div>
           </ScrollReveal>
 
-          {/* Two-column service layout cinematic reveal */}
-          <div className="space-y-4">
-            {INFRA_SERVICES.map(({ icon: SIcon, gradient, title, desc }, i) => {
-              const isEven = i % 2 === 0;
-              return (
-                <ScrollReveal
-                  key={i}
-                  direction={isEven ? "left" : "right"}
-                  duration={650}
-                  delay={50}
-                >
-                  <div className="group flex flex-col sm:flex-row items-start gap-5 bg-white border border-[#e5e4e7] rounded-2xl p-6 hover:border-[#6128a6]/30 hover:shadow-[0_12px_36px_-8px_rgba(97,40,166,0.10)] hover:-translate-y-0.5 transition-all duration-300">
-                    {/* Icon */}
-                    <div
-                      className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <SIcon className="w-6 h-6 text-white" />
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1">
-                      <div className="flex items-start justify-between gap-4">
-                        <h3 className="text-[15.5px] font-bold text-[#111] group-hover:text-[#6128a6] transition-colors leading-snug">
-                          {title}
-                        </h3>
-                        <span className="text-[11px] font-bold text-white/0 group-hover:text-[#6128a6] bg-[#ecdaff] rounded-full px-2.5 py-1 shrink-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                          #{String(i + 1).padStart(2, "0")}
-                        </span>
-                      </div>
-                      <p className="text-[13.5px] text-[#666] leading-relaxed mt-2">{desc}</p>
-                    </div>
-
-                    <ChevronRight className="w-5 h-5 text-[#ccc] group-hover:text-[#6128a6] group-hover:translate-x-1 transition-all duration-300 shrink-0 self-center" />
+          {/* Two-column service grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {INFRA_SERVICES.map(({ icon: SIcon, gradient, title, desc }, i) => (
+              <ScrollReveal
+                key={i}
+                direction="up"
+                duration={650}
+                delay={Math.floor(i / 2) * 80}
+                className="h-full"
+              >
+                <div className="group h-full flex items-start gap-5 bg-white border border-[#e5e4e7] rounded-2xl p-6 hover:border-[#6128a6]/30 hover:shadow-[0_12px_36px_-8px_rgba(97,40,166,0.10)] hover:-translate-y-0.5 transition-all duration-300">
+                  {/* Icon */}
+                  <div
+                    className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    <SIcon className="w-6 h-6 text-white" />
                   </div>
-                </ScrollReveal>
-              );
-            })}
+
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-[15px] font-bold text-[#111] group-hover:text-[#6128a6] transition-colors leading-snug mb-2">
+                      {title}
+                    </h3>
+                    <p className="text-[13.5px] text-[#666] leading-relaxed">{desc}</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>

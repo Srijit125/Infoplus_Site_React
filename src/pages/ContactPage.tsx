@@ -128,7 +128,7 @@ export function ContactPage() {
             {/* Left: Form */}
             <ScrollReveal direction="left" className="lg:col-span-7">
               <div className="bg-[#f8f5ff] border border-[#e5e4e7] rounded-3xl p-8 md:p-10">
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37] mb-2 block">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Send a Message
                 </span>
                 <h2 className="text-[28px] font-bold text-[#111] mb-8">
@@ -239,7 +239,7 @@ export function ContactPage() {
             <div className="lg:col-span-5 space-y-6">
               <ScrollReveal direction="right">
                 <div>
-                  <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37] mb-2 block">
+                  <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                     Reach Us Directly
                   </span>
                   <h2 className="text-[28px] font-bold text-[#111] mb-6">Contact Details</h2>
@@ -312,7 +312,7 @@ export function ContactPage() {
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 mb-3">
                 <Globe2 className="w-5 h-5 text-[#6128a6]" />
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Worldwide Presence
                 </span>
               </div>

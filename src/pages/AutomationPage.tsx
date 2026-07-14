@@ -194,12 +194,6 @@ export default function AutomationPage() {
             Talk to Our Team
           </Link>
         </div>
-        <div className="mt-16 flex flex-col items-center gap-2 opacity-40">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-white">
-            Scroll
-          </p>
-          <div className="w-px h-12 bg-linear-to-b from-white to-transparent" />
-        </div>
       </PageHero>
 
       {/* ── Intro ────────────────────────────────────────────── */}
@@ -208,7 +202,7 @@ export default function AutomationPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left" duration={720}>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Automation as a Service
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
@@ -303,7 +297,7 @@ export default function AutomationPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Core Business Outcomes
               </span>
               <h2 className="text-[36px] font-bold text-white mt-2">
@@ -370,7 +364,7 @@ export default function AutomationPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-14">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Automation Strategy
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-2">
@@ -424,7 +418,7 @@ export default function AutomationPage() {
         <div className="container mx-auto px-6 max-w-6xl">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Automation Capabilities
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-2">
@@ -480,7 +474,7 @@ export default function AutomationPage() {
             {/* Benefits */}
             <div>
               <ScrollReveal direction="left" duration={700}>
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Additional Benefits
                 </span>
                 <h2 className="text-[28px] font-bold text-white mt-3 mb-8">
@@ -509,7 +503,7 @@ export default function AutomationPage() {
             {/* Tools */}
             <div>
               <ScrollReveal direction="right" duration={700}>
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Technology Estate
                 </span>
                 <h2 className="text-[28px] font-bold text-white mt-3 mb-8">

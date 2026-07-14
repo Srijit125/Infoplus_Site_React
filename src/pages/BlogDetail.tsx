@@ -213,7 +213,7 @@ export default function BlogDetail() {
           <div className="container mx-auto px-6 max-w-7xl">
             <ScrollReveal direction="fade">
               <div className="mb-10">
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37] mb-2 block">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Keep Reading
                 </span>
                 <h2 className="text-[28px] font-bold text-[#111]">Related Articles</h2>

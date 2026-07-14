@@ -158,6 +158,41 @@ const SVC: AIService[] = [
   },
 ];
 
+function CounterStat({ value, label }: { value: string; label: string }) {
+  const numericPart = parseInt(value.replace(/\D/g, ""), 10);
+  const suffix = value.replace(/[0-9]/g, "");
+  const [count, setCount] = useState(0);
+  const started = useRef(false);
+
+  useEffect(() => {
+    if (started.current) return;
+    started.current = true;
+    const delay = setTimeout(() => {
+      const totalMs = 1600;
+      const fps = 60;
+      const steps = (totalMs / 1000) * fps;
+      const inc = numericPart / steps;
+      let cur = 0;
+      const id = setInterval(() => {
+        cur += inc;
+        if (cur >= numericPart) { setCount(numericPart); clearInterval(id); }
+        else { setCount(Math.floor(cur)); }
+      }, 1000 / fps);
+      return () => clearInterval(id);
+    }, 900);
+    return () => clearTimeout(delay);
+  }, [numericPart]);
+
+  return (
+    <div className="text-center">
+      <p className="text-[38px] font-black text-white leading-none mb-1 tabular-nums">
+        {count}{suffix}
+      </p>
+      <p className="text-[12px] text-white/50 font-medium">{label}</p>
+    </div>
+  );
+}
+
 export default function AIPage() {
   const [activeIdx, setActiveIdx] = useState(0);
   const detailRef = useRef<HTMLDivElement>(null);
@@ -206,7 +241,7 @@ export default function AIPage() {
         <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
           <button
             onClick={() => goToDetail(0)}
-            className="px-8 py-3.5 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors"
+            className="px-8 py-3.5 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors cursor-pointer"
           >
             Explore AI Services
           </button>
@@ -218,18 +253,11 @@ export default function AIPage() {
           </Link>
         </div>
 
-        {/* Stats */}
+        {/* Stats — counter animation */}
         <div className="grid grid-cols-3 gap-8 mt-14 pt-10 border-t border-white/10 max-w-lg mx-auto">
-          {[
-            { value: "11+", label: "AI Service Areas" },
-            { value: "100+", label: "AI Implementations" },
-            { value: "120+", label: "Enterprise Clients" },
-          ].map(({ value, label }) => (
-            <div key={label} className="text-center">
-              <p className="text-[38px] font-black text-white leading-none mb-1">{value}</p>
-              <p className="text-[12px] text-white/50 font-medium">{label}</p>
-            </div>
-          ))}
+          <CounterStat value="11+" label="AI Service Areas" />
+          <CounterStat value="100+" label="AI Implementations" />
+          <CounterStat value="120+" label="Enterprise Clients" />
         </div>
       </PageHero>
 
@@ -238,7 +266,7 @@ export default function AIPage() {
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="fade">
             <div className="text-center mb-4">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 What We Offer
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-2">Our AI Services</h2>
@@ -250,38 +278,36 @@ export default function AIPage() {
             </p>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {SVC.map((s, i) => {
               const CardIcon = s.icon;
               return (
                 <ScrollReveal
                   key={i}
-                  direction="fade"
+                  direction="up"
                   variant="card"
-                  delay={Math.min(i % 4, 3) * 80}
+                  delay={Math.floor(i / 3) * 90}
+                  className="h-full"
                 >
                   <button
                     onClick={() => goToDetail(i)}
-                    className="group w-full text-left bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:border-[#6128a6]/30 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.12)] hover:-translate-y-1 transition-all duration-300"
+                    className="group w-full h-full text-left flex flex-col bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden cursor-pointer hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.12)] hover:-translate-y-1 hover:border-[#6128a6]/25 transition-all duration-300"
                   >
                     {/* Gradient accent bar */}
-                    <div className={`h-1.5 w-full bg-linear-to-r ${s.gradient}`} />
-
-                    <div className="p-5">
-                      <div
-                        className={`w-11 h-11 rounded-xl bg-linear-to-br ${s.gradient} flex items-center justify-center mb-4`}
-                      >
-                        <CardIcon className="w-5 h-5 text-white" />
+                    <div className={`h-1.5 w-full shrink-0 bg-linear-to-r ${s.gradient}`} />
+                    <div className="flex flex-col flex-1 p-7">
+                      {/* Icon */}
+                      <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${s.gradient} flex items-center justify-center mb-5 shrink-0`}>
+                        <CardIcon className="w-6 h-6 text-white" />
                       </div>
-                      <h3 className="text-[14.5px] font-bold text-[#111] mb-2 group-hover:text-[#6128a6] transition-colors leading-snug">
+                      {/* Title */}
+                      <h3 className="text-[16px] font-bold text-[#111] mb-3 leading-snug group-hover:text-[#6128a6] transition-colors">
                         {s.title}
                       </h3>
-                      <p className="text-[12.5px] text-[#666] leading-relaxed line-clamp-3 mb-4">
+                      {/* Description */}
+                      <p className="text-[13.5px] text-[#666] leading-relaxed line-clamp-3">
                         {s.shortDesc}
                       </p>
-                      <div className="flex items-center gap-1 text-[12px] font-semibold text-[#6128a6] group-hover:text-[#f85d37] transition-colors">
-                        Explore <ChevronRight className="w-3.5 h-3.5" />
-                      </div>
                     </div>
                   </button>
                 </ScrollReveal>
@@ -300,7 +326,7 @@ export default function AIPage() {
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 In Depth
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-2">
@@ -381,7 +407,7 @@ export default function AIPage() {
                         <Icon className="w-7 h-7 text-white" />
                       </div>
                       <div>
-                        <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+                        <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                           Service {String(i + 1).padStart(2, "0")} of {SVC.length}
                         </span>
                         <h3 className="text-[26px] font-bold text-[#111] mt-0.5 leading-tight">{s.title}</h3>

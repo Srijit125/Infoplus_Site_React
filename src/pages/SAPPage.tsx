@@ -1,4 +1,4 @@
-﻿import { PageMeta } from "../components/shared/PageMeta";
+import { PageMeta } from "../components/shared/PageMeta";
 import imgSapCapabilities from "../assets/images/SAP-Capabilities.png";
 import { ImageWithFallback } from "../components/helpers/ImageWithFallback";
 import { Link } from "react-router-dom";
@@ -145,12 +145,6 @@ export default function SAPPage() {
             View Our SAP Services
           </Link>
         </div>
-        <div className="mt-16 flex flex-col items-center gap-2 opacity-40">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-white">
-            Scroll
-          </p>
-          <div className="w-px h-12 bg-linear-to-b from-white to-transparent" />
-        </div>
       </PageHero>
 
       {/* â”€â”€ 4 Key Benefits strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
@@ -158,10 +152,10 @@ export default function SAPPage() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {SAP_BENEFITS.map(({ icon: BIcon, title, gradient }, i) => (
-              <ScrollReveal key={i} direction="up" delay={i * 90}>
-                <div className="group flex flex-col items-center text-center gap-3 p-6 rounded-2xl bg-[#f8f5ff] border border-[#e8e0f7] hover:bg-white hover:shadow-[0_8px_32px_-8px_rgba(97,40,166,0.15)] hover:-translate-y-1 transition-all duration-300">
+              <ScrollReveal key={i} direction="up" delay={i * 90} className="h-full">
+                <div className="group h-full flex flex-col items-center text-center gap-3 p-6 rounded-2xl bg-[#f8f5ff] border border-[#e8e0f7] hover:bg-white hover:shadow-[0_8px_32px_-8px_rgba(97,40,166,0.15)] hover:-translate-y-1 transition-all duration-300">
                   <div
-                    className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center`}
+                    className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center shrink-0`}
                   >
                     <BIcon className="w-6 h-6 text-white" />
                   </div>
@@ -181,7 +175,7 @@ export default function SAPPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left" duration={700}>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 About Our SAP Practice
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
@@ -210,10 +204,10 @@ export default function SAPPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" duration={700} delay={150}>
-              <div className="bg-[#0d0517] rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/30 blur-[60px] pointer-events-none" />
+              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/8 blur-[60px] pointer-events-none" />
                 <div className="relative z-10">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#aa3bff] mb-6">
+                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] mb-6">
                     Our Reach
                   </p>
                   {[
@@ -229,13 +223,13 @@ export default function SAPPage() {
                   ].map(({ value, label }, i) => (
                     <div
                       key={i}
-                      className={`flex items-center justify-between py-4 ${i < 2 ? "border-b border-white/8" : ""}`}
+                      className={`flex items-center justify-between py-4 ${i < 2 ? "border-b border-[#e8e0f7]" : ""}`}
                       style={{
                         animation: `revealFade 500ms ease ${i * 120 + 200}ms both`,
                       }}
                     >
-                      <p className="text-[13px] text-white/50">{label}</p>
-                      <p className="text-[24px] font-black text-white">
+                      <p className="text-[13px] text-[#888]">{label}</p>
+                      <p className="text-[24px] font-black text-[#111]">
                         {value}
                       </p>
                     </div>
@@ -254,7 +248,7 @@ export default function SAPPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <ScrollReveal direction="left" duration={700}>
               <div className="lg:sticky lg:top-[120px]">
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                   01 ERP Suite
                 </span>
                 <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
@@ -304,7 +298,7 @@ export default function SAPPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-16">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 02 Implementations
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-3">
@@ -319,34 +313,27 @@ export default function SAPPage() {
             </div>
           </ScrollReveal>
 
-          {/* Horizontal cinematic timeline */}
+          {/* Minimalist step cards */}
           <div className="relative">
             {/* Connecting line (desktop) */}
-            <div className="hidden lg:block absolute top-[44px] left-[10%] right-[10%] h-px bg-linear-to-r from-transparent via-[#6128a6]/30 to-transparent" />
+            <div className="hidden lg:block absolute top-9.5 left-[calc(10%+1rem)] right-[calc(10%+1rem)] h-px bg-[#e5e4e7]" />
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
               {IMPL_STAGES.map(({ num, title }, i) => (
                 <ScrollReveal
                   key={i}
                   direction="up"
-                  delay={i * 120}
-                  duration={650}
+                  delay={i * 100}
+                  duration={600}
                 >
-                  <div className="flex flex-col items-center text-center group">
-                    {/* Circle */}
-                    <div className="relative mb-5">
-                      <div className="w-[88px] h-[88px] rounded-full bg-linear-to-br from-[#381f55] to-[#6128a6] flex flex-col items-center justify-center relative z-10 group-hover:scale-110 transition-transform duration-300 shadow-[0_8px_32px_-8px_rgba(97,40,166,0.45)]">
-                        <span className="text-[10px] font-bold text-white/50">
-                          {num}
-                        </span>
-                        <span className="text-[22px] font-black text-white leading-tight">
-                          S{i + 1}
-                        </span>
-                      </div>
-                      {/* Pulse ring */}
-                      <span className="absolute inset-0 rounded-full border-2 border-[#6128a6]/30 opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500" />
+                  <div className="group flex flex-col items-center text-center">
+                    {/* Step circle */}
+                    <div className="w-19 h-19 rounded-full bg-white border border-[#e5e4e7] flex flex-col items-center justify-center mb-5 relative z-10 group-hover:border-[#6128a6]/40 group-hover:bg-[#f8f5ff] transition-all duration-300">
+                      <span className="text-[18px] font-black text-[#6128a6] tabular-nums leading-tight">
+                        {num}
+                      </span>
                     </div>
-                    <h3 className="text-[13.5px] font-bold text-[#333] leading-snug">
+                    <h3 className="text-[13px] font-semibold text-[#444] leading-snug px-1">
                       {title}
                     </h3>
                   </div>
@@ -373,7 +360,7 @@ export default function SAPPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <ScrollReveal direction="left" duration={700}>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Managed Services
               </span>
               <h2 className="text-[34px] font-bold text-white mt-3 leading-tight mb-5">
@@ -428,7 +415,7 @@ export default function SAPPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <ScrollReveal direction="left" duration={700}>
               <div className="lg:sticky lg:top-[120px]">
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Business Intelligence
                 </span>
                 <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
@@ -465,8 +452,8 @@ export default function SAPPage() {
                         animation: `revealFade 400ms ease ${i * 70 + 100}ms both`,
                       }}
                     >
-                      <div className="w-8 h-8 rounded-lg bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                        <BarChart2 className="w-4 h-4 text-white" />
+                      <div className="w-8 h-8 rounded-lg bg-[#ecdaff] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <BarChart2 className="w-4 h-4 text-[#6128a6]" />
                       </div>
                       <span className="text-[13.5px] text-[#333] font-medium">
                         {svc}
@@ -485,7 +472,7 @@ export default function SAPPage() {
         <div className="container mx-auto px-6 max-w-6xl">
           <ScrollReveal direction="fade">
             <div className="text-center mb-14">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 The Infoplus Advantage
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-2">
@@ -527,19 +514,21 @@ export default function SAPPage() {
                   direction="up"
                   variant="card"
                   delay={i * 110}
+                  className="h-full"
                 >
-                  <div className="group bg-[#0d0517] rounded-2xl p-7 relative overflow-hidden hover:shadow-[0_20px_48px_-8px_rgba(97,40,166,0.25)] transition-all duration-300">
-                    <div className="absolute top-0 right-0 w-24 h-24 rounded-full bg-[#6128a6]/20 blur-[40px] pointer-events-none" />
-                    <div className="relative z-10">
+                  <div className="group h-full flex flex-col bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.12)] hover:-translate-y-1 hover:border-[#6128a6]/25 transition-all duration-300">
+                    {/* Gradient accent bar */}
+                    <div className={`h-1.5 w-full shrink-0 bg-linear-to-r ${gradient}`} />
+                    <div className="flex flex-col flex-1 p-7">
                       <div
-                        className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
+                        className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center mb-5 shrink-0 group-hover:scale-110 transition-transform duration-300`}
                       >
                         <DIcon className="w-6 h-6 text-white" />
                       </div>
-                      <h3 className="text-[16px] font-bold text-white mb-3 leading-snug">
+                      <h3 className="text-[16px] font-bold text-[#111] mb-3 leading-snug">
                         {title}
                       </h3>
-                      <p className="text-[13.5px] text-white/50 leading-relaxed">
+                      <p className="text-[13.5px] text-[#666] leading-relaxed">
                         {desc}
                       </p>
                     </div>

@@ -84,16 +84,22 @@ const CLOUD_PROVIDERS = [
     name: "AWS",
     desc: "Amazon Web Services",
     gradient: "from-[#f59e0b] to-[#f85d37]",
+    iconBg: "bg-[#fff8f0] border-[#f59e0b]/25",
+    iconColor: "text-[#f59e0b]",
   },
   {
     name: "Azure",
     desc: "Microsoft Azure",
     gradient: "from-[#1e3a8a] to-[#3b82f6]",
+    iconBg: "bg-[#eff6ff] border-[#3b82f6]/25",
+    iconColor: "text-[#3b82f6]",
   },
   {
     name: "GCP",
     desc: "Google Cloud Platform",
-    gradient: "from-[#0f766e] to-[#14b8a6]",
+    gradient: "from-[#064e3b] to-[#16a34a]",
+    iconBg: "bg-[#f0fdf4] border-[#16a34a]/25",
+    iconColor: "text-[#16a34a]",
   },
 ];
 
@@ -138,12 +144,6 @@ export default function CloudPage() {
             </span>
           ))}
         </div>
-        <div className="mt-12 flex flex-col items-center gap-2 opacity-40">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-white">
-            Scroll
-          </p>
-          <div className="w-px h-12 bg-linear-to-b from-white to-transparent" />
-        </div>
       </PageHero>
 
       {/* ── Intro ────────────────────────────────────────────── */}
@@ -152,7 +152,7 @@ export default function CloudPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left" duration={720}>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Enterprise Cloud
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
@@ -176,40 +176,33 @@ export default function CloudPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" duration={720} delay={150}>
-              <div className="bg-[#0d0517] rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/30 blur-[60px] pointer-events-none" />
-                <div className="relative z-10">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#aa3bff] mb-6">
-                    Multi-Cloud Delivery
-                  </p>
-                  {CLOUD_PROVIDERS.map(({ name, desc, gradient }, i) => (
-                    <div
-                      key={i}
-                      className={`flex items-center gap-4 py-4 ${i < 2 ? "border-b border-white/8" : ""}`}
-                      style={{
-                        animation: `revealFade 500ms ease ${i * 130 + 200}ms both`,
-                      }}
-                    >
-                      <div
-                        className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center shrink-0`}
-                      >
-                        <Cloud className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <p className="text-[16px] font-black text-white">
-                          {name}
-                        </p>
-                        <p className="text-[12px] text-white/40">{desc}</p>
-                      </div>
-                      <CheckCircle2 className="w-4 h-4 text-[#aa3bff] ml-auto shrink-0" />
+              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8">
+                <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] mb-6">
+                  Multi-Cloud Delivery
+                </p>
+                {CLOUD_PROVIDERS.map(({ name, desc, iconBg, iconColor }, i) => (
+                  <div
+                    key={i}
+                    className={`flex items-center gap-3 py-3 ${i < 2 ? "border-b border-[#e8e0f7]" : ""}`}
+                    style={{
+                      animation: `revealFade 500ms ease ${i * 130 + 200}ms both`,
+                    }}
+                  >
+                    <div className={`w-10 h-10 rounded-xl ${iconBg} border flex items-center justify-center shrink-0`}>
+                      <Cloud className={`w-4.5 h-4.5 ${iconColor}`} />
                     </div>
-                  ))}
-                  <div className="mt-6 pt-5 border-t border-white/8 text-center">
-                    <p className="text-[11px] text-white/30 font-medium">
-                      Through innovative solutions, we support you anywhere at
-                      any time.
-                    </p>
+                    <div className="min-w-0">
+                      <p className="text-[13.5px] font-bold text-[#111] leading-none mb-2">{name}</p>
+                      <p className="text-[11px] text-[#888] leading-none mb-0">{desc}</p>
+                    </div>
+                    <CheckCircle2 className="w-4 h-4 text-[#6128a6] ml-auto shrink-0" />
                   </div>
+                ))}
+                <div className="mt-6 pt-5 border-t border-[#e8e0f7] text-center">
+                  <p className="text-[11px] text-[#999] font-medium">
+                    Through innovative solutions, we support you anywhere at
+                    any time.
+                  </p>
                 </div>
               </div>
             </ScrollReveal>
@@ -222,7 +215,7 @@ export default function CloudPage() {
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Service Models
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-2">
@@ -295,7 +288,7 @@ export default function CloudPage() {
             {/* Sticky heading */}
             <div className="lg:sticky lg:top-[120px]">
               <ScrollReveal direction="left" duration={720}>
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Why Choose Us
                 </span>
                 <h2 className="text-[34px] font-bold text-white mt-3 leading-tight mb-5">

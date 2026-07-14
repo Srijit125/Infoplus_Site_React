@@ -1,4 +1,4 @@
-﻿import { PageMeta } from "../components/shared/PageMeta";
+import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Globe,
@@ -11,7 +11,6 @@ import {
   Code2,
   CheckCircle2,
   ArrowRight,
-  ChevronRight,
   type LucideIcon,
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
@@ -225,17 +224,10 @@ export default function SoftwareDevelopmentPage() {
                 .getElementById("sd-services")
                 ?.scrollIntoView({ behavior: "smooth", block: "start" });
             }}
-            className="px-8 py-3.5 rounded-xl border border-white/30 text-white font-semibold text-[15px] hover:bg-white/10 transition-colors"
+            className="px-8 py-3.5 rounded-xl border border-white/30 text-white font-semibold text-[15px] hover:bg-white/10 transition-colors cursor-pointer"
           >
             Explore Services
           </button>
-        </div>
-        {/* Animated scroll indicator */}
-        <div className="mt-16 flex flex-col items-center gap-2 opacity-40">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-white">
-            Scroll
-          </p>
-          <div className="w-px h-12 bg-linear-to-b from-white to-transparent" />
         </div>
       </PageHero>
 
@@ -247,7 +239,7 @@ export default function SoftwareDevelopmentPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left" duration={700}>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Who We Are
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-3 leading-tight">
@@ -274,37 +266,33 @@ export default function SoftwareDevelopmentPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" duration={700} delay={120}>
-              <div className="bg-[#0d0517] rounded-3xl p-8 relative overflow-hidden">
-                {/* orb inside card */}
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/30 blur-[60px] pointer-events-none" />
-                <div className="relative z-10">
-                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#aa3bff] mb-5">
-                    Our Core Development Values
+              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8">
+                <p className="text-[11px] font-bold uppercase tracking-widest text-[#6128a6] mb-5">
+                  Our Core Development Values
+                </p>
+                <div className="grid grid-cols-2 gap-3 mb-8">
+                  {CORE_VALUES.map((v, i) => (
+                    <div
+                      key={v}
+                      className="flex items-center gap-2.5 bg-white border border-[#e5e4e7] rounded-xl px-4 py-3 hover:border-[#6128a6]/30 hover:shadow-[0_4px_12px_-4px_rgba(97,40,166,0.10)] transition-all duration-200"
+                      style={{
+                        animation: `revealFade 500ms ease ${i * 100 + 200}ms both`,
+                      }}
+                    >
+                      <span className="w-2 h-2 rounded-full bg-[#6128a6] shrink-0" />
+                      <span className="text-[14px] font-semibold text-[#333]">
+                        {v}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <div className="border-t border-[#e8e0f7] pt-6">
+                  <p className="text-[13px] text-[#888] leading-relaxed">
+                    Infoplus consistently considers not only current trends,
+                    but also carefully performs research on the future of
+                    software development. Our services are predominantly
+                    focused on these four core values.
                   </p>
-                  <div className="grid grid-cols-2 gap-3 mb-8">
-                    {CORE_VALUES.map((v, i) => (
-                      <div
-                        key={v}
-                        className="flex items-center gap-2.5 bg-white/5 border border-white/10 rounded-xl px-4 py-3"
-                        style={{
-                          animation: `revealFade 500ms ease ${i * 100 + 200}ms both`,
-                        }}
-                      >
-                        <span className="w-2 h-2 rounded-full bg-[#aa3bff] shrink-0" />
-                        <span className="text-[14px] font-semibold text-white">
-                          {v}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="border-t border-white/10 pt-6">
-                    <p className="text-[13px] text-white/50 leading-relaxed">
-                      Infoplus consistently considers not only current trends,
-                      but also carefully performs research on the future of
-                      software development. Our services are predominantly
-                      focused on these four core values.
-                    </p>
-                  </div>
                 </div>
               </div>
             </ScrollReveal>
@@ -469,7 +457,7 @@ export default function SoftwareDevelopmentPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-14">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Getting Started
               </span>
               <h2 className="text-[36px] font-bold text-white mt-3">
@@ -495,11 +483,12 @@ export default function SoftwareDevelopmentPage() {
                   direction="up"
                   variant="card"
                   delay={i * 130}
+                  className="h-full"
                 >
-                  <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/8 hover:border-[#6128a6]/40 transition-all duration-300 group">
+                  <div className="relative h-full flex flex-col bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/8 hover:border-[#6128a6]/40 transition-all duration-300 group">
                     {/* Step number badge */}
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center relative">
+                      <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center shrink-0 relative">
                         <StepIcon className="w-6 h-6 text-white" />
                         {/* Pulse ring */}
                         <span className="absolute inset-0 rounded-2xl border border-[#6128a6]/50 scale-110 opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500" />
@@ -512,13 +501,10 @@ export default function SoftwareDevelopmentPage() {
                     <h3 className="text-[18px] font-bold text-white mb-3 leading-snug">
                       {title}
                     </h3>
-                    <p className="text-[14px] text-white/50 leading-relaxed">
+                    <p className="text-[14px] text-white/50 leading-relaxed flex-1">
                       {desc}
                     </p>
 
-                    <div className="mt-6 flex items-center gap-1.5 text-[12px] font-semibold text-[#aa3bff] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      Learn More <ChevronRight className="w-3.5 h-3.5" />
-                    </div>
                   </div>
                 </ScrollReveal>
               ))}

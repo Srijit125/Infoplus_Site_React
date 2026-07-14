@@ -276,12 +276,6 @@ export default function ITServicesPage() {
                     style={{ background: "radial-gradient(ellipse at 20% 20%, rgba(170,59,255,0.18) 0%, transparent 65%)" }}
                   />
 
-                  {/* Featured badge */}
-                  {svc.featured && (
-                    <span className="absolute top-4 right-4 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-[#f85d37]/20 border border-[#f85d37]/40 text-[#f85d37]">
-                      Flagship
-                    </span>
-                  )}
 
                   {/* Icon */}
                   <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shrink-0 group-hover:scale-110 transition-transform duration-300"

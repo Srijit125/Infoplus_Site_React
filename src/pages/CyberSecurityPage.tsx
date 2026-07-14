@@ -118,12 +118,6 @@ export default function CyberSecurityPage() {
             Request a Security Audit
           </Link>
         </div>
-        <div className="mt-16 flex flex-col items-center gap-2 opacity-40">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-white">
-            Scroll
-          </p>
-          <div className="w-px h-12 bg-linear-to-b from-white to-transparent" />
-        </div>
       </PageHero>
 
       {/* ── Intro + AI Capabilities ──────────────────────────── */}
@@ -132,7 +126,7 @@ export default function CyberSecurityPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left" duration={720}>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Security Practice
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
@@ -162,40 +156,34 @@ export default function CyberSecurityPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" duration={720} delay={150}>
-              <div className="bg-[#0d0517] rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/30 blur-[60px] pointer-events-none" />
-                {/* Animated scanning circle */}
+              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/8 blur-[60px] pointer-events-none" />
+                {/* Scanning circle */}
                 <div className="relative flex items-center justify-center mb-6">
-                  <div className="w-24 h-24 rounded-full border-2 border-[#6128a6]/40 flex items-center justify-center relative">
-                    <div className="w-16 h-16 rounded-full border-2 border-[#6128a6]/60 flex items-center justify-center relative">
+                  <div className="w-24 h-24 rounded-full border-2 border-[#6128a6]/20 flex items-center justify-center relative">
+                    <div className="w-16 h-16 rounded-full border-2 border-[#6128a6]/35 flex items-center justify-center relative">
                       <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center">
                         <Shield className="w-5 h-5 text-white" />
                       </div>
                     </div>
-                    {/* Scanning line pseudo-animation */}
                     <div
-                      className="absolute top-[50%] left-[50%] w-[48px] h-px bg-[#6128a6] origin-left"
-                      style={{
-                        animation: "spin 3s linear infinite",
-                        transformOrigin: "left center",
-                      }}
+                      className="absolute top-[50%] left-[50%] w-12 h-px bg-[#6128a6]/50 origin-left"
+                      style={{ animation: "spin 3s linear infinite", transformOrigin: "left center" }}
                     />
                   </div>
                 </div>
                 <div className="relative z-10">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#aa3bff] mb-4 text-center">
+                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] mb-4 text-center">
                     AI-Powered Security Capabilities
                   </p>
                   <div className="grid grid-cols-1 gap-2">
                     {AI_CAPABILITIES.map((cap, i) => (
                       <div
                         key={i}
-                        className="flex items-center gap-2.5 text-[13px] text-white/60"
-                        style={{
-                          animation: `revealFade 400ms ease ${i * 80 + 200}ms both`,
-                        }}
+                        className="flex items-center gap-2.5 text-[13px] text-[#555]"
+                        style={{ animation: `revealFade 400ms ease ${i * 80 + 200}ms both` }}
                       >
-                        <Lock className="w-3.5 h-3.5 text-[#aa3bff] shrink-0" />
+                        <Lock className="w-3.5 h-3.5 text-[#6128a6] shrink-0" />
                         {cap}
                       </div>
                     ))}
@@ -223,7 +211,7 @@ export default function CyberSecurityPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-14">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Security Portfolio
               </span>
               <h2 className="text-[36px] font-bold text-white mt-2">

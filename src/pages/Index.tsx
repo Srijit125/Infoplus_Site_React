@@ -1,4 +1,4 @@
-﻿import { useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { Link } from "react-router";
 import { ChevronRight, MapPin, Mail, Phone, Shield } from "lucide-react";
 import { ImageWithFallback } from "../components/helpers/ImageWithFallback";
@@ -281,7 +281,7 @@ function HomePage() {
             </ScrollReveal>
             <ScrollReveal direction="right" delay={120}>
               <div>
-                <span className="text-[#f85d37] text-[12px] font-semibold uppercase tracking-[0.1em] mb-3 block">About Us</span>
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">About Us</span>
                 <h2 className="text-[36px] font-bold text-[#111111] mb-6 leading-tight">Forward-Looking IT Company</h2>
                 <div className="space-y-5 mb-10">
                   <p className="text-[16px] text-[#555555] leading-[1.75] text-justify">
@@ -412,7 +412,7 @@ function HomePage() {
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
             <div className="mb-14">
-              <span className="text-[#f85d37] text-[12px] font-semibold uppercase tracking-[0.1em] mb-3 block">Our Work</span>
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">Our Work</span>
               <h2 className="text-[36px] font-bold text-[#111111] mb-5 leading-tight">Proactively Managed IT Solutions</h2>
               <p className="text-[16px] text-[#555555] leading-[1.75] max-w-3xl text-justify">
                 In order for a business to strive and to meet its planned objectives, supporting IT is not just enough but strategically led and proactively managed IT. Our forward-thinking IT service CoE team has been designing end-to-end solutions for organisations to have a technology edge and to be ahead of the curve.
@@ -706,7 +706,7 @@ function HomePage() {
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
             <div className="mb-14">
-              <span className="text-[#f85d37] text-[12px] font-semibold uppercase tracking-[0.1em] mb-3 block">Our Values</span>
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">Our Values</span>
               <h2 className="text-[36px] font-bold text-[#111111]">Driven By Excellence</h2>
             </div>
           </ScrollReveal>
@@ -776,7 +776,7 @@ function HomePage() {
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
             <div className="mb-12">
-              <span className="text-[#f85d37] text-[12px] font-semibold uppercase tracking-[0.1em] mb-3 block">Our Industries</span>
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">Our Industries</span>
               <h2 className="text-[36px] font-bold text-white">Industries We Serve</h2>
             </div>
           </ScrollReveal>
@@ -805,7 +805,7 @@ function HomePage() {
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
             <div className="mb-14 text-center">
-              <span className="text-[#f85d37] text-[12px] font-semibold uppercase tracking-[0.1em] mb-3 block">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Global Reach
               </span>
               <h2 className="text-[36px] font-bold text-[#111111] mb-5">
@@ -1021,7 +1021,7 @@ function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <ScrollReveal direction="left">
               <div>
-                <span className="text-[#f85d37] text-[12px] font-semibold uppercase tracking-[0.1em] mb-3 block">Get in Touch</span>
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">Get in Touch</span>
                 <h2 className="text-[36px] font-bold text-[#111111] mb-5 leading-tight">Let's Start a Project Together</h2>
                 <p className="text-[16px] text-[#555555] leading-[1.75] mb-12 text-justify">
                   We'd love to hear from you. Please fill out our form or drop us an email and we'll get back to you within one business day.

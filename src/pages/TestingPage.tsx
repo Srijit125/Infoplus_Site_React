@@ -1,4 +1,4 @@
-﻿import { PageMeta } from "../components/shared/PageMeta";
+import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Globe,
@@ -161,12 +161,6 @@ export default function TestingPage() {
             Talk to Experts
           </Link>
         </div>
-        <div className="mt-16 flex flex-col items-center gap-2 opacity-40">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-white">
-            Scroll
-          </p>
-          <div className="w-px h-12 bg-linear-to-b from-white to-transparent" />
-        </div>
       </PageHero>
 
       {/* â”€â”€ CoE Intro â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
@@ -174,7 +168,7 @@ export default function TestingPage() {
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center">
           <ScrollReveal direction="fade">
-            <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+            <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
               Testing Center of Excellence
             </span>
             <h2 className="text-[36px] font-bold text-[#111] mt-3 mb-6">
@@ -196,7 +190,7 @@ export default function TestingPage() {
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Testing Services
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-2">
@@ -256,7 +250,7 @@ export default function TestingPage() {
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Why Testing Matters
               </span>
               <h2 className="text-[36px] font-bold text-white mt-2">
@@ -303,7 +297,7 @@ export default function TestingPage() {
             {/* Left: Sticky heading */}
             <div className="lg:sticky lg:top-[120px]">
               <ScrollReveal direction="left" duration={700}>
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Our Process
                 </span>
                 <h2 className="text-[36px] font-bold text-[#111] mt-3 leading-tight">
@@ -383,7 +377,7 @@ export default function TestingPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37]">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 The Infoplus Difference
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-2">

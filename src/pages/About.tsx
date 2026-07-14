@@ -118,7 +118,7 @@ function About() {
             {/* Right content */}
             <ScrollReveal direction="right" className="lg:col-span-8">
               <div>
-                <span className="text-[#f85d37] text-[11px] font-bold uppercase tracking-widest mb-3 block">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Who We Are
                 </span>
                 <h2 className="text-[36px] font-bold text-[#111111] mb-7">
@@ -189,7 +189,7 @@ function About() {
 
           <ScrollReveal direction="up">
             <div className="mb-14">
-              <span className="text-[#f85d37] text-[11px] font-bold uppercase tracking-widest mb-3 block">Facts</span>
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">Facts</span>
               <h2 className="text-[36px] font-bold text-[#111111] mb-4">Two Decades of Excellence</h2>
               <p className="text-[16px] text-[#555555] leading-[1.75] max-w-2xl">
                 As an end-to-end IT Service provider, we have the privilege of growing with our clients, partners, and employees, organically, over the last two decades by religiously practicing our core values.
@@ -259,7 +259,7 @@ function About() {
 
           <ScrollReveal direction="up">
             <div className="mb-14">
-              <span className="text-[#f85d37] text-[11px] font-bold uppercase tracking-widest mb-3 block">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Who We Are
               </span>
               <h2 className="text-[36px] font-bold text-[#111111] mb-5">
@@ -273,8 +273,8 @@ function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {cultureCards.map((item, idx) => (
-              <ScrollReveal key={idx} variant="card" delay={idx * 100}>
-                <div className="group p-8 bg-[#f8f5ff] border border-[#e5e4e7] rounded-2xl hover:border-[#aa3bff]/30 hover:shadow-[0_8px_32px_rgba(97,40,166,0.10)] hover:-translate-y-1.5 transition-all duration-300">
+              <ScrollReveal key={idx} variant="card" delay={idx * 100} className="h-full">
+                <div className="group h-full p-8 bg-[#f8f5ff] border border-[#e5e4e7] rounded-2xl hover:border-[#aa3bff]/30 hover:shadow-[0_8px_32px_rgba(97,40,166,0.10)] hover:-translate-y-1.5 transition-all duration-300">
                   <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6 shadow-sm group-hover:bg-[#ecdaff] transition-colors">
                     <item.icon className="w-6 h-6 text-[#6128a6]" strokeWidth={1.6} />
                   </div>
@@ -321,7 +321,7 @@ function About() {
             {/* Right text */}
             <ScrollReveal direction="right">
               <div>
-                <span className="text-[#f85d37] text-[11px] font-bold uppercase tracking-widest mb-3 block">
+                <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white/70 text-[11px] font-bold uppercase tracking-widest mb-5">
                   Our Culture
                 </span>
                 <h2 className="text-[36px] font-bold text-white mb-7">
@@ -345,7 +345,7 @@ function About() {
             {/* Left intro */}
             <ScrollReveal direction="left">
               <div>
-                <span className="text-[#f85d37] text-[11px] font-bold uppercase tracking-widest mb-3 block">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Partnerships
                 </span>
                 <h2 className="text-[36px] font-bold text-[#111111] mb-6">

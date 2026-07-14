@@ -209,7 +209,7 @@ function CareersPage() {
 
             <ScrollReveal direction="left">
               <div>
-                <span className="text-[#f85d37] text-[11px] font-bold uppercase tracking-widest mb-3 block">Why Us</span>
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">Why Us</span>
                 <h2 className="text-[36px] font-bold text-[#111111] mb-5">Why work with us?</h2>
                 <p className="text-[16px] text-[#555555] leading-[1.75] text-justify">
                   We believe that great work happens when you&apos;re happy, healthy, and challenged. We&apos;ve built a culture that prioritises autonomy, continuous learning, and cross-border collaboration.
@@ -240,7 +240,7 @@ function CareersPage() {
 
           <ScrollReveal direction="up">
             <div className="mb-10">
-              <span className="text-[#f85d37] text-[11px] font-bold uppercase tracking-widest mb-3 block">Join Us</span>
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">Join Us</span>
               <div className="flex items-end justify-between flex-wrap gap-4">
                 <h2 className="text-[36px] font-bold text-[#111111]">Open Positions</h2>
                 <p className="text-[15px] text-[#555555]">
