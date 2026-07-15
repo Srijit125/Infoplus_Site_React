@@ -22,8 +22,25 @@ import {
   Star,
   BookMarked,
   Brain,
-  Image,
 } from "lucide-react";
+import imgApproachFundamentalLaw from "../assets/images/Approach_Fundamental Law.png";
+import imgApproachWorkingPrinciple from "../assets/images/Approach_Working Principle.png";
+import imgApproachDerivation from "../assets/images/Approach_Derivation.png";
+import imgApproachConstruction from "../assets/images/Approach_Construction.png";
+import imgApproachSolvedTutorial from "../assets/images/Approach_Solved Tutorial Problem.png";
+import imgApproachApplication from "../assets/images/Approach_Application.png";
+import imgModelLearn3DWay from "../assets/images/Model_Learn 3D Way.jpg";
+import imgModelFourQuadrant from "../assets/images/Model_Four Quadrant Approach.png";
+import imgDepthModel1_1 from "../assets/images/Depth Of Content_Model 1_1.jpg";
+import imgDepthModel1_2 from "../assets/images/Depth Of Content_Model 1_2.jpg";
+import imgDepthModel1_3 from "../assets/images/Depth Of Content_Model 1_3.jpg";
+import imgDepthModel1_4 from "../assets/images/Depth Of Content_Model 1_4.jpg";
+import imgDepthModel2_1 from "../assets/images/Depth Of Content_Model 2_1.jpg";
+import imgDepthModel2_2 from "../assets/images/Depth Of Content_Model 2_2.jpg";
+import imgDepthModel3_1 from "../assets/images/Depth Of Content_Model 3_1.jpg";
+import imgDepthModel3_2 from "../assets/images/Depth Of Content_Model 3_2.jpg";
+import imgFeatures1 from "../assets/images/Features_1.jpg";
+import imgFeatures2 from "../assets/images/Features_2.jpg";
 
 /* ── Product Cards ─────────────────────────────────────────── */
 const PRODUCT_TYPES = [
@@ -80,27 +97,29 @@ type Tab = (typeof TABS)[number];
 
 /* ── Approach steps ────────────────────────────────────────── */
 const APPROACH_STEPS = [
-  { icon: BookMarked, label: "Fundamental Law", num: "01" },
-  { icon: Zap, label: "Working Principle", num: "02" },
-  { icon: FlaskConical, label: "Derivation", num: "03" },
-  { icon: Cpu, label: "Construction", num: "04" },
-  { icon: PenTool, label: "Solved Tutorial Problem", num: "05" },
-  { icon: Lightbulb, label: "Application", num: "06" },
+  { icon: BookMarked, label: "Fundamental Law", num: "01", image: imgApproachFundamentalLaw },
+  { icon: Zap, label: "Working Principle", num: "02", image: imgApproachWorkingPrinciple },
+  { icon: FlaskConical, label: "Derivation", num: "03", image: imgApproachDerivation },
+  { icon: Cpu, label: "Construction", num: "04", image: imgApproachConstruction },
+  { icon: PenTool, label: "Solved Tutorial Problem", num: "05", image: imgApproachSolvedTutorial },
+  { icon: Lightbulb, label: "Application", num: "06", image: imgApproachApplication },
 ];
 
 /* ── Model quadrants ───────────────────────────────────────── */
 const MODEL_QUADRANTS = [
   {
-    label: "Two Quadrant Approach",
+    label: "Learn 3D Way",
     desc: "Concepts & Fundamentals (Indian method) paired with Products & Applications (Western method) two complementary halves of deep engineering mastery.",
     quads: ["Concepts", "Fundamentals", "Products", "Applications"],
     accent: "#6128a6",
+    image: imgModelLearn3DWay,
   },
   {
     label: "Four Quadrant Approach",
     desc: "An extended model integrating Theory, Practice, Demonstration, and Assessment all four pillars necessary for a complete engineering education journey.",
     quads: ["Theory", "Practice", "Demonstration", "Assessment"],
     accent: "#aa3bff",
+    image: imgModelFourQuadrant,
   },
 ];
 
@@ -110,40 +129,54 @@ const DEPTH_METHODS = [
     num: "01",
     title: "Structured Hierarchy",
     subtitle: "Unit → Chapter → Topic",
-    desc: "Content is arranged unit wise, then chapter wise, then topic wise, following lesson planning as per the university/Board/NCVT syllabus. Text content is supported by sketches, images, and embedded 3D visual demonstrations, followed by self-assessment.",
+    intro: "We provide a depth level of content arranged in the",
+    hierarchy: ["1. Unit wise", "1.1 Chapter wise", "1.1.1 Topic wise"],
+    paragraphs: [
+      "This arrangement is followed based on the lesson planning and as per the university/Board/NCVT syllabus.",
+      "At First, Text Content is provided with details as per topic requirements. It is supported by sketches and images.",
+      "Visual demonstrations (mostly 3D) are embedded across for better understanding.",
+      "It is followed by a self-assessment.",
+    ],
+    featuresTitle: "Our Special Features are:",
     features: [
-      "Reference text books for given topic/subject",
-      "Links to other open resources on the World Wide Web",
-      "Summary of Units and Measurements applicable to a specific product",
-      "Summarized table detailing all formulae across the subject",
+      "Reference text books for given topic/subject.",
+      "Links to other open resources on the World Wide Web.",
+      "Summary of Units and Measurements applicable to a specific product.",
+      "A summarized table detailing all formulae across the subject.",
     ],
     accent: "#6128a6",
+    images: [imgDepthModel1_1, imgDepthModel1_2, imgDepthModel1_3, imgDepthModel1_4],
   },
   {
     num: "02",
     title: "Demonstration Hub (D-Hub)",
     subtitle: "200+ 3D/2D Demonstrations",
-    desc: "The D-Hub in the Home panel provides a collection of all the 3D/2D demonstrations arranged topic-wise. It is a single-point access for all visual demonstrations available for the subject approximately 200+ per subject.",
-    features: [
-      "All demos arranged topic-wise in one place",
-      "3D and 2D visual formats",
-      "200+ demonstrations per subject",
-      "Single-click access from Home panel",
+    intro: undefined as string | undefined,
+    hierarchy: [] as string[],
+    paragraphs: [
+      "The demonstration Hub (D-Hub) in the Home panel, provides a collection of all the 3D/2D demonstrations arranged topic-wise, and it is single point access of all the 3D/2D demonstration available for the subject (number around 200+ for each subject).",
     ],
+    featuresTitle: undefined as string | undefined,
+    features: [] as string[],
     accent: "#aa3bff",
+    images: [imgDepthModel2_1, imgDepthModel2_2],
   },
   {
     num: "03",
     title: "Q&A Examination App",
     subtitle: "75% Typical Success Rate",
-    desc: "Towards the examination, students require targeted support to score higher. The Q&A product covers every subject's past 5 semesters and reflects a typical success rate of around 75%. Delivered as an Android and Desktop application.",
-    features: [
-      "Last 5 semesters of experience baked in",
-      "~75% typical success rate across subjects",
-      "Available as Android app",
-      "Available as Desktop app",
+    intro: undefined as string | undefined,
+    hierarchy: [] as string[],
+    paragraphs: [
+      "Towards the examination, the students will require to learn and understand the subject to score more for better academic performance.",
+      "Typically, the students will expect how do I score more in the exam? To support and extend our products to this scenario, we have developed a separate Question and Answer product for every subject.",
+      "The last 5 semesters' experience reflects the typical success rate of the Q&A app is around 75%.",
+      "Q&A app is delivered as an Android/Desktop app.",
     ],
+    featuresTitle: undefined as string | undefined,
+    features: [] as string[],
     accent: "#f85d37",
+    images: [imgDepthModel3_1, imgDepthModel3_2],
   },
 ];
 
@@ -152,6 +185,7 @@ const FEATURE_GROUPS = [
   {
     label: "Content Reference Features",
     accent: "#6128a6",
+    image: imgFeatures1,
     items: [
       "Reference textbooks for given topic/subject",
       "Links to other open resources on the World Wide Web",
@@ -162,6 +196,7 @@ const FEATURE_GROUPS = [
   {
     label: "Problem-Solving Features",
     accent: "#aa3bff",
+    image: imgFeatures2,
     items: [
       "Solved Problems with visual explanations",
       "Important formulae for quick review",
@@ -258,7 +293,7 @@ export default function EducationSolutionsPage() {
 
       {/* ── Product Types ────────────────────────────────────── */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#ecdaff] opacity-50 blur-[100px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-125 h-125 rounded-full bg-[#ecdaff] opacity-50 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
             <div className="text-center mb-16">
@@ -356,8 +391,8 @@ export default function EducationSolutionsPage() {
 
       {/* ── Limitless Learning ───────────────────────────────── */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
-        <div className="absolute top-0 left-[-10%] w-[500px] h-[500px] rounded-full bg-[#381f55] opacity-40 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-[-10%] w-[400px] h-[400px] rounded-full bg-[#6128a6] opacity-20 blur-[120px] pointer-events-none" />
+        <div className="absolute top-0 left-[-10%] w-125 h-125 rounded-full bg-[#381f55] opacity-40 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-[-10%] w-100 h-100 rounded-full bg-[#6128a6] opacity-20 blur-[120px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -526,19 +561,13 @@ export default function EducationSolutionsPage() {
                         animation: `cardTiltIn 500ms cubic-bezier(0.22,1,0.36,1) ${i * 80}ms both`,
                       }}
                     >
-                      {/* Image placeholder */}
-                      <div className="h-44 bg-[#6128a6]/5 border-b border-[#ecdaff] flex items-center justify-center relative overflow-hidden">
-                        <div
-                          className="absolute inset-0 opacity-[0.04]"
-                          style={{
-                            backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)",
-                            backgroundSize: "16px 16px",
-                          }}
+                      {/* Image */}
+                      <div className="h-44 border-b border-[#ecdaff] overflow-hidden">
+                        <img
+                          src={step.image}
+                          alt={step.label}
+                          className="w-full h-full object-cover"
                         />
-                        <div className="flex flex-col items-center gap-2 text-[#6128a6]/25 relative z-10">
-                          <Image className="w-10 h-10" />
-                          <span className="text-[10px] font-bold uppercase tracking-widest">Image Placeholder</span>
-                        </div>
                       </div>
                       {/* Card body */}
                       <div className="p-7 relative">
@@ -582,22 +611,13 @@ export default function EducationSolutionsPage() {
                         animation: `revealFade 400ms ease ${i * 120}ms both`,
                       }}
                     >
-                      {/* Image placeholder */}
-                      <div
-                        className="h-44 flex items-center justify-center relative overflow-hidden border-b border-[#ecdaff]"
-                        style={{ background: `linear-gradient(135deg, ${model.accent}0d 0%, ${model.accent}05 100%)` }}
-                      >
-                        <div
-                          className="absolute inset-0 opacity-[0.04]"
-                          style={{
-                            backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)",
-                            backgroundSize: "16px 16px",
-                          }}
+                      {/* Image */}
+                      <div className="border-b border-[#ecdaff]">
+                        <img
+                          src={model.image}
+                          alt={model.label}
+                          className="w-full h-auto block"
                         />
-                        <div className="flex flex-col items-center gap-2 relative z-10" style={{ color: `${model.accent}40` }}>
-                          <Image className="w-10 h-10" />
-                          <span className="text-[10px] font-bold uppercase tracking-widest">Image Placeholder</span>
-                        </div>
                       </div>
                       <div className="p-8">
                         <h4
@@ -661,38 +681,79 @@ export default function EducationSolutionsPage() {
                       {method.num}
                     </span>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start relative z-10">
+                    {/* Header */}
+                    <div className="flex items-center gap-3 mb-1.5 relative z-10">
+                      <span
+                        className="w-8 h-8 rounded-lg flex items-center justify-center text-[11px] font-black text-white shrink-0"
+                        style={{ backgroundColor: method.accent }}
+                      >
+                        {method.num}
+                      </span>
                       <div>
-                        <div className="flex items-center gap-3 mb-4">
-                          <span
-                            className="w-8 h-8 rounded-lg flex items-center justify-center text-[11px] font-black text-white"
-                            style={{ backgroundColor: method.accent }}
-                          >
-                            {method.num}
-                          </span>
-                          <div>
-                            <h4 className="text-[17px] font-bold text-[#0d0517]">
-                              {method.title}
-                            </h4>
-                            <p
-                              className="text-[12px] font-semibold"
-                              style={{ color: method.accent }}
-                            >
-                              {method.subtitle}
-                            </p>
-                          </div>
-                        </div>
-                        <p className="text-[14px] text-[#0d0517]/65 leading-relaxed">
-                          {method.desc}
-                        </p>
-                      </div>
-                      <div>
+                        <h4 className="text-[17px] font-bold text-[#0d0517] mb-1.5">
+                          {method.title}
+                        </h4>
                         <p
-                          className="text-[11px] font-bold uppercase tracking-widest mb-3"
+                          className="text-[12px] font-semibold"
                           style={{ color: method.accent }}
                         >
-                          Key Features
+                          {method.subtitle}
                         </p>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="relative z-10 space-y-2.5 mb-6">
+                      {method.intro && (
+                        <p className="text-[14px] text-[#0d0517]/65 leading-relaxed">
+                          {method.intro}
+                        </p>
+                      )}
+                      {method.hierarchy.length > 0 && (
+                        <ul className="ml-4 space-y-1 mb-1">
+                          {method.hierarchy.map((h, hi) => (
+                            <li key={hi} className="text-[14px] text-[#0d0517]/70 leading-relaxed">
+                              <span className="font-semibold mr-1" style={{ color: method.accent }}>
+                                {h.split(" ")[0]}
+                              </span>
+                              {h.split(" ").slice(1).join(" ")}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      {method.paragraphs.map((p, pi) => (
+                        <p key={pi} className="text-[14px] text-[#0d0517]/65 leading-relaxed">
+                          {p}
+                        </p>
+                      ))}
+                    </div>
+
+                    {/* Images */}
+                    <div
+                      className="grid gap-3 relative z-10 mb-6"
+                      style={{ gridTemplateColumns: `repeat(${method.images.length}, 1fr)` }}
+                    >
+                      {method.images.map((img, idx) => (
+                        <img
+                          key={idx}
+                          src={img}
+                          alt={`${method.title} ${idx + 1}`}
+                          className="w-full h-auto rounded-xl border border-[#ecdaff] object-contain bg-[#f8f5ff]"
+                        />
+                      ))}
+                    </div>
+
+                    {/* Features (Method 1 only) */}
+                    {method.features.length > 0 && (
+                      <div className="relative z-10">
+                        {method.featuresTitle && (
+                          <p
+                            className="text-[13px] font-bold mb-3"
+                            style={{ color: method.accent }}
+                          >
+                            {method.featuresTitle}
+                          </p>
+                        )}
                         <ul className="space-y-3">
                           {method.features.map((feat, fi) => (
                             <li key={fi} className="flex items-start gap-3">
@@ -712,7 +773,7 @@ export default function EducationSolutionsPage() {
                           ))}
                         </ul>
                       </div>
-                    </div>
+                    )}
                   </div>
                 ))}
                 </div>
@@ -742,37 +803,13 @@ export default function EducationSolutionsPage() {
                         animation: `cardTiltIn 500ms cubic-bezier(0.22,1,0.36,1) ${i * 120}ms both`,
                       }}
                     >
-                      {/* placeholder image strip */}
-                      <div
-                        className="h-48 flex items-center justify-center relative overflow-hidden"
-                        style={{
-                          background: `linear-gradient(135deg, ${fg.accent}20 0%, ${fg.accent}08 100%)`,
-                        }}
-                      >
-                        <div
-                          className="absolute inset-0 opacity-[0.06]"
-                          style={{
-                            backgroundImage:
-                              "radial-gradient(circle, #6128a6 1px, transparent 1px)",
-                            backgroundSize: "20px 20px",
-                          }}
+                      {/* Image */}
+                      <div className="border-b border-[#ecdaff]">
+                        <img
+                          src={fg.image}
+                          alt={fg.label}
+                          className="w-full h-auto block"
                         />
-                        <div
-                          className="w-16 h-16 rounded-2xl flex items-center justify-center"
-                          style={{
-                            backgroundColor: `${fg.accent}20`,
-                            color: fg.accent,
-                          }}
-                        >
-                          {i === 0 ? (
-                            <BookMarked className="w-8 h-8" />
-                          ) : (
-                            <PenTool className="w-8 h-8" />
-                          )}
-                        </div>
-                        <span className="absolute bottom-3 right-3 text-[10px] font-semibold uppercase tracking-widest opacity-30">
-                          Image Placeholder
-                        </span>
                       </div>
                       <div className="p-7">
                         <h4
@@ -856,7 +893,7 @@ export default function EducationSolutionsPage() {
                               }}
                             >
                               <div
-                                className="w-1.5 h-1.5 rounded-full shrink-0 mt-[7px]"
+                                className="w-1.5 h-1.5 rounded-full shrink-0 mt-1.75"
                                 style={{ backgroundColor: bg.accent }}
                               />
                               <span className="text-[13px] text-[#0d0517]/65 leading-snug">

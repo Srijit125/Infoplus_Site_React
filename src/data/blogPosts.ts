@@ -1,4 +1,8 @@
-﻿export type Block =
+﻿import imgBlog1 from "../assets/images/blog_1_ai.jpg";
+import imgBlog3 from "../assets/images/blog_3_mdm.jpg";
+import imgBlog5 from "../assets/images/blog_5_consulting.jpg";
+
+export type Block =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }
   | { type: "ul"; items: string[] };
@@ -64,8 +68,7 @@ export const POSTS: Post[] = [
     tags: ["Generative AI", "Enterprise", "Machine Learning", "Automation"],
     excerpt:
       "Explore how generative AI is reshaping enterprise workflows, from automating complex data processes to enabling smarter decision-making at scale. Organisations that embrace this shift are seeing measurable gains in productivity and innovation.",
-    image:
-      "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBcnRpZmljaWFsJTIwSW50ZWxsaWdlbmNlJTIwVGVjaG5vbG9neXxlbnwxfHx8fDE3ODE1MjYwOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: imgBlog1,
     featured: true,
     content: [
       { type: "p", text: "Generative AI has shifted from research curiosity to boardroom priority at an unprecedented pace. In 2025, over 60% of Fortune 500 companies reported active GenAI pilots by 2026, the majority have moved from pilot to production. But what does this actually mean for enterprise operations, and how do you navigate the transition from experimentation to measurable value?" },
@@ -121,8 +124,7 @@ export const POSTS: Post[] = [
     tags: ["MDM", "Data Governance", "Enterprise Data", "Quality"],
     excerpt:
       "Discover how Master Data Management empowers organisations to bring structure, standards, and control to their enterprise data, enabling accurate reporting and operational excellence.",
-    image:
-      "https://images.unsplash.com/photo-1549637642-90187f64f420?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDb3Jwb3JhdGUlMjBPZmZpY2UlMjBNb2Rlcm58ZW58MXx8fHwxNzgxNTI2MDkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: imgBlog3,
     content: [
       { type: "p", text: "Most data quality problems aren't technology problems they're process and governance failures that manifest as technology symptoms. Duplicate customer records, inconsistent product data across channels, mismatched supplier identifiers: these are the symptoms of an organisation that has scaled without a master data strategy. MDM is the cure, and its value compounds with every system you connect." },
       { type: "h2", text: "What MDM Actually Does" },
@@ -178,8 +180,7 @@ export const POSTS: Post[] = [
     tags: ["Staffing", "Digital", "Consulting", "Platforms"],
     excerpt:
       "The consulting industry is undergoing a digital revolution. We explore the key drivers pushing staffing and consulting firms towards integrated digital platforms and what it means for clients.",
-    image:
-      "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxCdXNpbmVzcyUyMFBlb3BsZSUyMENvbGxhYm9yYXRpb258ZW58MXx8fHwxNzgxNTI3MzE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: imgBlog5,
     content: [
       { type: "p", text: "The staffing and consulting industry built itself on relationship networks, manual candidate matching, and paper-heavy compliance processes. That model is not just inefficient in today's market, it is a competitive disadvantage. Digital-native competitors and talent marketplaces are capturing market share by offering what clients and candidates increasingly expect: speed, transparency, and data-driven matching." },
       { type: "h2", text: "What Digital Platforms Enable" },

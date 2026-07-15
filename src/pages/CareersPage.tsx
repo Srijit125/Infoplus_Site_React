@@ -1,6 +1,7 @@
 import { PageMeta } from "../components/shared/PageMeta";
 import { useState, useEffect } from "react";
 import { PageHero } from "../components/shared/PageHero";
+import imgCareerHero from "../assets/images/career_hero.jpg";
 import { Coffee, Heart, Globe, Zap, MapPin, Briefcase, X, ChevronRight, CheckCircle2, Shield } from "lucide-react";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 
@@ -128,7 +129,7 @@ function CareersPage() {
         description="Join a global team of passionate builders, thinkers, and innovators dedicated to shaping the digital landscape."
         badge="CAREERS"
         variant="split"
-        image="https://images.unsplash.com/photo-1718220216044-006f43e3a9b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxNb2Rlcm4lMjBUZWNoJTIwV29ya3NwYWNlfGVufDF8fHx8MTc4MTUyNzMxNHww&ixlib=rb-4.1.0&q=80&w=1080"
+        image={imgCareerHero}
       >
         <div className="mt-8">
           <button

@@ -16,8 +16,4 @@ export const socialMediaLinks: SocialMedia[] = [
     title: "LinkedIn",
     url: "https://www.linkedin.com/company/infoplus-technologies-uk-limited/",
   },
-  {
-    title: "Instagram",
-    url: "https://www.instagram.com/infoplusltd",
-  },
 ];
