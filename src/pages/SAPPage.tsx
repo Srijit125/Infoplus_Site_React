@@ -148,7 +148,7 @@ export default function SAPPage() {
       </PageHero>
 
       {/* â”€â”€ 4 Key Benefits strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-14 bg-white border-b border-[#f0eff5]">
+      <section className="py-14 bg-white border-b border-[#f0eff5] relative -mt-10 rounded-t-[3rem] z-20">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {SAP_BENEFITS.map(({ icon: BIcon, title, gradient }, i) => (

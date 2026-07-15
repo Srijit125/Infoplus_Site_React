@@ -144,7 +144,7 @@ export default function StaffingPage() {
       </PageHero>
 
       {/* â”€â”€ Stats Strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-14 bg-white border-b border-[#f0eff5]">
+      <section className="py-14 bg-white border-b border-[#f0eff5] relative -mt-10 rounded-t-[3rem] z-20">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {STATS.map(({ icon: SIcon, value, label }, i) => (

@@ -232,7 +232,7 @@ export default function SoftwareDevelopmentPage() {
       </PageHero>
 
       {/* â”€â”€ Intro / Mission â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         {/* faint orb */}
         <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
 

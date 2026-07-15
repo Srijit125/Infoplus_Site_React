@@ -107,18 +107,18 @@ export function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
-                "Artificial Intelligence",
-                "Products",
-                "IT Services",
-                "Staffing & Consulting",
-                "New-Gen Services",
+                { label: "IT Services",            to: "/services/it-services" },
+                { label: "Staffing & Consulting",  to: "/services/staffing-consulting" },
+                { label: "New-Gen Services",        to: "/services/new-generation" },
+                { label: "Artificial Intelligence", to: "/services/it-services/artificial-intelligence" },
+                { label: "Products",               to: "/products" },
               ].map((item) => (
-                <li key={item}>
+                <li key={item.label}>
                   <Link
-                    to="/services"
+                    to={item.to}
                     className="text-white/70 hover:text-white transition-colors text-[14px] font-normal"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}

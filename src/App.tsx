@@ -10,7 +10,6 @@ import BlogDetail from "./pages/BlogDetail";
 import { ContactPage } from "./pages/ContactPage";
 import CareersPage from "./pages/CareersPage";
 import ProductsPage from "./pages/ProductsPage";
-import { ServicesPage } from "./pages/ServicesPage";
 import AIPage from "./pages/AIPage";
 import SoftwareDevelopmentPage from "./pages/SoftwareDevelopmentPage";
 import TestingPage from "./pages/TestingPage";
@@ -49,7 +48,6 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/products" element={<ProductsPage />} />
-          <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/it-services" element={<ITServicesPage />} />
           <Route path="/services/staffing-consulting" element={<StaffingConsultingPage />} />
           <Route path="/services/new-generation" element={<NewGenServicesPage />} />

@@ -262,7 +262,7 @@ export default function AIPage() {
       </PageHero>
 
       {/* ── Our AI Services (overview cards) ──────────────────── */}
-      <section className="py-20 bg-[#f8f5ff]">
+      <section className="py-20 bg-[#f8f5ff] relative -mt-10 rounded-t-[3rem] z-20">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="fade">
             <div className="text-center mb-4">

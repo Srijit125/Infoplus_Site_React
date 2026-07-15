@@ -66,7 +66,7 @@ export function ServicesPage() {
         </div>
       </PageHero>
 
-      <section className="py-24 bg-[#f8f5ff]">
+      <section className="py-24 bg-[#f8f5ff] relative -mt-10 rounded-t-[3rem] z-20">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
             {services.map((srv, idx) => (

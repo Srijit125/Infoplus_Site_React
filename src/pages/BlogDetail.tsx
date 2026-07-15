@@ -136,7 +136,7 @@ export default function BlogDetail() {
       )}
 
       {/* Article body */}
-      <section className={`bg-white ${post.image ? "pt-28" : "pt-16"} pb-20`}>
+      <section className={`bg-white -mt-10 rounded-t-[3rem] z-20 ${post.image ? "pt-28" : "pt-16"} pb-20`}>
         <div className="container mx-auto px-6 max-w-3xl">
           {/* Excerpt lead */}
           <p className="text-[19px] text-[#333] leading-[1.7] font-medium border-l-4 border-[#6128a6] pl-6 mb-10 italic">

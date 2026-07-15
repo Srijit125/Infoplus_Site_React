@@ -95,7 +95,7 @@ function Blog() {
         variant="centered"
       />
 
-      <section className="py-20 bg-[#f8f5ff]">
+      <section className="py-20 bg-[#f8f5ff] relative -mt-10 rounded-t-[3rem] z-20">
         <div className="container mx-auto px-6 max-w-7xl">
 
           {/* Filter Panel */}

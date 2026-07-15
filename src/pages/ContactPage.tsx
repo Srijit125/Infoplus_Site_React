@@ -121,7 +121,7 @@ export function ContactPage() {
       />
 
       {/* ── Get In Touch ─────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white relative -mt-10 rounded-t-[3rem] z-20">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 

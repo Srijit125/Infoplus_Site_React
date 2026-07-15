@@ -84,7 +84,7 @@ function About() {
       </PageHero>
 
       {/* ── 2. WHO WE ARE (NEW) ────────────────────────── */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div
           className="absolute inset-0 opacity-[0.025] pointer-events-none"
           style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "28px 28px" }}

@@ -137,7 +137,7 @@ function HomePage() {
           2. About Us NEW DESIGN
           Bento-stack right column: image card + stat tiles + location strip
       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
-      <section className="py-28 bg-white relative overflow-hidden">
+      <section className="py-28 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-[-10%] left-[-8%] w-[560px] h-[560px] rounded-full bg-[#ecdaff] opacity-55 blur-[130px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[#f8f5ff] opacity-80 blur-[100px] pointer-events-none" />
         <div
@@ -309,7 +309,7 @@ function HomePage() {
           3. Our Work NEW DESIGN
           Dark section rides up over the white About section.
       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
-      <section className="py-28 bg-[#0d0517] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-28 bg-[#0d0517] relative overflow-hidden -mt-10 z-20">
         <div className="absolute top-[-15%] right-[-8%] w-[600px] h-[600px] rounded-full bg-[#381f55] opacity-35 blur-[150px] pointer-events-none" />
         <div className="absolute bottom-[-10%] left-[-5%] w-[450px] h-[450px] rounded-full bg-[#6128a6] opacity-12 blur-[120px] pointer-events-none" />
         <div
