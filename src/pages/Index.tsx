@@ -205,7 +205,7 @@ function HomePage() {
               </div>
               <Link
                 to="/about"
-                className="group/btn inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#f85d37] hover:bg-[#e84d27] text-white font-bold text-[15px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.30)]"
+                className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#f85d37] hover:bg-[#e84d27] text-white font-bold text-[15px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.30)]"
               >
                 Know More About Us
                 <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
@@ -596,17 +596,17 @@ function HomePage() {
 
           {/* â”€â”€ CTAs â”€â”€ */}
           <ScrollReveal direction="up" delay={160}>
-            <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 to="/services/it-services/artificial-intelligence"
-                className="group/btn inline-flex items-center gap-2.5 px-9 py-4 rounded-xl bg-[#f85d37] hover:bg-[#e84d27] text-white font-bold text-[15px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
+                className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2.5 px-9 py-4 rounded-xl bg-[#f85d37] hover:bg-[#e84d27] text-white font-bold text-[15px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
               >
                 Explore AI Services
                 <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
               </Link>
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 px-9 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/12 hover:border-white/25 text-white font-semibold text-[15px] transition-all duration-300"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-9 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/12 hover:border-white/25 text-white font-semibold text-[15px] transition-all duration-300"
               >
                 All Services
               </Link>

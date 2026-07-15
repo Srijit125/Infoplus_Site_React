@@ -261,7 +261,7 @@ export default function BlogDetail() {
             <div className="text-center mt-10">
               <Link
                 to="/blog"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#1e0a38] text-white text-[14px] font-semibold hover:bg-[#6128a6] transition-colors duration-300"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#1e0a38] text-white text-[14px] font-semibold hover:bg-[#6128a6] transition-colors duration-300"
               >
                 <ArrowLeft className="w-4 h-4" /> All Articles
               </Link>

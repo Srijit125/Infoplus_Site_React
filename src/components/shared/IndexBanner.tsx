@@ -49,7 +49,7 @@ const SLIDES: Slide[] = [
     bg:      "linear-gradient(135deg, #020b1a 0%, #061a3a 25%, #0d3060 60%, #0a2050 100%)",
     orb1: "#3b82f6", orb2: "#1d4ed8", orb3: "#06b6d4",
     accent: "#3b82f6", sh1: "#60a5fa", sh2: "#06b6d4",
-    serviceHref: "/services", serviceLabel: "Our Services",
+    serviceHref: "/services/it-services", serviceLabel: "Our Services",
     image: imgSlide2,
   },
   {
@@ -61,7 +61,7 @@ const SLIDES: Slide[] = [
     orb1: "#ef4444", orb2: "#b91c1c", orb3: "#f97316",
     accent: "#ef4444", sh1: "#fca5a5", sh2: "#fb923c",
     btnColor: "#f85d37",
-    serviceHref: "/services/it-services/cyber-security", serviceLabel: "Cyber Security",
+    serviceHref: "/services/it-services/software-development", serviceLabel: "Product Development",
     image: imgSlide3,
   },
   {
@@ -184,10 +184,10 @@ function SlideContent({
       </p>
 
       {/* CTAs */}
-      <div className={`${cin(4)} flex flex-wrap gap-4 items-center`}>
+      <div className={`${cin(4)} flex flex-col sm:flex-row gap-4 items-center`}>
         <Link
           to="/contact"
-          className="flex items-center gap-2 group text-white px-8 py-3.5 rounded-xl font-semibold text-[15px] transition-all"
+          className="w-full sm:w-auto flex items-center justify-center gap-2 group text-white px-8 py-3.5 rounded-xl font-semibold text-[15px] transition-all"
           style={{
             background: s.btnColor ?? s.accent,
             boxShadow: `0 8px 28px ${s.btnColor ?? s.accent}55`,
@@ -198,7 +198,7 @@ function SlideContent({
         </Link>
         <Link
           to={s.serviceHref}
-          className="flex items-center gap-2 bg-white/8 border border-white/20 text-white px-8 py-3.5 rounded-xl font-semibold text-[15px] hover:bg-white/15 transition-all backdrop-blur-sm"
+          className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/8 border border-white/20 text-white px-8 py-3.5 rounded-xl font-semibold text-[15px] hover:bg-white/15 transition-all backdrop-blur-sm"
         >
           {s.serviceLabel}
         </Link>

@@ -439,7 +439,7 @@ export function ContactPage() {
             </p>
             <a
               href="mailto:uk@infoplusltd.co.uk"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#1e0a38] text-white text-[15px] font-semibold hover:bg-[#6128a6] transition-colors duration-300 group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#1e0a38] text-white text-[15px] font-semibold hover:bg-[#6128a6] transition-colors duration-300 group"
             >
               Email Us Directly
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

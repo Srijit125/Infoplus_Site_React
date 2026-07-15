@@ -262,7 +262,7 @@ export default function TermsOfServicePage() {
         description="Please read these Terms of Service carefully before using our website or engaging Infoplus Technologies for any services. These terms govern your relationship with us."
         variant="centered"
       >
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex flex-col sm:flex-row justify-center gap-3">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/70 text-[12px] font-semibold">
             <FileText className="w-3.5 h-3.5 text-[#aa3bff]" />
             Effective Date: June 2025
@@ -472,14 +472,14 @@ export default function TermsOfServicePage() {
               <div className="relative z-10 flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
                   to="/contact"
-                  className="group/btn inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#f85d37] hover:bg-[#e84d27] text-white font-bold text-[14px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
+                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#f85d37] hover:bg-[#e84d27] text-white font-bold text-[14px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
                 >
                   Contact Us
                   <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
                 </Link>
                 <Link
                   to="/privacy-policy"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 text-white font-semibold text-[14px] transition-all duration-200"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 text-white font-semibold text-[14px] transition-all duration-200"
                 >
                   Privacy Policy
                 </Link>

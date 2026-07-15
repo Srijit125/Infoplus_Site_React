@@ -166,7 +166,7 @@ export default function MasterDataManagementPage() {
         description="We fulfill the needs of different delivery models crafting a single version of the truth so your master data achieves the strategic foundational goal of providing accurate, reusable, and seamlessly syndicated information."
         variant="gradient"
       >
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex flex-col sm:flex-row justify-center gap-3">
           {CORE_VALUES.map((v) => (
             <span
               key={v.label}
@@ -548,14 +548,14 @@ export default function MasterDataManagementPage() {
               <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="group/btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#f85d37] hover:bg-[#e84d27] text-white font-bold text-[15px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
+                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#f85d37] hover:bg-[#e84d27] text-white font-bold text-[15px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
                 >
                   Talk to Our Experts
                   <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
                 </a>
                 <a
                   href="/services/new-generation/everything-data"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 text-white font-semibold text-[15px] transition-all duration-200"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 text-white font-semibold text-[15px] transition-all duration-200"
                 >
                   Explore Everything Data
                 </a>

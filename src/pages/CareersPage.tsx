@@ -134,7 +134,7 @@ function CareersPage() {
         <div className="mt-8">
           <button
             onClick={() => document.getElementById("open-positions")?.scrollIntoView({ behavior: "smooth" })}
-            className="bg-[#f85d37] text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-[#e04f2c] transition-colors shadow-lg shadow-[#f85d37]/30"
+            className="w-full sm:w-auto inline-flex items-center justify-center bg-[#f85d37] text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-[#e04f2c] transition-colors shadow-lg shadow-[#f85d37]/30"
           >
             View Open Roles
           </button>
