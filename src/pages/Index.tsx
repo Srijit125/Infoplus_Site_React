@@ -1,6 +1,6 @@
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, useRef, type FormEvent } from "react";
 import { Link } from "react-router";
-import { ChevronRight, MapPin, Mail, Phone, Shield } from "lucide-react";
+import { ChevronRight, ChevronLeft, MapPin, Mail, Phone, Shield, Clock, Award, Headphones, Globe, Zap, Trophy, Star, Play, Quote } from "lucide-react";
 import { ImageWithFallback } from "../components/helpers/ImageWithFallback";
 import imgAboutUs from "../assets/images/Info_Landing_AboutSection.jpg";
 import imgMap from "../assets/images/imgMap.png";
@@ -101,10 +101,145 @@ const LOCATIONS = [
   },
 ];
 
+/* ── Awards & Recognition data ── */
+const AWARDS = [
+  { icon: Trophy,    color: "#f59e0b", title: "Microsoft Solution Partner",  org: "Microsoft Corporation",         tag: "Technology Partner" },
+  { icon: Shield,    color: "#6128a6", title: "ISO 27001 Certified",          org: "Information Security Mgmt.",    tag: "Certified"          },
+  { icon: Award,     color: "#f85d37", title: "Clutch Top IT Company",        org: "Clutch Global Rankings",        tag: "2024"               },
+  { icon: Star,      color: "#a855f7", title: "SAP Certified Partner",        org: "SAP SE",                        tag: "Technology Partner" },
+  { icon: Globe,     color: "#14b8a6", title: "Cyber Essentials Plus",        org: "Nat. Cyber Security Centre",    tag: "Certified"          },
+  { icon: Zap,       color: "#22c55e", title: "24+ Years of Excellence",      org: "Industry Recognition",          tag: "Since 2000"         },
+] as const;
+
+/* ── Client testimonials data ── */
+const TESTIMONIALS = [
+  {
+    type: "text" as const,
+    quote: "Infoplus Technologies transformed our IT infrastructure completely. Their expertise in cloud solutions drove a 40% improvement in our operational efficiency. Truly a trusted long-term partner.",
+    name: "James Richardson",
+    role: "Chief Technology Officer",
+    company: "FinTech Solutions Ltd",
+    initials: "JR",
+    accent: "#6128a6",
+    stars: 5,
+  },
+  {
+    type: "video" as const,
+    quote: "Their cybersecurity team identified vulnerabilities we didn't even know existed. We now have complete confidence in our data protection strategy.",
+    name: "Sarah Mitchell",
+    role: "IT Director",
+    company: "Apex Healthcare UK",
+    initials: "SM",
+    accent: "#f85d37",
+    stars: 5,
+  },
+  {
+    type: "text" as const,
+    quote: "From SAP consulting to IT staffing — Infoplus delivered beyond expectations every time. Their 98% client retention rate is no accident. Outstanding team and real outcomes.",
+    name: "David Okafor",
+    role: "Operations Manager",
+    company: "Global Retail Group",
+    initials: "DO",
+    accent: "#14b8a6",
+    stars: 5,
+  },
+  {
+    type: "text" as const,
+    quote: "The umbrella service and staffing solutions saved us months of recruitment headaches. Candidates were perfectly matched to our culture and technical requirements.",
+    name: "Emma Clarke",
+    role: "HR Director",
+    company: "TechBridge UK",
+    initials: "EC",
+    accent: "#6366f1",
+    stars: 5,
+  },
+  {
+    type: "text" as const,
+    quote: "Infoplus helped us migrate our entire SAP landscape to the cloud seamlessly. Their certified consultants brought structure, speed, and zero disruption to our operations.",
+    name: "Michael Torres",
+    role: "Head of IT",
+    company: "BuildCore International",
+    initials: "MT",
+    accent: "#f59e0b",
+    stars: 5,
+  },
+];
+
+/* ── Our Team data ── */
+const TEAM = [
+  {
+    name: "Rajesh Kumar",
+    role: "CEO & Founder",
+    bio: "Visionary leader with 24+ years driving global IT strategy and innovation.",
+    initials: "RK",
+    accent: "#6128a6",
+    linkedin: "#",
+  },
+  {
+    name: "Priya Sharma",
+    role: "Chief Technology Officer",
+    bio: "Architect of enterprise cloud and AI solutions across 17 countries.",
+    initials: "PS",
+    accent: "#aa3bff",
+    linkedin: "#",
+  },
+  {
+    name: "James Bennett",
+    role: "Head of IT Services",
+    bio: "Expert in managed IT, infrastructure, and cybersecurity delivery.",
+    initials: "JB",
+    accent: "#f85d37",
+    linkedin: "#",
+  },
+  {
+    name: "Aisha Patel",
+    role: "Director of SAP Practice",
+    bio: "Certified SAP consultant specialising in S/4HANA transformations.",
+    initials: "AP",
+    accent: "#14b8a6",
+    linkedin: "#",
+  },
+  {
+    name: "Michael Carter",
+    role: "Head of Staffing & Consulting",
+    bio: "Connects top IT talent with leading organisations across the UK.",
+    initials: "MC",
+    accent: "#6366f1",
+    linkedin: "#",
+  },
+  {
+    name: "Sophie Williams",
+    role: "Director of Business Development",
+    bio: "Builds lasting partnerships and drives growth across new markets.",
+    initials: "SW",
+    accent: "#f59e0b",
+    linkedin: "#",
+  },
+];
+
 function HomePage() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", requirement: "" });
   const [errors, setErrors] = useState({ name: "", email: "", phone: "", requirement: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [tIdx, setTIdx] = useState(0);
+  const _textTs = TESTIMONIALS.filter(t => t.type === "text");
+  const _videoTs = TESTIMONIALS.filter(t => t.type === "video");
+  const tSlides = [
+    ...Array.from({ length: Math.ceil(_textTs.length / 2) }, (_, i) => _textTs.slice(i * 2, i * 2 + 2)),
+    ...Array.from({ length: Math.ceil(_videoTs.length / 2) }, (_, i) => _videoTs.slice(i * 2, i * 2 + 2)),
+  ];
+  const tTotal = tSlides.length;
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const goTo = (i: number) => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    setTIdx((i + tTotal) % tTotal);
+  };
+
+  useEffect(() => {
+    timerRef.current = setTimeout(() => setTIdx(p => (p + 1) % tTotal), 6000);
+    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
+  }, [tIdx, tTotal]);
 
   const validate = () => {
     const errs = { name: "", email: "", phone: "", requirement: "" };
@@ -137,7 +272,7 @@ function HomePage() {
           2. About Us NEW DESIGN
           Bento-stack right column: image card + stat tiles + location strip
       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
-      <section className="py-28 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-28 bg-white relative overflow-hidden z-20">
         <div className="absolute top-[-10%] left-[-8%] w-[560px] h-[560px] rounded-full bg-[#ecdaff] opacity-55 blur-[130px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[#f8f5ff] opacity-80 blur-[100px] pointer-events-none" />
         <div
@@ -309,6 +444,112 @@ function HomePage() {
           3. Our Work NEW DESIGN
           Dark section rides up over the white About section.
       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      {/* ══════════════════════════════════════════════════════
+          2b. Why Choose Us
+      ══════════════════════════════════════════════════════ */}
+      <section className="py-28 bg-white relative overflow-hidden z-20">
+        {/* Ambient orbs */}
+        <div className="absolute top-[-15%] right-[-8%] w-[600px] h-[600px] rounded-full bg-[#ecdaff] opacity-50 blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#d8c5f7] opacity-35 blur-[130px] pointer-events-none" />
+        <div className="absolute top-[45%] right-[30%] w-[280px] h-[280px] rounded-full bg-[#f0e8ff] opacity-60 blur-[90px] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.018] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          {/* Header */}
+          <ScrollReveal direction="up">
+            <div className="text-center mb-16">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                Why Choose Us
+              </span>
+              <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-bold text-[#0d0517] leading-tight mb-4">
+                Why Choose{" "}
+                <span style={{ background: "linear-gradient(90deg,#aa3bff 0%,#f85d37 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                  Infoplus Technologies UK Ltd?
+                </span>
+              </h2>
+              <p className="text-[16px] text-[#555]/70 max-w-2xl mx-auto leading-relaxed">
+                Your trusted partner for comprehensive IT solutions, built on 24+ years of real-world expertise.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Bento grid — xl: 3 cols, md: 2 cols, mobile: 1 col */}
+          <ScrollReveal direction="up" delay={80}>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+
+              {/* Card 1 — Featured, spans 2 cols on xl */}
+              <div className="xl:col-span-2 group relative rounded-3xl overflow-hidden border border-[#ecdaff] p-7 md:p-8 flex flex-col md:flex-row gap-6 md:gap-10 items-start md:items-center transition-all duration-300 hover:border-[#6128a6]/30 hover:shadow-[0_16px_48px_rgba(97,40,166,0.12)]"
+                style={{ background: "linear-gradient(135deg,#f0e8ff 0%,#faf8ff 60%,#ffffff 100%)" }}>
+                <span className="absolute top-4 right-5 text-[65px] font-black leading-none select-none pointer-events-none text-[#ecdaff]">01</span>
+                <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#ecdaff] opacity-40 blur-[60px] pointer-events-none" />
+                <div className="shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center relative z-10" style={{ background: "linear-gradient(135deg,#6128a6 0%,#aa3bff 100%)" }}>
+                  <Clock className="w-8 h-8 text-white" />
+                </div>
+                <div className="relative z-10">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#6128a6] mb-2">24+ Years of Experience</p>
+                  <h3 className="text-[20px] md:text-[22px] font-bold text-[#0d0517] leading-snug">Solving Real IT Problems Since 2000</h3>
+                  <p className="text-[14px] text-[#555]/70 leading-[1.75]">We have been solving real IT problems since 2000. This means we have already seen the challenges that your business is facing now; we know how to fix them properly.</p>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-[#aa3bff] to-transparent opacity-40" />
+              </div>
+
+              {/* Card 2 */}
+              <div className="group relative rounded-3xl overflow-hidden border border-[#ecdaff] bg-white p-7 flex flex-col transition-all duration-300 hover:border-[#f85d37]/40 hover:shadow-[0_16px_48px_rgba(248,93,55,0.10)] hover:-translate-y-1">
+                <span className="absolute top-4 right-5 text-[55px] font-black leading-none select-none pointer-events-none text-[#ecdaff]">02</span>
+                <div className="absolute inset-0 bg-linear-to-br from-[#f85d37]/4 to-transparent pointer-events-none" />
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 relative z-10" style={{ background: "rgba(248,93,55,0.12)", border: "1px solid rgba(248,93,55,0.20)" }}>
+                  <Award className="w-6 h-6" style={{ color: "#f85d37" }} />
+                </div>
+                <h3 className="text-[17px] font-bold text-[#0d0517] leading-snug relative z-10">Certified Specialists, Not Just Experienced</h3>
+                <p className="text-[13px] text-[#555]/65 leading-[1.75] relative z-10 flex-1">Our teams include certified specialists across SAP, Cloud platforms & cybersecurity. You're getting services from the people who are genuinely qualified, not just experienced.</p>
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-[#f85d37] to-transparent opacity-35" />
+              </div>
+
+              {/* Card 3 */}
+              <div className="group relative rounded-3xl overflow-hidden border border-[#ecdaff] bg-white p-7 flex flex-col transition-all duration-300 hover:border-[#14b8a6]/40 hover:shadow-[0_16px_48px_rgba(20,184,166,0.10)] hover:-translate-y-1">
+                <span className="absolute top-4 right-5 text-[55px] font-black leading-none select-none pointer-events-none text-[#ecdaff]">03</span>
+                <div className="absolute inset-0 bg-linear-to-br from-[#14b8a6]/4 to-transparent pointer-events-none" />
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 relative z-10" style={{ background: "rgba(20,184,166,0.12)", border: "1px solid rgba(20,184,166,0.20)" }}>
+                  <Headphones className="w-6 h-6" style={{ color: "#14b8a6" }} />
+                </div>
+                <h3 className="text-[17px] font-bold text-[#0d0517] leading-snug relative z-10">Ongoing Support That Never Walks Away</h3>
+                <p className="text-[13px] text-[#555]/65 leading-[1.75] relative z-10 flex-1">We don't just set things up and walk away. We stay with you for ongoing support, so problems get fixed quickly, not weeks later.</p>
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-[#14b8a6] to-transparent opacity-35" />
+              </div>
+
+              {/* Card 4 */}
+              <div className="group relative rounded-3xl overflow-hidden border border-[#ecdaff] bg-white p-7 flex flex-col transition-all duration-300 hover:border-[#6366f1]/40 hover:shadow-[0_16px_48px_rgba(99,102,241,0.10)] hover:-translate-y-1">
+                <span className="absolute top-4 right-5 text-[55px] font-black leading-none select-none pointer-events-none text-[#ecdaff]">04</span>
+                <div className="absolute inset-0 bg-linear-to-br from-[#6366f1]/4 to-transparent pointer-events-none" />
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 relative z-10" style={{ background: "rgba(99,102,241,0.12)", border: "1px solid rgba(99,102,241,0.20)" }}>
+                  <Globe className="w-6 h-6" style={{ color: "#6366f1" }} />
+                </div>
+                <h3 className="text-[17px] font-bold text-[#0d0517] leading-snug relative z-10">Support Spanning 17 Countries</h3>
+                <p className="text-[13px] text-[#555]/65 leading-[1.75] relative z-10 flex-1">Our team works from across 17 countries, so support is never far away.</p>
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-[#6366f1] to-transparent opacity-35" />
+              </div>
+
+              {/* Card 5 — md: full width so it centres, xl: normal 1 col */}
+              <div className="md:col-span-2 xl:col-span-1 group relative rounded-3xl overflow-hidden border border-[#ecdaff] bg-white p-7 flex flex-col transition-all duration-300 hover:border-[#22c55e]/40 hover:shadow-[0_16px_48px_rgba(34,197,94,0.10)] hover:-translate-y-1">
+                <span className="absolute top-4 right-5 text-[55px] font-black leading-none select-none pointer-events-none text-[#ecdaff]">05</span>
+                <div className="absolute inset-0 bg-linear-to-br from-[#22c55e]/4 to-transparent pointer-events-none" />
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 relative z-10" style={{ background: "rgba(34,197,94,0.12)", border: "1px solid rgba(34,197,94,0.20)" }}>
+                  <Zap className="w-6 h-6" style={{ color: "#22c55e" }} />
+                </div>
+                <h3 className="text-[17px] font-bold text-[#0d0517] leading-snug relative z-10">IT That Actually Works for Your Business</h3>
+                <p className="text-[13px] text-[#555]/65 leading-[1.75] relative z-10 flex-1">We don't just fix problems. We built IT that actually works for your business every day.</p>
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-[#22c55e] to-transparent opacity-35" />
+              </div>
+
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════
+          3. Our Work NEW DESIGN
+          Dark section rides up over the Why Choose Us section.
+      ══════════════════════════════════════════════════════ */}
       <section className="py-28 bg-[#0d0517] relative overflow-hidden -mt-10 z-20">
         <div className="absolute top-[-15%] right-[-8%] w-[600px] h-[600px] rounded-full bg-[#381f55] opacity-35 blur-[150px] pointer-events-none" />
         <div className="absolute bottom-[-10%] left-[-5%] w-[450px] h-[450px] rounded-full bg-[#6128a6] opacity-12 blur-[120px] pointer-events-none" />
@@ -670,7 +911,7 @@ function HomePage() {
                     {/* Watermark number */}
                     <span
                       aria-hidden
-                      className="absolute top-3 right-4 font-black text-[68px] leading-none select-none pointer-events-none text-[#ecdaff]"
+                      className="absolute top-3 right-4 font-black text-[50px] leading-none select-none pointer-events-none text-[#ecdaff]"
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -797,6 +1038,319 @@ function HomePage() {
       <ScrollReveal direction="fade">
         <ClientCarousel />
       </ScrollReveal>
+
+      {/* ──────────────────────────────────────────────────────
+          8a. Awards & Recognition
+      ────────────────────────────────────────────────────── */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="absolute top-[-12%] right-[-6%] w-[550px] h-[550px] rounded-full bg-[#ecdaff] opacity-45 blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-[-8%] left-[-4%] w-[420px] h-[420px] rounded-full bg-[#f0e8ff] opacity-55 blur-[110px] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.016] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          <ScrollReveal direction="up">
+            <div className="text-center mb-14">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                Awards & Recognition
+              </span>
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-[#0d0517] leading-tight mb-4">
+                Recognised for{" "}
+                <span style={{ background: "linear-gradient(90deg,#6128a6 0%,#aa3bff 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                  Excellence & Trust
+                </span>
+              </h2>
+              <p className="text-[15px] text-[#555]/70 max-w-xl mx-auto leading-relaxed">
+                Accreditations and recognitions that reflect our commitment to quality, security, and world-class IT delivery.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={80}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {AWARDS.map((a, i) => {
+                const Icon = a.icon;
+                return (
+                  <div
+                    key={i}
+                    className="group relative bg-white border border-[#ecdaff] rounded-2xl p-6 overflow-hidden hover:shadow-[0_16px_48px_rgba(97,40,166,0.10)] transition-all duration-300 hover:-translate-y-1 flex items-start gap-5"
+                    style={{ ["--hover-border" as string]: a.color + "66" }}
+                    onMouseEnter={e => (e.currentTarget.style.borderColor = a.color + "55")}
+                    onMouseLeave={e => (e.currentTarget.style.borderColor = "")}
+                  >
+                    {/* Icon badge */}
+                    <div
+                      className="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                      style={{ background: a.color + "18", border: `1px solid ${a.color}30` }}
+                    >
+                      <Icon className="w-7 h-7" style={{ color: a.color }} />
+                    </div>
+
+                    {/* Text */}
+                    <div className="min-w-0">
+                      <p className="font-bold text-[#0d0517] text-[15px] leading-snug mb-0">{a.title}</p>
+                      <p className="text-[12px] text-[#6b6375] leading-snug">{a.org}</p>
+                      <span
+                        className="inline-block py-0.5 px-2.5 rounded-full text-[10px] font-bold uppercase tracking-wider"
+                        style={{ background: a.color + "15", color: a.color }}
+                      >
+                        {a.tag}
+                      </span>
+                    </div>
+
+                    {/* Accent line */}
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{ background: `linear-gradient(90deg, transparent, ${a.color}, transparent)` }} />
+                  </div>
+                );
+              })}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ──────────────────────────────────────────────────────
+          8b. Client Testimonials
+      ────────────────────────────────────────────────────── */}
+      <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
+        <div className="absolute top-[-10%] left-[-5%] w-[480px] h-[480px] rounded-full bg-[#ecdaff] opacity-50 blur-[130px] pointer-events-none" />
+        <div className="absolute bottom-[-8%] right-[-6%] w-[400px] h-[400px] rounded-full bg-[#e0d0f8] opacity-40 blur-[110px] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.016] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          {/* Header */}
+          <ScrollReveal direction="up">
+            <div className="text-center mb-12">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                Client Testimonials
+              </span>
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-[#0d0517] leading-tight mb-4">
+                What Our{" "}
+                <span style={{ background: "linear-gradient(90deg,#6128a6 0%,#aa3bff 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                  Clients Say
+                </span>
+              </h2>
+              <p className="text-[15px] text-[#555]/70 max-w-xl mx-auto leading-relaxed">
+                Real stories from the businesses we've helped transform with technology, talent, and trust.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Carousel — text slides separate from video slides */}
+          <div className="relative">
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${tIdx * 100}%)` }}
+              >
+                {tSlides.map((pair, pi) => {
+                  const isVideoSlide = pair.every(t => t.type === "video");
+                  return (
+                    <div key={pi} className="w-full flex-shrink-0">
+                      {isVideoSlide ? (
+                        /* ── Video slide: full-width horizontal layout ── */
+                        <div className="flex flex-col gap-5">
+                          {pair.map((t, ti) => (
+                            <div key={ti} className="grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden border border-[#ecdaff] shadow-[0_8px_40px_rgba(97,40,166,0.08)]">
+                              {/* Dark video panel */}
+                              <div
+                                className="relative min-h-[280px] flex items-center justify-center overflow-hidden"
+                                style={{ background: "linear-gradient(135deg,#1a0b2e 0%,#0d0517 60%,#120820 100%)" }}
+                              >
+                                <div className="absolute top-[-20%] left-[-10%] w-[280px] h-[280px] rounded-full bg-[#6128a6] opacity-20 blur-[60px] pointer-events-none" />
+                                <div className="absolute bottom-[-10%] right-[-5%] w-[220px] h-[220px] rounded-full bg-[#f85d37] opacity-12 blur-[50px] pointer-events-none" />
+                                <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "22px 22px" }} />
+                                <button
+                                  className="relative z-10 w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                                  style={{ background: "rgba(255,255,255,0.12)", border: "2px solid rgba(255,255,255,0.25)", backdropFilter: "blur(8px)" }}
+                                >
+                                  <Play className="w-8 h-8 text-white fill-white ml-1" />
+                                  <span className="sr-only">Play video testimonial</span>
+                                </button>
+                                <div className="absolute bottom-5 left-5">
+                                  <div className="inline-flex items-center gap-2 rounded-xl px-3 py-1.5"
+                                    style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)", backdropFilter: "blur(8px)" }}>
+                                    <Play className="w-3 h-3 text-white fill-white" />
+                                    <span className="text-white text-[11px] font-semibold tracking-wide">Video Testimonial</span>
+                                  </div>
+                                </div>
+                              </div>
+                              {/* White text panel */}
+                              <div className="bg-white p-8 md:p-10 flex flex-col justify-center">
+                                <div className="flex gap-1 mb-5">
+                                  {Array.from({ length: t.stars }).map((_, s) => (
+                                    <Star key={s} className="w-5 h-5 fill-[#f59e0b] text-[#f59e0b]" />
+                                  ))}
+                                </div>
+                                <Quote className="w-9 h-9 text-[#ecdaff] mb-4" />
+                                <p className="text-[16px] md:text-[18px] text-[#0d0517] leading-[1.8] mb-8 font-medium italic">
+                                  &ldquo;{t.quote}&rdquo;
+                                </p>
+                                <div className="flex items-center gap-4">
+                                  <div
+                                    className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-white font-black text-[15px] shadow-md"
+                                    style={{ background: `linear-gradient(135deg,${t.accent} 0%,${t.accent}99 100%)` }}
+                                  >
+                                    {t.initials}
+                                  </div>
+                                  <div>
+                                    <p className="font-bold text-[#0d0517] text-[15px] leading-snug mb-0">{t.name}</p>
+                                    <p className="text-[13px] text-[#6b6375]">{t.role} &middot; {t.company}</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        /* ── Text slide: 2 text cards per row ── */
+                        <div className={`grid grid-cols-1 gap-5 items-stretch ${pair.length === 2 ? "md:grid-cols-2" : "max-w-2xl mx-auto"}`}>
+                          {pair.map((t, ti) => (
+                            <div key={ti} className="bg-white rounded-2xl border border-[#ecdaff] p-7 relative overflow-hidden shadow-[0_8px_40px_rgba(97,40,166,0.07)] flex flex-col">
+                              <Quote className="absolute top-5 right-6 w-10 h-10 text-[#ecdaff]" />
+                              <div className="flex gap-1 mb-5">
+                                {Array.from({ length: t.stars }).map((_, s) => (
+                                  <Star key={s} className="w-4 h-4 fill-[#f59e0b] text-[#f59e0b]" />
+                                ))}
+                              </div>
+                              <p className="text-[15px] md:text-[16px] text-[#0d0517] leading-[1.8] mb-7 font-medium italic flex-1">
+                                &ldquo;{t.quote}&rdquo;
+                              </p>
+                              <div className="flex items-center gap-3.5">
+                                <div
+                                  className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-white font-black text-[15px] shadow-md"
+                                  style={{ background: `linear-gradient(135deg,${t.accent} 0%,${t.accent}99 100%)` }}
+                                >
+                                  {t.initials}
+                                </div>
+                                <div>
+                                  <p className="font-bold text-[#0d0517] text-[15px] leading-snug mb-0">{t.name}</p>
+                                  <p className="text-[12px] text-[#6b6375]">{t.role} &middot; {t.company}</p>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Controls — dots + arrows */}
+            <div className="flex items-center justify-center gap-3 mt-9">
+              <button
+                onClick={() => goTo(tIdx - 1)}
+                aria-label="Previous"
+                className="w-11 h-11 rounded-full border border-[#ecdaff] bg-white flex items-center justify-center text-[#6128a6] hover:bg-[#6128a6] hover:border-[#6128a6] hover:text-white transition-all duration-200 shadow-sm"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              {tSlides.map((_, di) => (
+                <button
+                  key={di}
+                  onClick={() => goTo(di)}
+                  aria-label={`Page ${di + 1}`}
+                  className={`rounded-full transition-all duration-300 ${tIdx === di ? "w-7 h-3 bg-[#6128a6]" : "w-3 h-3 bg-[#d8c5f7] hover:bg-[#6128a6]/50"}`}
+                />
+              ))}
+              <button
+                onClick={() => goTo(tIdx + 1)}
+                aria-label="Next"
+                className="w-11 h-11 rounded-full border border-[#ecdaff] bg-white flex items-center justify-center text-[#6128a6] hover:bg-[#6128a6] hover:border-[#6128a6] hover:text-white transition-all duration-200 shadow-sm"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════
+          8c. Our Team
+      ══════════════════════════════════════════════════════ */}
+      <section className="py-28 bg-[#0d0517] relative overflow-hidden">
+        {/* Ambient orbs */}
+        <div className="absolute top-[-12%] right-[-6%] w-[600px] h-[600px] rounded-full bg-[#381f55] opacity-30 blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-[-8%] left-[-5%] w-[480px] h-[480px] rounded-full bg-[#6128a6] opacity-15 blur-[130px] pointer-events-none" />
+        <div className="absolute top-[40%] left-[40%] w-[300px] h-[300px] rounded-full bg-[#f85d37] opacity-[0.05] blur-[90px] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.025] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          {/* Header */}
+          <ScrollReveal direction="up">
+            <div className="text-center mb-16">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/15 border border-[#6128a6]/25 text-[#aa3bff] text-[11px] font-bold uppercase tracking-widest mb-5">
+                Our Team
+              </span>
+              <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-bold text-white leading-tight mb-4">
+                Meet the{" "}
+                <span style={{ background: "linear-gradient(90deg,#aa3bff 0%,#f85d37 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                  People Behind Infoplus
+                </span>
+              </h2>
+              <p className="text-[16px] text-white/45 max-w-2xl mx-auto leading-relaxed">
+                Experienced professionals united by a passion for technology, talent, and delivering real-world impact.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Team grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+            {TEAM.map((member, i) => (
+              <ScrollReveal key={member.name} variant="card" delay={i * 60}>
+                <div className="group relative rounded-2xl border border-white/10 bg-white/[0.04] p-7 flex flex-col items-center text-center overflow-hidden transition-all duration-300 hover:border-white/20 hover:-translate-y-1 hover:shadow-[0_8px_40px_rgba(0,0,0,0.40)] h-full">
+                  {/* Hover background glow */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                    style={{ background: `radial-gradient(ellipse at 50% 0%, ${member.accent}18 0%, transparent 65%)` }}
+                  />
+
+                  {/* Avatar */}
+                  <div
+                    className="relative w-24 h-24 rounded-2xl flex items-center justify-center mb-5 text-white font-black text-[28px] shadow-xl transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
+                    style={{ background: `linear-gradient(135deg, ${member.accent} 0%, ${member.accent}cc 100%)` }}
+                  >
+                    {member.initials}
+                    <div className="absolute inset-0 rounded-2xl ring-1 ring-white/20 pointer-events-none" />
+                  </div>
+
+                  {/* Name */}
+                  <h3 className="text-[18px] font-bold text-white mb-1">{member.name}</h3>
+
+                  {/* Role */}
+                  <p className="text-[11px] font-bold uppercase tracking-widest mb-4" style={{ color: member.accent }}>{member.role}</p>
+
+                  {/* Bio */}
+                  <p className="text-[13px] text-white/45 leading-relaxed flex-1 mb-6">{member.bio}</p>
+
+                  {/* LinkedIn link */}
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 text-white/50 hover:text-white hover:border-[#0A66C2]/60 hover:bg-[#0A66C2]/10 transition-all duration-200 text-[12px] font-semibold"
+                    aria-label={`View ${member.name} on LinkedIn`}
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 flex-shrink-0" aria-hidden="true">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    LinkedIn
+                  </a>
+
+                  {/* Bottom accent on hover */}
+                  <div
+                    className="absolute bottom-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{ background: `linear-gradient(90deg, transparent, ${member.accent}, transparent)` }}
+                  />
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
 
       {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
           8. Global Presence (unchanged)
