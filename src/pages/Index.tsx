@@ -173,6 +173,7 @@ const TEAM = [
     bio: "Visionary leader with 24+ years driving global IT strategy and innovation.",
     initials: "RK",
     accent: "#6128a6",
+    image: "/team/rajesh-kumar.jpg",
     linkedin: "#",
   },
   {
@@ -181,6 +182,7 @@ const TEAM = [
     bio: "Architect of enterprise cloud and AI solutions across 17 countries.",
     initials: "PS",
     accent: "#aa3bff",
+    image: "/team/priya-sharma.jpg",
     linkedin: "#",
   },
   {
@@ -189,6 +191,7 @@ const TEAM = [
     bio: "Expert in managed IT, infrastructure, and cybersecurity delivery.",
     initials: "JB",
     accent: "#f85d37",
+    image: "/team/james-bennett.jpg",
     linkedin: "#",
   },
   {
@@ -197,6 +200,7 @@ const TEAM = [
     bio: "Certified SAP consultant specialising in S/4HANA transformations.",
     initials: "AP",
     accent: "#14b8a6",
+    image: "/team/aisha-patel.jpg",
     linkedin: "#",
   },
   {
@@ -205,6 +209,7 @@ const TEAM = [
     bio: "Connects top IT talent with leading organisations across the UK.",
     initials: "MC",
     accent: "#6366f1",
+    image: "/team/michael-carter.jpg",
     linkedin: "#",
   },
   {
@@ -213,6 +218,7 @@ const TEAM = [
     bio: "Builds lasting partnerships and drives growth across new markets.",
     initials: "SW",
     accent: "#f59e0b",
+    image: "/team/sophie-williams.jpg",
     linkedin: "#",
   },
 ];
@@ -1270,13 +1276,36 @@ function HomePage() {
           8c. Our Team
       ══════════════════════════════════════════════════════ */}
       <section className="py-28 bg-[#0d0517] relative overflow-hidden">
+        <style>{`
+          @keyframes teamDrift {
+            0%,100% { transform: translate(0,0) scale(1); }
+            33%      { transform: translate(18px,-14px) scale(1.10); }
+            66%      { transform: translate(-14px,10px) scale(0.93); }
+          }
+          @keyframes teamFloat {
+            0%,100% { transform: translateY(0) scale(1);   opacity: 0.7; }
+            50%      { transform: translateY(-11px) scale(1.15); opacity: 1;   }
+          }
+          @keyframes teamRingPulse {
+            0%,100% { transform: scale(1);    opacity: 0.22; }
+            50%      { transform: scale(1.22); opacity: 0.05; }
+          }
+          @keyframes teamOuterRingPulse {
+            0%,100% { transform: scale(1);    opacity: 0.12; }
+            50%      { transform: scale(1.35); opacity: 0;    }
+          }
+          .team-shimmer { transform: translateX(-130%) skewX(-14deg); transition: transform 0.85s cubic-bezier(0.4,0,0.2,1); }
+          .group:hover .team-shimmer { transform: translateX(280%) skewX(-14deg); }
+        `}</style>
+
         {/* Ambient orbs */}
-        <div className="absolute top-[-12%] right-[-6%] w-[600px] h-[600px] rounded-full bg-[#381f55] opacity-30 blur-[150px] pointer-events-none" />
-        <div className="absolute bottom-[-8%] left-[-5%] w-[480px] h-[480px] rounded-full bg-[#6128a6] opacity-15 blur-[130px] pointer-events-none" />
-        <div className="absolute top-[40%] left-[40%] w-[300px] h-[300px] rounded-full bg-[#f85d37] opacity-[0.05] blur-[90px] pointer-events-none" />
-        <div className="absolute inset-0 opacity-[0.025] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+        <div className="absolute top-[-10%] right-[-5%] w-[650px] h-[650px] rounded-full bg-[#381f55] opacity-28 blur-[160px] pointer-events-none" />
+        <div className="absolute bottom-[-8%] left-[-6%] w-[500px] h-[500px] rounded-full bg-[#6128a6] opacity-14 blur-[140px] pointer-events-none" />
+        <div className="absolute top-[50%] left-[38%] w-[320px] h-[320px] rounded-full bg-[#f85d37] opacity-[0.05] blur-[100px] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.022] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
+
           {/* Header */}
           <ScrollReveal direction="up">
             <div className="text-center mb-16">
@@ -1297,55 +1326,104 @@ function HomePage() {
 
           {/* Team grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-            {TEAM.map((member, i) => (
-              <ScrollReveal key={member.name} variant="card" delay={i * 60}>
-                <div className="group relative rounded-2xl border border-white/10 bg-white/[0.04] p-7 flex flex-col items-center text-center overflow-hidden transition-all duration-300 hover:border-white/20 hover:-translate-y-1 hover:shadow-[0_8px_40px_rgba(0,0,0,0.40)] h-full">
-                  {/* Hover background glow */}
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                    style={{ background: `radial-gradient(ellipse at 50% 0%, ${member.accent}18 0%, transparent 65%)` }}
-                  />
+            {TEAM.map((member, i) => {
+              const driftDur   = `${3.8 + i * 0.35}s`;
+              const floatDur   = `${3.2 + i * 0.28}s`;
+              const ringDur    = `${3.5 + i * 0.4}s`;
+              const delay      = `${i * 0.45}s`;
+              const delay2     = `${i * 0.45 + 1}s`;
+              return (
+                <ScrollReveal key={member.name} variant="card" delay={i * 70}>
+                  <div className="group relative rounded-2xl border border-white/10 overflow-hidden flex flex-col h-full transition-all duration-500 hover:-translate-y-2 hover:border-white/[0.18] hover:shadow-[0_24px_64px_rgba(0,0,0,0.55)]"
+                    style={{ background: "linear-gradient(160deg,rgba(255,255,255,0.04) 0%,rgba(255,255,255,0.02) 100%)" }}>
 
-                  {/* Avatar */}
-                  <div
-                    className="relative w-24 h-24 rounded-2xl flex items-center justify-center mb-5 text-white font-black text-[28px] shadow-xl transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
-                    style={{ background: `linear-gradient(135deg, ${member.accent} 0%, ${member.accent}cc 100%)` }}
-                  >
-                    {member.initials}
-                    <div className="absolute inset-0 rounded-2xl ring-1 ring-white/20 pointer-events-none" />
+                    {/* ─── Avatar composition area ─── */}
+                    <div className="relative h-[270px] flex-shrink-0 overflow-hidden">
+
+                      {/* Fallback bg (visible when image is absent or loading) */}
+                      <div className="absolute inset-0 flex items-center justify-center select-none"
+                        style={{ background: `linear-gradient(135deg,${member.accent}50 0%,rgba(13,5,23,0.96) 100%)` }}>
+                        <span className="font-black leading-none pointer-events-none"
+                          style={{ fontSize: 90, color: `${member.accent}18`, letterSpacing: "-0.06em" }}>
+                          {member.initials}
+                        </span>
+                      </div>
+
+                      {/* Photo — fills the full area */}
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                        onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = "0"; }}
+                      />
+
+                      {/* Accent light leak — top-left corner */}
+                      <div className="absolute top-0 left-0 w-[200px] h-[110px] pointer-events-none"
+                        style={{ background: `radial-gradient(ellipse at 0% 0%,${member.accent}40 0%,transparent 75%)` }} />
+
+                      {/* Subtle tint over image (branding wash) */}
+                      <div className="absolute inset-0 pointer-events-none"
+                        style={{ background: `linear-gradient(to bottom,${member.accent}1a 0%,transparent 50%)` }} />
+
+                      {/* Top accent bar */}
+                      <div className="absolute top-0 left-0 right-0 h-[3px] pointer-events-none"
+                        style={{ background: `linear-gradient(90deg,transparent,${member.accent},transparent)` }} />
+
+                      {/* Floating accent dots */}
+                      <div className="absolute w-2.5 h-2.5 rounded-full shadow-lg pointer-events-none"
+                        style={{ top: 20, right: 22, background: member.accent, animation: `teamFloat ${floatDur} ease-in-out infinite`, animationDelay: delay }} />
+                      <div className="absolute w-1.5 h-1.5 rounded-full pointer-events-none opacity-65"
+                        style={{ top: 36, right: 42, background: member.accent, animation: `teamFloat ${floatDur} ease-in-out infinite reverse`, animationDelay: delay2 }} />
+
+                      {/* Hover shimmer sweep */}
+                      <div className="team-shimmer absolute inset-y-0 w-[42%] pointer-events-none"
+                        style={{ background: "linear-gradient(90deg,transparent,rgba(255,255,255,0.14),transparent)" }} />
+
+                      {/* Bottom gradient fade — deeper to hide photo edge */}
+                      <div className="absolute bottom-0 left-0 right-0 h-[100px] pointer-events-none"
+                        style={{ background: "linear-gradient(to bottom,transparent,rgba(13,5,23,0.98))" }} />
+                    </div>
+
+                    {/* ─── Info area ─── */}
+                    <div className="flex flex-col flex-1 px-6 pt-4 pb-6">
+
+                      {/* Accent rule */}
+                      <div className="h-0.5 w-10 rounded-full mb-4 transition-all duration-300 group-hover:w-16"
+                        style={{ background: `linear-gradient(90deg,${member.accent},transparent)` }} />
+
+                      {/* Role */}
+                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-1.5" style={{ color: member.accent }}>
+                        {member.role}
+                      </p>
+
+                      {/* Name */}
+                      <h3 className="text-[19px] font-bold text-white mb-3 leading-snug">{member.name}</h3>
+
+                      {/* Bio */}
+                      <p className="text-[13px] text-white/45 leading-relaxed flex-1 mb-5">{member.bio}</p>
+
+                      {/* LinkedIn */}
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${member.name} on LinkedIn`}
+                        className="self-start inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-white/10 text-white/45 text-[12px] font-semibold transition-all duration-200 hover:text-white hover:border-[#0A66C2]/55 hover:bg-[#0A66C2]/12"
+                      >
+                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                        LinkedIn
+                      </a>
+                    </div>
+
+                    {/* Bottom accent bar (hover reveal) */}
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                      style={{ background: `linear-gradient(90deg,transparent,${member.accent},transparent)` }} />
                   </div>
-
-                  {/* Name */}
-                  <h3 className="text-[18px] font-bold text-white mb-1">{member.name}</h3>
-
-                  {/* Role */}
-                  <p className="text-[11px] font-bold uppercase tracking-widest mb-4" style={{ color: member.accent }}>{member.role}</p>
-
-                  {/* Bio */}
-                  <p className="text-[13px] text-white/45 leading-relaxed flex-1 mb-6">{member.bio}</p>
-
-                  {/* LinkedIn link */}
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 text-white/50 hover:text-white hover:border-[#0A66C2]/60 hover:bg-[#0A66C2]/10 transition-all duration-200 text-[12px] font-semibold"
-                    aria-label={`View ${member.name} on LinkedIn`}
-                  >
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 flex-shrink-0" aria-hidden="true">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg>
-                    LinkedIn
-                  </a>
-
-                  {/* Bottom accent on hover */}
-                  <div
-                    className="absolute bottom-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ background: `linear-gradient(90deg, transparent, ${member.accent}, transparent)` }}
-                  />
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
