@@ -36,13 +36,13 @@ export function Header() {
     >
       <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between gap-4">
 
-        {/* Logo wrapper fixes layout height so header bar stays unchanged */}
+        {/* Logo — responsive height: grows with screen width */}
         <NavLink to="/" className="flex items-center shrink-0">
-          <div className="h-14 flex items-center overflow-visible">
+          <div className="h-10 sm:h-12 lg:h-16 xl:h-20 flex items-center overflow-visible">
             <ImageWithFallback
               src={isScrolled ? imgInfoplusLogoColor : imgInfoplusLogo}
               alt="Infoplus Technologies"
-              className="h-14 w-auto object-contain transition-all duration-300"
+              className="h-10 sm:h-12 lg:h-16 xl:h-20 w-auto object-contain transition-all duration-300"
             />
           </div>
         </NavLink>
