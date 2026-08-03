@@ -1327,9 +1327,7 @@ function HomePage() {
           {/* Team grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
             {TEAM.map((member, i) => {
-              const driftDur   = `${3.8 + i * 0.35}s`;
               const floatDur   = `${3.2 + i * 0.28}s`;
-              const ringDur    = `${3.5 + i * 0.4}s`;
               const delay      = `${i * 0.45}s`;
               const delay2     = `${i * 0.45 + 1}s`;
               return (
