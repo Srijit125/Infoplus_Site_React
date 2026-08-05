@@ -96,7 +96,7 @@ const LOCATIONS = [
   },
   {
     country: "Germany",
-    address: "14th Floor, Tower 185, Friedrich-Ebert-Anlage 35-37, 60327.",
+    address: "14th Floor, Tower 185, Friedrich-Ebert-Anlage 35-37, 60327 Frankfurt am Main.",
     accent: "#aa3bff",
   },
 ];
@@ -115,7 +115,7 @@ const AWARDS = [
 const TESTIMONIALS = [
   {
     type: "text" as const,
-    quote: "Infoplus Technologies transformed our IT infrastructure completely. Their expertise in cloud solutions drove a 40% improvement in our operational efficiency. Truly a trusted long-term partner.",
+    quote: "Their team guided us through every stage of our digital transformation. The advice was practical, transparent, and focused on long-term business value.",
     name: "James Richardson",
     role: "Chief Technology Officer",
     company: "FinTech Solutions Ltd",
@@ -125,7 +125,7 @@ const TESTIMONIALS = [
   },
   {
     type: "video" as const,
-    quote: "Their cybersecurity team identified vulnerabilities we didn't even know existed. We now have complete confidence in our data protection strategy.",
+    quote: "Their cybersecurity experts identified risks we hadn't considered and helped strengthen our infrastructure without disrupting our business.",
     name: "Sarah Mitchell",
     role: "IT Director",
     company: "Apex Healthcare UK",
@@ -135,7 +135,7 @@ const TESTIMONIALS = [
   },
   {
     type: "text" as const,
-    quote: "From SAP consulting to IT staffing — Infoplus delivered beyond expectations every time. Their 98% client retention rate is no accident. Outstanding team and real outcomes.",
+    quote: "The automation solution reduced repetitive work and improved productivity across our operations. The implementation was smooth from start to finish.",
     name: "David Okafor",
     role: "Operations Manager",
     company: "Global Retail Group",
@@ -400,7 +400,7 @@ function HomePage() {
                       17 Global Offices
                     </p>
                     <p className="text-[#0d0517]/55 text-[13px] mt-1 leading-[1.6]">
-                      London · Manchester · Birmingham · Frankfurt · Paris · Amsterdam · New York · Chicago · San Francisco · Toronto · Sydney · Singapore · Tokyo · Chennai · Bangalore · Mumbai · Dubai
+                      United Kingdom · India · Germany · Sweden · Netherlands · Belgium · Ireland · Switzerland · Poland · Czech Republic · Spain · France · Austria · Italy · Romania · Bulgaria · UAE
                     </p>
                   </div>
                 </div>
@@ -1442,7 +1442,7 @@ function HomePage() {
                 Our Presence Worldwide
               </h2>
               <p className="text-[16px] text-[#555555] leading-[1.75] max-w-2xl mx-auto">
-                We have a global reach with offices and operations across 11
+                We have a global reach with offices and operations across 17
                 countries delivering world-class technology solutions wherever
                 our clients need us.
               </p>
@@ -1659,8 +1659,8 @@ function HomePage() {
                 <div className="space-y-8">
                   {[
                     { title: "United Kingdom", desc: "Unit 6 Capital Business Park, Manor Way, Borehamwood WD6 1GW.", icon: MapPin },
-                    { title: "India",           desc: "No. 99, 1st Floor, Greeta Tower, Industrial Estate, Perungudi, Chennai 600096.", icon: MapPin },
-                    { title: "Germany",         desc: "14th Floor, Tower 185, Friedrich-Ebert-Anlage 35-37, 60327.", icon: MapPin },
+                    { title: "India",          desc: "No. 99, 1st Floor, Greeta Tower, Industrial Estate, Perungudi, Chennai, Tamil Nadu 600096.", icon: MapPin },
+                    { title: "Germany",        desc: "14th Floor, Tower 185, Friedrich-Ebert-Anlage 35-37, 60327 Frankfurt am Main.", icon: MapPin },
                   ].map((loc, i) => (
                     <div key={i} className="flex gap-4 items-start">
                       <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm border border-slate-100">

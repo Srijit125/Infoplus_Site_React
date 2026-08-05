@@ -6,25 +6,26 @@ import {
   CheckCircle2, ArrowRight, Send, ChevronDown,
 } from "lucide-react";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
+import ReactCountryFlag from "react-country-flag";
 
 const OFFICES = [
-  { flag: "🇬🇧", region: "United Kingdom", city: "London (HQ)", address: "Unit 6 Capital Business Park, Manor Way, Borehamwood WD6 1GW", mapUrl: "https://maps.google.com/?q=Unit+6+Capital+Business+Park+Manor+Way+Borehamwood+WD6+1GW" },
-  { flag: "🇬🇧", region: "United Kingdom", city: "Manchester", address: "3 Piccadilly Place, Manchester M1 3BN", mapUrl: "https://maps.google.com/?q=3+Piccadilly+Place+Manchester+M1+3BN" },
-  { flag: "🇬🇧", region: "United Kingdom", city: "Birmingham", address: "Colmore Building, 20 Colmore Circus, Birmingham B4 6AT", mapUrl: "https://maps.google.com/?q=Colmore+Building+20+Colmore+Circus+Birmingham+B4+6AT" },
-  { flag: "🇩🇪", region: "Germany", city: "Frankfurt", address: "Tower 185, Friedrich-Ebert-Anlage 35-37, Frankfurt 60327", mapUrl: "https://maps.google.com/?q=Tower+185+Friedrich-Ebert-Anlage+35-37+Frankfurt+60327" },
-  { flag: "🇫🇷", region: "France", city: "Paris", address: "25 Rue de Ponthieu, 75008 Paris", mapUrl: "https://maps.google.com/?q=25+Rue+de+Ponthieu+75008+Paris+France" },
-  { flag: "🇳🇱", region: "Netherlands", city: "Amsterdam", address: "World Trade Center, Strawinskylaan 77, 1077 XW Amsterdam", mapUrl: "https://maps.google.com/?q=World+Trade+Center+Amsterdam+Strawinskylaan+77" },
-  { flag: "🇺🇸", region: "USA", city: "New York", address: "One World Trade Center, 285 Fulton St, New York NY 10007", mapUrl: "https://maps.google.com/?q=One+World+Trade+Center+285+Fulton+St+New+York+NY+10007" },
-  { flag: "🇺🇸", region: "USA", city: "Chicago", address: "200 W Madison St, Suite 2100, Chicago IL 60606", mapUrl: "https://maps.google.com/?q=200+W+Madison+St+Chicago+IL+60606" },
-  { flag: "🇺🇸", region: "USA", city: "San Francisco", address: "One Market Plaza, Suite 3600, San Francisco CA 94105", mapUrl: "https://maps.google.com/?q=One+Market+Plaza+San+Francisco+CA+94105" },
-  { flag: "🇨🇦", region: "Canada", city: "Toronto", address: "150 King Street West, Suite 2500, Toronto ON M5H 1J9", mapUrl: "https://maps.google.com/?q=150+King+Street+West+Toronto+ON+M5H+1J9" },
-  { flag: "🇦🇺", region: "Australia", city: "Sydney", address: "1 Martin Place, Level 12, Sydney NSW 2000", mapUrl: "https://maps.google.com/?q=1+Martin+Place+Sydney+NSW+2000" },
-  { flag: "🇸🇬", region: "Singapore", city: "Singapore", address: "1 Raffles Place, #20-61 One Raffles Place, Singapore 048616", mapUrl: "https://maps.google.com/?q=1+Raffles+Place+Singapore+048616" },
-  { flag: "🇯🇵", region: "Japan", city: "Tokyo", address: "Marunouchi Building, 2-4-1 Marunouchi, Chiyoda-ku, Tokyo 100-6390", mapUrl: "https://maps.google.com/?q=Marunouchi+Building+2-4-1+Marunouchi+Chiyoda-ku+Tokyo" },
-  { flag: "🇮🇳", region: "India", city: "Chennai", address: "No. 99, 1st Floor, Greeta Tower, Industrial Estate, Perungudi, Chennai 600096", mapUrl: "https://maps.google.com/?q=99+Greeta+Tower+Perungudi+Chennai+600096" },
-  { flag: "🇮🇳", region: "India", city: "Bangalore", address: "Prestige Towers, 99/100 Residency Road, Bangalore 560025", mapUrl: "https://maps.google.com/?q=Prestige+Towers+99+Residency+Road+Bangalore+560025" },
-  { flag: "🇮🇳", region: "India", city: "Mumbai", address: "One BKC, Plot C-66, G Block, Bandra Kurla Complex, Mumbai 400051", mapUrl: "https://maps.google.com/?q=One+BKC+Plot+C-66+Bandra+Kurla+Complex+Mumbai+400051" },
-  { flag: "🇦🇪", region: "UAE", city: "Dubai", address: "The Offices 4, One Central, World Trade Centre District, Dubai", mapUrl: "https://maps.google.com/?q=One+Central+World+Trade+Centre+Dubai+UAE" },
+  { code: "GB", region: "United Kingdom", city: "Borehamwood (HQ)", address: "Unit 6 Capital Business Park, Manor Way, Borehamwood WD6 1GW", mapUrl: "https://maps.google.com/?q=Unit+6+Capital+Business+Park+Manor+Way+Borehamwood+WD6+1GW" },
+  { code: "IN", region: "India",          city: "Chennai",          address: "No. 99, 1st Floor, Greeta Tower, Industrial Estate, Perungudi, Chennai, Tamil Nadu 600096", mapUrl: "https://maps.google.com/?q=99+Greeta+Tower+Perungudi+Chennai+600096" },
+  { code: "DE", region: "Germany",        city: "Frankfurt",        address: "14th Floor, Tower 185, Friedrich-Ebert-Anlage 35-37, 60327 Frankfurt am Main", mapUrl: "https://maps.google.com/?q=Tower+185+Friedrich-Ebert-Anlage+35-37+60327+Frankfurt+am+Main" },
+  { code: "SE", region: "Sweden",         city: "Stockholm",        address: "Hammarbybacken 27, Johanneshov, Stockholm 120 30", mapUrl: "https://maps.google.com/?q=Hammarbybacken+27+Johanneshov+Stockholm+120+30" },
+  { code: "NL", region: "Netherlands",    city: "Rotterdam",        address: "Hofplein 20, Rotterdam 3032 AC", mapUrl: "https://maps.google.com/?q=Hofplein+20+Rotterdam+3032+AC" },
+  { code: "BE", region: "Belgium",        city: "Brussels",         address: "Chemin des Deux Maisons 73-3, 1200 Brussels", mapUrl: "https://maps.google.com/?q=Chemin+des+Deux+Maisons+73+1200+Bruxelles+Belgium" },
+  { code: "IE", region: "Ireland",        city: "Dublin",           address: "The Black Church, St. Mary's Place, Dublin 7", mapUrl: "https://maps.google.com/?q=The+Black+Church+St+Marys+Place+Dublin+7+Ireland" },
+  { code: "CH", region: "Switzerland",    city: "Zug",              address: "Bahnhofstrasse 21, 6300 Zug", mapUrl: "https://maps.google.com/?q=Bahnhofstrasse+21+6300+Zug+Switzerland" },
+  { code: "PL", region: "Poland",         city: "Krakow",           address: "ul. Kamienna 21, 31-403 Krakow", mapUrl: "https://maps.google.com/?q=ul+Kamienna+21+31-403+Krakow+Poland" },
+  { code: "CZ", region: "Czech Republic", city: "Prague",           address: "Zeleny pruh 1560/99, Branik, 140 00 Praha 4", mapUrl: "https://maps.google.com/?q=Zeleny+pruh+1560+Branik+140+00+Praha+4+Czech+Republic" },
+  { code: "ES", region: "Spain",          city: "Barcelona",        address: "Cl Paris Num.45, Entresuelo 3, 08029 Barcelona", mapUrl: "https://maps.google.com/?q=Calle+Paris+45+08029+Barcelona+Spain" },
+  { code: "FR", region: "France",         city: "Levallois-Perret", address: "101-109 Rue Jean Jaures, 92300 Levallois-Perret", mapUrl: "https://maps.google.com/?q=101+Rue+Jean+Jaures+92300+Levallois-Perret+France" },
+  { code: "AT", region: "Austria",        city: "Vienna",           address: "Mariahilfer Straße 123/3, 1060 Vienna", mapUrl: "https://maps.google.com/?q=Mariahilfer+Strasse+123+1060+Vienna+Austria" },
+  { code: "IT", region: "Italy",          city: "Milan",            address: "via dell'Annunciata 23/4, c/o LEXIA Avvocati, 20121 Milan", mapUrl: "https://maps.google.com/?q=via+dell+Annunciata+23+20121+Milan+Italy" },
+  { code: "RO", region: "Romania",        city: "Bucharest",        address: "B-dul Iuliu Maniu, Nr. 57, Block OD16, Staircase E, Fl. 2, Apt. 188, 061081 Bucharest Sector 6", mapUrl: "https://maps.google.com/?q=Bdul+Iuliu+Maniu+57+Bucharest+Sector+6+Romania" },
+  { code: "BG", region: "Bulgaria",       city: "Sofia",            address: "85 Aleksandar Malinov Blvd., fl. 1, office 1, 1715 Sofia", mapUrl: "https://maps.google.com/?q=85+Aleksandar+Malinov+Blvd+1715+Sofia+Bulgaria" },
+  { code: "AE", region: "UAE",            city: "Dubai",            address: "DSO-IFZA, IFZA Properties, Dubai Silicon Oasis, Dubai 1111", mapUrl: "https://maps.google.com/?q=IFZA+Properties+Dubai+Silicon+Oasis+Dubai+UAE" },
 ];
 
 const FAQS = [
@@ -311,8 +312,7 @@ export function ContactPage() {
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 mb-3">
-                <Globe2 className="w-5 h-5 text-[#6128a6]" />
-                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest">
                   Worldwide Presence
                 </span>
               </div>
@@ -320,7 +320,7 @@ export function ContactPage() {
                 Our Global Offices
               </h2>
               <p className="text-[16px] text-[#555] max-w-xl mx-auto">
-                With 17 offices across 4 continents, we're wherever our clients need us to be.
+                With 17 offices across Europe, Asia &amp; the Middle East, we're wherever our clients need us to be.
               </p>
             </div>
           </ScrollReveal>
@@ -334,15 +334,15 @@ export function ContactPage() {
                 delay={Math.min(i % 4, 3) * 70}
               >
                 <div className="group bg-white border border-[#e5e4e7] rounded-2xl p-5 hover:border-[#6128a6]/30 hover:shadow-[0_8px_24px_-4px_rgba(97,40,166,0.10)] transition-all duration-300 h-full flex flex-col">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-[22px] leading-none">{office.flag}</span>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#888]">
-                      {office.region}
-                    </span>
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <ReactCountryFlag
+                      countryCode={office.code}
+                      svg
+                      style={{ width: "1.6em", height: "1.2em", borderRadius: "3px", objectFit: "cover" }}
+                      title={office.region}
+                    />
+                    <span className="text-[15px] font-bold text-[#111] leading-snug group-hover:text-[#6128a6] transition-colors">{office.city}</span>
                   </div>
-                  <h3 className="text-[15px] font-bold text-[#111] mb-2 group-hover:text-[#6128a6] transition-colors">
-                    {office.city}
-                  </h3>
                   <p className="text-[12px] text-[#666] leading-relaxed flex-1 mb-4">
                     {office.address}
                   </p>

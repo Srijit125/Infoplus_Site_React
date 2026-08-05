@@ -38,11 +38,11 @@ export function Header() {
 
         {/* Logo — responsive height: grows with screen width */}
         <NavLink to="/" className="flex items-center shrink-0">
-          <div className="h-10 sm:h-12 lg:h-16 xl:h-20 flex items-center overflow-visible">
+          <div className="h-12 sm:h-14 lg:h-16 xl:h-20 flex items-center overflow-visible">
             <ImageWithFallback
               src={isScrolled ? imgInfoplusLogoColor : imgInfoplusLogo}
               alt="Infoplus Technologies"
-              className="h-10 sm:h-12 lg:h-16 xl:h-20 w-auto object-contain transition-all duration-300"
+              className="h-12 sm:h-14 lg:h-16 xl:h-20 w-auto object-contain transition-all duration-300"
             />
           </div>
         </NavLink>
