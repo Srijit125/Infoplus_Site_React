@@ -35,7 +35,7 @@ function About() {
   ];
 
   const keyStats = [
-    { val: "11",   label: "Countries"     },
+    { val: "17",   label: "Countries"     },
     { val: "120+", label: "Customers"     },
     { val: "20+",  label: "Years"         },
     { val: "17",   label: "Global Offices" },
@@ -608,8 +608,8 @@ function About() {
             </ScrollReveal>
           </div>
 
-          {/* Fact bullets */}
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          Fact bullets
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {factBullets.map((fact, i) => (
               <ScrollReveal key={i} direction="up" delay={i * 80}>
                 <div className="flex items-center gap-4 bg-white border border-[#e5e4e7] px-5 py-4 rounded-xl hover:border-[#6128a6]/30 hover:shadow-sm transition-all duration-300">
@@ -620,7 +620,7 @@ function About() {
                 </div>
               </ScrollReveal>
             ))}
-          </div> */}
+          </div>
 
         </div>
       </section>

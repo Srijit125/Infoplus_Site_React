@@ -14,8 +14,14 @@ import {
   Globe,
   Users,
   Zap,
+  Layers,
+  Clock,
+  Star,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import imgCareerHero from "../assets/images/career_hero.jpg";
+import { FAQAccordion } from "../components/shared/FAQAccordion";
+import type { FAQItem } from "../components/shared/FAQAccordion";
 
 /* â”€â”€ Service cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const SERVICES = [
@@ -24,58 +30,70 @@ const SERVICES = [
     title: "Software Development",
     href: "/services/it-services/software-development",
     gradient: "from-[#381f55] to-[#6128a6]",
-    desc: "Our development teams are based in Europe and India to fulfil the needs of different delivery models. We design, develop, and deploy innovative, customised business-critical software systems web, mobile, AR&VR, and IoT solutions that make technology a true asset to your business.",
+    desc: "Innovate fast and drive your business towards sustainable success with our Expert Team’s web, mobile, and enterprise application development services.",
   },
   {
     icon: FlaskConical,
     title: "Testing",
     href: "/services/it-services/testing",
     gradient: "from-[#381f55] to-[#6128a6]",
-    desc: "Infoplus Testing Center of Excellence believes that quality isn't just checking for defects it is preventing them. Our structured test methodologies cover functional, performance, security, and automation testing to ensure your product launches flawlessly.",
+    desc: "Ensure your product success by leveraging our end-to-end testing services. We help you mitigate risks, boost application performance and provide seamless user experience.",
   },
   {
     icon: Server,
     title: "Infrastructure Management",
     href: "/services/it-services/infrastructure-management",
     gradient: "from-[#381f55] to-[#6128a6]",
-    desc: "Infoplus has built its reputation helping leading global organisations achieve optimal IT infrastructure performance. From 24/7 monitoring and incident management to cloud migration and disaster recovery, we keep your operations highly available.",
+    desc: "Manage your IT infrastructure effectively with our proactive management services aimed at maximizing your efficiency and growing your business.",
   },
   {
     icon: Database,
     title: "SAP Consulting & Implementation",
     href: "/services/it-services/sap-consulting",
     gradient: "from-[#381f55] to-[#6128a6]",
-    desc: "Our SAP Consulting and Implementation approach at Infoplus clearly focuses on delivering business value. We cover the full SAP landscape ERP, BI, S/4HANA providing design, build, and rollout services tailored to your industry and delivery model.",
+    desc: "Realize the full potential of SAP with our consulting services. We provide customized SAP solutions aimed at improving efficiency and business performance.",
   },
   {
     icon: ShieldCheck,
     title: "Cyber Security",
     href: "/services/it-services/cyber-security",
     gradient: "from-[#381f55] to-[#6128a6]",
-    desc: "Infoplus cyber security services include a Security Operations Centre, vulnerability scanning, penetration testing, compliance management, and incident response providing end-to-end protection so your organisation stays resilient against evolving threats.",
+    desc: "Guard your business from malicious attacks using intelligent cybersecurity solutions which will secure your data and guarantee uninterrupted business operations.",
   },
   {
     icon: Cloud,
     title: "Cloud Portfolio",
     href: "/services/it-services/cloud-portfolio",
     gradient: "from-[#381f55] to-[#6128a6]",
-    desc: "Infoplus Cloud Portfolio is an enterprise cloud service offering spanning AWS, Azure, and GCP. From cloud strategy and migration to managed operations and cost optimisation, we guide your cloud journey from inception to full production scale.",
+    desc: "Optimize your cloud portfolio with customized solutions designed to provide high scalability and efficiency.",
   },
   {
     icon: BrainCircuit,
     title: "Artificial Intelligence",
     href: "/services/it-services/artificial-intelligence",
     gradient: "from-[#381f55] to-[#6128a6]",
-    desc: "Infoplus Technologies is at the forefront of Artificial Intelligence innovation. Our AI CoE delivers machine learning, NLP, generative AI, computer vision, and intelligent automation solutions that transform raw data into strategic business intelligence.",
+    desc: "Boost your business processes by applying artificial intelligence solutions for process automation, better decision-making and innovation.",
   },
 ];
 
-/* â”€â”€ Stats â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-const STATS = [
-  { value: "7",    label: "IT Service Verticals",  color: "#aa3bff" },
-  { value: "20+",  label: "Years of Expertise",    color: "#f85d37" },
-  { value: "2",    label: "Continents, 1 Mission", color: "#aa3bff" },
-  { value: "24/7", label: "Support & Monitoring",  color: "#f85d37" },
+
+const IT_FAQS: FAQItem[] = [
+  {
+    q: "What are the IT Services Infoplus Technologies Provide?",
+    a: "We offer End to End IT Solutions including: Software Development, Testing, Artificial Intelligence, Cyber Security, Cloud Portfolios, Infrastructure Management, & SAP Consulting.",
+  },
+  {
+    q: "Which Industries Infoplus Technologies serve?",
+    a: "Infoplus Technologies works with various businesses across different industries like: Software, Pharmaceuticals, Health Care, Insurance, Transport, Retail, Broadcasting, Manufacturing, Real Estate, Agriculture, Construction, Telecommunication, & Education etc.",
+  },
+  {
+    q: "Can you provide customized software for your business?",
+    a: "Yes. We offer to design and develop customized software in accordance with your business needs. Our services cover every aspect of the process including requirement analysis, UI/UX designing, development, testing, deployment, and maintenance.",
+  },
+  {
+    q: "Does Infoplus Technologies provide ongoing support and maintenance after the completion of the project?",
+    a: "Yes. Our Technical Experts take care of everything after the deployment of the project (24/7 Support).",
+  },
 ];
 
 export default function ITServicesPage() {
@@ -89,8 +107,8 @@ export default function ITServicesPage() {
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         badge="IT SERVICES"
-        title="We are Providing the Best Services for Clients"
-        description="Supporting IT is not just enough it must be strategically led and proactively managed. Our forward-thinking IT CoE team designs end-to-end solutions so organisations gain a technology edge and stay ahead of the curve."
+        title="All Your IT Services Under one roof"
+        description="Delivering innovative technology solutions including Software Development, AI, Cybersecurity, Testing, Cloud Portfolios, SAP Consulting & Infrastructure Management for businesses worldwide."
         variant="gradient"
       >
         <div className="flex flex-col sm:flex-row justify-center gap-3">
@@ -195,27 +213,91 @@ export default function ITServicesPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Stats strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-14 bg-[#1e0a38] relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "24px 24px" }}
-        />
-        <div className="container mx-auto px-6 max-w-5xl relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {STATS.map((s, i) => (
-              <ScrollReveal key={s.label} direction="up" delay={i * 80}>
-                <div className="text-center">
-                  <p className="text-[clamp(2rem,4vw,3rem)] font-black leading-none mb-2" style={{ color: s.color }}>
-                    {s.value}
-                  </p>
-                  <p className="text-[13px] text-white/50">{s.label}</p>
+      {/* -- Why Choose Us ----------------------------------------- */}
+      <section className=”py-24 bg-white relative overflow-hidden”>
+        <div className=”absolute top-[-10%] right-[-8%] w-96 h-96 rounded-full bg-[#ecdaff] opacity-50 blur-[100px] pointer-events-none” />
+        <div className=”absolute bottom-[-8%] left-[-5%] w-72 h-72 rounded-full bg-[#6128a6]/10 blur-[80px] pointer-events-none” />
+
+        <div className=”container mx-auto px-6 max-w-7xl relative z-10”>
+          <div className=”grid grid-cols-1 lg:grid-cols-2 gap-16 items-center”>
+
+            {/* Content */}
+            <ScrollReveal direction=”left”>
+              <div>
+                <span className=”inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5”>
+                  Why Choose Us
+                </span>
+                <h2 className=”text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold text-[#0d0517] leading-tight mb-6”>
+                  Why Choose Infoplus for{“ “}
+                  <span className=”text-[#6128a6]”>IT Services</span>
+                </h2>
+                <p className=”text-[15px] text-[#555] leading-relaxed mb-10 text-justify”>
+                  At Infoplus, we believe technology should make business easier rather than complicate its needs.
+                  Our technical teams work closely with clients to deliver innovative, secure &amp; scalable IT
+                  solutions tailored to their unique business needs. From development to delivery we provide 24/7
+                  support, upholding commitment, transparency &amp; real business value. We deliver projects on
+                  time with no compromise on quality, fostering transparency, long-term partnerships, and helping
+                  businesses confidently embrace digital transformation.
+                </p>
+
+                {/* Feature tiles */}
+                <div className=”grid grid-cols-2 gap-3”>
+                  {[
+                    { icon: Layers, label: “End to End IT Solutions”, desc: “Full-lifecycle coverage from strategy to delivery”, color: “#6128a6” },
+                    { icon: Users,  label: “Skilled Team”,            desc: “Experienced engineers across Europe & India”,     color: “#aa3bff” },
+                    { icon: Clock,  label: “24/7 Support”,            desc: “Round-the-clock monitoring and assistance”,       color: “#f85d37” },
+                    { icon: Star,   label: “Focus on Quality”,        desc: “No compromise on standards, every delivery”,      color: “#14b8a6” },
+                    { icon: Zap,    label: “Fast Delivery”,           desc: “Agile execution without sacrificing quality”,     color: “#f85d37” },
+                  ].map((f, i) => (
+                    <div
+                      key={f.label}
+                      className={`flex items-start gap-3 p-4 rounded-2xl border border-[#f0ecf9] hover:border-[#6128a6]/25 hover:shadow-[0_4px_16px_rgba(97,40,166,0.08)] transition-all duration-300 bg-[#fafafe]${i === 4 ? “ col-span-2” : “”}`}
+                    >
+                      <div
+                        className=”w-9 h-9 rounded-xl flex items-center justify-center shrink-0”
+                        style={{ backgroundColor: `${f.color}18`, color: f.color }}
+                      >
+                        <f.icon className=”w-4 h-4” />
+                      </div>
+                      <div>
+                        <p className=”text-[13px] font-bold text-[#0d0517] mb-0.5”>{f.label}</p>
+                        <p className=”text-[12px] text-[#888] leading-snug”>{f.desc}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              </ScrollReveal>
-            ))}
+              </div>
+            </ScrollReveal>
+
+            {/* Placeholder image panel */}
+            <ScrollReveal direction=”right” delay={120}>
+              <div className=”relative”>
+                <div className=”rounded-3xl overflow-hidden h-120”>
+                  <img
+                    src={imgCareerHero}
+                    alt=”Infoplus IT Services team”
+                    className=”w-full h-full object-cover”
+                  />
+                </div>
+
+                {/* Floating stat */}
+                <div className=”absolute -bottom-5 -left-5 bg-white rounded-2xl px-5 py-4 shadow-[0_8px_32px_rgba(97,40,166,0.12)] border border-[#ecdaff]”>
+                  <p className=”text-[26px] font-black text-[#6128a6] leading-none mb-0”>20+</p>
+                  <p className=”text-[11px] text-[#888]”>Years of IT Excellence</p>
+                </div>
+
+                {/* Floating badge */}
+                <div className=”absolute -top-4 -right-4 bg-[#f85d37] text-white rounded-2xl px-4 py-3 shadow-[0_8px_24px_rgba(248,93,55,0.30)]”>
+                  <p className=”text-[11px] font-bold uppercase tracking-widest mb-0”>ISO 27001</p>
+                  <p className=”text-[10px] opacity-80”>Certified</p>
+                </div>
+              </div>
+            </ScrollReveal>
+
           </div>
         </div>
       </section>
+
 
       {/* â”€â”€ Services Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
@@ -272,7 +354,7 @@ export default function ITServicesPage() {
                   <div className="w-8 h-0.5 rounded-full mb-5 bg-[#6128a6]/50 group-hover:w-16 transition-all duration-300" />
 
                   {/* Description */}
-                  <p className="text-[14px] text-white/55 leading-relaxed flex-1 group-hover:text-white/70 transition-colors duration-300">
+                  <p className="text-[14px] text-white/55 leading-relaxed flex-1 group-hover:text-white/70 transition-colors duration-300 mb-0">
                     {svc.desc}
                   </p>
 
@@ -287,6 +369,13 @@ export default function ITServicesPage() {
           </div>
         </div>
       </section>
+
+      <FAQAccordion
+        faqs={IT_FAQS}
+        badge=”FAQs”
+        title=”Frequently Asked Questions”
+        defaultOpen={0}
+      />
 
       {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
