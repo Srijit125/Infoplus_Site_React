@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
+import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 
 type Benefit = { icon: LucideIcon; title: string; gradient: string };
 type DeliveryModel = {
@@ -112,6 +113,25 @@ const DELIVERY_MODELS: DeliveryModel[] = [
     gradient: "from-[#9a2600] to-[#f85d37]",
     title: "Remote (Offshore) Support",
     desc: "Full remote support from our expert centres, providing round-the-clock coverage and significant cost savings for your organisation.",
+  },
+];
+
+const SAP_FAQS: FAQItem[] = [
+  {
+    q: "Is SAP only for large organisations, or can smaller businesses use it too?",
+    a: "No — we've helped businesses of every size use SAP successfully, and it's more affordable than people think.",
+  },
+  {
+    q: "What's the difference between implementation and managed services?",
+    a: "Implementation is about setting up SAP properly for your business, from planning through go-live. Managed services keep it running smoothly afterwards.",
+  },
+  {
+    q: "What support options are available once our SAP system is live?",
+    a: "We offer three flexible models: onsite support, nearshore support (or a mix of the two), and fully remote offshore support — so you can choose whichever suits your business.",
+  },
+  {
+    q: "What is SAP NetWeaver BI, and do we need it alongside our regular SAP setup?",
+    a: "It's a business intelligence tool that pulls data from across your organisation and turns it into clear insights for better decision-making. You don't need it to run standard SAP, but it's valuable if you want deeper visibility into your business performance.",
   },
 ];
 
@@ -540,8 +560,15 @@ export default function SAPPage() {
         </div>
       </section>
 
-      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-20 bg-[#f8f5ff]">
+      <FAQAccordion
+        faqs={SAP_FAQS}
+        badge=”FAQs”
+        title=”Frequently Asked Questions”
+        subtitle=”Common questions about our SAP consulting services. Can't find what you're looking for? Reach out to our team.”
+      />
+
+      {/* CTA */}
+      <section className=”py-20 bg-[#f8f5ff]”>
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
             <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">

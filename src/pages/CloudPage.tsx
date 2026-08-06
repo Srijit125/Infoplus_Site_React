@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
+import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 
 type CloudService = {
   icon: LucideIcon;
@@ -37,35 +38,35 @@ const CLOUD_SERVICES: CloudService[] = [
     gradient: "from-[#1e3a8a] to-[#3b82f6]",
     tag: "IaaS",
     title: "Infrastructure-as-a-Service",
-    desc: "Cost-optimised solutions that powerfully virtualise your entire computing infrastructure and successfully manage it over the Internet on demand, at scale.",
+    desc: "We turn your computing infrastructure into a flexible, cost-effective virtual setup managed entirely over the internet. This means less spent on the hardware and more control over how your system runs.",
   },
   {
     icon: Layers,
     gradient: "from-[#0f766e] to-[#14b8a6]",
     tag: "PaaS",
     title: "Platform-as-a-Service",
-    desc: "Outsource hosting, database security, and storage so that you can avoid long-term investments and focus entirely on building and delivering your applications.",
+    desc: "We take hosting, database security, and storage off your plate, so you’re not tied down by long- term infrastructure investments. You get to focus on your product, not the plumbing behind it.",
   },
   {
     icon: BarChart2,
     gradient: "from-[#4c1d95] to-[#7c3aed]",
     tag: "Analytics",
     title: "Big Data Analytics Solutions",
-    desc: "Your big data will be stored on the right cloud platform and Infoplus Analytics solutions process that data effectively turning raw information into actionable business insights.",
+    desc: "We store your data on the right cloud platform and turn it into insights you can use. Raw data becomes useful information that helps you make better decisions.",
   },
   {
     icon: Settings,
     gradient: "from-[#78350f] to-[#f59e0b]",
     tag: "Managed",
     title: "Managed Cloud",
-    desc: "Infoplus manages your cloud infrastructure using cutting-edge technologies, enabling you to realise the full benefits of cloud computing without the operational burden.",
+    desc: "We handle your entire cloud infrastructure using the latest tools and techniques, so you get all the benefits of cloud without managing it yourself. That means fewer headaches and more time to focus on your business.",
   },
   {
     icon: Shield,
     gradient: "from-[#9a2600] to-[#f85d37]",
     tag: "Security",
     title: "Data Governance & Cyber Security",
-    desc: "Increase your data security to protect sensitive data from cyber threats and ensure compliance with data governance frameworks across all cloud environments.",
+    desc: "We protect your sensitive data from cyber threats with strong, proactive security measures. Whenever you need support, we’re there to keep your systems safe.",
   },
 ];
 
@@ -103,6 +104,25 @@ const CLOUD_PROVIDERS = [
   },
 ];
 
+const CLOUD_FAQS: FAQItem[] = [
+  {
+    q: "Which cloud platform does Infoplus work with – AWS, Azure, or Google Cloud?",
+    a: "All three. We choose the platform that genuinely fits your business needs and existing systems, rather than pushing you toward just one provider.",
+  },
+  {
+    q: "What's the difference between SaaS, IaaS, and PaaS?",
+    a: "SaaS is ready-to-use software online. IaaS gives you virtual infrastructure to build on. PaaS gives you a platform to develop and host applications without managing the underlying services yourself. We help you figure out which one — or which combination — fits your business.",
+  },
+  {
+    q: "Is managed cloud only for large enterprises?",
+    a: "No. Any business that wants to focus on running their operations, rather than managing cloud infrastructure themselves, can benefit — regardless of size.",
+  },
+  {
+    q: "How does Infoplus keep our data secure once it's in the cloud?",
+    a: "We build security into your cloud setup right from the start, not after something goes wrong. That means your data stays protected, monitored, and safe at all times — not just checked occasionally.",
+  },
+];
+
 export default function CloudPage() {
   return (
     <div className="w-full overflow-x-hidden">
@@ -113,7 +133,7 @@ export default function CloudPage() {
       />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
-        title="Cloud Portfolio"
+        title="Best Cloud Delivery Services in UK"
         description="We Offer Cloud Delivery Models That Scale With Your Business"
         badge="IT SERVICES"
         variant="centered"
@@ -134,7 +154,7 @@ export default function CloudPage() {
           </Link>
         </div>
         {/* Provider badges */}
-        <div className="flex items-center justify-center gap-4 mt-10">
+        {/* <div className="flex items-center justify-center gap-4 mt-10">
           {CLOUD_PROVIDERS.map(({ name, gradient }) => (
             <span
               key={name}
@@ -143,7 +163,7 @@ export default function CloudPage() {
               {name}
             </span>
           ))}
-        </div>
+        </div> */}
       </PageHero>
 
       {/* ── Intro ────────────────────────────────────────────── */}
@@ -258,7 +278,7 @@ export default function CloudPage() {
                       <p className="text-[13.5px] text-[#666] leading-relaxed flex-1">
                         {desc}
                       </p>
-                      <div className="flex items-center gap-1 text-[12px] font-semibold text-[#6128a6] group-hover:text-[#f85d37] transition-colors mt-5 pt-5 border-t border-[#f0eff5]">
+                      <div className="flex items-center gap-1 text-[12px] font-semibold text-[#6128a6] group-hover:text-[#f85d37] transition-colors pt-5 border-t border-[#f0eff5]">
                         Learn More <ChevronRight className="w-3.5 h-3.5" />
                       </div>
                     </div>
@@ -361,6 +381,13 @@ export default function CloudPage() {
           </div>
         </div>
       </section>
+
+      <FAQAccordion
+        faqs={CLOUD_FAQS}
+        badge="FAQs"
+        title="Frequently Asked Questions"
+        subtitle="Common questions about cloud services and how Infoplus helps your business move to the cloud."
+      />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="py-20 bg-[#f8f5ff]">
