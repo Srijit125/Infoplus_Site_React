@@ -1,4 +1,6 @@
 import { PageMeta } from "../components/shared/PageMeta";
+import { FAQAccordion } from "../components/shared/FAQAccordion";
+import type { FAQItem } from "../components/shared/FAQAccordion";
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -193,6 +195,25 @@ function CounterStat({ value, label }: { value: string; label: string }) {
   );
 }
 
+const AI_FAQS: FAQItem[] = [
+  {
+    q: "What's the real difference between Machine Learning and Generative AI?",
+    a: "Machine Learning is about spotting patterns in the data you already have, so you can predict what comes next — demand, risk, behaviour. Generative AI works the opposite way: it creates something new — content, code, images — based on what it's learned. Most businesses end up needing both, not one or the other.",
+  },
+  {
+    q: "Can AI genuinely take pressure off our customer service team, or is that overhyped?",
+    a: "It's not overhyped, but it's not magic either. Our conversational AI handles the repetitive, predictable questions your team answers every day, so the humans on your team are free to handle the conversations that actually need judgement and empathy.",
+  },
+  {
+    q: "We don't have \"big data\" – does that rule AI out for us?",
+    a: "No. That's one of the biggest myths about AI. Our AI Centre of Excellence builds solutions around the data you actually have, not the data a tech giant has. A modest, well-organised dataset can still deliver real value.",
+  },
+  {
+    q: "How is AI-Powered Automation actually different from the automation we already use?",
+    a: "Traditional automation is rigid — it does exactly what it's told, every time, no matter what. AI-powered automation can weigh a situation and make a judgement call, adjusting its response instead of blindly following the same script regardless of context.",
+  },
+];
+
 export default function AIPage() {
   const [activeIdx, setActiveIdx] = useState(0);
   const detailRef = useRef<HTMLDivElement>(null);
@@ -350,7 +371,6 @@ export default function AIPage() {
                     : "bg-white text-[#555] border-[#e5e4e7] hover:border-[#6128a6]/40"
                 }`}
               >
-                <span className="text-[9px] opacity-50">{String(i + 1).padStart(2, "0")}</span>
                 {s.title.split(" ").slice(0, 2).join(" ")}
               </button>
             ))}
@@ -407,10 +427,7 @@ export default function AIPage() {
                         <Icon className="w-7 h-7 text-white" />
                       </div>
                       <div>
-                        <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
-                          Service {String(i + 1).padStart(2, "0")} of {SVC.length}
-                        </span>
-                        <h3 className="text-[26px] font-bold text-[#111] mt-0.5 leading-tight">{s.title}</h3>
+                        <h3 className="text-[26px] font-bold text-[#111] leading-tight mb-0">{s.title}</h3>
                         <p className="text-[14px] text-[#6128a6] font-medium italic mt-1">"{s.tagline}"</p>
                       </div>
                     </div>
@@ -460,6 +477,13 @@ export default function AIPage() {
           </div>
         </div>
       </section>
+
+      <FAQAccordion
+        faqs={AI_FAQS}
+        badge="FAQs"
+        title="Frequently Asked Questions"
+        defaultOpen={0}
+      />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="py-20 bg-[#f8f5ff]">

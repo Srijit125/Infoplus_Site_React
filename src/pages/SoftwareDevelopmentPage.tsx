@@ -1,4 +1,6 @@
 import { PageMeta } from "../components/shared/PageMeta";
+import { FAQAccordion } from "../components/shared/FAQAccordion";
+import type { FAQItem } from "../components/shared/FAQAccordion";
 import { Link } from "react-router-dom";
 import {
   Globe,
@@ -74,7 +76,7 @@ const SERVICES: Service[] = [
       "Healthcare",
       "E-Commerce",
       "Retail",
-      "Automotive",
+      "Automation",
       "Entertainment",
       "Banking",
     ],
@@ -97,7 +99,7 @@ const SERVICES: Service[] = [
     number: "03",
     title: "AR & VR Solutions",
     intro:
-      "To increase the engagement with customers, our AR&VR designers can help with the end-to-end solution process so that our clients can explore fully computer-generated worlds and can have a view of the immediate environment.",
+      "Our AR & VR designers help you create impressive experiences that boost how customers engage with your business – from fully virtual worlds to enhanced views of the real one, we handle the whole process end-to-end.",
     highlights: [
       "End-to-end AR/VR solution process",
       "Fully computer-generated world experiences",
@@ -123,7 +125,7 @@ const SERVICES: Service[] = [
     number: "04",
     title: "IoT Solutions",
     intro:
-      "As IoT has a long way to go and there is still a lot of untapped potential, our IoT R&D team constantly looks for ways and means to connect different devices for more meaningful efficiencies and monitoring. Infoplus has the ability to build devices through its esteemed partners. We develop IoT solutions for almost all industries.",
+      "Our IoT research and development team constantly explores new ways to connect devices for smarter monitoring and efficiency. With trusted partners, we can build IoT solutions across almost any industry.",
     highlights: [
       "Computer devices",
       "Wireless Sensors",
@@ -195,6 +197,25 @@ const ENGAGE_STEPS: {
   },
 ];
 
+const SD_FAQS: FAQItem[] = [
+  {
+    q: "Which Technologies does Infoplus use for web development?",
+    a: "We use a wide mix of tools, including HTML, CSS, JavaScript, PHP, ASP.NET, Ruby on Rails, Ajax, Python, and jQuery. We pick whichever ones genuinely fit your project, not a fixed set.",
+  },
+  {
+    q: "Can Infoplus build both Android and iOS apps, or do we need separate teams?",
+    a: "Just one team. We build Android, iOS, and cross-platform apps together, so you don't need to hire different companies for each.",
+  },
+  {
+    q: "Is AR & VR only useful for gaming businesses?",
+    a: "No. Any business that wants to engage customers better — like retail, real estate, or education — can benefit from AR & VR, not just gaming companies.",
+  },
+  {
+    q: "How do you choose the right software development model for our project?",
+    a: "We look at your specific needs first, then pick the best-fit approach — whether that's Agile, Waterfall, Extreme Programming, or Lean — instead of using the same process for every project.",
+  },
+];
+
 export default function SoftwareDevelopmentPage() {
   return (
     <div className="w-full overflow-x-hidden">
@@ -205,8 +226,8 @@ export default function SoftwareDevelopmentPage() {
       />
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
-        title="Software Development"
-        description="Emerging into High Technology Trends"
+        title="Best Software Development Services in UK"
+        description="Technology that Grows As You Do"
         badge="IT SERVICES"
         variant="centered"
       >
@@ -249,19 +270,7 @@ export default function SoftwareDevelopmentPage() {
                 </span>
               </h2>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mt-6">
-                Our development teams are based in Europe and India to fulfil
-                the needs of different delivery models of our clients. Infoplus
-                is a pioneer in designing, developing, and deployment of
-                innovative and customised business-critical software systems and
-                solutions.
-              </p>
-              <p className="text-[15.5px] text-[#555] leading-[1.85] mt-4">
-                With more than two decades of operation, Infoplus Technologies
-                has grown into an internationally recognised staffing service
-                provider because of its innovative technical savvy engineering
-                teams. Through a clear vision and a customised plan, these teams
-                provide cutting-edge services to industry giants, mid-sized
-                companies, and unicorns.
+                Our development teams work across Europe and India, so we can support different clients in the way that suits them best. We’ve spent over two decades designing, building, and deploying custom software that becomes a real asset to your business, not another IT expense.
               </p>
             </ScrollReveal>
 
@@ -340,24 +349,17 @@ export default function SoftwareDevelopmentPage() {
                     // style={{ direction: "ltr" } as React.CSSProperties}
                   >
                     <div style={{ direction: "ltr" }}>
-                      {/* Service number + icon */}
-                      <div className="flex items-center gap-3 mb-5">
+                      {/* Icon + Title inline */}
+                      <div className="flex items-center gap-4 mb-5">
                         <div
-                          className={`w-12 h-12 rounded-xl bg-linear-to-br ${svc.gradient} flex items-center justify-center`}
+                          className={`w-12 h-12 rounded-xl bg-linear-to-br ${svc.gradient} flex items-center justify-center shrink-0`}
                         >
                           <SvcIcon className="w-6 h-6 text-white" />
                         </div>
-                        <span
-                          className="text-[11px] font-bold uppercase tracking-widest"
-                          style={{ color: svc.accentColor }}
-                        >
-                          Service {svc.number}
-                        </span>
+                        <h2 className="text-[32px] font-bold text-[#111] leading-tight mb-0">
+                          {svc.title}
+                        </h2>
                       </div>
-
-                      <h2 className="text-[32px] font-bold text-[#111] leading-tight mb-5">
-                        {svc.title}
-                      </h2>
                       <p className="text-[15.5px] text-[#555] leading-[1.8] mb-7">
                         {svc.intro}
                       </p>
@@ -513,8 +515,15 @@ export default function SoftwareDevelopmentPage() {
         </div>
       </section>
 
+      <FAQAccordion
+        faqs={SD_FAQS}
+        badge=”FAQs”
+        title=”Frequently Asked Questions”
+        defaultOpen={0}
+      />
+
       {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-20 bg-[#f8f5ff]">
+      <section className=”py-20 bg-[#f8f5ff]”>
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
             <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">
