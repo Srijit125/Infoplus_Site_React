@@ -17,6 +17,8 @@ import {
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
+import imgCareerHero from "../assets/images/career_hero.jpg";
+import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 
 type TestType = {
   icon: LucideIcon;
@@ -37,13 +39,13 @@ const TESTING_TYPES: TestType[] = [
     icon: Globe,
     gradient: "from-[#381f55] to-[#6128a6]",
     title: "SOA / Web Services Testing",
-    desc: "Comprehensive testing of service-oriented architecture and web services to ensure seamless integration and performance across distributed systems.",
+    desc: "We check that your systems, APIs, and services communicate with each other correctly. This stops silent failures and broken connections between the platforms you rely on.",
   },
   {
     icon: Zap,
     gradient: "from-[#9a2600] to-[#f85d37]",
     title: "Load & Performance Testing",
-    desc: "Simulate real-world traffic conditions to evaluate system behaviour under peak load and identify performance bottlenecks before they affect users.",
+    desc: "We test how your software behaves under real-world pressure, not just ideal conditions. You find out where the limits are before your users do.",
   },
   {
     icon: RefreshCcw,
@@ -60,51 +62,45 @@ const TESTING_TYPES: TestType[] = [
   {
     icon: Layers,
     gradient: "from-[#0f766e] to-[#14b8a6]",
-    title: "Unit / Integration / System / UAT",
-    desc: "Full-spectrum testing from unit-level code validation through integration checks, system-wide testing, and final user acceptance testing with real users.",
+    title: "Unit/ Integration/ system/ User Acceptance Testing (UAT)",
+    desc: "We test your software at every stage – big and small- to make sure it all works together properly.",
   },
   {
     icon: Activity,
     gradient: "from-[#78350f] to-[#f59e0b]",
     title: "Functional & Compatibility Testing",
-    desc: "Verify that software functions exactly as intended across different platforms, browsers, devices, and operating system configurations.",
+    desc: "We check that every feature works exactly the way it’s supposed to. We also make sure it runs smoothly on all the devices, browsers, and platforms your users are likely to use.",
   },
 ];
 
 const SOLUTIONS: SolutionItem[] = [
   {
     icon: Target,
-    number: "01",
     title: "Software Testing Is Important",
     tagline: "So, Do Not Start From Scratch Again.",
   },
   {
     icon: Users,
-    number: "02",
     title: "Test So That Customers Do Not Lose Confidence",
     tagline: "In The Software.",
   },
   {
     icon: Search,
-    number: "03",
     title: "To Know If The Product Has Bad Hidden Features",
     tagline: "Surface defects before they reach your users.",
   },
   {
     icon: AlertCircle,
-    number: "04",
     title: "The Software Will Not End Up As An Error",
     tagline: "Prevent critical failures from reaching production.",
   },
   {
     icon: Zap,
-    number: "05",
     title: "Test to Determine Software Performance",
     tagline: "Understand how your software behaves under real conditions.",
   },
   {
     icon: CheckCircle2,
-    number: "06",
     title: "Verify All Aspects Of The Software",
     tagline: "Comprehensive validation across every feature and user flow.",
   },
@@ -121,14 +117,23 @@ const STRATEGY_STEPS = [
   "Baseline and deploy in Production",
 ];
 
-const WHY_COE = [
-  "Proven expertise in developing Testing strategies and solutions",
-  "Delivers simplified and cost-effective testing solutions across the globe",
-  "Strong programming background of testing professionals",
-  "Commitment to quality, timely delivery, round the clock support",
-  "Adds inspiration and innovation to business",
-  "Helps software development and maintenance teams regain time for the things that matter",
-  "Nurtured a winning team that has a passion for excellence",
+const TESTING_FAQS: FAQItem[] = [
+  {
+    q: "What's the difference between Load testing and performance testing?",
+    a: "Load testing checks how your software is working when lots of people are using it at the same time. Performance testing checks how fast and stable it is overall. We check both, so nothing gets missed.",
+  },
+  {
+    q: "If we already do security testing, do we still need penetration testing?",
+    a: "Yes, it tests your system like a real attacker would, which is different from regular security checks.",
+  },
+  {
+    q: "What's the difference between system testing and user acceptance testing?",
+    a: "System testing checks that the technical side works. User acceptance testing checks that real users can actually use it properly.",
+  },
+  {
+    q: "How long does testing usually take?",
+    a: "It depends on how big or complex your software is. We look at each project individually, rather than using a fixed timeline, so testing is thorough without wasting time.",
+  },
 ];
 
 export default function TestingPage() {
@@ -141,7 +146,7 @@ export default function TestingPage() {
       />
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
-        title="Testing"
+        title="Best Testing services in UK"
         description="We're Delivering Quality Products & Services"
         badge="IT SERVICES"
         variant="centered"
@@ -163,25 +168,86 @@ export default function TestingPage() {
         </div>
       </PageHero>
 
-      {/* â”€â”€ CoE Intro â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-20 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
-        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
-        <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center">
-          <ScrollReveal direction="fade">
-            <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
-              Testing Center of Excellence
-            </span>
-            <h2 className="text-[36px] font-bold text-[#111] mt-3 mb-6">
-              Quality Is Not an Act, It's a Habit
-            </h2>
-            <p className="text-[16px] text-[#555] leading-[1.85] max-w-3xl mx-auto">
-              Infoplus Testing Center of Excellence believes the following, and
-              the team ensures that it practises these tenets every time. As
-              offerings, Infoplus delivers testing services across different
-              types of testing built on a foundation of precision, automation,
-              and an unwavering commitment to quality.
-            </p>
-          </ScrollReveal>
+      {/* Why Choose Us */}
+      <section className=”py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20”>
+        <div className=”absolute top-[-10%] right-[-8%] w-96 h-96 rounded-full bg-[#ecdaff] opacity-50 blur-[100px] pointer-events-none” />
+        <div className=”absolute bottom-[-8%] left-[-5%] w-72 h-72 rounded-full bg-[#6128a6]/10 blur-[80px] pointer-events-none” />
+
+        <div className=”container mx-auto px-6 max-w-7xl relative z-10”>
+          <div className=”grid grid-cols-1 lg:grid-cols-2 gap-16 items-center”>
+
+            {/* Left — content */}
+            <ScrollReveal direction=”left”>
+              <div>
+                <span className=”inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5”>
+                  Why Choose Us
+                </span>
+                <h2 className=”text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold text-[#0d0517] leading-tight mb-6”>
+                  Why Choose Infoplus for{“ “}
+                  <span className=”text-[#6128a6]”>Software Testing</span>
+                </h2>
+                <p className=”text-[15px] text-[#555] leading-relaxed mb-4 text-justify”>
+                  Our testing centre of excellence brings real programming depth to every project, not just a
+                  checklist mentality. We build testing into how software gets developed, so quality isn't a
+                  last-minute scramble before launch.
+                </p>
+                <p className=”text-[15px] text-[#555] leading-relaxed mb-10 text-justify”>
+                  Whether you need a single round of testing or an ongoing QA (Quality Assurance) Partner, we
+                  tailor our approach to your product and your technology, not a generic template.
+                </p>
+
+                {/* Feature tiles */}
+                <div className=”grid grid-cols-2 gap-3”>
+                  {[
+                    { icon: Target,       label: “Proven expertise in developing Testing strategies and solutions”,              color: “#6128a6” },
+                    { icon: Globe,        label: “Delivers simplified and cost-effective testing solutions across the globe”,    color: “#aa3bff” },
+                    { icon: Zap,          label: “Adds inspiration and innovation to business”,                                  color: “#f85d37” },
+                    { icon: Shield,       label: “Commitment to quality, timely delivery, round the clock support”,             color: “#14b8a6” },
+                    { icon: Users,        label: “Nurtured a winning team that has a passion for excellence”,                   color: “#f85d37” },
+                  ].map((f, i) => (
+                    <div
+                      key={f.label}
+                      className={`flex items-center gap-3 p-4 rounded-2xl border border-[#f0ecf9] hover:border-[#6128a6]/25 hover:shadow-[0_4px_16px_rgba(97,40,166,0.08)] transition-all duration-300 bg-[#fafafe]${i === 4 ? “ col-span-2” : “”}`}
+                    >
+                      <div
+                        className=”w-9 h-9 rounded-xl flex items-center justify-center shrink-0”
+                        style={{ backgroundColor: `${f.color}18`, color: f.color }}
+                      >
+                        <f.icon className=”w-4 h-4” />
+                      </div>
+                      <p className=”text-[13px] font-semibold text-[#0d0517] leading-snug”>{f.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Right — image panel */}
+            <ScrollReveal direction=”right” delay={120}>
+              <div className=”relative”>
+                <div className=”rounded-3xl overflow-hidden lg:min-h-[500px]”>
+                  <img
+                    src={imgCareerHero}
+                    alt=”Infoplus Testing team at work”
+                    className=”w-full h-full object-cover”
+                  />
+                </div>
+
+                {/* Floating stat */}
+                <div className=”absolute -bottom-5 -left-5 bg-white rounded-2xl px-5 py-4 shadow-[0_8px_32px_rgba(97,40,166,0.12)] border border-[#ecdaff]”>
+                  <p className=”text-[26px] font-black text-[#6128a6] leading-none mb-0”>100%</p>
+                  <p className=”text-[11px] text-[#888]”>Coverage Goal</p>
+                </div>
+
+                {/* Floating badge */}
+                <div className=”absolute -top-4 -right-4 bg-[#f85d37] text-white rounded-2xl px-4 py-3 shadow-[0_8px_24px_rgba(248,93,55,0.30)]”>
+                  <p className=”text-[11px] font-bold uppercase tracking-widest mb-0”>QA CoE</p>
+                  <p className=”text-[10px] opacity-80”>Certified</p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+          </div>
         </div>
       </section>
 
@@ -208,19 +274,20 @@ export default function TestingPage() {
                   direction="up"
                   variant="card"
                   delay={i * 90}
+                  className="h-full"
                 >
-                  <div className="group bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.12)] hover:-translate-y-1 hover:border-[#6128a6]/25 transition-all duration-300">
+                  <div className="group h-full flex flex-col bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.12)] hover:-translate-y-1 hover:border-[#6128a6]/25 transition-all duration-300">
                     <div className={`h-1.5 bg-linear-to-r ${t.gradient}`} />
-                    <div className="p-7">
+                    <div className="flex-1 p-7 flex flex-col">
                       <div
-                        className={`w-12 h-12 rounded-xl bg-linear-to-br ${t.gradient} flex items-center justify-center mb-5`}
+                        className={`w-12 h-12 rounded-xl bg-linear-to-br ${t.gradient} flex items-center justify-center mb-5 shrink-0`}
                       >
                         <TIcon className="w-6 h-6 text-white" />
                       </div>
                       <h3 className="text-[16px] font-bold text-[#111] mb-3 leading-snug group-hover:text-[#6128a6] transition-colors">
                         {t.title}
                       </h3>
-                      <p className="text-[13.5px] text-[#666] leading-relaxed">
+                      <p className="text-[13.5px] text-[#666] leading-relaxed flex-1">
                         {t.desc}
                       </p>
                     </div>
@@ -264,20 +331,17 @@ export default function TestingPage() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {SOLUTIONS.map(({ icon: SIcon, number, title, tagline }, i) => (
+            {SOLUTIONS.map(({ icon: SIcon, title, tagline }, i) => (
               <ScrollReveal key={i} direction="fade" delay={i * 80}>
                 <div className="group bg-white/5 border border-white/8 rounded-2xl p-6 hover:bg-white/8 hover:border-[#6128a6]/40 transition-all duration-300">
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-center gap-4 mb-3">
                     <div className="w-11 h-11 rounded-xl bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center shrink-0">
                       <SIcon className="w-5 h-5 text-white" />
                     </div>
-                    <span className="text-[32px] font-black text-white/8 leading-none self-end mb-1">
-                      {number}
-                    </span>
+                    <h3 className="text-[15px] font-bold text-white leading-snug mb-0">
+                      {title}
+                    </h3>
                   </div>
-                  <h3 className="text-[15px] font-bold text-white mt-4 mb-2 leading-snug">
-                    {title}
-                  </h3>
                   <p className="text-[13px] text-white/45 leading-relaxed italic">
                     {tagline}
                   </p>
@@ -370,45 +434,12 @@ export default function TestingPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Why Infoplus CoE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-20 bg-[#f8f5ff] relative overflow-hidden">
-        <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-[#ecdaff]/60 blur-[100px] pointer-events-none" />
-
-        <div className="container mx-auto px-6 max-w-6xl relative z-10">
-          <ScrollReveal direction="fade">
-            <div className="text-center mb-12">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
-                The Infoplus Difference
-              </span>
-              <h2 className="text-[36px] font-bold text-[#111] mt-2">
-                Why Infoplus Testing CoE?
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {WHY_COE.map((point, i) => (
-              <ScrollReveal
-                key={i}
-                direction={i % 2 === 0 ? "left" : "right"}
-                delay={i * 70}
-              >
-                <div className="flex items-start gap-4 bg-white border border-[#e5e4e7] rounded-xl p-5 hover:border-[#6128a6]/30 hover:shadow-[0_8px_24px_-4px_rgba(97,40,166,0.08)] transition-all duration-300">
-                  <div className="w-8 h-8 rounded-lg bg-[#ecdaff] flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#6128a6]" />
-                  </div>
-                  <p className="text-[14.5px] text-[#333] font-medium leading-relaxed">
-                    {point}
-                  </p>
-                </div>
-              </ScrollReveal>
-            ))}
-
-            {/* Full-width last item if odd count */}
-            {WHY_COE.length % 2 !== 0 && <div className="hidden md:block" />}
-          </div>
-        </div>
-      </section>
+      <FAQAccordion
+        faqs={TESTING_FAQS}
+        badge=”FAQs”
+        title=”Frequently Asked Questions”
+        subtitle=”Common questions about our testing services. Can't find what you're looking for? Reach out to our team.”
+      />
 
       {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-20 bg-white">

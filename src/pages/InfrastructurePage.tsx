@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
+import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 
 type Benefit = {
   icon: LucideIcon;
@@ -39,67 +40,86 @@ const INFRA_SERVICES: InfraService[] = [
     icon: Monitor,
     gradient: "from-[#381f55] to-[#6128a6]",
     title: "Infrastructure Monitoring & Real-time Dashboards",
-    desc: "Continuous monitoring of your entire IT estate with live dashboards that surface the status of business-critical services dynamically.",
+    desc: "We give you a live, clear view of your systems, so you always know exactly what’s happening, not what happened yesterday.",
   },
   {
     icon: Activity,
     gradient: "from-[#1e3a8a] to-[#3b82f6]",
     title: "Application Monitoring & Management",
-    desc: "End-to-end visibility into application health, performance metrics, and availability ensuring your apps run at peak efficiency.",
+    desc: "We keep a close eye on your applications, catching issues early before they affect your users.",
   },
   {
     icon: Clock,
     gradient: "from-[#0f766e] to-[#14b8a6]",
     title: "Availability Management",
-    desc: "Proactive management of system uptime, SLA adherence, and failover strategies to minimise downtime and maintain business productivity.",
+    desc: "We work to keep your systems up and running consistently, minimising the downtime that costs your business.",
   },
   {
     icon: BarChart2,
     gradient: "from-[#4c1d95] to-[#7c3aed]",
     title: "Capacity Planning & Management",
-    desc: "Forecast future infrastructure demand and optimise resource allocation to ensure your environment scales seamlessly with business growth.",
+    desc: "We plan ahead so your systems can handle growth rather than buckling under it when demand increases.",
   },
   {
     icon: TrendingUp,
     gradient: "from-[#78350f] to-[#f59e0b]",
     title: "Performance & Load Monitoring",
-    desc: "Real-time performance baselines and load analysis to detect anomalies early and prevent degradation before it impacts end users.",
+    desc: "We track how your systems perform under real conditions, so slow downs get caught before your customers notice.",
   },
   {
     icon: Shield,
     gradient: "from-[#9a2600] to-[#f85d37]",
     title: "Vulnerability & Automatic Patch Management",
-    desc: "Automated scanning, vulnerability reporting, and patch deployment pipelines that keep your infrastructure secure and compliant.",
+    desc: "We keep your systems updated and protected automatically, closing security gaps before they become a real risk.",
   },
   {
     icon: Globe,
     gradient: "from-[#1e3a8a] to-[#3b82f6]",
     title: "Follow-the-Sun Support Model",
-    desc: "Round-the-clock coverage with globally distributed teams that provide seamless handoffs across time zones for uninterrupted support.",
+    desc: "We provide support around the clock, handed off across time zones, so help is always available when you need it.",
   },
   {
     icon: Layers,
     gradient: "from-[#381f55] to-[#6128a6]",
     title: "SIAM System Integration & Asset Management",
-    desc: "Centralised governance of multi-vendor service relationships and complete visibility over your technology asset inventory.",
+    desc: "We bring together your different systems and vendors into one coordinated approach, so nothing falls through the cracks.",
   },
   {
     icon: Activity,
     gradient: "from-[#0f766e] to-[#14b8a6]",
     title: "Health Checks & Peak Season Programmes",
-    desc: "Scheduled infrastructure health assessments and bespoke readiness programmes to ensure resilience during high-demand periods.",
+    desc: "We prepare your systems in advance for high-demand periods, so they hold up when it matters most.",
   },
   {
     icon: Target,
     gradient: "from-[#4c1d95] to-[#7c3aed]",
     title: "Consulting & Implementation Services",
-    desc: "Strategic advisory and hands-on implementation support for infrastructure modernisation, automation, and process transformation.",
+    desc: "We guide you through infrastructure decisions and put the right solutions in place properly, from planning to execution.",
   },
   {
     icon: Server,
     gradient: "from-[#9a2600] to-[#f85d37]",
     title: "Data Center Migrations",
-    desc: "End-to-end migration planning and execution from on-premises to cloud or hybrid environments with minimal disruption to operations.",
+    desc: "We move your infrastructure to new environments carefully, minimising disruption to your day-to-day operations.",
+  },
+];
+
+const INFRA_FAQS: FAQItem[] = [
+  {
+    q: "What's the difference between infrastructure Monitoring and Application Monitoring?",
+    a: "Infrastructure monitoring checks your services, networks, and hardware. Application monitoring checks how your actual software is performing. We cover both, so nothing gets missed.",
+  },
+  {
+    q: "What does 'Follow-the-sun' support mean?",
+    a: "It means different teams around the world take turns supporting you, so help is always available, no matter what time it is for you.",
+  },
+  {
+    q: "Why do we need capacity planning if everything's working fine right now?",
+    a: "Because things can change fast as your business grows. Capacity planning ensures your systems are ready for that growth, rather than breaking down when it happens.",
+  },
+  {
+    q: "Will a data centre migration disrupt our business?",
+    a: "No — we move things carefully so your operations keep running smoothly.",
   },
 ];
 
@@ -113,7 +133,7 @@ export default function InfrastructurePage() {
       />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
-        title="Infrastructure Management"
+        title="Best Infrastructure Management Services In UK"
         description="We Deliver Industry-Leading Best Practices and Technologies"
         badge="IT SERVICES"
         variant="centered"
@@ -152,16 +172,10 @@ export default function InfrastructurePage() {
                   <span className="text-[#6128a6]">for Global Enterprises</span>
                 </h2>
                 <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
-                  Infoplus has built its reputation helping leading global organisations with the
-                  administration and management of technology, information, and data in a proactive
-                  way. Our integrated IT infrastructure management solutions and services give a
-                  consolidated end-to-end view of your infrastructure and applications.
+                  We've built our reputation by helping large, global organisations manage their technology and data proactively, not just reactively. Our infrastructure management provides a single, complete view of your systems and applications, so nothing gets missed.
                 </p>
                 <p className="text-[15.5px] text-[#555] leading-[1.85]">
-                  Our main goal for our clients is to minimise downtime and maintain business
-                  productivity. The dashboards we provide help you view the status of your
-                  business-critical services dynamically. We, together with our partners, deliver
-                  this through industry-leading best practices and technologies.
+                  Our main goal is simple: keep your downtime low and your business running smoothly. We deliver all of this using proven, industry- leading practices, working alongside trusted partners.
                 </p>
               </ScrollReveal>
             </div>
@@ -288,6 +302,13 @@ export default function InfrastructurePage() {
           </div>
         </div>
       </section>
+
+      <FAQAccordion
+        faqs={INFRA_FAQS}
+        badge="FAQs"
+        title="Frequently Asked Questions"
+        subtitle="Common questions about our infrastructure services. Can't find what you're looking for? Reach out to our team."
+      />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="py-20 bg-white">
