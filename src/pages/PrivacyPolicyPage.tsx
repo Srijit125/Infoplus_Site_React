@@ -228,19 +228,9 @@ export default function PrivacyPolicyPage() {
                     <li key={s.id}>
                       <a
                         href={`#${s.id}`}
-                        className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-[12px] transition-all duration-200"
-                        style={{
-                          color: activeId === s.id ? s.accent : "#444",
-                          backgroundColor:
-                            activeId === s.id ? `${s.accent}12` : undefined,
-                        }}
+                        className={`flex items-center gap-2 px-2 py-1.5 rounded-lg text-[12px] text-[#0d0517] transition-all duration-200 ${activeId === s.id ? "font-semibold" : "font-medium"}`}
+                        style={{ backgroundColor: activeId === s.id ? `${s.accent}12` : undefined }}
                       >
-                        <span
-                          className="text-[10px] font-black w-5 shrink-0"
-                          style={{ color: s.accent }}
-                        >
-                          {s.num}
-                        </span>
                         <span className="flex-1">{s.title}</span>
                         {activeId === s.id && (
                           <ChevronRight
@@ -270,24 +260,16 @@ export default function PrivacyPolicyPage() {
                   />
 
                   {/* Header */}
-                  <div className="flex items-center gap-3 mb-5 pl-4">
+                  <div className="flex items-center gap-3 pl-4 mb-2">
                     <div
                       className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
                       style={{ backgroundColor: `${s.accent}15`, color: s.accent }}
                     >
                       <s.icon className="w-4.5 h-4.5" />
                     </div>
-                    <div>
-                      <span
-                        className="text-[10px] font-black tracking-widest block"
-                        style={{ color: s.accent }}
-                      >
-                        {s.num}
-                      </span>
-                      <h2 className="text-[17px] font-bold text-[#0d0517] leading-tight">
-                        {s.title}
-                      </h2>
-                    </div>
+                    <h2 className="text-[17px] font-bold text-[#0d0517] leading-tight mb-0">
+                      {s.title}
+                    </h2>
                   </div>
 
                   {/* Body */}
