@@ -1,6 +1,7 @@
 ﻿import { PageMeta } from "../components/shared/PageMeta";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
+import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 import {
   Database,
   CheckCircle2,
@@ -19,15 +20,51 @@ import {
 
 /* â"€â"€ Our Solutions â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */
 const SOLUTIONS = [
-  { icon: Search, label: "Data Cleaning & Standardization" },
-  { icon: Database, label: "Material Master Consultancy" },
-  { icon: Users, label: "Vendor Master Cleaning" },
-  { icon: ClipboardList, label: "Physical Verification" },
-  { icon: Package, label: "Plant Asset Management" },
-  { icon: Shield, label: "Data Governance" },
-  { icon: Layers, label: "Service Masters" },
-  { icon: BarChart3, label: "Product Master Management" },
-  { icon: CheckCircle2, label: "Consultancy Support" },
+  {
+    icon: Search,
+    label: "Data Cleaning & Standardisation",
+    desc: "We fix duplicate, messy, and inconsistent data so every record follows the same clear standard. This gives your business one clean, trustworthy version of the truth to work from.",
+  },
+  {
+    icon: Database,
+    label: "Material Master Consultancy",
+    desc: "We guide you through organising your material data properly by using proven methods from decades of real projects. You get expert advice, not just software recommendations.",
+  },
+  {
+    icon: Users,
+    label: "Vendor Master Cleaning",
+    desc: "We clean up and organise your supplier records, so there's no confusion between duplicated or outdated vendor entries. This makes purchasing and payments smoother and more accurate.",
+  },
+  {
+    icon: ClipboardList,
+    label: "Physical Verification",
+    desc: "We not only do verification digitally in your systems. We check your actual assets and materials on-site physically to confirm that they match what is recorded in the systems. We do this to close the gap between the digital records and the physical records.",
+  },
+  {
+    icon: Package,
+    label: "Plant Asset Management",
+    desc: "We help you manage and track your equipment and inventory properly, so you always know what you have — nothing gets lost or wasted.",
+  },
+  {
+    icon: Shield,
+    label: "Data Governance",
+    desc: "We set up simple rules and approval steps to keep your data accurate over time, so problems don't come back later.",
+  },
+  {
+    icon: Layers,
+    label: "Service Masters",
+    desc: "We organise your service-related data so it's consistent across every team and system, making your reports and decisions more reliable.",
+  },
+  {
+    icon: BarChart3,
+    label: "Product Master Management",
+    desc: "We keep your product information consistent and accurate everywhere it's used, stopping mismatches between what's listed and what's actually available.",
+  },
+  {
+    icon: CheckCircle2,
+    label: "Consultancy Support",
+    desc: "Our team stays with you for ongoing support — not just a one-time fix and then leave you.",
+  },
 ];
 
 /* â"€â"€ Core Values â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */
@@ -151,6 +188,25 @@ const BENEFITS: {
   },
 ];
 
+const MDM_FAQS: FAQItem[] = [
+  {
+    q: "What is master data management in simple terms?",
+    a: "It's the process of organising your core business data and cleaning it up — things like materials, suppliers, or assets — so everyone in your business works from the same accurate information, instead of conflicting versions.",
+  },
+  {
+    q: "Why does my data get messy in the first place?",
+    a: "When our company was started many years ago, the data was entered by different people without a consistent system. Add merges, new software, or manual processes, and errors build up naturally.",
+  },
+  {
+    q: "What's the difference between data cleansing and BAU cataloguing?",
+    a: "Data cleansing fixes the problems and mess that already exists. BAU cataloguing keeps things accurate going forward, so new data doesn't fall into the same problems.",
+  },
+  {
+    q: "Why would I need a plant walkdown if I already have digital records?",
+    a: "Because what you see on screen doesn't always match what's physically there. A plant walkdown means we check your equipment in person, so we know your records are actually correct.",
+  },
+];
+
 export default function MasterDataManagementPage() {
   return (
     <div className="w-full">
@@ -162,8 +218,8 @@ export default function MasterDataManagementPage() {
       {/* â"€â"€ Hero â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <PageHero
         badge="PRODUCTS"
-        title="Master Data Management"
-        description="We fulfill the needs of different delivery models crafting a single version of the truth so your master data achieves the strategic foundational goal of providing accurate, reusable, and seamlessly syndicated information."
+        title="Clean Data. Confident Solutions"
+        description="Messy data leads to guesswork–duplicate records, wrong numbers, and then we need to make decisions on shaky ground. We clean up all the mess, and we fix it that way, so every decision your business makes is backed by the information you can actually trust."
         variant="gradient"
       >
         <div className="flex flex-col sm:flex-row justify-center gap-3">
@@ -305,14 +361,18 @@ export default function MasterDataManagementPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {SOLUTIONS.map((sol, i) => (
               <ScrollReveal key={sol.label} variant="card" delay={i * 60}>
-                <div className="group flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl px-6 py-5 hover:bg-white/10 hover:border-[#aa3bff]/40 hover:shadow-[0_8px_32px_rgba(170,59,255,0.12)] transition-all duration-300 cursor-default">
-                  <div className="w-10 h-10 rounded-xl bg-linear-to-br from-[#6128a6] to-[#aa3bff] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <sol.icon className="w-5 h-5 text-white" />
+                <div className="group h-full bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-[#aa3bff]/40 hover:shadow-[0_8px_32px_rgba(170,59,255,0.12)] transition-all duration-300 cursor-default">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-linear-to-br from-[#6128a6] to-[#aa3bff] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <sol.icon className="w-5 h-5 text-white" />
+                    </div>
+                    <span className="text-[14px] font-semibold text-white/90 group-hover:text-white transition-colors leading-snug">
+                      {sol.label}
+                    </span>
                   </div>
-                  <span className="text-[14px] font-semibold text-white/90 group-hover:text-white transition-colors">
-                    {sol.label}
-                  </span>
-                  <ChevronRight className="w-4 h-4 text-white/20 group-hover:text-[#aa3bff] ml-auto shrink-0 group-hover:translate-x-1 transition-all duration-300" />
+                  <p className="text-[12.5px] text-white/50 leading-relaxed">
+                    {sol.desc}
+                  </p>
                 </div>
               </ScrollReveal>
             ))}
@@ -516,6 +576,8 @@ export default function MasterDataManagementPage() {
           </div>
         </div>
       </section>
+
+      <FAQAccordion faqs={MDM_FAQS} badge="FAQs" title="Frequently Asked Questions" subtitle="Common questions about our master data management services." />
 
       {/* â"€â"€ CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">

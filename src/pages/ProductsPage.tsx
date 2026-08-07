@@ -3,6 +3,26 @@ import { PageHero } from "../components/shared/PageHero";
 import { Link } from "react-router-dom";
 import { Database, GraduationCap, CheckCircle2, ChevronRight } from "lucide-react";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
+import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
+
+const PRODUCTS_FAQS: FAQItem[] = [
+  {
+    q: "What is Master Data Management, and why do I need it?",
+    a: "It means organising your important data properly, so everyone works from the same accurate information.",
+  },
+  {
+    q: "Who is Education Solutions for?",
+    a: "It's made for technical students and working professionals who are looking for a proper, structured way to build real skills — it's not about just watching videos. It's especially useful for anyone in engineering or technical fields.",
+  },
+  {
+    q: "Is Master Data Management only for big companies?",
+    a: "No — any business with growing or messy data can benefit.",
+  },
+  {
+    q: "What makes Education Solutions different from other online learning platforms?",
+    a: "It's officially recognised under India's NEAT education programme, so it's a step above typical course platforms. At the same time, it's focused specifically on technical and vocational learning — so it's held to a higher standard than a typical course website.",
+  },
+];
 
 function ProductsPage() {
   const products = [
@@ -77,6 +97,8 @@ function ProductsPage() {
           </div>
         </div>
       </section>
+
+      <FAQAccordion faqs={PRODUCTS_FAQS} badge="FAQs" title="Frequently Asked Questions" subtitle="Common questions about our products." />
     </div>
   );
 }

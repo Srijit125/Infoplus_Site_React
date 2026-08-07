@@ -2,6 +2,7 @@ import { PageMeta } from "../components/shared/PageMeta";
 import { useState } from "react";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
+import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 import {
   BookOpen,
   MessageSquare,
@@ -257,6 +258,25 @@ const BENEFIT_GROUPS = [
   },
 ];
 
+const EDUCATION_FAQS: FAQItem[] = [
+  {
+    q: "What makes Learnengg different from a typical online learning platform?",
+    a: "It's recognised as part of NEAT, an official initiative by India's Ministry of Education and AICTE — meaning it's held to a national standard for education technology, not just another course website.",
+  },
+  {
+    q: "Can I learn on Learnengg without a laptop, or do I need specific equipment?",
+    a: "No specific equipment needed. Learnengg works across computers, laptops, tablets, and mobile phones, both online and offline, so you can learn wherever suits you.",
+  },
+  {
+    q: "Is Learnengg only for engineering students, or does it cover other technical fields too?",
+    a: "It's built specifically for technical students and professionals, focused on high-employability skills — so it's relevant well beyond a single engineering discipline.",
+  },
+  {
+    q: "Does the platform just provide videos, or is there structured content and practice material too?",
+    a: "It's structured, in-depth content — including important questions and answers — not just passive video watching, so learners actually retain and apply what they study.",
+  },
+];
+
 export default function EducationSolutionsPage() {
   const [activeTab, setActiveTab] = useState<Tab>("Approach");
 
@@ -270,7 +290,7 @@ export default function EducationSolutionsPage() {
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
         badge="PRODUCTS"
-        title="Education Solutions"
+        title="World’s Best E-Learning Solution For Technical Students"
         description="One-step learning solution for every technical student and professional. Learnengg is proud to be part of the NEAT initiative by MHRD & AICTE bringing the best technological products in education on a single platform for the convenience of learners."
         variant="gradient"
       >
@@ -963,6 +983,8 @@ export default function EducationSolutionsPage() {
           </div>
         </div>
       </section>
+
+      <FAQAccordion faqs={EDUCATION_FAQS} badge="FAQs" title="Frequently Asked Questions" subtitle="Common questions about our education solutions." />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
