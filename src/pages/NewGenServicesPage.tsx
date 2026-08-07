@@ -1,4 +1,4 @@
-﻿import { PageMeta } from "../components/shared/PageMeta";
+import { PageMeta } from "../components/shared/PageMeta";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
@@ -17,14 +17,14 @@ import {
 import { Link } from "react-router-dom";
 import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 
-/* â”€â”€ Services â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* â"€â"€ Services â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */
 const SERVICES = [
   {
     icon: TrendingUp,
     title: "Enterprise Transformations",
     href: "/services/new-generation/enterprise-transformation",
     gradient: "from-[#381f55] to-[#6128a6]",
-    desc: "We help you update old systems and habits so your business runs in a modern way. It’s about changing how the whole company operates. Not just adding new tools. The business transforms from the current state to the updated version. And staying up to date.",
+    desc: "We help you update old systems and habits so your business runs in a modern way. It's about changing how the whole company operates. Not just adding new tools. The business transforms from the current state to the updated version. And staying up to date.",
     highlights: ["Legacy Modernisation", "Change Management", "Agile Adoption", "Digital Roadmaps"],
   },
   {
@@ -40,12 +40,12 @@ const SERVICES = [
     title: "Automation",
     href: "/services/new-generation/automation",
     gradient: "from-[#381f55] to-[#6128a6]",
-    desc: "We handle the repetitive, manual tasks so your team can spend on the work that really matters. We take the boring, repeated tasks off your team’s hands. This saves time, reduces mistakes, and lets your team focus on more important work.",
+    desc: "We handle the repetitive, manual tasks so your team can spend on the work that really matters. We take the boring, repeated tasks off your team's hands. This saves time, reduces mistakes, and lets your team focus on more important work.",
     highlights: ["RPA Implementation", "Intelligent Workflows", "Process Mining", "AI Automation"],
   },
 ];
 
-/* â”€â”€ Why next-gen â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* â"€â"€ Why next-gen â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */
 const WHY_NEXTGEN = [
   { icon: Rocket,    label: "Ahead of the Curve",    sub: "Stay ahead of competitors who delay" },
   { icon: RefreshCw, label: "Legacy to Agile",       sub: "Streamline outdated models into lean" },
@@ -80,7 +80,7 @@ export default function NewGenServicesPage() {
         description="Lead your digital future with Infoplus Technologies UK's new generation services enterprise transformation, data analytics, and intelligent automation for the modern enterprise."
         path="/services/new-generation"
       />
-      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Hero â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <PageHero
         badge="NEW-GEN SOLUTIONS"
         title="Next-Generation IT Services for Smarter Business Growth"
@@ -104,7 +104,7 @@ export default function NewGenServicesPage() {
         </div>
       </PageHero>
 
-      {/* â”€â”€ Intro + Why New-Gen â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Intro + Why New-Gen â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#ecdaff] opacity-50 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -159,69 +159,69 @@ export default function NewGenServicesPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Why Choose Infoplus â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className=”py-20 bg-white relative overflow-hidden”>
-        <div className=”absolute top-0 right-0 w-125 h-125 rounded-full bg-[#f8f5ff] blur-[100px] pointer-events-none” />
+      {/* â"€â"€ Why Choose Infoplus â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-125 h-125 rounded-full bg-[#f8f5ff] blur-[100px] pointer-events-none" />
         <div
-          className=”absolute inset-0 opacity-[0.025] pointer-events-none”
-          style={{ backgroundImage: “radial-gradient(circle, #6128a6 1px, transparent 1px)”, backgroundSize: “32px 32px” }}
+          className="absolute inset-0 opacity-[0.025] pointer-events-none"
+          style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "32px 32px" }}
         />
-        <div className=”container mx-auto px-6 max-w-7xl relative z-10”>
-          <ScrollReveal direction=”up”>
-            <div className=”text-center mb-12”>
-              <span className=”inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5”>
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          <ScrollReveal direction="up">
+            <div className="text-center mb-12">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Why Choose Us
               </span>
-              <h2 className=”text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-[#0d0517] leading-tight max-w-3xl mx-auto”>
-                Why Choose Infoplus for{“ “}
-                <span className=”text-[#6128a6]”>New Generation IT Services?</span>
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-[#0d0517] leading-tight max-w-3xl mx-auto">
+                Why Choose Infoplus for{" "}
+                <span className="text-[#6128a6]">New Generation IT Services?</span>
               </h2>
             </div>
           </ScrollReveal>
 
-          <div className=”grid grid-cols-1 md:grid-cols-3 gap-6”>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {([
               {
-                num: “01”, icon: TrendingUp,
-                gradient: “from-[#381f55] to-[#6128a6]”, accent: “#6128a6”,
-                cardBg: “#f8f5ff”, cardBorder: “#e4dcf5”,
-                hoverShadow: “hover:shadow-[0_20px_60px_-12px_rgba(97,40,166,0.18)]”,
-                title: “We Keep You Ahead”,
-                desc: “Technology is always changing, and businesses that don't keep up fall behind — we make sure you don't.”,
+                num: "01", icon: TrendingUp,
+                gradient: "from-[#381f55] to-[#6128a6]", accent: "#6128a6",
+                cardBg: "#f8f5ff", cardBorder: "#e4dcf5",
+                hoverShadow: "hover:shadow-[0_20px_60px_-12px_rgba(97,40,166,0.18)]",
+                title: "We Keep You Ahead",
+                desc: "Technology is always changing, and businesses that don't keep up fall behind — we make sure you don't.",
               },
               {
-                num: “02”, icon: Zap,
-                gradient: “from-[#7c2d12] to-[#f85d37]”, accent: “#f85d37”,
-                cardBg: “#fff8f6”, cardBorder: “#fde0d6”,
-                hoverShadow: “hover:shadow-[0_20px_60px_-12px_rgba(248,93,55,0.14)]”,
-                title: “Real, Practical Improvements”,
-                desc: “We help you replace outdated systems, put your data to real use, and automate the tasks that waste your team's time.”,
+                num: "02", icon: Zap,
+                gradient: "from-[#7c2d12] to-[#f85d37]", accent: "#f85d37",
+                cardBg: "#fff8f6", cardBorder: "#fde0d6",
+                hoverShadow: "hover:shadow-[0_20px_60px_-12px_rgba(248,93,55,0.14)]",
+                title: "Real, Practical Improvements",
+                desc: "We help you replace outdated systems, put your data to real use, and automate the tasks that waste your team's time.",
               },
               {
-                num: “03”, icon: Rocket,
-                gradient: “from-[#5b21b6] to-[#aa3bff]”, accent: “#aa3bff”,
-                cardBg: “#faf5ff”, cardBorder: “#e9d5ff”,
-                hoverShadow: “hover:shadow-[0_20px_60px_-12px_rgba(170,59,255,0.14)]”,
-                title: “Your Path, Built by Us”,
-                desc: “Whatever \”moving forward\” looks like for your business, we build the path to get you there.”,
+                num: "03", icon: Rocket,
+                gradient: "from-[#5b21b6] to-[#aa3bff]", accent: "#aa3bff",
+                cardBg: "#faf5ff", cardBorder: "#e9d5ff",
+                hoverShadow: "hover:shadow-[0_20px_60px_-12px_rgba(170,59,255,0.14)]",
+                title: "Your Path, Built by Us",
+                desc: "Whatever \"moving forward\" looks like for your business, we build the path to get you there.",
               },
             ] as const).map((item, i) => (
-              <ScrollReveal key={item.num} variant=”card” delay={i * 120}>
+              <ScrollReveal key={item.num} variant="card" delay={i * 120}>
                 <div
                   className={`group relative flex flex-col h-full rounded-3xl p-8 border transition-all duration-300 hover:-translate-y-2 overflow-hidden ${item.hoverShadow}`}
                   style={{ background: item.cardBg, borderColor: item.cardBorder }}
                 >
                   <span
-                    className=”absolute -top-3 -right-1 text-[110px] font-black leading-none select-none pointer-events-none group-hover:scale-105 transition-transform duration-500”
-                    style={{ color: item.accent + “18” }}
+                    className="absolute -top-3 -right-1 text-[110px] font-black leading-none select-none pointer-events-none group-hover:scale-105 transition-transform duration-500"
+                    style={{ color: item.accent + "18" }}
                   >{item.num}</span>
                   <div className={`relative z-10 w-12 h-12 rounded-2xl bg-linear-to-br ${item.gradient} flex items-center justify-center mb-5 shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-[0_8px_20px_-4px_rgba(0,0,0,0.20)]`}>
-                    <item.icon className=”w-6 h-6 text-white” />
+                    <item.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className=”relative z-10 text-[19px] font-bold text-[#0d0517] mb-3 leading-snug”>{item.title}</h3>
-                  <div className=”relative z-10 h-[3px] w-8 rounded-full mb-5 group-hover:w-16 transition-all duration-300” style={{ background: item.accent }} />
-                  <p className=”relative z-10 text-[14px] text-[#555] leading-relaxed flex-1”>{item.desc}</p>
-                  <div className=”absolute bottom-0 left-0 right-0 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none” style={{ background: `linear-gradient(to top, ${item.accent}12, transparent)` }} />
+                  <h3 className="relative z-10 text-[19px] font-bold text-[#0d0517] mb-3 leading-snug">{item.title}</h3>
+                  <div className="relative z-10 h-[3px] w-8 rounded-full mb-5 group-hover:w-16 transition-all duration-300" style={{ background: item.accent }} />
+                  <p className="relative z-10 text-[14px] text-[#555] leading-relaxed flex-1">{item.desc}</p>
+                  <div className="absolute bottom-0 left-0 right-0 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: `linear-gradient(to top, ${item.accent}12, transparent)` }} />
                 </div>
               </ScrollReveal>
             ))}
@@ -229,7 +229,7 @@ export default function NewGenServicesPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Services Cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Services Cards â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#381f55] opacity-35 blur-[130px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[#6128a6] opacity-15 blur-[110px] pointer-events-none" />
@@ -307,7 +307,7 @@ export default function NewGenServicesPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Digital CoE spotlight â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Digital CoE spotlight â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-20 bg-[#f8f5ff] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#ecdaff]/60 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -343,10 +343,10 @@ export default function NewGenServicesPage() {
         </div>
       </section>
 
-      <FAQAccordion faqs={NEWGEN_FAQS} badge=”FAQs” title=”Frequently Asked Questions” subtitle=”Common questions about our new generation IT services.” />
+      <FAQAccordion faqs={NEWGEN_FAQS} badge="FAQs" title="Frequently Asked Questions" subtitle="Common questions about our new generation IT services." />
 
-      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className=”py-24 bg-white relative overflow-hidden”>
+      {/* â"€â"€ CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
+      <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
           <ScrollReveal variant="card">

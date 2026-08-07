@@ -107,7 +107,7 @@ export default function UmbrellaPage() {
         description="Simplify your contracting with Infoplus Technologies UK's umbrella company service. We provide compliant, hassle-free payroll and employment solutions for IT contractors across the UK."
         path="/services/staffing-consulting/umbrella-service"
       />
-      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Hero â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <PageHero
         title="All in one Technology solutions for modern business"
         description="We Take Care of All the Bits"
@@ -131,7 +131,7 @@ export default function UmbrellaPage() {
         </div>
       </PageHero>
 
-      {/* â”€â”€ What Is an Umbrella Company â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ What Is an Umbrella Company â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -191,7 +191,7 @@ export default function UmbrellaPage() {
         </div>
       </section>
 
-      {/* â”€â”€ What We Handle 4 Cinematic Cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ What We Handle 4 Cinematic Cards â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-20 bg-[#f8f5ff]">
         <div className="container mx-auto px-6 max-w-6xl">
           <ScrollReveal direction="fade">
@@ -230,7 +230,7 @@ export default function UmbrellaPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Why Infoplus Cinematic dark rows â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Why Infoplus Cinematic dark rows â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#6128a6]/15 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#f85d37]/8 blur-[100px] pointer-events-none" />
@@ -278,7 +278,7 @@ export default function UmbrellaPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Simple Steps â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Simple Steps â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-16 bg-[#f8f5ff] border-y border-[#e5e4e7]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
@@ -306,10 +306,10 @@ export default function UmbrellaPage() {
         </div>
       </section>
 
-      <FAQAccordion faqs={UMBRELLA_FAQS} badge=”FAQs” title=”Frequently Asked Questions” subtitle=”Common questions about our umbrella company service.” />
+      <FAQAccordion faqs={UMBRELLA_FAQS} badge="FAQs" title="Frequently Asked Questions" subtitle="Common questions about our umbrella company service." />
 
-      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className=”py-20 bg-white”>
+      {/* â"€â"€ CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
             <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">

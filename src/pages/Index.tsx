@@ -41,7 +41,7 @@ const homeJsonLd = {
 import ClientCarousel from "../components/ui/ClientCarousel";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 
-/* â”€â”€ Solution cards enhanced for Our Work section â”€â”€ */
+/* â"€â"€ Solution cards enhanced for Our Work section â"€â"€ */
 const EXTRAS = [
   {
     href: "/services/it-services",
@@ -70,7 +70,7 @@ const EXTRAS = [
 ];
 const SOLUTION_CARDS = ourSolutions.map((sol, i) => ({ ...sol, ...EXTRAS[i] }));
 
-/* â”€â”€ Value card accents (cycles through 3 brand colours) â”€â”€ */
+/* â"€â"€ Value card accents (cycles through 3 brand colours) â"€â"€ */
 const VALUE_ACCENTS = [
   "#6128a6",
   "#aa3bff",
@@ -81,7 +81,7 @@ const VALUE_ACCENTS = [
   "#6128a6",
 ];
 
-/* â”€â”€ Office locations (contact strip) â”€â”€ */
+/* â"€â"€ Office locations (contact strip) â"€â"€ */
 const LOCATIONS = [
   {
     country: "United Kingdom",
@@ -683,7 +683,7 @@ function HomePage() {
           glass cards, sweep animation, gradient headline
       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <section className="py-32 bg-[#080010] relative overflow-hidden">
-        {/* â”€â”€ Atmospheric lighting â”€â”€ */}
+        {/* â"€â"€ Atmospheric lighting â"€â"€ */}
         <div className="absolute inset-0 pointer-events-none select-none">
           {/* Orange-violet burst top right */}
           <div
@@ -711,7 +711,7 @@ function HomePage() {
         </div>
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          {/* â”€â”€ Cinematic headline â”€â”€ */}
+          {/* â"€â"€ Cinematic headline â"€â"€ */}
           <ScrollReveal direction="up">
             <div className="text-center mb-16">
               <span className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#f85d37]/25 bg-[#f85d37]/8 text-[#f85d37] text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
@@ -733,7 +733,7 @@ function HomePage() {
             </div>
           </ScrollReveal>
 
-          {/* â”€â”€ Stats filmstrip â”€â”€ */}
+          {/* â"€â"€ Stats filmstrip â"€â"€ */}
           <ScrollReveal direction="up" delay={80}>
             <div className="grid grid-cols-3 mb-16 rounded-2xl overflow-hidden border border-white/6">
               {[
@@ -763,7 +763,7 @@ function HomePage() {
             </div>
           </ScrollReveal>
 
-          {/* â”€â”€ Service cards gradient-border glass style â”€â”€ */}
+          {/* â"€â"€ Service cards gradient-border glass style â"€â"€ */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-16">
             {services.map((svc, i) => {
               const ACCENTS = ["#aa3bff", "#f85d37", "#10b981", "#06b6d4"];
@@ -841,7 +841,7 @@ function HomePage() {
             })}
           </div>
 
-          {/* â”€â”€ CTAs â”€â”€ */}
+          {/* â"€â"€ CTAs â"€â"€ */}
           <ScrollReveal direction="up" delay={160}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
@@ -1038,9 +1038,9 @@ function HomePage() {
       </section>
       â•â•â• OLD OUR INDUSTRIES SECTION BACKUP END â•â•â• */}
 
-      {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+      {/* â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
           7. Clients carousel (unchanged)
-      â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <ScrollReveal direction="fade">
         <ClientCarousel />
       </ScrollReveal>
@@ -1428,9 +1428,9 @@ function HomePage() {
 
 
 
-      {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+      {/* â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
           8. Global Presence (unchanged)
-      â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="pt-24 pb-10 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">

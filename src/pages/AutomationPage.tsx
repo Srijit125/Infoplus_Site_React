@@ -23,7 +23,6 @@ import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 type Pillar = {
   icon: LucideIcon;
   gradient: string;
-  num: string;
   title: string;
   desc: string;
 };
@@ -119,7 +118,7 @@ const AUTO_SERVICES: AutoService[] = [
     icon: Cpu,
     gradient: "from-[#78350f] to-[#f59e0b]",
     title: "Robotic Process Automation (RPA)",
-    desc: "Taking repetitive digital tasks off your team’s hands entirely.",
+    desc: "Taking repetitive digital tasks off your team's hands entirely.",
   },
   {
     icon: Layers,
@@ -227,10 +226,10 @@ export default function AutomationPage() {
                 <span className="text-[#6128a6]">in IT Maturity.</span>
               </h2>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
-                Automation isn’t just about doing things faster- it’s about building real trust into your IT Systems, so your business can innovate with confidence. We deliver automation as a service, and we have helped businesses across industries put real automation strategies into action.
+                Automation isn't just about doing things faster- it's about building real trust into your IT Systems, so your business can innovate with confidence. We deliver automation as a service, and we have helped businesses across industries put real automation strategies into action.
               </p>
               <p className="text-[15.5px] text-[#555] leading-[1.85]">
-                Our clients haven’t just cut costs and turnaround times – they have been able to put their people to better use elsewhere in the business. Automation done right doesn’t eliminate jobs; it frees your team up for more valuable work.
+                Our clients haven't just cut costs and turnaround times – they have been able to put their people to better use elsewhere in the business. Automation done right doesn't eliminate jobs; it frees your team up for more valuable work.
               </p>
             </ScrollReveal>
 

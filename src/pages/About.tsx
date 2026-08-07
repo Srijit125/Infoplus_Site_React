@@ -34,13 +34,6 @@ function About() {
     { icon: BarChart2,  title: "Financial Planning",  desc: "Provide visible positive contribution to the client's IT growth strategy." },
   ];
 
-  const keyStats = [
-    { val: "17",   label: "Countries"     },
-    { val: "120+", label: "Customers"     },
-    { val: "20+",  label: "Years"         },
-    { val: "17",   label: "Global Offices" },
-  ];
-
   const factBullets = [
     "Operating in 11 Countries.",
     "Preferred IT partner for many leading organizations.",
@@ -459,8 +452,6 @@ function About() {
               <div className="grid h-full" style={{ gridTemplateColumns: `repeat(${milestones.length}, minmax(0, 1fr))` }}>
                 {milestones.map((m, i) => {
                   const above = i % 2 === 0;
-                  const num = String(i + 1).padStart(2, "0");
-
                   return (
                     <ScrollReveal key={m.year} direction="up" delay={i * 75} className="h-full">
                       <div className="h-full flex flex-col items-center">

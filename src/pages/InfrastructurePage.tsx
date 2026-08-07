@@ -40,7 +40,7 @@ const INFRA_SERVICES: InfraService[] = [
     icon: Monitor,
     gradient: "from-[#381f55] to-[#6128a6]",
     title: "Infrastructure Monitoring & Real-time Dashboards",
-    desc: "We give you a live, clear view of your systems, so you always know exactly what’s happening, not what happened yesterday.",
+    desc: "We give you a live, clear view of your systems, so you always know exactly what's happening, not what happened yesterday.",
   },
   {
     icon: Activity,

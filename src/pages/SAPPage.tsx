@@ -143,7 +143,7 @@ export default function SAPPage() {
         description="Maximise your SAP investment with Infoplus Technologies UK's SAP consulting services. From implementation to support, our experts deliver end-to-end SAP solutions across the UK."
         path="/services/it-services/sap-consulting"
       />
-      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Hero â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <PageHero
         title="SAP Consulting & Implementation"
         description="We have a large pool of certified SAP experts"
@@ -167,7 +167,7 @@ export default function SAPPage() {
         </div>
       </PageHero>
 
-      {/* â”€â”€ 4 Key Benefits strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ 4 Key Benefits strip â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-14 bg-white border-b border-[#f0eff5] relative -mt-10 rounded-t-[3rem] z-20">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -189,7 +189,7 @@ export default function SAPPage() {
         </div>
       </section>
 
-      {/* â”€â”€ About SAP CoE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ About SAP CoE â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -261,7 +261,7 @@ export default function SAPPage() {
         </div>
       </section>
 
-      {/* â”€â”€ SAP All-in-One ERP Suite â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ SAP All-in-One ERP Suite â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
         <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-[#ecdaff]/60 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -312,7 +312,7 @@ export default function SAPPage() {
         </div>
       </section>
 
-      {/* â”€â”€ SAP Implementations Horizontal Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ SAP Implementations Horizontal Timeline â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -364,7 +364,7 @@ export default function SAPPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Outsourcing Managed Services â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Outsourcing Managed Services â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#6128a6]/20 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#f85d37]/10 blur-[100px] pointer-events-none" />
@@ -428,7 +428,7 @@ export default function SAPPage() {
         </div>
       </section>
 
-      {/* â”€â”€ SAP NetWeaver BI â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ SAP NetWeaver BI â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
         <div className="absolute top-20 right-0 w-80 h-80 rounded-full bg-[#ecdaff]/50 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -487,7 +487,7 @@ export default function SAPPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Why Infoplus + Delivery Models â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Why Infoplus + Delivery Models â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-6xl">
           <ScrollReveal direction="fade">
@@ -562,13 +562,13 @@ export default function SAPPage() {
 
       <FAQAccordion
         faqs={SAP_FAQS}
-        badge=”FAQs”
-        title=”Frequently Asked Questions”
-        subtitle=”Common questions about our SAP consulting services. Can't find what you're looking for? Reach out to our team.”
+        badge="FAQs"
+        title="Frequently Asked Questions"
+        subtitle="Common questions about our SAP consulting services. Can't find what you're looking for? Reach out to our team."
       />
 
       {/* CTA */}
-      <section className=”py-20 bg-[#f8f5ff]”>
+      <section className="py-20 bg-[#f8f5ff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
             <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">

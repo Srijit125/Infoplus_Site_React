@@ -290,7 +290,7 @@ export default function EducationSolutionsPage() {
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
         badge="PRODUCTS"
-        title="World’s Best E-Learning Solution For Technical Students"
+        title="World's Best E-Learning Solution For Technical Students"
         description="One-step learning solution for every technical student and professional. Learnengg is proud to be part of the NEAT initiative by MHRD & AICTE bringing the best technological products in education on a single platform for the convenience of learners."
         variant="gradient"
       >

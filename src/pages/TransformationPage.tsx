@@ -113,7 +113,7 @@ const STRATEGY_STEPS = [
   },
   {
     title: "Work Closely With Your Business",
-    desc: "Our team works hand in hand with yours, based on a resourcing model that’s agreed together.",
+    desc: "Our team works hand in hand with yours, based on a resourcing model that's agreed together.",
   },
   {
     title: "Validate Real, Lasting Change",
@@ -150,7 +150,7 @@ export default function TransformationPage() {
         description="Accelerate your digital journey with Infoplus Technologies UK's enterprise transformation services. We help organisations modernise, innovate, and thrive in a digital landscape."
         path="/services/new-generation/enterprise-transformation"
       />
-      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Hero â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <PageHero
         title="End to End Enterprise Transformation for Modern Business"
         description="We Enable Digital Across the World"
@@ -183,7 +183,7 @@ export default function TransformationPage() {
         </div>
       </PageHero>
 
-      {/* â”€â”€ Intro â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Intro â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -200,10 +200,10 @@ export default function TransformationPage() {
                 </span>
               </h2>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
-                Adopting new technology isn’t the same as truly transforming a business. Real digital transformation means weaving “digital” into everything – how information flows, how work gets done, and how people operate day to day.
+                Adopting new technology isn't the same as truly transforming a business. Real digital transformation means weaving "digital" into everything – how information flows, how work gets done, and how people operate day to day.
               </p>
               <p className="text-[15.5px] text-[#555] leading-[1.85]">
-                We know transformations are hard, and digital ones are harder still. That’s why we work from a proven set of success factors, refined through real client work, instead of a one- size-fits-all playbook.
+                We know transformations are hard, and digital ones are harder still. That's why we work from a proven set of success factors, refined through real client work, instead of a one- size-fits-all playbook.
               </p>
             </ScrollReveal>
 
@@ -249,7 +249,7 @@ export default function TransformationPage() {
         </div>
       </section>
 
-      {/* â”€â”€ 4 Integration Pillars â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ 4 Integration Pillars â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-20 bg-[#0d0517] relative overflow-hidden">
         <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#6128a6]/20 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#f85d37]/10 blur-[100px] pointer-events-none" />
@@ -305,7 +305,7 @@ export default function TransformationPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Top 5 Goals Cinematic numbered cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Top 5 Goals Cinematic numbered cards â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
         <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-[#ecdaff]/60 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -355,7 +355,7 @@ export default function TransformationPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Strategy 6-Step Vertical Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Strategy 6-Step Vertical Timeline â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-5xl relative z-10">
@@ -423,10 +423,10 @@ export default function TransformationPage() {
         </div>
       </section>
 
-      <FAQAccordion faqs={TRANSFORMATION_FAQS} badge=”FAQs” title=”Frequently Asked Questions” subtitle=”Common questions about our enterprise digital transformation services.” />
+      <FAQAccordion faqs={TRANSFORMATION_FAQS} badge="FAQs" title="Frequently Asked Questions" subtitle="Common questions about our enterprise digital transformation services." />
 
-      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className=”py-20 bg-[#f8f5ff]”>
+      {/* â"€â"€ CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
+      <section className="py-20 bg-[#f8f5ff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
             <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">

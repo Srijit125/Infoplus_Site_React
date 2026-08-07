@@ -45,7 +45,7 @@ const CLOUD_SERVICES: CloudService[] = [
     gradient: "from-[#0f766e] to-[#14b8a6]",
     tag: "PaaS",
     title: "Platform-as-a-Service",
-    desc: "We take hosting, database security, and storage off your plate, so you’re not tied down by long- term infrastructure investments. You get to focus on your product, not the plumbing behind it.",
+    desc: "We take hosting, database security, and storage off your plate, so you're not tied down by long- term infrastructure investments. You get to focus on your product, not the plumbing behind it.",
   },
   {
     icon: BarChart2,
@@ -66,7 +66,7 @@ const CLOUD_SERVICES: CloudService[] = [
     gradient: "from-[#9a2600] to-[#f85d37]",
     tag: "Security",
     title: "Data Governance & Cyber Security",
-    desc: "We protect your sensitive data from cyber threats with strong, proactive security measures. Whenever you need support, we’re there to keep your systems safe.",
+    desc: "We protect your sensitive data from cyber threats with strong, proactive security measures. Whenever you need support, we're there to keep your systems safe.",
   },
 ];
 

@@ -69,7 +69,7 @@ const DATA_SERVICES: DataService[] = [
     icon: BarChart2,
     gradient: "from-[#381f55] to-[#6128a6]",
     title: "Data Analytics Consultation",
-    desc: "Whether you’re getting started or already an established business, we tailor our guidance to where you actually are. No generic advice- just support that fits your stage of growth.",
+    desc: "Whether you're getting started or already an established business, we tailor our guidance to where you actually are. No generic advice- just support that fits your stage of growth.",
     details:
       "From initial data strategy through to analytics architecture and governance.",
   },
@@ -175,7 +175,7 @@ export default function EverythingDataPage() {
                 </span>
               </h2>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
-                Using data properly isn’t just for big companies anymore- it's something every business can benefit from. Our data team helps you raise your data quality, pick the right tools, and build custom solutions, so you can make better decisions and strengthen relationships with clients and partners.
+                Using data properly isn't just for big companies anymore- it's something every business can benefit from. Our data team helps you raise your data quality, pick the right tools, and build custom solutions, so you can make better decisions and strengthen relationships with clients and partners.
               </p>
               {/* <p className="text-[15.5px] text-[#555] leading-[1.85]">
                 We closely work with clients to develop the right data strategy

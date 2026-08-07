@@ -2,7 +2,7 @@ import { PageMeta } from "../components/shared/PageMeta";
 import { useState, useRef } from "react";
 import { PageHero } from "../components/shared/PageHero";
 import {
-  MapPin, Mail, Phone, Clock, Globe2, Shield,
+  MapPin, Mail, Phone, Clock, Shield,
   CheckCircle2, ArrowRight, Send,
 } from "lucide-react";
 import { ScrollReveal } from "../components/ui/ScrollReveal";

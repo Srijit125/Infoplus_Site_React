@@ -80,9 +80,9 @@ function CareersPage() {
   /* ── Static data ───────────────────────────────── */
   const perks = [
     { icon: Heart,  title: "Real Responsibility, From Day One", desc: "Here you don't need to wait for the \"real\" work. You'll be handed the genuine problem to solve from the day you start, with support when you need it."},
-    { icon: Globe,  title: "Global Exposure, Local Team Feel",       desc: "As we are operating across 17 countries, you’ll work on projects with real international people; you can exchange and gain more knowledge and skills."},
-    { icon: Zap,    title: "Learning that’s Part of the Journey, Not an Afterthought",     desc: "Technology is moving so fast - SAP, AI, Cybersecurity. In Infoplus, you’ll get the chance to build skills, and you’ll get the encouragement to grow with the technology, while working with the most experienced & talented people."},
-    { icon: Coffee, title: "Who we’re Looking For",       desc: "We hire based on skills and attitude over the ticking boxes of what you achieved. We care more about how you work than what's on the paper. All we see is whether you’re taking pride in what you do or not. And then you can be trusted to get on with the job- you’ll do well here. This applies to everyone, whether you’re an experienced specialist or just starting your career, including throughout the internship programme."},
+    { icon: Globe,  title: "Global Exposure, Local Team Feel",       desc: "As we are operating across 17 countries, you'll work on projects with real international people; you can exchange and gain more knowledge and skills."},
+    { icon: Zap,    title: "Learning that's Part of the Journey, Not an Afterthought",     desc: "Technology is moving so fast - SAP, AI, Cybersecurity. In Infoplus, you'll get the chance to build skills, and you'll get the encouragement to grow with the technology, while working with the most experienced & talented people."},
+    { icon: Coffee, title: "Who we're Looking For",       desc: "We hire based on skills and attitude over the ticking boxes of what you achieved. We care more about how you work than what's on the paper. All we see is whether you're taking pride in what you do or not. And then you can be trusted to get on with the job- you'll do well here. This applies to everyone, whether you're an experienced specialist or just starting your career, including throughout the internship programme."},
   ];
 
   const positions: Job[] = [

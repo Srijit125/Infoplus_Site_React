@@ -224,7 +224,7 @@ export default function SoftwareDevelopmentPage() {
         description="Build compelling, scalable software with Infoplus Technologies UK. Our development team delivers bespoke web, mobile, and enterprise applications tailored to your vision and goals."
         path="/services/it-services/software-development"
       />
-      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Hero â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <PageHero
         title="Best Software Development Services in UK"
         description="Technology that Grows As You Do"
@@ -252,7 +252,7 @@ export default function SoftwareDevelopmentPage() {
         </div>
       </PageHero>
 
-      {/* â”€â”€ Intro / Mission â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Intro / Mission â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         {/* faint orb */}
         <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
@@ -270,7 +270,7 @@ export default function SoftwareDevelopmentPage() {
                 </span>
               </h2>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mt-6">
-                Our development teams work across Europe and India, so we can support different clients in the way that suits them best. We’ve spent over two decades designing, building, and deploying custom software that becomes a real asset to your business, not another IT expense.
+                Our development teams work across Europe and India, so we can support different clients in the way that suits them best. We've spent over two decades designing, building, and deploying custom software that becomes a real asset to your business, not another IT expense.
               </p>
             </ScrollReveal>
 
@@ -309,7 +309,7 @@ export default function SoftwareDevelopmentPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Service Sections (Cinematic Alternating) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ Service Sections (Cinematic Alternating) â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <div id="sd-services" style={{ scrollMarginTop: "88px" }}>
         {SERVICES.map((svc, i) => {
           const SvcIcon = svc.icon;
@@ -441,7 +441,7 @@ export default function SoftwareDevelopmentPage() {
         })}
       </div>
 
-      {/* â”€â”€ How to Engage â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* â"€â"€ How to Engage â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-[#0d0517] relative overflow-hidden">
         {/* Background orbs */}
         <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#6128a6]/20 blur-[120px] pointer-events-none" />
@@ -517,13 +517,13 @@ export default function SoftwareDevelopmentPage() {
 
       <FAQAccordion
         faqs={SD_FAQS}
-        badge=”FAQs”
-        title=”Frequently Asked Questions”
+        badge="FAQs"
+        title="Frequently Asked Questions"
         defaultOpen={0}
       />
 
-      {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className=”py-20 bg-[#f8f5ff]”>
+      {/* â"€â"€ CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
+      <section className="py-20 bg-[#f8f5ff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
             <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">
