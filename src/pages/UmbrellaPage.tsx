@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
+import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 
 type ServiceCard = {
   icon: LucideIcon;
@@ -79,6 +80,25 @@ const BENEFITS = [
   "Safe, compliant, and HMRC-recognised umbrella structure",
 ];
 
+const UMBRELLA_FAQS: FAQItem[] = [
+  {
+    q: "What exactly does an umbrella company do for contractors?",
+    a: "It becomes your employer while you're on a contract, handling your invoicing, tax, and payments.",
+  },
+  {
+    q: "Do I lose out financially by using an umbrella company instead of running my own limited company?",
+    a: "No. You still get the financial benefits of contracting, without the stress and admin of running your own company — invoicing, tax calculations, and compliance are all taken care of for you.",
+  },
+  {
+    q: "Is Infoplus Umbrella service suitable if I'm completely new to contracting?",
+    a: "Yes. Whether you're just starting out or you're an experienced contractor, our service is designed to remove the hassle, so you don't need prior experience running a business to get started.",
+  },
+  {
+    q: "Will my tax and payments be calculated correctly?",
+    a: "Yes — everything is worked out accurately and stays fully compliant.",
+  },
+];
+
 export default function UmbrellaPage() {
   return (
     <div className="w-full overflow-x-hidden">
@@ -89,7 +109,7 @@ export default function UmbrellaPage() {
       />
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
-        title="Umbrella Service"
+        title="All in one Technology solutions for modern business"
         description="We Take Care of All the Bits"
         badge="STAFFING & CONSULTING"
         variant="centered"
@@ -286,8 +306,10 @@ export default function UmbrellaPage() {
         </div>
       </section>
 
+      <FAQAccordion faqs={UMBRELLA_FAQS} badge=”FAQs” title=”Frequently Asked Questions” subtitle=”Common questions about our umbrella company service.” />
+
       {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-20 bg-white">
+      <section className=”py-20 bg-white”>
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
             <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">

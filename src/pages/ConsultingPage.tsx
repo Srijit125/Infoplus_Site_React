@@ -6,10 +6,11 @@ import {
   UserCheck,
   Cpu,
   ArrowRight,
-  type LucideIcon,
+  type LucideIcon, 
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
+import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 
 type Tower = {
   icon: LucideIcon;
@@ -125,6 +126,25 @@ const STRATEGY_STEPS: StrategyStep[] = [
   },
 ];
 
+const CONSULTING_FAQS: FAQItem[] = [
+  {
+    q: "What areas does Infoplus IT Consulting actually cover?",
+    a: "Our consulting teams are organised into four specialist areas, covering everything from application and product development to cloud migration, IT support, and infrastructure like security, networking, and big data. Whatever your project needs, we likely already have the right specialists.",
+  },
+  {
+    q: "Do your consultants only work with modern technology, or older systems too?",
+    a: "Both. Our consultants understand legacy systems as well as cutting-edge frameworks, so we can support you whether you're maintaining an older setup or building something brand new.",
+  },
+  {
+    q: "Can Infoplus help us move our data centre to the cloud?",
+    a: "Yes, data centre migration and consolidation is one of our core consulting services, handled alongside ongoing IT support so the transition doesn't disrupt your daily operations.",
+  },
+  {
+    q: "What kind of specialist technology support do your consultants provide?",
+    a: "A wide range — including AI, Big Data, security, Salesforce, and more.",
+  },
+];
+
 export default function ConsultingPage() {
   return (
     <div className="w-full overflow-x-hidden">
@@ -135,8 +155,8 @@ export default function ConsultingPage() {
       />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
-        title="IT Consulting Solutions"
-        description="We Provide Premier Quality IT Consultants"
+        title="Best IT Consulting Solution Providers in U.K"
+        description="We are providing the top notch premier quality IT Consultants across worldwide"
         badge="STAFFING & CONSULTING"
         variant="centered"
       >
@@ -214,6 +234,60 @@ export default function ConsultingPage() {
               </div>
             </ScrollReveal>
           </div>
+        </div>
+      </section>
+
+      {/* ── Why Choose Infoplus ───────────────────────────── */}
+      <section className="py-20 bg-[#f8f5ff] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-125 h-125 rounded-full bg-[#ecdaff] opacity-40 blur-[120px] pointer-events-none" />
+        <div
+          className="absolute inset-0 opacity-[0.025] pointer-events-none"
+          style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "32px 32px" }}
+        />
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          <ScrollReveal direction="up">
+            <div className="text-center mb-12">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                Why Choose Us
+              </span>
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-[#0d0517] leading-tight mb-6 max-w-3xl mx-auto">
+                Why Choose Infoplus for{" "}
+                <span className="text-[#6128a6]">IT Consulting Solutions?</span>
+              </h2>
+              <p className="text-[15.5px] text-[#555] max-w-3xl mx-auto leading-[1.85]">
+                At Infoplus, we help businesses make informed technology decisions that support long-term growth and operational efficiency. Our consulting approach focuses on understanding your business goals, identifying challenges, and delivering practical IT solutions that create measurable value. Whether you&apos;re modernising existing systems, implementing new technologies, or improving business processes, we work closely with your team to ensure successful outcomes.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={100}>
+            <div className="grid grid-cols-2 lg:grid-cols-4 rounded-2xl overflow-hidden border border-[#e4dcf5] bg-white">
+              {([
+                { icon: Briefcase, label: "Informed Decisions",     sub: "Technology choices aligned to your long-term business goals" },
+                { icon: Cpu,       label: "Long-term Growth",       sub: "Focused on operational efficiency and sustainable scale" },
+                { icon: Code2,     label: "Practical Solutions",    sub: "Delivering measurable value, not just recommendations" },
+                { icon: UserCheck, label: "Team Partnership",       sub: "Working closely with your team through every step" },
+              ] as const).map(({ icon: Icon, label, sub }, i) => {
+                const dividerClass =
+                  i === 0 ? "" :
+                  i === 1 ? "border-l border-[#e4dcf5]" :
+                  i === 2 ? "border-t border-[#e4dcf5] lg:border-t-0 lg:border-l" :
+                            "border-l border-t border-[#e4dcf5] lg:border-t-0";
+                return (
+                  <div
+                    key={label}
+                    className={`group flex flex-col items-center text-center py-7 px-5 hover:bg-[#f8f5ff] transition-all duration-300 ${dividerClass}`}
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-[#6128a6]/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-5 h-5 text-[#6128a6]" />
+                    </div>
+                    <p className="text-[14px] font-bold text-[#0d0517] mb-1">{label}</p>
+                    <p className="text-[12px] text-[#555]/70 leading-snug">{sub}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -379,6 +453,8 @@ export default function ConsultingPage() {
           </div>
         </div>
       </section>
+
+      <FAQAccordion faqs={CONSULTING_FAQS} badge="FAQs" title="Frequently Asked Questions" subtitle="Common questions about our IT consulting services." />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="py-20 bg-[#f8f5ff]">

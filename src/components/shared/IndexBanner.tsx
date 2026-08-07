@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { ImageWithFallback } from "../helpers/ImageWithFallback";
 import {
@@ -803,11 +803,11 @@ function IndexBanner() {
                 }}
               >
                 <div className="container mx-auto px-6 max-w-7xl">
-                  <div className="flex items-center justify-around flex-wrap gap-4 sm:gap-6 py-3 sm:py-5">
+                  <div className="flex items-center py-3 sm:py-5">
                     {s.stats.map((st, i) => (
-                      <div key={st.label} className="flex items-center gap-4 sm:gap-6">
-                        {i > 0 && <div className="hidden sm:block w-px h-9 bg-white/15" />}
-                        <div className="flex flex-col items-center gap-0.5 text-center">
+                      <Fragment key={st.label}>
+                        {i > 0 && <div className="w-px h-9 bg-white/15 shrink-0" />}
+                        <div className="flex-1 flex flex-col items-center gap-0.5 text-center">
                           <span className="text-[18px] sm:text-[22px] md:text-[26px] font-bold leading-none tabular-nums" style={{ color: s.sh1 }}>
                             {st.value}
                           </span>
@@ -815,7 +815,7 @@ function IndexBanner() {
                             {st.label}
                           </span>
                         </div>
-                      </div>
+                      </Fragment>
                     ))}
                   </div>
                 </div>

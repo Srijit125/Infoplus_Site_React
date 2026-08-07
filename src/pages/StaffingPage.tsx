@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
+import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 
 type StaffingModel = {
   icon: LucideIcon;
@@ -111,6 +112,25 @@ const APPROACH_STEPS: ApproachStep[] = [
   },
 ];
 
+const STAFFING_FAQS: FAQItem[] = [
+  {
+    q: "What staffing options does Infoplus offer?",
+    a: "Short-term contracts or permanent hires — whatever fits your business, agreed with clarity from the start.",
+  },
+  {
+    q: "Can a contractor become a permanent employee later on?",
+    a: "Yes. If a temporary placement is working well for both sides, we make it easy to convert that contractor into a permanent employee whenever you're ready.",
+  },
+  {
+    q: "Does contract staffing help avoid long-term hiring costs?",
+    a: "Yes. Contract staffing lets you bring in skilled people for a project without adding permanent headcount or the long-term costs that come with it — useful when you need extra hands without a long-term commitment.",
+  },
+  {
+    q: "Which countries does Infoplus provide staffing in?",
+    a: "We have dedicated, end-to-end recruitment teams across the UK, US, Germany, Netherlands, Belgium, Sweden, and India, so we can support hiring needs across multiple regions, not just one.",
+  },
+];
+
 export default function StaffingPage() {
   return (
     <div className="w-full overflow-x-hidden">
@@ -121,8 +141,8 @@ export default function StaffingPage() {
       />
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
-        title="IT Staffing Solutions"
-        description="We Add Value to Our Client's Staffing Requirements"
+        title="Best IT Staffing Solution Providers in U.K"
+        description="Whether you are looking for FTE(Full time employee)/ Contract Role (C2H) – Infoplus Technologies offers the best service with 99% Client retention rate."
         badge="STAFFING & CONSULTING"
         variant="centered"
       >
@@ -242,7 +262,7 @@ export default function StaffingPage() {
           </ScrollReveal>
 
           <div className="space-y-5">
-            {STAFFING_MODELS.map(({ icon: MIcon, gradient, accentColor, tag, title, desc }, i) => {
+            {STAFFING_MODELS.map(({ icon: MIcon, gradient, accentColor, title, desc }, i) => {
               const isEven = i % 2 === 0;
               return (
                 <ScrollReveal key={i} direction={isEven ? "left" : "right"} duration={700} delay={60}>
@@ -258,14 +278,6 @@ export default function StaffingPage() {
                         </div>
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <span
-                            className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border"
-                            style={{ color: accentColor, borderColor: `${accentColor}40`, background: `${accentColor}12` }}
-                          >
-                            {tag}
-                          </span>
-                        </div>
                         <h3 className="text-[20px] font-bold text-white mb-3 leading-snug">{title}</h3>
                         <p className="text-[14px] text-white/55 leading-relaxed">{desc}</p>
                       </div>
@@ -405,8 +417,15 @@ export default function StaffingPage() {
         </div>
       </section>
 
+      <FAQAccordion
+        faqs={STAFFING_FAQS}
+        badge=”FAQs”
+        title=”Frequently Asked Questions”
+        subtitle=”Common questions about our IT staffing services.”
+      />
+
       {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-20 bg-[#f8f5ff]">
+      <section className=”py-20 bg-[#f8f5ff]”>
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
             <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">
