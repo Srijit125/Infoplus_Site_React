@@ -3,9 +3,10 @@ import { useState, useRef } from "react";
 import { PageHero } from "../components/shared/PageHero";
 import {
   MapPin, Mail, Phone, Clock, Globe2, Shield,
-  CheckCircle2, ArrowRight, Send, ChevronDown,
+  CheckCircle2, ArrowRight, Send,
 } from "lucide-react";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
+import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 import ReactCountryFlag from "react-country-flag";
 
 const OFFICES = [
@@ -28,34 +29,26 @@ const OFFICES = [
   { code: "AE", region: "UAE",            city: "Dubai",            address: "DSO-IFZA, IFZA Properties, Dubai Silicon Oasis, Dubai 1111", mapUrl: "https://maps.google.com/?q=IFZA+Properties+Dubai+Silicon+Oasis+Dubai+UAE" },
 ];
 
-const FAQS = [
+const CONTACT_FAQS: FAQItem[] = [
   {
-    q: "What services does Infoplus Technologies specialise in?",
-    a: "We specialise in Artificial Intelligence, IT Services, Master Data Management, Cybersecurity, SAP Consulting, Cloud Computing, Digital Transformation, and Staffing & Consulting. Our multidisciplinary teams work across industries to deliver tailored technology solutions that drive measurable business outcomes.",
+    q: "What kind of work does Infoplus do?",
+    a: "We handle IT for businesses, from building software and testing it to managing servers and networks to keep systems safe from cyber threats. We also work with SAP systems, cloud setups, and AI tools. On top of that, we help companies find IT staff and offer support with automation and data.",
   },
   {
-    q: "How long does a typical IT project take from start to finish?",
-    a: "Project timelines vary based on scope and complexity. A discovery and scoping engagement typically takes 2–4 weeks. Implementation projects range from 6 weeks for targeted solutions to 12+ months for large-scale enterprise programmes. We provide a detailed project plan with milestones at the outset of every engagement.",
+    q: "Do you only work with businesses in the UK?",
+    a: "No. Infoplus Technologies UK Limited is headquartered in Borehamwood, UK, but we support clients across 17 countries, including India, Germany, Sweden, the Netherlands, and the UAE. Wherever your business is based, our team can help.",
   },
   {
-    q: "Do you provide ongoing support and maintenance after project delivery?",
-    a: "Absolutely. We offer a range of post-delivery support models including SLA-backed managed services, dedicated support retainers, and on-demand advisory. Our support teams are available across UK, India, and APAC time zones to ensure maximum coverage for global clients.",
+    q: "How do I get a quote or discuss a project?",
+    a: "An easier way is to fill out the short form on this page. You can also email us directly at contact@infoplusltd.co.uk. You can also call us on +44 208207 3474 to speak with our team.",
   },
   {
-    q: "How do you ensure the security and confidentiality of our data?",
-    a: "Data security is central to everything we do. We are ISO 27001 compliant and follow strict data handling protocols including NDA agreements at engagement start, role-based access control, and encrypted data transfer. We are fully aligned with GDPR requirements for all EU and UK client engagements.",
+    q: "How soon will I hear back after submitting an enquiry?",
+    a: "Our team reviews every enquiry and gets back to you as soon as possible with next steps. If your request is urgent, calling us directly is the fastest way to reach us.",
   },
   {
-    q: "Can you integrate your solutions with our existing systems?",
-    a: "Yes. Integration capability is a core part of our delivery approach. We have deep experience integrating with ERP systems (SAP, Oracle, Microsoft Dynamics), CRM platforms (Salesforce, HubSpot), cloud providers (AWS, Azure, GCP), and legacy on-premises systems using modern APIs, middleware, and ETL pipelines.",
-  },
-  {
-    q: "What is your pricing model and how do engagements work?",
-    a: "We offer flexible engagement models including fixed-price project delivery, time-and-materials, and managed services retainers. After an initial scoping conversation, we provide a transparent proposal outlining deliverables, timelines, and costs with no hidden charges. We start with a no-obligation discovery call.",
-  },
-  {
-    q: "Do you work with businesses of all sizes?",
-    a: "Yes. While many of our clients are large enterprises and public sector organisations, we regularly work with SMEs and scale-ups. We tailor our approach and commercial model to match the budget and ambition of each client, regardless of size or industry sector.",
+    q: "Can Infoplus support both small businesses and large enterprises?",
+    a: "Yes. Our services are built to scale, from one-off projects like a website build or SAP implementation, to long-term partnerships covering staffing, cloud infrastructure, and ongoing IT support.",
   },
 ];
 
@@ -71,7 +64,6 @@ const labelCls = "block text-[13px] font-semibold text-[#333] mb-1.5";
 export function ContactPage() {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [errors, setErrors] = useState({ name: "", email: "", phone: "" });
 
   const handleSubmit = async (e: { preventDefault(): void }) => {
@@ -116,7 +108,7 @@ export function ContactPage() {
       />
       <PageHero
         title="Contact Us"
-        description="Keep touch with Us We'd love to hear from you! Brief us of your requirements below, and let's connect."
+        description="Tell us your requirements, Our Expert team will come shortly with your solutions!!!"
         badge="GET IN TOUCH"
         variant="centered"
       />
@@ -363,90 +355,13 @@ export function ContactPage() {
         </div>
       </section>
 
-      {/* ── FAQ ──────────────────────────────────────────────────── */}
-      <section className="py-20 bg-[#0d0517] relative overflow-hidden">
-        {/* Dot grid */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
-          }}
-        />
-        {/* Orb */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-175 h-100 rounded-full bg-[#6128a6]/15 blur-[120px] pointer-events-none" />
+      <FAQAccordion
+        faqs={CONTACT_FAQS}
+        badge="FAQs"
+        title="Frequently Asked Questions"
+        subtitle="Can't find the answer here? Drop us a message and our team will get back to you."
+      />
 
-        <div className="container mx-auto px-6 max-w-4xl relative z-10">
-          <ScrollReveal direction="fade">
-            <div className="text-center mb-12">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#f85d37] mb-3 block">
-                FAQ
-              </span>
-              <h2 className="text-[36px] font-bold text-white mb-3">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-[16px] text-white/50 max-w-lg mx-auto">
-                Can't find the answer here? Drop us a message and our team will respond within 24 hours.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="space-y-3">
-            {FAQS.map((faq, idx) => (
-              <ScrollReveal key={idx} direction="fade" delay={idx * 50}>
-                <div
-                  className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
-                    openFaq === idx
-                      ? "border-white/20 bg-white/8"
-                      : "border-white/10 bg-white/4 hover:border-white/15"
-                  }`}
-                >
-                  <button
-                    onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                    className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
-                    aria-expanded={openFaq === idx}
-                  >
-                    <span className="text-[15px] font-semibold text-white leading-snug">
-                      {faq.q}
-                    </span>
-                    <ChevronDown
-                      className={`w-5 h-5 text-white/50 shrink-0 transition-transform duration-300 ${
-                        openFaq === idx ? "rotate-180 text-[#aa3bff]" : ""
-                      }`}
-                    />
-                  </button>
-                  {openFaq === idx && (
-                    <div className="px-6 pb-6">
-                      <p className="text-[14px] text-white/55 leading-relaxed">{faq.a}</p>
-                    </div>
-                  )}
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Bottom CTA ───────────────────────────────────────────── */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl text-center">
-          <ScrollReveal direction="fade">
-            <h2 className="text-[30px] font-bold text-[#111] mb-3">
-              Ready to start a conversation?
-            </h2>
-            <p className="text-[16px] text-[#555] mb-8">
-              Our team is on hand to understand your requirements and explore how we can help.
-            </p>
-            <a
-              href="mailto:uk@infoplusltd.co.uk"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#1e0a38] text-white text-[15px] font-semibold hover:bg-[#6128a6] transition-colors duration-300 group"
-            >
-              Email Us Directly
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </ScrollReveal>
-        </div>
-      </section>
     </div>
   );
 }

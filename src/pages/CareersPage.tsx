@@ -4,6 +4,7 @@ import { PageHero } from "../components/shared/PageHero";
 import imgCareerHero from "../assets/images/career_hero.jpg";
 import { Coffee, Heart, Globe, Zap, MapPin, Briefcase, X, ChevronRight, CheckCircle2, Shield } from "lucide-react";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
+import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 
 /* ── Types ─────────────────────────────────────────── */
 type Job = {
@@ -40,6 +41,25 @@ const TEAM_BADGE: Record<string, string> = {
   Sales:          "bg-[#dcfce7] text-[#15803d]",
 };
 
+const CAREERS_FAQS: FAQItem[] = [
+  {
+    q: "Do I need years of experience to apply, or is there room for people just starting out?",
+    a: "Both are welcome. We hire experienced specialists and people building their first career through our internship programme- what matters more to us is curiosity and ownership, not just years on a CV.",
+  },
+  {
+    q: "What actually happens during the internship- real work, or just observing?",
+    a: "Real work, from day one. Our interns get placed on live projects with the best mentorship from people who've been in the industry for years, not shadowing meetings or making coffee.",
+  },
+  {
+    q: "If there's no open role listed right now, is it still worth applying?",
+    a: "Yes. We're always interested in hearing from strong candidates, even without a live vacancy- send your CV, and we'll keep it on file for when the right opportunity comes up.",
+  },
+  {
+    q: "What actually makes day-to-day work at Infoplus different from a typical IT job?",
+    a: "You're trusted with real responsibility early on, working across a genuinely global business spanning 17 countries – not stuck waiting for permission to contribute.",
+  },
+];
+
 /* ── Component ─────────────────────────────────────── */
 function CareersPage() {
   const [teamFilter,     setTeamFilter]     = useState("All");
@@ -59,10 +79,10 @@ function CareersPage() {
 
   /* ── Static data ───────────────────────────────── */
   const perks = [
-    { icon: Heart,  title: "Health & Wellbeing", desc: "Comprehensive coverage for you and your family."            },
-    { icon: Globe,  title: "Work Anywhere",       desc: "Flexible remote work and global office access."             },
-    { icon: Zap,    title: "Learning Budget",     desc: "Annual stipend for courses, books, and conferences."        },
-    { icon: Coffee, title: "Team Retreats",       desc: "Biannual gatherings to connect and celebrate."              },
+    { icon: Heart,  title: "Real Responsibility, From Day One", desc: "Here you don't need to wait for the \"real\" work. You'll be handed the genuine problem to solve from the day you start, with support when you need it."},
+    { icon: Globe,  title: "Global Exposure, Local Team Feel",       desc: "As we are operating across 17 countries, you’ll work on projects with real international people; you can exchange and gain more knowledge and skills."},
+    { icon: Zap,    title: "Learning that’s Part of the Journey, Not an Afterthought",     desc: "Technology is moving so fast - SAP, AI, Cybersecurity. In Infoplus, you’ll get the chance to build skills, and you’ll get the encouragement to grow with the technology, while working with the most experienced & talented people."},
+    { icon: Coffee, title: "Who we’re Looking For",       desc: "We hire based on skills and attitude over the ticking boxes of what you achieved. We care more about how you work than what's on the paper. All we see is whether you’re taking pride in what you do or not. And then you can be trusted to get on with the job- you’ll do well here. This applies to everyone, whether you’re an experienced specialist or just starting your career, including throughout the internship programme."},
   ];
 
   const positions: Job[] = [
@@ -203,35 +223,58 @@ function CareersPage() {
         </div>
       </section>
 
-      {/* ── 3. WHY WORK WITH US (existing) ───────────── */}
-      <section className="py-24 bg-[#f8f5ff]">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      {/* ── 3. WHY WORK WITH US ───────────────────────── */}
+      <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.025] pointer-events-none"
+          style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+        />
 
-            <ScrollReveal direction="left">
-              <div>
-                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">Why Us</span>
-                <h2 className="text-[36px] font-bold text-[#111111] mb-5">Why work with us?</h2>
-                <p className="text-[16px] text-[#555555] leading-[1.75] text-justify">
-                  We believe that great work happens when you&apos;re happy, healthy, and challenged. We&apos;ve built a culture that prioritises autonomy, continuous learning, and cross-border collaboration.
-                </p>
-              </div>
-            </ScrollReveal>
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {perks.map((perk, i) => (
-                <ScrollReveal key={i} variant="card" delay={i * 90}>
-                  <div className="group p-6 bg-white border border-[#e5e4e7] rounded-2xl hover:border-[#aa3bff]/30 hover:shadow-[0_8px_24px_rgba(97,40,166,0.09)] transition-all duration-300">
-                    <div className="w-10 h-10 rounded-xl bg-[#f8f5ff] flex items-center justify-center mb-4 shadow-sm group-hover:bg-[#ecdaff] transition-colors">
-                      <perk.icon className="w-5 h-5 text-[#6128a6]" strokeWidth={1.6} />
+          <ScrollReveal direction="up">
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">Why Us</span>
+              <h2 className="text-[38px] font-bold text-[#111111] mb-5 leading-tight">Why work with us?</h2>
+              <p className="text-[16px] text-[#555555] leading-[1.75]">
+                We believe that great work happens when you&apos;re happy, healthy, and challenged. We&apos;ve built a culture that prioritises autonomy, continuous learning, and cross-border collaboration.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Top 3 perk cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            {perks.slice(0, 3).map((perk, i) => {
+              const PIcon = perk.icon;
+              return (
+                <ScrollReveal key={i} variant="card" delay={i * 110}>
+                  <div className="group h-full bg-white border border-[#e8e0f7] rounded-2xl p-7 hover:border-[#6128a6]/30 hover:shadow-[0_12px_40px_-8px_rgba(97,40,166,0.13)] hover:-translate-y-1 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                      <PIcon className="w-6 h-6 text-white" strokeWidth={1.6} />
                     </div>
-                    <h3 className="text-[16px] font-semibold text-[#111111] mb-2">{perk.title}</h3>
-                    <p className="text-[13px] text-[#555555] leading-relaxed">{perk.desc}</p>
+                    <h3 className="text-[16px] font-bold text-[#111111] mb-3 group-hover:text-[#6128a6] transition-colors leading-snug">{perk.title}</h3>
+                    <p className="text-[13.5px] text-[#555555] leading-relaxed">{perk.desc}</p>
                   </div>
                 </ScrollReveal>
-              ))}
-            </div>
+              );
+            })}
           </div>
+
+          {/* 4th card – full-width feature */}
+          <ScrollReveal direction="up" delay={330}>
+            <div className="group bg-white border border-[#e8e0f7] rounded-2xl p-8 hover:border-[#f85d37]/30 hover:shadow-[0_12px_40px_-8px_rgba(248,93,55,0.10)] transition-all duration-300">
+              <div className="flex flex-col sm:flex-row items-start gap-6">
+                <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-[#c2410c] to-[#f85d37] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <Coffee className="w-7 h-7 text-white" strokeWidth={1.6} />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-[18px] font-bold text-[#111111] mb-3 group-hover:text-[#f85d37] transition-colors leading-snug">{perks[3].title}</h3>
+                  <p className="text-[14.5px] text-[#555555] leading-[1.8]">{perks[3].desc}</p>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
         </div>
       </section>
 
@@ -391,6 +434,13 @@ function CareersPage() {
           )}
         </div>
       </section>
+
+      <FAQAccordion
+        faqs={CAREERS_FAQS}
+        badge="FAQs"
+        title="Frequently Asked Questions"
+        subtitle="Common questions about careers at Infoplus."
+      />
 
       {/* ── APPLY MODAL ───────────────────────────────── */}
       {applyJob && (
