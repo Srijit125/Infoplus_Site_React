@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
+import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 
 type Goal = {
   num: string;
@@ -34,35 +35,35 @@ const GOALS: Goal[] = [
     icon: Settings,
     gradient: "from-[#381f55] to-[#6128a6]",
     title: "Optimise Internal Processes",
-    desc: "Streamline and automate internal workflows to eliminate waste, reduce operational costs, and free teams to focus on high-value work.",
+    desc: "We simplify the everyday workflows that slow your team down.",
   },
   {
     num: "02",
     icon: Users,
     gradient: "from-[#1e3a8a] to-[#3b82f6]",
     title: "Improve Digital Customer Experience",
-    desc: "Create seamless, personalised digital interactions that delight customers at every touchpoint across all channels and devices.",
+    desc: "we make every digital touchpoint with your customers smoother and more reliable.",
   },
   {
     num: "03",
     icon: Zap,
     gradient: "from-[#9a2600] to-[#f85d37]",
     title: "Create a New Digital Business Model",
-    desc: "Reimagine how your organisation creates, delivers, and captures value through digital-first, platform-enabled business models.",
+    desc: "we help you find new ways to deliver value. Not just digitise the old ones.",
   },
   {
     num: "04",
     icon: RefreshCcw,
     gradient: "from-[#0f766e] to-[#14b8a6]",
     title: "Establish an Agile & Innovative Culture",
-    desc: "Build an organisational culture that embraces change, encourages experimentation, and rewards innovation at every level of the business.",
+    desc: "we help your organisation become one that adapts quickly, instead of resisting change.",
   },
   {
     num: "05",
     icon: Network,
     gradient: "from-[#78350f] to-[#f59e0b]",
-    title: "Launch New Value Networks & Ecosystems",
-    desc: "Extend reach by participating in and leading digital ecosystems that create new opportunities, partnerships, and revenue streams.",
+    title: "Launch New Value Networks & Digital Ecosystems",
+    desc: "we connect you into wider digital opportunities beyond your own four walls.",
   },
 ];
 
@@ -95,32 +96,51 @@ const PILLARS: Pillar[] = [
 
 const STRATEGY_STEPS = [
   {
-    title: "Digital Maturity Assessment",
-    desc: "Perform a Digital Maturity Assessment against five key areas: Vision, Culture, Adoption, Execution, and Growth.",
+    title: "Assess Your Digital Maturity",
+    desc: "we evaluate your business across five key areas: Vision, Culture, Adoption, Execution, and Growth.",
   },
   {
-    title: "Provide Recommendations",
-    desc: 'Provide clear, prioritised recommendations based on the "Digital Maturity Assessment Report" findings.',
+    title: "Give Clear Recommendations",
+    desc: "Based on the assessment, we tell you exactly where the gaps and opportunities are.",
   },
   {
-    title: "Develop a Digital Strategy",
-    desc: "Develop a comprehensive Digital Strategy considering the above recommendations and business context.",
+    title: "Build a Tailored Digital Strategy",
+    desc: "we shape a strategy around those specific recommendations, not a generic template.",
   },
   {
-    title: "Build a Delivery Team",
-    desc: "Assemble and onboard a dedicated team to deliver the agreed digital strategy and roadmap.",
+    title: "Assemble the Right Delivery Team",
+    desc: "we build a team that is actually suited to the strategy, not just who is good at writing it.",
   },
   {
-    title: "Tribe Delivery Model",
-    desc: "The tribe works closely with the client, based on the agreed resourcing and collaboration model.",
+    title: "Work Closely With Your Business",
+    desc: "Our team works hand in hand with yours, based on a resourcing model that’s agreed together.",
   },
   {
-    title: "Validate & Scale",
-    desc: "Validate that the enterprise is an Agile Enterprise by creating a sustainable Digital Core and penetrating Digital Literacy.",
+    title: "Validate Real, Lasting Change",
+    desc: "We confirm your organisation has become genuinely agile, with digital thinking built into its core – not just surface- level change.",
   },
 ];
 
 const MATURITY_AREAS = ["Vision", "Culture", "Adoption", "Execution", "Growth"];
+
+const TRANSFORMATION_FAQS: FAQItem[] = [
+  {
+    q: "What's the difference between digital transformation and just adopting new technology?",
+    a: "New technology is just tools. Digital transformation means changing how your whole business works.",
+  },
+  {
+    q: "How long does digital transformation usually take?",
+    a: "It depends on your business. We check where your business is and where it is starting from, then we plan accordingly — instead of following a fixed timeline.",
+  },
+  {
+    q: "What is a digital maturity assessment, and why does it matter?",
+    a: "It's a check-up of your business across five key areas: vision, culture, adoption, execution, and growth — so we know exactly where to help.",
+  },
+  {
+    q: "Is digital transformation only for large companies?",
+    a: "No — any business that wants to modernise can benefit, whatever the size.",
+  },
+];
 
 export default function TransformationPage() {
   return (
@@ -132,7 +152,7 @@ export default function TransformationPage() {
       />
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
-        title="Enterprise Transformation"
+        title="End to End Enterprise Transformation for Modern Business"
         description="We Enable Digital Across the World"
         badge="NEW-GEN SERVICES"
         variant="centered"
@@ -180,17 +200,10 @@ export default function TransformationPage() {
                 </span>
               </h2>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
-                Our Generation Z engineers in the digital transformation team
-                strongly believe that for today's enterprise, adapting to the
-                latest technologies is not enough it's about using "digital"
-                across the entire organisation. We enable digital across the
-                world by integrating Information, Process, Work, and People.
+                Adopting new technology isn’t the same as truly transforming a business. Real digital transformation means weaving “digital” into everything – how information flows, how work gets done, and how people operate day to day.
               </p>
               <p className="text-[15.5px] text-[#555] leading-[1.85]">
-                It is a known fact that transformations are hard, and digital
-                ones are even harder. But we have carefully devised 20 success
-                factors to make Digital Transformations successful for the
-                first time and every time.
+                We know transformations are hard, and digital ones are harder still. That’s why we work from a proven set of success factors, refined through real client work, instead of a one- size-fits-all playbook.
               </p>
             </ScrollReveal>
 
@@ -308,7 +321,7 @@ export default function TransformationPage() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {GOALS.map(({ num, icon: GIcon, gradient, title, desc }, i) => (
+            {GOALS.map(({ icon: GIcon, gradient, title, desc }, i) => (
               <ScrollReveal
                 key={i}
                 direction="up"
@@ -318,16 +331,13 @@ export default function TransformationPage() {
                 <div className="group h-full bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:border-[#6128a6]/25 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.10)] hover:-translate-y-0.5 transition-all duration-300">
                   <div className={`h-1 bg-linear-to-r ${gradient}`} />
                   <div className="p-7 flex flex-col sm:flex-row gap-5 items-start">
-                    {/* Icon + Number */}
-                    <div className="shrink-0 flex items-center gap-4">
+                    {/* Icon */}
+                    <div className="shrink-0">
                       <div
                         className={`w-13 h-13 rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
                       >
                         <GIcon className="w-6 h-6 text-white" />
                       </div>
-                      <span className="text-[40px] font-black text-[#f0eff5] leading-none select-none">
-                        {num}
-                      </span>
                     </div>
                     <div className="flex-1">
                       <h3 className="text-[18px] font-bold text-[#111] mb-2 group-hover:text-[#6128a6] transition-colors leading-snug">
@@ -413,8 +423,10 @@ export default function TransformationPage() {
         </div>
       </section>
 
+      <FAQAccordion faqs={TRANSFORMATION_FAQS} badge=”FAQs” title=”Frequently Asked Questions” subtitle=”Common questions about our enterprise digital transformation services.” />
+
       {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-20 bg-[#f8f5ff]">
+      <section className=”py-20 bg-[#f8f5ff]”>
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
             <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">

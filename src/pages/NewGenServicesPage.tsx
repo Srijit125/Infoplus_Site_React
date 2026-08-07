@@ -15,6 +15,7 @@ import {
   Globe,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 
 /* â”€â”€ Services â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const SERVICES = [
@@ -23,7 +24,7 @@ const SERVICES = [
     title: "Enterprise Transformations",
     href: "/services/new-generation/enterprise-transformation",
     gradient: "from-[#381f55] to-[#6128a6]",
-    desc: "Our Generation Z engineers in the digital transformation team specialise in re-architecting and modernising legacy systems into agile, lean platforms. We guide organisations through every phase strategy, roadmap, execution, and change management so transformation is lasting, not just surface-level.",
+    desc: "We help you update old systems and habits so your business runs in a modern way. It’s about changing how the whole company operates. Not just adding new tools. The business transforms from the current state to the updated version. And staying up to date.",
     highlights: ["Legacy Modernisation", "Change Management", "Agile Adoption", "Digital Roadmaps"],
   },
   {
@@ -31,7 +32,7 @@ const SERVICES = [
     title: "Everything Data",
     href: "/services/new-generation/everything-data",
     gradient: "from-[#381f55] to-[#6128a6]",
-    desc: "Using data is NO longer limited to big companies. It is now widely accessible and the primary driver of competitive advantage. Infoplus helps organisations build end-to-end data pipelines, analytics platforms, and governance frameworks that turn raw data into strategic business intelligence at scale.",
+    desc: "In this service, we help you understand and use the data your business already has, no matter how big or small you are, so it actually helps you make better decisions. Good decisions need good data, and we make sure your data is actually being used, not ignored.",
     highlights: ["Data Pipelines", "Analytics Platforms", "Data Governance", "BI & Reporting"],
   },
   {
@@ -39,17 +40,9 @@ const SERVICES = [
     title: "Automation",
     href: "/services/new-generation/automation",
     gradient: "from-[#381f55] to-[#6128a6]",
-    desc: "Automation is the next critical step in IT maturity, building the bridge between today's operations and tomorrow's intelligent enterprise. Infoplus designs and implements RPA, intelligent process automation, and AI-driven workflow solutions that eliminate manual bottlenecks and free your teams for higher-value work.",
+    desc: "We handle the repetitive, manual tasks so your team can spend on the work that really matters. We take the boring, repeated tasks off your team’s hands. This saves time, reduces mistakes, and lets your team focus on more important work.",
     highlights: ["RPA Implementation", "Intelligent Workflows", "Process Mining", "AI Automation"],
   },
-];
-
-/* â”€â”€ Stats â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-const STATS = [
-  { value: "3",   label: "New-Gen Service Verticals",   color: "#aa3bff" },
-  { value: "CoE", label: "Digital Center of Excellence", color: "#f85d37" },
-  { value: "16%", label: "Projected Efficiency Gain",   color: "#aa3bff" },
-  { value: "0",   label: "Tolerance for Legacy Drag",   color: "#f85d37" },
 ];
 
 /* â”€â”€ Why next-gen â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
@@ -58,6 +51,25 @@ const WHY_NEXTGEN = [
   { icon: RefreshCw, label: "Legacy to Agile",       sub: "Streamline outdated models into lean" },
   { icon: Globe,     label: "Market Position",       sub: "Protect your market share proactively" },
   { icon: Layers,    label: "Modern Solutions",      sub: "Transformation-centric methodologies" },
+];
+
+const NEWGEN_FAQS: FAQItem[] = [
+  {
+    q: "What does \"new generation IT Services\" mean?",
+    a: "It means the newer, smarter side of IT — it's not just about fixing systems. It's actually helping your business use data and automation properly.",
+  },
+  {
+    q: "Is Enterprise Transformation only for big companies?",
+    a: "No — any business using old systems or old ways of working can benefit. It's about how you work, not how big you are.",
+  },
+  {
+    q: "What kind of work can Automation take over?",
+    a: "Simple, repeated tasks — like entering data, creating routine reports, and everyday jobs that don't need someone to think hard, just doing them.",
+  },
+  {
+    q: "What does \"Everything Data\" do differently?",
+    a: "Regular IT support keeps your systems running smoothly. But Everything Data goes a step further — it helps you actually use your information to make smarter business decisions.",
+  },
 ];
 
 export default function NewGenServicesPage() {
@@ -71,8 +83,8 @@ export default function NewGenServicesPage() {
       {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <PageHero
         badge="NEW-GEN SOLUTIONS"
-        title="We are Providing the Best Solutions for Clients"
-        description="Business goals and technologies are changing at unprecedented speed. Organisations that fail to implement next-generation innovative solutions will lose their market position. Our Digital CoE team keeps you ahead."
+        title="Next-Generation IT Services for Smarter Business Growth"
+        description="Modern Problems Need Modern Solutions."
         variant="gradient"
       >
         <div className="flex flex-col sm:flex-row justify-center gap-3">
@@ -147,21 +159,69 @@ export default function NewGenServicesPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Stats â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-14 bg-[#1e0a38] relative overflow-hidden">
+      {/* â”€â”€ Why Choose Infoplus â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <section className=”py-20 bg-white relative overflow-hidden”>
+        <div className=”absolute top-0 right-0 w-125 h-125 rounded-full bg-[#f8f5ff] blur-[100px] pointer-events-none” />
         <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "24px 24px" }}
+          className=”absolute inset-0 opacity-[0.025] pointer-events-none”
+          style={{ backgroundImage: “radial-gradient(circle, #6128a6 1px, transparent 1px)”, backgroundSize: “32px 32px” }}
         />
-        <div className="container mx-auto px-6 max-w-5xl relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {STATS.map((s, i) => (
-              <ScrollReveal key={s.label} direction="up" delay={i * 80}>
-                <div className="text-center">
-                  <p className="text-[clamp(2rem,4vw,3rem)] font-black leading-none mb-2" style={{ color: s.color }}>
-                    {s.value}
-                  </p>
-                  <p className="text-[13px] text-white/50">{s.label}</p>
+        <div className=”container mx-auto px-6 max-w-7xl relative z-10”>
+          <ScrollReveal direction=”up”>
+            <div className=”text-center mb-12”>
+              <span className=”inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5”>
+                Why Choose Us
+              </span>
+              <h2 className=”text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-[#0d0517] leading-tight max-w-3xl mx-auto”>
+                Why Choose Infoplus for{“ “}
+                <span className=”text-[#6128a6]”>New Generation IT Services?</span>
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className=”grid grid-cols-1 md:grid-cols-3 gap-6”>
+            {([
+              {
+                num: “01”, icon: TrendingUp,
+                gradient: “from-[#381f55] to-[#6128a6]”, accent: “#6128a6”,
+                cardBg: “#f8f5ff”, cardBorder: “#e4dcf5”,
+                hoverShadow: “hover:shadow-[0_20px_60px_-12px_rgba(97,40,166,0.18)]”,
+                title: “We Keep You Ahead”,
+                desc: “Technology is always changing, and businesses that don't keep up fall behind — we make sure you don't.”,
+              },
+              {
+                num: “02”, icon: Zap,
+                gradient: “from-[#7c2d12] to-[#f85d37]”, accent: “#f85d37”,
+                cardBg: “#fff8f6”, cardBorder: “#fde0d6”,
+                hoverShadow: “hover:shadow-[0_20px_60px_-12px_rgba(248,93,55,0.14)]”,
+                title: “Real, Practical Improvements”,
+                desc: “We help you replace outdated systems, put your data to real use, and automate the tasks that waste your team's time.”,
+              },
+              {
+                num: “03”, icon: Rocket,
+                gradient: “from-[#5b21b6] to-[#aa3bff]”, accent: “#aa3bff”,
+                cardBg: “#faf5ff”, cardBorder: “#e9d5ff”,
+                hoverShadow: “hover:shadow-[0_20px_60px_-12px_rgba(170,59,255,0.14)]”,
+                title: “Your Path, Built by Us”,
+                desc: “Whatever \”moving forward\” looks like for your business, we build the path to get you there.”,
+              },
+            ] as const).map((item, i) => (
+              <ScrollReveal key={item.num} variant=”card” delay={i * 120}>
+                <div
+                  className={`group relative flex flex-col h-full rounded-3xl p-8 border transition-all duration-300 hover:-translate-y-2 overflow-hidden ${item.hoverShadow}`}
+                  style={{ background: item.cardBg, borderColor: item.cardBorder }}
+                >
+                  <span
+                    className=”absolute -top-3 -right-1 text-[110px] font-black leading-none select-none pointer-events-none group-hover:scale-105 transition-transform duration-500”
+                    style={{ color: item.accent + “18” }}
+                  >{item.num}</span>
+                  <div className={`relative z-10 w-12 h-12 rounded-2xl bg-linear-to-br ${item.gradient} flex items-center justify-center mb-5 shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-[0_8px_20px_-4px_rgba(0,0,0,0.20)]`}>
+                    <item.icon className=”w-6 h-6 text-white” />
+                  </div>
+                  <h3 className=”relative z-10 text-[19px] font-bold text-[#0d0517] mb-3 leading-snug”>{item.title}</h3>
+                  <div className=”relative z-10 h-[3px] w-8 rounded-full mb-5 group-hover:w-16 transition-all duration-300” style={{ background: item.accent }} />
+                  <p className=”relative z-10 text-[14px] text-[#555] leading-relaxed flex-1”>{item.desc}</p>
+                  <div className=”absolute bottom-0 left-0 right-0 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none” style={{ background: `linear-gradient(to top, ${item.accent}12, transparent)` }} />
                 </div>
               </ScrollReveal>
             ))}
@@ -188,10 +248,10 @@ export default function NewGenServicesPage() {
                 Three pillars of&nbsp;
                 <span className="text-[#aa3bff]">next-gen innovation</span>
               </h2>
-              <p className="text-[15px] text-white/50 mt-4 max-w-2xl mx-auto">
+              {/* <p className="text-[15px] text-white/50 mt-4 max-w-2xl mx-auto">
                 Each service is delivered by our Digital CoE specialist engineers who live at the intersection of
                 strategy and execution. Click any service to explore in depth.
-              </p>
+              </p> */}
             </div>
           </ScrollReveal>
 
@@ -283,8 +343,10 @@ export default function NewGenServicesPage() {
         </div>
       </section>
 
+      <FAQAccordion faqs={NEWGEN_FAQS} badge=”FAQs” title=”Frequently Asked Questions” subtitle=”Common questions about our new generation IT services.” />
+
       {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className=”py-24 bg-white relative overflow-hidden”>
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
           <ScrollReveal variant="card">
