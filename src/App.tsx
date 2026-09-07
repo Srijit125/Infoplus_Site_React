@@ -1,9 +1,11 @@
-﻿import { BrowserRouter, Route, Routes } from "react-router-dom";
+﻿import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import { Footer } from "./components/FooterComponent";
 // import Header from "./components/Header";
 import { Header } from "./components/header/HeaderComponent";
 import Index from "./pages/Index";
+import IndexTheme2 from "./pages/IndexTheme2";
+import IndexTheme3 from "./pages/IndexTheme3";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
@@ -34,46 +36,60 @@ import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import { CookieConsent } from "./components/ui/CookieConsent";
 import { ScrollToTop } from "./components/ui/ScrollToTop";
 
-function App() {
+function AppShell() {
+  const location = useLocation();
+  const footerBg =
+    location.pathname === "/home-2" ? "#0D112D" :
+    location.pathname === "/home-3" ? "#152A6E" :
+    undefined;
+
   return (
     <>
-      <BrowserRouter>
-        <ScrollToTop />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogDetail />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/careers" element={<CareersPage />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/services/it-services" element={<ITServicesPage />} />
-          <Route path="/services/staffing-consulting" element={<StaffingConsultingPage />} />
-          <Route path="/services/new-generation" element={<NewGenServicesPage />} />
-          <Route path="/services/it-services/artificial-intelligence" element={<AIPage />} />
-          <Route path="/services/it-services/software-development" element={<SoftwareDevelopmentPage />} />
-          <Route path="/services/it-services/testing" element={<TestingPage />} />
-          <Route path="/services/it-services/infrastructure-management" element={<InfrastructurePage />} />
-          <Route path="/services/it-services/sap-consulting" element={<SAPPage />} />
-          <Route path="/services/it-services/cyber-security" element={<CyberSecurityPage />} />
-          <Route path="/services/it-services/cloud-portfolio" element={<CloudPage />} />
-          <Route path="/services/staffing-consulting/it-staffing-solutions" element={<StaffingPage />} />
-          <Route path="/services/staffing-consulting/it-consulting-solutions" element={<ConsultingPage />} />
-          <Route path="/services/staffing-consulting/umbrella-service" element={<UmbrellaPage />} />
-          <Route path="/services/new-generation/enterprise-transformation" element={<TransformationPage />} />
-          <Route path="/services/new-generation/everything-data" element={<EverythingDataPage />} />
-          <Route path="/services/new-generation/automation" element={<AutomationPage />} />
-          <Route path="/products/master-data-management" element={<MasterDataManagementPage />} />
-          <Route path="/products/education-solutions" element={<EducationSolutionsPage />} />
-          <Route path="/cookie-policy" element={<CookiePolicyPage />} />
-          <Route path="/terms-of-service" element={<TermsOfServicePage />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-        </Routes>
-        <Footer />
-        <CookieConsent />
-      </BrowserRouter>
+      <ScrollToTop />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/home-2" element={<IndexTheme2 />} />
+        <Route path="/home-3" element={<IndexTheme3 />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogDetail />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/careers" element={<CareersPage />} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/services/it-services" element={<ITServicesPage />} />
+        <Route path="/services/staffing-consulting" element={<StaffingConsultingPage />} />
+        <Route path="/services/new-generation" element={<NewGenServicesPage />} />
+        <Route path="/services/it-services/artificial-intelligence" element={<AIPage />} />
+        <Route path="/services/it-services/software-development" element={<SoftwareDevelopmentPage />} />
+        <Route path="/services/it-services/testing" element={<TestingPage />} />
+        <Route path="/services/it-services/infrastructure-management" element={<InfrastructurePage />} />
+        <Route path="/services/it-services/sap-consulting" element={<SAPPage />} />
+        <Route path="/services/it-services/cyber-security" element={<CyberSecurityPage />} />
+        <Route path="/services/it-services/cloud-portfolio" element={<CloudPage />} />
+        <Route path="/services/staffing-consulting/it-staffing-solutions" element={<StaffingPage />} />
+        <Route path="/services/staffing-consulting/it-consulting-solutions" element={<ConsultingPage />} />
+        <Route path="/services/staffing-consulting/umbrella-service" element={<UmbrellaPage />} />
+        <Route path="/services/new-generation/enterprise-transformation" element={<TransformationPage />} />
+        <Route path="/services/new-generation/everything-data" element={<EverythingDataPage />} />
+        <Route path="/services/new-generation/automation" element={<AutomationPage />} />
+        <Route path="/products/master-data-management" element={<MasterDataManagementPage />} />
+        <Route path="/products/education-solutions" element={<EducationSolutionsPage />} />
+        <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+        <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+      </Routes>
+      <Footer bgColor={footerBg} />
+      <CookieConsent />
     </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppShell />
+    </BrowserRouter>
   );
 }
 

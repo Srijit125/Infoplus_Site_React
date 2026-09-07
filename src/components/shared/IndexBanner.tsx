@@ -57,10 +57,10 @@ interface SlideB {
   image: string;
 }
 
-type AnySlide = SlideA | SlideB;
+export type AnySlide = SlideA | SlideB;
 
 /* ─── Slide data ─────────────────────────────────── */
-const SLIDES: AnySlide[] = [
+export const SLIDES_ALL: AnySlide[] = [
   /* ── Variant A — original 6 ── */
   {
     variant: "a",
@@ -556,7 +556,8 @@ function SlideContentB({
 }
 
 /* ─── Main banner ────────────────────────────────── */
-function IndexBanner() {
+function IndexBanner({ slides: slidesProp }: { slides?: AnySlide[] } = {}) {
+  const SLIDES = slidesProp ?? SLIDES_ALL;
   const [active, setActive]           = useState(0);
   const [exitingIdx, setExitingIdx]   = useState<number | null>(null);
   const [enterKey, setEnterKey]       = useState(0);
