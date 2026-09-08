@@ -144,15 +144,16 @@ export function PageHero({
           backgroundSize: "24px 24px",
         }}
       />
-      {/* subtle orb */}
-      <div className="absolute top-[-10%] right-[-5%] w-125 h-125 rounded-full bg-[#EB9B3D] opacity-20 blur-[120px] pointer-events-none" />
+      {/* amber orbs — left and right, matching split variant */}
+      <div className="absolute top-0 left-0 w-150 h-150 rounded-full bg-[#EB9B3D] opacity-20 blur-[120px] pointer-events-none" />
+      <div className="absolute top-[-10%] right-[-5%] w-125 h-125 rounded-full bg-[#EB9B3D] opacity-15 blur-[120px] pointer-events-none" />
       {/* brand accent line at bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#EB9B3D]/40 to-transparent" />
 
       <div className="container mx-auto px-6 max-w-4xl relative z-10 text-center">
         {badge && (
           <span
-            className="inline-block py-1.5 px-4 rounded-full bg-white/10 border border-white/20 text-white/80 text-[11px] font-bold uppercase tracking-widest mb-7"
+            className="inline-block py-1.5 px-4 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/30 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-7"
             style={heroStyle(80)}
           >
             {badge}

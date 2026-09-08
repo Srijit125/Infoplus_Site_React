@@ -81,7 +81,7 @@ export default function CookiePolicyPage() {
         variant="centered"
       >
         <div className="flex flex-wrap justify-center gap-3">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/70 text-[12px] font-semibold">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/30 text-[#EB9B3D] text-[12px] font-semibold">
             <Cookie className="w-3.5 h-3.5 text-[#EB9B3D]" />
             GDPR Compliant
           </span>
@@ -188,8 +188,8 @@ export default function CookiePolicyPage() {
                 <ScrollReveal key={cookie.name} direction="left" delay={i * 80}>
                   <div className="group flex items-center gap-5 bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl px-6 py-5 hover:border-[#EB9B3D]/35 hover:shadow-[0_8px_32px_rgba(235,155,61,0.10)] transition-all duration-300">
                     <div className="w-1 h-12 rounded-full bg-linear-to-b from-[#EB9B3D] to-[#DA4D33] shrink-0" />
-                    <div className="w-10 h-10 rounded-xl bg-[#EB9B3D]/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      <FIcon className="w-5 h-5 text-[#EB9B3D]" />
+                    <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <FIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-[15px] font-bold text-[#0d0517] mb-1">{cookie.name}</p>

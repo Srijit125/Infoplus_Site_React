@@ -31,11 +31,11 @@ export default function BlogDetail() {
 
   if (!post) {
     return (
-      <div className="min-h-[70vh] flex flex-col items-center justify-center bg-[#f8f5ff] gap-4">
+      <div className="min-h-[70vh] flex flex-col items-center justify-center bg-white gap-4">
         <h2 className="text-2xl font-bold text-[#111]">Article not found</h2>
         <Link
           to="/blog"
-          className="flex items-center gap-2 text-[#6128a6] font-semibold hover:text-[#f85d37] transition-colors"
+          className="flex items-center gap-2 text-[#EB9B3D] font-semibold hover:text-[#DA4D33] transition-colors"
         >
           <ArrowLeft className="w-4 h-4" /> Back to Blog
         </Link>
@@ -54,18 +54,25 @@ export default function BlogDetail() {
         description={post.excerpt}
         path={`/blog/${post.id}`}
       />
+
       {/* Article Hero */}
-      <section className="bg-[#0d0517] relative overflow-hidden pt-40 pb-16">
+      <section
+        className="relative overflow-hidden pt-40 pb-16"
+        style={{ background: "linear-gradient(135deg, #0D112D 0%, #242E72 100%)" }}
+      >
         {/* Dot grid */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.06]"
           style={{
             backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
             backgroundSize: "28px 28px",
           }}
         />
-        {/* Orb */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-[#6128a6]/20 blur-[120px] pointer-events-none" />
+        {/* Amber orb */}
+        <div className="absolute top-0 left-0 w-150 h-150 rounded-full bg-[#EB9B3D] opacity-20 blur-[120px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#EB9B3D] opacity-15 blur-[100px] pointer-events-none" />
+        {/* Accent line */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#EB9B3D]/40 to-transparent" />
 
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
           {/* Back link */}
@@ -98,7 +105,7 @@ export default function BlogDetail() {
           {/* Meta */}
           <div className="flex flex-wrap items-center gap-5">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#6128a6] to-[#aa3bff] flex items-center justify-center text-white text-[13px] font-bold">
+              <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center text-white text-[13px] font-bold">
                 {initials(post.author)}
               </div>
               <div>
@@ -121,7 +128,7 @@ export default function BlogDetail() {
 
       {/* Featured image (if exists) */}
       {post.image && (
-        <div className="bg-[#0d0517] pb-0">
+        <div style={{ background: "linear-gradient(135deg, #0D112D 0%, #242E72 100%)" }} className="pb-0">
           <div className="container mx-auto px-6 max-w-4xl">
             <div className="relative h-[420px] rounded-2xl overflow-hidden -mb-16 shadow-[0_24px_80px_rgba(0,0,0,0.4)]">
               <img
@@ -139,7 +146,7 @@ export default function BlogDetail() {
       <section className={`bg-white -mt-10 rounded-t-[3rem] z-20 ${post.image ? "pt-28" : "pt-16"} pb-20`}>
         <div className="container mx-auto px-6 max-w-3xl">
           {/* Excerpt lead */}
-          <p className="text-[19px] text-[#333] leading-[1.7] font-medium border-l-4 border-[#6128a6] pl-6 mb-10 italic">
+          <p className="text-[19px] text-[#333] leading-[1.7] font-medium border-l-4 border-[#EB9B3D] pl-6 mb-10 italic">
             {post.excerpt}
           </p>
 
@@ -150,7 +157,7 @@ export default function BlogDetail() {
                 return (
                   <h2
                     key={i}
-                    className="text-[24px] font-bold text-[#111] mt-12 mb-5 border-l-[3px] border-[#6128a6] pl-4"
+                    className="text-[24px] font-bold text-[#111] mt-12 mb-5 border-l-[3px] border-[#EB9B3D] pl-4"
                   >
                     {block.text}
                   </h2>
@@ -161,8 +168,8 @@ export default function BlogDetail() {
                   <ul key={i} className="my-6 space-y-4">
                     {block.items.map((item, j) => (
                       <li key={j} className="flex items-start gap-3">
-                        <span className="w-5 h-5 rounded-full bg-[#ecdaff] flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#6128a6]" />
+                        <span className="w-5 h-5 rounded-full bg-[#FEF0DC] flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#EB9B3D]" />
                         </span>
                         <span className="text-[16px] text-[#444] leading-relaxed">{item}</span>
                       </li>
@@ -179,11 +186,11 @@ export default function BlogDetail() {
           </div>
 
           {/* Tags footer */}
-          <div className="mt-12 pt-8 border-t border-[#f0eff5] flex flex-wrap gap-2">
+          <div className="mt-12 pt-8 border-t border-[rgba(13,17,45,0.08)] flex flex-wrap gap-2">
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="flex items-center gap-1 px-3 py-1 rounded-lg bg-[#f8f5ff] text-[#6128a6] text-[12px] font-medium border border-[#e8e0f7]"
+                className="flex items-center gap-1 px-3 py-1 rounded-lg bg-[#FEF0DC] text-[#EB9B3D] text-[12px] font-medium border border-[rgba(235,155,61,0.20)]"
               >
                 <Tag className="w-3 h-3" />
                 {tag}
@@ -192,8 +199,8 @@ export default function BlogDetail() {
           </div>
 
           {/* Author box */}
-          <div className="mt-10 flex items-start gap-5 bg-[#f8f5ff] border border-[#e5e4e7] rounded-2xl p-6">
-            <div className="w-14 h-14 rounded-full bg-linear-to-br from-[#6128a6] to-[#aa3bff] flex items-center justify-center text-white text-[18px] font-bold flex-shrink-0">
+          <div className="mt-10 flex items-start gap-5 bg-[#F3F5FF] border border-[rgba(13,17,45,0.08)] rounded-2xl p-6">
+            <div className="w-14 h-14 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center text-white text-[18px] font-bold flex-shrink-0">
               {initials(post.author)}
             </div>
             <div>
@@ -209,11 +216,11 @@ export default function BlogDetail() {
 
       {/* Related Articles */}
       {related.length > 0 && (
-        <section className="py-16 bg-[#f8f5ff]">
+        <section className="py-16 bg-white">
           <div className="container mx-auto px-6 max-w-7xl">
             <ScrollReveal direction="fade">
               <div className="mb-10">
-                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Keep Reading
                 </span>
                 <h2 className="text-[28px] font-bold text-[#111]">Related Articles</h2>
@@ -224,7 +231,7 @@ export default function BlogDetail() {
               {related.map((rp, idx) => (
                 <ScrollReveal key={rp.id} direction="fade" variant="card" delay={idx * 80}>
                   <Link to={`/blog/${rp.id}`} className="block group h-full">
-                    <article className="h-full flex flex-col bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:border-[#6128a6]/30 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.12)] hover:-translate-y-1 transition-all duration-300">
+                    <article className="h-full flex flex-col bg-white border border-[rgba(13,17,45,0.08)] rounded-2xl overflow-hidden hover:border-[#EB9B3D]/30 hover:shadow-[0_16px_48px_-8px_rgba(235,155,61,0.12)] hover:-translate-y-1 transition-all duration-300">
                       <div className="relative h-44 flex-shrink-0">
                         {rp.image ? (
                           <>
@@ -232,7 +239,7 @@ export default function BlogDetail() {
                             <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
                           </>
                         ) : (
-                          <div className={`w-full h-full ${CAT_GRADIENT[rp.category] ?? "bg-[#1e0a38]"} flex items-center justify-center`}>
+                          <div className={`w-full h-full ${CAT_GRADIENT[rp.category] ?? "bg-[#141A3D]"} flex items-center justify-center`}>
                             <span className="text-white/8 text-[72px] font-black leading-none select-none">{rp.category.charAt(0)}</span>
                           </div>
                         )}
@@ -248,7 +255,7 @@ export default function BlogDetail() {
                           <span className="text-[#ddd]">·</span>
                           <Clock className="w-3 h-3" />{rp.readTime}
                         </div>
-                        <h3 className="text-[15px] font-bold text-[#111] leading-snug group-hover:text-[#6128a6] transition-colors line-clamp-2">
+                        <h3 className="text-[15px] font-bold text-[#111] leading-snug group-hover:text-[#EB9B3D] transition-colors line-clamp-2">
                           {rp.title}
                         </h3>
                       </div>
@@ -261,7 +268,8 @@ export default function BlogDetail() {
             <div className="text-center mt-10">
               <Link
                 to="/blog"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#1e0a38] text-white text-[14px] font-semibold hover:bg-[#6128a6] transition-colors duration-300"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-white text-[14px] font-semibold transition-opacity duration-200 hover:opacity-85"
+                style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
               >
                 <ArrowLeft className="w-4 h-4" /> All Articles
               </Link>

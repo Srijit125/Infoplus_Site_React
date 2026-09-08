@@ -166,7 +166,7 @@ export default function TermsOfServicePage() {
         variant="centered"
       >
         <div className="flex flex-wrap justify-center gap-3">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/70 text-[12px] font-semibold">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/30 text-[#EB9B3D] text-[12px] font-semibold">
             <FileText className="w-3.5 h-3.5 text-[#EB9B3D]" />
             England &amp; Wales Law
           </span>
@@ -186,20 +186,20 @@ export default function TermsOfServicePage() {
 
             {/* Sticky TOC */}
             <aside className="hidden lg:block lg:sticky lg:self-start" style={{ top: "100px" }}>
-              <div
-                className="bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl shadow-[0_4px_24px_rgba(235,155,61,0.08)] flex flex-col overflow-hidden"
-                style={{ maxHeight: "calc(100vh - 120px)" }}
-              >
+              <div className="bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl shadow-[0_4px_24px_rgba(235,155,61,0.08)] flex flex-col overflow-hidden">
                 <div className="shrink-0 px-5 pt-5 pb-4 border-b border-[rgba(13,17,45,0.08)]">
                   <p className="text-[10px] font-bold uppercase tracking-widest text-[#EB9B3D]">Contents</p>
                 </div>
-                <ul className="overflow-y-auto px-3 py-3 space-y-0.5">
+                <ul className="px-3 py-3 space-y-1">
                   {SECTIONS.map((s) => (
                     <li key={s.id}>
                       <a
                         href={`#${s.id}`}
-                        className={`flex items-center gap-2 px-2 py-1.5 rounded-lg text-[12px] text-[#0d0517] transition-all duration-200 ${activeId === s.id ? "font-semibold" : "font-medium"}`}
-                        style={{ backgroundColor: activeId === s.id ? `${s.accent}12` : undefined }}
+                        className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[12px] transition-all duration-200 hover:bg-[rgba(13,17,45,0.05)] ${activeId === s.id ? "font-bold" : "font-medium text-[#666]"}`}
+                        style={{
+                          backgroundColor: activeId === s.id ? `${s.accent}25` : undefined,
+                          color: activeId === s.id ? s.accent : undefined,
+                        }}
                       >
                         <span className="flex-1 leading-snug">{s.title}</span>
                         {activeId === s.id && (
@@ -287,8 +287,8 @@ export default function TermsOfServicePage() {
             <div className="bg-[#F3F5FF] border border-[rgba(13,17,45,0.08)] rounded-2xl p-8 shadow-[0_4px_24px_rgba(235,155,61,0.06)]">
               <p className="text-[14.5px] font-bold text-[#0d0517] mb-1">Infoplus Technologies UK Limited</p>
               <div className="flex items-start gap-3 mb-6">
-                <div className="w-9 h-9 rounded-xl bg-[#EB9B3D]/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <MapPin className="w-4 h-4 text-[#EB9B3D]" />
+                <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0 mt-0.5">
+                  <MapPin className="w-5 h-5 text-white" strokeWidth={1.6} />
                 </div>
                 <span className="text-[14px] text-[#555] leading-relaxed pt-1.5">Unit 6 Capital Business Park, Manor Way, Borehamwood WD6 1GW</span>
               </div>
@@ -297,14 +297,14 @@ export default function TermsOfServicePage() {
                   href="mailto:contact@infoplusltd.co.uk"
                   className="flex items-center gap-3 text-[14.5px] text-[#555] hover:text-[#EB9B3D] transition-colors group"
                 >
-                  <div className="w-9 h-9 rounded-xl bg-[#EB9B3D]/10 flex items-center justify-center shrink-0 group-hover:bg-[#EB9B3D]/20 transition-colors">
-                    <Mail className="w-4 h-4 text-[#EB9B3D]" />
+                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <Mail className="w-5 h-5 text-white" strokeWidth={1.6} />
                   </div>
                   <span>contact@infoplusltd.co.uk</span>
                 </a>
                 <div className="flex items-center gap-3 text-[14.5px] text-[#555]">
-                  <div className="w-9 h-9 rounded-xl bg-[#EB9B3D]/10 flex items-center justify-center shrink-0">
-                    <Phone className="w-4 h-4 text-[#EB9B3D]" />
+                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-white" strokeWidth={1.6} />
                   </div>
                   <span>+44 208207 3474</span>
                 </div>
