@@ -15,35 +15,18 @@ import { ScrollReveal } from "../components/ui/ScrollReveal";
 import ClientCarousel from "../components/ui/ClientCarousel";
 import { ImageWithFallback } from "../components/helpers/ImageWithFallback";
 import imgMap from "../assets/images/imgMap.png";
+import IndexBanner, { SLIDES_ALL } from "../components/shared/IndexBanner";
 
-/* ─────────────────────────────────────────────────────────────────
-   Theme 2 — Design System Tokens
-───────────────────────────────────────────────────────────────── */
-const BG  = "linear-gradient(135deg, #0D112D 0%, #242E72 100%)";
-const ACC = "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)";
-const SRF = "#141A3D";
-const SAL = "#1A2444";
-const BRD = "rgba(169,180,214,0.15)";
-const TP  = "#FFFFFF";
-const TS  = "#A9B4D6";
-const TA  = "#DB5434";
-const FF  = "'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif";
-
-const card  = { background: SAL, border: `1px solid ${BRD}`, borderRadius: 12 };
-const lcard = { background: "#F3F5FF", border: "1px solid rgba(13,17,45,0.07)", borderRadius: 12 };
-const WH1   = "#101223";
-const WH2   = "#4A4F63";
+import {
+  T2_BG as BG, T2_ACC as ACC, T2_SRF as SRF, T2_SAL as SAL,
+  T2_BRD as BRD, T2_TP as TP, T2_TS as TS, T2_TA as TA, T2_FF as FF,
+  T2_WH1 as WH1, T2_WH2 as WH2,
+  t2Card as card, t2LCard as lcard,
+} from "../styles/theme2";
 
 /* ─────────────────────────────────────────────────────────────────
    Data
 ───────────────────────────────────────────────────────────────── */
-const STATS = [
-  { value: "20+",  label: "Years of Excellence" },
-  { value: "500+", label: "Projects Delivered"  },
-  { value: "17",   label: "Global Offices"      },
-  { value: "200+", label: "Certified Experts"   },
-];
-
 const WHY = [
   { icon: Clock,      title: "24+ Years of Experience",        desc: "Solving real IT problems since 2000 — we have already seen the challenges your business faces and know how to fix them properly." },
   { icon: Award,      title: "Certified Specialists",           desc: "Our teams include certified experts across SAP, Cloud platforms and cyber-security. Genuinely qualified, not just experienced." },
@@ -66,7 +49,8 @@ const LOCATIONS = [
   { country: "Germany",        address: "14th Floor, Tower 185, Friedrich-Ebert-Anlage 35-37, Frankfurt.", icon: MapPin },
 ];
 
-const HERO_TAGS = ["Artificial Intelligence", "Cloud Solutions", "Cyber Security", "SAP Consulting", "IT Staffing", "Digital Transformation"];
+/* Hero carousel: slides 8, 9, 10 (the 3 Variant B slides from SLIDES_ALL) */
+const SLIDES_T2 = SLIDES_ALL.slice(6);
 
 const AWARDS_T2 = [
   { icon: Trophy,  title: "Microsoft Solution Partner",  org: "Microsoft Corporation",         tag: "Technology Partner" },
@@ -257,67 +241,10 @@ export default function IndexTheme2() {
         path="/home-2"
       />
 
-      {/* ══ 1. Hero — Custom dark gradient ══ */}
-      <section style={{ background: BG, position: "relative", overflow: "hidden", paddingTop: "clamp(100px,14vw,140px)", paddingBottom: "clamp(100px,14vw,140px)" }}>
-        <div style={{ position: "absolute", inset: 0, opacity: 0.05, backgroundImage: "radial-gradient(circle,#ffffff 1px,transparent 1px)", backgroundSize: "24px 24px", pointerEvents: "none" }} />
-        <div style={{ position: "absolute", top: "-10%", right: "-5%", width: 560, height: 560, borderRadius: "50%", background: "radial-gradient(circle, rgba(235,155,61,0.14) 0%, transparent 65%)", pointerEvents: "none" }} />
-        <div style={{ position: "absolute", bottom: "-20%", left: "-8%", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(36,46,114,0.55) 0%, transparent 70%)", pointerEvents: "none" }} />
+      {/* ══ 1. Hero — Carousel (slide 1 = Theme 2 content, slides 2–9 from SLIDES_ALL) ══ */}
+      <IndexBanner slides={SLIDES_T2} />
 
-        <div className="container mx-auto px-6 max-w-5xl text-center" style={{ position: "relative", zIndex: 1, color: TP }}>
-          <ScrollReveal direction="up">
-            <Eyebrow label="Managed IT & AI Solutions" />
-            <h1 style={{ color: TP, fontWeight: 900, fontSize: "clamp(2.25rem,6vw,4rem)", lineHeight: 1.1, marginBottom: 24 }}>
-              Transform Your Business<br />with{" "}
-              <span style={{ background: ACC, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                Intelligent IT
-              </span>
-            </h1>
-            <p style={{ color: TS, fontSize: "clamp(15px,2vw,18px)", lineHeight: 1.75, maxWidth: 600, margin: "0 auto 44px" }}>
-              24+ years of expertise delivering AI, cloud, cyber security, SAP consulting, and staffing solutions across 17 countries.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
-              <Link to="/contact"
-                style={{ background: ACC, borderRadius: 999, padding: "14px 32px", fontWeight: 700, color: TP, display: "inline-flex", alignItems: "center", gap: 8, textDecoration: "none", fontSize: 15, transition: "all 0.2s" }}
-                className="hover:opacity-85 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.40)]">
-                Get Started <ArrowRight style={{ width: 16, height: 16 }} />
-              </Link>
-              <GhostBtn to="/about">Learn More</GhostBtn>
-            </div>
-
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              {HERO_TAGS.map(tag => (
-                <span key={tag} style={{ color: TS, background: "rgba(169,180,214,0.08)", border: `1px solid ${BRD}`, borderRadius: 999, padding: "6px 14px", fontSize: 12, fontWeight: 600 }}>
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ══ 2. Stats Band — dark (SRF) ══ */}
-      <section className="py-14" style={{ background: SRF }}>
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {STATS.map((s, i) => (
-              <ScrollReveal key={s.label} direction="up" delay={i * 70}>
-                <div style={{ ...card, padding: "32px 24px", transition: "all 0.25s" }}
-                  className="flex flex-col items-center text-center hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(235,155,61,0.14)] cursor-default">
-                  <p style={{ color: "#EB9B3D", fontWeight: 900, fontSize: 48, lineHeight: 1, marginBottom: 10 }} className="tabular-nums">
-                    {s.value}
-                  </p>
-                  <p style={{ color: TS, fontWeight: 600, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase" }}>
-                    {s.label}
-                  </p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══ 3. About Us — white ══ */}
+      {/* ══ 2. About Us — white ══ */}
       <section className="py-28" style={{ background: "#FFFFFF" }}>
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

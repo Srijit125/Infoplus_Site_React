@@ -13,8 +13,6 @@ export function Header() {
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
   const location = useLocation();
   const isServicesActive = location.pathname.startsWith("/services");
-  const isTheme2 = location.pathname === "/home-2";
-  const isTheme3 = location.pathname === "/home-3";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 40);
@@ -122,24 +120,8 @@ export function Header() {
         <div className="hidden lg:flex items-center">
           <NavLink
             to="/contact"
-            className={[
-              "flex items-center gap-2 px-5 py-2.5 font-semibold text-[14px] transition-all duration-200 shrink-0",
-              isTheme2
-                ? "text-white rounded-full hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(235,155,61,0.35)]"
-                : isTheme3
-                  ? isScrolled
-                    ? "text-white rounded-lg hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(30,85,204,0.30)]"
-                    : "rounded-lg hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(30,85,204,0.20)]"
-                  : "text-white rounded-lg bg-[#f85d37] hover:bg-[#e04f2c]",
-            ].join(" ")}
-            style={
-              isTheme2 ? { background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }
-              : isTheme3
-                ? isScrolled
-                  ? { background: "linear-gradient(135deg, #152A6E 0%, #1E55CC 100%)", color: "#FFFFFF" }
-                  : { background: "#FFFFFF", color: "#1E55CC", border: "1.5px solid rgba(30,85,204,0.20)" }
-              : undefined
-            }
+            className="flex items-center gap-2 text-white px-5 py-2.5 font-semibold text-[14px] transition-all duration-200 shrink-0 rounded-full hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(235,155,61,0.35)]"
+            style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
           >
             Get Started <ChevronRight className="w-4 h-4" />
           </NavLink>
@@ -147,7 +129,7 @@ export function Header() {
 
         {/* Mobile hamburger */}
         <button
-          className={`lg:hidden p-2 rounded-lg transition-colors ${
+          className={`lg:hidden p-2 rounded-lg transition-colors cursor-pointer ${
             isScrolled
               ? "text-[#111111] hover:bg-black/5"
               : "text-white hover:bg-white/10"
@@ -180,7 +162,7 @@ export function Header() {
                   <button
                     onClick={() => setOpenMobileSection(isOpen ? null : item.label)}
                     className={[
-                      "w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[15px] font-medium transition-colors",
+                      "w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[15px] font-medium transition-colors cursor-pointer",
                       isScrolled
                         ? item.noNavigate && isServicesActive
                           ? "text-[#6128a6] bg-[#f8f5ff] font-semibold"
@@ -264,19 +246,8 @@ export function Header() {
 
           <NavLink
             to="/contact"
-            className={[
-              "mt-3 flex items-center justify-center gap-2 px-6 py-3 font-semibold text-[14px] transition-all duration-200",
-              isTheme2
-                ? "text-white rounded-full hover:opacity-90"
-                : isTheme3
-                  ? "rounded-lg hover:opacity-90"
-                  : "text-white rounded-lg bg-[#f85d37] hover:bg-[#e04f2c]",
-            ].join(" ")}
-            style={
-              isTheme2 ? { background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }
-              : isTheme3 ? { background: "linear-gradient(135deg, #152A6E 0%, #1E55CC 100%)", color: "#FFFFFF" }
-              : undefined
-            }
+            className="mt-3 flex items-center justify-center gap-2 text-white px-6 py-3 font-semibold text-[14px] transition-all duration-200 rounded-full hover:opacity-90"
+            style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
           >
             Get Started <ChevronRight className="w-4 h-4" />
           </NavLink>

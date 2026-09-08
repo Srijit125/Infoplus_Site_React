@@ -51,21 +51,21 @@ function About() {
   ];
 
   const team = [
-    { name: "Rajesh Kumar",     role: "CEO & Founder",                    bio: "Visionary leader with 24+ years driving global IT strategy and innovation.",             initials: "RK", accent: "#6128a6", image: "/team/rajesh-kumar.jpg",   linkedin: "#" },
-    { name: "Priya Sharma",     role: "Chief Technology Officer",          bio: "Architect of enterprise cloud and AI solutions across 17 countries.",                    initials: "PS", accent: "#aa3bff", image: "/team/priya-sharma.jpg",   linkedin: "#" },
-    { name: "James Bennett",    role: "Head of IT Services",               bio: "Expert in managed IT, infrastructure, and cybersecurity delivery.",                     initials: "JB", accent: "#f85d37", image: "/team/james-bennett.jpg",  linkedin: "#" },
-    { name: "Aisha Patel",      role: "Director of SAP Practice",          bio: "Certified SAP consultant specialising in S/4HANA transformations.",                     initials: "AP", accent: "#14b8a6", image: "/team/aisha-patel.jpg",    linkedin: "#" },
-    { name: "Michael Carter",   role: "Head of Staffing & Consulting",     bio: "Connects top IT talent with leading organisations across the UK.",                      initials: "MC", accent: "#6366f1", image: "/team/michael-carter.jpg", linkedin: "#" },
-    { name: "Sophie Williams",  role: "Director of Business Development",  bio: "Builds lasting partnerships and drives growth across new markets.",                     initials: "SW", accent: "#f59e0b", image: "/team/sophie-williams.jpg",linkedin: "#" },
+    { name: "Rajesh Kumar",     role: "CEO & Founder",                    bio: "Visionary leader with 24+ years driving global IT strategy and innovation.",             initials: "RK", accent: "#EB9B3D", image: "/team/rajesh-kumar.jpg",   linkedin: "#" },
+    { name: "Priya Sharma",     role: "Chief Technology Officer",          bio: "Architect of enterprise cloud and AI solutions across 17 countries.",                    initials: "PS", accent: "#DA4D33", image: "/team/priya-sharma.jpg",   linkedin: "#" },
+    { name: "James Bennett",    role: "Head of IT Services",               bio: "Expert in managed IT, infrastructure, and cybersecurity delivery.",                     initials: "JB", accent: "#F5A623", image: "/team/james-bennett.jpg",  linkedin: "#" },
+    { name: "Aisha Patel",      role: "Director of SAP Practice",          bio: "Certified SAP consultant specialising in S/4HANA transformations.",                     initials: "AP", accent: "#F0783A", image: "/team/aisha-patel.jpg",    linkedin: "#" },
+    { name: "Michael Carter",   role: "Head of Staffing & Consulting",     bio: "Connects top IT talent with leading organisations across the UK.",                      initials: "MC", accent: "#F5C66A", image: "/team/michael-carter.jpg", linkedin: "#" },
+    { name: "Sophie Williams",  role: "Director of Business Development",  bio: "Builds lasting partnerships and drives growth across new markets.",                     initials: "SW", accent: "#EB9B3D", image: "/team/sophie-williams.jpg",linkedin: "#" },
   ];
 
   const milestones = [
-    { year: "2010", title: "Infoplus Technologies Founded", desc: "Established by Srikanth Settipalli, laying the foundation for a global IT services company.", accent: "#6128a6" },
-    { year: "2011", title: "Trusted Recruitment Vendor for Shell", desc: "Named a preferred recruitment partner for Shell Company — one of the Fortune 500 companies in the UK.", accent: "#aa3bff" },
-    { year: "2012", title: "SmartEMS Wins JNTU Hyderabad Bid", desc: "Our SmartEMS system was selected as the winning bidder at Jawaharlal Nehru Technological University, Hyderabad.", accent: "#f85d37" },
-    { year: "2013", title: "Acquired 3DM Engineering", desc: "Strategic acquisition of 3DM Engineering, extending our footprint into Kazakhstan and Central Asia.", accent: "#6128a6" },
-    { year: "2015", title: "Acquired LearnEngg", desc: "Added LearnEngg — one of India's leading e-learning companies — to our expanding portfolio.", accent: "#14b8a6" },
-    { year: "2019", title: "Digital Transformation IT Tower Launched", desc: "Commenced a focused IT Service tower for Digital Transformation, accelerating our clients' digital journeys.", accent: "#aa3bff" },
+    { year: "2010", title: "Infoplus Technologies Founded", desc: "Established by Srikanth Settipalli, laying the foundation for a global IT services company.", accent: "#EB9B3D" },
+    { year: "2011", title: "Trusted Recruitment Vendor for Shell", desc: "Named a preferred recruitment partner for Shell Company — one of the Fortune 500 companies in the UK.", accent: "#DA4D33" },
+    { year: "2012", title: "SmartEMS Wins JNTU Hyderabad Bid", desc: "Our SmartEMS system was selected as the winning bidder at Jawaharlal Nehru Technological University, Hyderabad.", accent: "#F5A623" },
+    { year: "2013", title: "Acquired 3DM Engineering", desc: "Strategic acquisition of 3DM Engineering, extending our footprint into Kazakhstan and Central Asia.", accent: "#F0783A" },
+    { year: "2015", title: "Acquired LearnEngg", desc: "Added LearnEngg — one of India's leading e-learning companies — to our expanding portfolio.", accent: "#F5C66A" },
+    { year: "2019", title: "Digital Transformation IT Tower Launched", desc: "Commenced a focused IT Service tower for Digital Transformation, accelerating our clients' digital journeys.", accent: "#DA4D33" },
   ];
 
   return (
@@ -86,7 +86,7 @@ function About() {
       >
         <div className="grid grid-cols-2 gap-8 mt-12">
           {stats.map((stat, i) => (
-            <div key={i} className="border-l-2 border-[#aa3bff] pl-4">
+            <div key={i} className="border-l-2 border-[#DA4D33] pl-4">
               <div className="text-3xl font-black text-white mb-1">{stat.value}</div>
               <div className="text-sm font-medium text-white/50 uppercase tracking-wider">{stat.label}</div>
             </div>
@@ -98,7 +98,7 @@ function About() {
       <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div
           className="absolute inset-0 opacity-[0.025] pointer-events-none"
-          style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+          style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "28px 28px" }}
         />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -107,18 +107,18 @@ function About() {
             {/* Left decorative year */}
             <ScrollReveal direction="left" className="lg:col-span-4">
               <div className="relative">
-                <div className="text-[9rem] font-black leading-none text-[#f0ecf8] select-none pointer-events-none">2000</div>
+                <div className="text-[9rem] font-black leading-none text-[#EEF2FF] select-none pointer-events-none">2000</div>
                 <div className="absolute inset-0 flex flex-col justify-center pl-2">
-                  <span className="inline-block bg-[#f85d37] text-white text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5 w-fit">
+                  <span className="inline-block bg-[#DA4D33] text-white text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5 w-fit">
                     Born in 2000
                   </span>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-0.5 bg-[#6128a6]" />
-                      <span className="text-[#6128a6] text-sm font-semibold">United Kingdom HQ</span>
+                      <div className="w-8 h-0.5 bg-[#EB9B3D]" />
+                      <span className="text-[#EB9B3D] text-sm font-semibold">United Kingdom HQ</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-0.5 bg-[#f85d37]" />
+                      <div className="w-8 h-0.5 bg-[#DA4D33]" />
                       <span className="text-[#555555] text-sm">Borehamwood</span>
                     </div>
                   </div>
@@ -129,11 +129,12 @@ function About() {
             {/* Right content */}
             <ScrollReveal direction="right" className="lg:col-span-8">
               <div>
-                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Who We Are
                 </span>
                 <h2 className="text-[36px] font-bold text-[#111111] mb-7">
-                  Born in 2000, Built for Tomorrow
+                  Born in 2000, Built for{" "}
+                  <span style={{ background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Tomorrow</span>
                 </h2>
                 <div className="space-y-5">
                   <p className="text-[16px] text-[#555555] leading-[1.8] text-justify">
@@ -145,8 +146,8 @@ function About() {
                 </div>
 
                 {/* Accent blockquote */}
-                <div className="mt-8 pl-5 border-l-4 border-[#aa3bff] bg-[#f8f5ff] rounded-r-2xl py-4 pr-6">
-                  <p className="text-[15px] text-[#381f55] font-semibold leading-relaxed italic">
+                <div className="mt-8 pl-5 border-l-4 border-[#DA4D33] bg-white rounded-r-2xl py-4 pr-6">
+                  <p className="text-[15px] text-[#1A2444] font-semibold leading-relaxed italic">
                     "Combining the power of technology with Quality, Innovation, and customer empathy at the forefront of the evolving digital world."
                   </p>
                 </div>
@@ -157,9 +158,9 @@ function About() {
       </section>
 
       {/* ── 3. OUR VALUES (NEW) ────────────────────────── */}
-      <section className="py-24 bg-[#1e0a38] relative overflow-hidden">
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#6128a6] opacity-20 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute -bottom-16 -left-16 w-64 h-64 bg-[#f85d37] opacity-10 rounded-full blur-[80px] pointer-events-none" />
+      <section className="py-24 bg-[#141A3D] relative overflow-hidden">
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#EB9B3D] opacity-20 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute -bottom-16 -left-16 w-64 h-64 bg-[#DA4D33] opacity-10 rounded-full blur-[80px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.04] pointer-events-none"
           style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }}
@@ -171,7 +172,10 @@ function About() {
               <span className="inline-block py-1 px-4 rounded-full bg-white/10 border border-white/20 text-white/70 text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Values
               </span>
-              <h2 className="text-[36px] font-bold text-white mb-4">What Drives Us Forward</h2>
+              <h2 className="text-[36px] font-bold text-white mb-4">
+                What Drives Us{" "}
+                <span style={{ background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Forward</span>
+              </h2>
               <p className="text-white/50 text-[16px] max-w-2xl mx-auto">
                 The principles that guide every decision, relationship, and product we build.
               </p>
@@ -181,8 +185,8 @@ function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map((val, idx) => (
               <ScrollReveal key={idx} variant="card" delay={idx * 90}>
-                <div className="group h-full bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-[#aa3bff]/50 hover:shadow-[0_16px_40px_rgba(170,59,255,0.10)] transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#6128a6] to-[#aa3bff] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                <div className="group h-full bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-[#DA4D33]/50 hover:shadow-[0_16px_40px_rgba(218,77,51,0.10)] transition-all duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                     <val.icon className="w-5 h-5 text-white" strokeWidth={1.6} />
                   </div>
                   <h3 className="text-[18px] font-semibold text-white mb-3">{val.title}</h3>
@@ -195,7 +199,7 @@ function About() {
       </section>
 
       {/* ══ 3b. IN THE NEWS ══ */}
-      <section className="py-20 bg-[#0d0517] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-20 bg-[#141A3D] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <style>{`
           @keyframes tnNodePulse {
             0%   { transform: scale(1);    opacity: 0.55; }
@@ -219,20 +223,20 @@ function About() {
         {/* Ambient */}
         <div className="absolute inset-0 opacity-[0.013] pointer-events-none"
           style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#6128a6] opacity-[0.08] blur-[130px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-[#f85d37] opacity-[0.05] blur-[130px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#EB9B3D] opacity-[0.08] blur-[130px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-[#DA4D33] opacity-[0.05] blur-[130px] pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
 
           {/* Header */}
           <ScrollReveal direction="up">
             <div className="text-center mb-20">
-              <span className="inline-block py-1 px-3 rounded-full bg-white/7 border border-white/12 text-[#aa3bff] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-white/7 border border-white/12 text-[#DA4D33] text-[11px] font-bold uppercase tracking-widest mb-5">
                 In the News
               </span>
               <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-bold text-white leading-tight mb-4">
                 Our Journey,{" "}
-                <span style={{ background: "linear-gradient(90deg,#aa3bff 0%,#f85d37 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                <span style={{ background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                   Milestone by Milestone
                 </span>
               </h2>
@@ -248,12 +252,12 @@ function About() {
             {/* Spine — desktop center */}
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 -translate-x-px pointer-events-none overflow-hidden">
               <div className="w-px h-full"
-                style={{ background: "linear-gradient(to bottom, transparent 0%, #6128a6 8%, #aa3bff 42%, #f85d37 78%, transparent 100%)" }} />
+                style={{ background: "linear-gradient(to bottom, transparent 0%, #EB9B3D 8%, #DA4D33 42%, #DA4D33 78%, transparent 100%)" }} />
             </div>
 
             {/* Spine — mobile left */}
             <div className="lg:hidden absolute left-7 top-0 bottom-0 w-px pointer-events-none"
-              style={{ background: "linear-gradient(to bottom, transparent 0%, #6128a6 8%, #aa3bff 52%, #f85d37 90%, transparent 100%)" }} />
+              style={{ background: "linear-gradient(to bottom, transparent 0%, #EB9B3D 8%, #DA4D33 52%, #DA4D33 90%, transparent 100%)" }} />
 
             {milestones.map((m, i) => {
               const cardRight = i % 2 === 0;
@@ -411,23 +415,23 @@ function About() {
       </section>
 
       {/* ══ 3c. IN THE NEWS — LITE VARIANT ══ */}
-      <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
+      <section className="py-24 bg-white relative overflow-hidden">
         {/* Ambient orbs */}
-        <div className="absolute top-[-8%] left-[-5%] w-80 h-80 rounded-full bg-[#ecdaff] opacity-55 blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-[-8%] right-[-4%] w-72 h-72 rounded-full bg-[#f85d37]/10 blur-[90px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full bg-[#aa3bff]/3 blur-[80px] pointer-events-none" />
+        <div className="absolute top-[-8%] left-[-5%] w-80 h-80 rounded-full bg-[#FEF0DC] opacity-55 blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-[-8%] right-[-4%] w-72 h-72 rounded-full bg-[#DA4D33]/10 blur-[90px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full bg-[#DA4D33]/3 blur-[80px] pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
 
           {/* Header */}
           <ScrollReveal direction="up">
             <div className="text-center mb-16">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Journey
               </span>
               <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-bold text-[#111111] leading-tight mb-4">
                 In the News,{" "}
-                <span style={{ background: "linear-gradient(90deg,#6128a6 0%,#f85d37 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                <span style={{ background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                   Milestone by Milestone
                 </span>
               </h2>
@@ -443,10 +447,10 @@ function About() {
 
               {/* Dashed spine */}
               <div className="absolute top-1/2 left-10 right-10 h-0 -translate-y-px pointer-events-none"
-                style={{ borderTop: "2px dashed rgba(97,40,166,0.22)" }} />
+                style={{ borderTop: "2px dashed rgba(235,155,61,0.22)" }} />
               {/* Gradient colour tint on spine */}
               <div className="absolute top-1/2 left-10 right-10 h-px -translate-y-px pointer-events-none"
-                style={{ background: "linear-gradient(90deg,transparent,#6128a6 12%,#aa3bff 48%,#f85d37 85%,transparent)", opacity: 0.20 }} />
+                style={{ background: "linear-gradient(90deg,transparent,#EB9B3D 12%,#DA4D33 48%,#DA4D33 85%,transparent)", opacity: 0.20 }} />
 
               {/* Columns */}
               <div className="grid h-full" style={{ gridTemplateColumns: `repeat(${milestones.length}, minmax(0, 1fr))` }}>
@@ -465,7 +469,7 @@ function About() {
                                 style={{ background: `linear-gradient(135deg,${m.accent},${m.accent}cc)`, boxShadow: `0 2px 8px ${m.accent}35` }}>
                                 {i + 1}
                               </div>
-                              <h3 className="text-[12px] font-bold text-[#1a1a2e] mb-1.5 leading-snug">{m.title}</h3>
+                              <h3 className="text-[12px] font-bold text-[#0D112D] mb-1.5 leading-snug">{m.title}</h3>
                               <p className="text-[10.5px] text-[#777777] leading-[1.6]">{m.desc}</p>
                             </div>
                           )}
@@ -499,7 +503,7 @@ function About() {
                                 style={{ background: `linear-gradient(135deg,${m.accent},${m.accent}cc)`, boxShadow: `0 2px 8px ${m.accent}35` }}>
                                 {i + 1}
                               </div>
-                              <h3 className="text-[12px] font-bold text-[#1a1a2e] mb-1.5 leading-snug">{m.title}</h3>
+                              <h3 className="text-[12px] font-bold text-[#0D112D] mb-1.5 leading-snug">{m.title}</h3>
                               <p className="text-[10.5px] text-[#777777] leading-[1.6]">{m.desc}</p>
                             </div>
                           )}
@@ -534,7 +538,7 @@ function About() {
                     {/* Content */}
                     <div className="flex-1 pl-4 border-l-2" style={{ borderColor: `${m.accent}30` }}>
                       <span className="text-[9px] font-black uppercase tracking-widest block mb-1" style={{ color: m.accent }}>{num} / 06</span>
-                      <h3 className="text-[14px] font-bold text-[#1a1a2e] mb-1.5 leading-snug">{m.title}</h3>
+                      <h3 className="text-[14px] font-bold text-[#0D112D] mb-1.5 leading-snug">{m.title}</h3>
                       <p className="text-[12px] text-[#666666] leading-relaxed">{m.desc}</p>
                     </div>
                   </div>
@@ -547,13 +551,16 @@ function About() {
       </section>
 
       {/* ── 4. FACTS / MISSION / VISION (NEW) ─────────── */}
-      <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
+      <section className="py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-7xl">
 
           <ScrollReveal direction="up">
             <div className="mb-14">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">Facts</span>
-              <h2 className="text-[36px] font-bold text-[#111111] mb-4">Two Decades of Excellence</h2>
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">Facts</span>
+              <h2 className="text-[36px] font-bold text-[#111111] mb-4">
+                Two Decades of{" "}
+                <span style={{ background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Excellence</span>
+              </h2>
               <p className="text-[16px] text-[#555555] leading-[1.75] max-w-4xl">
                 As an end-to-end IT Service provider, we have the privilege of growing with our clients, partners, and employees. It is really a source of utmost pleasure to see that our company has grown organically over the last two decades by religiously practicing our core values.
               </p>
@@ -564,8 +571,8 @@ function About() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
             {keyStats.map((stat, i) => (
               <ScrollReveal key={i} variant="card" delay={i * 80}>
-                <div className="text-center p-8 bg-white rounded-2xl border border-[#e5e4e7] shadow-sm hover:border-[#6128a6]/30 hover:shadow-[0_8px_24px_rgba(97,40,166,0.08)] transition-all duration-300">
-                  <div className="text-[48px] font-black text-[#6128a6] leading-none mb-2">{stat.val}</div>
+                <div className="text-center p-8 bg-white rounded-2xl border border-[#e5e4e7] shadow-sm hover:border-[#EB9B3D]/30 hover:shadow-[0_8px_24px_rgba(235,155,61,0.08)] transition-all duration-300">
+                  <div className="text-[48px] font-black text-[#EB9B3D] leading-none mb-2">{stat.val}</div>
                   <div className="text-[12px] font-semibold text-[#555555] uppercase tracking-widest">{stat.label}</div>
                 </div>
               </ScrollReveal>
@@ -575,9 +582,9 @@ function About() {
           {/* Mission + Vision */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
             <ScrollReveal direction="left">
-              <div className="group h-full bg-white border border-[#e5e4e7] p-10 rounded-2xl hover:border-[#f85d37]/40 hover:shadow-[0_12px_40px_rgba(248,93,55,0.08)] transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-[#fff3ef] flex items-center justify-center mb-6 group-hover:bg-[#f85d37] transition-colors duration-300">
-                  <Target className="w-6 h-6 text-[#f85d37] group-hover:text-white transition-colors duration-300" strokeWidth={1.6} />
+              <div className="group h-full bg-white border border-[#e5e4e7] p-10 rounded-2xl hover:border-[#DA4D33]/40 hover:shadow-[0_12px_40px_rgba(218,77,51,0.08)] transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-[#FEF8F0] flex items-center justify-center mb-6 group-hover:bg-[#DA4D33] transition-colors duration-300">
+                  <Target className="w-6 h-6 text-[#DA4D33] group-hover:text-white transition-colors duration-300" strokeWidth={1.6} />
                 </div>
                 <h3 className="text-[22px] font-bold text-[#111111] mb-4">Mission</h3>
                 <p className="text-[15px] text-[#555555] leading-[1.8]">
@@ -587,9 +594,9 @@ function About() {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="group h-full bg-white border border-[#e5e4e7] p-10 rounded-2xl hover:border-[#6128a6]/40 hover:shadow-[0_12px_40px_rgba(97,40,166,0.08)] transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-[#ecdaff] flex items-center justify-center mb-6 group-hover:bg-[#6128a6] transition-colors duration-300">
-                  <Eye className="w-6 h-6 text-[#6128a6] group-hover:text-white transition-colors duration-300" strokeWidth={1.6} />
+              <div className="group h-full bg-white border border-[#e5e4e7] p-10 rounded-2xl hover:border-[#EB9B3D]/40 hover:shadow-[0_12px_40px_rgba(235,155,61,0.08)] transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-[#FEF0DC] flex items-center justify-center mb-6 group-hover:bg-[#EB9B3D] transition-colors duration-300">
+                  <Eye className="w-6 h-6 text-[#EB9B3D] group-hover:text-white transition-colors duration-300" strokeWidth={1.6} />
                 </div>
                 <h3 className="text-[22px] font-bold text-[#111111] mb-4">Vision</h3>
                 <p className="text-[15px] text-[#555555] leading-[1.8]">
@@ -603,9 +610,9 @@ function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {factBullets.map((fact, i) => (
               <ScrollReveal key={i} direction="up" delay={i * 80}>
-                <div className="flex items-center gap-4 bg-white border border-[#e5e4e7] px-5 py-4 rounded-xl hover:border-[#6128a6]/30 hover:shadow-sm transition-all duration-300">
-                  <div className="w-7 h-7 rounded-lg bg-[#ecdaff] flex items-center justify-center shrink-0">
-                    <CheckCircle2 className="w-4 h-4 text-[#6128a6]" />
+                <div className="flex items-center gap-4 bg-white border border-[#e5e4e7] px-5 py-4 rounded-xl hover:border-[#EB9B3D]/30 hover:shadow-sm transition-all duration-300">
+                  <div className="w-7 h-7 rounded-lg bg-[#FEF0DC] flex items-center justify-center shrink-0">
+                    <CheckCircle2 className="w-4 h-4 text-[#EB9B3D]" />
                   </div>
                   <span className="text-[15px] font-medium text-[#111111]">{fact}</span>
                 </div>
@@ -619,7 +626,7 @@ function About() {
       {/* ══════════════════════════════════════════════════════
           4b. Our Team
       ══════════════════════════════════════════════════════ */}
-      <section className="py-28 bg-[#0d0517] relative overflow-hidden">
+      <section className="py-28 bg-[#141A3D] relative overflow-hidden">
         <style>{`
           @keyframes teamDrift {
             0%,100% { transform: translate(0,0) scale(1); }
@@ -643,9 +650,9 @@ function About() {
         `}</style>
 
         {/* Ambient orbs */}
-        <div className="absolute top-[-10%] right-[-5%] w-162.5 h-162.5 rounded-full bg-[#381f55] opacity-28 blur-[160px] pointer-events-none" />
-        <div className="absolute bottom-[-8%] left-[-6%] w-125 h-125 rounded-full bg-[#6128a6] opacity-14 blur-[140px] pointer-events-none" />
-        <div className="absolute top-1/2 left-[38%] w-80 h-80 rounded-full bg-[#f85d37] opacity-[0.05] blur-[100px] pointer-events-none" />
+        <div className="absolute top-[-10%] right-[-5%] w-162.5 h-162.5 rounded-full bg-[#1A2444] opacity-28 blur-[160px] pointer-events-none" />
+        <div className="absolute bottom-[-8%] left-[-6%] w-125 h-125 rounded-full bg-[#EB9B3D] opacity-14 blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/2 left-[38%] w-80 h-80 rounded-full bg-[#DA4D33] opacity-[0.05] blur-[100px] pointer-events-none" />
         <div className="absolute inset-0 opacity-[0.022] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -653,12 +660,12 @@ function About() {
           {/* Header */}
           <ScrollReveal direction="up">
             <div className="text-center mb-16">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/15 border border-[#6128a6]/25 text-[#aa3bff] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/15 border border-[#EB9B3D]/25 text-[#DA4D33] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Team
               </span>
               <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-bold text-white leading-tight mb-4">
                 Meet the{" "}
-                <span style={{ background: "linear-gradient(90deg,#aa3bff 0%,#f85d37 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                <span style={{ background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                   People Behind Infoplus
                 </span>
               </h2>
@@ -776,11 +783,12 @@ function About() {
 
           <ScrollReveal direction="up">
             <div className="mb-14">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Identity
               </span>
               <h2 className="text-[36px] font-bold text-[#111111] mb-5">
-                Empowering Digital Success
+                Empowering Digital{" "}
+                <span style={{ background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Success</span>
               </h2>
               <p className="text-[16px] text-[#555555] leading-[1.75] max-w-3xl text-justify">
                 We combine the power of technology with our culture: Quality, Innovation, and customer empathy. Infoplus Technologies UK Ltd is at the forefront in providing a comprehensive portfolio of services to cater to the needs of clients&apos; strategies in the evolving world of digital.
@@ -791,9 +799,9 @@ function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {cultureCards.map((item, idx) => (
               <ScrollReveal key={idx} variant="card" delay={idx * 100} className="h-full">
-                <div className="group h-full p-8 bg-[#f8f5ff] border border-[#e5e4e7] rounded-2xl hover:border-[#aa3bff]/30 hover:shadow-[0_8px_32px_rgba(97,40,166,0.10)] hover:-translate-y-1.5 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6 shadow-sm group-hover:bg-[#ecdaff] transition-colors">
-                    <item.icon className="w-6 h-6 text-[#6128a6]" strokeWidth={1.6} />
+                <div className="group h-full p-8 bg-white border border-[#e5e4e7] rounded-2xl hover:border-[#DA4D33]/30 hover:shadow-[0_8px_32px_rgba(235,155,61,0.10)] hover:-translate-y-1.5 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <item.icon className="w-5 h-5 text-white" strokeWidth={1.6} />
                   </div>
                   <h3 className="text-[17px] font-semibold text-[#111111] mb-3">{item.title}</h3>
                   <p className="text-[14px] text-[#555555] leading-relaxed">{item.desc}</p>
@@ -806,9 +814,9 @@ function About() {
       </section>
 
       {/* ── 6. CULTURE TEXT (NEW) ──────────────────────── */}
-      <section className="py-24 bg-[#0d0517] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-125 h-125 bg-[#6128a6] opacity-15 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#f85d37] opacity-[0.07] rounded-full blur-[100px] pointer-events-none" />
+      <section className="py-24 bg-[#141A3D] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-125 h-125 bg-[#EB9B3D] opacity-15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#DA4D33] opacity-[0.07] rounded-full blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -822,7 +830,7 @@ function About() {
                 <div className="relative z-10 space-y-5">
                   {["Collaboration", "Future Thinking", "Risk-Taking", "Client-Focused", "Innovation"].map((val, i) => (
                     <div key={i} className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-[#aa3bff] shrink-0" />
+                      <div className="w-2 h-2 rounded-full bg-[#DA4D33] shrink-0" />
                       <span className="text-white/75 text-[17px] font-medium">{val}</span>
                     </div>
                   ))}
@@ -842,7 +850,8 @@ function About() {
                   Our Culture
                 </span>
                 <h2 className="text-[36px] font-bold text-white mb-7">
-                  Our Most Valuable Resource
+                  Our Most Valuable{" "}
+                  <span style={{ background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Resource</span>
                 </h2>
                 <p className="text-[16px] text-white/60 leading-[1.85] text-justify">
                   At Infoplus Technologies UK Ltd, our most valuable resource is our people – with a diversified skill set, varied culture, and out-of-the-box options. Our team is client-focused with deep pride in their work. We believe in a culture rooted in collaboration, future thinking, and risk-taking. We hire smart and passionate professionals who thrive to understand the big picture. We celebrate success and look to improve it constantly. We have respect for the commitments we make and try to make every effort to meet or exceed them. We all have fun activities for employees to attend outside of work.
@@ -855,18 +864,19 @@ function About() {
       </section>
 
       {/* ── 7. PARTNERSHIPS (NEW) ──────────────────────── */}
-      <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
+      <section className="py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
             {/* Left intro */}
             <ScrollReveal direction="left">
               <div>
-                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Partnerships
                 </span>
                 <h2 className="text-[36px] font-bold text-[#111111] mb-6">
-                  Building Together
+                  Building{" "}
+                  <span style={{ background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Together</span>
                 </h2>
                 <div className="space-y-5">
                   <p className="text-[16px] text-[#555555] leading-[1.8] text-justify">
@@ -875,7 +885,7 @@ function About() {
                   <p className="text-[16px] text-[#555555] leading-[1.8] text-justify">
                     Our partner ecosystem includes go-to-market alliances, specialist partnerships for niche technologies, and partnerships for specific customer requirements; this system allows us to provide best-in-class solutions for our customers&apos; specific requirements.
                   </p>
-                  <p className="text-[15px] text-[#6128a6] font-semibold">
+                  <p className="text-[15px] text-[#EB9B3D] font-semibold">
                     Through partnerships, we continue to see the following benefits:
                   </p>
                 </div>
@@ -886,9 +896,9 @@ function About() {
             <div className="space-y-3">
               {partnerBenefits.map((benefit, i) => (
                 <ScrollReveal key={i} direction="right" delay={i * 80}>
-                  <div className="flex items-center gap-4 bg-white border border-[#e5e4e7] p-5 rounded-xl hover:border-[#6128a6]/30 hover:shadow-[0_4px_20px_rgba(97,40,166,0.07)] transition-all duration-300 group">
-                    <div className="w-9 h-9 rounded-xl bg-[#ecdaff] flex items-center justify-center shrink-0 group-hover:bg-[#6128a6] transition-colors duration-300">
-                      <ArrowRight className="w-4 h-4 text-[#6128a6] group-hover:text-white transition-colors duration-300" />
+                  <div className="flex items-center gap-4 bg-white border border-[#e5e4e7] p-5 rounded-xl hover:border-[#EB9B3D]/30 hover:shadow-[0_4px_20px_rgba(235,155,61,0.07)] transition-all duration-300 group">
+                    <div className="w-9 h-9 rounded-xl bg-[#FEF0DC] flex items-center justify-center shrink-0 group-hover:bg-[#EB9B3D] transition-colors duration-300">
+                      <ArrowRight className="w-4 h-4 text-[#EB9B3D] group-hover:text-white transition-colors duration-300" />
                     </div>
                     <span className="text-[15px] font-medium text-[#111111]">{benefit}</span>
                   </div>

@@ -109,19 +109,19 @@ export function CookieConsent() {
                 <Link
                   to="/cookie-policy"
                   onClick={() => dismiss("managed")}
-                  className="px-4 py-2 rounded-xl text-[12px] font-semibold text-white/50 border border-white/12 hover:text-white/80 hover:border-white/25 transition-all duration-200 whitespace-nowrap"
+                  className="px-4 py-2 rounded-xl text-[12px] font-semibold text-white/50 border border-white/12 hover:text-white/80 hover:border-white/25 transition-all duration-200 whitespace-nowrap cursor-pointer"
                 >
                   Manage Preferences
                 </Link>
                 <button
                   onClick={() => dismiss("rejected")}
-                  className="px-4 py-2 rounded-xl text-[12px] font-semibold text-white/50 border border-white/12 hover:text-white/80 hover:border-white/25 transition-all duration-200 whitespace-nowrap"
+                  className="px-4 py-2 rounded-xl text-[12px] font-semibold text-white/50 border border-white/12 hover:text-white/80 hover:border-white/25 transition-all duration-200 whitespace-nowrap cursor-pointer"
                 >
                   Reject Non-Essential
                 </button>
                 <button
                   onClick={() => dismiss("accepted")}
-                  className="px-5 py-2 rounded-xl text-[13px] font-bold bg-[#f85d37] hover:bg-[#e84d27] text-white transition-colors duration-200 shadow-[0_4px_16px_rgba(248,93,55,0.40)] whitespace-nowrap"
+                  className="px-5 py-2 rounded-xl text-[13px] font-bold bg-[#f85d37] hover:bg-[#e84d27] text-white transition-colors duration-200 shadow-[0_4px_16px_rgba(248,93,55,0.40)] whitespace-nowrap cursor-pointer"
                 >
                   Accept All
                 </button>
@@ -134,7 +134,7 @@ export function CookieConsent() {
         <button
           onClick={() => dismiss("rejected")}
           aria-label="Close cookie banner"
-          className="absolute top-3 right-3 w-7 h-7 rounded-lg bg-white/6 hover:bg-white/14 border border-white/10 flex items-center justify-center text-white/40 hover:text-white/80 transition-all duration-200"
+          className="absolute top-3 right-3 w-7 h-7 rounded-lg bg-white/6 hover:bg-white/14 border border-white/10 flex items-center justify-center text-white/40 hover:text-white/80 transition-all duration-200 cursor-pointer"
         >
           <X className="w-3.5 h-3.5" />
         </button>

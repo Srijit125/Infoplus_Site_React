@@ -95,7 +95,7 @@ function Blog() {
         variant="centered"
       />
 
-      <section className="py-20 bg-[#f8f5ff] relative -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-20 bg-white relative -mt-10 rounded-t-[3rem] z-20">
         <div className="container mx-auto px-6 max-w-7xl">
 
           {/* Filter Panel */}
@@ -110,12 +110,12 @@ function Blog() {
                     placeholder="Search articles, topics, or authors…"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="w-full pl-11 pr-10 py-3 rounded-xl border border-[#e5e4e7] bg-[#fafafa] text-[14px] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:ring-2 focus:ring-[#6128a6]/20 focus:border-[#6128a6] transition-all"
+                    className="w-full pl-11 pr-10 py-3 rounded-xl border border-[#e5e4e7] bg-[#fafafa] text-[14px] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:ring-2 focus:ring-[#EB9B3D]/20 focus:border-[#EB9B3D] transition-all"
                   />
                   {search && (
                     <button
                       onClick={() => setSearch("")}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-[#aaa] hover:text-[#333] transition-colors"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-[#aaa] hover:text-[#333] transition-colors cursor-pointer"
                     >
                       <X className="w-4 h-4" />
                     </button>
@@ -125,7 +125,7 @@ function Blog() {
                 <select
                   value={dateFilter}
                   onChange={(e) => setDateFilter(e.target.value)}
-                  className="px-4 py-3 rounded-xl border border-[#e5e4e7] bg-[#fafafa] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#6128a6]/20 focus:border-[#6128a6] cursor-pointer transition-all min-w-[160px]"
+                  className="px-4 py-3 rounded-xl border border-[#e5e4e7] bg-[#fafafa] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#EB9B3D]/20 focus:border-[#EB9B3D] cursor-pointer transition-all min-w-[160px]"
                 >
                   <option value="all">All Time</option>
                   <option value="month">This Month</option>
@@ -136,7 +136,7 @@ function Blog() {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="px-4 py-3 rounded-xl border border-[#e5e4e7] bg-[#fafafa] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#6128a6]/20 focus:border-[#6128a6] cursor-pointer transition-all min-w-[150px]"
+                  className="px-4 py-3 rounded-xl border border-[#e5e4e7] bg-[#fafafa] text-[14px] text-[#333] focus:outline-none focus:ring-2 focus:ring-[#EB9B3D]/20 focus:border-[#EB9B3D] cursor-pointer transition-all min-w-[150px]"
                 >
                   <option value="latest">Latest First</option>
                   <option value="oldest">Oldest First</option>
@@ -149,10 +149,10 @@ function Blog() {
                   <button
                     key={cat}
                     onClick={() => setCatFilter(cat)}
-                    className={`px-4 py-1.5 rounded-full text-[13px] font-semibold transition-all duration-200 border ${
+                    className={`px-4 py-1.5 rounded-full text-[13px] font-semibold transition-all duration-200 border cursor-pointer ${
                       catFilter === cat
-                        ? "bg-[#1e0a38] text-white border-[#1e0a38]"
-                        : "bg-white text-[#555] border-[#e5e4e7] hover:border-[#6128a6]/40 hover:text-[#6128a6]"
+                        ? "bg-[#141A3D] text-white border-[#141A3D]"
+                        : "bg-white text-[#555] border-[#e5e4e7] hover:border-[#EB9B3D]/40 hover:text-[#EB9B3D]"
                     }`}
                   >
                     {cat}
@@ -174,7 +174,7 @@ function Blog() {
             {hasFilter && (
               <button
                 onClick={clearFilters}
-                className="flex items-center gap-1.5 text-[13px] font-medium text-[#6128a6] hover:text-[#f85d37] transition-colors"
+                className="flex items-center gap-1.5 text-[13px] font-medium text-[#EB9B3D] hover:text-[#DA4D33] transition-colors cursor-pointer"
               >
                 <X className="w-3.5 h-3.5" /> Clear all filters
               </button>
@@ -184,7 +184,7 @@ function Blog() {
           {/* Featured Post */}
           {featuredPost && (
             <ScrollReveal direction="fade" className="mb-12">
-              <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden border border-[#e5e4e7] bg-white hover:border-[#6128a6]/30 hover:shadow-[0_24px_64px_-12px_rgba(97,40,166,0.15)] transition-all duration-500">
+              <div className="group grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden border border-[#e5e4e7] bg-white hover:border-[#EB9B3D]/30 hover:shadow-[0_24px_64px_-12px_rgba(235,155,61,0.15)] transition-all duration-500">
                 <div className="relative h-72 lg:h-auto min-h-[340px] overflow-hidden">
                   <img
                     src={featuredPost.image!}
@@ -193,7 +193,7 @@ function Blog() {
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-[#0d0517]/50 via-transparent to-transparent" />
                   <div className="absolute top-5 left-5 flex items-center gap-2">
-                    <span className="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest bg-[#f85d37] text-white">
+                    <span className="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest bg-[#EB9B3D] text-white">
                       Featured
                     </span>
                     <CategoryBadge category={featuredPost.category} overlay />
@@ -210,7 +210,7 @@ function Blog() {
                   </div>
 
                   <Link to={`/blog/${featuredPost.id}`}>
-                    <h2 className="text-[26px] lg:text-[30px] font-bold text-[#111] leading-snug mb-4 hover:text-[#6128a6] transition-colors duration-300">
+                    <h2 className="text-[26px] lg:text-[30px] font-bold text-[#111] leading-snug mb-4 hover:text-[#EB9B3D] transition-colors duration-300">
                       {featuredPost.title}
                     </h2>
                   </Link>
@@ -223,7 +223,7 @@ function Blog() {
                     {featuredPost.tags.slice(0, 3).map((tag) => (
                       <span
                         key={tag}
-                        className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#f8f5ff] text-[#6128a6] text-[12px] font-medium border border-[#e5e4e7]"
+                        className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#FEF0DC] text-[#EB9B3D] text-[12px] font-medium border border-[rgba(235,155,61,0.20)]"
                       >
                         <Tag className="w-3 h-3" />
                         {tag}
@@ -233,7 +233,7 @@ function Blog() {
 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2.5">
-                      <div className="w-9 h-9 rounded-full bg-linear-to-br from-[#6128a6] to-[#aa3bff] flex items-center justify-center text-white text-[12px] font-bold flex-shrink-0">
+                      <div className="w-9 h-9 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center text-white text-[12px] font-bold flex-shrink-0">
                         {initials(featuredPost.author)}
                       </div>
                       <div>
@@ -243,7 +243,8 @@ function Blog() {
                     </div>
                     <Link
                       to={`/blog/${featuredPost.id}`}
-                      className="flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1e0a38] text-white text-[14px] font-semibold hover:bg-[#6128a6] transition-colors duration-300 group/btn"
+                      className="flex items-center gap-2 px-6 py-3 rounded-xl text-white text-[14px] font-semibold hover:opacity-90 transition-all duration-300 group/btn"
+                      style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
                     >
                       Read Article
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
@@ -259,7 +260,7 @@ function Blog() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {gridPosts.map((post, idx) => (
                 <ScrollReveal key={post.id} direction="fade" variant="card" delay={Math.min(idx, 5) * 80}>
-                  <article className="group h-full flex flex-col bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:border-[#6128a6]/30 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.12)] hover:-translate-y-1 transition-all duration-300">
+                  <article className="group h-full flex flex-col bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:border-[#EB9B3D]/30 hover:shadow-[0_16px_48px_-8px_rgba(235,155,61,0.12)] hover:-translate-y-1 transition-all duration-300">
 
                     {/* Thumbnail */}
                     <div className="relative h-48 overflow-hidden flex-shrink-0">
@@ -298,7 +299,7 @@ function Blog() {
                       </div>
 
                       <Link to={`/blog/${post.id}`}>
-                        <h3 className="text-[16px] font-bold text-[#111] leading-snug mb-3 hover:text-[#6128a6] transition-colors duration-200 line-clamp-2">
+                        <h3 className="text-[16px] font-bold text-[#111] leading-snug mb-3 hover:text-[#EB9B3D] transition-colors duration-200 line-clamp-2">
                           {post.title}
                         </h3>
                       </Link>
@@ -309,22 +310,22 @@ function Blog() {
 
                       <div className="flex flex-wrap gap-1.5 mb-4">
                         {post.tags.slice(0, 3).map((tag) => (
-                          <span key={tag} className="px-2 py-0.5 rounded-md text-[11px] bg-[#f8f5ff] text-[#6128a6] border border-[#e8e0f7]">
+                          <span key={tag} className="px-2 py-0.5 rounded-md text-[11px] bg-[#FEF0DC] text-[#EB9B3D] border border-[rgba(235,155,61,0.20)]">
                             #{tag}
                           </span>
                         ))}
                       </div>
 
-                      <div className="flex items-center justify-between pt-3.5 border-t border-[#f0eff5] mt-auto">
+                      <div className="flex items-center justify-between pt-3.5 border-t border-[rgba(13,17,45,0.08)] mt-auto">
                         <div className="flex items-center gap-2">
-                          <div className="w-7 h-7 rounded-full bg-linear-to-br from-[#6128a6] to-[#aa3bff] flex items-center justify-center text-white text-[10px] font-bold shrink-0">
+                          <div className="w-7 h-7 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center text-white text-[10px] font-bold shrink-0">
                             {initials(post.author)}
                           </div>
                           <span className="text-[12px] text-[#666]">{post.author}</span>
                         </div>
                         <Link
                           to={`/blog/${post.id}`}
-                          className="flex items-center gap-1 text-[12px] font-semibold text-[#6128a6] hover:text-[#f85d37] transition-colors duration-200 group/btn"
+                          className="flex items-center gap-1 text-[12px] font-semibold text-[#EB9B3D] hover:text-[#DA4D33] transition-colors duration-200 group/btn"
                         >
                           Read More
                           <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform duration-200" />
@@ -341,7 +342,7 @@ function Blog() {
           {filteredPosts.length === 0 && (
             <div className="text-center py-24">
               <div className="w-20 h-20 rounded-full bg-white border border-[#e5e4e7] flex items-center justify-center mx-auto mb-6 shadow-sm">
-                <Search className="w-8 h-8 text-[#6128a6]/40" />
+                <Search className="w-8 h-8 text-[#EB9B3D]/40" />
               </div>
               <h3 className="text-xl font-bold text-[#111] mb-2">No articles found</h3>
               <p className="text-[15px] text-[#666] mb-8">
@@ -349,7 +350,8 @@ function Blog() {
               </p>
               <button
                 onClick={clearFilters}
-                className="px-7 py-3 rounded-xl bg-[#1e0a38] text-white text-[14px] font-semibold hover:bg-[#6128a6] transition-colors duration-300"
+                className="px-7 py-3 rounded-xl text-white text-[14px] font-semibold hover:opacity-90 transition-all duration-300 cursor-pointer"
+                style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
               >
                 Clear All Filters
               </button>

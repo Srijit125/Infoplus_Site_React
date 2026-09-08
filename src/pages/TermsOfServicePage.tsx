@@ -26,7 +26,7 @@ const SECTIONS = [
     id: "welcome",
     icon: FileText,
     title: "Welcome to Infoplus Technologies UK Limited",
-    accent: "#6128a6",
+    accent: "#EB9B3D",
     paragraphs: [
       `These terms and conditions ("terms") explain the rules for using this website, operated by Infoplus Technologies UK Limited ("infoplus", "we", "us", "our"), a company registered in England and Wales with offices in Borehamwood, UK, and operations across 17 countries worldwide.`,
       `By browsing this website, filling in an enquiry form, or engaging with any of our services, you need to agree to these terms. If you don't agree with them, please don't use the website.`,
@@ -36,7 +36,7 @@ const SECTIONS = [
     id: "who-can-use",
     icon: UserCheck,
     title: "Who can use this site",
-    accent: "#aa3bff",
+    accent: "#DA4D33",
     paragraphs: [
       "This website is intended for individuals who are 18 or older and who are representing themselves or a business in a professional capacity. If you're using this site on behalf of a company, you're confirming that you have the authority to do so.",
     ],
@@ -45,7 +45,7 @@ const SECTIONS = [
     id: "what-we-do",
     icon: Briefcase,
     title: "What we do",
-    accent: "#f85d37",
+    accent: "#F0783A",
     paragraphs: [
       "Infoplus provides IT and technology services, including but not limited to software development, testing, infrastructure management, SAP consulting and implementation, cyber security, cloud solutions, artificial intelligence services, and IT staffing; information only and does not constitute a binding offer. Actual scope of work, pricing, and deliverables for any project are agreed separately in a signed contract or statement of work between Infoplus and the client.",
     ],
@@ -54,7 +54,7 @@ const SECTIONS = [
     id: "using-website",
     icon: Settings2,
     title: "Using Our Website",
-    accent: "#6128a6",
+    accent: "#EB9B3D",
     paragraphs: [
       "You agree to use this website only for lawful purposes. You won't:",
     ],
@@ -70,7 +70,7 @@ const SECTIONS = [
     id: "enquiries",
     icon: Mail,
     title: "Enquiries and Information you share with us",
-    accent: "#aa3bff",
+    accent: "#DA4D33",
     paragraphs: [
       "When you submit an enquiry form or contact us through the website, you agree to provide accurate and up-to-date information. We'll use the details you share to respond to your enquiry and, where relevant, to get in touch about our services. How we handle your personal data is set out in our privacy policy.",
     ],
@@ -79,7 +79,7 @@ const SECTIONS = [
     id: "intellectual-property",
     icon: Shield,
     title: "Intellectual Property",
-    accent: "#f85d37",
+    accent: "#F0783A",
     paragraphs: [
       "All content on this website including text, graphics, logos, and design, is owned by Infoplus Technologies UK Limited or used under licence, unless stated otherwise. You may view and share pages for personal or business reference, but you can't reproduce, modify, or use our content commercially without written permission from us.",
     ],
@@ -88,7 +88,7 @@ const SECTIONS = [
     id: "links",
     icon: ExternalLink,
     title: "Links to other websites",
-    accent: "#6128a6",
+    accent: "#EB9B3D",
     paragraphs: [
       "Our website may contain links to third-party sites, tools, or resources. We don't control these external sites and aren't responsible for their content, accuracy, or privacy practices. Visiting them is at your own discretion.",
     ],
@@ -97,7 +97,7 @@ const SECTIONS = [
     id: "availability",
     icon: AlertTriangle,
     title: "No Guarantees on Website Availability",
-    accent: "#aa3bff",
+    accent: "#DA4D33",
     paragraphs: [
       "We aim to keep this website accurate and running smoothly, but we don't guarantee it will always be available, error-free, or uninterrupted. We may update, suspend, or remove parts of the site at any time without prior notice.",
     ],
@@ -106,7 +106,7 @@ const SECTIONS = [
     id: "liability",
     icon: Scale,
     title: "Limitation of Liability",
-    accent: "#f85d37",
+    accent: "#F0783A",
     paragraphs: [
       "To the extent permitted by law, Infoplus won't be liable for any indirect, incidental, or consequential loss arising from your use of this website, including loss of data, business, or profits. This doesn't apply to formal service agreements, which are governed separately by their own contract terms.",
     ],
@@ -115,7 +115,7 @@ const SECTIONS = [
     id: "changes",
     icon: RefreshCw,
     title: "Changes to These Terms",
-    accent: "#6128a6",
+    accent: "#EB9B3D",
     paragraphs: [
       `We may update these terms from time to time to reflect changes in our services, legal requirements, or how the website works. The updated version will be posted here with a new "last updated" date. Continuing to use the site after changes are posted means you accept the revised Terms.`,
     ],
@@ -124,7 +124,7 @@ const SECTIONS = [
     id: "governing-law",
     icon: Globe,
     title: "Governing Law",
-    accent: "#aa3bff",
+    accent: "#DA4D33",
     paragraphs: [
       "These terms are governed by the laws of England and Wales. Any disputes relating to this website will fall under the jurisdiction of the courts of England and Wales.",
     ],
@@ -167,18 +167,18 @@ export default function TermsOfServicePage() {
       >
         <div className="flex flex-wrap justify-center gap-3">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/70 text-[12px] font-semibold">
-            <FileText className="w-3.5 h-3.5 text-[#aa3bff]" />
+            <FileText className="w-3.5 h-3.5 text-[#EB9B3D]" />
             England &amp; Wales Law
           </span>
         </div>
       </PageHero>
 
       {/* ── TOC + Sections ───────────────────────────────────── */}
-      <section className="bg-[#f8f5ff] relative -mt-10 rounded-t-[3rem] z-20">
-        <div className="absolute top-0 right-0 w-125 h-125 rounded-full bg-[#ecdaff] opacity-40 blur-[120px] pointer-events-none" />
+      <section className="bg-white relative -mt-10 rounded-t-[3rem] z-20">
+        <div className="absolute top-0 right-0 w-125 h-125 rounded-full bg-[#EB9B3D] opacity-10 blur-[120px] pointer-events-none" />
         <div
-          className="absolute inset-0 opacity-[0.025] pointer-events-none rounded-t-[3rem]"
-          style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "32px 32px" }}
+          className="absolute inset-0 opacity-[0.015] pointer-events-none rounded-t-[3rem]"
+          style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "32px 32px" }}
         />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10 pt-16 pb-20">
@@ -187,11 +187,11 @@ export default function TermsOfServicePage() {
             {/* Sticky TOC */}
             <aside className="hidden lg:block lg:sticky lg:self-start" style={{ top: "100px" }}>
               <div
-                className="bg-white border border-[#ecdaff] rounded-2xl shadow-[0_4px_24px_rgba(97,40,166,0.07)] flex flex-col overflow-hidden"
+                className="bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl shadow-[0_4px_24px_rgba(235,155,61,0.08)] flex flex-col overflow-hidden"
                 style={{ maxHeight: "calc(100vh - 120px)" }}
               >
-                <div className="shrink-0 px-5 pt-5 pb-4 border-b border-[#ecdaff]">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#6128a6]">Contents</p>
+                <div className="shrink-0 px-5 pt-5 pb-4 border-b border-[rgba(13,17,45,0.08)]">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#EB9B3D]">Contents</p>
                 </div>
                 <ul className="overflow-y-auto px-3 py-3 space-y-0.5">
                   {SECTIONS.map((s) => (
@@ -218,7 +218,7 @@ export default function TermsOfServicePage() {
                 <div
                   key={s.id}
                   id={s.id}
-                  className="group bg-white border border-[#e8e0f7] rounded-2xl p-7 hover:border-[#6128a6]/30 hover:shadow-[0_8px_40px_rgba(97,40,166,0.09)] transition-all duration-300 scroll-mt-25 relative overflow-hidden"
+                  className="group bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl p-7 hover:border-[#EB9B3D]/30 hover:shadow-[0_8px_40px_rgba(235,155,61,0.09)] transition-all duration-300 scroll-mt-25 relative overflow-hidden"
                 >
                   {/* Left accent bar */}
                   <div className="absolute left-0 top-6 bottom-6 w-1 rounded-r-full" style={{ backgroundColor: s.accent }} />
@@ -262,16 +262,16 @@ export default function TermsOfServicePage() {
       </section>
 
       {/* ── Get in Touch ─────────────────────────────────────── */}
-      <section className="py-20 bg-white relative border-t border-[#e8e0f7]">
-        <div className="absolute top-0 left-0 w-100 h-100 rounded-full bg-[#ecdaff] opacity-30 blur-[100px] pointer-events-none" />
+      <section className="py-20 bg-white relative border-t border-[rgba(13,17,45,0.08)]">
+        <div className="absolute top-0 left-0 w-100 h-100 rounded-full bg-[#EB9B3D] opacity-8 blur-[100px] pointer-events-none" />
         <div
-          className="absolute inset-0 opacity-[0.025] pointer-events-none"
-          style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "32px 32px" }}
+          className="absolute inset-0 opacity-[0.012] pointer-events-none"
+          style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "32px 32px" }}
         />
         <div className="container mx-auto px-6 max-w-3xl relative z-10">
           <ScrollReveal direction="up">
             <div className="text-center mb-10">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-4">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-4">
                 Get in Touch
               </span>
               <h2 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d0517] mb-4">
@@ -284,32 +284,32 @@ export default function TermsOfServicePage() {
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={80}>
-            <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-2xl p-8 shadow-[0_4px_24px_rgba(97,40,166,0.06)]">
+            <div className="bg-[#F3F5FF] border border-[rgba(13,17,45,0.08)] rounded-2xl p-8 shadow-[0_4px_24px_rgba(235,155,61,0.06)]">
               <p className="text-[14.5px] font-bold text-[#0d0517] mb-1">Infoplus Technologies UK Limited</p>
               <div className="flex items-start gap-3 mb-6">
-                <div className="w-9 h-9 rounded-xl bg-[#6128a6]/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <MapPin className="w-4 h-4 text-[#6128a6]" />
+                <div className="w-9 h-9 rounded-xl bg-[#EB9B3D]/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <MapPin className="w-4 h-4 text-[#EB9B3D]" />
                 </div>
                 <span className="text-[14px] text-[#555] leading-relaxed pt-1.5">Unit 6 Capital Business Park, Manor Way, Borehamwood WD6 1GW</span>
               </div>
               <div className="space-y-4">
                 <a
                   href="mailto:contact@infoplusltd.co.uk"
-                  className="flex items-center gap-3 text-[14.5px] text-[#555] hover:text-[#6128a6] transition-colors group"
+                  className="flex items-center gap-3 text-[14.5px] text-[#555] hover:text-[#EB9B3D] transition-colors group"
                 >
-                  <div className="w-9 h-9 rounded-xl bg-[#6128a6]/10 flex items-center justify-center shrink-0 group-hover:bg-[#6128a6]/20 transition-colors">
-                    <Mail className="w-4 h-4 text-[#6128a6]" />
+                  <div className="w-9 h-9 rounded-xl bg-[#EB9B3D]/10 flex items-center justify-center shrink-0 group-hover:bg-[#EB9B3D]/20 transition-colors">
+                    <Mail className="w-4 h-4 text-[#EB9B3D]" />
                   </div>
                   <span>contact@infoplusltd.co.uk</span>
                 </a>
                 <div className="flex items-center gap-3 text-[14.5px] text-[#555]">
-                  <div className="w-9 h-9 rounded-xl bg-[#6128a6]/10 flex items-center justify-center shrink-0">
-                    <Phone className="w-4 h-4 text-[#6128a6]" />
+                  <div className="w-9 h-9 rounded-xl bg-[#EB9B3D]/10 flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4 text-[#EB9B3D]" />
                   </div>
                   <span>+44 208207 3474</span>
                 </div>
               </div>
-              <div className="mt-6 pt-6 border-t border-[#e8e0f7]">
+              <div className="mt-6 pt-6 border-t border-[rgba(13,17,45,0.08)]">
                 <p className="text-[14px] text-[#888]">We try to respond to all enquiries promptly.</p>
               </div>
             </div>

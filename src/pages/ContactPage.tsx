@@ -56,7 +56,7 @@ const fieldCls = (err: string) =>
   `w-full px-4 py-3.5 rounded-xl border text-[15px] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:ring-2 transition-all ${
     err
       ? "border-red-400 bg-white focus:ring-red-200 focus:border-red-400"
-      : "border-[#e5e4e7] bg-[#fafafa] focus:ring-[#6128a6]/20 focus:border-[#6128a6]"
+      : "border-[rgba(13,17,45,0.12)] bg-white focus:ring-[#EB9B3D]/20 focus:border-[#EB9B3D]"
   }`;
 
 const labelCls = "block text-[13px] font-semibold text-[#333] mb-1.5";
@@ -120,8 +120,8 @@ export function ContactPage() {
 
             {/* Left: Form */}
             <ScrollReveal direction="left" className="lg:col-span-7">
-              <div className="bg-[#f8f5ff] border border-[#e5e4e7] rounded-3xl p-8 md:p-10">
-                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <div className="bg-[#F3F5FF] border border-[rgba(13,17,45,0.08)] rounded-3xl p-8 md:p-10">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Send a Message
                 </span>
                 <h2 className="text-[28px] font-bold text-[#111] mb-8">
@@ -139,7 +139,8 @@ export function ContactPage() {
                     </p>
                     <button
                       onClick={() => setStatus("idle")}
-                      className="px-7 py-3 rounded-xl bg-[#1e0a38] text-white text-[14px] font-semibold hover:bg-[#6128a6] transition-colors"
+                      className="px-7 py-3 rounded-xl text-white text-[14px] font-semibold hover:opacity-90 transition-all cursor-pointer"
+                      style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
                     >
                       Send Another Message
                     </button>
@@ -148,7 +149,7 @@ export function ContactPage() {
                   <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
                     <div>
                       <label className={labelCls}>
-                        Your Name <span className="text-[#f85d37]">*</span>
+                        Your Name <span className="text-[#DA4D33]">*</span>
                       </label>
                       <input
                         type="text"
@@ -160,7 +161,7 @@ export function ContactPage() {
                     </div>
                     <div>
                       <label className={labelCls}>
-                        Email Address <span className="text-[#f85d37]">*</span>
+                        Email Address <span className="text-[#DA4D33]">*</span>
                       </label>
                       <input
                         type="email"
@@ -172,7 +173,7 @@ export function ContactPage() {
                     </div>
                     <div>
                       <label className={labelCls}>
-                        Contact Number <span className="text-[#f85d37]">*</span>
+                        Contact Number <span className="text-[#DA4D33]">*</span>
                       </label>
                       <input
                         type="tel"
@@ -203,7 +204,8 @@ export function ContactPage() {
                     <button
                       type="submit"
                       disabled={status === "sending"}
-                      className="w-full py-4 rounded-xl bg-[#1e0a38] text-white font-semibold text-[15px] flex items-center justify-center gap-2 hover:bg-[#6128a6] disabled:opacity-70 transition-colors duration-300"
+                      className="w-full py-4 rounded-xl text-white font-semibold text-[15px] flex items-center justify-center gap-2 disabled:opacity-70 hover:opacity-90 transition-all duration-300 cursor-pointer"
+                      style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
                     >
                       {status === "sending" ? (
                         <>
@@ -220,7 +222,7 @@ export function ContactPage() {
 
                     {/* Privacy tip */}
                     <div className="flex items-start gap-2 text-[12px] text-[#888]">
-                      <Shield className="w-4 h-4 text-[#6128a6]/50 shrink-0 mt-0.5" />
+                      <Shield className="w-4 h-4 text-[#EB9B3D]/50 shrink-0 mt-0.5" />
                       <span>We respect your privacy. We promise we won't spam you :)</span>
                     </div>
                   </form>
@@ -232,7 +234,7 @@ export function ContactPage() {
             <div className="lg:col-span-5 space-y-6">
               <ScrollReveal direction="right">
                 <div>
-                  <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                  <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                     Reach Us Directly
                   </span>
                   <h2 className="text-[28px] font-bold text-[#111] mb-6">Contact Details</h2>
@@ -249,16 +251,16 @@ export function ContactPage() {
                     href={href}
                     target={href.startsWith("http") ? "_blank" : undefined}
                     rel="noopener noreferrer"
-                    className="group flex items-start gap-4 p-5 bg-white border border-[#e5e4e7] rounded-2xl hover:border-[#6128a6]/30 hover:shadow-[0_8px_24px_-4px_rgba(97,40,166,0.10)] transition-all duration-300"
+                    className="group flex items-start gap-4 p-5 bg-white border border-[#e5e4e7] rounded-2xl hover:border-[#EB9B3D]/30 hover:shadow-[0_8px_24px_-4px_rgba(235,155,61,0.10)] transition-all duration-300"
                   >
-                    <div className="w-11 h-11 rounded-xl bg-[#ecdaff] flex items-center justify-center shrink-0">
-                      <Icon className="w-5 h-5 text-[#6128a6]" />
+                    <div className="w-11 h-11 rounded-xl bg-[#FEF0DC] flex items-center justify-center shrink-0">
+                      <Icon className="w-5 h-5 text-[#EB9B3D]" />
                     </div>
                     <div>
                       <p className="text-[11px] font-bold uppercase tracking-widest text-[#888] mb-1">
                         {label}
                       </p>
-                      <p className="text-[14px] font-semibold text-[#111] group-hover:text-[#6128a6] transition-colors leading-snug">
+                      <p className="text-[14px] font-semibold text-[#111] group-hover:text-[#EB9B3D] transition-colors leading-snug">
                         {value}
                       </p>
                     </div>
@@ -268,9 +270,9 @@ export function ContactPage() {
 
               {/* Office Timing */}
               <ScrollReveal variant="card" delay={320}>
-                <div className="bg-[#1e0a38] rounded-2xl p-6 text-white">
+                <div className="bg-[#141A3D] rounded-2xl p-6 text-white">
                   <div className="flex items-center gap-2 mb-5">
-                    <Clock className="w-5 h-5 text-[#aa3bff] shrink-0" />
+                    <Clock className="w-5 h-5 text-[#EB9B3D] shrink-0" />
                     <h4 className="text-[16px] font-bold text-white mb-0">Office Hours (GMT)</h4>
                   </div>
                   <div className="space-y-3 text-[14px]">
@@ -281,7 +283,7 @@ export function ContactPage() {
                     ].map(({ day, hours, open }) => (
                       <div key={day} className="flex items-center justify-between border-b border-white/10 pb-3 last:border-0 last:pb-0">
                         <span className="text-white/60">{day}</span>
-                        <span className={`font-semibold ${open ? "text-white" : "text-[#f85d37]"}`}>
+                        <span className={`font-semibold ${open ? "text-white" : "text-[#DA4D33]"}`}>
                           {hours}
                         </span>
                       </div>
@@ -299,12 +301,12 @@ export function ContactPage() {
       </section>
 
       {/* ── Global Offices ──────────────────────────────────────── */}
-      <section id="worldwide-presence" className="py-20 bg-[#f8f5ff]">
+      <section id="worldwide-presence" className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 mb-3">
-                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest">
                   Worldwide Presence
                 </span>
               </div>
@@ -325,7 +327,7 @@ export function ContactPage() {
                 variant="card"
                 delay={Math.min(i % 4, 3) * 70}
               >
-                <div className="group bg-white border border-[#e5e4e7] rounded-2xl p-5 hover:border-[#6128a6]/30 hover:shadow-[0_8px_24px_-4px_rgba(97,40,166,0.10)] transition-all duration-300 h-full flex flex-col">
+                <div className="group bg-white border border-[#e5e4e7] rounded-2xl p-5 hover:border-[#EB9B3D]/30 hover:shadow-[0_8px_24px_-4px_rgba(235,155,61,0.10)] transition-all duration-300 h-full flex flex-col">
                   <div className="flex items-center gap-2.5 mb-3">
                     <ReactCountryFlag
                       countryCode={office.code}
@@ -333,7 +335,7 @@ export function ContactPage() {
                       style={{ width: "1.6em", height: "1.2em", borderRadius: "3px", objectFit: "cover" }}
                       title={office.region}
                     />
-                    <span className="text-[15px] font-bold text-[#111] leading-snug group-hover:text-[#6128a6] transition-colors">{office.city}</span>
+                    <span className="text-[15px] font-bold text-[#111] leading-snug group-hover:text-[#EB9B3D] transition-colors">{office.city}</span>
                   </div>
                   <p className="text-[12px] text-[#666] leading-relaxed flex-1 mb-4">
                     {office.address}
@@ -342,7 +344,7 @@ export function ContactPage() {
                     href={office.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-[12px] font-semibold text-[#6128a6] hover:text-[#f85d37] transition-colors"
+                    className="flex items-center gap-1.5 text-[12px] font-semibold text-[#EB9B3D] hover:text-[#DA4D33] transition-colors"
                   >
                     <MapPin className="w-3.5 h-3.5" />
                     View on Google Maps

@@ -60,18 +60,29 @@ interface SlideB {
 export type AnySlide = SlideA | SlideB;
 
 /* ─── Slide data ─────────────────────────────────── */
+/* ─── Theme 2 palette shared across all slides ─────── */
+const T2_BG_A  = "linear-gradient(135deg, #0D112D 0%, #242E72 100%)";
+const T2_BG_B  = "linear-gradient(135deg, #0D112D 0%, #1A2444 100%)";
+const T2_EDGE  = "#0D112D";
+const T2_ORB1  = "#EB9B3D";
+const T2_ORB2  = "#DA4D33";
+const T2_ORB3  = "#F5A623";
+const T2_ACC   = "#EB9B3D";
+const T2_SH1   = "#F5C66A";
+const T2_SH2   = "#F0783A";
+
 export const SLIDES_ALL: AnySlide[] = [
-  /* ── Variant A — original 6 ── */
+  /* ── Variant A — 6 slides ── */
   {
     variant: "a",
     titlePart1:  "Artificial ",
     titleHL:     "Intelligence",
     titlePart2:  "Services",
     description: "Harness the power of AI to transform your business.",
-    bg:      "linear-gradient(135deg, #0d0517 0%, #1e0a38 25%, #381f55 55%, #4a1a6e 80%, #261140 100%)",
-    orb1: "#aa3bff", orb2: "#6128a6", orb3: "#f85d37",
-    accent: "#aa3bff", sh1: "#c084fc", sh2: "#f85d37",
-    btnColor: "#f85d37",
+    bg: T2_BG_A,
+    orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
+    accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
+    btnColor: T2_ORB2,
     serviceHref: "/services/it-services/artificial-intelligence", serviceLabel: "AI Services",
     image: imgSlide1,
   },
@@ -81,9 +92,9 @@ export const SLIDES_ALL: AnySlide[] = [
     titleHL:     "Company",
     titlePart2:  "",
     description: "For Innovative IT Solutions and Service.",
-    bg:      "linear-gradient(135deg, #020b1a 0%, #061a3a 25%, #0d3060 60%, #0a2050 100%)",
-    orb1: "#3b82f6", orb2: "#1d4ed8", orb3: "#06b6d4",
-    accent: "#3b82f6", sh1: "#60a5fa", sh2: "#06b6d4",
+    bg: T2_BG_A,
+    orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
+    accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
     serviceHref: "/services/it-services", serviceLabel: "Our Services",
     image: imgSlide2,
   },
@@ -93,10 +104,10 @@ export const SLIDES_ALL: AnySlide[] = [
     titleHL:     "Development",
     titlePart2:  "",
     description: "More Compelling and Memorable products through simplicity in design.",
-    bg:      "linear-gradient(135deg, #0a0000 0%, #180000 25%, #2e0808 60%, #200505 100%)",
-    orb1: "#ef4444", orb2: "#b91c1c", orb3: "#f97316",
-    accent: "#ef4444", sh1: "#fca5a5", sh2: "#fb923c",
-    btnColor: "#f85d37",
+    bg: T2_BG_A,
+    orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
+    accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
+    btnColor: T2_ORB2,
     serviceHref: "/services/it-services/software-development", serviceLabel: "Product Development",
     image: imgSlide3,
   },
@@ -106,9 +117,9 @@ export const SLIDES_ALL: AnySlide[] = [
     titleHL:     "Services",
     titlePart2:  "",
     description: "Provides focal point of knowledge management to help the client business to improve.",
-    bg:      "linear-gradient(135deg, #180800 0%, #301500 25%, #4a2200 60%, #361000 100%)",
-    orb1: "#f85d37", orb2: "#ea580c", orb3: "#f59e0b",
-    accent: "#f85d37", sh1: "#fb923c", sh2: "#f59e0b",
+    bg: T2_BG_A,
+    orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
+    accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
     serviceHref: "/services/it-services", serviceLabel: "IT Services",
     image: imgSlide4,
   },
@@ -118,9 +129,9 @@ export const SLIDES_ALL: AnySlide[] = [
     titleHL:     "Capability",
     titlePart2:  "",
     description: "Partner to propel your digital transformation journey.",
-    bg:      "linear-gradient(135deg, #06001a 0%, #0f0035 25%, #1c005c 60%, #120045 100%)",
-    orb1: "#818cf8", orb2: "#6366f1", orb3: "#a78bfa",
-    accent: "#818cf8", sh1: "#a5b4fc", sh2: "#c084fc",
+    bg: T2_BG_A,
+    orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
+    accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
     serviceHref: "/services/new-generation", serviceLabel: "New-Gen Services",
     image: imgSlide5,
   },
@@ -130,10 +141,10 @@ export const SLIDES_ALL: AnySlide[] = [
     titleHL:     "Consulting",
     titlePart2:  "",
     description: "Connect with pre-vetted IT professionals who deliver from day one permanent placements, contract roles, umbrella services, and specialist consulting for every engagement.",
-    bg:      "linear-gradient(135deg, #001a0f 0%, #002a18 25%, #003d28 60%, #002e1e 100%)",
-    orb1: "#10b981", orb2: "#059669", orb3: "#34d399",
-    accent: "#10b981", sh1: "#6ee7b7", sh2: "#34d399",
-    btnColor: "#f85d37",
+    bg: T2_BG_A,
+    orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
+    accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
+    btnColor: T2_ORB2,
     serviceHref: "/services/staffing-consulting", serviceLabel: "Staffing & Consulting",
     image: imgSlide6,
   },
@@ -147,8 +158,7 @@ export const SLIDES_ALL: AnySlide[] = [
     title:    "All Your ",
     titleHL:  "IT Services",
     titlePost: "Under One Roof",
-    description:
-      "All the IT Solutions you need – One trusted partner. Simplify, secure, & scale everything.",
+    description: "All the IT Solutions you need – One trusted partner. Simplify, secure, & scale everything.",
     services: [
       { label: "Software Development",    Icon: Code2    },
       { label: "Artificial Intelligence", Icon: Cpu      },
@@ -165,10 +175,9 @@ export const SLIDES_ALL: AnySlide[] = [
     ],
     ctaLabel: "Book A Demo",
     ctaHref:  "/contact",
-    bg:      "linear-gradient(135deg, #080612 0%, #0e0c2e 30%, #13104a 65%, #0a0820 100%)",
-    bgEdge:  "#080612",
-    orb1: "#6366f1", orb2: "#4338ca", orb3: "#818cf8",
-    accent: "#6366f1", sh1: "#a5b4fc", sh2: "#818cf8",
+    bg: T2_BG_B, bgEdge: T2_EDGE,
+    orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
+    accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
     image: imgSlideRec1,
   },
 
@@ -179,8 +188,7 @@ export const SLIDES_ALL: AnySlide[] = [
     title:    "Best ",
     titleHL:  "Recruitment Agency",
     titlePost: "in U.K",
-    description:
-      "Whether you are looking for FTE (Full Time Employee) / Contract Role (C2H) – Infoplus Technologies offers the best service with 99% Client retention rate.",
+    description: "Whether you are looking for FTE (Full Time Employee) / Contract Role (C2H) – Infoplus Technologies offers the best service with 99% Client retention rate.",
     services: [
       { label: "IT Staffing Solutions",   Icon: Users2    },
       { label: "IT Consulting Solutions", Icon: Briefcase },
@@ -194,10 +202,9 @@ export const SLIDES_ALL: AnySlide[] = [
     statsBar: true,
     ctaLabel: "Book A Demo",
     ctaHref:  "/contact",
-    bg:      "linear-gradient(135deg, #04100f 0%, #0a2220 30%, #0d2f2b 65%, #09201d 100%)",
-    bgEdge:  "#04100f",
-    orb1: "#14b8a6", orb2: "#0f766e", orb3: "#22d3ee",
-    accent: "#14b8a6", sh1: "#5eead4", sh2: "#2dd4bf",
+    bg: T2_BG_B, bgEdge: T2_EDGE,
+    orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
+    accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
     image: imgSlideRec1,
   },
 
@@ -208,8 +215,7 @@ export const SLIDES_ALL: AnySlide[] = [
     title:    "New Gen ",
     titleHL:  "IT Solutions",
     titlePost: "– Smarter Technology, Greater Impact",
-    description:
-      "Empowering business with New gen IT Service that drive innovation, agility & growth.",
+    description: "Empowering business with New gen IT Service that drive innovation, agility & growth.",
     services: [
       { label: "Enterprise Transformation", Icon: Building2 },
       { label: "Everything Data",           Icon: Database  },
@@ -224,10 +230,9 @@ export const SLIDES_ALL: AnySlide[] = [
     statsBar: true,
     ctaLabel: "Book A Demo",
     ctaHref:  "/contact",
-    bg:      "linear-gradient(135deg, #0a0614 0%, #150b2a 30%, #1e1040 65%, #0f0820 100%)",
-    bgEdge:  "#0a0614",
-    orb1: "#a855f7", orb2: "#7c3aed", orb3: "#c084fc",
-    accent: "#a855f7", sh1: "#d8b4fe", sh2: "#c084fc",
+    bg: T2_BG_B, bgEdge: T2_EDGE,
+    orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
+    accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
     image: imgSlideRec1,
   },
 ];

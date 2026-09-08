@@ -26,26 +26,26 @@ export function FAQAccordion({
   const [open, setOpen] = useState<number>(defaultOpen);
 
   return (
-    <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
       {/* Ambient */}
-      <div className="absolute top-[-10%] right-[-6%] w-96 h-96 rounded-full bg-[#ecdaff] opacity-55 blur-[110px] pointer-events-none" />
-      <div className="absolute bottom-[-8%] left-[-4%] w-72 h-72 rounded-full bg-[#6128a6]/10 blur-[90px] pointer-events-none" />
+      <div className="absolute top-[-10%] right-[-6%] w-96 h-96 rounded-full bg-[#EB9B3D] opacity-10 blur-[110px] pointer-events-none" />
+      <div className="absolute bottom-[-8%] left-[-4%] w-72 h-72 rounded-full bg-[#DA4D33]/8 blur-[90px] pointer-events-none" />
 
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
 
         {/* ── Section header ── */}
         <ScrollReveal direction="up">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 pb-10 border-b border-[#e2ddf0]">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 pb-10 border-b border-[rgba(13,17,45,0.10)]">
             <div>
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-6">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-6">
                 {badge}
               </span>
-              <h2 className="text-[clamp(2rem,4.5vw,3.25rem)] font-black text-[#0d0517] leading-[1.1] tracking-tight">
+              <h2 className="text-[clamp(2rem,4.5vw,3.25rem)] font-black text-[#101223] leading-[1.1] tracking-tight">
                 {title.split(" ").slice(0, Math.ceil(title.split(" ").length / 2)).join(" ")}
                 <br />
                 <span
                   style={{
-                    background: "linear-gradient(90deg,#6128a6 0%,#aa3bff 60%,#f85d37 100%)",
+                    background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -56,10 +56,10 @@ export function FAQAccordion({
               </h2>
             </div>
             <div className="lg:max-w-xs shrink-0">
-              <p className="text-[15px] text-[#666] leading-relaxed mb-6">{subtitle}</p>
+              <p className="text-[15px] text-[#4A4F63] leading-relaxed mb-6">{subtitle}</p>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 text-[13px] font-bold text-[#6128a6] hover:text-[#f85d37] transition-colors duration-200 group"
+                className="inline-flex items-center gap-2 text-[13px] font-bold text-[#EB9B3D] hover:text-[#DA4D33] transition-colors duration-200 group"
               >
                 Still have questions? Contact us
                 <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
@@ -76,14 +76,14 @@ export function FAQAccordion({
               <ScrollReveal key={i} direction="up" delay={i * 50}>
                 <div
                   className={`relative border-b transition-colors duration-300 ${
-                    isOpen ? "border-[#6128a6]/25" : "border-[#e2ddf0]"
+                    isOpen ? "border-[#EB9B3D]/30" : "border-[rgba(13,17,45,0.10)]"
                   }`}
                 >
                   {/* Active left accent bar */}
                   <div
                     className="absolute left-0 top-0 bottom-0 w-0.5 rounded-full transition-all duration-500 origin-top"
                     style={{
-                      background: "linear-gradient(180deg,#6128a6,#aa3bff)",
+                      background: "linear-gradient(180deg,#EB9B3D,#DA4D33)",
                       transform: isOpen ? "scaleY(1)" : "scaleY(0)",
                     }}
                   />
@@ -91,12 +91,12 @@ export function FAQAccordion({
                   {/* Question row */}
                   <button
                     onClick={() => setOpen(isOpen ? -1 : i)}
-                    className="w-full flex items-center gap-5 py-7 pl-6 pr-4 text-left group"
+                    className="w-full flex items-center gap-5 py-7 pl-6 pr-4 text-left group cursor-pointer"
                   >
                     {/* Number */}
                     <span
                       className="shrink-0 text-[11px] font-black tracking-widest transition-colors duration-300 w-6"
-                      style={{ color: isOpen ? "#6128a6" : "#bbb" }}
+                      style={{ color: isOpen ? "#EB9B3D" : "#bbb" }}
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -104,7 +104,7 @@ export function FAQAccordion({
                     {/* Question */}
                     <span
                       className="flex-1 text-[17px] font-semibold leading-snug transition-colors duration-300"
-                      style={{ color: isOpen ? "#6128a6" : "#0d0517" }}
+                      style={{ color: isOpen ? "#EB9B3D" : "#101223" }}
                     >
                       {faq.q}
                     </span>
@@ -113,9 +113,9 @@ export function FAQAccordion({
                     <span
                       className="shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 border"
                       style={{
-                        backgroundColor: isOpen ? "#6128a6" : "transparent",
-                        borderColor: isOpen ? "#6128a6" : "#d5d0e0",
-                        color: isOpen ? "#fff" : "#888",
+                        background: isOpen ? "linear-gradient(135deg,#EB9B3D,#DA4D33)" : "transparent",
+                        borderColor: isOpen ? "#EB9B3D" : "#D1D5DB",
+                        color: isOpen ? "#fff" : "#9CA3AF",
                         transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
                       }}
                     >
@@ -133,7 +133,7 @@ export function FAQAccordion({
                     }}
                   >
                     <div className="pl-17 pr-16 pb-8">
-                      <p className="text-[15px] text-[#555] leading-[1.85]">{faq.a}</p>
+                      <p className="text-[15px] text-[#4A4F63] leading-[1.85]">{faq.a}</p>
                     </div>
                   </div>
                 </div>

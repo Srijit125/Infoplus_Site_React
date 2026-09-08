@@ -250,7 +250,7 @@ export default function StaffingConsultingPage() {
         <button
           onClick={() => setCurrentBanner((b) => Math.max(0, b - 1))}
           aria-label="Previous banner"
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 disabled:opacity-30"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 disabled:opacity-30 cursor-pointer"
           disabled={currentBanner === 0}
         >
           <ChevronLeft className="w-5 h-5" />
@@ -260,7 +260,7 @@ export default function StaffingConsultingPage() {
         <button
           onClick={() => setCurrentBanner((b) => Math.min(1, b + 1))}
           aria-label="Next banner"
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 disabled:opacity-30"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 disabled:opacity-30 cursor-pointer"
           disabled={currentBanner === 1}
         >
           <ChevronRight className="w-5 h-5" />
@@ -273,7 +273,7 @@ export default function StaffingConsultingPage() {
               key={idx}
               onClick={() => setCurrentBanner(idx)}
               aria-label={`Go to banner ${idx + 1}`}
-              className="transition-all duration-300 rounded-full"
+              className="transition-all duration-300 rounded-full cursor-pointer"
               style={{
                 width: currentBanner === idx ? "24px" : "8px",
                 height: "8px",

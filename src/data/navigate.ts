@@ -27,7 +27,6 @@ export const navigation: NavigationItem[] = [
         items: [
           { label: "Home (Theme 1)", href: "/" },
           { label: "Home (Theme 2)", href: "/home-2" },
-          { label: "Home (Theme 3)", href: "/home-3" },
         ],
       },
     ],

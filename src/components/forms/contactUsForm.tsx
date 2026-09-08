@@ -80,7 +80,7 @@ function contactUsForm() {
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white rounded-2xl px-8 py-5 font-bold text-lg hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/30 transition-all flex items-center justify-center gap-2"
+          className="w-full bg-blue-600 text-white rounded-2xl px-8 py-5 font-bold text-lg hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer"
         >
           <Send className="w-5 h-5" />
           Send Message

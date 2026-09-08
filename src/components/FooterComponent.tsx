@@ -35,7 +35,7 @@ function SocialSvg({ name }: { name: string }) {
 
 export function Footer({ bgColor }: { bgColor?: string }) {
   return (
-    <footer className="text-white pt-20 pb-8" style={{ backgroundColor: bgColor ?? "#261140" }}>
+    <footer className="text-white pt-20 pb-8" style={{ backgroundColor: bgColor ?? "#141A3D" }}>
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
@@ -158,7 +158,7 @@ export function Footer({ bgColor }: { bgColor?: string }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.title}
-                  className="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/60 hover:bg-[#f85d37] hover:border-[#f85d37] hover:text-white transition-all duration-200"
+                  className="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-white/60 hover:bg-[#EB9B3D] hover:border-[#EB9B3D] hover:text-white transition-all duration-200"
                 >
                   <SocialSvg name={link.title.toLowerCase()} />
                 </a>
@@ -180,7 +180,8 @@ export function Footer({ bgColor }: { bgColor?: string }) {
               />
               <button
                 type="submit"
-                className="absolute right-1 top-1 bottom-1 w-10 bg-[#261140] rounded-md flex items-center justify-center text-white hover:bg-[#381f55] transition-colors"
+                className="absolute right-1 top-1 bottom-1 w-10 rounded-md flex items-center justify-center text-white transition-all duration-200 hover:opacity-90 cursor-pointer"
+                style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
                 aria-label="Subscribe Now"
               >
                 <ArrowRight className="w-4 h-4" />

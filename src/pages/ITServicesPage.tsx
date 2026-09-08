@@ -283,7 +283,7 @@ export default function ITServicesPage() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-[#f85d37] to-[#ff7a58] text-white rounded-xl py-3 font-bold text-[14px] hover:shadow-[0_8px_28px_rgba(248,93,55,0.40)] transition-all duration-300 flex items-center justify-center gap-2"
+                    className="w-full bg-gradient-to-r from-[#f85d37] to-[#ff7a58] text-white rounded-xl py-3 font-bold text-[14px] hover:shadow-[0_8px_28px_rgba(248,93,55,0.40)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     Send Message <ChevronRight className="w-4 h-4" />
                   </button>
@@ -306,7 +306,7 @@ export default function ITServicesPage() {
         <button
           onClick={() => setCurrentBanner((p) => Math.max(0, p - 1))}
           aria-label="Previous banner"
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 disabled:opacity-30"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 disabled:opacity-30 cursor-pointer"
           disabled={currentBanner === 0}
         >
           <ChevronLeft className="w-5 h-5" />
@@ -314,7 +314,7 @@ export default function ITServicesPage() {
         <button
           onClick={() => setCurrentBanner((p) => Math.min(1, p + 1))}
           aria-label="Next banner"
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 disabled:opacity-30"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 disabled:opacity-30 cursor-pointer"
           disabled={currentBanner === 1}
         >
           <ChevronRight className="w-5 h-5" />
@@ -327,7 +327,7 @@ export default function ITServicesPage() {
               key={idx}
               onClick={() => setCurrentBanner(idx)}
               aria-label={`Go to banner ${idx + 1}`}
-              className="transition-all duration-300 rounded-full"
+              className="transition-all duration-300 rounded-full cursor-pointer"
               style={{
                 width: currentBanner === idx ? "24px" : "8px",
                 height: "8px",

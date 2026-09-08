@@ -1,11 +1,10 @@
-﻿import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+﻿import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Footer } from "./components/FooterComponent";
 // import Header from "./components/Header";
 import { Header } from "./components/header/HeaderComponent";
 import Index from "./pages/Index";
 import IndexTheme2 from "./pages/IndexTheme2";
-import IndexTheme3 from "./pages/IndexTheme3";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
@@ -37,11 +36,7 @@ import { CookieConsent } from "./components/ui/CookieConsent";
 import { ScrollToTop } from "./components/ui/ScrollToTop";
 
 function AppShell() {
-  const location = useLocation();
-  const footerBg =
-    location.pathname === "/home-2" ? "#0D112D" :
-    location.pathname === "/home-3" ? "#152A6E" :
-    undefined;
+  const footerBg = "#141A3D";
 
   return (
     <>
@@ -50,7 +45,6 @@ function AppShell() {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/home-2" element={<IndexTheme2 />} />
-        <Route path="/home-3" element={<IndexTheme3 />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />

@@ -28,7 +28,7 @@ function CareerPosting({ job, idx }: { job: CareerPosition; idx: number }) {
         </div>
       </div>
 
-      <button className="mt-5 md:mt-0 inline-flex items-center gap-2 text-[13px] font-semibold text-[#6128a6] group-hover:text-[#f85d37] group-hover:translate-x-1 transition-all duration-200 shrink-0">
+      <button className="mt-5 md:mt-0 inline-flex items-center gap-2 text-[13px] font-semibold text-[#6128a6] group-hover:text-[#f85d37] group-hover:translate-x-1 transition-all duration-200 shrink-0 cursor-pointer">
         Apply Now
         <ArrowRight className="w-4 h-4" />
       </button>

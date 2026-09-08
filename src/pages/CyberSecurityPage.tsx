@@ -717,7 +717,7 @@ export default function CyberSecurityPage() {
                 <button
                   key={i}
                   onClick={() => goToDetail(i)}
-                  className={`shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all border ${
+                  className={`shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all border cursor-pointer ${
                     activeIdx === i
                       ? "bg-[#0d0517] text-white border-[#0d0517]"
                       : "bg-white text-[#555] border-[#e5e4e7] hover:border-[#6128a6]/40"
@@ -744,7 +744,7 @@ export default function CyberSecurityPage() {
                     <button
                       key={i}
                       onClick={() => goToDetail(i)}
-                      className={`w-full flex items-center gap-2 px-2.5 py-2 rounded-lg text-left transition-all duration-200 ${
+                      className={`w-full flex items-center gap-2 px-2.5 py-2 rounded-lg text-left transition-all duration-200 cursor-pointer ${
                         activeIdx === i
                           ? "bg-[#0d0517] text-white"
                           : "text-[#555] hover:bg-white hover:text-[#6128a6]"
