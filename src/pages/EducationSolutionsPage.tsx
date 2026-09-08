@@ -49,41 +49,41 @@ const PRODUCT_TYPES = [
     icon: BookOpen,
     title: "Content Products",
     desc: "We are open to change and maintaining flexibility rich multimedia content built for every technical student and professional.",
-    color: "#6128a6",
-    glow: "rgba(97,40,166,0.25)",
+    color: "#EB9B3D",
+    glow: "rgba(235,155,61,0.25)",
   },
   {
     icon: MessageSquare,
     title: "Q & A Products",
     desc: "We value our people, encourage their development and reward their performance targeted Q&A tools built around exam success.",
-    color: "#aa3bff",
-    glow: "rgba(170,59,255,0.25)",
+    color: "#DA4D33",
+    glow: "rgba(218,77,51,0.25)",
   },
   {
     icon: Layers,
     title: "Learning Objects",
     desc: "We put quality first to deliver WOW services modular, reusable learning objects designed for deeper conceptual understanding.",
-    color: "#f85d37",
-    glow: "rgba(248,93,55,0.25)",
+    color: "#F0783A",
+    glow: "rgba(240,120,58,0.25)",
   },
 ];
 
 /* ── Devices ───────────────────────────────────────────────── */
 const DEVICES = [
-  { icon: Monitor, label: "PC" },
-  { icon: Laptop, label: "Laptop" },
-  { icon: Tablet, label: "TAB" },
+  { icon: Monitor,    label: "PC" },
+  { icon: Laptop,     label: "Laptop" },
+  { icon: Tablet,     label: "TAB" },
   { icon: Smartphone, label: "Mobile" },
 ];
 
 /* ── Uniqueness Stats ──────────────────────────────────────── */
 const UNIQUENESS_STATS = [
-  { value: "4.5K", label: "Lecture Hours of Digital Content", accent: "#6128a6" },
-  { value: "1.00L", label: "3D/2D Demonstrations", accent: "#aa3bff" },
-  { value: "6.75L", label: "Page of Content", accent: "#f85d37" },
-  { value: "8.25K", label: "Solved Tutorial Problems", accent: "#6128a6" },
-  { value: "1.80L", label: "Multiple Choice Questions", accent: "#aa3bff" },
-  { value: "250", label: "Question & Answers APPs", accent: "#f85d37" },
+  { value: "4.5K",  label: "Lecture Hours of Digital Content",  accent: "#EB9B3D" },
+  { value: "1.00L", label: "3D/2D Demonstrations",              accent: "#DA4D33" },
+  { value: "6.75L", label: "Page of Content",                   accent: "#F0783A" },
+  { value: "8.25K", label: "Solved Tutorial Problems",          accent: "#EB9B3D" },
+  { value: "1.80L", label: "Multiple Choice Questions",         accent: "#DA4D33" },
+  { value: "250",   label: "Question & Answers APPs",           accent: "#F0783A" },
 ];
 
 /* ── Tabs ──────────────────────────────────────────────────── */
@@ -98,12 +98,12 @@ type Tab = (typeof TABS)[number];
 
 /* ── Approach steps ────────────────────────────────────────── */
 const APPROACH_STEPS = [
-  { icon: BookMarked, label: "Fundamental Law", num: "01", image: imgApproachFundamentalLaw },
-  { icon: Zap, label: "Working Principle", num: "02", image: imgApproachWorkingPrinciple },
-  { icon: FlaskConical, label: "Derivation", num: "03", image: imgApproachDerivation },
-  { icon: Cpu, label: "Construction", num: "04", image: imgApproachConstruction },
-  { icon: PenTool, label: "Solved Tutorial Problem", num: "05", image: imgApproachSolvedTutorial },
-  { icon: Lightbulb, label: "Application", num: "06", image: imgApproachApplication },
+  { icon: BookMarked,  label: "Fundamental Law",       num: "01", image: imgApproachFundamentalLaw },
+  { icon: Zap,         label: "Working Principle",     num: "02", image: imgApproachWorkingPrinciple },
+  { icon: FlaskConical,label: "Derivation",            num: "03", image: imgApproachDerivation },
+  { icon: Cpu,         label: "Construction",          num: "04", image: imgApproachConstruction },
+  { icon: PenTool,     label: "Solved Tutorial Problem",num: "05", image: imgApproachSolvedTutorial },
+  { icon: Lightbulb,   label: "Application",           num: "06", image: imgApproachApplication },
 ];
 
 /* ── Model quadrants ───────────────────────────────────────── */
@@ -112,14 +112,14 @@ const MODEL_QUADRANTS = [
     label: "Learn 3D Way",
     desc: "Concepts & Fundamentals (Indian method) paired with Products & Applications (Western method) two complementary halves of deep engineering mastery.",
     quads: ["Concepts", "Fundamentals", "Products", "Applications"],
-    accent: "#6128a6",
+    accent: "#EB9B3D",
     image: imgModelLearn3DWay,
   },
   {
     label: "Four Quadrant Approach",
     desc: "An extended model integrating Theory, Practice, Demonstration, and Assessment all four pillars necessary for a complete engineering education journey.",
     quads: ["Theory", "Practice", "Demonstration", "Assessment"],
-    accent: "#aa3bff",
+    accent: "#DA4D33",
     image: imgModelFourQuadrant,
   },
 ];
@@ -145,7 +145,7 @@ const DEPTH_METHODS = [
       "Summary of Units and Measurements applicable to a specific product.",
       "A summarized table detailing all formulae across the subject.",
     ],
-    accent: "#6128a6",
+    accent: "#EB9B3D",
     images: [imgDepthModel1_1, imgDepthModel1_2, imgDepthModel1_3, imgDepthModel1_4],
   },
   {
@@ -159,7 +159,7 @@ const DEPTH_METHODS = [
     ],
     featuresTitle: undefined as string | undefined,
     features: [] as string[],
-    accent: "#aa3bff",
+    accent: "#DA4D33",
     images: [imgDepthModel2_1, imgDepthModel2_2],
   },
   {
@@ -176,7 +176,7 @@ const DEPTH_METHODS = [
     ],
     featuresTitle: undefined as string | undefined,
     features: [] as string[],
-    accent: "#f85d37",
+    accent: "#F0783A",
     images: [imgDepthModel3_1, imgDepthModel3_2],
   },
 ];
@@ -185,7 +185,7 @@ const DEPTH_METHODS = [
 const FEATURE_GROUPS = [
   {
     label: "Content Reference Features",
-    accent: "#6128a6",
+    accent: "#EB9B3D",
     image: imgFeatures1,
     items: [
       "Reference textbooks for given topic/subject",
@@ -196,7 +196,7 @@ const FEATURE_GROUPS = [
   },
   {
     label: "Problem-Solving Features",
-    accent: "#aa3bff",
+    accent: "#DA4D33",
     image: imgFeatures2,
     items: [
       "Solved Problems with visual explanations",
@@ -212,8 +212,8 @@ const BENEFIT_GROUPS = [
   {
     audience: "Student",
     icon: GraduationCap,
-    accent: "#6128a6",
-    glow: "rgba(97,40,166,0.2)",
+    accent: "#EB9B3D",
+    glow: "rgba(235,155,61,0.2)",
     items: [
       "Improved comprehension and retention",
       "Better attention and attendance in the classroom",
@@ -228,8 +228,8 @@ const BENEFIT_GROUPS = [
   {
     audience: "Teacher",
     icon: BookOpen,
-    accent: "#aa3bff",
-    glow: "rgba(170,59,255,0.2)",
+    accent: "#DA4D33",
+    glow: "rgba(218,77,51,0.2)",
     items: [
       "Best practices by experienced teachers for conducting class",
       "Better quality of material available for explanation",
@@ -243,8 +243,8 @@ const BENEFIT_GROUPS = [
   {
     audience: "Government",
     icon: Globe,
-    accent: "#f85d37",
-    glow: "rgba(248,93,55,0.2)",
+    accent: "#F0783A",
+    glow: "rgba(240,120,58,0.2)",
     items: [
       "Enhanced employability of outgoing students",
       "Addresses lack of faculties especially in rural areas",
@@ -287,6 +287,7 @@ export default function EducationSolutionsPage() {
         description="Discover Infoplus Technologies UK's education solutions a comprehensive EdTech platform designed to streamline learning management, student engagement, and institutional efficiency."
         path="/products/education-solutions"
       />
+
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
         badge="PRODUCTS"
@@ -299,12 +300,13 @@ export default function EducationSolutionsPage() {
             href="https://neat.aicte-india.org"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f85d37]/15 border border-[#f85d37]/40 text-[#f85d37] text-[13px] font-semibold hover:bg-[#f85d37]/25 transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-semibold transition-opacity hover:opacity-85"
+            style={{ background: "linear-gradient(135deg,#EB9B3D,#DA4D33)", color: "#fff" }}
           >
             <Star className="w-3.5 h-3.5" />
             NEAT · AICTE India
           </a>
-          <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 border border-white/20 text-white/80 text-[13px] font-semibold">
+          <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/30 text-[#EB9B3D] text-[13px] font-semibold">
             <Brain className="w-3.5 h-3.5" />
             AI-Powered Learning
           </span>
@@ -312,19 +314,23 @@ export default function EducationSolutionsPage() {
       </PageHero>
 
       {/* ── Product Types ────────────────────────────────────── */}
-      <section className="py-24 bg-[#f8f5ff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
-        <div className="absolute top-0 right-0 w-125 h-125 rounded-full bg-[#ecdaff] opacity-50 blur-[100px] pointer-events-none" />
+      <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+        <div className="absolute top-0 right-0 w-125 h-125 rounded-full bg-[#FEF0DC] opacity-50 blur-[100px] pointer-events-none" />
+        <div
+          className="absolute inset-0 opacity-[0.02] pointer-events-none"
+          style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "32px 32px" }}
+        />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
             <div className="text-center mb-16">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Platform
               </span>
-              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-[#0d0517] leading-tight">
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-[#0d112d] leading-tight">
                 We provide a platform for the&nbsp;
-                <span className="text-[#6128a6]">convenience of learners</span>
+                <span className="text-[#EB9B3D]">convenience of learners</span>
               </h2>
-              <p className="text-[16px] text-[#0d0517]/60 mt-4 max-w-3xl mx-auto">
+              <p className="text-[16px] text-[#0d112d]/60 mt-4 max-w-3xl mx-auto">
                 Technology Products using Artificial Intelligence for customized
                 learning or e-content in niche areas having highly employable
                 skills identified and showcased on the NEAT portal.
@@ -335,12 +341,10 @@ export default function EducationSolutionsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {PRODUCT_TYPES.map((p, i) => (
               <ScrollReveal key={p.title} variant="card" delay={i * 120}>
-                <div className="group relative h-full bg-white border border-[#ecdaff] rounded-3xl p-8 hover:shadow-[0_16px_48px_rgba(97,40,166,0.1)] transition-all duration-400 overflow-hidden">
+                <div className="group relative h-full bg-white border border-[rgba(13,17,45,0.08)] rounded-3xl p-8 hover:shadow-[0_16px_48px_rgba(235,155,61,0.10)] transition-all duration-400 overflow-hidden">
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"
-                    style={{
-                      background: `radial-gradient(ellipse at 20% 20%, ${p.glow} 0%, transparent 65%)`,
-                    }}
+                    style={{ background: `radial-gradient(ellipse at 20% 20%, ${p.glow} 0%, transparent 65%)` }}
                   />
                   <div
                     className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
@@ -348,16 +352,9 @@ export default function EducationSolutionsPage() {
                   >
                     <p.icon className="w-7 h-7" />
                   </div>
-                  <h3 className="text-[20px] font-bold text-[#0d0517] mb-3">
-                    {p.title}
-                  </h3>
-                  <p className="text-[14px] text-[#0d0517]/65 leading-relaxed">
-                    {p.desc}
-                  </p>
-                  <div
-                    className="w-10 h-0.5 rounded-full mt-5"
-                    style={{ backgroundColor: p.color }}
-                  />
+                  <h3 className="text-[20px] font-bold text-[#0d112d] mb-3">{p.title}</h3>
+                  <p className="text-[14px] text-[#0d112d]/65 leading-relaxed">{p.desc}</p>
+                  <div className="w-10 h-0.5 rounded-full mt-5" style={{ backgroundColor: p.color }} />
                 </div>
               </ScrollReveal>
             ))}
@@ -367,24 +364,24 @@ export default function EducationSolutionsPage() {
 
       {/* ── Our Uniqueness ───────────────────────────────────── */}
       <section className="py-20 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#ecdaff]/60 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#f8f5ff] blur-[100px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#FEF0DC]/60 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#F3F5FF] blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
             <div className="text-center mb-14">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Uniqueness
               </span>
               <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-[#111] leading-tight">
                 Scale that sets us{" "}
-                <span className="text-[#6128a6]">apart</span>
+                <span className="text-[#EB9B3D]">apart</span>
               </h2>
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
             {UNIQUENESS_STATS.map((stat, i) => (
               <ScrollReveal key={stat.label} direction="up" delay={i * 80}>
-                <div className="group relative bg-[#f8f5ff] border border-[#e8e0f7] rounded-2xl p-7 hover:bg-white hover:border-[#6128a6]/25 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.12)] hover:-translate-y-1 transition-all duration-300 text-center overflow-hidden">
+                <div className="group relative bg-[#F3F5FF] border border-[rgba(13,17,45,0.08)] rounded-2xl p-7 hover:bg-white hover:border-[#EB9B3D]/25 hover:shadow-[0_16px_48px_-8px_rgba(235,155,61,0.12)] hover:-translate-y-1 transition-all duration-300 text-center overflow-hidden">
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
                     style={{ background: `radial-gradient(ellipse at 50% 30%, ${stat.accent}12 0%, transparent 70%)` }}
@@ -395,13 +392,8 @@ export default function EducationSolutionsPage() {
                   >
                     {stat.value}
                   </p>
-                  <div
-                    className="w-10 h-0.5 rounded-full mx-auto mb-3"
-                    style={{ backgroundColor: `${stat.accent}40` }}
-                  />
-                  <p className="text-[13.5px] text-[#555] leading-snug relative z-10">
-                    {stat.label}
-                  </p>
+                  <div className="w-10 h-0.5 rounded-full mx-auto mb-3" style={{ backgroundColor: `${stat.accent}40` }} />
+                  <p className="text-[13.5px] text-[#555] leading-snug relative z-10">{stat.label}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -410,16 +402,12 @@ export default function EducationSolutionsPage() {
       </section>
 
       {/* ── Limitless Learning ───────────────────────────────── */}
-      <section className="py-24 bg-[#0d0517] relative overflow-hidden">
-        <div className="absolute top-0 left-[-10%] w-125 h-125 rounded-full bg-[#381f55] opacity-40 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-[-10%] w-100 h-100 rounded-full bg-[#6128a6] opacity-20 blur-[120px] pointer-events-none" />
+      <section className="py-24 bg-[#141A3D] relative overflow-hidden">
+        <div className="absolute top-0 left-[-10%] w-125 h-125 rounded-full bg-[#0D112D] opacity-60 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-[-10%] w-100 h-100 rounded-full bg-[#EB9B3D] opacity-15 blur-[120px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, #ffffff 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
-          }}
+          style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }}
         />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -427,14 +415,12 @@ export default function EducationSolutionsPage() {
             {/* Text */}
             <ScrollReveal direction="left">
               <div>
-                <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white/70 text-[11px] font-bold uppercase tracking-widest mb-6">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/30 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-6">
                   Anywhere, Anytime
                 </span>
                 <h2 className="text-[clamp(2rem,4vw,3rem)] font-black text-white leading-tight mb-6">
                   Limitless Learning.{" "}
-                  <span className="text-[#aa3bff]">
-                    Limitless Possibilities.
-                  </span>
+                  <span className="text-[#EB9B3D]">Limitless Possibilities.</span>
                 </h2>
                 <p className="text-[16px] text-white/60 leading-relaxed mb-10">
                   Learning can happen anywhere both online and offline with
@@ -444,19 +430,15 @@ export default function EducationSolutionsPage() {
                 </p>
 
                 <div className="flex flex-wrap gap-3">
-                  {["Online", "Offline", "Any Time", "Any Pace"].map(
-                    (tag, i) => (
-                      <span
-                        key={tag}
-                        className="px-4 py-2 rounded-full border border-[#aa3bff]/40 bg-[#aa3bff]/10 text-[#aa3bff] text-[13px] font-semibold"
-                        style={{
-                          animation: `revealFade 400ms ease ${i * 80 + 200}ms both`,
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ),
-                  )}
+                  {["Online", "Offline", "Any Time", "Any Pace"].map((tag, i) => (
+                    <span
+                      key={tag}
+                      className="px-4 py-2 rounded-full border border-[#EB9B3D]/40 bg-[#EB9B3D]/10 text-[#EB9B3D] text-[13px] font-semibold"
+                      style={{ animation: `revealFade 400ms ease ${i * 80 + 200}ms both` }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
             </ScrollReveal>
@@ -464,9 +446,7 @@ export default function EducationSolutionsPage() {
             {/* Devices visual */}
             <ScrollReveal direction="right" delay={150}>
               <div className="relative">
-                {/* glow blob */}
-                <div className="absolute inset-0 bg-[#6128a6] opacity-20 blur-[80px] rounded-full scale-75" />
-
+                <div className="absolute inset-0 bg-[#EB9B3D] opacity-15 blur-[80px] rounded-full scale-75" />
                 <div className="relative bg-white/5 border border-white/10 rounded-3xl p-10">
                   <p className="text-[12px] font-bold uppercase tracking-widest text-white/40 text-center mb-8">
                     Available On Every Device
@@ -475,28 +455,22 @@ export default function EducationSolutionsPage() {
                     {DEVICES.map((d, i) => (
                       <div
                         key={d.label}
-                        className="group flex flex-col items-center gap-3 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-[#aa3bff]/40 hover:shadow-[0_8px_24px_rgba(170,59,255,0.15)] transition-all duration-300"
-                        style={{
-                          animation: `cardTiltIn 500ms cubic-bezier(0.22,1,0.36,1) ${i * 80 + 300}ms both`,
-                        }}
+                        className="group flex flex-col items-center gap-3 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-[#EB9B3D]/40 hover:shadow-[0_8px_24px_rgba(235,155,61,0.15)] transition-all duration-300"
+                        style={{ animation: `cardTiltIn 500ms cubic-bezier(0.22,1,0.36,1) ${i * 80 + 300}ms both` }}
                       >
-                        <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#6128a6] to-[#aa3bff] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <d.icon className="w-6 h-6 text-white" />
                         </div>
-                        <span className="text-[14px] font-semibold text-white/80">
-                          {d.label}
-                        </span>
+                        <span className="text-[14px] font-semibold text-white/80">{d.label}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* NEAT badge */}
-                  <div className="mt-6 flex items-center justify-center gap-3 bg-white/5 border border-[#f85d37]/20 rounded-2xl px-5 py-4">
-                    <Star className="w-5 h-5 text-[#f85d37] shrink-0" />
+                  <div className="mt-6 flex items-center justify-center gap-3 bg-white/5 border border-[#EB9B3D]/20 rounded-2xl px-5 py-4">
+                    <Star className="w-5 h-5 text-[#EB9B3D] shrink-0" />
                     <p className="text-[13px] text-white/70">
-                      <span className="text-[#f85d37] font-bold">
-                        NEAT Initiative
-                      </span>{" "}
+                      <span className="text-[#EB9B3D] font-bold">NEAT Initiative</span>{" "}
                       MHRD & AICTE certified platform
                     </p>
                   </div>
@@ -508,22 +482,18 @@ export default function EducationSolutionsPage() {
       </section>
 
       {/* ── Tabbed Explorer ──────────────────────────────────── */}
-      <section className="bg-[#f8f5ff] relative">
+      <section className="bg-white relative">
         <div
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, #6128a6 1px, transparent 1px)",
-            backgroundSize: "32px 32px",
-          }}
+          className="absolute inset-0 opacity-[0.02] pointer-events-none"
+          style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "32px 32px" }}
         />
         <div className="pt-24 container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
             <div className="text-center mb-10">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Explore the Platform
               </span>
-              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-[#0d0517] leading-tight">
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-[#0d112d] leading-tight">
                 Everything you need to know
               </h2>
             </div>
@@ -531,7 +501,7 @@ export default function EducationSolutionsPage() {
         </div>
 
         {/* Sticky tab bar */}
-        <div className="sticky top-16 z-30 bg-[#f8f5ff]/95 backdrop-blur-sm border-b border-[#e8e0f7]">
+        <div className="sticky top-16 z-30 bg-white/95 backdrop-blur-sm border-b border-[rgba(13,17,45,0.08)]">
           <div className="container mx-auto px-6 max-w-7xl py-4">
             <div className="flex flex-wrap justify-center gap-2">
               {TABS.map((tab) => (
@@ -541,9 +511,10 @@ export default function EducationSolutionsPage() {
                   className={[
                     "px-5 py-2.5 rounded-xl text-[14px] font-semibold transition-all duration-250 cursor-pointer",
                     activeTab === tab
-                      ? "bg-[#6128a6] text-white shadow-[0_8px_24px_rgba(97,40,166,0.30)]"
-                      : "bg-white border border-[#ecdaff] text-[#0d0517]/60 hover:border-[#6128a6]/40 hover:text-[#6128a6]",
+                      ? "text-white shadow-[0_8px_24px_rgba(235,155,61,0.30)]"
+                      : "bg-white border border-[rgba(13,17,45,0.08)] text-[#0d112d]/60 hover:border-[#EB9B3D]/40 hover:text-[#EB9B3D]",
                   ].join(" ")}
+                  style={activeTab === tab ? { background: "linear-gradient(135deg,#EB9B3D,#DA4D33)" } : undefined}
                 >
                   {tab}
                 </button>
@@ -553,19 +524,14 @@ export default function EducationSolutionsPage() {
         </div>
 
         <div className="pt-12 pb-24 container mx-auto px-6 max-w-7xl relative z-10">
-          {/* Tab content panel */}
-          <div
-            key={activeTab}
-            style={{ animation: "revealFade 350ms ease both" }}
-          >
+          <div key={activeTab} style={{ animation: "revealFade 350ms ease both" }}>
+
             {/* ─ APPROACH ─ */}
             {activeTab === "Approach" && (
               <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-12">
-                  <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d0517] mb-4">
-                    Our Approach
-                  </h3>
-                  <p className="text-[16px] text-[#0d0517]/65 max-w-3xl mx-auto">
+                  <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d112d] mb-4">Our Approach</h3>
+                  <p className="text-[16px] text-[#0d112d]/65 max-w-3xl mx-auto">
                     The solution offered is by combining the best Indian and
                     Western ways of Teaching and Learning. In India, Engineering
                     is taught through Concepts and Fundamentals, while in the
@@ -576,31 +542,21 @@ export default function EducationSolutionsPage() {
                   {APPROACH_STEPS.map((step, i) => (
                     <div
                       key={step.label}
-                      className="group relative bg-white border border-[#ecdaff] rounded-2xl overflow-hidden hover:border-[#6128a6]/40 hover:shadow-[0_8px_32px_rgba(97,40,166,0.10)] transition-all duration-300"
-                      style={{
-                        animation: `cardTiltIn 500ms cubic-bezier(0.22,1,0.36,1) ${i * 80}ms both`,
-                      }}
+                      className="group relative bg-white border border-[rgba(13,17,45,0.08)] rounded-2xl overflow-hidden hover:border-[#EB9B3D]/40 hover:shadow-[0_8px_32px_rgba(235,155,61,0.10)] transition-all duration-300"
+                      style={{ animation: `cardTiltIn 500ms cubic-bezier(0.22,1,0.36,1) ${i * 80}ms both` }}
                     >
-                      {/* Image */}
-                      <div className="h-44 border-b border-[#ecdaff] overflow-hidden">
-                        <img
-                          src={step.image}
-                          alt={step.label}
-                          className="w-full h-full object-cover"
-                        />
+                      <div className="h-44 border-b border-[rgba(13,17,45,0.06)] overflow-hidden">
+                        <img src={step.image} alt={step.label} className="w-full h-full object-cover" />
                       </div>
-                      {/* Card body */}
                       <div className="p-7 relative">
-                        <div className="absolute top-4 right-4 text-[48px] font-black text-[#6128a6] opacity-[0.06] leading-none select-none pointer-events-none">
+                        <div className="absolute top-4 right-4 text-[48px] font-black text-[#EB9B3D] opacity-[0.06] leading-none select-none pointer-events-none">
                           {step.num}
                         </div>
-                        <div className="w-11 h-11 rounded-xl bg-[#6128a6]/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                          <step.icon className="w-5 h-5 text-[#6128a6]" />
+                        <div className="w-11 h-11 rounded-xl bg-[#EB9B3D]/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                          <step.icon className="w-5 h-5 text-[#EB9B3D]" />
                         </div>
-                        <p className="text-[15px] font-bold text-[#0d0517]">
-                          {step.label}
-                        </p>
-                        <div className="w-8 h-0.5 rounded-full bg-[#6128a6]/40 mt-3 group-hover:w-full transition-all duration-500" />
+                        <p className="text-[15px] font-bold text-[#0d112d]">{step.label}</p>
+                        <div className="w-8 h-0.5 rounded-full bg-[#EB9B3D]/40 mt-3 group-hover:w-full transition-all duration-500" />
                       </div>
                     </div>
                   ))}
@@ -612,10 +568,8 @@ export default function EducationSolutionsPage() {
             {activeTab === "Model" && (
               <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-12">
-                  <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d0517] mb-4">
-                    Academic Model
-                  </h3>
-                  <p className="text-[16px] text-[#0d0517]/65 max-w-3xl mx-auto">
+                  <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d112d] mb-4">Academic Model</h3>
+                  <p className="text-[16px] text-[#0d112d]/65 max-w-3xl mx-auto">
                     The solution offered is by combining the best Indian and
                     Western ways of Teaching and Learning. In India, Engineering
                     is taught through Concepts and Fundamentals, while in the
@@ -626,30 +580,15 @@ export default function EducationSolutionsPage() {
                   {MODEL_QUADRANTS.map((model, i) => (
                     <div
                       key={model.label}
-                      className="bg-white border border-[#ecdaff] rounded-3xl overflow-hidden hover:shadow-[0_16px_48px_rgba(97,40,166,0.10)] transition-all duration-400"
-                      style={{
-                        animation: `revealFade 400ms ease ${i * 120}ms both`,
-                      }}
+                      className="bg-white border border-[rgba(13,17,45,0.08)] rounded-3xl overflow-hidden hover:shadow-[0_16px_48px_rgba(235,155,61,0.10)] transition-all duration-400"
+                      style={{ animation: `revealFade 400ms ease ${i * 120}ms both` }}
                     >
-                      {/* Image */}
-                      <div className="border-b border-[#ecdaff]">
-                        <img
-                          src={model.image}
-                          alt={model.label}
-                          className="w-full h-auto block"
-                        />
+                      <div className="border-b border-[rgba(13,17,45,0.06)]">
+                        <img src={model.image} alt={model.label} className="w-full h-auto block" />
                       </div>
                       <div className="p-8">
-                        <h4
-                          className="text-[18px] font-bold mb-3"
-                          style={{ color: model.accent }}
-                        >
-                          {model.label}
-                        </h4>
-                        <p className="text-[14px] text-[#0d0517]/65 leading-relaxed mb-7">
-                          {model.desc}
-                        </p>
-                        {/* Quadrant grid */}
+                        <h4 className="text-[18px] font-bold mb-3" style={{ color: model.accent }}>{model.label}</h4>
+                        <p className="text-[14px] text-[#0d112d]/65 leading-relaxed mb-7">{model.desc}</p>
                         <div className="grid grid-cols-2 gap-2">
                           {model.quads.map((q, qi) => (
                             <div
@@ -677,125 +616,97 @@ export default function EducationSolutionsPage() {
             {activeTab === "Depth of Content" && (
               <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-12">
-                  <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d0517] mb-4">
-                    Depth of Content
-                  </h3>
-                  <p className="text-[16px] text-[#0d0517]/65 max-w-3xl mx-auto">
+                  <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d112d] mb-4">Depth of Content</h3>
+                  <p className="text-[16px] text-[#0d112d]/65 max-w-3xl mx-auto">
                     Our content is structured with precision — from university-aligned hierarchies and 3D/2D visual demonstrations to targeted Q&A examination tools, every layer is designed to deepen understanding and improve outcomes.
                   </p>
                 </div>
                 <div className="space-y-8">
-                {DEPTH_METHODS.map((method, i) => (
-                  <div
-                    key={method.num}
-                    className="bg-white border border-[#ecdaff] rounded-3xl p-8 hover:shadow-[0_12px_40px_rgba(97,40,166,0.10)] transition-all duration-400 overflow-hidden relative"
-                    style={{
-                      animation: `revealFade 400ms ease ${i * 100}ms both`,
-                    }}
-                  >
-                    {/* Giant faded number */}
-                    <span
-                      className="absolute -bottom-4 -right-2 text-[120px] font-black leading-none pointer-events-none select-none"
-                      style={{ color: method.accent, opacity: 0.05 }}
+                  {DEPTH_METHODS.map((method, i) => (
+                    <div
+                      key={method.num}
+                      className="bg-white border border-[rgba(13,17,45,0.08)] rounded-3xl p-8 hover:shadow-[0_12px_40px_rgba(235,155,61,0.10)] transition-all duration-400 overflow-hidden relative"
+                      style={{ animation: `revealFade 400ms ease ${i * 100}ms both` }}
                     >
-                      {method.num}
-                    </span>
-
-                    {/* Header */}
-                    <div className="flex items-center gap-3 mb-1.5 relative z-10">
                       <span
-                        className="w-8 h-8 rounded-lg flex items-center justify-center text-[11px] font-black text-white shrink-0"
-                        style={{ backgroundColor: method.accent }}
+                        className="absolute -bottom-4 -right-2 text-[120px] font-black leading-none pointer-events-none select-none"
+                        style={{ color: method.accent, opacity: 0.05 }}
                       >
                         {method.num}
                       </span>
-                      <div>
-                        <h4 className="text-[17px] font-bold text-[#0d0517] mb-1.5">
-                          {method.title}
-                        </h4>
-                        <p
-                          className="text-[12px] font-semibold"
-                          style={{ color: method.accent }}
+
+                      <div className="flex items-center gap-3 mb-1.5 relative z-10">
+                        <span
+                          className="w-8 h-8 rounded-lg flex items-center justify-center text-[11px] font-black text-white shrink-0"
+                          style={{ backgroundColor: method.accent }}
                         >
-                          {method.subtitle}
-                        </p>
+                          {method.num}
+                        </span>
+                        <div>
+                          <h4 className="text-[17px] font-bold text-[#0d112d] mb-1.5">{method.title}</h4>
+                          <p className="text-[12px] font-semibold" style={{ color: method.accent }}>{method.subtitle}</p>
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Content */}
-                    <div className="relative z-10 space-y-2.5 mb-6">
-                      {method.intro && (
-                        <p className="text-[14px] text-[#0d0517]/65 leading-relaxed">
-                          {method.intro}
-                        </p>
-                      )}
-                      {method.hierarchy.length > 0 && (
-                        <ul className="ml-4 space-y-1 mb-1">
-                          {method.hierarchy.map((h, hi) => (
-                            <li key={hi} className="text-[14px] text-[#0d0517]/70 leading-relaxed">
-                              <span className="font-semibold mr-1" style={{ color: method.accent }}>
-                                {h.split(" ")[0]}
-                              </span>
-                              {h.split(" ").slice(1).join(" ")}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                      {method.paragraphs.map((p, pi) => (
-                        <p key={pi} className="text-[14px] text-[#0d0517]/65 leading-relaxed">
-                          {p}
-                        </p>
-                      ))}
-                    </div>
-
-                    {/* Images */}
-                    <div
-                      className="grid gap-3 relative z-10 mb-6"
-                      style={{ gridTemplateColumns: `repeat(${method.images.length}, 1fr)` }}
-                    >
-                      {method.images.map((img, idx) => (
-                        <img
-                          key={idx}
-                          src={img}
-                          alt={`${method.title} ${idx + 1}`}
-                          className="w-full h-auto rounded-xl border border-[#ecdaff] object-contain bg-[#f8f5ff]"
-                        />
-                      ))}
-                    </div>
-
-                    {/* Features (Method 1 only) */}
-                    {method.features.length > 0 && (
-                      <div className="relative z-10">
-                        {method.featuresTitle && (
-                          <p
-                            className="text-[13px] font-bold mb-3"
-                            style={{ color: method.accent }}
-                          >
-                            {method.featuresTitle}
-                          </p>
+                      <div className="relative z-10 space-y-2.5 mb-6">
+                        {method.intro && (
+                          <p className="text-[14px] text-[#0d112d]/65 leading-relaxed">{method.intro}</p>
                         )}
-                        <ul className="space-y-3">
-                          {method.features.map((feat, fi) => (
-                            <li key={fi} className="flex items-start gap-3">
-                              <div
-                                className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
-                                style={{
-                                  backgroundColor: `${method.accent}15`,
-                                  color: method.accent,
-                                }}
-                              >
-                                <CheckCircle2 className="w-3 h-3" />
-                              </div>
-                              <span className="text-[14px] text-[#0d0517]/70 leading-snug">
-                                {feat}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
+                        {method.hierarchy.length > 0 && (
+                          <ul className="ml-4 space-y-1 mb-1">
+                            {method.hierarchy.map((h, hi) => (
+                              <li key={hi} className="text-[14px] text-[#0d112d]/70 leading-relaxed">
+                                <span className="font-semibold mr-1" style={{ color: method.accent }}>
+                                  {h.split(" ")[0]}
+                                </span>
+                                {h.split(" ").slice(1).join(" ")}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                        {method.paragraphs.map((p, pi) => (
+                          <p key={pi} className="text-[14px] text-[#0d112d]/65 leading-relaxed">{p}</p>
+                        ))}
                       </div>
-                    )}
-                  </div>
-                ))}
+
+                      <div
+                        className="grid gap-3 relative z-10 mb-6"
+                        style={{ gridTemplateColumns: `repeat(${method.images.length}, 1fr)` }}
+                      >
+                        {method.images.map((img, idx) => (
+                          <img
+                            key={idx}
+                            src={img}
+                            alt={`${method.title} ${idx + 1}`}
+                            className="w-full h-auto rounded-xl border border-[rgba(13,17,45,0.06)] object-contain bg-[#F3F5FF]"
+                          />
+                        ))}
+                      </div>
+
+                      {method.features.length > 0 && (
+                        <div className="relative z-10">
+                          {method.featuresTitle && (
+                            <p className="text-[13px] font-bold mb-3" style={{ color: method.accent }}>
+                              {method.featuresTitle}
+                            </p>
+                          )}
+                          <ul className="space-y-3">
+                            {method.features.map((feat, fi) => (
+                              <li key={fi} className="flex items-start gap-3">
+                                <div
+                                  className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                                  style={{ backgroundColor: `${method.accent}15`, color: method.accent }}
+                                >
+                                  <CheckCircle2 className="w-3 h-3" />
+                                </div>
+                                <span className="text-[14px] text-[#0d112d]/70 leading-snug">{feat}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
             )}
@@ -804,13 +715,10 @@ export default function EducationSolutionsPage() {
             {activeTab === "Features" && (
               <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-12">
-                  <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d0517] mb-4">
-                    Platform Features
-                  </h3>
-                  <p className="text-[16px] text-[#0d0517]/65 max-w-2xl mx-auto">
+                  <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d112d] mb-4">Platform Features</h3>
+                  <p className="text-[16px] text-[#0d112d]/65 max-w-2xl mx-auto">
                     Every feature is designed to deliver a richer, more
-                    effective learning experience for both students and
-                    educators.
+                    effective learning experience for both students and educators.
                   </p>
                 </div>
 
@@ -818,36 +726,19 @@ export default function EducationSolutionsPage() {
                   {FEATURE_GROUPS.map((fg, i) => (
                     <div
                       key={fg.label}
-                      className="bg-white border border-[#ecdaff] rounded-3xl overflow-hidden hover:shadow-[0_16px_48px_rgba(97,40,166,0.10)] transition-all duration-400"
-                      style={{
-                        animation: `cardTiltIn 500ms cubic-bezier(0.22,1,0.36,1) ${i * 120}ms both`,
-                      }}
+                      className="bg-white border border-[rgba(13,17,45,0.08)] rounded-3xl overflow-hidden hover:shadow-[0_16px_48px_rgba(235,155,61,0.10)] transition-all duration-400"
+                      style={{ animation: `cardTiltIn 500ms cubic-bezier(0.22,1,0.36,1) ${i * 120}ms both` }}
                     >
-                      {/* Image */}
-                      <div className="border-b border-[#ecdaff]">
-                        <img
-                          src={fg.image}
-                          alt={fg.label}
-                          className="w-full h-auto block"
-                        />
+                      <div className="border-b border-[rgba(13,17,45,0.06)]">
+                        <img src={fg.image} alt={fg.label} className="w-full h-auto block" />
                       </div>
                       <div className="p-7">
-                        <h4
-                          className="text-[16px] font-bold mb-5"
-                          style={{ color: fg.accent }}
-                        >
-                          {fg.label}
-                        </h4>
+                        <h4 className="text-[16px] font-bold mb-5" style={{ color: fg.accent }}>{fg.label}</h4>
                         <ul className="space-y-3">
                           {fg.items.map((item, fi) => (
                             <li key={fi} className="flex items-start gap-3">
-                              <ChevronRight
-                                className="w-4 h-4 shrink-0 mt-0.5"
-                                style={{ color: fg.accent }}
-                              />
-                              <span className="text-[14px] text-[#0d0517]/70 leading-snug">
-                                {item}
-                              </span>
+                              <ChevronRight className="w-4 h-4 shrink-0 mt-0.5" style={{ color: fg.accent }} />
+                              <span className="text-[14px] text-[#0d112d]/70 leading-snug">{item}</span>
                             </li>
                           ))}
                         </ul>
@@ -862,63 +753,42 @@ export default function EducationSolutionsPage() {
             {activeTab === "Benefits" && (
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12">
-                  <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d0517] mb-4">
+                  <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d112d] mb-4">
                     Benefits for Every Stakeholder
                   </h3>
-                  <p className="text-[16px] text-[#0d0517]/65 max-w-2xl mx-auto">
-                    Learnengg delivers measurable outcomes for students,
-                    educators, and governments alike.
+                  <p className="text-[16px] text-[#0d112d]/65 max-w-2xl mx-auto">
+                    Learnengg delivers measurable outcomes for students, educators, and governments alike.
                   </p>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                   {BENEFIT_GROUPS.map((bg, i) => (
                     <div
                       key={bg.audience}
-                      className="group relative bg-white border border-[#ecdaff] rounded-3xl p-8 hover:shadow-[0_16px_48px_rgba(97,40,166,0.10)] transition-all duration-400 overflow-hidden"
-                      style={{
-                        animation: `cardTiltIn 500ms cubic-bezier(0.22,1,0.36,1) ${i * 100}ms both`,
-                      }}
+                      className="group relative bg-white border border-[rgba(13,17,45,0.08)] rounded-3xl p-8 hover:shadow-[0_16px_48px_rgba(235,155,61,0.10)] transition-all duration-400 overflow-hidden"
+                      style={{ animation: `cardTiltIn 500ms cubic-bezier(0.22,1,0.36,1) ${i * 100}ms both` }}
                     >
-                      {/* hover glow */}
                       <div
                         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"
-                        style={{
-                          background: `radial-gradient(ellipse at 20% 10%, ${bg.glow} 0%, transparent 60%)`,
-                        }}
+                        style={{ background: `radial-gradient(ellipse at 20% 10%, ${bg.glow} 0%, transparent 60%)` }}
                       />
                       <div className="relative z-10">
                         <div
                           className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300"
-                          style={{
-                            backgroundColor: `${bg.accent}15`,
-                            color: bg.accent,
-                          }}
+                          style={{ backgroundColor: `${bg.accent}15`, color: bg.accent }}
                         >
                           <bg.icon className="w-6 h-6" />
                         </div>
-                        <h4 className="text-[20px] font-bold text-[#0d0517] mb-1">
-                          {bg.audience}
-                        </h4>
-                        <div
-                          className="w-10 h-0.5 rounded-full mb-6"
-                          style={{ backgroundColor: bg.accent }}
-                        />
+                        <h4 className="text-[20px] font-bold text-[#0d112d] mb-1">{bg.audience}</h4>
+                        <div className="w-10 h-0.5 rounded-full mb-6" style={{ backgroundColor: bg.accent }} />
                         <ul className="space-y-2.5">
                           {bg.items.map((item, ii) => (
                             <li
                               key={ii}
                               className="flex items-start gap-2.5"
-                              style={{
-                                animation: `revealFade 300ms ease ${ii * 50 + 150}ms both`,
-                              }}
+                              style={{ animation: `revealFade 300ms ease ${ii * 50 + 150}ms both` }}
                             >
-                              <div
-                                className="w-1.5 h-1.5 rounded-full shrink-0 mt-1.75"
-                                style={{ backgroundColor: bg.accent }}
-                              />
-                              <span className="text-[13px] text-[#0d0517]/65 leading-snug">
-                                {item}
-                              </span>
+                              <div className="w-1.5 h-1.5 rounded-full shrink-0 mt-1.75" style={{ backgroundColor: bg.accent }} />
+                              <span className="text-[13px] text-[#0d112d]/65 leading-snug">{item}</span>
                             </li>
                           ))}
                         </ul>
@@ -933,50 +803,25 @@ export default function EducationSolutionsPage() {
       </section>
 
       {/* ── Stats Strip ──────────────────────────────────────── */}
-      <section className="py-16 bg-[#1e0a38] relative overflow-hidden">
+      <section className="py-16 bg-[#141A3D] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, #ffffff 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
+          style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "24px 24px" }}
         />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              {
-                value: "200+",
-                label: "3D Demonstrations per Subject",
-                color: "#aa3bff",
-              },
-              {
-                value: "75%",
-                label: "Typical Q&A Success Rate",
-                color: "#f85d37",
-              },
-              {
-                value: "NEAT",
-                label: "AICTE India Certified Platform",
-                color: "#aa3bff",
-              },
-              {
-                value: "5",
-                label: "Semesters of Q&A Experience",
-                color: "#f85d37",
-              },
+              { value: "200+", label: "3D Demonstrations per Subject",   color: "#EB9B3D" },
+              { value: "75%",  label: "Typical Q&A Success Rate",        color: "#DA4D33" },
+              { value: "NEAT", label: "AICTE India Certified Platform",  color: "#EB9B3D" },
+              { value: "5",    label: "Semesters of Q&A Experience",     color: "#DA4D33" },
             ].map((stat, i) => (
               <ScrollReveal key={stat.label} direction="up" delay={i * 100}>
                 <div className="text-center">
-                  <p
-                    className="text-[clamp(2rem,4vw,3rem)] font-black leading-none mb-2"
-                    style={{ color: stat.color }}
-                  >
+                  <p className="text-[clamp(2rem,4vw,3rem)] font-black leading-none mb-2" style={{ color: stat.color }}>
                     {stat.value}
                   </p>
-                  <p className="text-[13px] text-white/50 leading-snug">
-                    {stat.label}
-                  </p>
+                  <p className="text-[13px] text-white/50 leading-snug">{stat.label}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -987,22 +832,18 @@ export default function EducationSolutionsPage() {
       <FAQAccordion faqs={EDUCATION_FAQS} badge="FAQs" title="Frequently Asked Questions" subtitle="Common questions about our education solutions." />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
+      <section className="py-24 bg-white relative overflow-hidden">
         <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, #6128a6 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
-          }}
+          className="absolute inset-0 opacity-[0.02]"
+          style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "28px 28px" }}
         />
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
           <ScrollReveal variant="card">
-            <div className="relative bg-linear-to-br from-[#1e0a38] via-[#381f55] to-[#6128a6] rounded-3xl p-12 md:p-16 text-center overflow-hidden shadow-[0_32px_80px_rgba(97,40,166,0.35)]">
-              <div className="absolute top-[-30%] right-[-10%] w-80 h-80 rounded-full bg-[#aa3bff] opacity-20 blur-[80px] pointer-events-none" />
-              <div className="absolute bottom-[-20%] left-[-10%] w-64 h-64 rounded-full bg-[#f85d37] opacity-15 blur-[80px] pointer-events-none" />
+            <div className="relative bg-linear-to-br from-[#0D112D] via-[#141A3D] to-[#242E72] rounded-3xl p-12 md:p-16 text-center overflow-hidden shadow-[0_32px_80px_rgba(13,17,45,0.35)]">
+              <div className="absolute top-[-30%] right-[-10%] w-80 h-80 rounded-full bg-[#EB9B3D] opacity-20 blur-[80px] pointer-events-none" />
+              <div className="absolute bottom-[-20%] left-[-10%] w-64 h-64 rounded-full bg-[#DA4D33] opacity-15 blur-[80px] pointer-events-none" />
 
-              <span className="relative z-10 inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white/70 text-[11px] font-bold uppercase tracking-widest mb-6">
+              <span className="relative z-10 inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/30 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-6">
                 Get Started
               </span>
               <h2 className="relative z-10 text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-white leading-tight mb-5">
@@ -1016,7 +857,8 @@ export default function EducationSolutionsPage() {
               <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#f85d37] hover:bg-[#e84d27] text-white font-bold text-[15px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
+                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-bold text-[15px] transition-opacity duration-200 hover:opacity-85 shadow-[0_8px_24px_rgba(235,155,61,0.35)]"
+                  style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
                 >
                   Request a Demo
                   <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />

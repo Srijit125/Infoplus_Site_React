@@ -58,17 +58,21 @@ function ProductsPage() {
         variant="centered"
       />
 
-      <section className="py-24 bg-[#f8f5ff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#ecdaff]/50 blur-[120px] pointer-events-none" />
+      <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#FEF0DC]/60 blur-[120px] pointer-events-none" />
+        <div
+          className="absolute inset-0 opacity-[0.02] pointer-events-none"
+          style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+        />
         <div className="container mx-auto px-6 max-w-5xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {products.map((prod, idx) => (
               <ScrollReveal key={idx} direction={idx === 0 ? "left" : "right"} duration={720} delay={idx * 120}>
-                <div className="group h-full bg-white border border-[#e8e0f7] p-10 rounded-3xl hover:border-[#6128a6]/25 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.10)] hover:-translate-y-1 transition-all duration-300 flex flex-col">
-                  <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="group h-full bg-white border border-[rgba(13,17,45,0.08)] p-10 rounded-3xl hover:border-[#EB9B3D]/30 hover:shadow-[0_16px_48px_-8px_rgba(235,155,61,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                  <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <prod.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h2 className="text-[24px] font-bold mb-4 text-[#111] group-hover:text-[#6128a6] transition-colors leading-snug">
+                  <h2 className="text-[24px] font-bold mb-4 text-[#111] group-hover:text-[#EB9B3D] transition-colors leading-snug">
                     {prod.title}
                   </h2>
                   <p className="text-[15px] text-[#555] leading-relaxed mb-6">
@@ -76,8 +80,8 @@ function ProductsPage() {
                   </p>
                   <div className="grid grid-cols-2 gap-3 mb-8">
                     {prod.features.map((feat, i) => (
-                      <div key={i} className="flex items-center gap-2 bg-[#f8f5ff] border border-[#e8e0f7] px-4 py-3 rounded-xl">
-                        <CheckCircle2 className="w-4 h-4 text-[#6128a6] shrink-0" />
+                      <div key={i} className="flex items-center gap-2 bg-[#FEF0DC] border border-[rgba(235,155,61,0.20)] px-4 py-3 rounded-xl">
+                        <CheckCircle2 className="w-4 h-4 text-[#EB9B3D] shrink-0" />
                         <span className="text-[13px] font-medium text-[#444]">{feat}</span>
                       </div>
                     ))}
@@ -85,7 +89,7 @@ function ProductsPage() {
                   <div className="mt-auto">
                     <Link
                       to={prod.path}
-                      className="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#f85d37] hover:gap-3 transition-all duration-200"
+                      className="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#EB9B3D] hover:gap-3 transition-all duration-200"
                     >
                       Read More
                       <ChevronRight className="w-4 h-4" />
