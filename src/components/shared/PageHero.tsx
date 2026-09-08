@@ -106,14 +106,14 @@ export function PageHero({
         <div className="container mx-auto px-6 max-w-4xl relative z-10 text-center">
           {badge && (
             <span
-              className="inline-block py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold uppercase tracking-widest mb-7"
+              className="inline-block py-1.5 px-4 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/30 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-7"
               style={heroStyle(80)}
             >
               {badge}
             </span>
           )}
           <h1
-            className="text-[clamp(2.5rem,7vw,5rem)] font-black tracking-tight mb-8 leading-none text-white"
+            className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold text-white tracking-tight mb-6"
             style={heroStyle(200)}
           >
             {title}
