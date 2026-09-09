@@ -320,8 +320,6 @@ export default function ConsultingPage() {
               (
                 {
                   icon: TIcon,
-                  gradient,
-                  accentColor,
                   number,
                   title,
                   desc,

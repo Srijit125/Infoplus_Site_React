@@ -312,7 +312,7 @@ export default function AutomationPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             {OUTCOMES.map(
               (
-                { icon: OIcon, gradient, accentColor, title, desc, bullets },
+                { icon: OIcon, accentColor, title, desc, bullets },
                 i,
               ) => (
                 <ScrollReveal
@@ -377,7 +377,7 @@ export default function AutomationPage() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {PILLARS.map(({ icon: PIcon, gradient, title, desc }, i) => (
+            {PILLARS.map(({ icon: PIcon, title, desc }, i) => (
               <ScrollReveal
                 key={i}
                 direction={i % 2 === 0 ? "left" : "right"}
@@ -418,7 +418,7 @@ export default function AutomationPage() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {AUTO_SERVICES.map(({ icon: SIcon, gradient, title, desc }, i) => (
+            {AUTO_SERVICES.map(({ icon: SIcon, title, desc }, i) => (
               <ScrollReveal
                 key={i}
                 direction={i % 2 === 0 ? "left" : "right"}

@@ -237,7 +237,7 @@ export default function InfrastructurePage() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {BENEFITS.map(({ icon: BIcon, title, gradient }, i) => (
+            {BENEFITS.map(({ icon: BIcon, title }, i) => (
               <ScrollReveal key={i} direction="up" variant="card" delay={i * 70}>
                 <div className="group flex items-center gap-4 bg-white/5 border border-white/8 rounded-xl px-5 py-4 hover:bg-white/9 hover:border-[#EB9B3D]/40 transition-all duration-300">
                   <BIcon className="w-6 h-6 text-[#EB9B3D] shrink-0 group-hover:scale-110 transition-transform duration-300" strokeWidth={1.6} />
@@ -269,7 +269,7 @@ export default function InfrastructurePage() {
 
           {/* Two-column service grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {INFRA_SERVICES.map(({ icon: SIcon, gradient, title, desc }, i) => (
+            {INFRA_SERVICES.map(({ icon: SIcon, title, desc }, i) => (
               <ScrollReveal
                 key={i}
                 direction="up"

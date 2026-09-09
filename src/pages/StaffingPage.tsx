@@ -262,7 +262,7 @@ export default function StaffingPage() {
           </ScrollReveal>
 
           <div className="space-y-5">
-            {STAFFING_MODELS.map(({ icon: MIcon, gradient, accentColor, title, desc }, i) => {
+            {STAFFING_MODELS.map(({ icon: MIcon, accentColor, title, desc }, i) => {
               const isEven = i % 2 === 0;
               return (
                 <ScrollReveal key={i} direction={isEven ? "left" : "right"} duration={700} delay={60}>

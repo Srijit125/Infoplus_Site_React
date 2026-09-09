@@ -279,7 +279,7 @@ export default function TransformationPage() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {PILLARS.map(({ label, desc, gradient, icon: PIcon }, i) => (
+            {PILLARS.map(({ label, desc, icon: PIcon }, i) => (
               <ScrollReveal
                 key={i}
                 direction="up"
@@ -319,7 +319,7 @@ export default function TransformationPage() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {GOALS.map(({ icon: GIcon, gradient, title, desc }, i) => (
+            {GOALS.map(({ icon: GIcon, title, desc }, i) => (
               <ScrollReveal
                 key={i}
                 direction="up"

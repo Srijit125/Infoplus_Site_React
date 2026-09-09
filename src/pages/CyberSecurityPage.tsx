@@ -491,7 +491,7 @@ export default function CyberSecurityPage() {
               { icon: CheckCircle2,color: "#EB9B3D", label: "Global Compliance Support",      desc: "Meet regulatory and security standards worldwide"      },
               { icon: Settings,    color: "#F0783A", label: "Secure Digital Transformation",  desc: "Safe adoption of modern technologies at every stage"   },
               { icon: AlertCircle, color: "#f59e0b", label: "Advanced Threat Monitoring",     desc: "24/7 detection and rapid incident response"            },
-            ].map(({ icon: Icon, color, label, desc }, i) => (
+            ].map(({ icon: Icon, label, desc }, i) => (
               <ScrollReveal key={label} direction="up" delay={i * 75}>
                 <div className="group bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-2xl p-5 hover:bg-white hover:border-[#EB9B3D]/35 hover:shadow-[0_8px_32px_rgba(235,155,61,0.10)] transition-all duration-300">
                   <div className="flex items-center gap-3 mb-3">
@@ -616,7 +616,7 @@ export default function CyberSecurityPage() {
           <div className="space-y-5">
             {CYBER_SERVICES.map(
               (
-                { icon: SIcon, gradient, accentColor, title, desc, features },
+                { icon: SIcon, accentColor, title, desc, features },
                 i,
               ) => {
                 const isEven = i % 2 === 0;

@@ -200,7 +200,7 @@ export default function CloudPage() {
                 <p className="text-[13px] font-bold uppercase tracking-widest text-[#EB9B3D] mb-6">
                   Multi-Cloud Delivery
                 </p>
-                {CLOUD_PROVIDERS.map(({ name, desc, iconBg, iconColor }, i) => (
+                {CLOUD_PROVIDERS.map(({ name, desc }, i) => (
                   <div
                     key={i}
                     className={`flex items-center gap-3 py-3 ${i < 2 ? "border-b border-[rgba(13,17,45,0.08)]" : ""}`}
@@ -251,7 +251,7 @@ export default function CloudPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {CLOUD_SERVICES.map(
-              ({ icon: SIcon, gradient, tag, title, desc }, i) => (
+              ({ icon: SIcon, tag, title, desc }, i) => (
                 <ScrollReveal
                   key={i}
                   direction="up"

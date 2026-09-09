@@ -208,7 +208,7 @@ export default function UmbrellaPage() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {WHAT_WE_HANDLE.map(({ icon: HIcon, gradient, title, desc }, i) => (
+            {WHAT_WE_HANDLE.map(({ icon: HIcon, title, desc }, i) => (
               <ScrollReveal key={i} direction="up" variant="card" delay={i * 90}>
                 <div className="group bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl overflow-hidden hover:border-[#EB9B3D]/25 hover:shadow-[0_16px_48px_-8px_rgba(235,155,61,0.10)] hover:-translate-y-1 transition-all duration-300">
                   <div className="p-8 flex gap-5 items-start">

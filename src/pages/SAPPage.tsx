@@ -171,7 +171,7 @@ export default function SAPPage() {
       <section className="py-14 bg-white border-b border-[#f0eff5] relative -mt-10 rounded-t-[3rem] z-20">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {SAP_BENEFITS.map(({ icon: BIcon, title, gradient }, i) => (
+            {SAP_BENEFITS.map(({ icon: BIcon, title }, i) => (
               <ScrollReveal key={i} direction="up" delay={i * 90} className="h-full">
                 <div className="group h-full flex flex-col items-center text-center gap-3 p-6 rounded-2xl bg-[#ffffff] border border-[rgba(13,17,45,0.08)] hover:bg-white hover:shadow-[0_8px_32px_-8px_rgba(235,155,61,0.15)] hover:-translate-y-1 transition-all duration-300">
                   <div className="w-11 h-11 rounded-xl bg-[#FEF0DC] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
@@ -526,7 +526,7 @@ export default function SAPPage() {
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {DELIVERY_MODELS.map(
-              ({ icon: DIcon, gradient, title, desc }, i) => (
+              ({ icon: DIcon, title, desc }, i) => (
                 <ScrollReveal
                   key={i}
                   direction="up"

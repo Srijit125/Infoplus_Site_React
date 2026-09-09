@@ -314,7 +314,7 @@ export default function EverythingDataPage() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {DATA_SERVICES.map(({ icon: SIcon, gradient, title, desc, details }, i) => (
+            {DATA_SERVICES.map(({ icon: SIcon, title, desc, details }, i) => (
               <ScrollReveal
                 key={i}
                 direction="up"
