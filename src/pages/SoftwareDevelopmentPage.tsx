@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { FAQAccordion } from "../components/shared/FAQAccordion";
 import type { FAQItem } from "../components/shared/FAQAccordion";
 import { Link } from "react-router-dom";
@@ -13,6 +13,9 @@ import {
   Code2,
   CheckCircle2,
   ArrowRight,
+  Clock,
+  TrendingUp,
+  Shield,
   type LucideIcon,
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
@@ -33,8 +36,8 @@ type Service = {
 const SERVICES: Service[] = [
   {
     icon: Globe,
-    gradient: "from-[#381f55] to-[#6128a6]",
-    accentColor: "#6128a6",
+    gradient: "from-[#242E72] to-[#EB9B3D]",
+    accentColor: "#EB9B3D",
     number: "01",
     title: "Web Development",
     intro:
@@ -145,8 +148,8 @@ const SERVICES: Service[] = [
   },
   {
     icon: GitBranch,
-    gradient: "from-[#9a2600] to-[#f85d37]",
-    accentColor: "#f85d37",
+    gradient: "from-[#9a2600] to-[#F0783A]",
+    accentColor: "#F0783A",
     number: "05",
     title: "Software Development Models",
     intro:
@@ -169,7 +172,12 @@ const SERVICES: Service[] = [
   },
 ];
 
-const CORE_VALUES = ["Availability", "Scalability", "Reliability", "Lucidity"];
+const CORE_VALUES: { icon: LucideIcon; label: string }[] = [
+  { icon: Clock, label: "Availability" },
+  { icon: TrendingUp, label: "Scalability" },
+  { icon: Shield, label: "Reliability" },
+  { icon: Eye, label: "Lucidity" },
+];
 
 const ENGAGE_STEPS: {
   icon: LucideIcon;
@@ -234,7 +242,7 @@ export default function SoftwareDevelopmentPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <Link
             to="/contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
           >
             Start Your Project
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -255,17 +263,17 @@ export default function SoftwareDevelopmentPage() {
       {/* â"€â"€ Intro / Mission â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         {/* faint orb */}
-        <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#ffffff] blur-[80px] pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left" duration={700}>
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Who We Are
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-3 leading-tight">
                 Pioneer in Innovative &<br />
-                <span className="text-[#6128a6]">
+                <span className="text-[#EB9B3D]">
                   Mission-Critical Software
                 </span>
               </h2>
@@ -275,27 +283,29 @@ export default function SoftwareDevelopmentPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" duration={700} delay={120}>
-              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8">
-                <p className="text-[11px] font-bold uppercase tracking-widest text-[#6128a6] mb-5">
+              <div className="bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-3xl p-8">
+                <p className="text-[11px] font-bold uppercase tracking-widest text-[#EB9B3D] mb-5">
                   Our Core Development Values
                 </p>
                 <div className="grid grid-cols-2 gap-3 mb-8">
-                  {CORE_VALUES.map((v, i) => (
+                  {CORE_VALUES.map(({ icon: ValIcon, label }, i) => (
                     <div
-                      key={v}
-                      className="flex items-center gap-2.5 bg-white border border-[#e5e4e7] rounded-xl px-4 py-3 hover:border-[#6128a6]/30 hover:shadow-[0_4px_12px_-4px_rgba(97,40,166,0.10)] transition-all duration-200"
+                      key={label}
+                      className="flex items-center gap-2.5 bg-white border border-[rgba(13,17,45,0.10)] rounded-xl px-4 py-3 hover:border-[#EB9B3D]/30 hover:shadow-[0_4px_12px_-4px_rgba(235,155,61,0.10)] transition-all duration-200"
                       style={{
                         animation: `revealFade 500ms ease ${i * 100 + 200}ms both`,
                       }}
                     >
-                      <span className="w-2 h-2 rounded-full bg-[#6128a6] shrink-0" />
+                      <div className="w-10 h-10 rounded-xl bg-[#EB9B3D]/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <ValIcon className="w-5 h-5 text-[#EB9B3D]" strokeWidth={1.6} />
+                      </div>
                       <span className="text-[14px] font-semibold text-[#333]">
-                        {v}
+                        {label}
                       </span>
                     </div>
                   ))}
                 </div>
-                <div className="border-t border-[#e8e0f7] pt-6">
+                <div className="border-t border-[rgba(13,17,45,0.08)] pt-6">
                   <p className="text-[13px] text-[#888] leading-relaxed">
                     Infoplus consistently considers not only current trends,
                     but also carefully performs research on the future of
@@ -319,7 +329,7 @@ export default function SoftwareDevelopmentPage() {
             <section
               key={i}
               className={`py-24 relative overflow-hidden ${
-                isEven ? "bg-[#f8f5ff]" : "bg-white"
+                isEven ? "bg-[#ffffff]" : "bg-white"
               }`}
             >
               {/* Faint giant number background */}
@@ -351,10 +361,8 @@ export default function SoftwareDevelopmentPage() {
                     <div style={{ direction: "ltr" }}>
                       {/* Icon + Title inline */}
                       <div className="flex items-center gap-4 mb-5">
-                        <div
-                          className={`w-12 h-12 rounded-xl bg-linear-to-br ${svc.gradient} flex items-center justify-center shrink-0`}
-                        >
-                          <SvcIcon className="w-6 h-6 text-white" />
+                        <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0">
+                          <SvcIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                         </div>
                         <h2 className="text-[32px] font-bold text-[#111] leading-tight mb-0">
                           {svc.title}
@@ -368,10 +376,7 @@ export default function SoftwareDevelopmentPage() {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {svc.highlights.map((h, j) => (
                           <div key={j} className="flex items-center gap-2">
-                            <CheckCircle2
-                              className="w-4 h-4 shrink-0"
-                              style={{ color: svc.accentColor }}
-                            />
+                            <CheckCircle2 className="w-4 h-4 shrink-0 text-[#EB9B3D]" />
                             <span className="text-[13.5px] text-[#444] font-medium">
                               {h}
                             </span>
@@ -384,12 +389,9 @@ export default function SoftwareDevelopmentPage() {
                   {/* Tech stack visual card */}
                   <ScrollReveal direction="fade" duration={800} delay={200}>
                     <div style={{ direction: "ltr" }}>
-                      <div className="bg-[#0d0517] rounded-3xl p-8 relative overflow-hidden">
+                      <div className="bg-[#0D112D] rounded-3xl p-8 relative overflow-hidden">
                         {/* gradient orb inside */}
-                        <div
-                          className="absolute top-0 right-0 w-48 h-48 rounded-full blur-[80px] opacity-30 pointer-events-none"
-                          style={{ background: svc.accentColor }}
-                        />
+                        <div className="absolute top-0 right-0 w-48 h-48 rounded-full blur-[80px] opacity-30 pointer-events-none bg-[#EB9B3D]" />
                         <div className="relative z-10">
                           <p className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-5">
                             {svc.techLabel}
@@ -398,16 +400,8 @@ export default function SoftwareDevelopmentPage() {
                             {svc.techStack.map((tech, k) => (
                               <span
                                 key={k}
-                                className="px-3.5 py-2 rounded-xl text-[12.5px] font-semibold border"
+                                className="px-3.5 py-2 rounded-xl text-[12.5px] font-semibold border bg-[#EB9B3D]/10 border-[#EB9B3D]/30 text-[#EB9B3D]"
                                 style={{
-                                  backgroundColor: `${svc.accentColor}15`,
-                                  borderColor: `${svc.accentColor}35`,
-                                  color:
-                                    svc.accentColor === "#14b8a6"
-                                      ? "#5eead4"
-                                      : svc.accentColor === "#3b82f6"
-                                        ? "#93c5fd"
-                                        : "#d4b4fe",
                                   animation: `revealFade 400ms ease ${k * 60 + 100}ms both`,
                                 }}
                               >
@@ -419,12 +413,7 @@ export default function SoftwareDevelopmentPage() {
                           {/* Decorative bottom bar */}
                           <div className="mt-8 pt-6 border-t border-white/8">
                             <div className="flex items-center gap-2">
-                              <div
-                                className="h-1.5 rounded-full flex-1"
-                                style={{
-                                  background: `linear-gradient(to right, ${svc.accentColor}, transparent)`,
-                                }}
-                              />
+                              <div className="h-1.5 rounded-full flex-1 bg-linear-to-r from-[#EB9B3D] to-transparent" />
                               <span className="text-[11px] text-white/25 font-medium">
                                 {svc.techStack.length} Technologies
                               </span>
@@ -442,10 +431,10 @@ export default function SoftwareDevelopmentPage() {
       </div>
 
       {/* â"€â"€ How to Engage â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-[#0d0517] relative overflow-hidden">
+      <section className="py-24 bg-[#0D112D] relative overflow-hidden">
         {/* Background orbs */}
-        <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#6128a6]/20 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#f85d37]/10 blur-[100px] pointer-events-none" />
+        <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#EB9B3D]/20 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#F0783A]/10 blur-[100px] pointer-events-none" />
         {/* Dot grid */}
         <div
           className="absolute inset-0 opacity-[0.05]"
@@ -459,7 +448,7 @@ export default function SoftwareDevelopmentPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-14">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Getting Started
               </span>
               <h2 className="text-[36px] font-bold text-white mt-3">
@@ -487,13 +476,13 @@ export default function SoftwareDevelopmentPage() {
                   delay={i * 130}
                   className="h-full"
                 >
-                  <div className="relative h-full flex flex-col bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/8 hover:border-[#6128a6]/40 transition-all duration-300 group">
+                  <div className="relative h-full flex flex-col bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/8 hover:border-[#EB9B3D]/40 transition-all duration-300 group">
                     {/* Step number badge */}
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center shrink-0 relative">
-                        <StepIcon className="w-6 h-6 text-white" />
+                      <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0 relative">
+                        <StepIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                         {/* Pulse ring */}
-                        <span className="absolute inset-0 rounded-2xl border border-[#6128a6]/50 scale-110 opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500" />
+                        <span className="absolute inset-0 rounded-xl border border-[#EB9B3D]/50 scale-110 opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500" />
                       </div>
                       <span className="text-[28px] font-black text-white/10 leading-none">
                         {step}
@@ -523,12 +512,12 @@ export default function SoftwareDevelopmentPage() {
       />
 
       {/* â"€â"€ CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-20 bg-[#f8f5ff]">
+      <section className="py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
-            <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#6128a6]/25 blur-[100px] pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#f85d37]/10 blur-[80px] pointer-events-none" />
+            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#EB9B3D]/25 blur-[100px] pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#F0783A]/10 blur-[80px] pointer-events-none" />
 
               <div className="relative z-10">
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
@@ -545,7 +534,7 @@ export default function SoftwareDevelopmentPage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
                   >
                     Start Your Project
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

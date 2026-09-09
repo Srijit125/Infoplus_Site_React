@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { FAQAccordion } from "../components/shared/FAQAccordion";
 import type { FAQItem } from "../components/shared/FAQAccordion";
 import { useState, useRef, useEffect } from "react";
@@ -28,7 +28,7 @@ type AIService = {
 const SVC: AIService[] = [
   {
     icon: Target,
-    gradient: "from-[#381f55] to-[#6128a6]",
+    gradient: "from-[#242E72] to-[#EB9B3D]",
     title: "AI Strategy & Consulting",
     shortDesc: "Transform your business with a clear AI roadmap. We identify opportunities, design strategies, and guide successful adoption.",
     tagline: "Turn AI Ideas into Real Business Outcomes",
@@ -52,7 +52,7 @@ const SVC: AIService[] = [
   },
   {
     icon: Zap,
-    gradient: "from-[#9a2600] to-[#f85d37]",
+    gradient: "from-[#9a2600] to-[#F0783A]",
     title: "AI Powered Automation",
     shortDesc: "Eliminate repetitive tasks and accelerate operations with intelligent automation solutions.",
     tagline: "Let AI Handle Repetitive Tasks",
@@ -262,7 +262,7 @@ export default function AIPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <button
             onClick={() => goToDetail(0)}
-            className="w-full sm:w-auto flex items-center justify-center px-8 py-3.5 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors cursor-pointer"
+            className="w-full sm:w-auto flex items-center justify-center px-8 py-3.5 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors cursor-pointer"
           >
             Explore AI Services
           </button>
@@ -283,11 +283,11 @@ export default function AIPage() {
       </PageHero>
 
       {/* ── Our AI Services (overview cards) ──────────────────── */}
-      <section className="py-20 bg-[#f8f5ff] relative -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-20 bg-[#ffffff] relative -mt-10 rounded-t-[3rem] z-20">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="fade">
             <div className="text-center mb-4">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 What We Offer
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-2">Our AI Services</h2>
@@ -312,17 +312,15 @@ export default function AIPage() {
                 >
                   <button
                     onClick={() => goToDetail(i)}
-                    className="group w-full h-full text-left flex flex-col bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden cursor-pointer hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.12)] hover:-translate-y-1 hover:border-[#6128a6]/25 transition-all duration-300"
+                    className="group w-full h-full text-left flex flex-col bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl overflow-hidden cursor-pointer hover:shadow-[0_16px_48px_-8px_rgba(235,155,61,0.12)] hover:-translate-y-1 hover:border-[#EB9B3D]/25 transition-all duration-300"
                   >
-                    {/* Gradient accent bar */}
-                    <div className={`h-1.5 w-full shrink-0 bg-linear-to-r ${s.gradient}`} />
                     <div className="flex flex-col flex-1 p-7">
                       {/* Icon */}
-                      <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${s.gradient} flex items-center justify-center mb-5 shrink-0`}>
-                        <CardIcon className="w-6 h-6 text-white" />
+                      <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center mb-5 shrink-0">
+                        <CardIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                       </div>
                       {/* Title */}
-                      <h3 className="text-[16px] font-bold text-[#111] mb-3 leading-snug group-hover:text-[#6128a6] transition-colors">
+                      <h3 className="text-[16px] font-bold text-[#111] mb-3 leading-snug group-hover:text-[#EB9B3D] transition-colors">
                         {s.title}
                       </h3>
                       {/* Description */}
@@ -347,7 +345,7 @@ export default function AIPage() {
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 In Depth
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-2">
@@ -367,8 +365,8 @@ export default function AIPage() {
                 onClick={() => goToDetail(i)}
                 className={`shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all border cursor-pointer ${
                   activeIdx === i
-                    ? "bg-[#1e0a38] text-white border-[#1e0a38]"
-                    : "bg-white text-[#555] border-[#e5e4e7] hover:border-[#6128a6]/40"
+                    ? "bg-[#141A3D] text-white border-[#141A3D]"
+                    : "bg-white text-[#555] border-[rgba(13,17,45,0.10)] hover:border-[#EB9B3D]/40"
                 }`}
               >
                 {s.title.split(" ").slice(0, 2).join(" ")}
@@ -379,26 +377,26 @@ export default function AIPage() {
           <div className="flex flex-col md:flex-row gap-6 items-start">
             {/* Sticky sidebar — visible from tablet up */}
             <div className="hidden md:block md:w-52 lg:w-60 shrink-0 sticky top-25 self-start">
-              <div className="bg-[#f8f5ff] border border-[#e5e4e7] rounded-xl p-2.5">
+              <div className="bg-[#ffffff] border border-[rgba(13,17,45,0.10)] rounded-xl p-2.5">
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#aaa] px-2.5 pt-1.5 pb-1">
                   AI Services
                 </p>
-                <div className="space-y-0.5">
+                <div className="space-y-1">
                   {SVC.map((s, i) => (
                     <button
                       key={i}
                       onClick={() => goToDetail(i)}
                       className={`w-full flex items-center gap-2 px-2.5 py-2 rounded-lg text-left transition-all duration-200 cursor-pointer ${
                         activeIdx === i
-                          ? "bg-[#1e0a38] text-white"
-                          : "text-[#555] hover:bg-white hover:text-[#6128a6]"
+                          ? "bg-[#141A3D] text-white"
+                          : "text-[#555] hover:bg-white hover:text-[#EB9B3D]"
                       }`}
                     >
                       <span
                         className={`w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold shrink-0 ${
                           activeIdx === i
                             ? "bg-white/20 text-white"
-                            : "bg-[#ecdaff] text-[#6128a6]"
+                            : "bg-[#FEF0DC] text-[#EB9B3D]"
                         }`}
                       >
                         {i + 1}
@@ -423,12 +421,12 @@ export default function AIPage() {
                   >
                     {/* Service header */}
                     <div className="flex items-start gap-4 mb-7 pb-7 border-b border-[#f0eff5]">
-                      <div className={`w-14 h-14 rounded-2xl bg-linear-to-br ${s.gradient} flex items-center justify-center shrink-0`}>
-                        <Icon className="w-7 h-7 text-white" />
+                      <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0">
+                        <Icon className="w-5 h-5 text-white" strokeWidth={1.6} />
                       </div>
                       <div>
                         <h3 className="text-[26px] font-bold text-[#111] leading-tight mb-0">{s.title}</h3>
-                        <p className="text-[14px] text-[#6128a6] font-medium italic mt-1">"{s.tagline}"</p>
+                        <p className="text-[14px] text-[#EB9B3D] font-medium italic mt-1">"{s.tagline}"</p>
                       </div>
                     </div>
 
@@ -442,8 +440,8 @@ export default function AIPage() {
                       </h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {s.items.map((item, j) => (
-                          <div key={j} className="flex items-center gap-2.5 p-3 bg-[#f8f5ff] rounded-xl border border-[#e8e0f7]">
-                            <CheckCircle2 className="w-4 h-4 text-[#6128a6] shrink-0" />
+                          <div key={j} className="flex items-center gap-2.5 p-3 bg-[#ffffff] rounded-xl border border-[rgba(13,17,45,0.08)]">
+                            <CheckCircle2 className="w-4 h-4 text-[#EB9B3D] shrink-0" />
                             <span className="text-[13.5px] text-[#333] font-medium">{item}</span>
                           </div>
                         ))}
@@ -451,8 +449,8 @@ export default function AIPage() {
                     </div>
 
                     {/* Why Infoplus */}
-                    <div className="bg-[#0d0517] rounded-2xl p-7">
-                      <h4 className="text-[12px] font-bold uppercase tracking-widest text-[#aa3bff] mb-3">
+                    <div className="bg-[#0D112D] rounded-2xl p-7">
+                      <h4 className="text-[12px] font-bold uppercase tracking-widest text-[#DA4D33] mb-3">
                         Why Infoplus?
                       </h4>
                       <p className="text-[14px] text-white/65 leading-relaxed mb-6">{s.why}</p>
@@ -463,7 +461,7 @@ export default function AIPage() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                           {s.features.map((f, k) => (
                             <div key={k} className="flex items-start gap-2 text-[13px] text-white/60">
-                              <ChevronRight className="w-3.5 h-3.5 text-[#aa3bff] shrink-0 mt-0.5" />
+                              <ChevronRight className="w-3.5 h-3.5 text-[#DA4D33] shrink-0 mt-0.5" />
                               {f}
                             </div>
                           ))}
@@ -486,13 +484,13 @@ export default function AIPage() {
       />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="py-20 bg-[#f8f5ff]">
+      <section className="py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
-            <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">
+            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">
               {/* Orbs */}
-              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#6128a6]/25 blur-[100px] pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#f85d37]/10 blur-[80px] pointer-events-none" />
+              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#EB9B3D]/25 blur-[100px] pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#F0783A]/10 blur-[80px] pointer-events-none" />
 
               <div className="relative z-10">
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
@@ -508,7 +506,7 @@ export default function AIPage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
                   >
                     Schedule a Consultation
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

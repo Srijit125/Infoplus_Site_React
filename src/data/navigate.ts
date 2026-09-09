@@ -19,17 +19,7 @@ export interface NavigationItem {
 export const navigation: NavigationItem[] = [
   {
     label: "Home",
-    href: "/",
-    megaMenu: [
-      {
-        label: "Home",
-        href: "/",
-        items: [
-          { label: "Home (Theme 1)", href: "/" },
-          { label: "Home (Theme 2)", href: "/home-2" },
-        ],
-      },
-    ],
+    href: "/home-2",
   },
   {
     label: "About Us",

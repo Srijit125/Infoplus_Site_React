@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Shield, FileText, CheckCircle2, Settings,
@@ -19,7 +19,7 @@ type ServiceCard = {
 const WHAT_WE_HANDLE: ServiceCard[] = [
   {
     icon: FileText,
-    gradient: "from-[#381f55] to-[#6128a6]",
+    gradient: "from-[#242E72] to-[#EB9B3D]",
     title: "Invoicing & Collections",
     desc: "We handle all invoicing, chasing, and collecting of your hard-earned cash from your agency or end client so you never have to chase payments yourself.",
   },
@@ -117,7 +117,7 @@ export default function UmbrellaPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <Link
             to="/contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
           >
             Get Started Today
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -133,16 +133,16 @@ export default function UmbrellaPage() {
 
       {/* â"€â"€ What Is an Umbrella Company â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
-        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#ffffff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left" duration={720}>
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 What We Do
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                 Contracting Made Simple.<br />
-                <span className="text-[#6128a6]">Life Made Better.</span>
+                <span className="text-[#EB9B3D]">Life Made Better.</span>
               </h2>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
                 Whether you're new to contracting or are an old hand, an umbrella company such as
@@ -164,10 +164,10 @@ export default function UmbrellaPage() {
 
             {/* Benefits visual */}
             <ScrollReveal direction="right" duration={720} delay={150}>
-              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/8 blur-[60px] pointer-events-none" />
+              <div className="bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-3xl p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#EB9B3D]/8 blur-[60px] pointer-events-none" />
                 <div className="relative z-10">
-                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] mb-6">
+                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#EB9B3D] mb-6">
                     Contractor Benefits
                   </p>
                   <div className="space-y-3">
@@ -177,8 +177,8 @@ export default function UmbrellaPage() {
                         className="flex items-start gap-3"
                         style={{ animation: `revealFade 400ms ease ${i * 80 + 200}ms both` }}
                       >
-                        <div className="w-5 h-5 rounded-full bg-[#ecdaff] flex items-center justify-center shrink-0 mt-0.5">
-                          <CheckCircle2 className="w-3 h-3 text-[#6128a6]" />
+                        <div className="w-5 h-5 rounded-full bg-[#FEF0DC] flex items-center justify-center shrink-0 mt-0.5">
+                          <CheckCircle2 className="w-3 h-3 text-[#EB9B3D]" />
                         </div>
                         <p className="text-[13.5px] text-[#444] leading-relaxed">{b}</p>
                       </div>
@@ -192,11 +192,11 @@ export default function UmbrellaPage() {
       </section>
 
       {/* â"€â"€ What We Handle 4 Cinematic Cards â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-20 bg-[#f8f5ff]">
+      <section className="py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6 max-w-6xl">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 All Handled For You
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-2">What We Take Care Of</h2>
@@ -210,14 +210,13 @@ export default function UmbrellaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {WHAT_WE_HANDLE.map(({ icon: HIcon, gradient, title, desc }, i) => (
               <ScrollReveal key={i} direction="up" variant="card" delay={i * 90}>
-                <div className="group bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:border-[#6128a6]/25 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.10)] hover:-translate-y-1 transition-all duration-300">
-                  <div className={`h-1.5 bg-linear-to-r ${gradient}`} />
+                <div className="group bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl overflow-hidden hover:border-[#EB9B3D]/25 hover:shadow-[0_16px_48px_-8px_rgba(235,155,61,0.10)] hover:-translate-y-1 transition-all duration-300">
                   <div className="p-8 flex gap-5 items-start">
-                    <div className={`w-13 h-13 rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                      <HIcon className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <HIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                     </div>
                     <div>
-                      <h3 className="text-[16px] font-bold text-[#111] mb-2 group-hover:text-[#6128a6] transition-colors leading-snug">
+                      <h3 className="text-[16px] font-bold text-[#111] mb-2 group-hover:text-[#EB9B3D] transition-colors leading-snug">
                         {title}
                       </h3>
                       <p className="text-[13.5px] text-[#666] leading-relaxed">{desc}</p>
@@ -231,9 +230,9 @@ export default function UmbrellaPage() {
       </section>
 
       {/* â"€â"€ Why Infoplus Cinematic dark rows â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-[#0d0517] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#6128a6]/15 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#f85d37]/8 blur-[100px] pointer-events-none" />
+      <section className="py-24 bg-[#0D112D] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#EB9B3D]/15 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#F0783A]/8 blur-[100px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }}
@@ -242,7 +241,7 @@ export default function UmbrellaPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-14">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 The Infoplus Difference
               </span>
               <h2 className="text-[36px] font-bold text-white mt-2">
@@ -258,12 +257,12 @@ export default function UmbrellaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {WHY_INFOPLUS.map(({ icon: WIcon, title, desc }, i) => (
               <ScrollReveal key={i} direction="up" duration={680} delay={Math.floor(i / 2) * 80 + (i % 2) * 60}>
-                <div className="group h-full flex flex-col sm:flex-row gap-5 items-start bg-white/4 border border-white/8 rounded-2xl p-6 hover:bg-white/7 hover:border-[#6128a6]/30 transition-all duration-300 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#6128a6]/8 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="group h-full flex flex-col sm:flex-row gap-5 items-start bg-white/4 border border-white/8 rounded-2xl p-6 hover:bg-white/7 hover:border-[#EB9B3D]/30 transition-all duration-300 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#EB9B3D]/8 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   <div className="shrink-0">
-                    <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <WIcon className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <WIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                     </div>
                   </div>
 
@@ -279,10 +278,10 @@ export default function UmbrellaPage() {
       </section>
 
       {/* â"€â"€ Simple Steps â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-16 bg-[#f8f5ff] border-y border-[#e5e4e7]">
+      <section className="py-16 bg-[#ffffff] border-y border-[rgba(13,17,45,0.10)]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
-            <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] text-center mb-8">
+            <p className="text-[13px] font-bold uppercase tracking-widest text-[#EB9B3D] text-center mb-8">
               Getting started is easy
             </p>
           </ScrollReveal>
@@ -293,8 +292,8 @@ export default function UmbrellaPage() {
               { step: "03", title: "Start Contracting", desc: "Get paid accurately, compliantly, and on time every time." },
             ].map(({ step, title, desc }, i) => (
               <ScrollReveal key={i} direction="up" delay={i * 100} variant="card">
-                <div className="relative flex flex-col items-center text-center p-6 bg-white border border-[#e5e4e7] rounded-2xl hover:border-[#6128a6]/25 hover:shadow-[0_8px_24px_-4px_rgba(97,40,166,0.08)] transition-all duration-300">
-                  <div className="w-14 h-14 rounded-full bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center mb-4 shadow-[0_8px_24px_-4px_rgba(97,40,166,0.35)]">
+                <div className="relative flex flex-col items-center text-center p-6 bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl hover:border-[#EB9B3D]/25 hover:shadow-[0_8px_24px_-4px_rgba(235,155,61,0.08)] transition-all duration-300">
+                  <div className="w-14 h-14 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center mb-4 shadow-[0_8px_24px_-4px_rgba(235,155,61,0.35)]">
                     <span className="text-[13px] font-black text-white">{step}</span>
                   </div>
                   <h3 className="text-[16px] font-bold text-[#111] mb-2">{title}</h3>
@@ -312,9 +311,9 @@ export default function UmbrellaPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
-            <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#6128a6]/25 blur-[100px] pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#f85d37]/10 blur-[80px] pointer-events-none" />
+            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#EB9B3D]/25 blur-[100px] pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#F0783A]/10 blur-[80px] pointer-events-none" />
               <div className="relative z-10">
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Join Infoplus Umbrella
@@ -330,7 +329,7 @@ export default function UmbrellaPage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
                   >
                     Join Infoplus Umbrella
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

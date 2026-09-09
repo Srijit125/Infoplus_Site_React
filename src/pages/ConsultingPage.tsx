@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Briefcase,
@@ -32,8 +32,8 @@ type StrategyStep = {
 const TOWERS: Tower[] = [
   {
     icon: Briefcase,
-    gradient: "from-[#381f55] to-[#6128a6]",
-    accentColor: "#6128a6",
+    gradient: "from-[#242E72] to-[#EB9B3D]",
+    accentColor: "#EB9B3D",
     number: "01",
     title: "Enterprise Consulting",
     desc: "We help enterprises store, manage, and access critical data online efficiently letting stakeholders access insights from any browser, on any device, at any time.",
@@ -163,7 +163,7 @@ export default function ConsultingPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <Link
             to="/contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
           >
             Get Started
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -179,17 +179,17 @@ export default function ConsultingPage() {
 
       {/* ── Intro ────────────────────────────────────────────── */}
       <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
-        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#ffffff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left" duration={720}>
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Consulting Practice
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                 Deep Expertise.
                 <br />
-                <span className="text-[#6128a6]">Proven Track Record.</span>
+                <span className="text-[#EB9B3D]">Proven Track Record.</span>
               </h2>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
                 Infoplus Technologies uses expertise and a deep technical
@@ -206,10 +206,10 @@ export default function ConsultingPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" duration={720} delay={150}>
-              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/8 blur-[60px] pointer-events-none" />
+              <div className="bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-3xl p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#EB9B3D]/8 blur-[60px] pointer-events-none" />
                 <div className="relative z-10">
-                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] mb-6">
+                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#EB9B3D] mb-6">
                     Why Our Consultants
                   </p>
                   {[
@@ -219,7 +219,7 @@ export default function ConsultingPage() {
                   ].map(({ value, label }, i) => (
                     <div
                       key={i}
-                      className={`flex items-center justify-between py-4 ${i < 2 ? "border-b border-[#e8e0f7]" : ""}`}
+                      className={`flex items-center justify-between py-4 ${i < 2 ? "border-b border-[rgba(13,17,45,0.08)]" : ""}`}
                       style={{
                         animation: `revealFade 500ms ease ${i * 130 + 200}ms both`,
                       }}
@@ -238,21 +238,21 @@ export default function ConsultingPage() {
       </section>
 
       {/* ── Why Choose Infoplus ───────────────────────────── */}
-      <section className="py-20 bg-[#f8f5ff] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-125 h-125 rounded-full bg-[#ecdaff] opacity-40 blur-[120px] pointer-events-none" />
+      <section className="py-20 bg-[#ffffff] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-125 h-125 rounded-full bg-[#FEF0DC] opacity-40 blur-[120px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.025] pointer-events-none"
-          style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "32px 32px" }}
+          style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "32px 32px" }}
         />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
             <div className="text-center mb-12">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Why Choose Us
               </span>
-              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-[#0d0517] leading-tight mb-6 max-w-3xl mx-auto">
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-[#0D112D] leading-tight mb-6 max-w-3xl mx-auto">
                 Why Choose Infoplus for{" "}
-                <span className="text-[#6128a6]">IT Consulting Solutions?</span>
+                <span className="text-[#EB9B3D]">IT Consulting Solutions?</span>
               </h2>
               <p className="text-[15.5px] text-[#555] max-w-3xl mx-auto leading-[1.85]">
                 At Infoplus, we help businesses make informed technology decisions that support long-term growth and operational efficiency. Our consulting approach focuses on understanding your business goals, identifying challenges, and delivering practical IT solutions that create measurable value. Whether you&apos;re modernising existing systems, implementing new technologies, or improving business processes, we work closely with your team to ensure successful outcomes.
@@ -276,12 +276,12 @@ export default function ConsultingPage() {
                 return (
                   <div
                     key={label}
-                    className={`group flex flex-col items-center text-center py-7 px-5 hover:bg-[#f8f5ff] transition-all duration-300 ${dividerClass}`}
+                    className={`group flex flex-col items-center text-center py-7 px-5 hover:bg-[#ffffff] transition-all duration-300 ${dividerClass}`}
                   >
-                    <div className="w-10 h-10 rounded-xl bg-[#6128a6]/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-5 h-5 text-[#6128a6]" />
+                    <div className="w-10 h-10 rounded-xl bg-[#EB9B3D]/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-5 h-5 text-[#EB9B3D]" />
                     </div>
-                    <p className="text-[14px] font-bold text-[#0d0517] mb-1">{label}</p>
+                    <p className="text-[14px] font-bold text-[#0D112D] mb-1">{label}</p>
                     <p className="text-[12px] text-[#555]/70 leading-snug">{sub}</p>
                   </div>
                 );
@@ -292,9 +292,9 @@ export default function ConsultingPage() {
       </section>
 
       {/* ── 4 Sub-Towers Cinematic alternating ─────────────── */}
-      <section className="py-20 bg-[#0d0517] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#6128a6]/15 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#f85d37]/8 blur-[100px] pointer-events-none" />
+      <section className="py-20 bg-[#0D112D] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#EB9B3D]/15 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#F0783A]/8 blur-[100px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -306,7 +306,7 @@ export default function ConsultingPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-14">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/20 border border-[#6128a6]/30 text-[#aa3bff] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/20 border border-[#EB9B3D]/30 text-[#DA4D33] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Consulting Coverage
               </span>
               <h2 className="text-[36px] font-bold text-white mt-2">
@@ -337,16 +337,12 @@ export default function ConsultingPage() {
                     duration={700}
                     delay={60}
                   >
-                    <div className="group bg-white/4 border border-white/8 rounded-2xl overflow-hidden hover:bg-white/7 hover:border-[#6128a6]/30 hover:-translate-y-0.5 transition-all duration-300">
-                      {/* Top gradient accent */}
-                      <div className={`h-1 bg-linear-to-r ${gradient}`} />
+                    <div className="group bg-white/4 border border-white/8 rounded-2xl overflow-hidden hover:bg-white/7 hover:border-[#EB9B3D]/30 hover:-translate-y-0.5 transition-all duration-300">
                       <div className="p-7 flex flex-col sm:flex-row gap-6 items-start">
                         {/* Icon + number */}
                         <div className="shrink-0">
-                          <div
-                            className={`w-14 h-14 rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
-                          >
-                            <TIcon className="w-7 h-7 text-white" />
+                          <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <TIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                           </div>
                           <p className="text-[11px] font-black text-white/30 mt-2 text-center">
                             {number}
@@ -355,7 +351,7 @@ export default function ConsultingPage() {
 
                         {/* Content */}
                         <div className="flex-1">
-                          <h3 className="text-[19px] font-bold text-white mb-3 leading-snug group-hover:text-[#aa3bff] transition-colors">
+                          <h3 className="text-[19px] font-bold text-white mb-3 leading-snug group-hover:text-[#EB9B3D] transition-colors">
                             {title}
                           </h3>
                           <p className="text-[14px] text-white/55 leading-relaxed mb-5">
@@ -365,13 +361,8 @@ export default function ConsultingPage() {
                             {tags.map((tag, j) => (
                               <span
                                 key={j}
-                                className="px-3 py-1.5 rounded-lg text-[11.5px] font-semibold border"
-                                style={{
-                                  backgroundColor: `${accentColor}15`,
-                                  borderColor: `${accentColor}30`,
-                                  color: accentColor,
-                                  animation: `revealFade 350ms ease ${j * 50 + 200}ms both`,
-                                }}
+                                className="px-3 py-1.5 rounded-lg text-[11.5px] font-semibold border bg-[#EB9B3D]/10 border-[#EB9B3D]/30 text-[#EB9B3D]"
+                                style={{ animation: `revealFade 350ms ease ${j * 50 + 200}ms both` }}
                               >
                                 {tag}
                               </span>
@@ -393,7 +384,7 @@ export default function ConsultingPage() {
         <div className="container mx-auto px-6 max-w-5xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-16">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 How We Work
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-2">
@@ -408,7 +399,7 @@ export default function ConsultingPage() {
 
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-4.75 top-6 bottom-6 w-px bg-linear-to-b from-[#6128a6] via-[#6128a6]/50 to-transparent lg:left-7.75" />
+            <div className="absolute left-4.75 top-6 bottom-6 w-px bg-linear-to-b from-[#EB9B3D] via-[#EB9B3D]/50 to-transparent lg:left-7.75" />
 
             <div className="space-y-3">
               {STRATEGY_STEPS.map(({ step, title, desc, highlight }, i) => (
@@ -421,7 +412,7 @@ export default function ConsultingPage() {
                   <div className="flex gap-6">
                     {/* Circle */}
                     <div className="shrink-0 mt-1">
-                      <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center z-10 relative group-hover:scale-110 transition-transform duration-300 lg:w-16 lg:h-16">
+                      <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center z-10 relative group-hover:scale-110 transition-transform duration-300 lg:w-16 lg:h-16">
                         <span className="text-[11px] font-black text-white lg:text-[13px]">
                           {step}
                         </span>
@@ -430,13 +421,13 @@ export default function ConsultingPage() {
 
                     {/* Card */}
                     <div className="flex-1 pb-6 group">
-                      <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-2xl p-6 hover:bg-white hover:border-[#6128a6]/30 hover:shadow-[0_8px_32px_-8px_rgba(97,40,166,0.12)] transition-all duration-300">
+                      <div className="bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-2xl p-6 hover:bg-white hover:border-[#EB9B3D]/30 hover:shadow-[0_8px_32px_-8px_rgba(235,155,61,0.12)] transition-all duration-300">
                         <div className="flex items-start justify-between gap-4 mb-2">
-                          <h3 className="text-[17px] font-bold text-[#111] group-hover:text-[#6128a6] transition-colors leading-snug">
+                          <h3 className="text-[17px] font-bold text-[#111] group-hover:text-[#EB9B3D] transition-colors leading-snug">
                             {title}
                           </h3>
                           {highlight && (
-                            <span className="shrink-0 px-3 py-1 rounded-full bg-[#6128a6] text-white text-[10px] font-bold uppercase tracking-wide">
+                            <span className="shrink-0 px-3 py-1 rounded-full bg-[#EB9B3D] text-white text-[10px] font-bold uppercase tracking-wide">
                               {highlight}
                             </span>
                           )}
@@ -457,12 +448,12 @@ export default function ConsultingPage() {
       <FAQAccordion faqs={CONSULTING_FAQS} badge="FAQs" title="Frequently Asked Questions" subtitle="Common questions about our IT consulting services." />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="py-20 bg-[#f8f5ff]">
+      <section className="py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
-            <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#6128a6]/25 blur-[100px] pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#f85d37]/10 blur-[80px] pointer-events-none" />
+            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#EB9B3D]/25 blur-[100px] pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#F0783A]/10 blur-[80px] pointer-events-none" />
               <div className="relative z-10">
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Engage Our Experts
@@ -480,7 +471,7 @@ export default function ConsultingPage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
                   >
                     Engage a Consultant
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

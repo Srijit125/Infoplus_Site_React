@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Clock, Zap, Users, Database, Globe,
@@ -36,8 +36,8 @@ const STATS = [
 const STAFFING_MODELS: StaffingModel[] = [
   {
     icon: FileText,
-    gradient: "from-[#381f55] to-[#6128a6]",
-    accentColor: "#aa3bff",
+    gradient: "from-[#242E72] to-[#EB9B3D]",
+    accentColor: "#DA4D33",
     tag: "Model 01",
     title: "Contract Staffing",
     desc: "When you need to quickly ramp up projects, Infoplus Technologies provides cost-efficient and right candidates who can fit the bill to get the job done. Our contract staffing services help accomplish your goals without adding employee headcount and associated long-term costs.",
@@ -149,7 +149,7 @@ export default function StaffingPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <Link
             to="/contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
           >
             Hire Now
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -169,11 +169,11 @@ export default function StaffingPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {STATS.map(({ icon: SIcon, value, label }, i) => (
               <ScrollReveal key={i} direction="up" delay={i * 80} className="h-full">
-                <div className="group h-full flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-[#f8f5ff] border border-[#e8e0f7] hover:bg-white hover:shadow-[0_8px_32px_-8px_rgba(97,40,166,0.14)] hover:-translate-y-1 transition-all duration-300">
-                  <div className="w-11 h-11 rounded-xl bg-[#ecdaff] flex items-center justify-center mb-1 shrink-0">
-                    <SIcon className="w-5 h-5 text-[#6128a6]" />
+                <div className="group h-full flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-[#ffffff] border border-[rgba(13,17,45,0.08)] hover:bg-white hover:shadow-[0_8px_32px_-8px_rgba(235,155,61,0.14)] hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-11 h-11 rounded-xl bg-[#FEF0DC] flex items-center justify-center mb-1 shrink-0">
+                    <SIcon className="w-5 h-5 text-[#EB9B3D]" />
                   </div>
-                  <p className="text-[28px] font-black text-[#6128a6] leading-none">{value}</p>
+                  <p className="text-[28px] font-black text-[#EB9B3D] leading-none">{value}</p>
                   <p className="text-[12px] text-[#666] font-medium leading-snug">{label}</p>
                 </div>
               </ScrollReveal>
@@ -184,16 +184,16 @@ export default function StaffingPage() {
 
       {/* â"€â"€ Intro â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#ffffff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left" duration={720}>
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 20+ Years of Excellence
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                 Internationally Recognised<br />
-                <span className="text-[#6128a6]">Staffing Service Provider</span>
+                <span className="text-[#EB9B3D]">Staffing Service Provider</span>
               </h2>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
                 With more than two decades of operation, Infoplus Technologies has grown into an
@@ -211,22 +211,22 @@ export default function StaffingPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" duration={720} delay={150}>
-              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/8 blur-[60px] pointer-events-none" />
+              <div className="bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-3xl p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#EB9B3D]/8 blur-[60px] pointer-events-none" />
                 <div className="relative z-10">
-                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] mb-5">
+                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#EB9B3D] mb-5">
                     Our Global Presence
                   </p>
                   <div className="grid grid-cols-1 gap-2">
                     {COUNTRIES.map((country, i) => (
                       <div
                         key={i}
-                        className="flex items-center gap-3 py-2.5 border-b border-[#e8e0f7] last:border-0"
+                        className="flex items-center gap-3 py-2.5 border-b border-[rgba(13,17,45,0.08)] last:border-0"
                         style={{ animation: `revealFade 400ms ease ${i * 70 + 200}ms both` }}
                       >
-                        <Globe className="w-4 h-4 text-[#6128a6] shrink-0" />
+                        <Globe className="w-4 h-4 text-[#EB9B3D] shrink-0" />
                         <span className="text-[13.5px] text-[#444] font-medium">{country}</span>
-                        <ChevronRight className="w-3.5 h-3.5 text-[#6128a6]/30 ml-auto" />
+                        <ChevronRight className="w-3.5 h-3.5 text-[#EB9B3D]/30 ml-auto" />
                       </div>
                     ))}
                   </div>
@@ -238,9 +238,9 @@ export default function StaffingPage() {
       </section>
 
       {/* â"€â"€ Staffing Models Cinematic Cards â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-20 bg-[#0d0517] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#6128a6]/15 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#f85d37]/8 blur-[100px] pointer-events-none" />
+      <section className="py-20 bg-[#0D112D] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#EB9B3D]/15 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#F0783A]/8 blur-[100px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }}
@@ -249,7 +249,7 @@ export default function StaffingPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-14">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Engagement Models
               </span>
               <h2 className="text-[36px] font-bold text-white mt-2">Our Staffing Models</h2>
@@ -266,22 +266,22 @@ export default function StaffingPage() {
               const isEven = i % 2 === 0;
               return (
                 <ScrollReveal key={i} direction={isEven ? "left" : "right"} duration={700} delay={60}>
-                  <div className="group bg-white/4 border border-white/8 rounded-2xl p-7 hover:bg-white/7 hover:border-[#6128a6]/30 transition-all duration-300 relative overflow-hidden">
+                  <div className="group bg-white/4 border border-white/8 rounded-2xl p-7 hover:bg-white/7 hover:border-[#EB9B3D]/30 transition-all duration-300 relative overflow-hidden">
                     <div
                       className="absolute top-0 right-0 w-48 h-48 rounded-full blur-[80px] opacity-0 group-hover:opacity-12 transition-opacity duration-500 pointer-events-none"
                       style={{ background: accentColor }}
                     />
                     <div className="relative z-10 flex flex-col sm:flex-row gap-6 items-start">
                       <div className="shrink-0">
-                        <div className={`w-14 h-14 rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                          <MIcon className="w-7 h-7 text-white" />
+                        <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <MIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                         </div>
                       </div>
                       <div className="flex-1">
                         <h3 className="text-[20px] font-bold text-white mb-3 leading-snug">{title}</h3>
                         <p className="text-[14px] text-white/55 leading-relaxed">{desc}</p>
                       </div>
-                      <ChevronRight className="w-5 h-5 text-white/20 group-hover:text-[#aa3bff] group-hover:translate-x-1 transition-all duration-300 shrink-0 self-center hidden sm:block" />
+                      <ChevronRight className="w-5 h-5 text-white/20 group-hover:text-[#DA4D33] group-hover:translate-x-1 transition-all duration-300 shrink-0 self-center hidden sm:block" />
                     </div>
                   </div>
                 </ScrollReveal>
@@ -292,11 +292,11 @@ export default function StaffingPage() {
       </section>
 
       {/* â"€â"€ Core vs Support Activities â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-20 bg-[#f8f5ff] relative overflow-hidden">
+      <section className="py-20 bg-[#ffffff] relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-6xl">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 How We Operate
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-2">
@@ -311,10 +311,10 @@ export default function StaffingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Core */}
             <ScrollReveal direction="left" duration={700}>
-              <div className="bg-white border border-[#e5e4e7] rounded-2xl p-8 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.10)] hover:border-[#6128a6]/30 transition-all duration-300">
+              <div className="bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl p-8 hover:shadow-[0_16px_48px_-8px_rgba(235,155,61,0.10)] hover:border-[#EB9B3D]/30 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-[#ecdaff] flex items-center justify-center shrink-0">
-                    <Briefcase className="w-5 h-5 text-[#6128a6]" />
+                  <div className="w-10 h-10 rounded-xl bg-[#FEF0DC] flex items-center justify-center shrink-0">
+                    <Briefcase className="w-5 h-5 text-[#EB9B3D]" />
                   </div>
                   <h3 className="text-[18px] font-bold text-[#111] m-0">Core Staffing Activities</h3>
                 </div>
@@ -322,10 +322,10 @@ export default function StaffingPage() {
                   {STAFFING_ACTIVITIES.core.map((item, i) => (
                     <div
                       key={i}
-                      className="flex items-start gap-3 p-3.5 bg-[#f8f5ff] rounded-xl border border-[#e8e0f7]"
+                      className="flex items-start gap-3 p-3.5 bg-[#ffffff] rounded-xl border border-[rgba(13,17,45,0.08)]"
                       style={{ animation: `revealFade 400ms ease ${i * 80 + 200}ms both` }}
                     >
-                      <CheckCircle2 className="w-4 h-4 text-[#6128a6] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#EB9B3D] shrink-0 mt-0.5" />
                       <span className="text-[13.5px] text-[#333] font-medium">{item}</span>
                     </div>
                   ))}
@@ -335,10 +335,10 @@ export default function StaffingPage() {
 
             {/* Support */}
             <ScrollReveal direction="right" duration={700} delay={100}>
-              <div className="bg-white border border-[#e5e4e7] rounded-2xl p-8 hover:shadow-[0_16px_48px_-8px_rgba(248,93,55,0.08)] hover:border-[#f85d37]/25 transition-all duration-300">
+              <div className="bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl p-8 hover:shadow-[0_16px_48px_-8px_rgba(248,93,55,0.08)] hover:border-[#F0783A]/25 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-[#fff3ef] border border-[#f85d37]/20 flex items-center justify-center shrink-0">
-                    <Users className="w-5 h-5 text-[#f85d37]" />
+                  <div className="w-10 h-10 rounded-xl bg-[#fff3ef] border border-[#F0783A]/20 flex items-center justify-center shrink-0">
+                    <Users className="w-5 h-5 text-[#F0783A]" />
                   </div>
                   <h3 className="text-[18px] font-bold text-[#111] m-0">Support Activities</h3>
                 </div>
@@ -346,10 +346,10 @@ export default function StaffingPage() {
                   {STAFFING_ACTIVITIES.support.map((item, i) => (
                     <div
                       key={i}
-                      className="flex items-start gap-3 p-3.5 bg-[#fff3ef] rounded-xl border border-[#f85d37]/15"
+                      className="flex items-start gap-3 p-3.5 bg-[#fff3ef] rounded-xl border border-[#F0783A]/15"
                       style={{ animation: `revealFade 400ms ease ${i * 80 + 200}ms both` }}
                     >
-                      <CheckCircle2 className="w-4 h-4 text-[#f85d37] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#F0783A] shrink-0 mt-0.5" />
                       <span className="text-[13.5px] text-[#333] font-medium">{item}</span>
                     </div>
                   ))}
@@ -362,11 +362,11 @@ export default function StaffingPage() {
 
       {/* â"€â"€ Our Approach Cinematic Flow â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-80 h-80 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 left-0 w-80 h-80 rounded-full bg-[#ffffff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-5xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-16">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Process
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-2">Our Approach</h2>
@@ -380,7 +380,7 @@ export default function StaffingPage() {
 
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-[19px] top-6 bottom-6 w-px bg-linear-to-b from-[#6128a6] via-[#6128a6]/50 to-transparent lg:left-[27px]" />
+            <div className="absolute left-[19px] top-6 bottom-6 w-px bg-linear-to-b from-[#EB9B3D] via-[#EB9B3D]/50 to-transparent lg:left-[27px]" />
 
             <div className="space-y-3">
               {APPROACH_STEPS.map(({ step, title, bullets }, i) => (
@@ -388,21 +388,21 @@ export default function StaffingPage() {
                   <div className="flex gap-6">
                     {/* Circle */}
                     <div className="shrink-0 mt-1">
-                      <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center relative z-10 lg:w-14 lg:h-14">
+                      <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center relative z-10 lg:w-14 lg:h-14">
                         <span className="text-[11px] font-black text-white lg:text-[13px]">{step}</span>
                       </div>
                     </div>
 
                     {/* Content */}
                     <div className="flex-1 pb-8">
-                      <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-2xl p-6 hover:bg-white hover:border-[#6128a6]/30 hover:shadow-[0_8px_32px_-8px_rgba(97,40,166,0.12)] transition-all duration-300 group">
-                        <h3 className="text-[17px] font-bold text-[#111] mb-4 group-hover:text-[#6128a6] transition-colors">
+                      <div className="bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-2xl p-6 hover:bg-white hover:border-[#EB9B3D]/30 hover:shadow-[0_8px_32px_-8px_rgba(235,155,61,0.12)] transition-all duration-300 group">
+                        <h3 className="text-[17px] font-bold text-[#111] mb-4 group-hover:text-[#EB9B3D] transition-colors">
                           {title}
                         </h3>
                         <div className="space-y-2.5">
                           {bullets.map((b, j) => (
                             <div key={j} className="flex items-start gap-2.5">
-                              <ChevronRight className="w-4 h-4 text-[#6128a6] shrink-0 mt-0.5" />
+                              <ChevronRight className="w-4 h-4 text-[#EB9B3D] shrink-0 mt-0.5" />
                               <p className="text-[13.5px] text-[#555] leading-relaxed">{b}</p>
                             </div>
                           ))}
@@ -425,12 +425,12 @@ export default function StaffingPage() {
       />
 
       {/* â"€â"€ CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-20 bg-[#f8f5ff]">
+      <section className="py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
-            <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#6128a6]/25 blur-[100px] pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#f85d37]/10 blur-[80px] pointer-events-none" />
+            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#EB9B3D]/25 blur-[100px] pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#F0783A]/10 blur-[80px] pointer-events-none" />
               <div className="relative z-10">
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Find Your Next Hire
@@ -446,7 +446,7 @@ export default function StaffingPage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
                   >
                     Start Hiring Today
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

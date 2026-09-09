@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Cloud,
@@ -28,7 +28,7 @@ type CloudService = {
 const CLOUD_SERVICES: CloudService[] = [
   {
     icon: Cloud,
-    gradient: "from-[#381f55] to-[#6128a6]",
+    gradient: "from-[#242E72] to-[#EB9B3D]",
     tag: "SaaS",
     title: "Software-as-a-Service",
     desc: "Our SaaS solutions help you store data online efficiently and let you access it from a browser on any device no installation, no maintenance, no upfront infrastructure cost.",
@@ -63,7 +63,7 @@ const CLOUD_SERVICES: CloudService[] = [
   },
   {
     icon: Shield,
-    gradient: "from-[#9a2600] to-[#f85d37]",
+    gradient: "from-[#9a2600] to-[#F0783A]",
     tag: "Security",
     title: "Data Governance & Cyber Security",
     desc: "We protect your sensitive data from cyber threats with strong, proactive security measures. Whenever you need support, we're there to keep your systems safe.",
@@ -84,7 +84,7 @@ const CLOUD_PROVIDERS = [
   {
     name: "AWS",
     desc: "Amazon Web Services",
-    gradient: "from-[#f59e0b] to-[#f85d37]",
+    gradient: "from-[#f59e0b] to-[#F0783A]",
     iconBg: "bg-[#fff8f0] border-[#f59e0b]/25",
     iconColor: "text-[#f59e0b]",
   },
@@ -141,7 +141,7 @@ export default function CloudPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <Link
             to="/contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
           >
             Explore Cloud Services
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -168,17 +168,17 @@ export default function CloudPage() {
 
       {/* ── Intro ────────────────────────────────────────────── */}
       <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
-        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#ffffff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left" duration={720}>
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Enterprise Cloud
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                 Secure, Scalable Cloud
                 <br />
-                <span className="text-[#6128a6]">for Modern Enterprises</span>
+                <span className="text-[#EB9B3D]">for Modern Enterprises</span>
               </h2>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
                 Infoplus cloud portfolio is an enterprise cloud service offering
@@ -196,29 +196,29 @@ export default function CloudPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" duration={720} delay={150}>
-              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8">
-                <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] mb-6">
+              <div className="bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-3xl p-8">
+                <p className="text-[13px] font-bold uppercase tracking-widest text-[#EB9B3D] mb-6">
                   Multi-Cloud Delivery
                 </p>
                 {CLOUD_PROVIDERS.map(({ name, desc, iconBg, iconColor }, i) => (
                   <div
                     key={i}
-                    className={`flex items-center gap-3 py-3 ${i < 2 ? "border-b border-[#e8e0f7]" : ""}`}
+                    className={`flex items-center gap-3 py-3 ${i < 2 ? "border-b border-[rgba(13,17,45,0.08)]" : ""}`}
                     style={{
                       animation: `revealFade 500ms ease ${i * 130 + 200}ms both`,
                     }}
                   >
-                    <div className={`w-10 h-10 rounded-xl ${iconBg} border flex items-center justify-center shrink-0`}>
-                      <Cloud className={`w-4.5 h-4.5 ${iconColor}`} />
+                    <div className="w-10 h-10 rounded-xl bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 flex items-center justify-center shrink-0">
+                      <Cloud className="w-5 h-5 text-[#EB9B3D]" />
                     </div>
                     <div className="min-w-0">
                       <p className="text-[13.5px] font-bold text-[#111] leading-none mb-2">{name}</p>
                       <p className="text-[11px] text-[#888] leading-none mb-0">{desc}</p>
                     </div>
-                    <CheckCircle2 className="w-4 h-4 text-[#6128a6] ml-auto shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#EB9B3D] ml-auto shrink-0" />
                   </div>
                 ))}
-                <div className="mt-6 pt-5 border-t border-[#e8e0f7] text-center">
+                <div className="mt-6 pt-5 border-t border-[rgba(13,17,45,0.08)] text-center">
                   <p className="text-[11px] text-[#999] font-medium">
                     Through innovative solutions, we support you anywhere at
                     any time.
@@ -231,11 +231,11 @@ export default function CloudPage() {
       </section>
 
       {/* ── 6 Cloud Service Cards Cinematic grid ───────────── */}
-      <section className="py-20 bg-[#f8f5ff]">
+      <section className="py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Service Models
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-2">
@@ -258,27 +258,23 @@ export default function CloudPage() {
                   variant="card"
                   delay={i * 85}
                 >
-                  <div className="group bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:border-[#6128a6]/30 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.12)] hover:-translate-y-1 transition-all duration-300 h-full">
-                    {/* Accent gradient bar */}
-                    <div className={`h-1.5 bg-linear-to-r ${gradient}`} />
+                  <div className="group bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl overflow-hidden hover:border-[#EB9B3D]/30 hover:shadow-[0_16px_48px_-8px_rgba(235,155,61,0.12)] hover:-translate-y-1 transition-all duration-300 h-full">
                     <div className="p-7 flex flex-col h-full">
                       <div className="flex items-start justify-between mb-5">
-                        <div
-                          className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center`}
-                        >
-                          <SIcon className="w-6 h-6 text-white" />
+                        <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center">
+                          <SIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                         </div>
-                        <span className="text-[10px] font-black uppercase tracking-widest text-[#888] bg-[#f8f5ff] border border-[#e5e4e7] rounded-full px-3 py-1">
+                        <span className="text-[10px] font-black uppercase tracking-widest text-[#888] bg-[#ffffff] border border-[rgba(13,17,45,0.10)] rounded-full px-3 py-1">
                           {tag}
                         </span>
                       </div>
-                      <h3 className="text-[16px] font-bold text-[#111] mb-3 group-hover:text-[#6128a6] transition-colors leading-snug">
+                      <h3 className="text-[16px] font-bold text-[#111] mb-3 group-hover:text-[#EB9B3D] transition-colors leading-snug">
                         {title}
                       </h3>
                       <p className="text-[13.5px] text-[#666] leading-relaxed flex-1">
                         {desc}
                       </p>
-                      <div className="flex items-center gap-1 text-[12px] font-semibold text-[#6128a6] group-hover:text-[#f85d37] transition-colors pt-5 border-t border-[#f0eff5]">
+                      <div className="flex items-center gap-1 text-[12px] font-semibold text-[#EB9B3D] group-hover:text-[#F0783A] transition-colors pt-5 border-t border-[#f0eff5]">
                         Learn More <ChevronRight className="w-3.5 h-3.5" />
                       </div>
                     </div>
@@ -291,9 +287,9 @@ export default function CloudPage() {
       </section>
 
       {/* ── Our Solutions Cinematic dark list ──────────────── */}
-      <section className="py-24 bg-[#0d0517] relative overflow-hidden">
-        <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#6128a6]/20 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#f85d37]/10 blur-[100px] pointer-events-none" />
+      <section className="py-24 bg-[#0D112D] relative overflow-hidden">
+        <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#EB9B3D]/20 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#F0783A]/10 blur-[100px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -308,12 +304,12 @@ export default function CloudPage() {
             {/* Sticky heading */}
             <div className="lg:sticky lg:top-[120px]">
               <ScrollReveal direction="left" duration={720}>
-                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Why Choose Us
                 </span>
                 <h2 className="text-[34px] font-bold text-white mt-3 leading-tight mb-5">
                   Our Solutions &<br />
-                  <span className="text-[#aa3bff]">Delivery Standards</span>
+                  <span className="text-[#DA4D33]">Delivery Standards</span>
                 </h2>
                 <p className="text-[15px] text-white/50 leading-relaxed mb-8">
                   All services and solutions are delivered in an agile and
@@ -350,7 +346,7 @@ export default function CloudPage() {
             {/* Vertical animated solution list */}
             <div className="relative">
               {/* Connecting line */}
-              <div className="absolute left-[19px] top-6 bottom-6 w-px bg-linear-to-b from-[#6128a6] via-[#6128a6]/50 to-transparent" />
+              <div className="absolute left-[19px] top-6 bottom-6 w-px bg-linear-to-b from-[#EB9B3D] via-[#EB9B3D]/50 to-transparent" />
 
               <div className="space-y-2">
                 {OUR_SOLUTIONS.map((sol, i) => (
@@ -363,12 +359,12 @@ export default function CloudPage() {
                     <div className="flex gap-5 pb-2 group">
                       {/* Circle on the line */}
                       <div className="shrink-0 mt-1">
-                        <div className="w-10 h-10 rounded-full border-2 border-[#6128a6] bg-[#6128a6]/20 flex items-center justify-center relative z-10 group-hover:bg-[#6128a6] transition-colors duration-300">
-                          <Zap className="w-4 h-4 text-[#aa3bff] group-hover:text-white transition-colors duration-300" />
+                        <div className="w-10 h-10 rounded-full border-2 border-[#EB9B3D] bg-[#EB9B3D]/20 flex items-center justify-center relative z-10 group-hover:bg-[#EB9B3D] transition-colors duration-300">
+                          <Zap className="w-4 h-4 text-[#DA4D33] group-hover:text-white transition-colors duration-300" />
                         </div>
                       </div>
                       {/* Card */}
-                      <div className="flex-1 bg-white/4 border border-white/8 rounded-xl px-5 py-3.5 group-hover:bg-white/7 group-hover:border-[#6128a6]/30 transition-all duration-300">
+                      <div className="flex-1 bg-white/4 border border-white/8 rounded-xl px-5 py-3.5 group-hover:bg-white/7 group-hover:border-[#EB9B3D]/30 transition-all duration-300">
                         <p className="text-[14px] text-white/65 font-medium leading-relaxed">
                           {sol}
                         </p>
@@ -390,12 +386,12 @@ export default function CloudPage() {
       />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="py-20 bg-[#f8f5ff]">
+      <section className="py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
-            <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#6128a6]/25 blur-[100px] pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#f85d37]/10 blur-[80px] pointer-events-none" />
+            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#EB9B3D]/25 blur-[100px] pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#F0783A]/10 blur-[80px] pointer-events-none" />
               <div className="relative z-10">
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Move to the Cloud
@@ -413,7 +409,7 @@ export default function CloudPage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
                   >
                     Start Cloud Migration
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

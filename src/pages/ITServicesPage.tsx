@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { PageMeta } from "../components/shared/PageMeta";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
@@ -33,49 +33,49 @@ const SERVICES = [
     icon: Code2,
     title: "Software Development",
     href: "/services/it-services/software-development",
-    gradient: "from-[#381f55] to-[#6128a6]",
+    gradient: "from-[#EB9B3D] to-[#DA4D33]",
     desc: "Innovate fast and drive your business towards sustainable success with our Expert Team's web, mobile, and enterprise application development services.",
   },
   {
     icon: FlaskConical,
     title: "Testing",
     href: "/services/it-services/testing",
-    gradient: "from-[#381f55] to-[#6128a6]",
+    gradient: "from-[#EB9B3D] to-[#DA4D33]",
     desc: "Ensure your product success by leveraging our end-to-end testing services. We help you mitigate risks, boost application performance and provide seamless user experience.",
   },
   {
     icon: Server,
     title: "Infrastructure Management",
     href: "/services/it-services/infrastructure-management",
-    gradient: "from-[#381f55] to-[#6128a6]",
+    gradient: "from-[#EB9B3D] to-[#DA4D33]",
     desc: "Manage your IT infrastructure effectively with our proactive management services aimed at maximizing your efficiency and growing your business.",
   },
   {
     icon: Database,
     title: "SAP Consulting & Implementation",
     href: "/services/it-services/sap-consulting",
-    gradient: "from-[#381f55] to-[#6128a6]",
+    gradient: "from-[#EB9B3D] to-[#DA4D33]",
     desc: "Realize the full potential of SAP with our consulting services. We provide customized SAP solutions aimed at improving efficiency and business performance.",
   },
   {
     icon: ShieldCheck,
     title: "Cyber Security",
     href: "/services/it-services/cyber-security",
-    gradient: "from-[#381f55] to-[#6128a6]",
+    gradient: "from-[#EB9B3D] to-[#DA4D33]",
     desc: "Guard your business from malicious attacks using intelligent cybersecurity solutions which will secure your data and guarantee uninterrupted business operations.",
   },
   {
     icon: Cloud,
     title: "Cloud Portfolio",
     href: "/services/it-services/cloud-portfolio",
-    gradient: "from-[#381f55] to-[#6128a6]",
+    gradient: "from-[#EB9B3D] to-[#DA4D33]",
     desc: "Optimize your cloud portfolio with customized solutions designed to provide high scalability and efficiency.",
   },
   {
     icon: BrainCircuit,
     title: "Artificial Intelligence",
     href: "/services/it-services/artificial-intelligence",
-    gradient: "from-[#381f55] to-[#6128a6]",
+    gradient: "from-[#EB9B3D] to-[#DA4D33]",
     desc: "Boost your business processes by applying artificial intelligence solutions for process automation, better decision-making and innovation.",
   },
 ];
@@ -119,7 +119,7 @@ export default function ITServicesPage() {
 
   const fieldCls = (err: string) =>
     `w-full px-3.5 py-2.5 rounded-xl border text-[14px] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:ring-2 transition-all ${
-      err ? "border-red-400 bg-white focus:ring-red-200" : "border-[#e5e4e7] bg-[#fafafa] focus:ring-[#6128a6]/20 focus:border-[#6128a6]"
+      err ? "border-red-400 bg-white focus:ring-red-200" : "border-[rgba(13,17,45,0.10)] bg-[#fafafa] focus:ring-[#EB9B3D]/20 focus:border-[#EB9B3D]"
     }`;
 
   return (
@@ -149,7 +149,7 @@ export default function ITServicesPage() {
               <div className="flex flex-col sm:flex-row justify-center gap-3">
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#f85d37] hover:bg-[#e84d27] text-white font-bold text-[14px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#F0783A] hover:bg-[#e84d27] text-white font-bold text-[14px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
                 >
                   Discuss Your Project <ChevronRight className="w-4 h-4" />
                 </Link>
@@ -165,10 +165,10 @@ export default function ITServicesPage() {
 
           {/* ── Slide 1 — 2-column form banner ── */}
           <div className="w-full shrink-0">
-      <section className="relative bg-[#0d0517] overflow-hidden pt-28 pb-20">
+      <section className="relative bg-[#0D112D] overflow-hidden pt-28 pb-20">
         {/* Ambient orbs */}
-        <div className="absolute top-[-10%] left-[-6%] w-[600px] h-[600px] rounded-full bg-[#381f55] opacity-40 blur-[130px] pointer-events-none" />
-        <div className="absolute bottom-[-15%] right-[-4%] w-[500px] h-[500px] rounded-full bg-[#6128a6] opacity-20 blur-[120px] pointer-events-none" />
+        <div className="absolute top-[-10%] left-[-6%] w-[600px] h-[600px] rounded-full bg-[#242E72] opacity-40 blur-[130px] pointer-events-none" />
+        <div className="absolute bottom-[-15%] right-[-4%] w-[500px] h-[500px] rounded-full bg-[#EB9B3D] opacity-20 blur-[120px] pointer-events-none" />
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
           style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
 
@@ -182,7 +182,7 @@ export default function ITServicesPage() {
               </span>
               <h1 className="text-[clamp(2rem,4.5vw,3.25rem)] font-black text-white leading-[1.1] tracking-tight mb-6">
                 All Your IT Services{" "}
-                <span style={{ background: "linear-gradient(90deg,#aa3bff 0%,#f85d37 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                <span style={{ background: "linear-gradient(90deg,#DA4D33 0%,#F0783A 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                   Under One Roof
                 </span>
               </h1>
@@ -194,7 +194,7 @@ export default function ITServicesPage() {
               <div className="flex flex-wrap gap-3 mb-10">
                 {["End-to-End Solutions", "24/7 Support", "17 Countries", "ISO 27001 Certified"].map((chip) => (
                   <span key={chip} className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/8 border border-white/12 text-white/70 text-[12px] font-medium">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#aa3bff] shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#DA4D33] shrink-0" />
                     {chip}
                   </span>
                 ))}
@@ -204,7 +204,7 @@ export default function ITServicesPage() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#f85d37] hover:bg-[#e84d27] text-white font-bold text-[14px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#F0783A] hover:bg-[#e84d27] text-white font-bold text-[14px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
                 >
                   Discuss Your Project <ChevronRight className="w-4 h-4" />
                 </Link>
@@ -219,22 +219,22 @@ export default function ITServicesPage() {
 
             {/* Right — Quick Enquiry form */}
             <div className="bg-white rounded-2xl p-6 shadow-[0_24px_80px_rgba(0,0,0,0.30)]">
-              <h3 className="text-[18px] font-bold text-[#0d0517] mb-0.5">Quick Enquiry</h3>
+              <h3 className="text-[18px] font-bold text-[#0D112D] mb-0.5">Quick Enquiry</h3>
               <p className="text-[12px] text-[#888] mb-5">Tell us about your project and we'll be in touch within one business day.</p>
 
               {submitted ? (
                 <div className="flex flex-col items-center justify-center py-8 text-center">
-                  <div className="w-12 h-12 rounded-full bg-[#6128a6]/10 flex items-center justify-center mb-3">
-                    <Send className="w-5 h-5 text-[#6128a6]" />
+                  <div className="w-12 h-12 rounded-full bg-[#EB9B3D]/10 flex items-center justify-center mb-3">
+                    <Send className="w-5 h-5 text-[#EB9B3D]" />
                   </div>
-                  <h4 className="text-[16px] font-bold text-[#0d0517] mb-1">Message Sent!</h4>
+                  <h4 className="text-[16px] font-bold text-[#0D112D] mb-1">Message Sent!</h4>
                   <p className="text-[13px] text-[#666]">We'll get back to you within one business day.</p>
                 </div>
               ) : (
                 <form className="space-y-3" onSubmit={handleSubmit} noValidate>
                   <div>
                     <label className="block text-[12px] font-semibold text-[#333] mb-1">
-                      Your Name <span className="text-[#f85d37]">*</span>
+                      Your Name <span className="text-[#F0783A]">*</span>
                     </label>
                     <input
                       type="text"
@@ -247,7 +247,7 @@ export default function ITServicesPage() {
                   </div>
                   <div>
                     <label className="block text-[12px] font-semibold text-[#333] mb-1">
-                      Email Address <span className="text-[#f85d37]">*</span>
+                      Email Address <span className="text-[#F0783A]">*</span>
                     </label>
                     <input
                       type="email"
@@ -260,7 +260,7 @@ export default function ITServicesPage() {
                   </div>
                   <div>
                     <label className="block text-[12px] font-semibold text-[#333] mb-1">
-                      Contact Number <span className="text-[#f85d37]">*</span>
+                      Contact Number <span className="text-[#F0783A]">*</span>
                     </label>
                     <input
                       type="tel"
@@ -278,17 +278,17 @@ export default function ITServicesPage() {
                       placeholder="Tell us about your project or challenge…"
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-[#e5e4e7] bg-[#fafafa] text-[14px] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:ring-2 focus:ring-[#6128a6]/20 focus:border-[#6128a6] transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-xl border border-[rgba(13,17,45,0.10)] bg-[#fafafa] text-[14px] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:ring-2 focus:ring-[#EB9B3D]/20 focus:border-[#EB9B3D] transition-all resize-none"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-[#f85d37] to-[#ff7a58] text-white rounded-xl py-3 font-bold text-[14px] hover:shadow-[0_8px_28px_rgba(248,93,55,0.40)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full bg-gradient-to-r from-[#F0783A] to-[#ff7a58] text-white rounded-xl py-3 font-bold text-[14px] hover:shadow-[0_8px_28px_rgba(248,93,55,0.40)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     Send Message <ChevronRight className="w-4 h-4" />
                   </button>
                   <div className="flex items-center gap-2 text-[11px] text-[#bbb]">
-                    <Shield className="w-3.5 h-3.5 text-[#6128a6]/50 shrink-0" />
+                    <Shield className="w-3.5 h-3.5 text-[#EB9B3D]/50 shrink-0" />
                     We respect your privacy. No spam, ever.
                   </div>
                 </form>
@@ -331,7 +331,7 @@ export default function ITServicesPage() {
               style={{
                 width: currentBanner === idx ? "24px" : "8px",
                 height: "8px",
-                backgroundColor: currentBanner === idx ? "#aa3bff" : "rgba(255,255,255,0.35)",
+                backgroundColor: currentBanner === idx ? "#DA4D33" : "rgba(255,255,255,0.35)",
               }}
             />
           ))}
@@ -340,29 +340,29 @@ export default function ITServicesPage() {
       </div>{/* end Hero carousel */}
 
       {/* Intro + Vision */}
-      <section className="py-24 bg-[#f8f5ff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#ecdaff] opacity-50 blur-[100px] pointer-events-none" />
+      <section className="py-24 bg-[#ffffff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#FEF0DC] opacity-50 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
             {/* Intro text */}
             <ScrollReveal direction="left">
               <div>
-                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Our Approach
                 </span>
-                <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold text-[#0d0517] leading-tight mb-6">
+                <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold text-[#0D112D] leading-tight mb-6">
                   Strategically led.&nbsp;
-                  <span className="text-[#6128a6]">Proactively managed.</span>
+                  <span className="text-[#EB9B3D]">Proactively managed.</span>
                 </h2>
-                <p className="text-[15px] text-[#0d0517]/65 leading-relaxed mb-5 text-justify">
+                <p className="text-[15px] text-[#0D112D]/65 leading-relaxed mb-5 text-justify">
                   In order for a business to strive and to meet its planned objectives, supporting IT is not just
                   enough it must be strategically led and proactively managed. Our forward-thinking IT service
                   CoE (Center of Excellence) team has been designing end-to-end solutions for organisations to
                   have a technology edge and to be ahead of the curve while running their operations seriously,
                   thus making their infrastructure highly available.
                 </p>
-                <p className="text-[15px] text-[#0d0517]/65 leading-relaxed text-justify">
+                <p className="text-[15px] text-[#0D112D]/65 leading-relaxed text-justify">
                   Infoplus Technologies has carefully structured different business verticals to cater to the
                   needs of every IT service requirement at any time from software development and AI to
                   infrastructure management and cyber security.
@@ -374,14 +374,14 @@ export default function ITServicesPage() {
             <ScrollReveal direction="right" delay={120}>
               <div className="space-y-5">
                 {/* Vision card */}
-                <div className="relative bg-[#0d0517] rounded-3xl p-8 overflow-hidden">
-                  <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-[#6128a6] opacity-20 blur-[60px] pointer-events-none" />
+                <div className="relative bg-[#0D112D] rounded-3xl p-8 overflow-hidden">
+                  <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-[#EB9B3D] opacity-20 blur-[60px] pointer-events-none" />
                   <div className="relative z-10">
                     <div className="flex items-center gap-2 mb-4">
-                      <div className="w-8 h-8 rounded-lg bg-[#aa3bff]/20 flex items-center justify-center">
-                        <Lightbulb className="w-4 h-4 text-[#aa3bff]" />
+                      <div className="w-8 h-8 rounded-lg bg-[#DA4D33]/20 flex items-center justify-center">
+                        <Lightbulb className="w-4 h-4 text-[#DA4D33]" />
                       </div>
-                      <span className="text-[11px] font-bold uppercase tracking-widest text-[#aa3bff]">
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-[#DA4D33]">
                         Vision
                       </span>
                     </div>
@@ -389,7 +389,7 @@ export default function ITServicesPage() {
                       "We strive to support improvements in IT services and solutions in order to make a visible
                       positive contribution to the client's IT growth strategy."
                     </p>
-                    <div className="mt-5 h-px bg-linear-to-r from-[#6128a6]/60 via-[#aa3bff]/40 to-transparent" />
+                    <div className="mt-5 h-px bg-linear-to-r from-[#EB9B3D]/60 via-[#DA4D33]/40 to-transparent" />
                     <p className="mt-3 text-[12px] text-white/40 font-semibold uppercase tracking-widest">
                       Infoplus Technologies IT CoE
                     </p>
@@ -399,13 +399,13 @@ export default function ITServicesPage() {
                 {/* Feature chips */}
                 <div className="grid grid-cols-3 gap-3">
                   {[
-                    { icon: Globe,  label: "Europe & India",    color: "#6128a6" },
-                    { icon: Users,  label: "Dedicated CoE",     color: "#aa3bff" },
-                    { icon: Zap,    label: "End-to-End",        color: "#f85d37" },
+                    { icon: Globe,  label: "Europe & India",    color: "#EB9B3D" },
+                    { icon: Users,  label: "Dedicated CoE",     color: "#DA4D33" },
+                    { icon: Zap,    label: "End-to-End",        color: "#F0783A" },
                   ].map((f, i) => (
                     <div
                       key={f.label}
-                      className="flex flex-col items-center gap-2 bg-white border border-[#ecdaff] rounded-2xl py-4 px-3 hover:border-[#6128a6]/30 hover:shadow-[0_4px_16px_rgba(97,40,166,0.08)] transition-all duration-300"
+                      className="flex flex-col items-center gap-2 bg-white border border-[#FEF0DC] rounded-2xl py-4 px-3 hover:border-[#EB9B3D]/30 hover:shadow-[0_4px_16px_rgba(235,155,61,0.08)] transition-all duration-300"
                       style={{ animation: `revealFade 350ms ease ${i * 80 + 300}ms both` }}
                     >
                       <div
@@ -414,7 +414,7 @@ export default function ITServicesPage() {
                       >
                         <f.icon className="w-4 h-4" />
                       </div>
-                      <span className="text-[11px] font-semibold text-[#0d0517]/70 text-center">{f.label}</span>
+                      <span className="text-[11px] font-semibold text-[#0D112D]/70 text-center">{f.label}</span>
                     </div>
                   ))}
                 </div>
@@ -426,8 +426,8 @@ export default function ITServicesPage() {
 
       {/* -- Why Choose Us ----------------------------------------- */}
       <section className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute top-[-10%] right-[-8%] w-96 h-96 rounded-full bg-[#ecdaff] opacity-50 blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-[-8%] left-[-5%] w-72 h-72 rounded-full bg-[#6128a6]/10 blur-[80px] pointer-events-none" />
+        <div className="absolute top-[-10%] right-[-8%] w-96 h-96 rounded-full bg-[#FEF0DC] opacity-50 blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-[-8%] left-[-5%] w-72 h-72 rounded-full bg-[#EB9B3D]/10 blur-[80px] pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -435,12 +435,12 @@ export default function ITServicesPage() {
             {/* Content */}
             <ScrollReveal direction="left">
               <div>
-                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Why Choose Us
                 </span>
-                <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold text-[#0d0517] leading-tight mb-6">
+                <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold text-[#0D112D] leading-tight mb-6">
                   Why Choose Infoplus for{" "}
-                  <span className="text-[#6128a6]">IT Services</span>
+                  <span className="text-[#EB9B3D]">IT Services</span>
                 </h2>
                 <p className="text-[15px] text-[#555] leading-relaxed mb-10 text-justify">
                   At Infoplus, we believe technology should make business easier rather than complicate its needs.
@@ -454,15 +454,15 @@ export default function ITServicesPage() {
                 {/* Feature tiles */}
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    { icon: Layers, label: "End to End IT Solutions", desc: "Full-lifecycle coverage from strategy to delivery", color: "#6128a6" },
-                    { icon: Users,  label: "Skilled Team",            desc: "Experienced engineers across Europe & India",     color: "#aa3bff" },
-                    { icon: Clock,  label: "24/7 Support",            desc: "Round-the-clock monitoring and assistance",       color: "#f85d37" },
+                    { icon: Layers, label: "End to End IT Solutions", desc: "Full-lifecycle coverage from strategy to delivery", color: "#EB9B3D" },
+                    { icon: Users,  label: "Skilled Team",            desc: "Experienced engineers across Europe & India",     color: "#DA4D33" },
+                    { icon: Clock,  label: "24/7 Support",            desc: "Round-the-clock monitoring and assistance",       color: "#F0783A" },
                     { icon: Star,   label: "Focus on Quality",        desc: "No compromise on standards, every delivery",      color: "#14b8a6" },
-                    { icon: Zap,    label: "Fast Delivery",           desc: "Agile execution without sacrificing quality",     color: "#f85d37" },
+                    { icon: Zap,    label: "Fast Delivery",           desc: "Agile execution without sacrificing quality",     color: "#F0783A" },
                   ].map((f, i) => (
                     <div
                       key={f.label}
-                      className={`flex items-start gap-3 p-4 rounded-2xl border border-[#f0ecf9] hover:border-[#6128a6]/25 hover:shadow-[0_4px_16px_rgba(97,40,166,0.08)] transition-all duration-300 bg-[#fafafe]${i === 4 ? " col-span-2" : ""}`}
+                      className={`flex items-start gap-3 p-4 rounded-2xl border border-[#f0ecf9] hover:border-[#EB9B3D]/25 hover:shadow-[0_4px_16px_rgba(235,155,61,0.08)] transition-all duration-300 bg-[#fafafe]${i === 4 ? " col-span-2" : ""}`}
                     >
                       <div
                         className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
@@ -471,7 +471,7 @@ export default function ITServicesPage() {
                         <f.icon className="w-4 h-4" />
                       </div>
                       <div>
-                        <p className="text-[13px] font-bold text-[#0d0517] mb-0.5">{f.label}</p>
+                        <p className="text-[13px] font-bold text-[#0D112D] mb-0.5">{f.label}</p>
                         <p className="text-[12px] text-[#888] leading-snug">{f.desc}</p>
                       </div>
                     </div>
@@ -492,13 +492,13 @@ export default function ITServicesPage() {
                 </div>
 
                 {/* Floating stat */}
-                <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl px-5 py-4 shadow-[0_8px_32px_rgba(97,40,166,0.12)] border border-[#ecdaff]">
-                  <p className="text-[26px] font-black text-[#6128a6] leading-none mb-0">20+</p>
+                <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl px-5 py-4 shadow-[0_8px_32px_rgba(235,155,61,0.12)] border border-[#FEF0DC]">
+                  <p className="text-[26px] font-black text-[#EB9B3D] leading-none mb-0">20+</p>
                   <p className="text-[11px] text-[#888]">Years of IT Excellence</p>
                 </div>
 
                 {/* Floating badge */}
-                <div className="absolute -top-4 -right-4 bg-[#f85d37] text-white rounded-2xl px-4 py-3 shadow-[0_8px_24px_rgba(248,93,55,0.30)]">
+                <div className="absolute -top-4 -right-4 bg-[#F0783A] text-white rounded-2xl px-4 py-3 shadow-[0_8px_24px_rgba(248,93,55,0.30)]">
                   <p className="text-[11px] font-bold uppercase tracking-widest mb-0">ISO 27001</p>
                   <p className="text-[10px] opacity-80">Certified</p>
                 </div>
@@ -511,9 +511,9 @@ export default function ITServicesPage() {
 
 
       {/* â"€â"€ Services Grid â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-[#0d0517] relative overflow-hidden">
-        <div className="absolute top-[-10%] left-[-5%] w-[600px] h-[600px] rounded-full bg-[#381f55] opacity-35 blur-[130px] pointer-events-none" />
-        <div className="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[#6128a6] opacity-15 blur-[120px] pointer-events-none" />
+      <section className="py-24 bg-[#0D112D] relative overflow-hidden">
+        <div className="absolute top-[-10%] left-[-5%] w-[600px] h-[600px] rounded-full bg-[#242E72] opacity-35 blur-[130px] pointer-events-none" />
+        <div className="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[#EB9B3D] opacity-15 blur-[120px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{ backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)", backgroundSize: "28px 28px" }}
@@ -527,7 +527,7 @@ export default function ITServicesPage() {
               </span>
               <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold text-white leading-tight">
                 Seven pillars of&nbsp;
-                <span className="text-[#aa3bff]">IT excellence</span>
+                <span className="text-[#DA4D33]">IT excellence</span>
               </h2>
               <p className="text-[15px] text-white/50 mt-4 max-w-2xl mx-auto">
                 Each vertical is purpose-built and CoE-backed click any service to explore the full offering.
@@ -546,23 +546,23 @@ export default function ITServicesPage() {
               >
                 <Link
                   to={svc.href}
-                  className="group relative flex flex-col h-full bg-white/4 border border-white/8 rounded-3xl p-7 hover:bg-white/7 hover:border-[#6128a6]/30 hover:-translate-y-1 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.20)] transition-all duration-300 overflow-hidden"
+                  className="group relative flex flex-col h-full bg-white/4 border border-white/8 rounded-3xl p-7 hover:bg-white/7 hover:border-[#EB9B3D]/30 hover:-translate-y-1 hover:shadow-[0_16px_48px_-8px_rgba(235,155,61,0.20)] transition-all duration-300 overflow-hidden"
                 >
                   {/* Hover glow */}
-                  <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/10 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#EB9B3D]/10 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   {/* Icon */}
-                  <div className={`w-12 h-12 rounded-2xl bg-linear-to-br ${svc.gradient} flex items-center justify-center mb-5 shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                    <svc.icon className="w-6 h-6 text-white" />
+                  <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${svc.gradient} flex items-center justify-center mb-5 shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                    <svc.icon className="w-5 h-5 text-white" strokeWidth={1.6} />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-[19px] font-bold text-white mb-2 group-hover:text-[#aa3bff] transition-colors duration-300">
+                  <h3 className="text-[19px] font-bold text-white mb-2 group-hover:text-[#DA4D33] transition-colors duration-300">
                     {svc.title}
                   </h3>
 
                   {/* Accent line */}
-                  <div className="w-8 h-0.5 rounded-full mb-5 bg-[#6128a6]/50 group-hover:w-16 transition-all duration-300" />
+                  <div className="w-8 h-0.5 rounded-full mb-5 bg-[#EB9B3D]/50 group-hover:w-16 transition-all duration-300" />
 
                   {/* Description */}
                   <p className="text-[14px] text-white/55 leading-relaxed flex-1 group-hover:text-white/70 transition-colors duration-300 mb-0">
@@ -570,7 +570,7 @@ export default function ITServicesPage() {
                   </p>
 
                   {/* Read More link */}
-                  <div className="mt-6 flex items-center gap-1.5 text-[13px] font-semibold text-[#f85d37]">
+                  <div className="mt-6 flex items-center gap-1.5 text-[13px] font-semibold text-[#F0783A]">
                     Read More
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
@@ -589,16 +589,16 @@ export default function ITServicesPage() {
       />
 
       {/* â"€â"€ CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
+      <section className="py-24 bg-[#ffffff] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{ backgroundImage: "radial-gradient(circle, #6128a6 1px, transparent 1px)", backgroundSize: "32px 32px" }}
+          style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "32px 32px" }}
         />
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
           <ScrollReveal variant="card">
-            <div className="relative bg-linear-to-br from-[#1e0a38] via-[#381f55] to-[#6128a6] rounded-3xl p-10 md:p-14 text-center overflow-hidden shadow-[0_32px_80px_rgba(97,40,166,0.35)]">
-              <div className="absolute top-[-30%] right-[-10%] w-80 h-80 rounded-full bg-[#aa3bff] opacity-20 blur-[80px] pointer-events-none" />
-              <div className="absolute bottom-[-20%] left-[-10%] w-64 h-64 rounded-full bg-[#f85d37] opacity-12 blur-[80px] pointer-events-none" />
+            <div className="relative bg-linear-to-br from-[#141A3D] via-[#242E72] to-[#EB9B3D] rounded-3xl p-10 md:p-14 text-center overflow-hidden shadow-[0_32px_80px_rgba(235,155,61,0.35)]">
+              <div className="absolute top-[-30%] right-[-10%] w-80 h-80 rounded-full bg-[#DA4D33] opacity-20 blur-[80px] pointer-events-none" />
+              <div className="absolute bottom-[-20%] left-[-10%] w-64 h-64 rounded-full bg-[#F0783A] opacity-12 blur-[80px] pointer-events-none" />
 
               <span className="relative z-10 inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white/70 text-[11px] font-bold uppercase tracking-widest mb-5">
                 Work With Us
@@ -613,7 +613,7 @@ export default function ITServicesPage() {
               <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#f85d37] hover:bg-[#e84d27] text-white font-bold text-[15px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
+                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#F0783A] hover:bg-[#e84d27] text-white font-bold text-[15px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
                 >
                   Start a Conversation
                   <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />

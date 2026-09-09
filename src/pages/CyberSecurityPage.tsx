@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+﻿import { useState, useRef, useEffect } from "react";
 import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
@@ -29,8 +29,8 @@ type CyberService = {
 const CYBER_SERVICES: CyberService[] = [
   {
     icon: Eye,
-    gradient: "from-[#381f55] to-[#6128a6]",
-    accentColor: "#aa3bff",
+    gradient: "from-[#242E72] to-[#EB9B3D]",
+    accentColor: "#DA4D33",
     title: "Security Management Center (SOC) & Managed Detection Response (MDR)",
     desc: "Protect your business with 24/7 threat monitoring, advanced analytics, and rapid incident response to stop cyber threats before they impact operations. Infoplus ensures continuous security visibility across networks, endpoints, and applications to keep your digital environment safe.",
     features: [
@@ -55,7 +55,7 @@ const CYBER_SERVICES: CyberService[] = [
   },
   {
     icon: Lock,
-    gradient: "from-[#9a2600] to-[#f85d37]",
+    gradient: "from-[#9a2600] to-[#F0783A]",
     accentColor: "#ff9a7a",
     title: "Identity & Access Management",
     desc: "Control who can access your systems with secure authentication, access policies, and identity governance solutions. Infoplus protects digital identities while enabling seamless and secure access across enterprise applications.",
@@ -120,8 +120,8 @@ type CyberCapability = {
 const CYBER_CAPABILITIES: CyberCapability[] = [
   {
     icon: Eye,
-    gradient: "from-[#381f55] to-[#6128a6]",
-    accentColor: "#aa3bff",
+    gradient: "from-[#242E72] to-[#EB9B3D]",
+    accentColor: "#DA4D33",
     title: "Security Management Center (SOC) & MDR",
     shortDesc: "Protect your business with 24/7 threat monitoring and rapid incident response.",
     tagline: "Security That Never Sleeps",
@@ -182,7 +182,7 @@ const CYBER_CAPABILITIES: CyberCapability[] = [
   },
   {
     icon: Lock,
-    gradient: "from-[#9a2600] to-[#f85d37]",
+    gradient: "from-[#9a2600] to-[#F0783A]",
     accentColor: "#ff9a7a",
     title: "Identity & Access Management",
     shortDesc: "Secure digital identities and control access with robust authentication and governance.",
@@ -340,7 +340,7 @@ export default function CyberSecurityPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <Link
             to="/contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
           >
             Secure Your Business
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -362,8 +362,8 @@ export default function CyberSecurityPage() {
             100% { transform: translate(-50%,-50%) scale(3);   opacity: 0;   }
           }
           @keyframes shieldGlow {
-            0%,100% { box-shadow: 0 0 30px rgba(97,40,166,0.35), 0 0 60px rgba(97,40,166,0.12); }
-            50%     { box-shadow: 0 0 55px rgba(170,59,255,0.65), 0 0 100px rgba(170,59,255,0.22); }
+            0%,100% { box-shadow: 0 0 30px rgba(235,155,61,0.35), 0 0 60px rgba(235,155,61,0.12); }
+            50%     { box-shadow: 0 0 55px rgba(218,77,51,0.65), 0 0 100px rgba(218,77,51,0.22); }
           }
           @keyframes orbitCW  { from { transform:translate(-50%,-50%) rotate(0deg);   } to { transform:translate(-50%,-50%) rotate(360deg);  } }
           @keyframes orbitCCW { from { transform:translate(-50%,-50%) rotate(0deg);   } to { transform:translate(-50%,-50%) rotate(-360deg); } }
@@ -374,8 +374,8 @@ export default function CyberSecurityPage() {
         `}</style>
 
         {/* Ambient orbs */}
-        <div className="absolute top-[-10%] right-[-6%] w-[520px] h-[520px] rounded-full bg-[#ecdaff] opacity-60 blur-[130px] pointer-events-none" />
-        <div className="absolute bottom-[-8%] left-[-5%] w-96 h-96 rounded-full bg-[#6128a6]/8 blur-[110px] pointer-events-none" />
+        <div className="absolute top-[-10%] right-[-6%] w-[520px] h-[520px] rounded-full bg-[#FEF0DC] opacity-60 blur-[130px] pointer-events-none" />
+        <div className="absolute bottom-[-8%] left-[-5%] w-96 h-96 rounded-full bg-[#EB9B3D]/8 blur-[110px] pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
 
@@ -388,17 +388,17 @@ export default function CyberSecurityPage() {
                 {/* Pulsing badge */}
                 <div className="flex items-center gap-2.5 mb-7">
                   <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#aa3bff] opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#6128a6]" />
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#DA4D33] opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#EB9B3D]" />
                   </span>
-                  <span className="text-[11px] font-bold text-[#6128a6] uppercase tracking-widest">About the Service</span>
+                  <span className="text-[11px] font-bold text-[#EB9B3D] uppercase tracking-widest">About the Service</span>
                 </div>
 
-                <h2 className="text-[clamp(1.9rem,3.8vw,3rem)] font-black text-[#0d0517] leading-[1.1] tracking-tight mb-8">
+                <h2 className="text-[clamp(1.9rem,3.8vw,3rem)] font-black text-[#0D112D] leading-[1.1] tracking-tight mb-8">
                   Protecting Your Business
                   <span
                     className="block"
-                    style={{ background: "linear-gradient(90deg,#6128a6 0%,#aa3bff 60%,#f85d37 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
+                    style={{ background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 60%,#F0783A 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
                   >
                     in the Digital Age
                   </span>
@@ -427,26 +427,26 @@ export default function CyberSecurityPage() {
                 {[0, 1, 2].map((i) => (
                   <div
                     key={i}
-                    className="absolute rounded-full border border-[#6128a6]/35"
+                    className="absolute rounded-full border border-[#EB9B3D]/35"
                     style={{ width: 100, height: 100, top: "50%", left: "50%", animation: `sonarRing 3.2s ease-out ${i * 1.07}s infinite` }}
                   />
                 ))}
 
                 {/* Slow rotating dashed ring (outer) */}
                 <div
-                  className="absolute rounded-full border-2 border-dashed border-[#6128a6]/20"
+                  className="absolute rounded-full border-2 border-dashed border-[#EB9B3D]/20"
                   style={{ width: 300, height: 300, top: "50%", left: "50%", animation: "orbitCW 22s linear infinite" }}
                 />
 
                 {/* Counter-rotating solid ring (inner) */}
                 <div
-                  className="absolute rounded-full border border-[#aa3bff]/20"
+                  className="absolute rounded-full border border-[#DA4D33]/20"
                   style={{ width: 220, height: 220, top: "50%", left: "50%", animation: "orbitCCW 14s linear infinite" }}
                 />
 
                 {/* Center shield */}
                 <div
-                  className="absolute flex items-center justify-center rounded-[26px] bg-linear-to-br from-[#381f55] to-[#6128a6]"
+                  className="absolute flex items-center justify-center rounded-[26px] bg-linear-to-br from-[#242E72] to-[#EB9B3D]"
                   style={{ width: 88, height: 88, top: "50%", left: "50%", transform: "translate(-50%,-50%)", animation: "shieldGlow 2.8s ease-in-out infinite" }}
                 >
                   <Shield className="w-10 h-10 text-white" />
@@ -455,11 +455,11 @@ export default function CyberSecurityPage() {
                 {/* Orbiting icons — hexagonal layout */}
                 {([
                   { icon: Eye,         color: "#3b82f6", x: 0,    y: -130 },
-                  { icon: Lock,        color: "#f85d37", x: 113,  y: -65  },
+                  { icon: Lock,        color: "#F0783A", x: 113,  y: -65  },
                   { icon: AlertCircle, color: "#f59e0b", x: 113,  y: 65   },
-                  { icon: Search,      color: "#aa3bff", x: 0,    y: 130  },
+                  { icon: Search,      color: "#DA4D33", x: 0,    y: 130  },
                   { icon: Settings,    color: "#14b8a6", x: -113, y: 65   },
-                  { icon: CheckCircle2,color: "#6128a6", x: -113, y: -65  },
+                  { icon: CheckCircle2,color: "#EB9B3D", x: -113, y: -65  },
                 ] as { icon: React.ElementType; color: string; x: number; y: number }[]).map(({ icon: Icon, color, x, y }, i) => (
                   <div
                     key={i}
@@ -485,23 +485,20 @@ export default function CyberSecurityPage() {
           {/* ── Capability cards ── */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { icon: Lock,        color: "#aa3bff", label: "Identity & Access Management",   desc: "Strengthening control across all digital platforms"   },
+              { icon: Lock,        color: "#DA4D33", label: "Identity & Access Management",   desc: "Strengthening control across all digital platforms"   },
               { icon: Eye,         color: "#3b82f6", label: "Real-time Security Analytics",   desc: "Identify threats before they impact operations"        },
               { icon: Shield,      color: "#14b8a6", label: "Business Continuity",            desc: "Maintain operational stability under any threat"       },
-              { icon: CheckCircle2,color: "#6128a6", label: "Global Compliance Support",      desc: "Meet regulatory and security standards worldwide"      },
-              { icon: Settings,    color: "#f85d37", label: "Secure Digital Transformation",  desc: "Safe adoption of modern technologies at every stage"   },
+              { icon: CheckCircle2,color: "#EB9B3D", label: "Global Compliance Support",      desc: "Meet regulatory and security standards worldwide"      },
+              { icon: Settings,    color: "#F0783A", label: "Secure Digital Transformation",  desc: "Safe adoption of modern technologies at every stage"   },
               { icon: AlertCircle, color: "#f59e0b", label: "Advanced Threat Monitoring",     desc: "24/7 detection and rapid incident response"            },
             ].map(({ icon: Icon, color, label, desc }, i) => (
               <ScrollReveal key={label} direction="up" delay={i * 75}>
-                <div className="group bg-[#f8f5ff] border border-[#e8e0f7] rounded-2xl p-5 hover:bg-white hover:border-[#6128a6]/35 hover:shadow-[0_8px_32px_rgba(97,40,166,0.10)] transition-all duration-300">
+                <div className="group bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-2xl p-5 hover:bg-white hover:border-[#EB9B3D]/35 hover:shadow-[0_8px_32px_rgba(235,155,61,0.10)] transition-all duration-300">
                   <div className="flex items-center gap-3 mb-3">
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                      style={{ backgroundColor: `${color}18`, color }}
-                    >
-                      <Icon className="w-5 h-5" />
+                    <div className="w-10 h-10 rounded-xl bg-[#EB9B3D]/10 flex items-center justify-center shrink-0 text-[#EB9B3D]">
+                      <Icon className="w-5 h-5" strokeWidth={1.6} />
                     </div>
-                    <p className="text-[13.5px] font-bold text-[#0d0517] leading-snug">{label}</p>
+                    <p className="text-[13.5px] font-bold text-[#0D112D] leading-snug">{label}</p>
                   </div>
                   <p className="text-[12.5px] text-[#666] leading-relaxed">{desc}</p>
                 </div>
@@ -514,17 +511,17 @@ export default function CyberSecurityPage() {
 
       {/* ── Intro + AI Capabilities ──────────────────────────── */}
       <section className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#ffffff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left" duration={720}>
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Security Practice
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                 Advanced Security for
                 <br />
-                <span className="text-[#6128a6]">a Threat-Filled World</span>
+                <span className="text-[#EB9B3D]">a Threat-Filled World</span>
               </h2>
               <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
                 Infoplus cyber security services include a security operations
@@ -541,31 +538,31 @@ export default function CyberSecurityPage() {
                 industry-leading organisations provide secure access while
                 improving employee value-proposition.
               </p>
-              <div className="flex items-center gap-2 text-[13px] font-semibold text-[#6128a6]">
+              <div className="flex items-center gap-2 text-[13px] font-semibold text-[#EB9B3D]">
                 <Shield className="w-4 h-4" />
                 Security Operations Center (SOC) + Engineering Capability
               </div>
             </ScrollReveal>
 
             <ScrollReveal direction="right" duration={720} delay={150}>
-              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/8 blur-[60px] pointer-events-none" />
+              <div className="bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-3xl p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#EB9B3D]/8 blur-[60px] pointer-events-none" />
                 {/* Scanning circle */}
                 <div className="relative flex items-center justify-center mb-6">
-                  <div className="w-24 h-24 rounded-full border-2 border-[#6128a6]/20 flex items-center justify-center relative">
-                    <div className="w-16 h-16 rounded-full border-2 border-[#6128a6]/35 flex items-center justify-center relative">
-                      <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center">
+                  <div className="w-24 h-24 rounded-full border-2 border-[#EB9B3D]/20 flex items-center justify-center relative">
+                    <div className="w-16 h-16 rounded-full border-2 border-[#EB9B3D]/35 flex items-center justify-center relative">
+                      <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#242E72] to-[#EB9B3D] flex items-center justify-center">
                         <Shield className="w-5 h-5 text-white" />
                       </div>
                     </div>
                     <div
-                      className="absolute top-[50%] left-[50%] w-12 h-px bg-[#6128a6]/50 origin-left"
+                      className="absolute top-[50%] left-[50%] w-12 h-px bg-[#EB9B3D]/50 origin-left"
                       style={{ animation: "spin 3s linear infinite", transformOrigin: "left center" }}
                     />
                   </div>
                 </div>
                 <div className="relative z-10">
-                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] mb-4 text-center">
+                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#EB9B3D] mb-4 text-center">
                     AI-Powered Security Capabilities
                   </p>
                   <div className="grid grid-cols-1 gap-2">
@@ -575,7 +572,7 @@ export default function CyberSecurityPage() {
                         className="flex items-center gap-2.5 text-[13px] text-[#555]"
                         style={{ animation: `revealFade 400ms ease ${i * 80 + 200}ms both` }}
                       >
-                        <Lock className="w-3.5 h-3.5 text-[#6128a6] shrink-0" />
+                        <Lock className="w-3.5 h-3.5 text-[#EB9B3D] shrink-0" />
                         {cap}
                       </div>
                     ))}
@@ -588,9 +585,9 @@ export default function CyberSecurityPage() {
       </section>
 
       {/* ── Security Portfolio ───────────────────────────────── */}
-      <section className="py-20 bg-[#0d0517] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#6128a6]/15 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#f85d37]/8 blur-[100px] pointer-events-none" />
+      <section className="py-20 bg-[#0D112D] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#EB9B3D]/15 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#F0783A]/8 blur-[100px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -603,7 +600,7 @@ export default function CyberSecurityPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-14">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Security Portfolio
               </span>
               <h2 className="text-[36px] font-bold text-white mt-2">
@@ -630,7 +627,7 @@ export default function CyberSecurityPage() {
                     duration={700}
                     delay={60}
                   >
-                    <div className="group bg-white/4 border border-white/8 rounded-2xl p-7 hover:bg-white/7 hover:border-[#6128a6]/30 transition-all duration-300 relative overflow-hidden">
+                    <div className="group bg-white/4 border border-white/8 rounded-2xl p-7 hover:bg-white/7 hover:border-[#EB9B3D]/30 transition-all duration-300 relative overflow-hidden">
                       {/* Accent glow on hover */}
                       <div
                         className="absolute top-0 right-0 w-48 h-48 rounded-full blur-[80px] opacity-0 group-hover:opacity-15 transition-opacity duration-500 pointer-events-none"
@@ -640,10 +637,8 @@ export default function CyberSecurityPage() {
                       <div className="relative z-10 flex flex-col md:flex-row gap-7 items-start">
                         {/* Icon + gradient bar */}
                         <div className="shrink-0">
-                          <div
-                            className={`w-14 h-14 rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
-                          >
-                            <SIcon className="w-7 h-7 text-white" />
+                          <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <SIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                           </div>
                         </div>
 
@@ -661,12 +656,7 @@ export default function CyberSecurityPage() {
                             {features.map((f, j) => (
                               <span
                                 key={j}
-                                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold border"
-                                style={{
-                                  backgroundColor: `${accentColor}12`,
-                                  borderColor: `${accentColor}30`,
-                                  color: accentColor,
-                                }}
+                                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold border bg-[#EB9B3D]/10 border-[#EB9B3D]/30 text-[#EB9B3D]"
                               >
                                 <CheckCircle2 className="w-3 h-3" />
                                 {f}
@@ -675,7 +665,7 @@ export default function CyberSecurityPage() {
                           </div>
                         </div>
 
-                        <ChevronRight className="w-5 h-5 text-white/20 group-hover:text-[#aa3bff] group-hover:translate-x-1 transition-all duration-300 shrink-0 self-center hidden md:block" />
+                        <ChevronRight className="w-5 h-5 text-white/20 group-hover:text-[#DA4D33] group-hover:translate-x-1 transition-all duration-300 shrink-0 self-center hidden md:block" />
                       </div>
                     </div>
                   </ScrollReveal>
@@ -697,10 +687,10 @@ export default function CyberSecurityPage() {
           {/* Section header */}
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 In Depth
               </span>
-              <h2 className="text-[36px] font-bold text-[#0d0517] mt-2">
+              <h2 className="text-[36px] font-bold text-[#0D112D] mt-2">
                 Explore Security Capabilities
               </h2>
               <p className="text-[15px] text-[#666] max-w-2xl mx-auto mt-4 leading-relaxed">
@@ -719,8 +709,8 @@ export default function CyberSecurityPage() {
                   onClick={() => goToDetail(i)}
                   className={`shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all border cursor-pointer ${
                     activeIdx === i
-                      ? "bg-[#0d0517] text-white border-[#0d0517]"
-                      : "bg-white text-[#555] border-[#e5e4e7] hover:border-[#6128a6]/40"
+                      ? "bg-[#0D112D] text-white border-[#0D112D]"
+                      : "bg-white text-[#555] border-[rgba(13,17,45,0.10)] hover:border-[#EB9B3D]/40"
                   }`}
                 >
                   <Icon className="w-3 h-3 shrink-0" />
@@ -735,7 +725,7 @@ export default function CyberSecurityPage() {
 
             {/* Sticky sidebar (desktop) */}
             <div className="hidden md:block md:w-52 lg:w-64 shrink-0 sticky top-25 self-start">
-              <div className="bg-[#f8f5ff] border border-[#e5e4e7] rounded-xl p-2.5">
+              <div className="bg-[#ffffff] border border-[rgba(13,17,45,0.10)] rounded-xl p-2.5">
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#aaa] px-2.5 pt-1.5 pb-1">
                   Security Services
                 </p>
@@ -746,13 +736,13 @@ export default function CyberSecurityPage() {
                       onClick={() => goToDetail(i)}
                       className={`w-full flex items-center gap-2 px-2.5 py-2 rounded-lg text-left transition-all duration-200 cursor-pointer ${
                         activeIdx === i
-                          ? "bg-[#0d0517] text-white"
-                          : "text-[#555] hover:bg-white hover:text-[#6128a6]"
+                          ? "bg-[#0D112D] text-white"
+                          : "text-[#555] hover:bg-white hover:text-[#EB9B3D]"
                       }`}
                     >
                       <span
                         className={`w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold shrink-0 ${
-                          activeIdx === i ? "bg-white/20 text-white" : "bg-[#ecdaff] text-[#6128a6]"
+                          activeIdx === i ? "bg-white/20 text-white" : "bg-[#FEF0DC] text-[#EB9B3D]"
                         }`}
                       >
                         {i + 1}
@@ -777,14 +767,14 @@ export default function CyberSecurityPage() {
                   >
                     {/* Header: icon + title + tagline */}
                     <div className="flex items-start gap-5 mb-7">
-                      <div className={`w-14 h-14 rounded-2xl bg-linear-to-br ${svc.gradient} flex items-center justify-center shrink-0`}>
-                        <Icon className="w-7 h-7 text-white" />
+                      <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0">
+                        <Icon className="w-5 h-5 text-white" strokeWidth={1.6} />
                       </div>
                       <div>
-                        <p className="text-[12px] font-bold uppercase tracking-widest mb-1" style={{ color: svc.accentColor }}>
+                        <p className="text-[12px] font-bold uppercase tracking-widest mb-1 text-[#EB9B3D]">
                           {svc.tagline}
                         </p>
-                        <h3 className="text-[24px] font-bold text-[#0d0517] leading-tight">
+                        <h3 className="text-[24px] font-bold text-[#0D112D] leading-tight">
                           {svc.title}
                         </h3>
                       </div>
@@ -795,14 +785,14 @@ export default function CyberSecurityPage() {
 
                     {/* Key Areas grid */}
                     <div className="mb-8">
-                      <p className="text-[12px] font-bold uppercase tracking-widest text-[#0d0517] mb-4">Key Areas</p>
+                      <p className="text-[12px] font-bold uppercase tracking-widest text-[#0D112D] mb-4">Key Areas</p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {svc.items.map((item, j) => (
                           <div
                             key={j}
-                            className="flex items-center gap-2.5 p-3 rounded-xl bg-[#f8f5ff] border border-[#ede8f8]"
+                            className="flex items-center gap-2.5 p-3 rounded-xl bg-[#ffffff] border border-[rgba(13,17,45,0.08)]"
                           >
-                            <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: svc.accentColor }} />
+                            <CheckCircle2 className="w-4 h-4 shrink-0 text-[#EB9B3D]" />
                             <span className="text-[13px] text-[#444] font-medium">{item}</span>
                           </div>
                         ))}
@@ -810,18 +800,15 @@ export default function CyberSecurityPage() {
                     </div>
 
                     {/* Why Infoplus? dark card */}
-                    <div
-                      className="rounded-2xl p-6 border-l-4"
-                      style={{ background: "linear-gradient(135deg,#0d0517 0%,#1a0d2e 100%)", borderLeftColor: svc.accentColor }}
-                    >
-                      <p className="text-[12px] font-bold uppercase tracking-widest mb-3" style={{ color: svc.accentColor }}>
+                    <div className="rounded-2xl p-6 border-l-4 border-[#EB9B3D] bg-[#0D112D]">
+                      <p className="text-[12px] font-bold uppercase tracking-widest mb-3 text-[#EB9B3D]">
                         Why Infoplus?
                       </p>
                       <p className="text-[14px] text-white/70 leading-[1.8] mb-5">{svc.why}</p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {svc.features.map((feat, j) => (
                           <div key={j} className="flex items-center gap-2 text-[13px] text-white/60">
-                            <ChevronRight className="w-3.5 h-3.5 shrink-0" style={{ color: svc.accentColor }} />
+                            <ChevronRight className="w-3.5 h-3.5 shrink-0 text-[#EB9B3D]" />
                             {feat}
                           </div>
                         ))}
@@ -837,7 +824,7 @@ export default function CyberSecurityPage() {
       </section>
 
       {/* ── Trust Stats ──────────────────────────────────────── */}
-      <section className="py-16 bg-[#f8f5ff] border-y border-[#e5e4e7]">
+      <section className="py-16 bg-[#ffffff] border-y border-[rgba(13,17,45,0.10)]">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -847,8 +834,8 @@ export default function CyberSecurityPage() {
               { value: "0", label: "Tolerance for unresolved threats" },
             ].map(({ value, label }, i) => (
               <ScrollReveal key={i} direction="up" delay={i * 80}>
-                <div className="text-center p-6 rounded-2xl bg-white border border-[#e5e4e7]">
-                  <p className="text-[32px] font-black text-[#6128a6] leading-none mb-2">
+                <div className="text-center p-6 rounded-2xl bg-white border border-[rgba(13,17,45,0.10)]">
+                  <p className="text-[32px] font-black text-[#EB9B3D] leading-none mb-2">
                     {value}
                   </p>
                   <p className="text-[12.5px] text-[#666] font-medium leading-snug">
@@ -872,9 +859,9 @@ export default function CyberSecurityPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
-            <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#6128a6]/25 blur-[100px] pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#f85d37]/10 blur-[80px] pointer-events-none" />
+            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#EB9B3D]/25 blur-[100px] pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#F0783A]/10 blur-[80px] pointer-events-none" />
               <div className="relative z-10">
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Stay Protected
@@ -892,7 +879,7 @@ export default function CyberSecurityPage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
                   >
                     Request a Security Assessment
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

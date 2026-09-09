@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Monitor, Activity, Clock, BarChart2, Shield,
@@ -24,21 +24,21 @@ type InfraService = {
 };
 
 const BENEFITS: Benefit[] = [
-  { icon: TrendingUp,    title: "Reduced IT Operations Cost",     gradient: "from-[#381f55] to-[#6128a6]" },
+  { icon: TrendingUp,    title: "Reduced IT Operations Cost",     gradient: "from-[#242E72] to-[#EB9B3D]" },
   { icon: Target,        title: "Increased Operational Efficiency", gradient: "from-[#0f766e] to-[#14b8a6]" },
   { icon: Activity,      title: "Improved Productivity",           gradient: "from-[#1e3a8a] to-[#3b82f6]" },
   { icon: Users,         title: "Intelligent Collaboration",       gradient: "from-[#4c1d95] to-[#7c3aed]" },
   { icon: Shield,        title: "Peace of Mind",                   gradient: "from-[#78350f] to-[#f59e0b]" },
-  { icon: Lock,          title: "Enhanced IT Security",            gradient: "from-[#9a2600] to-[#f85d37]" },
+  { icon: Lock,          title: "Enhanced IT Security",            gradient: "from-[#9a2600] to-[#F0783A]" },
   { icon: MessageSquare, title: "Rapid Response to IT Issues",     gradient: "from-[#1e3a8a] to-[#3b82f6]" },
   { icon: CheckCircle2,  title: "Additional Support",              gradient: "from-[#0f766e] to-[#14b8a6]" },
-  { icon: Globe,         title: "Improved User Experience",        gradient: "from-[#381f55] to-[#6128a6]" },
+  { icon: Globe,         title: "Improved User Experience",        gradient: "from-[#242E72] to-[#EB9B3D]" },
 ];
 
 const INFRA_SERVICES: InfraService[] = [
   {
     icon: Monitor,
-    gradient: "from-[#381f55] to-[#6128a6]",
+    gradient: "from-[#242E72] to-[#EB9B3D]",
     title: "Infrastructure Monitoring & Real-time Dashboards",
     desc: "We give you a live, clear view of your systems, so you always know exactly what's happening, not what happened yesterday.",
   },
@@ -68,7 +68,7 @@ const INFRA_SERVICES: InfraService[] = [
   },
   {
     icon: Shield,
-    gradient: "from-[#9a2600] to-[#f85d37]",
+    gradient: "from-[#9a2600] to-[#F0783A]",
     title: "Vulnerability & Automatic Patch Management",
     desc: "We keep your systems updated and protected automatically, closing security gaps before they become a real risk.",
   },
@@ -80,7 +80,7 @@ const INFRA_SERVICES: InfraService[] = [
   },
   {
     icon: Layers,
-    gradient: "from-[#381f55] to-[#6128a6]",
+    gradient: "from-[#242E72] to-[#EB9B3D]",
     title: "SIAM System Integration & Asset Management",
     desc: "We bring together your different systems and vendors into one coordinated approach, so nothing falls through the cracks.",
   },
@@ -98,7 +98,7 @@ const INFRA_SERVICES: InfraService[] = [
   },
   {
     icon: Server,
-    gradient: "from-[#9a2600] to-[#f85d37]",
+    gradient: "from-[#9a2600] to-[#F0783A]",
     title: "Data Center Migrations",
     desc: "We move your infrastructure to new environments carefully, minimising disruption to your day-to-day operations.",
   },
@@ -141,7 +141,7 @@ export default function InfrastructurePage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <Link
             to="/contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
           >
             Get a Free Assessment
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -157,19 +157,19 @@ export default function InfrastructurePage() {
 
       {/* ── Intro ────────────────────────────────────────────── */}
       <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
-        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#ffffff] blur-[80px] pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
             {/* Text 3 cols */}
             <div className="lg:col-span-3">
               <ScrollReveal direction="left" duration={700}>
-                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   About Our Practice
                 </span>
                 <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                   Proactive Infrastructure Management<br />
-                  <span className="text-[#6128a6]">for Global Enterprises</span>
+                  <span className="text-[#EB9B3D]">for Global Enterprises</span>
                 </h2>
                 <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
                   We've built our reputation by helping large, global organisations manage their technology and data proactively, not just reactively. Our infrastructure management provides a single, complete view of your systems and applications, so nothing gets missed.
@@ -183,8 +183,8 @@ export default function InfrastructurePage() {
             {/* Stats card 2 cols */}
             <div className="lg:col-span-2">
               <ScrollReveal direction="right" duration={700} delay={150}>
-                <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8">
-                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#6128a6] mb-6">
+                <div className="bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-3xl p-8">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#EB9B3D] mb-6">
                     Client-Proven Results
                   </p>
                   {[
@@ -195,7 +195,7 @@ export default function InfrastructurePage() {
                     <div
                       key={i}
                       className={`flex items-center justify-between py-4 ${
-                        i < 2 ? "border-b border-[#e8e0f7]" : ""
+                        i < 2 ? "border-b border-[rgba(13,17,45,0.08)]" : ""
                       }`}
                       style={{ animation: `revealFade 500ms ease ${i * 120 + 200}ms both` }}
                     >
@@ -211,9 +211,9 @@ export default function InfrastructurePage() {
       </section>
 
       {/* ── Key Benefits ─────────────────────────────────────── */}
-      <section className="py-20 bg-[#0d0517] relative overflow-hidden">
-        <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#6128a6]/20 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#f85d37]/10 blur-[100px] pointer-events-none" />
+      <section className="py-20 bg-[#0D112D] relative overflow-hidden">
+        <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#EB9B3D]/20 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#F0783A]/10 blur-[100px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -225,7 +225,7 @@ export default function InfrastructurePage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Immediate Impact
               </span>
               <h2 className="text-[36px] font-bold text-white mt-2">Key Benefits</h2>
@@ -239,12 +239,8 @@ export default function InfrastructurePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {BENEFITS.map(({ icon: BIcon, title, gradient }, i) => (
               <ScrollReveal key={i} direction="up" variant="card" delay={i * 70}>
-                <div className="group flex items-center gap-4 bg-white/5 border border-white/8 rounded-xl px-5 py-4 hover:bg-white/9 hover:border-[#6128a6]/40 transition-all duration-300">
-                  <div
-                    className={`w-11 h-11 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    <BIcon className="w-5 h-5 text-white" />
-                  </div>
+                <div className="group flex items-center gap-4 bg-white/5 border border-white/8 rounded-xl px-5 py-4 hover:bg-white/9 hover:border-[#EB9B3D]/40 transition-all duration-300">
+                  <BIcon className="w-6 h-6 text-[#EB9B3D] shrink-0 group-hover:scale-110 transition-transform duration-300" strokeWidth={1.6} />
                   <p className="text-[14px] font-semibold text-white/80 leading-snug">{title}</p>
                 </div>
               </ScrollReveal>
@@ -254,13 +250,13 @@ export default function InfrastructurePage() {
       </section>
 
       {/* ── Our Services Cinematic alternating cards ─────────── */}
-      <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
-        <div className="absolute top-20 right-0 w-80 h-80 rounded-full bg-[#ecdaff]/60 blur-[100px] pointer-events-none" />
+      <section className="py-24 bg-[#ffffff] relative overflow-hidden">
+        <div className="absolute top-20 right-0 w-80 h-80 rounded-full bg-[#FEF0DC]/60 blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-14">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 What We Deliver
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-2">Our Services</h2>
@@ -281,17 +277,15 @@ export default function InfrastructurePage() {
                 delay={Math.floor(i / 2) * 80}
                 className="h-full"
               >
-                <div className="group h-full flex items-start gap-5 bg-white border border-[#e5e4e7] rounded-2xl p-6 hover:border-[#6128a6]/30 hover:shadow-[0_12px_36px_-8px_rgba(97,40,166,0.10)] hover:-translate-y-0.5 transition-all duration-300">
+                <div className="group h-full flex items-start gap-5 bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl p-6 hover:border-[#EB9B3D]/30 hover:shadow-[0_12px_36px_-8px_rgba(235,155,61,0.10)] hover:-translate-y-0.5 transition-all duration-300">
                   {/* Icon */}
-                  <div
-                    className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    <SIcon className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <SIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                   </div>
 
                   {/* Content */}
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-[15px] font-bold text-[#111] group-hover:text-[#6128a6] transition-colors leading-snug mb-2">
+                    <h3 className="text-[15px] font-bold text-[#111] group-hover:text-[#EB9B3D] transition-colors leading-snug mb-2">
                       {title}
                     </h3>
                     <p className="text-[13.5px] text-[#666] leading-relaxed">{desc}</p>
@@ -314,9 +308,9 @@ export default function InfrastructurePage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
-            <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#6128a6]/25 blur-[100px] pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#f85d37]/10 blur-[80px] pointer-events-none" />
+            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#EB9B3D]/25 blur-[100px] pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#F0783A]/10 blur-[80px] pointer-events-none" />
               <div className="relative z-10">
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Get Started Today
@@ -332,7 +326,7 @@ export default function InfrastructurePage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
                   >
                     Request a Free Assessment
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

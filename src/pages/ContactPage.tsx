@@ -67,6 +67,7 @@ export function ContactPage() {
   const [errors, setErrors] = useState({ name: "", email: "", phone: "" });
 
   const handleSubmit = async (e: { preventDefault(): void }) => {
+    alert("Test Message");
     e.preventDefault();
     if (!formRef.current) return;
 
@@ -83,7 +84,7 @@ export function ContactPage() {
     try {
       const formData = new FormData(formRef.current);
       formData.append("type", "Infoplus UK Contact");
-      const res = await fetch("https://www.infoplus.co.uk/WebMail/api/Email/contact", {
+      const res = await fetch("https://test.infoplus.co.in/WebMail/api/Email/contact", {
         method: "POST",
         body: formData,
       });

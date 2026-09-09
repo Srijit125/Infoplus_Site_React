@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Settings,
@@ -33,7 +33,7 @@ const GOALS: Goal[] = [
   {
     num: "01",
     icon: Settings,
-    gradient: "from-[#381f55] to-[#6128a6]",
+    gradient: "from-[#242E72] to-[#EB9B3D]",
     title: "Optimise Internal Processes",
     desc: "We simplify the everyday workflows that slow your team down.",
   },
@@ -47,7 +47,7 @@ const GOALS: Goal[] = [
   {
     num: "03",
     icon: Zap,
-    gradient: "from-[#9a2600] to-[#f85d37]",
+    gradient: "from-[#9a2600] to-[#F0783A]",
     title: "Create a New Digital Business Model",
     desc: "we help you find new ways to deliver value. Not just digitise the old ones.",
   },
@@ -71,13 +71,13 @@ const PILLARS: Pillar[] = [
   {
     label: "Information",
     desc: "Unifying data across the enterprise for a single source of truth and intelligent decision-making",
-    gradient: "from-[#381f55] to-[#6128a6]",
+    gradient: "from-[#242E72] to-[#EB9B3D]",
     icon: Server,
   },
   {
     label: "Process",
     desc: "Streamlining workflows with intelligent automation and smart orchestration layers",
-    gradient: "from-[#9a2600] to-[#f85d37]",
+    gradient: "from-[#9a2600] to-[#F0783A]",
     icon: Settings,
   },
   {
@@ -160,7 +160,7 @@ export default function TransformationPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <Link
             to="/contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
           >
             Start Your Transformation
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -175,7 +175,7 @@ export default function TransformationPage() {
         {/* 20 Success Factors badge */}
         <div className="mt-10 flex items-center justify-center">
           <span className="flex items-center gap-2.5 px-6 py-3 rounded-full bg-white/10 border border-white/20 text-white/80 text-[13px] font-semibold">
-            <span className="w-8 h-8 rounded-full bg-[#f85d37] flex items-center justify-center text-[12px] font-black text-white shrink-0">
+            <span className="w-8 h-8 rounded-full bg-[#F0783A] flex items-center justify-center text-[12px] font-black text-white shrink-0">
               20
             </span>
             Carefully devised success factors for Digital Transformation
@@ -185,17 +185,17 @@ export default function TransformationPage() {
 
       {/* â"€â"€ Intro â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
-        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#ffffff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left" duration={720}>
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Generation Z Engineering
               </span>
               <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                 Digital is Not a Tool.
                 <br />
-                <span className="text-[#6128a6]">
+                <span className="text-[#EB9B3D]">
                   It's an Organisation-Wide Mindset.
                 </span>
               </h2>
@@ -209,10 +209,10 @@ export default function TransformationPage() {
 
             {/* Maturity Areas card */}
             <ScrollReveal direction="right" duration={720} delay={150}>
-              <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#6128a6]/8 blur-[60px] pointer-events-none" />
+              <div className="bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-3xl p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#EB9B3D]/8 blur-[60px] pointer-events-none" />
                 <div className="relative z-10">
-                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#6128a6] mb-5">
+                  <p className="text-[13px] font-bold uppercase tracking-widest text-[#EB9B3D] mb-5">
                     5 Digital Maturity Areas
                   </p>
                   <div className="space-y-3 mb-7">
@@ -225,7 +225,7 @@ export default function TransformationPage() {
                         }}
                       >
                         <div
-                          className="h-2 rounded-full bg-linear-to-r from-[#6128a6] to-[#aa3bff] transition-all duration-300"
+                          className="h-2 rounded-full bg-linear-to-r from-[#EB9B3D] to-[#DA4D33] transition-all duration-300"
                           style={{ width: `${100 - i * 8}%` }}
                         />
                         <span className="text-[13px] text-[#444] font-medium shrink-0">
@@ -234,7 +234,7 @@ export default function TransformationPage() {
                       </div>
                     ))}
                   </div>
-                  <div className="border-t border-[#e8e0f7] pt-6 text-center">
+                  <div className="border-t border-[rgba(13,17,45,0.08)] pt-6 text-center">
                     <p className="text-[32px] font-black text-[#111] leading-none">
                       20
                     </p>
@@ -250,9 +250,9 @@ export default function TransformationPage() {
       </section>
 
       {/* â"€â"€ 4 Integration Pillars â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-20 bg-[#0d0517] relative overflow-hidden">
-        <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#6128a6]/20 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#f85d37]/10 blur-[100px] pointer-events-none" />
+      <section className="py-20 bg-[#0D112D] relative overflow-hidden">
+        <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#EB9B3D]/20 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#F0783A]/10 blur-[100px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -265,7 +265,7 @@ export default function TransformationPage() {
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-12">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 How We Enable Digital
               </span>
               <h2 className="text-[36px] font-bold text-white mt-2">
@@ -286,11 +286,9 @@ export default function TransformationPage() {
                 variant="card"
                 delay={i * 100}
               >
-                <div className="group bg-white/5 border border-white/8 rounded-2xl p-7 hover:bg-white/8 hover:border-[#6128a6]/35 transition-all duration-300 h-full text-center flex flex-col items-center">
-                  <div
-                    className={`w-14 h-14 rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    <PIcon className="w-7 h-7 text-white" />
+                <div className="group bg-white/5 border border-white/8 rounded-2xl p-7 hover:bg-white/8 hover:border-[#EB9B3D]/35 transition-all duration-300 h-full text-center flex flex-col items-center">
+                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <PIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                   </div>
                   <h3 className="text-[18px] font-black text-white mb-3">
                     {label}
@@ -306,12 +304,12 @@ export default function TransformationPage() {
       </section>
 
       {/* â"€â"€ Top 5 Goals Cinematic numbered cards â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-[#f8f5ff] relative overflow-hidden">
-        <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-[#ecdaff]/60 blur-[100px] pointer-events-none" />
+      <section className="py-24 bg-[#ffffff] relative overflow-hidden">
+        <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-[#FEF0DC]/60 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
             <div className="text-center mb-14">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Strategic Goals
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-2">
@@ -328,19 +326,16 @@ export default function TransformationPage() {
                 duration={700}
                 delay={Math.floor(i / 2) * 80 + (i % 2) * 60}
               >
-                <div className="group h-full bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:border-[#6128a6]/25 hover:shadow-[0_16px_48px_-8px_rgba(97,40,166,0.10)] hover:-translate-y-0.5 transition-all duration-300">
-                  <div className={`h-1 bg-linear-to-r ${gradient}`} />
+                <div className="group h-full bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl overflow-hidden hover:border-[#EB9B3D]/25 hover:shadow-[0_16px_48px_-8px_rgba(235,155,61,0.10)] hover:-translate-y-0.5 transition-all duration-300">
                   <div className="p-7 flex flex-col sm:flex-row gap-5 items-start">
                     {/* Icon */}
                     <div className="shrink-0">
-                      <div
-                        className={`w-13 h-13 rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
-                      >
-                        <GIcon className="w-6 h-6 text-white" />
+                      <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <GIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                       </div>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-[18px] font-bold text-[#111] mb-2 group-hover:text-[#6128a6] transition-colors leading-snug">
+                      <h3 className="text-[18px] font-bold text-[#111] mb-2 group-hover:text-[#EB9B3D] transition-colors leading-snug">
                         {title}
                       </h3>
                       <p className="text-[14px] text-[#666] leading-relaxed">
@@ -357,19 +352,19 @@ export default function TransformationPage() {
 
       {/* â"€â"€ Strategy 6-Step Vertical Timeline â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-80 h-80 rounded-full bg-[#f8f5ff] blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 left-0 w-80 h-80 rounded-full bg-[#ffffff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-5xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Sticky heading */}
             <div className="lg:sticky lg:top-[120px]">
               <ScrollReveal direction="left" duration={720}>
-                <span className="inline-block py-1 px-3 rounded-full bg-[#6128a6]/10 border border-[#6128a6]/20 text-[#6128a6] text-[11px] font-bold uppercase tracking-widest mb-5">
+                <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Our Approach
                 </span>
                 <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                   Our Digital
                   <br />
-                  <span className="text-[#6128a6]">
+                  <span className="text-[#EB9B3D]">
                     Transformation Strategy
                   </span>
                 </h2>
@@ -378,7 +373,7 @@ export default function TransformationPage() {
                   successful from initial assessment through to validated,
                   scalable execution.
                 </p>
-                <div className="mt-8 flex items-center gap-2 text-[13px] font-semibold text-[#6128a6]">
+                <div className="mt-8 flex items-center gap-2 text-[13px] font-semibold text-[#EB9B3D]">
                   <Target className="w-4 h-4" />
                   Assessed across 5 Maturity Dimensions
                 </div>
@@ -387,7 +382,7 @@ export default function TransformationPage() {
 
             {/* Timeline */}
             <div className="relative">
-              <div className="absolute left-[19px] top-6 bottom-6 w-px bg-linear-to-b from-[#6128a6] via-[#6128a6]/50 to-transparent lg:left-[27px]" />
+              <div className="absolute left-[19px] top-6 bottom-6 w-px bg-linear-to-b from-[#EB9B3D] via-[#EB9B3D]/50 to-transparent lg:left-[27px]" />
               <div className="space-y-3">
                 {STRATEGY_STEPS.map(({ title, desc }, i) => (
                   <ScrollReveal
@@ -398,15 +393,15 @@ export default function TransformationPage() {
                   >
                     <div className="flex gap-6 group">
                       <div className="shrink-0 mt-1">
-                        <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#381f55] to-[#6128a6] flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform duration-300 lg:w-14 lg:h-14">
+                        <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform duration-300 lg:w-14 lg:h-14">
                           <span className="text-[11px] font-black text-white lg:text-[13px]">
                             {String(i + 1).padStart(2, "0")}
                           </span>
                         </div>
                       </div>
                       <div className="flex-1 pb-5">
-                        <div className="bg-[#f8f5ff] border border-[#e8e0f7] rounded-2xl p-5 group-hover:bg-white group-hover:border-[#6128a6]/30 group-hover:shadow-[0_8px_32px_-8px_rgba(97,40,166,0.12)] transition-all duration-300">
-                          <h3 className="text-[15px] font-bold text-[#111] mb-2 group-hover:text-[#6128a6] transition-colors">
+                        <div className="bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-2xl p-5 group-hover:bg-white group-hover:border-[#EB9B3D]/30 group-hover:shadow-[0_8px_32px_-8px_rgba(235,155,61,0.12)] transition-all duration-300">
+                          <h3 className="text-[15px] font-bold text-[#111] mb-2 group-hover:text-[#EB9B3D] transition-colors">
                             {title}
                           </h3>
                           <p className="text-[13px] text-[#555] leading-relaxed">
@@ -426,12 +421,12 @@ export default function TransformationPage() {
       <FAQAccordion faqs={TRANSFORMATION_FAQS} badge="FAQs" title="Frequently Asked Questions" subtitle="Common questions about our enterprise digital transformation services." />
 
       {/* â"€â"€ CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-20 bg-[#f8f5ff]">
+      <section className="py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
-            <div className="bg-linear-to-br from-[#0d0517] to-[#381f55] rounded-3xl p-14 text-center text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#6128a6]/25 blur-[100px] pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#f85d37]/10 blur-[80px] pointer-events-none" />
+            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#EB9B3D]/25 blur-[100px] pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#F0783A]/10 blur-[80px] pointer-events-none" />
               <div className="relative z-10">
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Begin Your Digital Journey
@@ -449,7 +444,7 @@ export default function TransformationPage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#f85d37] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
                   >
                     Start a Maturity Assessment
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
