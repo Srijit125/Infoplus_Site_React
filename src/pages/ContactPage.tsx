@@ -67,7 +67,6 @@ export function ContactPage() {
   const [errors, setErrors] = useState({ name: "", email: "", phone: "" });
 
   const handleSubmit = async (e: { preventDefault(): void }) => {
-    alert("Test Message");
     e.preventDefault();
     if (!formRef.current) return;
 
@@ -189,7 +188,7 @@ export function ContactPage() {
                         Message
                       </label>
                       <textarea
-                        name="requirement"
+                        name="message"
                         rows={5}
                         placeholder="Tell us about your project, challenge, or what you'd like to achieve…"
                         className={`${fieldCls("")} resize-none`}
