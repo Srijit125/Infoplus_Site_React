@@ -130,8 +130,9 @@ export default function EverythingDataPage() {
   return (
     <div className="w-full overflow-x-hidden">
       <PageMeta
-        title="Data Analytics & Management Services"
-        description="Unlock the value of your data with Infoplus Technologies UK. Our data analytics, data management, and business intelligence services help organisations make smarter decisions."
+        title="Data Management Services | Infoplus Technologies UK"
+        description="Scattered, inconsistent records turned into usable, standardised data, handled by the Infoplus New-Gen services team."
+        keywords="Data Management Services in UK"
         path="/services/new-generation/everything-data"
       />
       {/* ── Hero ─────────────────────────────────────────────── */}

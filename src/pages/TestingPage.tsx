@@ -139,8 +139,9 @@ export default function TestingPage() {
   return (
     <div className="w-full overflow-x-hidden">
       <PageMeta
-        title="Software Testing & QA Services"
-        description="Ensure software quality with Infoplus Technologies UK's testing services. Our QA experts deliver functional, performance, security, and automation testing for reliable software."
+        title="Software Testing Services | Infoplus Technologies UK"
+        description="Quality assurance and testing services from Infoplus, catching defects before release rather than after customers report them."
+        keywords="Software Testing Service in UK, Software Testing Services in UK"
         path="/services/it-services/testing"
       />
       {/* â"€â"€ Hero â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}

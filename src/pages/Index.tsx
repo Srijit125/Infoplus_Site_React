@@ -266,8 +266,9 @@ export default function IndexTheme2() {
   return (
     <div style={{ fontFamily: FF }}>
       <PageMeta
-        title="Managed IT Services & AI Solutions | Infoplus Technologies UK"
-        description="Infoplus Technologies UK delivers expert managed IT services including AI, cloud computing, cyber security, SAP consulting and IT staffing solutions."
+        title="Infoplus Technologies UK | IT, AI & SAP Solutions since 2000"
+        description="Global IT Company Headquartered in Borehamwood, UK, running on a fixed-price delivery model. AI, SAP, Cloud and cybersecurity, built for 17 countries."
+        keywords="Infoplus Technologies, IT Solutions, AI Solutions, SAP Solutions"
         path="/"
       />
 

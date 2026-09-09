@@ -247,8 +247,9 @@ export default function AIPage() {
   return (
     <div className="w-full">
       <PageMeta
-        title="Artificial Intelligence Services"
-        description="Harness the power of AI with Infoplus Technologies UK. Our artificial intelligence services deliver intelligent automation, machine learning, and data-driven insights for UK enterprises."
+        title="AI Centre of Excellence | Infoplus Technologies UK"
+        description="Infoplus runs a dedicated AI centre of excellence spanning machine learning, NLP, Generative AI and intelligent automation for enterprise clients."
+        keywords="AI, Artificial Intelligence, AI Services in UK, AI Service in UK, AI Service"
         path="/services/it-services/artificial-intelligence"
       />
       {/* ── Hero ──────────────────────────────────────────────── */}

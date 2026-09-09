@@ -103,8 +103,9 @@ export default function UmbrellaPage() {
   return (
     <div className="w-full overflow-x-hidden">
       <PageMeta
-        title="Umbrella Company Services"
-        description="Simplify your contracting with Infoplus Technologies UK's umbrella company service. We provide compliant, hassle-free payroll and employment solutions for IT contractors across the UK."
+        title="Umbrella Company Services for Contractors | Infoplus UK"
+        description="Payroll and compliance handled for contractors through Infoplus Technologies UK Limited's umbrella service, so paperwork isn't your problem."
+        keywords="Umbrella service in UK"
         path="/services/staffing-consulting/umbrella-service"
       />
       {/* â"€â"€ Hero â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}

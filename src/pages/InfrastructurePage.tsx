@@ -127,8 +127,9 @@ export default function InfrastructurePage() {
   return (
     <div className="w-full overflow-x-hidden">
       <PageMeta
-        title="IT Infrastructure Management Services"
-        description="Ensure business continuity with Infoplus Technologies UK's infrastructure management. We provide proactive monitoring, support, and optimisation for your IT environment."
+        title="IT Infrastructure Management | Infoplus UK"
+        description="Always-on monitoring, support and maintenance for business-critical systems, handled by Infoplus Technologies UK Limited's infrastructure team."
+        keywords="IT Infrastructure Management, Infrastructure Management service, Infrastructure management service in UK"
         path="/services/it-services/infrastructure-management"
       />
       {/* ── Hero ─────────────────────────────────────────────── */}

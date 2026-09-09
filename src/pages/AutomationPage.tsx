@@ -183,8 +183,9 @@ export default function AutomationPage() {
   return (
     <div className="w-full overflow-x-hidden">
       <PageMeta
-        title="Automation & Intelligent Process Automation"
-        description="Accelerate operational efficiency with Infoplus Technologies UK's automation services. We implement RPA, intelligent process automation, and workflow solutions tailored to your business."
+        title="Automation Services | Infoplus Technologies UK"
+        description="Robotic process automation and intelligent workflow design that cut manual tasks out of day-to-day operations at Infoplus client sites."
+        keywords="Automation Service in UK, Automation Service, Automation services in UK, Automation service in UK"
         path="/services/new-generation/automation"
       />
       {/* ── Hero ─────────────────────────────────────────────── */}

@@ -82,8 +82,9 @@ export default function StaffingConsultingPage() {
   return (
     <div className="w-full">
       <PageMeta
-        title="IT Staffing & Consulting Services"
-        description="Find the right talent and expertise with Infoplus Technologies UK's staffing and consulting services. We place skilled IT professionals for permanent, contract, and umbrella roles."
+        title="IT Staffing & Consulting | Infoplus Technologies UK"
+        description="Two decades of placing IT talent globally, now grouped into staffing, consulting and umbrella services under one Infoplus division."
+        keywords="Best IT Staffing Firms, IT Staffing firms, IT Staffing firms in UK"
         path="/services/staffing-consulting"
       />
 

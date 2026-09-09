@@ -228,8 +228,9 @@ export default function SoftwareDevelopmentPage() {
   return (
     <div className="w-full overflow-x-hidden">
       <PageMeta
-        title="Custom Software Development Services"
-        description="Build compelling, scalable software with Infoplus Technologies UK. Our development team delivers bespoke web, mobile, and enterprise applications tailored to your vision and goals."
+        title="Software Development Services | Infoplus UK"
+        description="Web platforms, custom applications and outsourced product development, built by Infoplus Technologies UK Limited's development teams."
+        keywords="Software development service in UK, Software development services in UK"
         path="/services/it-services/software-development"
       />
       {/* â"€â"€ Hero â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}

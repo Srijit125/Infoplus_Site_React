@@ -149,8 +149,9 @@ export default function ConsultingPage() {
   return (
     <div className="w-full overflow-x-hidden">
       <PageMeta
-        title="IT Consulting Solutions"
-        description="Empower your organisation with expert IT consulting from Infoplus Technologies UK. From strategy to implementation, our consultants deliver measurable business outcomes."
+        title="Best IT Consulting Solutions | Infoplus Technologies UK"
+        description="Independent technology advice from Infoplus before you commit budget, not after a vendor's already been chosen for you."
+        keywords="Best IT Consulting Solutions, IT Consulting Solutions in UK, Best IT Consulting Solutions in UK"
         path="/services/staffing-consulting/it-consulting-solutions"
       />
       {/* ── Hero ─────────────────────────────────────────────── */}

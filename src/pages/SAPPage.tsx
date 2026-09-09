@@ -139,8 +139,9 @@ export default function SAPPage() {
   return (
     <div className="w-full overflow-x-hidden">
       <PageMeta
-        title="SAP Consulting Services"
-        description="Maximise your SAP investment with Infoplus Technologies UK's SAP consulting services. From implementation to support, our experts deliver end-to-end SAP solutions across the UK."
+        title="SAP Consulting & Implementation | Infoplus UK"
+        description="SAP all-in-one implementation, post-go-live support and Oracle E-Business Suite services, delivered through SAP-certified offshore support centres."
+        keywords="SAP Consulting, SAP Consulting service, SAP Consulting services in UK"
         path="/services/it-services/sap-consulting"
       />
       {/* â"€â"€ Hero â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}

@@ -71,8 +71,9 @@ function About() {
   return (
     <div className="w-full">
       <PageMeta
-        title="About Infoplus Technologies UK"
-        description="Learn about Infoplus Technologies UK a global IT company founded in 2000 with offices worldwide, delivering managed IT services, AI, cloud computing, and digital transformation."
+        title="About Infoplus Technologies UK Limited"
+        description="Started in 2000, Infoplus runs on a performance–pricing model most IT firms don't offer – you pay for outcomes, not just hours logged."
+        keywords="About us"
         path="/about"
       />
 

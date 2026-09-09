@@ -8,6 +8,7 @@ interface PageMetaProps {
   title: string;
   description: string;
   path: string;
+  keywords?: string;
   ogImage?: string;
   noIndex?: boolean;
   jsonLd?: object;
@@ -17,11 +18,13 @@ export function PageMeta({
   title,
   description,
   path,
+  keywords,
   ogImage = OG_IMAGE,
   noIndex = false,
   jsonLd,
 }: PageMetaProps) {
-  const fullTitle    = `${title} | ${SITE_NAME}`;
+  /* If title already contains the brand name, use it as-is; otherwise append */
+  const fullTitle    = title.toLowerCase().includes("infoplus") ? title : `${title} | ${SITE_NAME}`;
   const canonicalUrl = `${BASE_URL}${path}`;
   const ogImageUrl   = `${BASE_URL}${ogImage}`;
 
@@ -29,6 +32,7 @@ export function PageMeta({
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={canonicalUrl} />
       {noIndex && <meta name="robots" content="noindex, nofollow" />}
 

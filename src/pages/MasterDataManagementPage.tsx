@@ -211,8 +211,9 @@ export default function MasterDataManagementPage() {
   return (
     <div className="w-full">
       <PageMeta
-        title="Master Data Management Solutions"
-        description="Streamline your enterprise data with Infoplus Technologies UK's Master Data Management platform. Achieve data accuracy, consistency, and governance across your organisation."
+        title="MRO Master Data Management | Infoplus Technologies UK"
+        description="Infoplus's offshore MDM centre cleans and standardises MRO master data for asset-intensive organisations managing complex material catalogues."
+        keywords="Data Management in UK, Data Management service in UK"
         path="/products/master-data-management"
       />
 

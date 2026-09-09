@@ -127,8 +127,9 @@ export default function CloudPage() {
   return (
     <div className="w-full overflow-x-hidden">
       <PageMeta
-        title="Cloud Computing Services & Solutions"
-        description="Transform your business with Infoplus Technologies UK's cloud services. We deliver cloud strategy, migration, and management across AWS, Azure, and Google Cloud platforms."
+        title="Cloud Portfolio & Migration Services | Infoplus UK"
+        description="Planning, migration and managing cloud environments without breaking what already works. One of six core IT service lines at Infoplus."
+        keywords="Cloud Service in UK, Cloud Services in UK, Cloud Service"
         path="/services/it-services/cloud-portfolio"
       />
       {/* ── Hero ─────────────────────────────────────────────── */}

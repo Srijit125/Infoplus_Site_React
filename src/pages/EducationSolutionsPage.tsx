@@ -283,8 +283,9 @@ export default function EducationSolutionsPage() {
   return (
     <div className="w-full">
       <PageMeta
-        title="Education Technology Solutions"
-        description="Discover Infoplus Technologies UK's education solutions a comprehensive EdTech platform designed to streamline learning management, student engagement, and institutional efficiency."
+        title="Education Technology Solutions | Infoplus UK"
+        description="Infoplus began in the education sector, and its wisdom platforms still power end-to-end systems for educational institutions today."
+        keywords="Education Technology in UK, Education Services in UK"
         path="/products/education-solutions"
       />
 

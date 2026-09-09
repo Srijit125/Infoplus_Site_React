@@ -135,8 +135,9 @@ export default function StaffingPage() {
   return (
     <div className="w-full overflow-x-hidden">
       <PageMeta
-        title="IT Staffing Solutions"
-        description="Access skilled IT professionals through Infoplus Technologies UK's staffing solutions. We specialise in placing expert talent across AI, cloud, cyber security, SAP, and software development."
+        title="IT Staffing Solutions | Infoplus Technologies UK"
+        description="Contract, permanent and project-based IT hiring, drawing on Infoplus's staffing relationships built over more than 20 years."
+        keywords="Best IT Staffing Solution, Staffing Solution in UK, IT Staffing Solutions in UK, Best IT Staffing Solutions in UK"
         path="/services/staffing-consulting/it-staffing-solutions"
       />
       {/* â"€â"€ Hero â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}

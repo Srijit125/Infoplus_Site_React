@@ -76,8 +76,9 @@ export default function NewGenServicesPage() {
   return (
     <div className="w-full">
       <PageMeta
-        title="New Generation IT Services"
-        description="Lead your digital future with Infoplus Technologies UK's new generation services enterprise transformation, data analytics, and intelligent automation for the modern enterprise."
+        title="New-Gen Services | Infoplus Digital Centre of Excellence"
+        description="Infoplus's Digital Centre of Excellence covers enterprise transformation, data management and automation under one New-Gen Services banner."
+        keywords="New gen service in UK, New gen service"
         path="/services/new-generation"
       />
       {/* â"€â"€ Hero â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}

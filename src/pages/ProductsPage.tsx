@@ -47,8 +47,9 @@ function ProductsPage() {
   return (
     <div className="w-full overflow-x-hidden">
       <PageMeta
-        title="Products | IT Software Solutions"
-        description="Discover Infoplus Technologies UK's product portfolio including Master Data Management and Education Solutions purpose-built software for enterprise efficiency and digital transformation."
+        title="IT Products | Infoplus Technologies UK"
+        description="Two product lines built by Infoplus: Master data management for asset-intensive industries, and technology built for education providers."
+        keywords="IT Products in UK, IT products"
         path="/products"
       />
       <PageHero

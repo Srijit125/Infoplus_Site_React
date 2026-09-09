@@ -125,8 +125,9 @@ export default function ITServicesPage() {
   return (
     <div className="w-full">
       <PageMeta
-        title="IT Services | Managed IT Solutions"
-        description="Explore Infoplus Technologies UK's full range of IT services including AI, software development, testing, infrastructure management, SAP consulting, cyber security, and cloud solutions."
+        title="IT Services Hub | Infoplus Technologies UK"
+        description="Software development, testing, infrastructure management, SAP, cybersecurity & cloud, ground-up under one IT services division at Infoplus."
+        keywords="IT service in UK, IT service, IT Services in UK"
         path="/services/it-services"
       />
 

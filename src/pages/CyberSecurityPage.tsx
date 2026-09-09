@@ -326,8 +326,9 @@ export default function CyberSecurityPage() {
   return (
     <div className="w-full" style={{ overflowX: "clip" }}>
       <PageMeta
-        title="Cyber Security Services & Solutions"
-        description="Protect your organisation with Infoplus Technologies UK's cyber security services. We provide threat detection, risk management, compliance, and end-to-end security solutions."
+        title="Cyber Security Services | Infoplus Technologies UK"
+        description="Cyber security built around your actual risk profile, not a generic checklist. Part of Infoplus Technologies UK Limited's IT services division."
+        keywords="Cyber Security, Cyber Security service, Cyber security services in UK, Cyber Security Service in UK"
         path="/services/it-services/cyber-security"
       />
       {/* ── Hero ─────────────────────────────────────────────── */}
