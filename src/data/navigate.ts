@@ -92,11 +92,6 @@ export const navigation: NavigationItem[] = [
   },
 
   {
-    label: "Blog",
-    href: "/blog",
-  },
-
-  {
     label: "Contact",
     href: "/contact",
   },

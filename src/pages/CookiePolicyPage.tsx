@@ -105,7 +105,8 @@ export default function CookiePolicyPage() {
     <div className="w-full overflow-x-hidden">
       <PageMeta
         title="Cookie Policy | Infoplus Technologies UK"
-        description="Read the Infoplus Technologies UK cookie policy to understand what cookies we use, why we use them, and how you can control them."
+        description="Find out how Infoplus Technologies uses cookies on our website, why we use them, and how they help us improve website functionality, performance, and your browsing experience."
+        keywords="Infoplus Technologies Cookie Policy, cookie policy, website cookies, cookies and tracking, cookie preferences, website privacy, Infoplus Technologies"
         path="/cookie-policy"
         noIndex
       />

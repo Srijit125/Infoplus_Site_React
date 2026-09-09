@@ -159,8 +159,9 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="w-full">
       <PageMeta
-        title="Privacy Policy"
-        description="Read how Infoplus Technologies UK Ltd collects, uses and protects your personal information when you visit our site or work with us."
+        title="Data & Privacy | Infoplus Technologies UK"
+        description="Learn how Infoplus Technologies handles personal information, including how data is collected, used, stored, and protected when you interact with our website and services."
+        keywords="Infoplus Technologies Privacy Policy, data and privacy, data protection, personal information, data security, website privacy, privacy policy, Infoplus Technologies"
         path="/privacy-policy"
         noIndex
       />

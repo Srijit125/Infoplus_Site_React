@@ -35,10 +35,10 @@ const EMPTY_FORM: FormState = {
 };
 
 const TEAM_BADGE: Record<string, string> = {
-  Engineering:    "bg-[#FEF0DC] text-[#EB9B3D]",
-  "Data Science": "bg-[#FEF8F0] text-[#EB9B3D]",
-  Design:         "bg-[#dbeafe] text-[#1d4ed8]",
-  Sales:          "bg-[#dcfce7] text-[#15803d]",
+  Engineering:    "bg-[rgba(235,155,61,0.10)] text-[#A06010] border border-[rgba(235,155,61,0.22)]",
+  "Data Science": "bg-[rgba(235,155,61,0.10)] text-[#A06010] border border-[rgba(235,155,61,0.22)]",
+  Design:         "bg-[rgba(235,155,61,0.10)] text-[#A06010] border border-[rgba(235,155,61,0.22)]",
+  Sales:          "bg-[rgba(235,155,61,0.10)] text-[#A06010] border border-[rgba(235,155,61,0.22)]",
 };
 
 const CAREERS_FAQS: FAQItem[] = [
@@ -138,8 +138,9 @@ function CareersPage() {
   return (
     <div className="w-full">
       <PageMeta
-        title="Careers at Infoplus Technologies UK"
-        description="Join Infoplus Technologies UK and build your career in a leading global IT company. Explore opportunities in AI, cloud, cyber security, SAP consulting, and IT staffing."
+        title="Careers at Infoplus Technologies | Find Your Next Opportunity"
+        description="Looking for a place where your skills and ideas can make a difference? Explore career opportunities at Infoplus Technologies across different teams, locations, and areas of expertise."
+        keywords="Careers at Infoplus Technologies, Infoplus careers, jobs at Infoplus, Infoplus job opportunities, career opportunities, technology jobs, IT careers"
         path="/careers"
       />
 
@@ -205,7 +206,7 @@ function CareersPage() {
               </ScrollReveal>
 
               <ScrollReveal direction="right" delay={110}>
-                <div className="pl-5 border-l-4 border-[#DA4D33] bg-[#F3F5FF] rounded-r-2xl py-4 pr-6">
+                <div className="pl-5 border-l-4 border-[#EB9B3D] bg-[rgba(235,155,61,0.06)] rounded-r-2xl py-4 pr-6">
                   <span className="text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-2 block">Our Expertise</span>
                   <p className="text-[16px] font-semibold text-[#0D112D] leading-snug">
                     Specializes in finding and placing professionals across all sectors.
@@ -300,7 +301,7 @@ function CareersPage() {
 
           {/* ── Filter bar ── */}
           <ScrollReveal direction="up" delay={80}>
-            <div className="bg-[#F3F5FF] border border-[#e5e4e7] rounded-2xl p-5 mb-10">
+            <div className="bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl p-5 mb-10">
               <div className="flex flex-col sm:flex-row gap-6">
 
                 {/* Team */}
@@ -361,7 +362,7 @@ function CareersPage() {
           {/* ── Job cards ── */}
           {filtered.length === 0 ? (
             <ScrollReveal direction="up">
-              <div className="text-center py-24 bg-[#F3F5FF] rounded-2xl border border-[#e5e4e7]">
+              <div className="text-center py-24 bg-white rounded-2xl border border-[rgba(13,17,45,0.10)]">
                 <p className="text-[18px] font-semibold text-[#111111] mb-2">No roles match your filters</p>
                 <p className="text-[15px] text-[#555555] mb-6">Try adjusting your team or location selection.</p>
                 <button
@@ -376,18 +377,15 @@ function CareersPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filtered.map((job, idx) => (
                 <ScrollReveal key={job.id} variant="card" delay={idx * 80}>
-                  <div className="group h-full flex flex-col bg-white border border-[#e5e4e7] rounded-2xl overflow-hidden hover:border-[#EB9B3D]/40 hover:shadow-[0_12px_40px_rgba(235,155,61,0.10)] hover:-translate-y-1 transition-all duration-300">
-
-                    {/* Gradient top bar */}
-                    <div className="h-1 bg-linear-to-r from-[#0D112D] via-[#EB9B3D] to-[#DA4D33]" />
+                  <div className="group h-full flex flex-col bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl overflow-hidden hover:border-[rgba(235,155,61,0.35)] hover:shadow-[0_12px_40px_rgba(235,155,61,0.10)] hover:-translate-y-1 transition-all duration-300">
 
                     <div className="p-6 flex flex-col flex-1">
                       {/* Team + Location badges */}
                       <div className="flex flex-wrap gap-2 mb-4">
-                        <span className={`px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide ${TEAM_BADGE[job.team] ?? "bg-[#F3F5FF] text-[#555555]"}`}>
+                        <span className={`px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide ${TEAM_BADGE[job.team] ?? "bg-[rgba(13,17,45,0.05)] text-[#4A4F63] border border-[rgba(13,17,45,0.08)]"}`}>
                           {job.team}
                         </span>
-                        <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-[#F3F5FF] text-[#555555] text-[11px] font-medium">
+                        <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-[rgba(13,17,45,0.05)] text-[#4A4F63] text-[11px] font-medium border border-[rgba(13,17,45,0.08)]">
                           <MapPin className="w-3 h-3 shrink-0" />
                           {job.location}
                         </span>
@@ -412,7 +410,7 @@ function CareersPage() {
                       {/* Skills */}
                       <div className="flex flex-wrap gap-1.5 mb-5">
                         {job.skills.map(s => (
-                          <span key={s} className="px-2.5 py-1 rounded-lg bg-[#F3F5FF] text-[#555555] text-[11px] font-medium border border-[#e5e4e7]">
+                          <span key={s} className="px-2.5 py-1 rounded-lg bg-[rgba(13,17,45,0.04)] text-[#4A4F63] text-[11px] font-medium border border-[rgba(13,17,45,0.08)]">
                             {s}
                           </span>
                         ))}

@@ -152,8 +152,9 @@ export default function TermsOfServicePage() {
   return (
     <div className="w-full">
       <PageMeta
-        title="Terms of Service"
-        description="Read the Infoplus Technologies UK Terms of Service to understand the terms and conditions governing the use of our website and services."
+        title="Terms of Use | Infoplus Technologies UK"
+        description="Please read the Terms of Use for the Infoplus Technologies website to understand the rules and conditions that apply when accessing and using our website and its content."
+        keywords="Infoplus Technologies Terms of Use, terms and conditions, website terms of use, Infoplus UK terms, website conditions, service terms, Infoplus Technologies"
         path="/terms-of-service"
         noIndex
       />

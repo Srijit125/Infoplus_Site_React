@@ -102,8 +102,9 @@ export function ContactPage() {
   return (
     <div className="w-full">
       <PageMeta
-        title="Contact Us"
-        description="Get in touch with Infoplus Technologies UK. Whether you need managed IT services, AI solutions, or staffing support, our team is ready to help you achieve your goals."
+        title="Contact Us | Infoplus Technologies UK"
+        description="Have a project in mind or want to know more about our services? Get in touch with Infoplus Technologies to discuss software, AI, cybersecurity, and other technology solutions."
+        keywords="Contact Infoplus Technologies, Infoplus Technologies contact, contact Infoplus UK, technology solutions, software development services, AI services, cybersecurity services"
         path="/contact"
       />
       <PageHero
