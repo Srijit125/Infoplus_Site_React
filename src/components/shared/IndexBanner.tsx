@@ -13,6 +13,8 @@ import imgSlide4 from "../../assets/images/IT Services Slide 4.png";
 import imgSlide5 from "../../assets/images/Digital Capability Slide 5.png";
 import imgSlide6 from "../../assets/images/Staffing & Consulting Slide 6.png";
 import imgSlideRec1 from "../../assets/images/Info_Landing_AboutSection.jpg";
+import imgSlide7    from "../../assets/images/Image 1.jpg";
+import imgSlide9    from "../../assets/images/Image 2.jpg";
 import "./hero-animations.css";
 
 /* ─── Types ──────────────────────────────────────── */
@@ -178,7 +180,7 @@ export const SLIDES_ALL: AnySlide[] = [
     bg: T2_BG_B, bgEdge: T2_EDGE,
     orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
     accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
-    image: imgSlideRec1,
+    image: imgSlide7,
   },
 
   /* Slide 8 — Recruitment Agency */
@@ -233,7 +235,7 @@ export const SLIDES_ALL: AnySlide[] = [
     bg: T2_BG_B, bgEdge: T2_EDGE,
     orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
     accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
-    image: imgSlideRec1,
+    image: imgSlide9,
   },
 ];
 
