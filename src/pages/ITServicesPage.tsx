@@ -106,13 +106,53 @@ export default function ITServicesPage() {
   const [errors, setErrors] = useState({ name: "", email: "", phone: "" });
   const [submitted, setSubmitted] = useState(false);
 
+  type ITField = "name" | "email" | "phone";
+
+  const validateField = (field: ITField, value: string): string => {
+    const s = value.trim();
+    if (field === "name") {
+      if (!s) return "Name is required.";
+      if (s.length < 2) return "Name must be at least 2 characters.";
+      if (s.length > 100) return "Name must be under 100 characters.";
+      if (!/^[a-zA-ZÀ-ÖØ-öø-ÿ\s'\-.]+$/.test(s))
+        return "Name may only contain letters, spaces, hyphens, periods and apostrophes.";
+      return "";
+    }
+    if (field === "email") {
+      if (!s) return "Email is required.";
+      if (s.length > 254) return "Email address is too long.";
+      if (!/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(s))
+        return "Enter a valid email (e.g. john@company.com).";
+      return "";
+    }
+    if (field === "phone") {
+      if (!s) return "Contact number is required.";
+      if (!/^[+\d\s()\-]+$/.test(s))
+        return "Only digits, spaces, +, – and parentheses are allowed.";
+      const digits = s.replace(/\D/g, "");
+      if (digits.length < 7) return "Must contain at least 7 digits.";
+      if (digits.length > 15) return "Must not exceed 15 digits.";
+      return "";
+    }
+    return "";
+  };
+
+  const handleFieldChange = (field: ITField | "message", value: string) => {
+    setForm(prev => ({ ...prev, [field]: value }));
+    if (field !== "message" && errors[field as ITField])
+      setErrors(prev => ({ ...prev, [field]: validateField(field as ITField, value) }));
+  };
+
+  const handleFieldBlur = (field: ITField) =>
+    setErrors(prev => ({ ...prev, [field]: validateField(field, form[field]) }));
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const errs = { name: "", email: "", phone: "" };
-    if (!form.name.trim()) errs.name = "Name is required.";
-    if (!form.email.trim()) errs.email = "Email is required.";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errs.email = "Enter a valid email.";
-    if (!form.phone.trim()) errs.phone = "Contact number is required.";
+    const errs: Record<ITField, string> = {
+      name:  validateField("name",  form.name),
+      email: validateField("email", form.email),
+      phone: validateField("phone", form.phone),
+    };
     setErrors(errs);
     if (Object.values(errs).every((v) => !v)) setSubmitted(true);
   };
@@ -240,8 +280,11 @@ export default function ITServicesPage() {
                     <input
                       type="text"
                       placeholder="John Smith"
+                      maxLength={100}
+                      autoComplete="name"
                       value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      onChange={(e) => handleFieldChange("name", e.target.value)}
+                      onBlur={() => handleFieldBlur("name")}
                       className={fieldCls(errors.name)}
                     />
                     {errors.name && <p className="mt-1 text-[11px] text-red-500 font-medium">{errors.name}</p>}
@@ -253,8 +296,11 @@ export default function ITServicesPage() {
                     <input
                       type="email"
                       placeholder="john@company.com"
+                      maxLength={254}
+                      autoComplete="email"
                       value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      onChange={(e) => handleFieldChange("email", e.target.value)}
+                      onBlur={() => handleFieldBlur("email")}
                       className={fieldCls(errors.email)}
                     />
                     {errors.email && <p className="mt-1 text-[11px] text-red-500 font-medium">{errors.email}</p>}
@@ -266,8 +312,11 @@ export default function ITServicesPage() {
                     <input
                       type="tel"
                       placeholder="+44 20 0000 0000"
+                      maxLength={20}
+                      autoComplete="tel"
                       value={form.phone}
-                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                      onChange={(e) => handleFieldChange("phone", e.target.value)}
+                      onBlur={() => handleFieldBlur("phone")}
                       className={fieldCls(errors.phone)}
                     />
                     {errors.phone && <p className="mt-1 text-[11px] text-red-500 font-medium">{errors.phone}</p>}
@@ -277,8 +326,9 @@ export default function ITServicesPage() {
                     <textarea
                       rows={3}
                       placeholder="Tell us about your project or challenge…"
+                      maxLength={2000}
                       value={form.message}
-                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      onChange={(e) => handleFieldChange("message", e.target.value)}
                       className="w-full px-4 py-3 rounded-xl border border-[rgba(13,17,45,0.10)] bg-[#fafafa] text-[14px] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:ring-2 focus:ring-[#EB9B3D]/20 focus:border-[#EB9B3D] transition-all resize-none"
                     />
                   </div>

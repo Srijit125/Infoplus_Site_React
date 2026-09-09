@@ -4,7 +4,6 @@ import { Footer } from "./components/FooterComponent";
 // import Header from "./components/Header";
 import { Header } from "./components/header/HeaderComponent";
 import Index from "./pages/Index";
-import IndexTheme1 from "./pages/IndexTheme1";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
@@ -32,6 +31,7 @@ import StaffingConsultingPage from "./pages/StaffingConsultingPage";
 import NewGenServicesPage from "./pages/NewGenServicesPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import NotFoundPage from "./pages/NotFoundPage";
 import { CookieConsent } from "./components/ui/CookieConsent";
 import { ScrollToTop } from "./components/ui/ScrollToTop";
 
@@ -44,8 +44,6 @@ function AppShell() {
       <Header />
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="/home-2" element={<Index />} />
-        <Route path="/home-1" element={<IndexTheme1 />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
@@ -73,6 +71,7 @@ function AppShell() {
         <Route path="/cookie-policy" element={<CookiePolicyPage />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer bgColor={footerBg} />
       <CookieConsent />

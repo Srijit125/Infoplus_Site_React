@@ -1,5 +1,5 @@
 import { PageMeta } from "../components/shared/PageMeta";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { PageHero } from "../components/shared/PageHero";
 import {
   MapPin, Mail, Phone, Clock, Shield,
@@ -61,36 +61,78 @@ const fieldCls = (err: string) =>
 
 const labelCls = "block text-[13px] font-semibold text-[#333] mb-1.5";
 
+type Field = "name" | "email" | "phone";
+
+function validateField(field: Field, value: string): string {
+  const s = value.trim();
+  if (field === "name") {
+    if (!s) return "Name is required.";
+    if (s.length < 2) return "Name must be at least 2 characters.";
+    if (s.length > 100) return "Name must be under 100 characters.";
+    if (!/^[a-zA-ZÀ-ÖØ-öø-ÿ\s'\-.]+$/.test(s))
+      return "Name may only contain letters, spaces, hyphens, periods and apostrophes.";
+    return "";
+  }
+  if (field === "email") {
+    if (!s) return "Email address is required.";
+    if (s.length > 254) return "Email address is too long.";
+    if (!/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(s))
+      return "Enter a valid email address (e.g. john@company.com).";
+    return "";
+  }
+  if (field === "phone") {
+    if (!s) return "Contact number is required.";
+    if (!/^[+\d\s()\-]+$/.test(s))
+      return "Only digits, spaces, +, – and parentheses are allowed.";
+    const digits = s.replace(/\D/g, "");
+    if (digits.length < 7) return "Contact number must contain at least 7 digits.";
+    if (digits.length > 15) return "Contact number must not exceed 15 digits.";
+    return "";
+  }
+  return "";
+}
+
 export function ContactPage() {
-  const formRef = useRef<HTMLFormElement>(null);
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-  const [errors, setErrors] = useState({ name: "", email: "", phone: "" });
+  const [errors, setErrors] = useState<Record<Field, string>>({ name: "", email: "", phone: "" });
+
+  const handleChange = (field: Field | "message", value: string) => {
+    setForm(prev => ({ ...prev, [field]: value }));
+    if (field !== "message" && errors[field as Field])
+      setErrors(prev => ({ ...prev, [field]: validateField(field as Field, value) }));
+  };
+
+  const handleBlur = (field: Field) =>
+    setErrors(prev => ({ ...prev, [field]: validateField(field, form[field]) }));
 
   const handleSubmit = async (e: { preventDefault(): void }) => {
     e.preventDefault();
-    if (!formRef.current) return;
-
-    const data = Object.fromEntries(new FormData(formRef.current)) as Record<string, string>;
-    const errs = { name: "", email: "", phone: "" };
-    if (!data.name?.trim()) errs.name = "Name is required.";
-    if (!data.email?.trim()) errs.email = "Email address is required.";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) errs.email = "Enter a valid email address.";
-    if (!data.phone?.trim()) errs.phone = "Contact number is required.";
+    const errs: Record<Field, string> = {
+      name:  validateField("name",  form.name),
+      email: validateField("email", form.email),
+      phone: validateField("phone", form.phone),
+    };
     setErrors(errs);
-    if (Object.values(errs).some((v) => v)) return;
+    if (Object.values(errs).some(v => v)) return;
 
     setStatus("sending");
     try {
-      const formData = new FormData(formRef.current);
-      formData.append("type", "Infoplus UK Contact");
+      const formData = new FormData();
+      formData.append("name",    form.name.trim());
+      formData.append("email",   form.email.trim());
+      formData.append("phone",   form.phone.trim());
+      formData.append("message", form.message.trim());
+      formData.append("type",    "Infoplus UK Contact");
       const res = await fetch("https://test.infoplus.co.in/WebMail/api/Email/contact", {
         method: "POST",
         body: formData,
       });
-      const data = await res.json();
-      if (data.success) {
+      const json = await res.json();
+      if (json.success) {
         setStatus("success");
-        formRef.current.reset();
+        setForm({ name: "", email: "", phone: "", message: "" });
+        setErrors({ name: "", email: "", phone: "" });
       } else {
         setStatus("error");
       }
@@ -129,7 +171,7 @@ export function ContactPage() {
                   We'd love to hear from you
                 </h2>
 
-                  <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+                  <form onSubmit={handleSubmit} noValidate className="space-y-5">
                     <div>
                       <label className={labelCls}>
                         Your Name <span className="text-[#DA4D33]">*</span>
@@ -138,6 +180,11 @@ export function ContactPage() {
                         type="text"
                         name="name"
                         placeholder="John Smith"
+                        maxLength={100}
+                        autoComplete="name"
+                        value={form.name}
+                        onChange={e => handleChange("name", e.target.value)}
+                        onBlur={() => handleBlur("name")}
                         className={fieldCls(errors.name)}
                       />
                       {errors.name && <p className="mt-1.5 text-[12px] text-red-500 font-medium">{errors.name}</p>}
@@ -150,6 +197,11 @@ export function ContactPage() {
                         type="email"
                         name="email"
                         placeholder="john@company.com"
+                        maxLength={254}
+                        autoComplete="email"
+                        value={form.email}
+                        onChange={e => handleChange("email", e.target.value)}
+                        onBlur={() => handleBlur("email")}
                         className={fieldCls(errors.email)}
                       />
                       {errors.email && <p className="mt-1.5 text-[12px] text-red-500 font-medium">{errors.email}</p>}
@@ -162,6 +214,11 @@ export function ContactPage() {
                         type="tel"
                         name="phone"
                         placeholder="+44 20 0000 0000"
+                        maxLength={20}
+                        autoComplete="tel"
+                        value={form.phone}
+                        onChange={e => handleChange("phone", e.target.value)}
+                        onBlur={() => handleBlur("phone")}
                         className={fieldCls(errors.phone)}
                       />
                       {errors.phone && <p className="mt-1.5 text-[12px] text-red-500 font-medium">{errors.phone}</p>}
@@ -174,6 +231,9 @@ export function ContactPage() {
                         name="message"
                         rows={5}
                         placeholder="Tell us about your project, challenge, or what you'd like to achieve…"
+                        maxLength={2000}
+                        value={form.message}
+                        onChange={e => handleChange("message", e.target.value)}
                         className={`${fieldCls("")} resize-none`}
                       />
                     </div>

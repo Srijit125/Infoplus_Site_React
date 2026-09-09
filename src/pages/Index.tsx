@@ -162,23 +162,58 @@ function useCountUp(target: number, duration: number, active: boolean) {
   return value;
 }
 
+type T2Field = "name" | "email" | "phone";
+
+function t2ValidateField(field: T2Field, value: string): string {
+  const s = value.trim();
+  if (field === "name") {
+    if (!s) return "Name is required.";
+    if (s.length < 2) return "Name must be at least 2 characters.";
+    if (s.length > 100) return "Name must be under 100 characters.";
+    if (!/^[a-zA-ZÀ-ÖØ-öø-ÿ\s'\-.]+$/.test(s))
+      return "Name may only contain letters, spaces, hyphens, periods and apostrophes.";
+    return "";
+  }
+  if (field === "email") {
+    if (!s) return "Email is required.";
+    if (s.length > 254) return "Email address is too long.";
+    if (!/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(s))
+      return "Enter a valid email (e.g. john@company.com).";
+    return "";
+  }
+  if (field === "phone") {
+    if (!s) return "Phone is required.";
+    if (!/^[+\d\s()\-]+$/.test(s))
+      return "Only digits, spaces, +, – and parentheses are allowed.";
+    const digits = s.replace(/\D/g, "");
+    if (digits.length < 7) return "Must contain at least 7 digits.";
+    if (digits.length > 15) return "Must not exceed 15 digits.";
+    return "";
+  }
+  return "";
+}
+
 function T2ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
-  const [errors, setErrors] = useState({ name: "", email: "", phone: "" });
+  const [errors, setErrors] = useState<Record<T2Field, string>>({ name: "", email: "", phone: "" });
   const [sent, setSent] = useState(false);
 
-  const validate = () => {
-    const e = { name: "", email: "", phone: "" };
-    if (!form.name.trim()) e.name = "Name is required.";
-    if (!form.email.trim()) e.email = "Email is required.";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = "Enter a valid email.";
-    if (!form.phone.trim()) e.phone = "Phone is required.";
-    return e;
+  const handleChange = (field: T2Field | "message", value: string) => {
+    setForm(prev => ({ ...prev, [field]: value }));
+    if (field !== "message" && errors[field as T2Field])
+      setErrors(prev => ({ ...prev, [field]: t2ValidateField(field as T2Field, value) }));
   };
+
+  const handleBlur = (field: T2Field) =>
+    setErrors(prev => ({ ...prev, [field]: t2ValidateField(field, form[field]) }));
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const errs = validate();
+    const errs: Record<T2Field, string> = {
+      name:  t2ValidateField("name",  form.name),
+      email: t2ValidateField("email", form.email),
+      phone: t2ValidateField("phone", form.phone),
+    };
     setErrors(errs);
     if (Object.values(errs).every(v => !v)) setSent(true);
   };
@@ -207,8 +242,11 @@ function T2ContactForm() {
             <input
               type={{ name: "text", email: "email", phone: "tel" }[key]}
               placeholder={{ name: "John Smith", email: "john@company.com", phone: "+44 20 0000 0000" }[key]}
+              maxLength={{ name: 100, email: 254, phone: 20 }[key]}
+              autoComplete={{ name: "name", email: "email", phone: "tel" }[key]}
               value={form[key]}
-              onChange={e => setForm({ ...form, [key]: e.target.value })}
+              onChange={e => handleChange(key, e.target.value)}
+              onBlur={() => handleBlur(key)}
               style={{
                 width: "100%", padding: "12px 16px", borderRadius: 8, fontSize: 14,
                 border: `1px solid ${errors[key] ? "#EF4444" : BRD}`,
@@ -222,8 +260,9 @@ function T2ContactForm() {
         <div>
           <label style={{ display: "block", fontSize: 13, fontWeight: 600, color: TP, marginBottom: 6 }}>Message</label>
           <textarea rows={4} placeholder="Tell us about your project…"
+            maxLength={2000}
             value={form.message}
-            onChange={e => setForm({ ...form, message: e.target.value })}
+            onChange={e => handleChange("message", e.target.value)}
             style={{
               width: "100%", padding: "12px 16px", borderRadius: 8, fontSize: 14,
               border: `1px solid ${BRD}`, background: SAL, color: TP,
@@ -248,7 +287,7 @@ function T2ContactForm() {
 /* ─────────────────────────────────────────────────────────────────
    Page
 ───────────────────────────────────────────────────────────────── */
-export default function IndexTheme2() {
+export default function Index() {
   const statsRef = useRef<HTMLDivElement>(null);
   const [statsVisible, setStatsVisible] = useState(false);
   useEffect(() => {
