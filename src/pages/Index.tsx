@@ -527,7 +527,7 @@ export default function Index() {
                     <h4 style={{ color: TP, fontWeight: 700, fontSize: 17, marginBottom: 8 }}>{svc.title}</h4>
                     <p style={{ color: TS, fontSize: 14, lineHeight: 1.75, marginBottom: 16 }}>{svc.description}</p>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 8 }}>
-                      {svc.features.map((f, fi) => (
+                      {svc.features.map((f) => (
                         <li key={f} style={{ display: "flex", alignItems: "center", gap: 10, color: TS, fontSize: 13 }}>
                           <span style={{ display: "block", width: 6, height: 6, borderRadius: "50%", backgroundColor: TS, flexShrink: 0 }} />
                           {f}
