@@ -1,13 +1,11 @@
-﻿import { useState, Fragment } from "react";
+﻿import { Fragment } from "react";
 import { PageMeta } from "../components/shared/PageMeta";
-import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
   Users,
   Lightbulb,
   Umbrella,
   ChevronRight,
-  ChevronLeft,
   Globe,
   TrendingUp,
   Briefcase,
@@ -77,8 +75,6 @@ const STAFFING_FAQS: FAQItem[] = [
 ];
 
 export default function StaffingConsultingPage() {
-  const [currentBanner, setCurrentBanner] = useState(0);
-
   return (
     <div className="w-full">
       <PageMeta
@@ -88,203 +84,127 @@ export default function StaffingConsultingPage() {
         path="/services/staffing-consulting"
       />
 
-      {/* ── Hero carousel ─────────────────────────────────── */}
-      <div className="relative overflow-hidden">
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentBanner * 100}%)` }}
-        >
-
-          {/* Slide 0 — original PageHero */}
-          <div className="w-full shrink-0">
-            <PageHero
-              badge="STAFFING & CONSULTING"
-              title="We are Providing the Best Staff for Clients"
-              description="Having worked with clients from a wide range of services and domains globally over the last two decades, our Staffing and Consulting teams have developed a unique method to improve alignment of business and technology."
-              variant="gradient"
-            >
-              <div className="flex flex-col sm:flex-row justify-center gap-3">
-                <Link
-                  to="/contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#F0783A] hover:bg-[#e84d27] text-white font-bold text-[14px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
-                >
-                  Find Your Talent
-                  <ChevronRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  to="/services"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold text-[14px] transition-all duration-200"
-                >
-                  All Services
-                </Link>
-              </div>
-            </PageHero>
-          </div>
-
-          {/* Slide 1 — Best Recruitment Agency */}
-          <div className="w-full shrink-0">
-            <section
-              className="relative overflow-hidden flex flex-col"
-              style={{
-                minHeight: "75vh",
-                background: "linear-gradient(135deg, #04100f 0%, #0a2220 30%, #0d2f2b 65%, #09201d 100%)",
-              }}
-            >
-              {/* Ambient orbs + dot grid */}
-              <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div style={{ position: "absolute", width: 640, height: 640, borderRadius: "50%", top: "-15%", right: "-8%", background: "radial-gradient(circle, #14b8a6 0%, transparent 68%)", filter: "blur(90px)", opacity: 0.28 }} />
-                <div style={{ position: "absolute", width: 520, height: 520, borderRadius: "50%", bottom: "-12%", left: "-6%", background: "radial-gradient(circle, #0f766e 0%, transparent 68%)", filter: "blur(80px)", opacity: 0.30 }} />
-                <div style={{ position: "absolute", width: 320, height: 320, borderRadius: "50%", top: "38%", left: "28%", background: "radial-gradient(circle, #22d3ee 0%, transparent 68%)", filter: "blur(70px)", opacity: 0.12 }} />
-                <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.18) 1px, transparent 1px)", backgroundSize: "44px 44px", opacity: 0.4 }} />
-              </div>
-
-              {/* Right image — desktop */}
-              <div
-                className="absolute right-0 hidden md:block md:w-[40%] lg:w-[38%] xl:w-[42%] overflow-hidden"
-                style={{ top: 0, bottom: 0, zIndex: 5, borderTopLeftRadius: "2rem", borderBottomLeftRadius: "2rem" }}
-              >
-                <img src={imgSlideRec1} alt="Staffing visual" className="w-full h-full object-cover object-center" />
-                <div className="absolute inset-y-0 left-0 w-24 lg:w-44 pointer-events-none" style={{ background: "linear-gradient(to right, #04100f 0%, transparent 100%)" }} />
-                <div className="absolute inset-x-0 bottom-0 h-24 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.5), transparent)" }} />
-              </div>
-
-              {/* Content + stats column */}
-              <div className="flex-1 flex flex-col relative z-10">
-                <div className="flex-1 flex items-center pt-28 pb-8">
-                  <div className="container mx-auto px-6 max-w-7xl w-full">
-                    <div className="md:w-[56%] lg:w-[52%] xl:w-[50%]">
-
-                      {/* Badge */}
-                      <div className="mb-5">
-                        <span
-                          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[13px] font-semibold text-white/80"
-                          style={{ border: "1px solid #14b8a655", background: "linear-gradient(90deg, #14b8a618, transparent, #14b8a618)" }}
-                        >
-                          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#5eead4", boxShadow: "0 0 6px #5eead4", display: "inline-block", flexShrink: 0 }} />
-                          Staffing &amp; Consulting
-                        </span>
-                      </div>
-
-                      {/* Headline */}
-                      <h1 className="text-[clamp(1.8rem,5vw,3rem)] font-bold text-white leading-[1.1] mb-4 tracking-tight">
-                        Best{" "}
-                        <span style={{ background: "linear-gradient(90deg, #5eead4 0%, #2dd4bf 50%, #5eead4 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                          Recruitment Agency
-                        </span>
-                        &nbsp;in U.K
-                      </h1>
-
-                      {/* Description */}
-                      <p className="text-[14px] md:text-[15px] text-white/65 leading-relaxed mb-6 max-w-xl">
-                        Whether you are looking for FTE (Full Time Employee) / Contract Role (C2H) – Infoplus Technologies offers the best service with 99% Client retention rate.
-                      </p>
-
-                      {/* Service chips */}
-                      <div className="flex flex-wrap gap-2 mb-7">
-                        {[
-                          { label: "IT Staffing Solutions",   Icon: Users     },
-                          { label: "IT Consulting Solutions", Icon: Lightbulb },
-                          { label: "Umbrella Service",        Icon: Umbrella  },
-                        ].map(({ label, Icon }) => (
-                          <div
-                            key={label}
-                            className="inline-flex items-center gap-2 rounded-lg px-3 py-2.5"
-                            style={{ background: "#14b8a614", border: "1px solid #14b8a630" }}
-                          >
-                            <Icon className="w-3.5 h-3.5 shrink-0" style={{ color: "#5eead4" }} />
-                            <span className="text-[11px] text-white/70 font-medium whitespace-nowrap">{label}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* CTA */}
-                      <Link
-                        to="/contact"
-                        className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-[15px] text-white transition-all group"
-                        style={{ background: "#14b8a6", boxShadow: "0 8px 28px #14b8a655" }}
-                      >
-                        Book A Demo
-                        <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-
-                    </div>
-                  </div>
-                </div>
-
-                {/* Mobile image */}
-                <div className="md:hidden w-full relative overflow-hidden rounded-t-2xl" style={{ height: 220 }}>
-                  <img src={imgSlideRec1} alt="Staffing visual" className="w-full h-full object-cover object-center" />
-                  <div className="absolute inset-x-0 bottom-0 h-16 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55), transparent)" }} />
-                </div>
-
-                {/* Stats bar */}
-                <div style={{ background: "rgba(0,0,0,0.45)", backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)", borderTop: "1px solid #14b8a628" }}>
-                  <div className="container mx-auto px-6 max-w-7xl">
-                    <div className="flex items-center py-3 sm:py-5">
-                      {[
-                        { value: "98%",  label: "Client Retention Rate" },
-                        { value: "20+",  label: "Years' Experience"      },
-                        { value: "120+", label: "Clients Served"         },
-                      ].map((st, i) => (
-                        <Fragment key={st.label}>
-                          {i > 0 && <div className="w-px h-9 bg-white/15 shrink-0" />}
-                          <div className="flex-1 flex flex-col items-center gap-0.5 text-center">
-                            <span className="text-[18px] sm:text-[22px] md:text-[26px] font-bold leading-none tabular-nums" style={{ color: "#5eead4" }}>
-                              {st.value}
-                            </span>
-                            <span className="text-[10px] sm:text-[11px] text-white/50 tracking-wide uppercase">
-                              {st.label}
-                            </span>
-                          </div>
-                        </Fragment>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-
-        </div>{/* end slides strip */}
-
-        {/* Arrow — prev */}
-        <button
-          onClick={() => setCurrentBanner((b) => Math.max(0, b - 1))}
-          aria-label="Previous banner"
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 disabled:opacity-30 cursor-pointer"
-          disabled={currentBanner === 0}
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-
-        {/* Arrow — next */}
-        <button
-          onClick={() => setCurrentBanner((b) => Math.min(1, b + 1))}
-          aria-label="Next banner"
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 disabled:opacity-30 cursor-pointer"
-          disabled={currentBanner === 1}
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
-
-        {/* Dot indicators */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
-          {[0, 1].map((idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentBanner(idx)}
-              aria-label={`Go to banner ${idx + 1}`}
-              className="transition-all duration-300 rounded-full cursor-pointer"
-              style={{
-                width: currentBanner === idx ? "24px" : "8px",
-                height: "8px",
-                backgroundColor: currentBanner === idx ? "#14b8a6" : "rgba(255,255,255,0.35)",
-              }}
-            />
-          ))}
+      {/* ── Hero ─────────────────────────────────────────────── */}
+      <section
+        className="relative overflow-hidden flex flex-col"
+        style={{
+          minHeight: "75vh",
+          background: "linear-gradient(135deg, #0D112D 0%, #141A3D 40%, #1A2444 100%)",
+        }}
+      >
+        {/* Ambient orbs + dot grid */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div style={{ position: "absolute", width: 640, height: 640, borderRadius: "50%", top: "-15%", right: "-8%", background: "radial-gradient(circle, #EB9B3D 0%, transparent 68%)", filter: "blur(90px)", opacity: 0.20 }} />
+          <div style={{ position: "absolute", width: 520, height: 520, borderRadius: "50%", bottom: "-12%", left: "-6%", background: "radial-gradient(circle, #242E72 0%, transparent 68%)", filter: "blur(80px)", opacity: 0.55 }} />
+          <div style={{ position: "absolute", width: 320, height: 320, borderRadius: "50%", top: "38%", left: "28%", background: "radial-gradient(circle, #DA4D33 0%, transparent 68%)", filter: "blur(70px)", opacity: 0.10 }} />
+          <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px)", backgroundSize: "44px 44px", opacity: 0.3 }} />
         </div>
 
-      </div>{/* end Hero carousel */}
+        {/* Right image — desktop */}
+        <div
+          className="absolute right-0 hidden md:block md:w-[40%] lg:w-[38%] xl:w-[42%] overflow-hidden"
+          style={{ top: 0, bottom: 0, zIndex: 5, borderTopLeftRadius: "2rem", borderBottomLeftRadius: "2rem" }}
+        >
+          <img src={imgSlideRec1} alt="Staffing visual" className="w-full h-full object-cover object-center" />
+          <div className="absolute inset-y-0 left-0 w-24 lg:w-44 pointer-events-none" style={{ background: "linear-gradient(to right, #0D112D 0%, transparent 100%)" }} />
+          <div className="absolute inset-x-0 bottom-0 h-24 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.5), transparent)" }} />
+        </div>
+
+        {/* Content + stats column */}
+        <div className="flex-1 flex flex-col relative z-10">
+          <div className="flex-1 flex items-center pt-28 pb-8">
+            <div className="container mx-auto px-6 max-w-7xl w-full">
+              <div className="md:w-[56%] lg:w-[52%] xl:w-[50%]">
+
+                {/* Badge */}
+                <div className="mb-5">
+                  <span
+                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[13px] font-semibold text-white/80"
+                    style={{ border: "1px solid rgba(235,155,61,0.35)", background: "linear-gradient(90deg, rgba(235,155,61,0.10), transparent, rgba(235,155,61,0.10))" }}
+                  >
+                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#EB9B3D", boxShadow: "0 0 6px #EB9B3D", display: "inline-block", flexShrink: 0 }} />
+                    Staffing &amp; Consulting
+                  </span>
+                </div>
+
+                {/* Headline */}
+                <h1 className="text-[clamp(1.8rem,5vw,3rem)] font-bold text-white leading-[1.1] mb-4 tracking-tight">
+                  Best{" "}
+                  <span style={{ background: "linear-gradient(90deg, #EB9B3D 0%, #DA4D33 50%, #EB9B3D 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                    Recruitment Agency
+                  </span>
+                  &nbsp;in U.K
+                </h1>
+
+                {/* Description */}
+                <p className="text-[14px] md:text-[15px] text-white/65 leading-relaxed mb-6 max-w-xl">
+                  Whether you are looking for FTE (Full Time Employee) / Contract Role (C2H) – Infoplus Technologies offers the best service with 99% Client retention rate.
+                </p>
+
+                {/* Service chips */}
+                <div className="flex flex-wrap gap-2 mb-7">
+                  {[
+                    { label: "IT Staffing Solutions",   Icon: Users     },
+                    { label: "IT Consulting Solutions", Icon: Lightbulb },
+                    { label: "Umbrella Service",        Icon: Umbrella  },
+                  ].map(({ label, Icon }) => (
+                    <div
+                      key={label}
+                      className="inline-flex items-center gap-2 rounded-lg px-3 py-2.5"
+                      style={{ background: "rgba(235,155,61,0.08)", border: "1px solid rgba(235,155,61,0.20)" }}
+                    >
+                      <Icon className="w-3.5 h-3.5 shrink-0" style={{ color: "#EB9B3D" }} />
+                      <span className="text-[11px] text-white/70 font-medium whitespace-nowrap">{label}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-[15px] text-white transition-all hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
+                  style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
+                >
+                  Book A Demo
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile image */}
+          <div className="md:hidden w-full relative overflow-hidden rounded-t-2xl" style={{ height: 220 }}>
+            <img src={imgSlideRec1} alt="Staffing visual" className="w-full h-full object-cover object-center" />
+            <div className="absolute inset-x-0 bottom-0 h-16 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55), transparent)" }} />
+          </div>
+        </div>
+      </section>
+
+      {/* Stats bar — outside hero so it renders above the intro overlap (z-30 > intro z-20) */}
+      <div className="relative z-30" style={{ background: "#0D112D", borderTop: "1px solid rgba(235,155,61,0.16)" }}>
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="flex items-center py-3 sm:py-5">
+            {[
+              { value: "98%",  label: "Client Retention Rate" },
+              { value: "20+",  label: "Years' Experience"      },
+              { value: "120+", label: "Clients Served"         },
+            ].map((st, i) => (
+              <Fragment key={st.label}>
+                {i > 0 && <div className="w-px h-9 bg-white/15 shrink-0" />}
+                <div className="flex-1 flex flex-col items-center gap-0.5 text-center">
+                  <span className="text-[18px] sm:text-[22px] md:text-[26px] font-bold leading-none tabular-nums" style={{ color: "#EB9B3D" }}>
+                    {st.value}
+                  </span>
+                  <span className="text-[10px] sm:text-[11px] text-white/50 tracking-wide uppercase">
+                    {st.label}
+                  </span>
+                </div>
+              </Fragment>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* â"€â"€ Intro + Differentiators â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-24 bg-[#ffffff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
@@ -554,16 +474,11 @@ export default function StaffingConsultingPage() {
               <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#F0783A] hover:bg-[#e84d27] text-white font-bold text-[15px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
+                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
+                  style={{ background: "linear-gradient(135deg,#EB9B3D 0%,#DA4D33 100%)" }}
                 >
                   Start a Conversation
                   <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
-                </Link>
-                <Link
-                  to="/services"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 text-white font-semibold text-[15px] transition-all duration-200"
-                >
-                  All Service Areas
                 </Link>
               </div>
             </div>

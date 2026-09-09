@@ -20,6 +20,7 @@ import "./hero-animations.css";
 /* ─── Types ──────────────────────────────────────── */
 interface ServiceChip {
   label: string;
+  href: string;
   Icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>;
 }
 
@@ -162,21 +163,21 @@ export const SLIDES_ALL: AnySlide[] = [
     titlePost: "Under One Roof",
     description: "All the IT Solutions you need – One trusted partner. Simplify, secure, & scale everything.",
     services: [
-      { label: "Software Development",    Icon: Code2    },
-      { label: "Artificial Intelligence", Icon: Cpu      },
-      { label: "Cyber Security",          Icon: Shield   },
-      { label: "Testing",                 Icon: Bug      },
-      { label: "SAP Consulting",          Icon: Database },
-      { label: "Cloud Portfolio",         Icon: Cloud    },
-      { label: "Infrastructure Mgmt",     Icon: Server   },
+      { label: "Software Development",    href: "/services/it-services/software-development",       Icon: Code2    },
+      { label: "Artificial Intelligence", href: "/services/it-services/artificial-intelligence",    Icon: Cpu      },
+      { label: "Cyber Security",          href: "/services/it-services/cyber-security",             Icon: Shield   },
+      { label: "Testing",                 href: "/services/it-services/testing",                    Icon: Bug      },
+      { label: "SAP Consulting",          href: "/services/it-services/sap-consulting",             Icon: Database },
+      { label: "Cloud Portfolio",         href: "/services/it-services/cloud-portfolio",            Icon: Cloud    },
+      { label: "Infrastructure Mgmt",     href: "/services/it-services/infrastructure-management",  Icon: Server   },
     ],
     stats: [
       { value: "98%",  label: "Client Retention Rate" },
       { value: "20+",  label: "Years' Experience"      },
       { value: "120+", label: "Clients Served"         },
     ],
-    ctaLabel: "Book A Demo",
-    ctaHref:  "/contact",
+    ctaLabel: "Explore IT Services",
+    ctaHref:  "/services/it-services",
     bg: T2_BG_B, bgEdge: T2_EDGE,
     orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
     accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
@@ -192,9 +193,9 @@ export const SLIDES_ALL: AnySlide[] = [
     titlePost: "in U.K",
     description: "Whether you are looking for FTE (Full Time Employee) / Contract Role (C2H) – Infoplus Technologies offers the best service with 99% Client retention rate.",
     services: [
-      { label: "IT Staffing Solutions",   Icon: Users2    },
-      { label: "IT Consulting Solutions", Icon: Briefcase },
-      { label: "Umbrella Service",        Icon: Umbrella  },
+      { label: "IT Staffing Solutions",   href: "/services/staffing-consulting/it-staffing-solutions",   Icon: Users2    },
+      { label: "IT Consulting Solutions", href: "/services/staffing-consulting/it-consulting-solutions",  Icon: Briefcase },
+      { label: "Umbrella Service",        href: "/services/staffing-consulting/umbrella-service",         Icon: Umbrella  },
     ],
     stats: [
       { value: "98%",  label: "Client Retention Rate" },
@@ -202,8 +203,8 @@ export const SLIDES_ALL: AnySlide[] = [
       { value: "120+", label: "Clients Served"         },
     ],
     statsBar: true,
-    ctaLabel: "Book A Demo",
-    ctaHref:  "/contact",
+    ctaLabel: "Explore Staffing & Consulting",
+    ctaHref:  "/services/staffing-consulting",
     bg: T2_BG_B, bgEdge: T2_EDGE,
     orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
     accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
@@ -219,9 +220,9 @@ export const SLIDES_ALL: AnySlide[] = [
     titlePost: "– Smarter Technology, Greater Impact",
     description: "Empowering business with New gen IT Service that drive innovation, agility & growth.",
     services: [
-      { label: "Enterprise Transformation", Icon: Building2 },
-      { label: "Everything Data",           Icon: Database  },
-      { label: "Automation",               Icon: Zap       },
+      { label: "Enterprise Transformation", href: "/services/new-generation/enterprise-transformation", Icon: Building2 },
+      { label: "Everything Data",           href: "/services/new-generation/everything-data",           Icon: Database  },
+      { label: "Automation",                href: "/services/new-generation/automation",                Icon: Zap       },
     ],
     stats: [
       { value: "Innovation", label: "Solutions"  },
@@ -230,8 +231,8 @@ export const SLIDES_ALL: AnySlide[] = [
       { value: "End-to-End", label: "Support"     },
     ],
     statsBar: true,
-    ctaLabel: "Book A Demo",
-    ctaHref:  "/contact",
+    ctaLabel: "Explore New Gen Services",
+    ctaHref:  "/services/new-generation",
     bg: T2_BG_B, bgEdge: T2_EDGE,
     orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
     accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
@@ -300,7 +301,7 @@ function SlideContent({
       </div>
 
       {/* Headline */}
-      <h1 className={`${cin(2)} text-[40px] md:text-[52px] font-bold text-white leading-[1.08] mb-4 tracking-tight`}>
+      <h1 className={`${cin(2)} text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] font-bold text-white leading-[1.1] mb-4 tracking-tight`}>
         {s.titlePart1}
         <span
           style={{
@@ -326,10 +327,10 @@ function SlideContent({
       <div className={`${cin(4)} flex flex-col sm:flex-row gap-4 items-center`}>
         <Link
           to="/contact"
-          className="w-full sm:w-auto flex items-center justify-center gap-2 group text-white px-8 py-3.5 rounded-xl font-semibold text-[15px] transition-all"
+          className="w-full sm:w-auto flex items-center justify-center gap-2 group text-white px-8 py-3.5 rounded-full font-semibold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(235,155,61,0.55)]"
           style={{
-            background: s.btnColor ?? s.accent,
-            boxShadow: `0 8px 28px ${s.btnColor ?? s.accent}55`,
+            background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)",
+            boxShadow: "0 8px 28px rgba(235,155,61,0.35)",
           }}
         >
           Get Started
@@ -337,14 +338,14 @@ function SlideContent({
         </Link>
         <Link
           to={s.serviceHref}
-          className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/8 border border-white/20 text-white px-8 py-3.5 rounded-xl font-semibold text-[15px] hover:bg-white/15 transition-all backdrop-blur-sm"
+          className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/8 border border-white/20 text-white px-8 py-3.5 rounded-full font-semibold text-[15px] hover:bg-white/15 transition-all backdrop-blur-sm"
         >
           {s.serviceLabel}
         </Link>
       </div>
 
       {/* Stats */}
-      <div className={`${cin(5)} mt-10 flex gap-8 flex-wrap`}>
+      <div className={`${cin(5)} mt-8 flex gap-4 sm:gap-8 flex-wrap`}>
         {stats.map((st) => (
           <div
             key={st.label}
@@ -471,20 +472,22 @@ function SlideContentB({
         {s.description}
       </p>
 
-      {/* Service chips — auto-width per chip, wrap naturally across rows */}
+      {/* Service chips — each links to its respective service page */}
       <div className={`${cin(4)} flex flex-wrap gap-1.5 sm:gap-2 mb-4 md:mb-5`}>
-        {s.services.map(({ label, Icon }) => (
-          <div
+        {s.services.map(({ label, href, Icon }) => (
+          <Link
             key={label}
-            className="inline-flex items-center gap-2 rounded-lg px-3 py-2.5"
+            to={href}
+            className="inline-flex items-center gap-2 rounded-lg px-3 py-2.5 transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5"
             style={{
               background: `${s.accent}14`,
               border: `1px solid ${s.accent}30`,
+              textDecoration: "none",
             }}
           >
             <Icon className="w-3.5 h-3.5 flex-shrink-0" style={{ color: s.sh1 }} />
             <span className="text-[11px] text-white/70 leading-tight font-medium whitespace-nowrap">{label}</span>
-          </div>
+          </Link>
         ))}
       </div>
 
@@ -492,14 +495,20 @@ function SlideContentB({
       <div className={`${cin(5)} flex flex-col sm:flex-row gap-4 items-start sm:items-center`}>
         <Link
           to={s.ctaHref}
-          className="w-full sm:w-auto flex items-center justify-center gap-2 group text-white px-8 py-3.5 rounded-xl font-semibold text-[15px] transition-all"
+          className="w-full sm:w-auto flex items-center justify-center gap-2 group text-white px-8 py-3.5 rounded-full font-semibold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(235,155,61,0.55)]"
           style={{
-            background: s.accent,
-            boxShadow: `0 8px 28px ${s.accent}55`,
+            background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)",
+            boxShadow: "0 8px 28px rgba(235,155,61,0.35)",
           }}
         >
           {s.ctaLabel}
           <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </Link>
+        <Link
+          to="/contact"
+          className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/8 border border-white/20 text-white px-8 py-3.5 rounded-full font-semibold text-[15px] hover:bg-white/15 transition-all backdrop-blur-sm"
+        >
+          Get Started
         </Link>
       </div>
 
@@ -696,7 +705,7 @@ function IndexBanner({ slides: slidesProp }: { slides?: AnySlide[] } = {}) {
           VARIANT A — original two-column grid layout
       ══════════════════════════════════════════════ */}
       {s.variant === "a" && (
-        <div className="container mx-auto px-6 max-w-7xl relative z-10 pt-28 pb-24">
+        <div className="container mx-auto px-6 max-w-7xl relative z-10 pt-24 sm:pt-28 pb-12 sm:pb-16 lg:pb-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
             {/* Left column */}
@@ -705,10 +714,10 @@ function IndexBanner({ slides: slidesProp }: { slides?: AnySlide[] } = {}) {
               {renderContent(s, `enter-${enterKey}`, false)}
             </div>
 
-            {/* Right: floating image with orbit rings */}
+            {/* Right: floating image with orbit rings — desktop only */}
             <div
               key={`img-${enterKey}`}
-              className="relative flex justify-center lg:justify-end"
+              className="relative hidden lg:flex justify-end overflow-hidden"
               style={{ animation: "imgCinema 0.9s cubic-bezier(0.16,1,0.3,1) 0.12s both" }}
             >
               <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>
@@ -791,7 +800,7 @@ function IndexBanner({ slides: slidesProp }: { slides?: AnySlide[] } = {}) {
             </div>
 
             {/* Mobile image — shown below content, hidden on md+ where absolute image takes over */}
-            <div className="md:hidden w-full relative overflow-hidden rounded-t-2xl" style={{ height: 220 }}>
+            <div className="md:hidden w-full relative overflow-hidden rounded-t-2xl h-44 sm:h-56">
               <img
                 src={s.image}
                 alt="Visual"

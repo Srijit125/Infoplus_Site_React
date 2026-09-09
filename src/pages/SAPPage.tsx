@@ -1,4 +1,4 @@
-﻿import { PageMeta } from "../components/shared/PageMeta";
+import { PageMeta } from "../components/shared/PageMeta";
 import imgSapCapabilities from "../assets/images/SAP-Capabilities.png";
 import { ImageWithFallback } from "../components/helpers/ImageWithFallback";
 import { Link } from "react-router-dom";
@@ -154,17 +154,17 @@ export default function SAPPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <Link
             to="/contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
           >
             Consult an SAP Expert
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
-          <Link
-            to="/contact"
-            className="w-full sm:w-auto flex items-center justify-center px-8 py-3.5 rounded-xl border border-white/30 text-white font-semibold text-[15px] hover:bg-white/10 transition-colors"
+          <button
+            onClick={() => document.getElementById("erp-suite")?.scrollIntoView({ behavior: "smooth" })}
+            className="w-full sm:w-auto flex items-center justify-center px-8 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15 cursor-pointer"
           >
             View Our SAP Services
-          </Link>
+          </button>
         </div>
       </PageHero>
 
@@ -261,7 +261,7 @@ export default function SAPPage() {
       </section>
 
       {/* â"€â"€ SAP All-in-One ERP Suite â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-[#ffffff] relative overflow-hidden">
+      <section id="erp-suite" className="py-24 bg-[#ffffff] relative overflow-hidden">
         <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-[#FEF0DC]/60 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -584,14 +584,14 @@ export default function SAPPage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#F0783A] text-white font-semibold text-[15px] hover:bg-[#e04f2c] transition-colors group"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
                   >
                     Book a Free SAP Consultation
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <a
                     href="mailto:uk@infoplusltd.co.uk"
-                    className="w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-xl border border-white/25 text-white font-semibold text-[15px] hover:bg-white/10 transition-colors"
+                    className="w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15"
                   >
                     Email Our SAP Team
                   </a>

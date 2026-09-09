@@ -243,7 +243,7 @@ function Blog() {
                     </div>
                     <Link
                       to={`/blog/${featuredPost.id}`}
-                      className="flex items-center gap-2 px-6 py-3 rounded-xl text-white text-[14px] font-semibold hover:opacity-90 transition-all duration-300 group/btn"
+                      className="flex items-center gap-2 px-6 py-3 rounded-full text-white text-[14px] font-bold transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group/btn"
                       style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
                     >
                       Read Article
@@ -350,7 +350,7 @@ function Blog() {
               </p>
               <button
                 onClick={clearFilters}
-                className="px-7 py-3 rounded-xl text-white text-[14px] font-semibold hover:opacity-90 transition-all duration-300 cursor-pointer"
+                className="px-7 py-3 rounded-full text-white text-[14px] font-bold transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] cursor-pointer"
                 style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
               >
                 Clear All Filters

@@ -268,7 +268,7 @@ export default function BlogDetail() {
             <div className="text-center mt-10">
               <Link
                 to="/blog"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-white text-[14px] font-semibold transition-opacity duration-200 hover:opacity-85"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-white text-[14px] font-bold transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
                 style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
               >
                 <ArrowLeft className="w-4 h-4" /> All Articles

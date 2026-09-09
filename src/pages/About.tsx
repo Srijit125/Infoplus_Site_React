@@ -51,12 +51,12 @@ function About() {
   ];
 
   const team = [
-    { name: "Rajesh Kumar",     role: "CEO & Founder",                    bio: "Visionary leader with 24+ years driving global IT strategy and innovation.",             initials: "RK", accent: "#EB9B3D", image: "/team/rajesh-kumar.jpg",   linkedin: "#" },
-    { name: "Priya Sharma",     role: "Chief Technology Officer",          bio: "Architect of enterprise cloud and AI solutions across 17 countries.",                    initials: "PS", accent: "#DA4D33", image: "/team/priya-sharma.jpg",   linkedin: "#" },
-    { name: "James Bennett",    role: "Head of IT Services",               bio: "Expert in managed IT, infrastructure, and cybersecurity delivery.",                     initials: "JB", accent: "#F5A623", image: "/team/james-bennett.jpg",  linkedin: "#" },
-    { name: "Aisha Patel",      role: "Director of SAP Practice",          bio: "Certified SAP consultant specialising in S/4HANA transformations.",                     initials: "AP", accent: "#F0783A", image: "/team/aisha-patel.jpg",    linkedin: "#" },
-    { name: "Michael Carter",   role: "Head of Staffing & Consulting",     bio: "Connects top IT talent with leading organisations across the UK.",                      initials: "MC", accent: "#F5C66A", image: "/team/michael-carter.jpg", linkedin: "#" },
-    { name: "Sophie Williams",  role: "Director of Business Development",  bio: "Builds lasting partnerships and drives growth across new markets.",                     initials: "SW", accent: "#EB9B3D", image: "/team/sophie-williams.jpg",linkedin: "#" },
+    { name: "Srikanth Settipalli", role: "CEO & Founder",            bio: "Visionary founder with 24+ years driving global IT strategy and growth.",                   initials: "SS",  accent: "#EB9B3D", image: "/team/srikanth-settipalli.jpg", linkedin: "#" },
+    { name: "Karthik G Shanmugam", role: "Chief Technology Officer", bio: "Architect of enterprise cloud and AI solutions across 17 countries.",                        initials: "KGS", accent: "#DA4D33", image: "/team/karthik-shanmugam.jpg",   linkedin: "#" },
+    { name: "Karthikeyan RK",      role: "Head of IT Services",      bio: "Expert in managed IT, infrastructure, and cybersecurity delivery.",                          initials: "KR",  accent: "#F5A623", image: "/team/karthikeyan-rk.jpg",       linkedin: "#" },
+    { name: "Karthik G Shanmugam", role: "SAP Practice Lead",        bio: "Certified SAP specialist leading S/4HANA transformations and ERP strategy.",                 initials: "KGS", accent: "#F0783A", image: "/team/karthik-shanmugam.jpg",   linkedin: "#" },
+    { name: "Radhika",             role: "Head of Staffing",         bio: "Connects top IT talent with leading organisations across the UK and beyond.",                 initials: "R",   accent: "#F5C66A", image: "/team/radhika.jpg",              linkedin: "#" },
+    { name: "Sheik",               role: "Head of Business Dev.",    bio: "Builds lasting partnerships and drives business growth across new markets.",                  initials: "SH",  accent: "#EB9B3D", image: "/team/sheik.jpg",                linkedin: "#" },
   ];
 
   const milestones = [

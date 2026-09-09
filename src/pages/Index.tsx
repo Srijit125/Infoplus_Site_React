@@ -36,10 +36,10 @@ const WHY = [
 ];
 
 const SOL_EXTRAS = [
-  { href: "/services/it-services"         },
-  { href: "/products"                     },
-  { href: "/services/staffing-consulting" },
-  { href: "/services/new-generation"      },
+  { href: "/services/it-services",         ctaLabel: "Explore IT Services"          },
+  { href: "/products",                     ctaLabel: "Explore Our Products"          },
+  { href: "/services/staffing-consulting", ctaLabel: "Explore Staffing & Consulting" },
+  { href: "/services/new-generation",      ctaLabel: "Explore New-Gen Solutions"     },
 ];
 const SOLUTION_CARDS = ourSolutions.map((s, i) => ({ ...s, ...SOL_EXTRAS[i] }));
 
@@ -69,12 +69,12 @@ const TESTIMONIALS_T2 = [
 ];
 
 const TEAM_T2 = [
-  { name: "Rajesh Kumar",    role: "CEO & Founder",               bio: "24+ years driving global IT strategy and innovation.",               initials: "RK" },
-  { name: "Priya Sharma",    role: "Chief Technology Officer",    bio: "Architect of enterprise cloud and AI solutions across 17 countries.",  initials: "PS" },
-  { name: "James Bennett",   role: "Head of IT Services",         bio: "Expert in managed IT, infrastructure, and cybersecurity delivery.",   initials: "JB" },
-  { name: "Aisha Patel",     role: "Director of SAP Practice",    bio: "Certified SAP consultant specialising in S/4HANA transformations.",   initials: "AP" },
-  { name: "Michael Carter",  role: "Head of Staffing",            bio: "Connects top IT talent with leading organisations across the UK.",    initials: "MC" },
-  { name: "Sophie Williams", role: "Director of Business Dev.",   bio: "Builds lasting partnerships and drives growth across new markets.",   initials: "SW" },
+  { name: "Srikanth Settipalli", role: "CEO & Founder",            bio: "Visionary founder with 24+ years driving global IT strategy and growth.",          initials: "SS",  linkedin: "#" },
+  { name: "Karthik G Shanmugam", role: "Chief Technology Officer", bio: "Architect of enterprise cloud and AI solutions across 17 countries.",                initials: "KGS", linkedin: "#" },
+  { name: "Karthikeyan RK",      role: "Head of IT Services",      bio: "Expert in managed IT, infrastructure, and cybersecurity delivery.",                 initials: "KR",  linkedin: "#" },
+  { name: "Karthik G Shanmugam", role: "SAP Practice Lead",        bio: "Certified SAP specialist leading S/4HANA transformations and ERP strategy.",        initials: "KGS", linkedin: "#" },
+  { name: "Radhika",             role: "Head of Staffing",         bio: "Connects top IT talent with leading organisations across the UK and beyond.",        initials: "R",   linkedin: "#" },
+  { name: "Sheik",               role: "Head of Business Dev.",    bio: "Builds lasting partnerships and drives business growth across new markets.",         initials: "SH",  linkedin: "#" },
 ];
 
 /* ─────────────────────────────────────────────────────────────────
@@ -342,7 +342,7 @@ export default function Index() {
               </div>
               <Link to="/about"
                 style={{ background: ACC, borderRadius: 999, padding: "12px 24px", fontWeight: 600, color: TP, display: "inline-flex", alignItems: "center", gap: 8, textDecoration: "none", transition: "all 0.2s" }}
-                className="hover:opacity-85 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(235,155,61,0.35)]">
+                className="hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]">
                 Know More About Us
                 <ChevronRight style={{ width: 16, height: 16 }} />
               </Link>
@@ -462,7 +462,7 @@ export default function Index() {
                     <sol.icon style={{ width: 22, height: 22, color: TP }} />
                   </div>
                   <h3 style={{ color: WH1, fontWeight: 700, fontSize: 19, marginBottom: 8 }}>{sol.title}</h3>
-                  <p style={{ color: WH2, fontSize: 14, lineHeight: 1.75, marginBottom: 16, flex: 1 }}>{sol.description}</p>
+                  <p style={{ color: WH2, fontSize: 14, lineHeight: 1.75, marginBottom: 16 }}>{sol.description}</p>
 
                   <div className="flex flex-wrap gap-2 mb-5">
                     {sol.features.map(f => (
@@ -473,8 +473,8 @@ export default function Index() {
                     ))}
                   </div>
 
-                  <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#EB9B3D", fontSize: 13, fontWeight: 700 }}>
-                    Explore Solutions
+                  <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#EB9B3D", fontSize: 13, fontWeight: 700, marginTop: "auto" }}>
+                    {sol.ctaLabel}
                     <ChevronRight style={{ width: 14, height: 14 }} className="group-hover:translate-x-1 transition-transform duration-200" />
                   </div>
                 </Link>
@@ -528,8 +528,8 @@ export default function Index() {
                     <p style={{ color: TS, fontSize: 14, lineHeight: 1.75, marginBottom: 16 }}>{svc.description}</p>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 8 }}>
                       {svc.features.map((f, fi) => (
-                        <li key={f} style={{ display: "flex", alignItems: "center", gap: 8, color: TS, fontSize: 13 }}>
-                          <span className="bullet-dot" style={{ width: 6, height: 6, borderRadius: "50%", background: "#EB9B3D", flexShrink: 0, animationDelay: `${fi * 0.4}s` }} />
+                        <li key={f} style={{ display: "flex", alignItems: "center", gap: 10, color: TS, fontSize: 13 }}>
+                          <span style={{ display: "block", width: 6, height: 6, borderRadius: "50%", backgroundColor: TS, flexShrink: 0 }} />
                           {f}
                         </li>
                       ))}
@@ -544,10 +544,10 @@ export default function Index() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/services/it-services/artificial-intelligence"
                 style={{ background: ACC, borderRadius: 999, padding: "12px 24px", fontWeight: 600, color: TP, display: "inline-flex", alignItems: "center", gap: 8, textDecoration: "none", transition: "all 0.2s" }}
-                className="hover:opacity-85 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(235,155,61,0.35)]">
+                className="hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]">
                 Explore AI Services <ChevronRight style={{ width: 16, height: 16 }} />
               </Link>
-              <GhostBtn to="/services">All Services</GhostBtn>
+              <GhostBtn to="/services/it-services">All Services</GhostBtn>
             </div>
           </ScrollReveal>
         </div>
@@ -718,8 +718,17 @@ export default function Index() {
               <ScrollReveal key={member.name} variant="card" delay={i * 70} className="h-full">
                 <div style={{ ...card, padding: "28px", height: "100%", transition: "all 0.3s" }}
                   className="hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.30)] hover:border-[rgba(235,155,61,0.30)]">
-                  <div style={{ background: ACC, borderRadius: "50%", width: 56, height: 56, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20, flexShrink: 0 }}>
-                    <span style={{ color: TP, fontWeight: 800, fontSize: 18 }}>{member.initials}</span>
+                  <div className="flex items-start justify-between mb-5">
+                    <div style={{ background: ACC, borderRadius: "50%", width: 56, height: 56, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      <span style={{ color: TP, fontWeight: 800, fontSize: 18 }}>{member.initials}</span>
+                    </div>
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
+                      style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 34, height: 34, borderRadius: "50%", background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", color: TS, textDecoration: "none", transition: "all 0.2s", flexShrink: 0 }}
+                      className="hover:bg-[rgba(255,255,255,0.18)] hover:border-[rgba(235,155,61,0.50)] hover:text-white">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                    </a>
                   </div>
                   <p style={{ color: "#EB9B3D", fontWeight: 600, fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 6 }}>{member.role}</p>
                   <h3 style={{ color: TP, fontWeight: 700, fontSize: 18, marginBottom: 10 }}>{member.name}</h3>
@@ -748,64 +757,6 @@ export default function Index() {
           <ScrollReveal direction="fade" delay={150}>
             <div className="flex justify-center mt-6">
               <ImageWithFallback src={imgMap} alt="World Map — Infoplus Global Offices" className="w-full max-w-5xl h-auto object-contain" />
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ══ 14. Office Locations — white ══ */}
-      <section className="py-20" style={{ background: "#FFFFFF" }}>
-        <div className="container mx-auto px-6 max-w-7xl">
-
-          <ScrollReveal direction="up">
-            <div className="text-center mb-12">
-              <Eyebrow label="Our Offices" />
-              <h2 style={{ color: WH1, fontWeight: 700, fontSize: "clamp(1.75rem,3.5vw,2.5rem)", lineHeight: 1.2, marginBottom: 16 }}>
-                Global Presence
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            {LOCATIONS.map((loc, i) => (
-              <ScrollReveal key={loc.country} direction="up" delay={i * 80} className="h-full">
-                <div style={{ ...lcard, padding: "24px", height: "100%", transition: "all 0.25s" }}
-                  className="hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(13,17,45,0.10)] hover:border-[rgba(235,155,61,0.30)]">
-                  <div style={{ background: ACC, borderRadius: "50%", width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
-                    <loc.icon style={{ width: 18, height: 18, color: TP }} />
-                  </div>
-                  <p style={{ color: WH1, fontWeight: 700, fontSize: 15, marginBottom: 6 }}>{loc.country}</p>
-                  <p style={{ color: WH2, fontSize: 13, lineHeight: 1.65 }}>{loc.address}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal direction="up" delay={240}>
-            <div style={{ ...lcard, padding: "20px 28px" }} className="flex flex-col sm:flex-row items-center justify-center gap-8">
-              <a href="mailto:info@infoplustechnologies.co.uk"
-                style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", color: "inherit", transition: "transform 0.2s" }}
-                className="hover:-translate-y-0.5">
-                <div style={{ background: ACC, borderRadius: "50%", width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <Mail style={{ width: 18, height: 18, color: TP }} />
-                </div>
-                <div>
-                  <p style={{ color: WH2, fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 2 }}>Email Us</p>
-                  <p style={{ color: WH1, fontSize: 14, fontWeight: 700 }}>info@infoplustechnologies.co.uk</p>
-                </div>
-              </a>
-              <div style={{ width: 1, height: 40, background: "rgba(13,17,45,0.10)" }} className="hidden sm:block" />
-              <a href="tel:+447853045836"
-                style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", color: "inherit", transition: "transform 0.2s" }}
-                className="hover:-translate-y-0.5">
-                <div style={{ background: ACC, borderRadius: "50%", width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <Phone style={{ width: 18, height: 18, color: TP }} />
-                </div>
-                <div>
-                  <p style={{ color: WH2, fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 2 }}>Call Us</p>
-                  <p style={{ color: WH1, fontSize: 14, fontWeight: 700 }}>+44 785 304 5836</p>
-                </div>
-              </a>
             </div>
           </ScrollReveal>
         </div>
@@ -845,6 +796,32 @@ export default function Index() {
                 View All 17 Offices Worldwide
                 <ChevronRight style={{ width: 16, height: 16 }} />
               </Link>
+
+              <div style={{ ...lcard, padding: "20px 28px", marginTop: 24 }} className="flex flex-col sm:flex-row items-center justify-start gap-8">
+                <a href="mailto:info@infoplustechnologies.co.uk"
+                  style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", color: "inherit", transition: "transform 0.2s" }}
+                  className="hover:-translate-y-0.5">
+                  <div style={{ background: ACC, borderRadius: "50%", width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <Mail style={{ width: 18, height: 18, color: TP }} />
+                  </div>
+                  <div>
+                    <p style={{ color: WH2, fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 2 }}>Email Us</p>
+                    <p style={{ color: WH1, fontSize: 14, fontWeight: 700 }}>info@infoplustechnologies.co.uk</p>
+                  </div>
+                </a>
+                <div style={{ width: 1, height: 40, background: "rgba(13,17,45,0.10)" }} className="hidden sm:block" />
+                <a href="tel:+447853045836"
+                  style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", color: "inherit", transition: "transform 0.2s" }}
+                  className="hover:-translate-y-0.5">
+                  <div style={{ background: ACC, borderRadius: "50%", width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <Phone style={{ width: 18, height: 18, color: TP }} />
+                  </div>
+                  <div>
+                    <p style={{ color: WH2, fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 2 }}>Call Us</p>
+                    <p style={{ color: WH1, fontSize: 14, fontWeight: 700 }}>+44 785 304 5836</p>
+                  </div>
+                </a>
+              </div>
             </ScrollReveal>
 
             <ScrollReveal direction="right" delay={150}>

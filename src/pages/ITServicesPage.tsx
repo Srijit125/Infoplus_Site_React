@@ -1,6 +1,5 @@
 ﻿import { useState } from "react";
 import { PageMeta } from "../components/shared/PageMeta";
-import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
   Code2,
@@ -11,7 +10,6 @@ import {
   Cloud,
   BrainCircuit,
   ChevronRight,
-  ChevronLeft,
   Lightbulb,
   Globe,
   Users,
@@ -101,7 +99,6 @@ const IT_FAQS: FAQItem[] = [
 ];
 
 export default function ITServicesPage() {
-  const [currentBanner, setCurrentBanner] = useState(0);
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [errors, setErrors] = useState({ name: "", email: "", phone: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -171,41 +168,7 @@ export default function ITServicesPage() {
         path="/services/it-services"
       />
 
-      {/* ── Hero carousel ────────────────────────────────────── */}
-      <div className="relative overflow-hidden">
-        {/* Slides */}
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentBanner * 100}%)` }}
-        >
-
-          {/* ── Slide 0 — original PageHero ── */}
-          <div className="w-full shrink-0">
-            <PageHero
-              badge="IT SERVICES"
-              title="All Your IT Services Under one roof"
-              description="Delivering innovative technology solutions including Software Development, AI, Cybersecurity, Testing, Cloud Portfolios, SAP Consulting & Infrastructure Management for businesses worldwide."
-              variant="gradient"
-            >
-              <div className="flex flex-col sm:flex-row justify-center gap-3">
-                <Link
-                  to="/contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#F0783A] hover:bg-[#e84d27] text-white font-bold text-[14px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
-                >
-                  Discuss Your Project <ChevronRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  to="/services"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold text-[14px] transition-all duration-200"
-                >
-                  All Services
-                </Link>
-              </div>
-            </PageHero>
-          </div>
-
-          {/* ── Slide 1 — 2-column form banner ── */}
-          <div className="w-full shrink-0">
+      {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative bg-[#0D112D] overflow-hidden pt-28 pb-20">
         {/* Ambient orbs */}
         <div className="absolute top-[-10%] left-[-6%] w-[600px] h-[600px] rounded-full bg-[#242E72] opacity-40 blur-[130px] pointer-events-none" />
@@ -241,19 +204,14 @@ export default function ITServicesPage() {
                 ))}
               </div>
 
-              {/* CTAs */}
+              {/* CTA */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#F0783A] hover:bg-[#e84d27] text-white font-bold text-[14px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-bold text-[14px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
+                  style={{ background: "linear-gradient(135deg,#EB9B3D 0%,#DA4D33 100%)" }}
                 >
                   Discuss Your Project <ChevronRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  to="/services"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold text-[14px] transition-all duration-200"
-                >
-                  All Services
                 </Link>
               </div>
             </div>
@@ -349,46 +307,6 @@ export default function ITServicesPage() {
           </div>
         </div>
       </section>
-          </div>{/* end Slide 1 */}
-
-        </div>{/* end slides flex */}
-
-        {/* Arrow buttons */}
-        <button
-          onClick={() => setCurrentBanner((p) => Math.max(0, p - 1))}
-          aria-label="Previous banner"
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 disabled:opacity-30 cursor-pointer"
-          disabled={currentBanner === 0}
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-        <button
-          onClick={() => setCurrentBanner((p) => Math.min(1, p + 1))}
-          aria-label="Next banner"
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 disabled:opacity-30 cursor-pointer"
-          disabled={currentBanner === 1}
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
-
-        {/* Dot indicators */}
-        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-          {[0, 1].map((idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentBanner(idx)}
-              aria-label={`Go to banner ${idx + 1}`}
-              className="transition-all duration-300 rounded-full cursor-pointer"
-              style={{
-                width: currentBanner === idx ? "24px" : "8px",
-                height: "8px",
-                backgroundColor: currentBanner === idx ? "#DA4D33" : "rgba(255,255,255,0.35)",
-              }}
-            />
-          ))}
-        </div>
-
-      </div>{/* end Hero carousel */}
 
       {/* Intro + Vision */}
       <section className="py-24 bg-[#ffffff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
@@ -664,16 +582,11 @@ export default function ITServicesPage() {
               <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#F0783A] hover:bg-[#e84d27] text-white font-bold text-[15px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
+                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
+                  style={{ background: "linear-gradient(135deg,#EB9B3D 0%,#DA4D33 100%)" }}
                 >
                   Start a Conversation
                   <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
-                </Link>
-                <Link
-                  to="/services"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 text-white font-semibold text-[15px] transition-all duration-200"
-                >
-                  All Service Areas
                 </Link>
               </div>
             </div>

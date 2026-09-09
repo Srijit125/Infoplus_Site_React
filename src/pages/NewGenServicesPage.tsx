@@ -91,16 +91,11 @@ export default function NewGenServicesPage() {
         <div className="flex flex-col sm:flex-row justify-center gap-3">
           <Link
             to="/contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#F0783A] hover:bg-[#e84d27] text-white font-bold text-[14px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-bold text-[14px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
+            style={{ background: "linear-gradient(135deg,#EB9B3D 0%,#DA4D33 100%)" }}
           >
             Start Transforming
             <ChevronRight className="w-4 h-4" />
-          </Link>
-          <Link
-            to="/services"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold text-[14px] transition-all duration-200"
-          >
-            All Services
           </Link>
         </div>
       </PageHero>
@@ -368,16 +363,11 @@ export default function NewGenServicesPage() {
               <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#F0783A] hover:bg-[#e84d27] text-white font-bold text-[15px] transition-all duration-200 shadow-[0_8px_24px_rgba(248,93,55,0.35)]"
+                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
+                  style={{ background: "linear-gradient(135deg,#EB9B3D 0%,#DA4D33 100%)" }}
                 >
                   Talk to Our CoE Team
                   <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
-                </Link>
-                <Link
-                  to="/services"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 text-white font-semibold text-[15px] transition-all duration-200"
-                >
-                  All Service Areas
                 </Link>
               </div>
             </div>

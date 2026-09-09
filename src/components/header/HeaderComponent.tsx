@@ -120,7 +120,7 @@ export function Header() {
         <div className="hidden lg:flex items-center">
           <NavLink
             to="/contact"
-            className="flex items-center gap-2 text-white px-5 py-2.5 font-semibold text-[14px] transition-all duration-200 shrink-0 rounded-full hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(235,155,61,0.35)]"
+            className="flex items-center gap-2 text-white px-5 py-2.5 font-semibold text-[14px] transition-all duration-200 shrink-0 rounded-full hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_6px_24px_rgba(235,155,61,0.50)]"
             style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
           >
             Get Started <ChevronRight className="w-4 h-4" />
@@ -246,7 +246,7 @@ export function Header() {
 
           <NavLink
             to="/contact"
-            className="mt-3 flex items-center justify-center gap-2 text-white px-6 py-3 font-semibold text-[14px] transition-all duration-200 rounded-full hover:opacity-90"
+            className="mt-3 flex items-center justify-center gap-2 text-white px-6 py-3 font-semibold text-[14px] transition-all duration-200 rounded-full hover:brightness-110 hover:shadow-[0_6px_24px_rgba(235,155,61,0.50)]"
             style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
           >
             Get Started <ChevronRight className="w-4 h-4" />
