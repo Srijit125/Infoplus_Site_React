@@ -280,7 +280,7 @@ export default function IndexTheme2() {
 
             <ScrollReveal direction="right" delay={150}>
               <div className="grid grid-cols-2 gap-4">
-                <div className="col-span-2" style={{ ...lcard, background: "#ECEFFE", padding: 0, minHeight: 140, position: "relative", overflow: "hidden" }}>
+                <div className="col-span-2" style={{ ...lcard, padding: 0, minHeight: 140, position: "relative", overflow: "hidden" }}>
                   <div style={{ position: "absolute", inset: 0, opacity: 0.35, backgroundImage: "radial-gradient(circle,rgba(13,17,45,0.12) 1px,transparent 1px)", backgroundSize: "18px 18px" }} />
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <p style={{ color: WH2, fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 8 }}>Est. 2000</p>
@@ -296,7 +296,7 @@ export default function IndexTheme2() {
                   <p style={{ color: "#EB9B3D", fontWeight: 900, fontSize: 40, lineHeight: 1 }}>20+</p>
                   <p style={{ color: WH2, fontSize: 13, fontWeight: 600 }}>Years of Excellence</p>
                 </div>
-                <div style={{ ...lcard, background: "#ECEFFE", padding: "20px 24px", minHeight: 110, display: "flex", flexDirection: "column", justifyContent: "space-between", transition: "all 0.25s" }} className="hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(13,17,45,0.08)]">
+                <div style={{ ...lcard, padding: "20px 24px", minHeight: 110, display: "flex", flexDirection: "column", justifyContent: "space-between", transition: "all 0.25s" }} className="hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(13,17,45,0.08)]">
                   <p style={{ color: "#DA4D33", fontWeight: 900, fontSize: 40, lineHeight: 1 }}>500+</p>
                   <p style={{ color: WH2, fontSize: 13, fontWeight: 600 }}>Projects Delivered</p>
                 </div>
@@ -335,7 +335,7 @@ export default function IndexTheme2() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {WHY.map((w, i) => (
-              <ScrollReveal key={w.title} direction="up" delay={i * 70}>
+              <ScrollReveal key={w.title} direction="up" delay={i * 70} className="h-full">
                 <div style={{ ...card, padding: "28px 24px", height: "100%", transition: "all 0.25s" }}
                   className="hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(235,155,61,0.12)] hover:border-[rgba(235,155,61,0.25)]">
                   <AccentBadge icon={w.icon} />
@@ -381,7 +381,7 @@ export default function IndexTheme2() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {SOLUTION_CARDS.map((sol, i) => (
-              <ScrollReveal key={sol.title} direction="up" delay={i * 90}>
+              <ScrollReveal key={sol.title} direction="up" delay={i * 90} className="h-full">
                 <Link to={sol.href}
                   style={{ ...lcard, padding: "28px", display: "flex", flexDirection: "column", height: "100%", textDecoration: "none", transition: "all 0.3s" }}
                   className="group hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(13,17,45,0.12)] hover:border-[rgba(235,155,61,0.35)]">
@@ -446,8 +446,8 @@ export default function IndexTheme2() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
             {services.map((svc, i) => (
-              <ScrollReveal key={svc.title} direction="up" delay={i * 80}>
-                <div style={{ ...card, padding: "28px 24px", transition: "all 0.25s" }}
+              <ScrollReveal key={svc.title} direction="up" delay={i * 80} className="h-full">
+                <div style={{ ...card, padding: "28px 24px", height: "100%", transition: "all 0.25s" }}
                   className="hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(235,155,61,0.12)] hover:border-[rgba(235,155,61,0.25)]">
                   <AccentBadge icon={svc.icon} />
                   <h4 style={{ color: TP, fontWeight: 700, fontSize: 17, marginBottom: 8 }}>{svc.title}</h4>
@@ -496,7 +496,7 @@ export default function IndexTheme2() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {ourValues.map((val, i) => (
-              <ScrollReveal key={val.title} variant="card" delay={i * 70}>
+              <ScrollReveal key={val.title} variant="card" delay={i * 70} className="h-full">
                 <div style={{ ...lcard, padding: "24px 20px", height: "100%", transition: "all 0.25s" }}
                   className="hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(13,17,45,0.10)] hover:border-[rgba(235,155,61,0.30)]">
                   <div style={{ background: ACC, borderRadius: "50%", width: 44, height: 44, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
@@ -563,7 +563,7 @@ export default function IndexTheme2() {
                 const Icon = a.icon;
                 return (
                   <div key={i}
-                    style={{ ...card, padding: "24px", transition: "all 0.3s", display: "flex", alignItems: "flex-start", gap: 16 }}
+                    style={{ ...card, padding: "24px", height: "100%", transition: "all 0.3s", display: "flex", alignItems: "flex-start", gap: 16 }}
                     className="group hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(235,155,61,0.14)] hover:border-[rgba(235,155,61,0.30)]">
                     <div style={{ flexShrink: 0, background: "linear-gradient(135deg,#EB9B3D22,#DA4D3322)", borderRadius: "50%", width: 52, height: 52, display: "flex", alignItems: "center", justifyContent: "center", transition: "transform 0.3s" }}
                       className="group-hover:scale-110">
@@ -599,7 +599,7 @@ export default function IndexTheme2() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {TESTIMONIALS_T2.map((t, i) => (
-              <ScrollReveal key={t.name} variant="card" delay={i * 90}>
+              <ScrollReveal key={t.name} variant="card" delay={i * 90} className="h-full">
                 <div style={{ ...lcard, padding: "28px", position: "relative", overflow: "hidden", height: "100%" }}
                   className="flex flex-col hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(13,17,45,0.10)] hover:border-[rgba(235,155,61,0.30)] transition-all duration-300">
                   <Quote style={{ position: "absolute", top: 20, right: 20, width: 36, height: 36, color: "rgba(13,17,45,0.06)" }} />
@@ -640,8 +640,8 @@ export default function IndexTheme2() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
             {TEAM_T2.map((member, i) => (
-              <ScrollReveal key={member.name} variant="card" delay={i * 70}>
-                <div style={{ ...card, padding: "28px", transition: "all 0.3s" }}
+              <ScrollReveal key={member.name} variant="card" delay={i * 70} className="h-full">
+                <div style={{ ...card, padding: "28px", height: "100%", transition: "all 0.3s" }}
                   className="hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.30)] hover:border-[rgba(235,155,61,0.30)]">
                   <div style={{ background: ACC, borderRadius: "50%", width: 56, height: 56, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20, flexShrink: 0 }}>
                     <span style={{ color: TP, fontWeight: 800, fontSize: 18 }}>{member.initials}</span>
@@ -693,8 +693,8 @@ export default function IndexTheme2() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             {LOCATIONS.map((loc, i) => (
-              <ScrollReveal key={loc.country} direction="up" delay={i * 80}>
-                <div style={{ ...lcard, padding: "24px", transition: "all 0.25s" }}
+              <ScrollReveal key={loc.country} direction="up" delay={i * 80} className="h-full">
+                <div style={{ ...lcard, padding: "24px", height: "100%", transition: "all 0.25s" }}
                   className="hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(13,17,45,0.10)] hover:border-[rgba(235,155,61,0.30)]">
                   <div style={{ background: ACC, borderRadius: "50%", width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
                     <loc.icon style={{ width: 18, height: 18, color: TP }} />
@@ -723,8 +723,8 @@ export default function IndexTheme2() {
               <a href="tel:+447853045836"
                 style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", color: "inherit", transition: "transform 0.2s" }}
                 className="hover:-translate-y-0.5">
-                <div style={{ background: "#F3F5FF", border: "1px solid rgba(13,17,45,0.10)", borderRadius: "50%", width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <Phone style={{ width: 18, height: 18, color: "#EB9B3D" }} />
+                <div style={{ background: ACC, borderRadius: "50%", width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <Phone style={{ width: 18, height: 18, color: TP }} />
                 </div>
                 <div>
                   <p style={{ color: WH2, fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 2 }}>Call Us</p>

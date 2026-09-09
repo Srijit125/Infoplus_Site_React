@@ -128,24 +128,6 @@ export function ContactPage() {
                   We'd love to hear from you
                 </h2>
 
-                {status === "success" ? (
-                  <div className="text-center py-12">
-                    <div className="w-16 h-16 rounded-full bg-[#dcfce7] flex items-center justify-center mx-auto mb-5">
-                      <CheckCircle2 className="w-8 h-8 text-[#15803d]" />
-                    </div>
-                    <h3 className="text-xl font-bold text-[#111] mb-2">Message Sent!</h3>
-                    <p className="text-[15px] text-[#555] mb-7">
-                      Thank you for reaching out. We'll get back to you within 24 hours.
-                    </p>
-                    <button
-                      onClick={() => setStatus("idle")}
-                      className="px-7 py-3 rounded-xl text-white text-[14px] font-semibold hover:opacity-90 transition-all cursor-pointer"
-                      style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
-                    >
-                      Send Another Message
-                    </button>
-                  </div>
-                ) : (
                   <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
                     <div>
                       <label className={labelCls}>
@@ -203,7 +185,7 @@ export function ContactPage() {
 
                     <button
                       type="submit"
-                      disabled={status === "sending"}
+                      disabled={status === "sending" || status === "success"}
                       className="w-full py-4 rounded-xl text-white font-semibold text-[15px] flex items-center justify-center gap-2 disabled:opacity-70 hover:opacity-90 transition-all duration-300 cursor-pointer"
                       style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
                     >
@@ -220,13 +202,23 @@ export function ContactPage() {
                       )}
                     </button>
 
+                    {/* Success message below button */}
+                    {status === "success" && (
+                      <div className="flex items-start gap-3 bg-[#dcfce7] border border-[#bbf7d0] rounded-xl px-4 py-4">
+                        <CheckCircle2 className="w-5 h-5 text-[#15803d] shrink-0 mt-0.5" />
+                        <div>
+                          <p className="text-[14px] font-bold text-[#14532d] mb-0.5">Message Sent!</p>
+                          <p className="text-[13px] text-[#166534]">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                        </div>
+                      </div>
+                    )}
+
                     {/* Privacy tip */}
                     <div className="flex items-start gap-2 text-[12px] text-[#888]">
                       <Shield className="w-4 h-4 text-[#EB9B3D]/50 shrink-0 mt-0.5" />
                       <span>We respect your privacy. We promise we won't spam you :)</span>
                     </div>
                   </form>
-                )}
               </div>
             </ScrollReveal>
 

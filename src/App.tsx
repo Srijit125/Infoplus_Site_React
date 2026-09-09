@@ -4,7 +4,7 @@ import { Footer } from "./components/FooterComponent";
 // import Header from "./components/Header";
 import { Header } from "./components/header/HeaderComponent";
 import Index from "./pages/Index";
-import IndexTheme2 from "./pages/IndexTheme2";
+import IndexTheme1 from "./pages/IndexTheme1";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
@@ -44,7 +44,8 @@ function AppShell() {
       <Header />
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="/home-2" element={<IndexTheme2 />} />
+        <Route path="/home-2" element={<Index />} />
+        <Route path="/home-1" element={<IndexTheme1 />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />

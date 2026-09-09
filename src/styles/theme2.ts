@@ -12,7 +12,7 @@ export const T2_SAL  = "#1A2444";   // alt surface — secondary dark card
 
 /* ── Light backgrounds ────────────────────────────── */
 export const T2_LIGHT = "#FFFFFF";  // light section background
-export const T2_LCARD = "#F3F5FF";  // light card / map tile background
+export const T2_LCARD = "#FFFFFF";  // light card background
 
 /* ── Accent gradient & individual stops ──────────── */
 export const T2_ACC  = "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)";
@@ -53,6 +53,6 @@ export const t2Card = {
 
 export const t2LCard = {
   background: T2_LCARD,
-  border: "1px solid rgba(13,17,45,0.07)",
+  border: "1px solid rgba(13,17,45,0.10)",
   borderRadius: 12,
 } as const;

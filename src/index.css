@@ -48,6 +48,123 @@
   100% { transform: translateX(-50%); }
 }
 
+/* ── Amber / navy section animation system ────────────────────────
+   Our Work & AI Services — amber #EB9B3D / coral #DA4D33 / navy #141A3D
+────────────────────────────────────────────────────────────────── */
+
+/* Amber glow pulse — used on Our Work icon circles on card hover */
+@keyframes amberGlow {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(235,155,61,0),    0 0  0   0 rgba(235,155,61,0);    }
+  50%       { box-shadow: 0 0 0 6px rgba(235,155,61,0.20), 0 0 28px 4px rgba(235,155,61,0.30); }
+}
+
+/* Bullet-dot slow pulse — AI service card feature dots */
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1);   opacity: 0.9; }
+  50%       { transform: scale(1.8); opacity: 0.6; }
+}
+
+/* Scan-line sweep — AI service dark card hover overlay */
+@keyframes scanLine {
+  from { transform: translateY(-100%); opacity: 0.8; }
+  to   { transform: translateY(300%);  opacity: 0;   }
+}
+
+/* Floating grid drift — AI section background decoration */
+@keyframes gridFloat {
+  0%        { background-position: 0px 0px;   }
+  33%       { background-position: 14px 10px; }
+  66%       { background-position: 6px 18px;  }
+  100%      { background-position: 0px 0px;   }
+}
+
+/* Top-border sweep — Our Work card hover (handled via CSS transition, no keyframe needed) */
+
+/* ── Our Work card ─────────────────────────────────────────────── */
+.our-work-card {
+  position: relative;
+  overflow: hidden;
+}
+/* Amber top-border that sweeps left → right on hover */
+.our-work-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #EB9B3D 0%, #DA4D33 100%);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+  border-radius: 2px 2px 0 0;
+  z-index: 1;
+}
+.our-work-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Amber icon circle — glow animation fires on card hover */
+.amber-icon {
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.our-work-card:hover .amber-icon {
+  animation: amberGlow 1.6s ease-in-out infinite;
+}
+
+/* ── AI section background ─────────────────────────────────────── */
+.ai-section-bg {
+  position: relative;
+  overflow: hidden;
+}
+.ai-section-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(235,155,61,0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  animation: gridFloat 12s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── AI service dark card ──────────────────────────────────────── */
+.ai-service-card {
+  position: relative;
+  overflow: hidden;
+}
+/* Scan-line overlay that sweeps top → bottom on hover */
+.ai-service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(235,155,61,0.10) 0%, transparent 100%);
+  transform: translateY(-100%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+}
+.ai-service-card:hover::after {
+  animation: scanLine 0.65s ease-out forwards;
+}
+
+/* ── AI bullet dots ────────────────────────────────────────────── */
+.bullet-dot {
+  animation: dotPulse 2.6s ease-in-out infinite;
+}
+
+/* ── Reduced-motion overrides ──────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .our-work-card::before,
+  .amber-icon,
+  .ai-section-bg::before,
+  .ai-service-card::after,
+  .bullet-dot {
+    animation: none !important;
+    transition: none !important;
+  }
+  .our-work-card:hover::before { transform: scaleX(1); }
+}
+
 /* ════════════════════════════════════════════════════════════
    DESIGN SYSTEM — Infoplus Technologies UK
    ════════════════════════════════════════════════════════════

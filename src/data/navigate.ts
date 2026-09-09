@@ -19,7 +19,7 @@ export interface NavigationItem {
 export const navigation: NavigationItem[] = [
   {
     label: "Home",
-    href: "/home-2",
+    href: "/",
   },
   {
     label: "About Us",

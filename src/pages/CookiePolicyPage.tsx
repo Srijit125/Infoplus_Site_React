@@ -18,37 +18,21 @@ import {
 const COOKIE_TYPES = [
   {
     icon: ShieldCheck,
-    gradient: "from-[#EB9B3D] to-[#DA4D33]",
-    accent: "#EB9B3D",
-    cardBg: "#F3F5FF",
-    cardBorder: "rgba(13,17,45,0.10)",
     title: "Strictly Necessary Cookies",
     desc: "These are cookies that are required for the operation of our website. They include, for example, cookies that enable you to log into secure areas of our website, use a shopping cart, or make use of the e-billing services.",
   },
   {
     icon: BarChart3,
-    gradient: "from-[#F0783A] to-[#EB9B3D]",
-    accent: "#F0783A",
-    cardBg: "#FEF8F0",
-    cardBorder: "rgba(240,120,58,0.15)",
     title: "Analytical / Performance Cookies",
     desc: "They allow us to recognize and count the number of visitors and to see how visitors move around our website when they are using it. This helps us to improve the way our website works, for example, by ensuring that users find what they are looking for easily.",
   },
   {
     icon: Settings2,
-    gradient: "from-[#EB9B3D] to-[#F0783A]",
-    accent: "#DA4D33",
-    cardBg: "#FEF0DC",
-    cardBorder: "rgba(235,155,61,0.20)",
     title: "Functionality Cookies",
     desc: "These are used to recognize you when you return to our website. This enables us to personalize our content for you, greet you by name, and remember your preferences (for example, your choice of language or region).",
   },
   {
     icon: Target,
-    gradient: "from-[#DA4D33] to-[#EB9B3D]",
-    accent: "#EB9B3D",
-    cardBg: "#F3F5FF",
-    cardBorder: "rgba(13,17,45,0.10)",
     title: "Targeting Cookies",
     desc: "These cookies record your visit to our website, the pages you have visited, and the links you have followed. We will use this information to make our website and the advertising displayed on it more relevant to your interests. We may also share this information with third parties for this purpose.",
   },
@@ -129,27 +113,19 @@ export default function CookiePolicyPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {COOKIE_TYPES.map((ct, i) => {
               const CIcon = ct.icon;
               return (
                 <ScrollReveal key={ct.title} variant="card" delay={i * 100}>
-                  <div
-                    className="group h-full rounded-2xl p-7 border hover:shadow-[0_12px_40px_-8px_rgba(235,155,61,0.13)] hover:-translate-y-1 transition-all duration-300"
-                    style={{ backgroundColor: ct.cardBg, borderColor: ct.cardBorder }}
-                  >
-                    <div
-                      className={`w-12 h-12 rounded-xl bg-linear-to-br ${ct.gradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <CIcon className="w-6 h-6 text-white" />
+                  <div className="group h-full bg-white rounded-2xl p-6 border border-[rgba(13,17,45,0.10)] hover:border-[#EB9B3D]/25 hover:shadow-[0_12px_40px_-8px_rgba(235,155,61,0.13)] hover:-translate-y-1 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                      <CIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                     </div>
-                    <h3
-                      className="text-[17px] font-bold mb-3 leading-snug transition-colors duration-200"
-                      style={{ color: "#0d0517" }}
-                    >
+                    <h3 className="text-[16px] font-bold text-[#111] mb-3 leading-snug group-hover:text-[#EB9B3D] transition-colors duration-200">
                       {ct.title}
                     </h3>
-                    <p className="text-[14px] text-[#555] leading-relaxed">{ct.desc}</p>
+                    <p className="text-[13.5px] text-[#555] leading-relaxed">{ct.desc}</p>
                   </div>
                 </ScrollReveal>
               );

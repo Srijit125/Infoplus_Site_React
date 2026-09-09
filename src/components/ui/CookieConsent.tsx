@@ -1,14 +1,14 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Cookie, X, ShieldCheck, BarChart3, Settings2, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CONSENT_KEY = "infoplus-cookie-consent";
 
 const COOKIE_TYPES = [
-  { icon: ShieldCheck, label: "Necessary",   color: "#6128a6", always: true },
-  { icon: BarChart3,   label: "Analytics",   color: "#aa3bff", always: false },
-  { icon: Settings2,   label: "Functional",  color: "#aa3bff", always: false },
-  { icon: Target,      label: "Targeting",   color: "#f85d37", always: false },
+  { icon: ShieldCheck, label: "Necessary",  always: true  },
+  { icon: BarChart3,   label: "Analytics",  always: false },
+  { icon: Settings2,   label: "Functional", always: false },
+  { icon: Target,      label: "Targeting",  always: false },
 ];
 
 export function CookieConsent() {
@@ -20,7 +20,6 @@ export function CookieConsent() {
     const session = sessionStorage.getItem("cookie-banner-dismissed");
     if (!local && !session) {
       setShow(true);
-      // A second RAF + timeout ensures the element has painted before CSS transition fires
       requestAnimationFrame(() => {
         setTimeout(() => setVisible(true), 80);
       });
@@ -52,18 +51,18 @@ export function CookieConsent() {
     >
       <div className="max-w-5xl mx-auto pointer-events-auto relative">
         {/* Card */}
-        <div className="relative bg-[#130826]/97 border border-[#aa3bff]/25 rounded-2xl shadow-[0_-8px_48px_rgba(97,40,166,0.30),0_24px_64px_rgba(0,0,0,0.55)] overflow-hidden backdrop-blur-xl">
+        <div className="relative bg-[#141A3D] border border-[#EB9B3D]/25 rounded-2xl shadow-[0_-8px_48px_rgba(235,155,61,0.15),0_24px_64px_rgba(0,0,0,0.55)] overflow-hidden backdrop-blur-xl">
 
-          {/* Rainbow top accent */}
-          <div className="h-[2px] bg-linear-to-r from-[#6128a6] via-[#aa3bff] to-[#f85d37]" />
+          {/* Amber top accent */}
+          <div className="h-[2px] bg-linear-to-r from-[#EB9B3D] to-[#DA4D33]" />
 
           <div className="px-5 py-5 sm:px-6 sm:py-5">
             <div className="flex flex-col lg:flex-row gap-5 lg:items-center pr-8 lg:pr-0">
 
               {/* Icon + text */}
               <div className="flex gap-3.5 items-start flex-1 min-w-0">
-                <div className="w-10 h-10 rounded-xl bg-[#aa3bff]/15 border border-[#aa3bff]/20 flex items-center justify-center shrink-0 mt-0.5">
-                  <Cookie className="w-5 h-5 text-[#aa3bff]" />
+                <div className="w-10 h-10 rounded-xl bg-[#EB9B3D]/15 border border-[#EB9B3D]/20 flex items-center justify-center shrink-0 mt-0.5">
+                  <Cookie className="w-5 h-5 text-[#EB9B3D]" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-[15px] font-bold text-white mb-1 leading-tight">
@@ -77,7 +76,7 @@ export function CookieConsent() {
                     <Link
                       to="/cookie-policy"
                       onClick={() => dismiss("managed")}
-                      className="text-[#aa3bff] hover:underline underline-offset-2 whitespace-nowrap"
+                      className="text-[#EB9B3D] hover:underline underline-offset-2 whitespace-nowrap"
                     >
                       Cookie Policy →
                     </Link>
@@ -88,12 +87,7 @@ export function CookieConsent() {
                     {COOKIE_TYPES.map((ct) => (
                       <span
                         key={ct.label}
-                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold border"
-                        style={{
-                          borderColor: `${ct.color}35`,
-                          backgroundColor: `${ct.color}12`,
-                          color: ct.color,
-                        }}
+                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold border border-[#EB9B3D]/30 bg-[#EB9B3D]/10 text-[#EB9B3D]"
                       >
                         <ct.icon className="w-2.5 h-2.5" />
                         {ct.label}
@@ -121,7 +115,7 @@ export function CookieConsent() {
                 </button>
                 <button
                   onClick={() => dismiss("accepted")}
-                  className="px-5 py-2 rounded-xl text-[13px] font-bold bg-[#f85d37] hover:bg-[#e84d27] text-white transition-colors duration-200 shadow-[0_4px_16px_rgba(248,93,55,0.40)] whitespace-nowrap cursor-pointer"
+                  className="px-5 py-2 rounded-xl text-[13px] font-bold bg-linear-to-r from-[#EB9B3D] to-[#DA4D33] hover:opacity-90 text-white transition-all duration-200 shadow-[0_4px_16px_rgba(235,155,61,0.35)] whitespace-nowrap cursor-pointer"
                 >
                   Accept All
                 </button>
