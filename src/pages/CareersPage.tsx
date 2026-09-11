@@ -187,7 +187,7 @@ function CareersPage() {
       formData.append("job_title", applyJob?.role ?? "");
       formData.append("type", "Infoplus Career Application");
       const res = await fetch(
-        "https://test.infoplus.co.in/WebMail/api/Email/career",
+        "http://109.228.60.38/WebMail/api/Email/career",
         {
           method: "POST",
           body: formData,

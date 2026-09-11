@@ -69,9 +69,9 @@ const OFFICES = [
     code: "IE",
     region: "Ireland",
     city: "Dublin",
-    address: "The Black Church, St. Mary's Place, Dublin 7",
+    address: "28-32 Pembroke Street Upper, Dublin D02 EK84",
     mapUrl:
-      "https://maps.google.com/?q=The+Black+Church+St+Marys+Place+Dublin+7+Ireland",
+      "https://maps.google.com/?q=28-32+Pembroke+Street+Upper+Dublin+D02+EK84+Ireland",
   },
   {
     code: "CH",
@@ -267,7 +267,7 @@ export function ContactPage() {
       formData.append("message", form.message.trim());
       formData.append("type", "Infoplus UK Contact");
       const res = await fetch(
-        "https://test.infoplus.co.in/WebMail/api/Email/contact",
+        "http://109.228.60.38/WebMail/api/Email/contact",
         {
           method: "POST",
           body: formData,
