@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Phone, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./helpers/ImageWithFallback";
@@ -34,6 +35,37 @@ function SocialSvg({ name }: { name: string }) {
 }
 
 export function Footer({ bgColor }: { bgColor?: string }) {
+  const [nlEmail, setNlEmail] = useState("");
+  const [nlStatus, setNlStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  const handleNewsletter = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!nlEmail.trim()) return;
+    setNlStatus("sending");
+    try {
+      const fd = new FormData();
+      fd.append("name", "Newsletter Subscriber");
+      fd.append("email", nlEmail.trim());
+      fd.append("phone", "");
+      fd.append("message", "Newsletter subscription request.");
+      fd.append("type", "Newsletter Subscription");
+      const res = await fetch("http://109.228.60.38/WebMail/api/Email/contact", {
+        method: "POST",
+        body: fd,
+      });
+      const json = await res.json();
+      if (json.success) {
+        setNlStatus("success");
+        setNlEmail("");
+      } else {
+        setNlStatus("error");
+      }
+    } catch {
+      setNlStatus("error");
+    }
+    setTimeout(() => setNlStatus("idle"), 4000);
+  };
+
   return (
     <footer className="text-white pt-20 pb-8" style={{ backgroundColor: bgColor ?? "#141A3D" }}>
       <div className="container mx-auto px-6 max-w-7xl">
@@ -171,22 +203,32 @@ export function Footer({ bgColor }: { bgColor?: string }) {
             <p className="text-[12px] text-white/70 mb-4 font-normal">
               Subscribe to get latest news &amp; updates
             </p>
-            <form className="relative" onSubmit={(e) => e.preventDefault()}>
+            <form className="relative" onSubmit={handleNewsletter}>
               <input
                 type="email"
                 placeholder="Enter Your Email Address"
-                className="w-full bg-white rounded-lg py-3 pl-4 pr-12 text-[14px] text-[#111] focus:outline-none placeholder:text-[#555] transition-colors"
+                value={nlEmail}
+                onChange={(e) => setNlEmail(e.target.value)}
+                disabled={nlStatus === "sending" || nlStatus === "success"}
+                className="w-full bg-white rounded-lg py-3 pl-4 pr-12 text-[14px] text-[#111] focus:outline-none placeholder:text-[#555] transition-colors disabled:opacity-60"
                 required
               />
               <button
                 type="submit"
-                className="absolute right-1 top-1 bottom-1 w-10 rounded-md flex items-center justify-center text-white transition-all duration-200 hover:opacity-90 cursor-pointer"
+                disabled={nlStatus === "sending" || nlStatus === "success"}
+                className="absolute right-1 top-1 bottom-1 w-10 rounded-md flex items-center justify-center text-white transition-all duration-200 hover:opacity-90 cursor-pointer disabled:opacity-60"
                 style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
                 aria-label="Subscribe Now"
               >
                 <ArrowRight className="w-4 h-4" />
               </button>
             </form>
+            {nlStatus === "success" && (
+              <p className="text-[12px] text-[#1bb64a] mt-2 font-medium">Subscribed successfully.</p>
+            )}
+            {nlStatus === "error" && (
+              <p className="text-[12px] text-red-400 mt-2 font-medium">Something went wrong. Please try again.</p>
+            )}
           </div>
         </div>
 
