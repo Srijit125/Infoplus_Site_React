@@ -2,7 +2,18 @@ import { PageMeta } from "../components/shared/PageMeta";
 import { useState, useEffect } from "react";
 import { PageHero } from "../components/shared/PageHero";
 import imgCareerHero from "../assets/images/career_hero.jpg";
-import { Coffee, Heart, Globe, Zap, MapPin, Briefcase, X, ChevronRight, CheckCircle2, Shield } from "lucide-react";
+import {
+  Coffee,
+  Heart,
+  Globe,
+  Zap,
+  MapPin,
+  Briefcase,
+  X,
+  ChevronRight,
+  CheckCircle2,
+  Shield,
+} from "lucide-react";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 
@@ -27,18 +38,30 @@ type FormState = {
   noticePeriod: string;
   linkedin: string;
   coverLetter: string;
+  file: File | null;
 };
 
 const EMPTY_FORM: FormState = {
-  fullName: "", email: "", phone: "", currentLocation: "",
-  experience: "", noticePeriod: "", linkedin: "", coverLetter: "",
+  fullName: "",
+  email: "",
+  phone: "",
+  currentLocation: "",
+  experience: "",
+  noticePeriod: "",
+  linkedin: "",
+  coverLetter: "",
+  file: null,
 };
 
 const TEAM_BADGE: Record<string, string> = {
-  Engineering:    "bg-[rgba(235,155,61,0.10)] text-[#A06010] border border-[rgba(235,155,61,0.22)]",
-  "Data Science": "bg-[rgba(235,155,61,0.10)] text-[#A06010] border border-[rgba(235,155,61,0.22)]",
-  Design:         "bg-[rgba(235,155,61,0.10)] text-[#A06010] border border-[rgba(235,155,61,0.22)]",
-  Sales:          "bg-[rgba(235,155,61,0.10)] text-[#A06010] border border-[rgba(235,155,61,0.22)]",
+  Engineering:
+    "bg-[rgba(235,155,61,0.10)] text-[#A06010] border border-[rgba(235,155,61,0.22)]",
+  "Data Science":
+    "bg-[rgba(235,155,61,0.10)] text-[#A06010] border border-[rgba(235,155,61,0.22)]",
+  Design:
+    "bg-[rgba(235,155,61,0.10)] text-[#A06010] border border-[rgba(235,155,61,0.22)]",
+  Sales:
+    "bg-[rgba(235,155,61,0.10)] text-[#A06010] border border-[rgba(235,155,61,0.22)]",
 };
 
 const CAREERS_FAQS: FAQItem[] = [
@@ -62,78 +85,231 @@ const CAREERS_FAQS: FAQItem[] = [
 
 /* ── Component ─────────────────────────────────────── */
 function CareersPage() {
-  const [teamFilter,     setTeamFilter]     = useState("All");
+  const [teamFilter, setTeamFilter] = useState("All");
   const [locationFilter, setLocationFilter] = useState("All");
-  const [applyJob,       setApplyJob]       = useState<Job | null>(null);
-  const [submitted,      setSubmitted]      = useState(false);
-  const [form,           setForm]           = useState<FormState>(EMPTY_FORM);
+  const [applyJob, setApplyJob] = useState<Job | null>(null);
+  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState<FormState>(EMPTY_FORM);
+  const [errors, setErrors] = useState({ fullName: "", email: "", phone: "" });
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
 
   /* lock body scroll when modal is open */
   useEffect(() => {
     document.body.style.overflow = applyJob ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [applyJob]);
+  type ITField = "fullName" | "email" | "phone";
+  const closeModal = () => {
+    setApplyJob(null);
+    setSubmitted(false);
+    setForm(EMPTY_FORM);
+  };
 
-  const closeModal = () => { setApplyJob(null); setSubmitted(false); setForm(EMPTY_FORM); };
-  const handleSubmit = (e: { preventDefault(): void }) => { e.preventDefault(); setSubmitted(true); };
+  // fileToBase64.js
+  const fileToBase64 = (file: File) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result); // "data:image/png;base64,iVBORw0..."
+      reader.onerror = reject;
+    });
+
+  // If your API wants the raw base64 without the data-URL prefix:
+  const fileToBase64Raw: (file: File) => Promise<string> = async (file) => {
+    const dataUrl = await fileToBase64(file);
+    return dataUrl.split(",")[1];
+  };
+
+  const validateField = (field: ITField, value: string): string => {
+    const s = value.trim();
+    if (field === "fullName") {
+      if (!s) return "Full name is required.";
+      if (s.length < 2) return "Full name must be at least 2 characters.";
+      if (s.length > 100) return "Full name must be under 100 characters.";
+      if (!/^[a-zA-ZÀ-ÖØ-öø-ÿ\s'\-.]+$/.test(s))
+        return "Full name may only contain letters, spaces, hyphens, periods and apostrophes.";
+      return "";
+    }
+    if (field === "email") {
+      if (!s) return "Email is required.";
+      if (s.length > 254) return "Email address is too long.";
+      if (!/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(s))
+        return "Enter a valid email (e.g. john@company.com).";
+      return "";
+    }
+    if (field === "phone") {
+      if (!s) return "Contact number is required.";
+      if (!/^[+\d\s()\-]+$/.test(s))
+        return "Only digits, spaces, +, – and parentheses are allowed.";
+      const digits = s.replace(/\D/g, "");
+      if (digits.length < 7) return "Must contain at least 7 digits.";
+      if (digits.length > 15) return "Must not exceed 15 digits.";
+      return "";
+    }
+    return "";
+  };
+
+  const handleSubmit = async (e: { preventDefault(): void }) => {
+    e.preventDefault();
+    const errs: Record<ITField, string> = {
+      fullName: validateField("fullName", form.fullName),
+      email: validateField("email", form.email),
+      phone: validateField("phone", form.phone),
+    };
+    setErrors(errs);
+
+    setStatus("sending");
+    try {
+      const formData = new FormData();
+      formData.append("full_name", form.fullName.trim());
+      formData.append("email", form.email.trim());
+      formData.append("phone", form.phone.trim());
+      formData.append("cover_letter", form.coverLetter.trim());
+      formData.append("location", form.currentLocation.trim());
+      formData.append("experience", form.experience.trim());
+      formData.append("notice_period", form.noticePeriod.trim());
+      formData.append("linkedin", form.linkedin.trim());
+      if (form.file) {
+        const file = await fileToBase64Raw(form.file);
+        formData.append("file_name", form.file.name);
+        formData.append("base64", file);
+      }
+      formData.append("job_title", applyJob?.role ?? "");
+      formData.append("type", "Infoplus Career Application");
+      const res = await fetch(
+        "https://test.infoplus.co.in/WebMail/api/Email/career",
+        {
+          method: "POST",
+          body: formData,
+        },
+      );
+      const json = await res.json();
+      if (json.success) {
+        setStatus("success");
+        setForm({
+          fullName: "",
+          email: "",
+          phone: "",
+          coverLetter: "",
+          currentLocation: "",
+          experience: "",
+          noticePeriod: "",
+          linkedin: "",
+          file: null,
+        });
+        setErrors({ fullName: "", email: "", phone: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+    setSubmitted(true);
+  };
 
   /* ── Static data ───────────────────────────────── */
   const perks = [
-    { icon: Heart,  title: "Real Responsibility, From Day One", desc: "Here you don't need to wait for the \"real\" work. You'll be handed the genuine problem to solve from the day you start, with support when you need it."},
-    { icon: Globe,  title: "Global Exposure, Local Team Feel",       desc: "As we are operating across 17 countries, you'll work on projects with real international people; you can exchange and gain more knowledge and skills."},
-    { icon: Zap,    title: "Learning that's Part of the Journey, Not an Afterthought",     desc: "Technology is moving so fast - SAP, AI, Cybersecurity. In Infoplus, you'll get the chance to build skills, and you'll get the encouragement to grow with the technology, while working with the most experienced & talented people."},
-    { icon: Coffee, title: "Who we're Looking For",       desc: "We hire based on skills and attitude over the ticking boxes of what you achieved. We care more about how you work than what's on the paper. All we see is whether you're taking pride in what you do or not. And then you can be trusted to get on with the job- you'll do well here. This applies to everyone, whether you're an experienced specialist or just starting your career, including throughout the internship programme."},
+    {
+      icon: Heart,
+      title: "Real Responsibility, From Day One",
+      desc: "Here you don't need to wait for the \"real\" work. You'll be handed the genuine problem to solve from the day you start, with support when you need it.",
+    },
+    {
+      icon: Globe,
+      title: "Global Exposure, Local Team Feel",
+      desc: "As we are operating across 17 countries, you'll work on projects with real international people; you can exchange and gain more knowledge and skills.",
+    },
+    {
+      icon: Zap,
+      title: "Learning that's Part of the Journey, Not an Afterthought",
+      desc: "Technology is moving so fast - SAP, AI, Cybersecurity. In Infoplus, you'll get the chance to build skills, and you'll get the encouragement to grow with the technology, while working with the most experienced & talented people.",
+    },
+    {
+      icon: Coffee,
+      title: "Who we're Looking For",
+      desc: "We hire based on skills and attitude over the ticking boxes of what you achieved. We care more about how you work than what's on the paper. All we see is whether you're taking pride in what you do or not. And then you can be trusted to get on with the job- you'll do well here. This applies to everyone, whether you're an experienced specialist or just starting your career, including throughout the internship programme.",
+    },
   ];
 
   const positions: Job[] = [
     {
-      id: 1, role: "Senior Frontend Engineer", team: "Engineering",
-      location: "Remote / UK", type: "Full-time", salary: "£60,000 – £80,000",
+      id: 1,
+      role: "Senior Frontend Engineer",
+      team: "Engineering",
+      location: "Remote / UK",
+      type: "Full-time",
+      salary: "£60,000 – £80,000",
       skills: ["React", "TypeScript", "TailwindCSS"],
       desc: "Build and maintain high-performance user interfaces for enterprise clients across multiple industries.",
     },
     {
-      id: 2, role: "AI Research Scientist", team: "Data Science",
-      location: "Germany", type: "Full-time", salary: "€70,000 – €90,000",
+      id: 2,
+      role: "AI Research Scientist",
+      team: "Data Science",
+      location: "Germany",
+      type: "Full-time",
+      salary: "€70,000 – €90,000",
       skills: ["Python", "Machine Learning", "NLP"],
       desc: "Develop next-generation AI models and solutions for enterprise data intelligence platforms.",
     },
     {
-      id: 3, role: "Product Designer", team: "Design",
-      location: "Remote", type: "Full-time", salary: "£50,000 – £70,000",
+      id: 3,
+      role: "Product Designer",
+      team: "Design",
+      location: "Remote",
+      type: "Full-time",
+      salary: "£50,000 – £70,000",
       skills: ["Figma", "UI/UX", "Prototyping"],
       desc: "Create beautiful, user-centric designs for our growing product portfolio and client applications.",
     },
     {
-      id: 4, role: "Technical Account Manager", team: "Sales",
-      location: "India", type: "Full-time", salary: "₹15L – ₹25L",
+      id: 4,
+      role: "Technical Account Manager",
+      team: "Sales",
+      location: "India",
+      type: "Full-time",
+      salary: "₹15L – ₹25L",
       skills: ["Client Relations", "SAP", "CRM"],
       desc: "Manage key enterprise client relationships and drive business growth across the South Asia region.",
     },
     {
-      id: 5, role: "Backend Engineer", team: "Engineering",
-      location: "UK", type: "Full-time", salary: "£65,000 – £85,000",
+      id: 5,
+      role: "Backend Engineer",
+      team: "Engineering",
+      location: "UK",
+      type: "Full-time",
+      salary: "£65,000 – £85,000",
       skills: ["Node.js", "Python", "AWS"],
       desc: "Design and scale cloud-native backend services and APIs for enterprise-grade applications.",
     },
     {
-      id: 6, role: "Data Analyst", team: "Data Science",
-      location: "Remote", type: "Full-time", salary: "£45,000 – £60,000",
+      id: 6,
+      role: "Data Analyst",
+      team: "Data Science",
+      location: "Remote",
+      type: "Full-time",
+      salary: "£45,000 – £60,000",
       skills: ["SQL", "Power BI", "Python"],
       desc: "Transform raw data into actionable insights and build dashboards for our global clients.",
     },
   ];
 
   const teams = ["All", "Engineering", "Data Science", "Design", "Sales"];
-  const locs  = ["All", "Remote", "UK", "Germany", "India"];
+  const locs = ["All", "Remote", "UK", "Germany", "India"];
 
-  const filtered = positions.filter(p => {
+  const filtered = positions.filter((p) => {
     const matchTeam = teamFilter === "All" || p.team === teamFilter;
-    const matchLoc  = locationFilter === "All" || p.location.includes(locationFilter);
+    const matchLoc =
+      locationFilter === "All" || p.location.includes(locationFilter);
     return matchTeam && matchLoc;
   });
 
-  const inputCls = "w-full px-4 py-3 border border-[#e5e4e7] rounded-xl text-[14px] text-[#111111] focus:outline-none focus:border-[#EB9B3D] focus:ring-2 focus:ring-[#EB9B3D]/20 transition-all placeholder:text-[#bbb]";
+  const inputCls =
+    "w-full px-4 py-3 border border-[#e5e4e7] rounded-xl text-[14px] text-[#111111] focus:outline-none focus:border-[#EB9B3D] focus:ring-2 focus:ring-[#EB9B3D]/20 transition-all placeholder:text-[#bbb]";
 
   return (
     <div className="w-full">
@@ -154,7 +330,11 @@ function CareersPage() {
       >
         <div className="mt-8">
           <button
-            onClick={() => document.getElementById("open-positions")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() =>
+              document
+                .getElementById("open-positions")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
             className="w-full sm:w-auto inline-flex items-center justify-center bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white px-8 py-3.5 rounded-full font-bold transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] cursor-pointer"
           >
             View Open Roles
@@ -166,17 +346,22 @@ function CareersPage() {
       <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div
           className="absolute inset-0 opacity-[0.025] pointer-events-none"
-          style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, #EB9B3D 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
         />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
             {/* Left: decorative card */}
             <ScrollReveal direction="left" className="lg:col-span-5">
               <div className="relative rounded-3xl bg-[#141A3D] p-10 overflow-hidden min-h-110 flex flex-col justify-between">
                 {/* Watermark */}
-                <div className="absolute -top-4 -right-4 text-[13rem] font-black text-white/4 leading-none select-none pointer-events-none">?</div>
+                <div className="absolute -top-4 -right-4 text-[13rem] font-black text-white/4 leading-none select-none pointer-events-none">
+                  ?
+                </div>
                 <div className="absolute bottom-0 right-0 w-48 h-48 bg-[#EB9B3D] opacity-25 rounded-full blur-[60px] pointer-events-none" />
 
                 <div className="relative z-10">
@@ -184,14 +369,16 @@ function CareersPage() {
                     Join Us
                   </span>
                   <h2 className="text-[42px] font-black text-white leading-[1.1]">
-                    Why are<br />you{" "}
-                    <span className="text-[#DA4D33]">waiting?</span>
+                    Why are
+                    <br />
+                    you <span className="text-[#DA4D33]">waiting?</span>
                   </h2>
                 </div>
 
                 <div className="relative z-10 border-t border-white/10 pt-6">
                   <p className="text-white/40 text-[13px] italic leading-relaxed">
-                    "We have excellent opportunities for passionate people who love technology and innovation."
+                    "We have excellent opportunities for passionate people who
+                    love technology and innovation."
                   </p>
                 </div>
               </div>
@@ -201,22 +388,36 @@ function CareersPage() {
             <div className="lg:col-span-7 space-y-7">
               <ScrollReveal direction="right">
                 <p className="text-[16px] text-[#555555] leading-[1.85] text-justify">
-                  We need you by our side for developing high-end applications that will change the life of our clients and their end users for better. Also, if you love being part of the web, then, we have got excellent opportunities for you in digital marketing to help our clients take their business soaring beyond unexplored horizons.
+                  We need you by our side for developing high-end applications
+                  that will change the life of our clients and their end users
+                  for better. Also, if you love being part of the web, then, we
+                  have got excellent opportunities for you in digital marketing
+                  to help our clients take their business soaring beyond
+                  unexplored horizons.
                 </p>
               </ScrollReveal>
 
               <ScrollReveal direction="right" delay={110}>
                 <div className="pl-5 border-l-4 border-[#EB9B3D] bg-[rgba(235,155,61,0.06)] rounded-r-2xl py-4 pr-6">
-                  <span className="text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-2 block">Our Expertise</span>
+                  <span className="text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-2 block">
+                    Our Expertise
+                  </span>
                   <p className="text-[16px] font-semibold text-[#0D112D] leading-snug">
-                    Specializes in finding and placing professionals across all sectors.
+                    Specializes in finding and placing professionals across all
+                    sectors.
                   </p>
                 </div>
               </ScrollReveal>
 
               <ScrollReveal direction="right" delay={210}>
                 <p className="text-[16px] text-[#555555] leading-[1.85] text-justify">
-                  With our fantastic teams, cutting-edge technology and extensive branch network, we are big enough to really deliver while local enough to truly care. Our teams of Recruiters, Resourcers and Relationship Managers pride themselves on their expert knowledge and understanding of the local job market and their specialist Industry sectors; with many of our staff joining us directly from the sectors they now recruit into.
+                  With our fantastic teams, cutting-edge technology and
+                  extensive branch network, we are big enough to really deliver
+                  while local enough to truly care. Our teams of Recruiters,
+                  Resourcers and Relationship Managers pride themselves on their
+                  expert knowledge and understanding of the local job market and
+                  their specialist Industry sectors; with many of our staff
+                  joining us directly from the sectors they now recruit into.
                 </p>
               </ScrollReveal>
             </div>
@@ -228,17 +429,27 @@ function CareersPage() {
       <section className="py-24 bg-white relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.025] pointer-events-none"
-          style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, #EB9B3D 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
         />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
-
           <ScrollReveal direction="up">
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">Why Us</span>
-              <h2 className="text-[38px] font-bold text-[#111111] mb-5 leading-tight">Why work with us?</h2>
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
+                Why Us
+              </span>
+              <h2 className="text-[38px] font-bold text-[#111111] mb-5 leading-tight">
+                Why work with us?
+              </h2>
               <p className="text-[16px] text-[#555555] leading-[1.75]">
-                We believe that great work happens when you&apos;re happy, healthy, and challenged. We&apos;ve built a culture that prioritises autonomy, continuous learning, and cross-border collaboration.
+                We believe that great work happens when you&apos;re happy,
+                healthy, and challenged. We&apos;ve built a culture that
+                prioritises autonomy, continuous learning, and cross-border
+                collaboration.
               </p>
             </div>
           </ScrollReveal>
@@ -253,8 +464,12 @@ function CareersPage() {
                     <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                       <PIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                     </div>
-                    <h3 className="text-[16px] font-bold text-[#111111] mb-3 group-hover:text-[#EB9B3D] transition-colors leading-snug">{perk.title}</h3>
-                    <p className="text-[13.5px] text-[#555555] leading-relaxed">{perk.desc}</p>
+                    <h3 className="text-[16px] font-bold text-[#111111] mb-3 group-hover:text-[#EB9B3D] transition-colors leading-snug">
+                      {perk.title}
+                    </h3>
+                    <p className="text-[13.5px] text-[#555555] leading-relaxed">
+                      {perk.desc}
+                    </p>
                   </div>
                 </ScrollReveal>
               );
@@ -269,30 +484,40 @@ function CareersPage() {
                   <Coffee className="w-7 h-7 text-white" strokeWidth={1.6} />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-[18px] font-bold text-[#111111] mb-3 group-hover:text-[#EB9B3D] transition-colors leading-snug">{perks[3].title}</h3>
-                  <p className="text-[14.5px] text-[#555555] leading-[1.8]">{perks[3].desc}</p>
+                  <h3 className="text-[18px] font-bold text-[#111111] mb-3 group-hover:text-[#EB9B3D] transition-colors leading-snug">
+                    {perks[3].title}
+                  </h3>
+                  <p className="text-[14.5px] text-[#555555] leading-[1.8]">
+                    {perks[3].desc}
+                  </p>
                 </div>
               </div>
             </div>
           </ScrollReveal>
-
         </div>
       </section>
 
       {/* ── 4. OPEN POSITIONS ─────────────────────────── */}
       <section id="open-positions" className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
-
           <ScrollReveal direction="up">
             <div className="mb-10">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">Join Us</span>
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
+                Join Us
+              </span>
               <div className="flex items-end justify-between flex-wrap gap-4">
-                <h2 className="text-[36px] font-bold text-[#111111]">Open Positions</h2>
+                <h2 className="text-[36px] font-bold text-[#111111]">
+                  Open Positions
+                </h2>
                 <p className="text-[15px] text-[#555555]">
-                  <span className="font-bold text-[#EB9B3D]">{filtered.length}</span>{" "}
+                  <span className="font-bold text-[#EB9B3D]">
+                    {filtered.length}
+                  </span>{" "}
                   {filtered.length === 1 ? "role" : "roles"} available
                   {(teamFilter !== "All" || locationFilter !== "All") && (
-                    <span className="ml-2 text-[#EB9B3D] font-semibold text-[13px]">· Filtered</span>
+                    <span className="ml-2 text-[#EB9B3D] font-semibold text-[13px]">
+                      · Filtered
+                    </span>
                   )}
                 </p>
               </div>
@@ -303,12 +528,13 @@ function CareersPage() {
           <ScrollReveal direction="up" delay={80}>
             <div className="bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl p-5 mb-10">
               <div className="flex flex-col sm:flex-row gap-6">
-
                 {/* Team */}
                 <div className="flex-1 min-w-0">
-                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#EB9B3D] mb-3">Team</p>
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#EB9B3D] mb-3">
+                    Team
+                  </p>
                   <div className="flex flex-wrap gap-2">
-                    {teams.map(t => (
+                    {teams.map((t) => (
                       <button
                         key={t}
                         onClick={() => setTeamFilter(t)}
@@ -328,9 +554,11 @@ function CareersPage() {
 
                 {/* Location */}
                 <div className="flex-1 min-w-0">
-                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#EB9B3D] mb-3">Location</p>
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#EB9B3D] mb-3">
+                    Location
+                  </p>
                   <div className="flex flex-wrap gap-2">
-                    {locs.map(l => (
+                    {locs.map((l) => (
                       <button
                         key={l}
                         onClick={() => setLocationFilter(l)}
@@ -349,7 +577,10 @@ function CareersPage() {
                 {/* Reset */}
                 {(teamFilter !== "All" || locationFilter !== "All") && (
                   <button
-                    onClick={() => { setTeamFilter("All"); setLocationFilter("All"); }}
+                    onClick={() => {
+                      setTeamFilter("All");
+                      setLocationFilter("All");
+                    }}
                     className="flex items-center gap-1.5 text-[13px] font-semibold text-[#555555] hover:text-[#EB9B3D] transition-colors shrink-0 self-end pb-0.5 cursor-pointer"
                   >
                     <X className="w-3.5 h-3.5" /> Reset
@@ -363,10 +594,17 @@ function CareersPage() {
           {filtered.length === 0 ? (
             <ScrollReveal direction="up">
               <div className="text-center py-24 bg-white rounded-2xl border border-[rgba(13,17,45,0.10)]">
-                <p className="text-[18px] font-semibold text-[#111111] mb-2">No roles match your filters</p>
-                <p className="text-[15px] text-[#555555] mb-6">Try adjusting your team or location selection.</p>
+                <p className="text-[18px] font-semibold text-[#111111] mb-2">
+                  No roles match your filters
+                </p>
+                <p className="text-[15px] text-[#555555] mb-6">
+                  Try adjusting your team or location selection.
+                </p>
                 <button
-                  onClick={() => { setTeamFilter("All"); setLocationFilter("All"); }}
+                  onClick={() => {
+                    setTeamFilter("All");
+                    setLocationFilter("All");
+                  }}
                   className="px-6 py-3 bg-[#EB9B3D] text-white rounded-xl font-semibold hover:bg-[#0D112D] transition-colors cursor-pointer"
                 >
                   Clear Filters
@@ -378,11 +616,12 @@ function CareersPage() {
               {filtered.map((job, idx) => (
                 <ScrollReveal key={job.id} variant="card" delay={idx * 80}>
                   <div className="group h-full flex flex-col bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl overflow-hidden hover:border-[rgba(235,155,61,0.35)] hover:shadow-[0_12px_40px_rgba(235,155,61,0.10)] hover:-translate-y-1 transition-all duration-300">
-
                     <div className="p-6 flex flex-col flex-1">
                       {/* Team + Location badges */}
                       <div className="flex flex-wrap gap-2 mb-4">
-                        <span className={`px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide ${TEAM_BADGE[job.team] ?? "bg-[rgba(13,17,45,0.05)] text-[#4A4F63] border border-[rgba(13,17,45,0.08)]"}`}>
+                        <span
+                          className={`px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide ${TEAM_BADGE[job.team] ?? "bg-[rgba(13,17,45,0.05)] text-[#4A4F63] border border-[rgba(13,17,45,0.08)]"}`}
+                        >
                           {job.team}
                         </span>
                         <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-[rgba(13,17,45,0.05)] text-[#4A4F63] text-[11px] font-medium border border-[rgba(13,17,45,0.08)]">
@@ -404,13 +643,18 @@ function CareersPage() {
                           <Briefcase className="w-3.5 h-3.5 shrink-0" />
                           {job.type}
                         </span>
-                        <span className="text-[13px] font-bold text-[#EB9B3D]">{job.salary}</span>
+                        <span className="text-[13px] font-bold text-[#EB9B3D]">
+                          {job.salary}
+                        </span>
                       </div>
 
                       {/* Skills */}
                       <div className="flex flex-wrap gap-1.5 mb-5">
-                        {job.skills.map(s => (
-                          <span key={s} className="px-2.5 py-1 rounded-lg bg-[rgba(13,17,45,0.04)] text-[#4A4F63] text-[11px] font-medium border border-[rgba(13,17,45,0.08)]">
+                        {job.skills.map((s) => (
+                          <span
+                            key={s}
+                            className="px-2.5 py-1 rounded-lg bg-[rgba(13,17,45,0.04)] text-[#4A4F63] text-[11px] font-medium border border-[rgba(13,17,45,0.08)]"
+                          >
                             {s}
                           </span>
                         ))}
@@ -449,14 +693,20 @@ function CareersPage() {
           <div
             className="w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col"
             style={{ maxHeight: "90vh" }}
-            onClick={e => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
             <div className="bg-[#141A3D] px-7 py-6 flex items-start justify-between shrink-0">
               <div>
-                <p className="text-white/50 text-[11px] font-bold uppercase tracking-widest mb-1">Applying for</p>
-                <h3 className="text-white text-[20px] font-bold leading-snug">{applyJob.role}</h3>
-                <p className="text-white/50 text-[13px] mt-1">{applyJob.team} · {applyJob.location}</p>
+                <p className="text-white/50 text-[11px] font-bold uppercase tracking-widest mb-1">
+                  Applying for
+                </p>
+                <h3 className="text-white text-[20px] font-bold leading-snug">
+                  {applyJob.role}
+                </h3>
+                <p className="text-white/50 text-[13px] mt-1">
+                  {applyJob.team} · {applyJob.location}
+                </p>
               </div>
               <button
                 onClick={closeModal}
@@ -474,9 +724,12 @@ function CareersPage() {
                   <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-5">
                     <CheckCircle2 className="w-8 h-8 text-green-600" />
                   </div>
-                  <h4 className="text-[22px] font-bold text-[#111111] mb-2">Application Submitted!</h4>
+                  <h4 className="text-[22px] font-bold text-[#111111] mb-2">
+                    Application Submitted!
+                  </h4>
                   <p className="text-[15px] text-[#555555] mb-8 max-w-sm mx-auto">
-                    Thank you for your interest. We&apos;ll review your application and get back to you soon.
+                    Thank you for your interest. We&apos;ll review your
+                    application and get back to you soon.
                   </p>
                   <button
                     onClick={closeModal}
@@ -489,20 +742,24 @@ function CareersPage() {
                 /* ── Application form ── */
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <p className="text-[13px] text-[#777777] mb-5">
-                    Fields marked <span className="text-[#EB9B3D] font-bold">*</span> are mandatory.
+                    Fields marked{" "}
+                    <span className="text-[#EB9B3D] font-bold">*</span> are
+                    mandatory.
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
                     {/* Full Name */}
                     <div>
                       <label className="block text-[13px] font-semibold text-[#111111] mb-1.5">
                         Full Name <span className="text-[#EB9B3D]">*</span>
                       </label>
                       <input
-                        type="text" required
+                        type="text"
+                        required
                         value={form.fullName}
-                        onChange={e => setForm({ ...form, fullName: e.target.value })}
+                        onChange={(e) =>
+                          setForm({ ...form, fullName: e.target.value })
+                        }
                         placeholder="John Doe"
                         className={inputCls}
                       />
@@ -514,9 +771,12 @@ function CareersPage() {
                         Email Address <span className="text-[#EB9B3D]">*</span>
                       </label>
                       <input
-                        type="email" required
+                        type="email"
+                        required
                         value={form.email}
-                        onChange={e => setForm({ ...form, email: e.target.value })}
+                        onChange={(e) =>
+                          setForm({ ...form, email: e.target.value })
+                        }
                         placeholder="john@example.com"
                         className={inputCls}
                       />
@@ -528,9 +788,12 @@ function CareersPage() {
                         Phone Number <span className="text-[#EB9B3D]">*</span>
                       </label>
                       <input
-                        type="tel" required
+                        type="tel"
+                        required
                         value={form.phone}
-                        onChange={e => setForm({ ...form, phone: e.target.value })}
+                        onChange={(e) =>
+                          setForm({ ...form, phone: e.target.value })
+                        }
                         placeholder="+44 7700 000000"
                         className={inputCls}
                       />
@@ -544,21 +807,41 @@ function CareersPage() {
                       <input
                         type="text"
                         value={form.currentLocation}
-                        onChange={e => setForm({ ...form, currentLocation: e.target.value })}
+                        onChange={(e) =>
+                          setForm({ ...form, currentLocation: e.target.value })
+                        }
                         placeholder="London, UK"
                         className={inputCls}
                       />
                     </div>
-
+                    {/* Upload Resume */}
+                    <div>
+                      <label className="block text-[13px] font-semibold text-[#111111] mb-1.5">
+                        Upload Resume
+                      </label>
+                      <input
+                        type="file"
+                        accept=".pdf,.doc,.docx"
+                        value={form.currentLocation}
+                        onChange={(e) =>
+                          setForm({ ...form, currentLocation: e.target.value })
+                        }
+                        placeholder="Resume"
+                        className={inputCls}
+                      />
+                    </div>
                     {/* Years of Experience */}
                     <div>
                       <label className="block text-[13px] font-semibold text-[#111111] mb-1.5">
-                        Years of Experience <span className="text-[#EB9B3D]">*</span>
+                        Years of Experience{" "}
+                        <span className="text-[#EB9B3D]">*</span>
                       </label>
                       <select
                         required
                         value={form.experience}
-                        onChange={e => setForm({ ...form, experience: e.target.value })}
+                        onChange={(e) =>
+                          setForm({ ...form, experience: e.target.value })
+                        }
                         className={inputCls + " bg-white"}
                       >
                         <option value="">Select years</option>
@@ -578,7 +861,9 @@ function CareersPage() {
                       </label>
                       <select
                         value={form.noticePeriod}
-                        onChange={e => setForm({ ...form, noticePeriod: e.target.value })}
+                        onChange={(e) =>
+                          setForm({ ...form, noticePeriod: e.target.value })
+                        }
                         className={inputCls + " bg-white"}
                       >
                         <option value="">Select period</option>
@@ -600,7 +885,9 @@ function CareersPage() {
                     <input
                       type="url"
                       value={form.linkedin}
-                      onChange={e => setForm({ ...form, linkedin: e.target.value })}
+                      onChange={(e) =>
+                        setForm({ ...form, linkedin: e.target.value })
+                      }
                       placeholder="https://linkedin.com/in/yourname"
                       className={inputCls}
                     />
@@ -614,7 +901,9 @@ function CareersPage() {
                     <textarea
                       rows={4}
                       value={form.coverLetter}
-                      onChange={e => setForm({ ...form, coverLetter: e.target.value })}
+                      onChange={(e) =>
+                        setForm({ ...form, coverLetter: e.target.value })
+                      }
                       placeholder="Tell us why you're the perfect fit for this role..."
                       className={inputCls + " resize-none"}
                     />
@@ -628,7 +917,9 @@ function CareersPage() {
                   </button>
                   <div className="flex items-start gap-2 text-[12px] text-[#888] mt-2">
                     <Shield className="w-4 h-4 text-[#EB9B3D]/50 shrink-0 mt-0.5" />
-                    <span>We respect your privacy. We promise we won't spam you :)</span>
+                    <span>
+                      We respect your privacy. We promise we won't spam you :)
+                    </span>
                   </div>
                 </form>
               )}
@@ -636,7 +927,6 @@ function CareersPage() {
           </div>
         </div>
       )}
-
     </div>
   );
 }
