@@ -625,9 +625,9 @@ function About() {
       </section>
 
       {/* ══════════════════════════════════════════════════════
-          4b. Our Team
+          4b. Our Team — temporarily hidden
       ══════════════════════════════════════════════════════ */}
-      <section className="py-28 bg-[#141A3D] relative overflow-hidden">
+      {false && <section className="py-28 bg-[#141A3D] relative overflow-hidden">
         <style>{`
           @keyframes teamDrift {
             0%,100% { transform: translate(0,0) scale(1); }
@@ -776,7 +776,7 @@ function About() {
             })}
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* ── 5. CULTURE & VISION CARDS (EXISTING kept) ── */}
       <section className="py-24 bg-white">
@@ -812,7 +812,7 @@ function About() {
           </div>
 
         </div>
-      </section>
+      </section>}
 
       {/* ── 6. CULTURE TEXT (NEW) ──────────────────────── */}
       <section className="py-24 bg-[#141A3D] relative overflow-hidden">

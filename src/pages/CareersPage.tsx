@@ -181,7 +181,7 @@ function CareersPage() {
       formData.append("linkedin", form.linkedin.trim());
       if (form.file) {
         const base64 = await fileToBase64Raw(form.file);
-        formData.append("file_name", form.file.name);
+        formData.append("filename", form.file.name);
         formData.append("base64", base64);
       }
       formData.append("job_title", applyJob?.role ?? "");
