@@ -49,7 +49,7 @@ export function Footer({ bgColor }: { bgColor?: string }) {
       fd.append("phone", "");
       fd.append("message", "Newsletter subscription request.");
       fd.append("type", "Newsletter Subscription");
-      const res = await fetch("http://109.228.60.38/WebMail/api/Email/contact", {
+      const res = await fetch("https://test.infoplus.co.in/WebMail/api/Email/contact", {
         method: "POST",
         body: fd,
       });

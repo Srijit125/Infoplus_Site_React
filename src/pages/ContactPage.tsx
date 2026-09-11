@@ -267,7 +267,7 @@ export function ContactPage() {
       formData.append("message", form.message.trim());
       formData.append("type", "Infoplus UK Contact");
       const res = await fetch(
-        "http://109.228.60.38/WebMail/api/Email/contact",
+        "https://test.infoplus.co.in/WebMail/api/Email/contact",
         {
           method: "POST",
           body: formData,
