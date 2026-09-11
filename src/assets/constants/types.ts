@@ -160,13 +160,13 @@ export const ourSolutions: Solution[] = [
     description:
       "In order for a business to strive and to meet its planned objectives, supporting IT is not just enough but strategically led and proactively managed IT.",
     features: [
-      "Artificial Intelligence (AI)",
+      "Artificial Intelligence",
       "Software Development",
       "Testing",
       "Infrastructure Management",
-      "Application Management",
       "SAP Consulting & Implementation",
       "Cyber Security",
+      "Cloud Portfolio",
     ],
     icon: Monitor,
   },

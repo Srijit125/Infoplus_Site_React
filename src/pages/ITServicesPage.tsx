@@ -1,5 +1,5 @@
-﻿import { useState } from "react";
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
+import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
   Code2,
@@ -17,8 +17,6 @@ import {
   Layers,
   Clock,
   Star,
-  Shield,
-  Send,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import imgCareerHero from "../assets/images/career_hero.jpg";
@@ -27,6 +25,13 @@ import type { FAQItem } from "../components/shared/FAQAccordion";
 
 /* â"€â"€ Service cards â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */
 const SERVICES = [
+  {
+    icon: BrainCircuit,
+    title: "Artificial Intelligence",
+    href: "/services/it-services/artificial-intelligence",
+    gradient: "from-[#EB9B3D] to-[#DA4D33]",
+    desc: "Boost your business processes by applying artificial intelligence solutions for process automation, better decision-making and innovation.",
+  },
   {
     icon: Code2,
     title: "Software Development",
@@ -69,13 +74,6 @@ const SERVICES = [
     gradient: "from-[#EB9B3D] to-[#DA4D33]",
     desc: "Optimize your cloud portfolio with customized solutions designed to provide high scalability and efficiency.",
   },
-  {
-    icon: BrainCircuit,
-    title: "Artificial Intelligence",
-    href: "/services/it-services/artificial-intelligence",
-    gradient: "from-[#EB9B3D] to-[#DA4D33]",
-    desc: "Boost your business processes by applying artificial intelligence solutions for process automation, better decision-making and innovation.",
-  },
 ];
 
 const IT_FAQS: FAQItem[] = [
@@ -98,108 +96,6 @@ const IT_FAQS: FAQItem[] = [
 ];
 
 export default function ITServicesPage() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-  const [errors, setErrors] = useState({ name: "", email: "", phone: "" });
-  const [submitted, setSubmitted] = useState(false);
-  const [status, setStatus] = useState<
-    "idle" | "sending" | "success" | "error"
-  >("idle");
-  type ITField = "name" | "email" | "phone";
-
-  const validateField = (field: ITField, value: string): string => {
-    const s = value.trim();
-    if (field === "name") {
-      if (!s) return "Name is required.";
-      if (s.length < 2) return "Name must be at least 2 characters.";
-      if (s.length > 100) return "Name must be under 100 characters.";
-      if (!/^[a-zA-ZÀ-ÖØ-öø-ÿ\s'\-.]+$/.test(s))
-        return "Name may only contain letters, spaces, hyphens, periods and apostrophes.";
-      return "";
-    }
-    if (field === "email") {
-      if (!s) return "Email is required.";
-      if (s.length > 254) return "Email address is too long.";
-      if (!/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(s))
-        return "Enter a valid email (e.g. john@company.com).";
-      return "";
-    }
-    if (field === "phone") {
-      if (!s) return "Contact number is required.";
-      if (!/^[+\d\s()\-]+$/.test(s))
-        return "Only digits, spaces, +, – and parentheses are allowed.";
-      const digits = s.replace(/\D/g, "");
-      if (digits.length < 7) return "Must contain at least 7 digits.";
-      if (digits.length > 15) return "Must not exceed 15 digits.";
-      return "";
-    }
-    return "";
-  };
-
-  const handleFieldChange = (field: ITField | "message", value: string) => {
-    setForm((prev) => ({ ...prev, [field]: value }));
-    if (field !== "message" && errors[field as ITField])
-      setErrors((prev) => ({
-        ...prev,
-        [field]: validateField(field as ITField, value),
-      }));
-  };
-
-  const handleFieldBlur = (field: ITField) =>
-    setErrors((prev) => ({
-      ...prev,
-      [field]: validateField(field, form[field]),
-    }));
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const errs: Record<ITField, string> = {
-      name: validateField("name", form.name),
-      email: validateField("email", form.email),
-      phone: validateField("phone", form.phone),
-    };
-    setErrors(errs);
-
-    setStatus("sending");
-    try {
-      const formData = new FormData();
-      formData.append("name", form.name.trim());
-      formData.append("email", form.email.trim());
-      formData.append("phone", form.phone.trim());
-      formData.append("message", form.message.trim());
-      formData.append("type", "Infoplus UK Contact");
-      const res = await fetch(
-        "http://109.228.60.38/WebMail/api/Email/contact",
-        {
-          method: "POST",
-          body: formData,
-        },
-      );
-      const json = await res.json();
-      if (json.success) {
-        setStatus("success");
-        setForm({ name: "", email: "", phone: "", message: "" });
-        setErrors({ name: "", email: "", phone: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-    if (Object.values(errs).every((v) => !v)) setSubmitted(true);
-  };
-
-  const fieldCls = (err: string) =>
-    `w-full px-3.5 py-2.5 rounded-xl border text-[14px] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:ring-2 transition-all ${
-      err
-        ? "border-red-400 bg-white focus:ring-red-200"
-        : "border-[rgba(13,17,45,0.10)] bg-[#fafafa] focus:ring-[#EB9B3D]/20 focus:border-[#EB9B3D]"
-    }`;
-
   return (
     <div className="w-full">
       <PageMeta
@@ -210,203 +106,22 @@ export default function ITServicesPage() {
       />
 
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative bg-[#0D112D] overflow-hidden pt-28 pb-20">
-        {/* Ambient orbs */}
-        <div className="absolute top-[-10%] left-[-6%] w-[600px] h-[600px] rounded-full bg-[#242E72] opacity-40 blur-[130px] pointer-events-none" />
-        <div className="absolute bottom-[-15%] right-[-4%] w-[500px] h-[500px] rounded-full bg-[#EB9B3D] opacity-20 blur-[120px] pointer-events-none" />
-        <div
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, #ffffff 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
-          }}
-        />
-
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-            {/* Left — content */}
-            <div>
-              <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white/70 text-[11px] font-bold uppercase tracking-widest mb-6">
-                IT Services
-              </span>
-              <h1 className="text-[clamp(2rem,4.5vw,3.25rem)] font-black text-white leading-[1.1] tracking-tight mb-6">
-                All Your IT Services{" "}
-                <span
-                  style={{
-                    background:
-                      "linear-gradient(90deg,#DA4D33 0%,#F0783A 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
-                >
-                  Under One Roof
-                </span>
-              </h1>
-              <p className="text-[16px] text-white/60 leading-relaxed mb-10 max-w-lg">
-                Delivering innovative technology solutions including Software
-                Development, AI, Cybersecurity, Testing, Cloud Portfolios, SAP
-                Consulting &amp; Infrastructure Management for businesses
-                worldwide.
-              </p>
-
-              {/* Trust chips */}
-              <div className="flex flex-wrap gap-3 mb-10">
-                {[
-                  "End-to-End Solutions",
-                  "24/7 Support",
-                  "17 Countries",
-                  "ISO 27001 Certified",
-                ].map((chip) => (
-                  <span
-                    key={chip}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/8 border border-white/12 text-white/70 text-[12px] font-medium"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#DA4D33] shrink-0" />
-                    {chip}
-                  </span>
-                ))}
-              </div>
-
-              {/* CTA */}
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-bold text-[14px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
-                  style={{
-                    background:
-                      "linear-gradient(135deg,#EB9B3D 0%,#DA4D33 100%)",
-                  }}
-                >
-                  Discuss Your Project <ChevronRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Right — Quick Enquiry form */}
-            <div className="bg-white rounded-2xl p-6 shadow-[0_24px_80px_rgba(0,0,0,0.30)]">
-              <h3 className="text-[18px] font-bold text-[#0D112D] mb-0.5">
-                Quick Enquiry
-              </h3>
-              <p className="text-[12px] text-[#888] mb-5">
-                Tell us about your project and we'll be in touch within one
-                business day.
-              </p>
-
-              {submitted ? (
-                <div className="flex flex-col items-center justify-center py-8 text-center">
-                  <div className="w-12 h-12 rounded-full bg-[#EB9B3D]/10 flex items-center justify-center mb-3">
-                    <Send className="w-5 h-5 text-[#EB9B3D]" />
-                  </div>
-                  <h4 className="text-[16px] font-bold text-[#0D112D] mb-1">
-                    Message Sent!
-                  </h4>
-                  <p className="text-[13px] text-[#666]">
-                    We'll get back to you within one business day.
-                  </p>
-                </div>
-              ) : (
-                <form className="space-y-3" onSubmit={handleSubmit} noValidate>
-                  <div>
-                    <label className="block text-[12px] font-semibold text-[#333] mb-1">
-                      Your Name <span className="text-[#F0783A]">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="John Smith"
-                      maxLength={100}
-                      autoComplete="name"
-                      value={form.name}
-                      onChange={(e) =>
-                        handleFieldChange("name", e.target.value)
-                      }
-                      onBlur={() => handleFieldBlur("name")}
-                      className={fieldCls(errors.name)}
-                    />
-                    {errors.name && (
-                      <p className="mt-1 text-[11px] text-red-500 font-medium">
-                        {errors.name}
-                      </p>
-                    )}
-                  </div>
-                  <div>
-                    <label className="block text-[12px] font-semibold text-[#333] mb-1">
-                      Email Address <span className="text-[#F0783A]">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="john@company.com"
-                      maxLength={254}
-                      autoComplete="email"
-                      value={form.email}
-                      onChange={(e) =>
-                        handleFieldChange("email", e.target.value)
-                      }
-                      onBlur={() => handleFieldBlur("email")}
-                      className={fieldCls(errors.email)}
-                    />
-                    {errors.email && (
-                      <p className="mt-1 text-[11px] text-red-500 font-medium">
-                        {errors.email}
-                      </p>
-                    )}
-                  </div>
-                  <div>
-                    <label className="block text-[12px] font-semibold text-[#333] mb-1">
-                      Contact Number <span className="text-[#F0783A]">*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      placeholder="+44 20 0000 0000"
-                      maxLength={20}
-                      autoComplete="tel"
-                      value={form.phone}
-                      onChange={(e) =>
-                        handleFieldChange("phone", e.target.value)
-                      }
-                      onBlur={() => handleFieldBlur("phone")}
-                      className={fieldCls(errors.phone)}
-                    />
-                    {errors.phone && (
-                      <p className="mt-1 text-[11px] text-red-500 font-medium">
-                        {errors.phone}
-                      </p>
-                    )}
-                  </div>
-                  <div>
-                    <label className="block text-[12px] font-semibold text-[#333] mb-1">
-                      Message
-                    </label>
-                    <textarea
-                      name="message"
-                      rows={3}
-                      placeholder="Tell us about your project or challenge…"
-                      maxLength={2000}
-                      value={form.message}
-                      onChange={(e) =>
-                        handleFieldChange("message", e.target.value)
-                      }
-                      className="w-full px-4 py-3 rounded-xl border border-[rgba(13,17,45,0.10)] bg-[#fafafa] text-[14px] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:ring-2 focus:ring-[#EB9B3D]/20 focus:border-[#EB9B3D] transition-all resize-none"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    disabled={status === "sending"}
-                    className="w-full bg-gradient-to-r from-[#F0783A] to-[#ff7a58] text-white rounded-xl py-3 font-bold text-[14px] hover:shadow-[0_8px_28px_rgba(248,93,55,0.40)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
-                  >
-                    Send Message <ChevronRight className="w-4 h-4" />
-                  </button>
-                  <div className="flex items-center gap-2 text-[11px] text-[#bbb]">
-                    <Shield className="w-3.5 h-3.5 text-[#EB9B3D]/50 shrink-0" />
-                    We respect your privacy. No spam, ever.
-                  </div>
-                </form>
-              )}
-            </div>
-          </div>
+      <PageHero
+        variant="gradient"
+        badge="IT SERVICES"
+        title="All Your IT Services Under One Roof"
+        description="Delivering innovative technology solutions including Artificial Intelligence, Software Development, Testing, Infrastructure Management, SAP Consulting, Cyber Security and Cloud Portfolio for businesses worldwide."
+      >
+        <div className="flex flex-col sm:flex-row justify-center gap-3">
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-bold text-[14px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
+            style={{ background: "linear-gradient(135deg,#EB9B3D 0%,#DA4D33 100%)" }}
+          >
+            Discuss Your Project <ChevronRight className="w-4 h-4" />
+          </Link>
         </div>
-      </section>
+      </PageHero>
 
       {/* Intro + Vision */}
       <section className="py-24 bg-[#ffffff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">

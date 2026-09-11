@@ -1,5 +1,6 @@
 ﻿import { Fragment } from "react";
 import { PageMeta } from "../components/shared/PageMeta";
+import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
   Users,
@@ -14,7 +15,6 @@ import {
   Clock,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import imgSlideRec1 from "../assets/images/Info_Landing_AboutSection.jpg";
 import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 
 /* â"€â"€ Services â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */
@@ -85,101 +85,39 @@ export default function StaffingConsultingPage() {
       />
 
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section
-        className="relative overflow-hidden flex flex-col"
-        style={{
-          minHeight: "75vh",
-          background: "linear-gradient(135deg, #0D112D 0%, #141A3D 40%, #1A2444 100%)",
-        }}
+      <PageHero
+        variant="gradient"
+        badge="STAFFING & CONSULTING"
+        title="Best Recruitment Agency in U.K"
+        description="Whether you are looking for FTE (Full Time Employee) / Contract Role (C2H) - Infoplus Technologies offers the best service with 99% Client retention rate."
       >
-        {/* Ambient orbs + dot grid */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div style={{ position: "absolute", width: 640, height: 640, borderRadius: "50%", top: "-15%", right: "-8%", background: "radial-gradient(circle, #EB9B3D 0%, transparent 68%)", filter: "blur(90px)", opacity: 0.20 }} />
-          <div style={{ position: "absolute", width: 520, height: 520, borderRadius: "50%", bottom: "-12%", left: "-6%", background: "radial-gradient(circle, #242E72 0%, transparent 68%)", filter: "blur(80px)", opacity: 0.55 }} />
-          <div style={{ position: "absolute", width: 320, height: 320, borderRadius: "50%", top: "38%", left: "28%", background: "radial-gradient(circle, #DA4D33 0%, transparent 68%)", filter: "blur(70px)", opacity: 0.10 }} />
-          <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px)", backgroundSize: "44px 44px", opacity: 0.3 }} />
-        </div>
-
-        {/* Right image — desktop */}
-        <div
-          className="absolute right-0 hidden md:block md:w-[40%] lg:w-[38%] xl:w-[42%] overflow-hidden"
-          style={{ top: 0, bottom: 0, zIndex: 5, borderTopLeftRadius: "2rem", borderBottomLeftRadius: "2rem" }}
-        >
-          <img src={imgSlideRec1} alt="Staffing visual" className="w-full h-full object-cover object-center" />
-          <div className="absolute inset-y-0 left-0 w-24 lg:w-44 pointer-events-none" style={{ background: "linear-gradient(to right, #0D112D 0%, transparent 100%)" }} />
-          <div className="absolute inset-x-0 bottom-0 h-24 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.5), transparent)" }} />
-        </div>
-
-        {/* Content + stats column */}
-        <div className="flex-1 flex flex-col relative z-10">
-          <div className="flex-1 flex items-center pt-28 pb-8">
-            <div className="container mx-auto px-6 max-w-7xl w-full">
-              <div className="md:w-[56%] lg:w-[52%] xl:w-[50%]">
-
-                {/* Badge */}
-                <div className="mb-5">
-                  <span
-                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[13px] font-semibold text-white/80"
-                    style={{ border: "1px solid rgba(235,155,61,0.35)", background: "linear-gradient(90deg, rgba(235,155,61,0.10), transparent, rgba(235,155,61,0.10))" }}
-                  >
-                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#EB9B3D", boxShadow: "0 0 6px #EB9B3D", display: "inline-block", flexShrink: 0 }} />
-                    Staffing &amp; Consulting
-                  </span>
-                </div>
-
-                {/* Headline */}
-                <h1 className="text-[clamp(1.8rem,5vw,3rem)] font-bold text-white leading-[1.1] mb-4 tracking-tight">
-                  Best{" "}
-                  <span style={{ background: "linear-gradient(90deg, #EB9B3D 0%, #DA4D33 50%, #EB9B3D 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                    Recruitment Agency
-                  </span>
-                  &nbsp;in U.K
-                </h1>
-
-                {/* Description */}
-                <p className="text-[14px] md:text-[15px] text-white/65 leading-relaxed mb-6 max-w-xl">
-                  Whether you are looking for FTE (Full Time Employee) / Contract Role (C2H) – Infoplus Technologies offers the best service with 99% Client retention rate.
-                </p>
-
-                {/* Service chips */}
-                <div className="flex flex-wrap gap-2 mb-7">
-                  {[
-                    { label: "IT Staffing Solutions",   Icon: Users     },
-                    { label: "IT Consulting Solutions", Icon: Lightbulb },
-                    { label: "Umbrella Service",        Icon: Umbrella  },
-                  ].map(({ label, Icon }) => (
-                    <div
-                      key={label}
-                      className="inline-flex items-center gap-2 rounded-lg px-3 py-2.5"
-                      style={{ background: "rgba(235,155,61,0.08)", border: "1px solid rgba(235,155,61,0.20)" }}
-                    >
-                      <Icon className="w-3.5 h-3.5 shrink-0" style={{ color: "#EB9B3D" }} />
-                      <span className="text-[11px] text-white/70 font-medium whitespace-nowrap">{label}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* CTA */}
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-[15px] text-white transition-all hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
-                  style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
-                >
-                  Book A Demo
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-
+        <div className="flex flex-col items-center gap-5">
+          <div className="flex flex-wrap justify-center gap-2">
+            {[
+              { label: "IT Staffing Solutions",   Icon: Users     },
+              { label: "IT Consulting Solutions", Icon: Lightbulb },
+              { label: "Umbrella Service",        Icon: Umbrella  },
+            ].map(({ label, Icon }) => (
+              <div
+                key={label}
+                className="inline-flex items-center gap-2 rounded-lg px-3 py-2.5"
+                style={{ background: "rgba(235,155,61,0.08)", border: "1px solid rgba(235,155,61,0.20)" }}
+              >
+                <Icon className="w-3.5 h-3.5 shrink-0" style={{ color: "#EB9B3D" }} />
+                <span className="text-[11px] text-white/70 font-medium whitespace-nowrap">{label}</span>
               </div>
-            </div>
+            ))}
           </div>
-
-          {/* Mobile image */}
-          <div className="md:hidden w-full relative overflow-hidden rounded-t-2xl" style={{ height: 220 }}>
-            <img src={imgSlideRec1} alt="Staffing visual" className="w-full h-full object-cover object-center" />
-            <div className="absolute inset-x-0 bottom-0 h-16 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55), transparent)" }} />
-          </div>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-[15px] text-white transition-all hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
+            style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
+          >
+            Book A Demo
+            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
-      </section>
+      </PageHero>
 
       {/* Stats bar — outside hero so it renders above the intro overlap (z-30 > intro z-20) */}
       <div className="relative z-30" style={{ background: "#0D112D", borderTop: "1px solid rgba(235,155,61,0.16)" }}>
