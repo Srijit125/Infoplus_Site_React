@@ -828,25 +828,6 @@ function CareersPage() {
                         className={inputCls}
                       />
                     </div>
-                    {/* Upload Resume */}
-                    <div>
-                      <label className="block text-[13px] font-semibold text-[#111111] mb-1.5">
-                        Upload Resume
-                      </label>
-                      <input
-                        type="file"
-                        accept=".pdf,.doc,.docx"
-                        value={form.currentLocation}
-                        onChange={handleFileChange}
-                        placeholder="Resume"
-                        className={inputCls}
-                      />
-                      {fileError && (
-                        <p className="mt-1 text-[12px] text-red-600">
-                          {fileError}
-                        </p>
-                      )}
-                    </div>
                     {/* Years of Experience */}
                     <div>
                       <label className="block text-[13px] font-semibold text-[#111111] mb-1.5">
@@ -892,6 +873,35 @@ function CareersPage() {
                         <option>More than 3 months</option>
                       </select>
                     </div>
+                  </div>
+
+                  {/* Upload Resume */}
+                  <div>
+                    <label className="block text-[13px] font-semibold text-[#111111] mb-1.5">
+                      Upload Resume
+                    </label>
+                    <label className={`${inputCls} flex items-center cursor-pointer`}>
+                      <span className={`flex-1 truncate text-[14px] ${form.file ? "text-[#222]" : "text-[#aaa]"}`}>
+                        {form.file ? form.file.name : "Choose file"}
+                      </span>
+                      <span
+                        className="ml-3 shrink-0 px-3 py-1 rounded-lg text-[12px] font-semibold text-white"
+                        style={{ background: "linear-gradient(135deg,#EB9B3D 0%,#DA4D33 100%)" }}
+                      >
+                        Browse
+                      </span>
+                      <input
+                        type="file"
+                        accept=".pdf,.doc,.docx"
+                        onChange={handleFileChange}
+                        className="sr-only"
+                      />
+                    </label>
+                    {fileError && (
+                      <p className="mt-1 text-[12px] text-red-600">
+                        {fileError}
+                      </p>
+                    )}
                   </div>
 
                   {/* LinkedIn */}
