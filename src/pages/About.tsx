@@ -812,7 +812,7 @@ function About() {
           </div>
 
         </div>
-      </section>}
+      </section>
 
       {/* ── 6. CULTURE TEXT (NEW) ──────────────────────── */}
       <section className="py-24 bg-[#141A3D] relative overflow-hidden">
