@@ -1,5 +1,5 @@
 import { PageMeta } from "../components/shared/PageMeta";
-import { useState, useEffect } from "react";
+import { useState, useEffect, type ChangeEvent, useRef } from "react";
 import { PageHero } from "../components/shared/PageHero";
 import imgCareerHero from "../assets/images/career_hero.jpg";
 import {
@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
+import { fileToBase64Raw } from "../assets/helpers";
 
 /* ── Types ─────────────────────────────────────────── */
 type Job = {
@@ -90,7 +91,10 @@ function CareersPage() {
   const [applyJob, setApplyJob] = useState<Job | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState<FormState>(EMPTY_FORM);
+  const MAX_FILE_BYTES = 5 * 1024 * 1024; // 5 MB raw → ~6.7 MB as base64
   const [errors, setErrors] = useState({ fullName: "", email: "", phone: "" });
+  const [fileError, setFileError] = useState("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
   >("idle");
@@ -107,21 +111,6 @@ function CareersPage() {
     setApplyJob(null);
     setSubmitted(false);
     setForm(EMPTY_FORM);
-  };
-
-  // fileToBase64.js
-  const fileToBase64 = (file: File) =>
-    new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result); // "data:image/png;base64,iVBORw0..."
-      reader.onerror = reject;
-    });
-
-  // If your API wants the raw base64 without the data-URL prefix:
-  const fileToBase64Raw: (file: File) => Promise<string> = async (file) => {
-    const dataUrl = await fileToBase64(file);
-    return dataUrl.split(",")[1];
   };
 
   const validateField = (field: ITField, value: string): string => {
@@ -153,6 +142,19 @@ function CareersPage() {
     return "";
   };
 
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    const file = e.target.files?.[0] ?? null;
+
+    if (file && file.size > MAX_FILE_BYTES) {
+      setFileError("Resume must be under 5 MB.");
+      setForm((prev) => ({ ...prev, file: null }));
+      e.target.value = "";
+      return;
+    }
+    setFileError("");
+    setForm((prev) => ({ ...prev, file }));
+  };
+
   const handleSubmit = async (e: { preventDefault(): void }) => {
     e.preventDefault();
     const errs: Record<ITField, string> = {
@@ -161,6 +163,10 @@ function CareersPage() {
       phone: validateField("phone", form.phone),
     };
     setErrors(errs);
+    if (Object.values(errs).some((msg) => msg !== "")) {
+      setStatus("idle");
+      return; // ← stop here
+    }
 
     setStatus("sending");
     try {
@@ -174,9 +180,9 @@ function CareersPage() {
       formData.append("notice_period", form.noticePeriod.trim());
       formData.append("linkedin", form.linkedin.trim());
       if (form.file) {
-        const file = await fileToBase64Raw(form.file);
+        const base64 = await fileToBase64Raw(form.file);
         formData.append("file_name", form.file.name);
-        formData.append("base64", file);
+        formData.append("base64", base64);
       }
       formData.append("job_title", applyJob?.role ?? "");
       formData.append("type", "Infoplus Career Application");
@@ -187,28 +193,21 @@ function CareersPage() {
           body: formData,
         },
       );
+      if (!res.ok) throw new Error(`Request failed: ${res.status}`);
       const json = await res.json();
       if (json.success) {
         setStatus("success");
-        setForm({
-          fullName: "",
-          email: "",
-          phone: "",
-          coverLetter: "",
-          currentLocation: "",
-          experience: "",
-          noticePeriod: "",
-          linkedin: "",
-          file: null,
-        });
+        setForm(EMPTY_FORM);
+        setSubmitted(true);
         setErrors({ fullName: "", email: "", phone: "" });
+        if (fileInputRef.current) fileInputRef.current.value = "";
       } else {
         setStatus("error");
       }
-    } catch {
+    } catch (err: unknown) {
+      console.error(err instanceof Error ? err.message : err);
       setStatus("error");
     }
-    setSubmitted(true);
   };
 
   /* ── Static data ───────────────────────────────── */
@@ -763,6 +762,11 @@ function CareersPage() {
                         placeholder="John Doe"
                         className={inputCls}
                       />
+                      {errors.fullName && (
+                        <p className="mt-1 text-[12px] text-red-600">
+                          {errors.fullName}
+                        </p>
+                      )}
                     </div>
 
                     {/* Email */}
@@ -780,6 +784,11 @@ function CareersPage() {
                         placeholder="john@example.com"
                         className={inputCls}
                       />
+                      {errors.email && (
+                        <p className="mt-1 text-[12px] text-red-600">
+                          {errors.email}
+                        </p>
+                      )}
                     </div>
 
                     {/* Phone */}
@@ -797,6 +806,11 @@ function CareersPage() {
                         placeholder="+44 7700 000000"
                         className={inputCls}
                       />
+                      {errors.phone && (
+                        <p className="mt-1 text-[12px] text-red-600">
+                          {errors.phone}
+                        </p>
+                      )}
                     </div>
 
                     {/* Current Location */}
@@ -823,12 +837,15 @@ function CareersPage() {
                         type="file"
                         accept=".pdf,.doc,.docx"
                         value={form.currentLocation}
-                        onChange={(e) =>
-                          setForm({ ...form, currentLocation: e.target.value })
-                        }
+                        onChange={handleFileChange}
                         placeholder="Resume"
                         className={inputCls}
                       />
+                      {fileError && (
+                        <p className="mt-1 text-[12px] text-red-600">
+                          {fileError}
+                        </p>
+                      )}
                     </div>
                     {/* Years of Experience */}
                     <div>
@@ -908,7 +925,12 @@ function CareersPage() {
                       className={inputCls + " resize-none"}
                     />
                   </div>
-
+                  {status === "error" && (
+                    <p className="text-[13px] text-red-600">
+                      Something went wrong sending your application. Please try
+                      again.
+                    </p>
+                  )}
                   <button
                     type="submit"
                     className="w-full py-4 bg-[#EB9B3D] text-white rounded-xl font-semibold text-[15px] hover:bg-[#0D112D] transition-colors cursor-pointer"
