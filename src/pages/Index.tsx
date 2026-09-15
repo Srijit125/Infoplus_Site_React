@@ -747,7 +747,7 @@ export default function Index() {
                   textDecoration: "none",
                   transition: "all 0.2s",
                 }}
-                className="w-full sm:w-auto flex items-center justify-center hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
+                className="w-full sm:w-auto inline-flex items-center justify-center hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
               >
                 Know More About Us
                 <ChevronRight style={{ width: 16, height: 16 }} />

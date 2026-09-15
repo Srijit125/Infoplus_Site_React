@@ -10,6 +10,7 @@ import { navigation } from "../../data/navigate";
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMobileSections, setOpenMobileSections] = useState<Set<string>>(new Set());
   const location = useLocation();
   const isServicesActive = location.pathname.startsWith("/services");
 
@@ -143,14 +144,16 @@ export function Header() {
         </button>
       </div>
 
-      {/* Mobile menu — always open, no accordion */}
+      {/* Mobile menu — collapsible sections */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-[#0D112D] border-t-2 border-[#EB9B3D] shadow-2xl max-h-[80vh] overflow-y-auto">
+        <div
+          className="lg:hidden fixed left-0 right-0 bottom-0 bg-[#0D112D] border-t-2 border-[#EB9B3D] shadow-2xl overflow-y-auto z-49"
+          style={{ top: isScrolled ? "64px" : "72px" }}
+        >
           <div className="px-4 py-3 flex flex-col gap-0.5">
 
             {navigation.map((item) => {
               if (!item.megaMenu) {
-                /* Plain nav link — Home, About, Careers, Contact */
                 return (
                   <NavLink
                     key={item.label}
@@ -168,49 +171,66 @@ export function Header() {
                 );
               }
 
-              /* Items with megaMenu — always expanded, no toggle */
+              const isOpen = openMobileSections.has(item.label);
               const isItemActive = item.noNavigate
                 ? isServicesActive
                 : location.pathname.startsWith(item.href);
 
               return (
                 <div key={item.label}>
-                  {/* Section label */}
-                  <div className={`px-4 py-2.5 text-[15px] font-semibold ${isItemActive ? "text-[#EB9B3D]" : "text-white/85"}`}>
-                    {item.label}
-                  </div>
+                  {/* Collapsible toggle */}
+                  <button
+                    onClick={() => setOpenMobileSections((prev) => {
+                        const next = new Set(prev);
+                        isOpen ? next.delete(item.label) : next.add(item.label);
+                        return next;
+                      })}
+                    className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-[15px] font-medium transition-all duration-200 cursor-pointer ${
+                      isItemActive
+                        ? "text-[#EB9B3D] bg-[#EB9B3D]/10"
+                        : "text-white/85 hover:text-white hover:bg-white/8"
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                    <ChevronDown
+                      size={16}
+                      className={`text-[#EB9B3D] transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
 
-                  {/* Categories + sub-items always visible */}
-                  <div className="ml-2 pl-3 border-l-2 border-[#EB9B3D]/30 flex flex-col gap-0.5 mb-2">
-                    {item.megaMenu.map((category) => (
-                      <div key={category.label}>
-                        {/* Category header — navigates to hub */}
-                        {item.megaMenu!.length > 1 && (
-                          <Link
-                            to={category.href}
-                            className="block px-3 py-2 text-[13px] font-bold text-[#EB9B3D]/80 hover:text-[#EB9B3D] hover:bg-white/5 rounded-lg transition-colors"
-                          >
-                            {category.label}
-                          </Link>
-                        )}
-                        {/* Sub-items */}
-                        {category.items.map((subItem) => (
-                          <NavLink
-                            key={subItem.label}
-                            to={subItem.href}
-                            className={({ isActive }) => [
-                              "block px-5 py-1.5 text-[13px] rounded-lg transition-colors",
-                              isActive
-                                ? "text-[#EB9B3D] font-semibold"
-                                : "text-white/55 hover:text-white hover:bg-white/5",
-                            ].join(" ")}
-                          >
-                            {subItem.label}
-                          </NavLink>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
+                  {/* Expanded content */}
+                  {isOpen && (
+                    <div className="mt-1 mb-2 ml-2 pl-3 border-l-2 border-[#EB9B3D]/30 flex flex-col gap-0.5">
+                      {item.megaMenu.map((category) => (
+                        <div key={category.label}>
+                          {/* Category label (Services only — multi-category) */}
+                          {item.megaMenu!.length > 1 && (
+                            <Link
+                              to={category.href}
+                              className="block px-3 py-2 text-[13px] font-bold text-[#EB9B3D]/80 hover:text-[#EB9B3D] hover:bg-white/5 rounded-lg transition-colors"
+                            >
+                              {category.label}
+                            </Link>
+                          )}
+                          {/* Sub-items */}
+                          {category.items.map((subItem) => (
+                            <NavLink
+                              key={subItem.label}
+                              to={subItem.href}
+                              className={({ isActive }) => [
+                                "block px-5 py-1.5 text-[13px] rounded-lg transition-colors",
+                                isActive
+                                  ? "text-[#EB9B3D] font-semibold"
+                                  : "text-white/55 hover:text-white hover:bg-white/5",
+                              ].join(" ")}
+                            >
+                              {subItem.label}
+                            </NavLink>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               );
             })}

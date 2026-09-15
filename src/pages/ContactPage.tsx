@@ -517,14 +517,10 @@ export function ContactPage() {
                     {[
                       {
                         day: "Monday – Friday",
-                        hours: "9:00 AM – 6:00 PM",
+                        hours: "9:30 AM – 6:30 PM",
                         open: true,
                       },
-                      {
-                        day: "Saturday",
-                        hours: "10:00 AM – 2:00 PM",
-                        open: true,
-                      },
+                      { day: "Saturday", hours: "Closed", open: false },
                       { day: "Sunday", hours: "Closed", open: false },
                     ].map(({ day, hours, open }) => (
                       <div
