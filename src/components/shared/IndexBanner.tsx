@@ -492,10 +492,10 @@ function SlideContentB({
       </div>
 
       {/* CTA */}
-      <div className={`${cin(5)} flex flex-col lg:flex-row gap-4 items-start lg:items-center`}>
+      <div className={`${cin(5)} flex flex-col sm:flex-row gap-4 items-start sm:items-center`}>
         <Link
           to={s.ctaHref}
-          className="w-full lg:w-auto flex items-center justify-center gap-2 group text-white px-8 py-3.5 rounded-full font-semibold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(235,155,61,0.55)]"
+          className="w-full sm:w-auto flex items-center justify-center gap-2 group text-white px-8 py-3.5 rounded-full font-semibold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(235,155,61,0.55)]"
           style={{
             background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)",
             boxShadow: "0 8px 28px rgba(235,155,61,0.35)",
@@ -506,7 +506,7 @@ function SlideContentB({
         </Link>
         <Link
           to="/contact"
-          className="w-full lg:w-auto flex items-center justify-center gap-2 bg-white/8 border border-white/20 text-white px-8 py-3.5 rounded-full font-semibold text-[15px] hover:bg-white/15 transition-all backdrop-blur-sm"
+          className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/8 border border-white/20 text-white px-8 py-3.5 rounded-full font-semibold text-[15px] hover:bg-white/15 transition-all backdrop-blur-sm"
         >
           Get Started
         </Link>
@@ -756,20 +756,20 @@ function IndexBanner({ slides: slidesProp }: { slides?: AnySlide[] } = {}) {
                 {renderContent(s, `enter-${enterKey}`, false)}
               </div>
 
-              {/* Right: image in rounded card */}
+              {/* Right: image card — natural height, matches About Us hero */}
               <div
                 key={`img-${enterKey}`}
-                className="relative block"
+                className="relative"
                 style={{ animation: "imgCinema 0.9s cubic-bezier(0.16,1,0.3,1) 0.12s both" }}
               >
                 <div
-                  className="absolute inset-0 rounded-3xl translate-x-4 translate-y-4 opacity-25 blur-2xl"
+                  className="absolute inset-0 rounded-3xl translate-x-4 translate-y-4 opacity-30 blur-2xl"
                   style={{ background: s.accent }}
                 />
                 <img
                   src={s.image}
                   alt="Visual"
-                  className="w-full h-auto rounded-3xl shadow-2xl relative z-10 object-cover max-h-64 sm:max-h-96 lg:max-h-130"
+                  className="w-full h-64 sm:h-80 lg:h-104 xl:h-120 rounded-3xl shadow-2xl relative z-10 object-cover"
                 />
                 <div className="absolute inset-0 rounded-3xl ring-1 ring-white/10 z-20 pointer-events-none" />
               </div>
