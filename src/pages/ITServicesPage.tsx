@@ -249,7 +249,7 @@ export default function ITServicesPage() {
                 </p>
 
                 {/* Feature tiles */}
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
                     {
                       icon: Layers,
@@ -281,10 +281,10 @@ export default function ITServicesPage() {
                       desc: "Agile execution without sacrificing quality",
                       color: "#F0783A",
                     },
-                  ].map((f, i) => (
+                  ].map((f) => (
                     <div
                       key={f.label}
-                      className={`flex items-start gap-3 p-4 rounded-2xl border border-[#f0ecf9] hover:border-[#EB9B3D]/25 hover:shadow-[0_4px_16px_rgba(235,155,61,0.08)] transition-all duration-300 bg-[#fafafe]${i === 4 ? " col-span-2" : ""}`}
+                      className="flex items-start gap-3 p-4 rounded-2xl border border-[#f0ecf9] hover:border-[#EB9B3D]/25 hover:shadow-[0_4px_16px_rgba(235,155,61,0.08)] transition-all duration-300 bg-[#fafafe]"
                     >
                       <div
                         className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"

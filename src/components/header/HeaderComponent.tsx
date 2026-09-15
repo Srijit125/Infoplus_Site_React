@@ -10,7 +10,6 @@ import { navigation } from "../../data/navigate";
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
   const location = useLocation();
   const isServicesActive = location.pathname.startsWith("/services");
 
@@ -23,7 +22,6 @@ export function Header() {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    setOpenMobileSection(null);
   }, [location.pathname]);
 
   return (
@@ -129,128 +127,109 @@ export function Header() {
 
         {/* Mobile hamburger */}
         <button
-          className={`lg:hidden p-2 rounded-lg transition-colors cursor-pointer ${
+          className={`lg:hidden flex items-center justify-center w-10 h-10 rounded-xl border transition-all duration-200 cursor-pointer ${
             isScrolled
-              ? "text-[#111111] hover:bg-black/5"
-              : "text-white hover:bg-white/10"
+              ? "text-[#141A3D] border-[#141A3D]/20 hover:bg-[#141A3D]/5"
+              : "text-white border-white/25 bg-white/10 hover:bg-white/15"
           }`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle Menu"
         >
           {isMobileMenuOpen ? (
-            <X className="w-6 h-6" />
+            <X className="w-5 h-5" />
           ) : (
-            <Menu className="w-6 h-6" />
+            <Menu className="w-5 h-5" />
           )}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — always open, no accordion */}
       {isMobileMenuOpen && (
-        <div
-          className={`lg:hidden absolute top-full left-0 right-0 border-t py-4 px-6 flex flex-col gap-1 shadow-xl max-h-[80vh] overflow-y-auto ${
-            isScrolled
-              ? "bg-white border-black/8"
-              : "bg-[#1e0a38]/95 backdrop-blur-md border-white/10"
-          }`}
-        >
-          {navigation.map((item) => {
-            if (item.megaMenu) {
-              const isOpen = openMobileSection === item.label;
-              return (
-                <div key={item.label}>
-                  <button
-                    onClick={() => setOpenMobileSection(isOpen ? null : item.label)}
-                    className={[
-                      "w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[15px] font-medium transition-colors cursor-pointer",
-                      isScrolled
-                        ? item.noNavigate && isServicesActive
-                          ? "text-[#6128a6] bg-[#f8f5ff] font-semibold"
-                          : "text-[#111111] hover:text-[#f85d37] hover:bg-black/5"
-                        : item.noNavigate && isServicesActive
-                          ? "text-white bg-white/15 font-semibold"
-                          : "text-white/85 hover:text-white hover:bg-white/10",
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-[#0D112D] border-t-2 border-[#EB9B3D] shadow-2xl max-h-[80vh] overflow-y-auto">
+          <div className="px-4 py-3 flex flex-col gap-0.5">
+
+            {navigation.map((item) => {
+              if (!item.megaMenu) {
+                /* Plain nav link — Home, About, Careers, Contact */
+                return (
+                  <NavLink
+                    key={item.label}
+                    to={item.href}
+                    end={item.href === "/"}
+                    className={({ isActive }) => [
+                      "block px-4 py-3 rounded-xl text-[15px] font-medium transition-all duration-200",
+                      isActive
+                        ? "text-[#EB9B3D] bg-[#EB9B3D]/10 font-semibold"
+                        : "text-white/85 hover:text-white hover:bg-white/8",
                     ].join(" ")}
                   >
                     {item.label}
-                    <ChevronDown
-                      size={16}
-                      className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
-                    />
-                  </button>
+                  </NavLink>
+                );
+              }
 
-                  {isOpen && (
-                    <div className="ml-3 mt-1 mb-1 flex flex-col gap-0.5">
-                      {item.megaMenu.map((category) => (
-                        <div key={category.label}>
-                          {/* Category hub link */}
+              /* Items with megaMenu — always expanded, no toggle */
+              const isItemActive = item.noNavigate
+                ? isServicesActive
+                : location.pathname.startsWith(item.href);
+
+              return (
+                <div key={item.label}>
+                  {/* Section label */}
+                  <div className={`px-4 py-2.5 text-[15px] font-semibold ${isItemActive ? "text-[#EB9B3D]" : "text-white/85"}`}>
+                    {item.label}
+                  </div>
+
+                  {/* Categories + sub-items always visible */}
+                  <div className="ml-2 pl-3 border-l-2 border-[#EB9B3D]/30 flex flex-col gap-0.5 mb-2">
+                    {item.megaMenu.map((category) => (
+                      <div key={category.label}>
+                        {/* Category header — navigates to hub */}
+                        {item.megaMenu!.length > 1 && (
                           <Link
                             to={category.href}
-                            className={[
-                              "flex items-center gap-2 px-3 py-2 rounded-lg text-[14px] font-semibold transition-colors",
-                              isScrolled
-                                ? "text-[#6128a6] hover:bg-[#f8f5ff]"
-                                : "text-[#aa3bff] hover:bg-white/8",
-                            ].join(" ")}
+                            className="block px-3 py-2 text-[13px] font-bold text-[#EB9B3D]/80 hover:text-[#EB9B3D] hover:bg-white/5 rounded-lg transition-colors"
                           >
-                            <ChevronRight size={12} className="opacity-60 shrink-0" />
                             {category.label}
                           </Link>
-                          {/* Sub-items */}
-                          {category.items.map((subItem) => (
-                            <NavLink
-                              key={subItem.label}
-                              to={subItem.href}
-                              className={({ isActive }) => [
-                                "block px-7 py-1.5 text-[13px] rounded-lg transition-colors",
-                                isActive
-                                  ? isScrolled
-                                    ? "text-[#6128a6] font-medium"
-                                    : "text-[#aa3bff] font-medium"
-                                  : isScrolled
-                                    ? "text-[#555] hover:text-[#6128a6] hover:bg-black/3"
-                                    : "text-white/55 hover:text-white hover:bg-white/5",
-                              ].join(" ")}
-                            >
-                              {subItem.label}
-                            </NavLink>
-                          ))}
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                        )}
+                        {/* Sub-items */}
+                        {category.items.map((subItem) => (
+                          <NavLink
+                            key={subItem.label}
+                            to={subItem.href}
+                            className={({ isActive }) => [
+                              "block px-5 py-1.5 text-[13px] rounded-lg transition-colors",
+                              isActive
+                                ? "text-[#EB9B3D] font-semibold"
+                                : "text-white/55 hover:text-white hover:bg-white/5",
+                            ].join(" ")}
+                          >
+                            {subItem.label}
+                          </NavLink>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               );
-            }
+            })}
 
-            return (
-              <NavLink
-                key={item.label}
-                to={item.href}
-                end={item.href === "/"}
-                className={({ isActive }) => [
-                  "block px-3 py-2.5 rounded-lg text-[15px] font-medium transition-colors",
-                  isActive
-                    ? isScrolled
-                      ? "text-[#6128a6] bg-[#f8f5ff]"
-                      : "text-white bg-white/15"
-                    : isScrolled
-                      ? "text-[#111111] hover:text-[#f85d37] hover:bg-black/5"
-                      : "text-white/85 hover:text-white hover:bg-white/10",
-                ].join(" ")}
-              >
-                {item.label}
-              </NavLink>
-            );
-          })}
+            {/* Divider */}
+            <div className="my-2 h-px bg-white/10" />
 
-          <NavLink
-            to="/contact"
-            className="mt-3 flex items-center justify-center gap-2 text-white px-6 py-3 font-semibold text-[14px] transition-all duration-200 rounded-full hover:brightness-110 hover:shadow-[0_6px_24px_rgba(235,155,61,0.50)]"
-            style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
-          >
-            Get Started <ChevronRight className="w-4 h-4" />
-          </NavLink>
+            {/* CTA */}
+            <NavLink
+              to="/contact"
+              className="w-full flex items-center justify-center gap-2 text-white px-6 py-3.5 font-bold text-[15px] transition-all duration-200 rounded-xl hover:brightness-110 hover:shadow-[0_6px_24px_rgba(235,155,61,0.40)]"
+              style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
+            >
+              Get Started <ChevronRight className="w-4 h-4" />
+            </NavLink>
+
+            {/* Bottom safe area */}
+            <div className="h-2" />
+          </div>
         </div>
       )}
     </header>

@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useCallback, useRef, Fragment } from "react";
+﻿import { useState, useEffect, useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ImageWithFallback } from "../helpers/ImageWithFallback";
 import {
@@ -640,7 +640,7 @@ function IndexBanner({ slides: slidesProp }: { slides?: AnySlide[] } = {}) {
     return (
       <SlideContentB
         key={key}
-        slide={slide}
+        slide={{ ...slide, statsBar: false }}
         active={active}
         total={SLIDES.length}
         exiting={isExiting}
@@ -652,7 +652,7 @@ function IndexBanner({ slides: slidesProp }: { slides?: AnySlide[] } = {}) {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
+      className="relative flex flex-col overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -705,7 +705,8 @@ function IndexBanner({ slides: slidesProp }: { slides?: AnySlide[] } = {}) {
           VARIANT A — original two-column grid layout
       ══════════════════════════════════════════════ */}
       {s.variant === "a" && (
-        <div className="container mx-auto px-6 max-w-7xl relative z-10 pt-24 sm:pt-28 pb-12 sm:pb-16 lg:pb-24">
+        <div className="relative z-10 pt-28 sm:pt-32 lg:pt-36 pb-16 lg:pb-24">
+          <div className="container mx-auto px-6 max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
             {/* Left column */}
@@ -714,10 +715,10 @@ function IndexBanner({ slides: slidesProp }: { slides?: AnySlide[] } = {}) {
               {renderContent(s, `enter-${enterKey}`, false)}
             </div>
 
-            {/* Right: floating image with orbit rings — desktop only */}
+            {/* Right: floating image with orbit rings */}
             <div
               key={`img-${enterKey}`}
-              className="relative hidden lg:flex justify-end overflow-hidden"
+              className="relative flex justify-center lg:justify-end"
               style={{ animation: "imgCinema 0.9s cubic-bezier(0.16,1,0.3,1) 0.12s both" }}
             >
               <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>
@@ -737,109 +738,45 @@ function IndexBanner({ slides: slidesProp }: { slides?: AnySlide[] } = {}) {
               />
             </div>
           </div>
+          </div>
         </div>
       )}
 
       {/* ══════════════════════════════════════════════
-          VARIANT B — magazine split: full-bleed right image
-          Right image starts at header bottom (80px).
-          Content + stats bar are a flex-1 column: stats naturally
-          sit at the bottom when there is screen space, and flow
-          below content when the screen is too short.
+          VARIANT B — two-column grid (matches About Us hero style)
       ══════════════════════════════════════════════ */}
       {s.variant === "b" && (
-        <>
-          {/* Full-bleed right image — rounded left corners, responsive width, top aligned with content */}
-          <div
-            key={`img-${enterKey}`}
-            className="absolute right-0 hidden md:block md:w-[40%] lg:w-[36%] xl:w-[42%] 2xl:w-[44%] overflow-hidden"
-            style={{
-              top: "7rem",
-              bottom: 0,
-              zIndex: 5,
-              borderTopLeftRadius: "2rem",
-              borderBottomLeftRadius: "2rem",
-              animation: "imgCinema 0.9s cubic-bezier(0.16,1,0.3,1) 0.08s both",
-            }}
-          >
-            <img
-              src={s.image}
-              alt="Recruitment visual"
-              className="w-full h-full object-cover object-center"
-            />
-            {/* Blend left edge into the background */}
-            <div
-              className="absolute inset-y-0 left-0 w-16 md:w-24 lg:w-44 pointer-events-none"
-              style={{ background: `linear-gradient(to right, ${s.bgEdge} 0%, transparent 100%)` }}
-            />
-            {/* Bottom vignette only — no top overlay so image is visible from the header bottom */}
-            <div className="absolute inset-x-0 bottom-0 h-24 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.50), transparent)" }} />
-          </div>
+        <div className="relative z-10 pt-28 sm:pt-32 lg:pt-36 pb-16 lg:pb-24">
+          <div className="container mx-auto px-6 max-w-7xl w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-          {/*
-            Content + stats as a single flex-1 column child of the section.
-            flex-1 fills the full section height; padding-top clears the header.
-            Inside: content area grows (flex-1) → stats bar naturally at the bottom.
-            On screens where everything fits, stats land at the viewport bottom.
-            On shorter screens, the block grows and stats flow below content.
-          */}
-          <div
-            className="w-full flex flex-col flex-1 relative"
-            style={{ paddingTop: "80px", zIndex: 10 }}
-          >
-            {/* Content — top-aligned so badge starts at 7rem (= header 80px + pt-8 32px),
-                matching the image top exactly for clean visual alignment */}
-            <div className="flex-1 flex items-start pt-5 sm:pt-7 md:pt-8 pb-5 sm:pb-7 md:pb-8">
-              <div className="container mx-auto px-6 max-w-7xl w-full">
-                {/* 52% wide on desktop; gap widens at larger breakpoints alongside image */}
-                <div className="md:w-[56%] lg:w-[52%] xl:w-[50%] relative">
-                  {exitingIdx !== null && renderContent(SLIDES[exitingIdx], `exit-${flashKey}`, true)}
-                  {renderContent(s, `enter-${enterKey}`, false)}
-                </div>
+              {/* Left content */}
+              <div className="relative">
+                {exitingIdx !== null && renderContent(SLIDES[exitingIdx], `exit-${flashKey}`, true)}
+                {renderContent(s, `enter-${enterKey}`, false)}
               </div>
-            </div>
 
-            {/* Mobile image — shown below content, hidden on md+ where absolute image takes over */}
-            <div className="md:hidden w-full relative overflow-hidden rounded-t-2xl h-44 sm:h-56">
-              <img
-                src={s.image}
-                alt="Visual"
-                className="w-full h-full object-cover object-center"
-              />
-              <div className="absolute inset-x-0 bottom-0 h-16 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55), transparent)" }} />
-            </div>
-
-            {/* Bottom stats bar — only for slides with statsBar: true */}
-            {s.statsBar && (
+              {/* Right: image in rounded card */}
               <div
-                style={{
-                  background: "rgba(0,0,0,0.45)",
-                  backdropFilter: "blur(14px)",
-                  WebkitBackdropFilter: "blur(14px)",
-                  borderTop: `1px solid ${s.accent}28`,
-                }}
+                key={`img-${enterKey}`}
+                className="relative block"
+                style={{ animation: "imgCinema 0.9s cubic-bezier(0.16,1,0.3,1) 0.12s both" }}
               >
-                <div className="container mx-auto px-6 max-w-7xl">
-                  <div className="flex items-center py-3 sm:py-5">
-                    {s.stats.map((st, i) => (
-                      <Fragment key={st.label}>
-                        {i > 0 && <div className="w-px h-9 bg-white/15 shrink-0" />}
-                        <div className="flex-1 flex flex-col items-center gap-0.5 text-center">
-                          <span className="text-[18px] sm:text-[22px] md:text-[26px] font-bold leading-none tabular-nums" style={{ color: s.sh1 }}>
-                            {st.value}
-                          </span>
-                          <span className="text-[10px] sm:text-[11px] text-white/50 tracking-wide uppercase">
-                            {st.label}
-                          </span>
-                        </div>
-                      </Fragment>
-                    ))}
-                  </div>
-                </div>
+                <div
+                  className="absolute inset-0 rounded-3xl translate-x-4 translate-y-4 opacity-25 blur-2xl"
+                  style={{ background: s.accent }}
+                />
+                <img
+                  src={s.image}
+                  alt="Visual"
+                  className="w-full h-auto rounded-3xl shadow-2xl relative z-10 object-cover max-h-64 sm:max-h-96 lg:max-h-130"
+                />
+                <div className="absolute inset-0 rounded-3xl ring-1 ring-white/10 z-20 pointer-events-none" />
               </div>
-            )}
+
+            </div>
           </div>
-        </>
+        </div>
       )}
 
       {/* ── Bottom vignette ── */}
