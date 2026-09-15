@@ -175,7 +175,7 @@ export default function CloudPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Enterprise Cloud
               </span>
-              <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
+              <h2 className="text-[22px] lg:text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                 Secure, Scalable Cloud
                 <br />
                 <span className="text-[#EB9B3D]">for Modern Enterprises</span>
@@ -238,7 +238,7 @@ export default function CloudPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Service Models
               </span>
-              <h2 className="text-[36px] font-bold text-[#111] mt-2">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111] mt-2">
                 Our Cloud Services
               </h2>
               <p className="text-[16px] text-[#555] max-w-2xl mx-auto mt-4 leading-relaxed">
@@ -304,7 +304,7 @@ export default function CloudPage() {
                 <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Why Choose Us
                 </span>
-                <h2 className="text-[34px] font-bold text-white mt-3 leading-tight mb-5">
+                <h2 className="text-[22px] lg:text-[34px] font-bold text-white mt-3 leading-tight mb-5">
                   Our Solutions &<br />
                   <span className="text-[#DA4D33]">Delivery Standards</span>
                 </h2>
@@ -393,7 +393,7 @@ export default function CloudPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Move to the Cloud
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
+                <h2 className="text-[22px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   Modernise Your Infrastructure
                   <br className="hidden md:block" />
                   with Confidence

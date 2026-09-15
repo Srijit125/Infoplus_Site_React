@@ -187,7 +187,7 @@ function CounterStat({ value, label }: { value: string; label: string }) {
 
   return (
     <div className="text-center">
-      <p className="text-[38px] font-black text-white leading-none mb-1 tabular-nums">
+      <p className="text-[24px] lg:text-[38px] font-black text-white leading-none mb-1 tabular-nums">
         {count}{suffix}
       </p>
       <p className="text-[12px] text-white/50 font-medium">{label}</p>
@@ -306,7 +306,7 @@ export default function AIPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 What We Offer
               </span>
-              <h2 className="text-[36px] font-bold text-[#111] mt-2">Our AI Services</h2>
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111] mt-2">Our AI Services</h2>
             </div>
             <p className="text-[16px] text-[#555] text-center max-w-3xl mx-auto mb-8 lg:mb-14 leading-relaxed">
               The successful implementation of AI is not just about the technology it is about the
@@ -364,7 +364,7 @@ export default function AIPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 In Depth
               </span>
-              <h2 className="text-[36px] font-bold text-[#111] mt-2">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111] mt-2">
                 Explore AI Capabilities
               </h2>
             </div>
@@ -513,7 +513,7 @@ export default function AIPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Get Started Today
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
+                <h2 className="text-[22px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   Ready to Transform Your<br className="hidden md:block" /> Business with AI?
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">

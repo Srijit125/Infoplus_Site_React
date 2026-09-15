@@ -309,7 +309,7 @@ export default function EducationSolutionsPage() {
             href="https://neat.aicte-india.org"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-semibold transition-opacity hover:opacity-85"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-semibold transition-opacity hover:opacity-85"
             style={{ background: "linear-gradient(135deg,#EB9B3D,#DA4D33)", color: "#fff" }}
           >
             <Star className="w-3.5 h-3.5" />
@@ -558,7 +558,7 @@ export default function EducationSolutionsPage() {
                         <img src={step.image} alt={step.label} className="w-full h-full object-cover" />
                       </div>
                       <div className="p-7 relative">
-                        <div className="absolute top-4 right-4 text-[48px] font-black text-[#EB9B3D] opacity-[0.06] leading-none select-none pointer-events-none">
+                        <div className="absolute top-4 right-4 text-[30px] lg:text-[48px] font-black text-[#EB9B3D] opacity-[0.06] leading-none select-none pointer-events-none">
                           {step.num}
                         </div>
                         <div className="w-11 h-11 rounded-xl bg-[#EB9B3D]/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">

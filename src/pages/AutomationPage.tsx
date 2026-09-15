@@ -221,7 +221,7 @@ export default function AutomationPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Automation as a Service
               </span>
-              <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
+              <h2 className="text-[22px] lg:text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                 The Next Critical Step
                 <br />
                 <span className="text-[#EB9B3D]">in IT Maturity.</span>
@@ -247,7 +247,7 @@ export default function AutomationPage() {
                     recipe for success?" We've derived our strategy from these.
                   </p>
                   <div className="flex items-center gap-4 mb-5">
-                    <div className="text-[48px] font-black text-[#111] leading-none">
+                    <div className="text-[30px] lg:text-[48px] font-black text-[#111] leading-none">
                       10
                     </div>
                     <div>
@@ -304,7 +304,7 @@ export default function AutomationPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/20 border border-[#EB9B3D]/30 text-[#DA4D33] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Core Business Outcomes
               </span>
-              <h2 className="text-[36px] font-bold text-white mt-2">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-white mt-2">
                 Two Primary Outcomes
               </h2>
             </div>
@@ -366,7 +366,7 @@ export default function AutomationPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Automation Strategy
               </span>
-              <h2 className="text-[36px] font-bold text-[#111] mt-2">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111] mt-2">
                 4 Strategic Pillars
               </h2>
               <p className="text-[15px] text-[#555] max-w-2xl mx-auto mt-4 leading-relaxed">
@@ -413,7 +413,7 @@ export default function AutomationPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Automation Capabilities
               </span>
-              <h2 className="text-[36px] font-bold text-[#111] mt-2">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111] mt-2">
                 Our Automation Services
               </h2>
             </div>
@@ -468,7 +468,7 @@ export default function AutomationPage() {
                 <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/20 border border-[#EB9B3D]/30 text-[#DA4D33] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Additional Benefits
                 </span>
-                <h2 className="text-[28px] font-bold text-white mt-3 mb-8">
+                <h2 className="text-[20px] lg:text-[28px] font-bold text-white mt-3 mb-8">
                   What Our Solutions Provide
                 </h2>
               </ScrollReveal>
@@ -497,7 +497,7 @@ export default function AutomationPage() {
                 <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/20 border border-[#EB9B3D]/30 text-[#DA4D33] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Technology Estate
                 </span>
-                <h2 className="text-[28px] font-bold text-white mt-3 mb-8">
+                <h2 className="text-[20px] lg:text-[28px] font-bold text-white mt-3 mb-8">
                   Tools, Technologies & Frameworks
                 </h2>
               </ScrollReveal>
@@ -534,7 +534,7 @@ export default function AutomationPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-[#EB9B3D]/20 border border-[#EB9B3D]/30 text-[11px] font-bold uppercase tracking-widest text-[#DA4D33] mb-6">
                   Automate with Confidence
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
+                <h2 className="text-[22px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   Resilient. Intelligent.
                   <br className="hidden md:block" />
                   Automated.

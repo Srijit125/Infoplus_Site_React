@@ -311,7 +311,7 @@ export function ContactPage() {
                 <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Send a Message
                 </span>
-                <h2 className="text-[28px] font-bold text-[#111] mb-8">
+                <h2 className="text-[20px] lg:text-[28px] font-bold text-[#111] mb-8">
                   We'd love to hear from you
                 </h2>
 
@@ -455,7 +455,7 @@ export function ContactPage() {
                   <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                     Reach Us Directly
                   </span>
-                  <h2 className="text-[28px] font-bold text-[#111] mb-6">
+                  <h2 className="text-[20px] lg:text-[28px] font-bold text-[#111] mb-6">
                     Contact Details
                   </h2>
                 </div>
@@ -561,7 +561,7 @@ export function ContactPage() {
                   Worldwide Presence
                 </span>
               </div>
-              <h2 className="text-[36px] font-bold text-[#111] mb-3">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111] mb-3">
                 Our Global Offices
               </h2>
               <p className="text-[16px] text-[#555] max-w-xl mx-auto">

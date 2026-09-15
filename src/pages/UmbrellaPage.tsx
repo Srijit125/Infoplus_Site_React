@@ -141,7 +141,7 @@ export default function UmbrellaPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 What We Do
               </span>
-              <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
+              <h2 className="text-[22px] lg:text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                 Contracting Made Simple.<br />
                 <span className="text-[#EB9B3D]">Life Made Better.</span>
               </h2>
@@ -200,7 +200,7 @@ export default function UmbrellaPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 All Handled For You
               </span>
-              <h2 className="text-[36px] font-bold text-[#111] mt-2">What We Take Care Of</h2>
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111] mt-2">What We Take Care Of</h2>
               <p className="text-[15px] text-[#555] max-w-2xl mx-auto mt-4 leading-relaxed">
                 We do all this so you can be sure your payments are calculated correctly and you are
                 completely protected and compliant at all times.
@@ -245,7 +245,7 @@ export default function UmbrellaPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 The Infoplus Difference
               </span>
-              <h2 className="text-[36px] font-bold text-white mt-2">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-white mt-2">
                 Why Choose Infoplus Umbrella?
               </h2>
               <p className="text-[15px] text-white/45 max-w-2xl mx-auto mt-4">
@@ -319,7 +319,7 @@ export default function UmbrellaPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Join Infoplus Umbrella
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
+                <h2 className="text-[22px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   Focus on Your Work.<br className="hidden md:block" />
                   Leave the Rest to Us.
                 </h2>

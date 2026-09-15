@@ -331,13 +331,13 @@ function GhostBtn({ to, children }: { to: string; children: React.ReactNode }) {
         padding: "12px 24px",
         fontWeight: 600,
         color: TP,
-        display: "inline-flex",
         alignItems: "center",
         gap: 8,
         textDecoration: "none",
         transition: "all 0.2s",
         transform: hov ? "translateY(-2px)" : "translateY(0)",
       }}
+      className="w-full sm:w-auto flex items-center justify-center"
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
     >
@@ -742,13 +742,12 @@ export default function Index() {
                   padding: "12px 24px",
                   fontWeight: 600,
                   color: TP,
-                  display: "inline-flex",
                   alignItems: "center",
                   gap: 8,
                   textDecoration: "none",
                   transition: "all 0.2s",
                 }}
-                className="hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
+                className="w-full sm:w-auto flex items-center justify-center hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
               >
                 Know More About Us
                 <ChevronRight style={{ width: 16, height: 16 }} />
@@ -1042,14 +1041,12 @@ export default function Index() {
                     padding: "12px 24px",
                     fontWeight: 600,
                     color: TP,
-                    display: "inline-flex",
                     alignItems: "center",
                     gap: 8,
                     textDecoration: "none",
-                    flexShrink: 0,
                     transition: "all 0.2s",
                   }}
-                  className="hover:-translate-y-0.5 hover:bg-[#1f2d55]"
+                  className="w-full sm:w-auto flex items-center justify-center hover:-translate-y-0.5 hover:bg-[#1f2d55]"
                 >
                   Get in Touch <ArrowRight style={{ width: 16, height: 16 }} />
                 </Link>
@@ -1370,13 +1367,12 @@ export default function Index() {
                   padding: "12px 24px",
                   fontWeight: 600,
                   color: TP,
-                  display: "inline-flex",
                   alignItems: "center",
                   gap: 8,
                   textDecoration: "none",
                   transition: "all 0.2s",
                 }}
-                className="hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
+                className="w-full sm:w-auto flex items-center justify-center hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
               >
                 Explore AI Services{" "}
                 <ChevronRight style={{ width: 16, height: 16 }} />

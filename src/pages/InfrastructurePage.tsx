@@ -168,7 +168,7 @@ export default function InfrastructurePage() {
                 <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   About Our Practice
                 </span>
-                <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
+                <h2 className="text-[22px] lg:text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                   Proactive Infrastructure Management<br />
                   <span className="text-[#EB9B3D]">for Global Enterprises</span>
                 </h2>
@@ -229,7 +229,7 @@ export default function InfrastructurePage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Immediate Impact
               </span>
-              <h2 className="text-[36px] font-bold text-white mt-2">Key Benefits</h2>
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-white mt-2">Key Benefits</h2>
               <p className="text-[15px] text-white/45 max-w-2xl mx-auto mt-4">
                 Through our customer-centric approach, competency, flexibility, and future-driven
                 technology exposure, you can experience these key benefits immediately.
@@ -260,7 +260,7 @@ export default function InfrastructurePage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 What We Deliver
               </span>
-              <h2 className="text-[36px] font-bold text-[#111] mt-2">Our Services</h2>
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111] mt-2">Our Services</h2>
               <p className="text-[16px] text-[#555] max-w-2xl mx-auto mt-4 leading-relaxed">
                 With our proven experience in Infrastructure Management and Operations, we deliver
                 an exclusive set of services designed for enterprise environments.
@@ -316,7 +316,7 @@ export default function InfrastructurePage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Get Started Today
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
+                <h2 className="text-[22px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   Minimise Downtime.<br className="hidden md:block" />
                   Maximise Productivity.
                 </h2>

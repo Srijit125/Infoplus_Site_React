@@ -174,7 +174,7 @@ export default function StaffingPage() {
                   <div className="w-11 h-11 rounded-xl bg-[#FEF0DC] flex items-center justify-center mb-1 shrink-0">
                     <SIcon className="w-5 h-5 text-[#EB9B3D]" />
                   </div>
-                  <p className="text-[28px] font-black text-[#EB9B3D] leading-none">{value}</p>
+                  <p className="text-[20px] lg:text-[28px] font-black text-[#EB9B3D] leading-none">{value}</p>
                   <p className="text-[12px] text-[#666] font-medium leading-snug">{label}</p>
                 </div>
               </ScrollReveal>
@@ -192,7 +192,7 @@ export default function StaffingPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 20+ Years of Excellence
               </span>
-              <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
+              <h2 className="text-[22px] lg:text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                 Internationally Recognised<br />
                 <span className="text-[#EB9B3D]">Staffing Service Provider</span>
               </h2>
@@ -253,7 +253,7 @@ export default function StaffingPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Engagement Models
               </span>
-              <h2 className="text-[36px] font-bold text-white mt-2">Our Staffing Models</h2>
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-white mt-2">Our Staffing Models</h2>
               <p className="text-[15px] text-white/45 max-w-2xl mx-auto mt-4 leading-relaxed">
                 We manage hiring, employment, and payroll while our contractor is busy at your
                 location. Swift access to qualified talent with an expert approach to matching the
@@ -300,7 +300,7 @@ export default function StaffingPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 How We Operate
               </span>
-              <h2 className="text-[34px] font-bold text-[#111] mt-2">
+              <h2 className="text-[22px] lg:text-[34px] font-bold text-[#111] mt-2">
                 All Models. Two Task Sets.
               </h2>
               <p className="text-[15px] text-[#555] max-w-xl mx-auto mt-3">
@@ -370,7 +370,7 @@ export default function StaffingPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Process
               </span>
-              <h2 className="text-[34px] font-bold text-[#111] mt-2">Our Approach</h2>
+              <h2 className="text-[22px] lg:text-[34px] font-bold text-[#111] mt-2">Our Approach</h2>
               <p className="text-[15px] text-[#555] max-w-2xl mx-auto mt-4 leading-relaxed">
                 Our simple and effective staffing strategy is not just about hiring employees 
                 it's about making the best staffing choices to address the core business needs of
@@ -436,7 +436,7 @@ export default function StaffingPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Find Your Next Hire
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
+                <h2 className="text-[22px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   The Right Talent.<br className="hidden md:block" />
                   The Right Time.
                 </h2>

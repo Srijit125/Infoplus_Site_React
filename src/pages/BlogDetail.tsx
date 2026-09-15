@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { POSTS, CAT_COLORS, CAT_GRADIENT } from "../data/blogPosts";
@@ -98,7 +98,7 @@ export default function BlogDetail() {
           </div>
 
           {/* Title */}
-          <h1 className="text-[32px] md:text-[44px] font-bold text-white leading-[1.15] mb-8 max-w-3xl">
+          <h1 className="text-[22px] md:text-[44px] font-bold text-white leading-[1.15] mb-8 max-w-3xl">
             {post.title}
           </h1>
 
@@ -223,7 +223,7 @@ export default function BlogDetail() {
                 <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Keep Reading
                 </span>
-                <h2 className="text-[28px] font-bold text-[#111]">Related Articles</h2>
+                <h2 className="text-[20px] lg:text-[28px] font-bold text-[#111]">Related Articles</h2>
               </div>
             </ScrollReveal>
 

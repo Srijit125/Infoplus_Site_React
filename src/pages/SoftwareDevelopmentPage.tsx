@@ -272,7 +272,7 @@ export default function SoftwareDevelopmentPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Who We Are
               </span>
-              <h2 className="text-[36px] font-bold text-[#111] mt-3 leading-tight">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111] mt-3 leading-tight">
                 Pioneer in Innovative &<br />
                 <span className="text-[#EB9B3D]">
                   Mission-Critical Software
@@ -365,7 +365,7 @@ export default function SoftwareDevelopmentPage() {
                         <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0">
                           <SvcIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                         </div>
-                        <h2 className="text-[32px] font-bold text-[#111] leading-tight mb-0">
+                        <h2 className="text-[22px] lg:text-[32px] font-bold text-[#111] leading-tight mb-0">
                           {svc.title}
                         </h2>
                       </div>
@@ -452,7 +452,7 @@ export default function SoftwareDevelopmentPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Getting Started
               </span>
-              <h2 className="text-[36px] font-bold text-white mt-3">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-white mt-3">
                 How To Engage?
               </h2>
               <p className="text-[16px] text-white/50 max-w-2xl mx-auto mt-4 leading-relaxed">
@@ -485,7 +485,7 @@ export default function SoftwareDevelopmentPage() {
                         {/* Pulse ring */}
                         <span className="absolute inset-0 rounded-xl border border-[#EB9B3D]/50 scale-110 opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500" />
                       </div>
-                      <span className="text-[28px] font-black text-white/10 leading-none">
+                      <span className="text-[20px] lg:text-[28px] font-black text-white/10 leading-none">
                         {step}
                       </span>
                     </div>
@@ -524,7 +524,7 @@ export default function SoftwareDevelopmentPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Ready to Build?
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
+                <h2 className="text-[22px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   Let's Build Something Remarkable
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">

@@ -360,7 +360,7 @@ function CareersPage() {
                   <span className="inline-block py-1.5 px-4 rounded-full bg-[#EB9B3D] text-white text-[11px] font-bold uppercase tracking-widest mb-8">
                     Join Us
                   </span>
-                  <h2 className="text-[42px] font-black text-white leading-[1.1]">
+                  <h2 className="text-[26px] lg:text-[42px] font-black text-white leading-[1.1]">
                     Why are
                     <br />
                     you <span className="text-[#DA4D33]">waiting?</span>
@@ -434,7 +434,7 @@ function CareersPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Why Us
               </span>
-              <h2 className="text-[38px] font-bold text-[#111111] mb-5 leading-tight">
+              <h2 className="text-[24px] lg:text-[38px] font-bold text-[#111111] mb-5 leading-tight">
                 Why work with us?
               </h2>
               <p className="text-[16px] text-[#555555] leading-[1.75]">
@@ -498,7 +498,7 @@ function CareersPage() {
                 Join Us
               </span>
               <div className="flex items-end justify-between flex-wrap gap-4">
-                <h2 className="text-[36px] font-bold text-[#111111]">
+                <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111111]">
                   Open Positions
                 </h2>
                 <p className="text-[15px] text-[#555555]">
@@ -597,7 +597,7 @@ function CareersPage() {
                     setTeamFilter("All");
                     setLocationFilter("All");
                   }}
-                  className="px-6 py-3 bg-[#EB9B3D] text-white rounded-xl font-semibold hover:bg-[#0D112D] transition-colors cursor-pointer"
+                  className="w-full sm:w-auto px-6 py-3 bg-[#EB9B3D] text-white rounded-xl font-semibold hover:bg-[#0D112D] transition-colors cursor-pointer"
                 >
                   Clear Filters
                 </button>
@@ -722,7 +722,7 @@ function CareersPage() {
                   </p>
                   <button
                     onClick={closeModal}
-                    className="px-8 py-3.5 bg-[#EB9B3D] text-white rounded-xl font-semibold hover:bg-[#0D112D] transition-colors cursor-pointer"
+                    className="w-full px-8 py-3.5 bg-[#EB9B3D] text-white rounded-xl font-semibold hover:bg-[#0D112D] transition-colors cursor-pointer"
                   >
                     Done
                   </button>

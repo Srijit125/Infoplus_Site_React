@@ -193,7 +193,7 @@ export default function TransformationPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Generation Z Engineering
               </span>
-              <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
+              <h2 className="text-[22px] lg:text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                 Digital is Not a Tool.
                 <br />
                 <span className="text-[#EB9B3D]">
@@ -236,7 +236,7 @@ export default function TransformationPage() {
                     ))}
                   </div>
                   <div className="border-t border-[rgba(13,17,45,0.08)] pt-6 text-center">
-                    <p className="text-[32px] font-black text-[#111] leading-none">
+                    <p className="text-[22px] lg:text-[32px] font-black text-[#111] leading-none">
                       20
                     </p>
                     <p className="text-[12px] text-[#888] mt-1">
@@ -269,7 +269,7 @@ export default function TransformationPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 How We Enable Digital
               </span>
-              <h2 className="text-[36px] font-bold text-white mt-2">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-white mt-2">
                 Integrating 4 Core Dimensions
               </h2>
               <p className="text-[15px] text-white/45 max-w-xl mx-auto mt-4">
@@ -313,7 +313,7 @@ export default function TransformationPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Strategic Goals
               </span>
-              <h2 className="text-[36px] font-bold text-[#111] mt-2">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111] mt-2">
                 Our Top 5 Goals
               </h2>
             </div>
@@ -362,7 +362,7 @@ export default function TransformationPage() {
                 <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Our Approach
                 </span>
-                <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
+                <h2 className="text-[22px] lg:text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                   Our Digital
                   <br />
                   <span className="text-[#EB9B3D]">
@@ -432,7 +432,7 @@ export default function TransformationPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Begin Your Digital Journey
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
+                <h2 className="text-[22px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   Transform Your Enterprise.
                   <br className="hidden md:block" />
                   Lead the Digital Era.

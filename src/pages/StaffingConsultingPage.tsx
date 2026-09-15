@@ -92,7 +92,7 @@ export default function StaffingConsultingPage() {
       >
         <Link
           to="/contact"
-          className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-[15px] text-white transition-all hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
+          className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-bold text-[15px] text-white transition-all hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
           style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
         >
           Connect With Us

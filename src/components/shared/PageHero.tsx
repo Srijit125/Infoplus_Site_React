@@ -81,7 +81,7 @@ export function PageHero({
                 <img
                   src={image}
                   alt={title}
-                  className="w-full h-135 object-cover rounded-3xl shadow-2xl relative z-10"
+                  className="w-full h-auto rounded-3xl shadow-2xl relative z-10"
                 />
                 <div className="absolute inset-0 rounded-3xl ring-1 ring-white/10 z-20" />
               </div>

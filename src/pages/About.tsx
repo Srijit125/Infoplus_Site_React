@@ -133,7 +133,7 @@ function About() {
                 <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Who We Are
                 </span>
-                <h2 className="text-[36px] font-bold text-[#111111] mb-7">
+                <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111111] mb-7">
                   Born in 2000, Built for{" "}
                   <span style={{ background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Tomorrow</span>
                 </h2>
@@ -173,7 +173,7 @@ function About() {
               <span className="inline-block py-1 px-4 rounded-full bg-white/10 border border-white/20 text-white/70 text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Values
               </span>
-              <h2 className="text-[36px] font-bold text-white mb-4">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-white mb-4">
                 What Drives Us{" "}
                 <span style={{ background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Forward</span>
               </h2>
@@ -558,7 +558,7 @@ function About() {
           <ScrollReveal direction="up">
             <div className="mb-8 lg:mb-14">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">Facts</span>
-              <h2 className="text-[36px] font-bold text-[#111111] mb-4">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111111] mb-4">
                 Two Decades of{" "}
                 <span style={{ background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Excellence</span>
               </h2>
@@ -573,7 +573,7 @@ function About() {
             {keyStats.map((stat, i) => (
               <ScrollReveal key={i} variant="card" delay={i * 80}>
                 <div className="text-center p-8 bg-white rounded-2xl border border-[#e5e4e7] shadow-sm hover:border-[#EB9B3D]/30 hover:shadow-[0_8px_24px_rgba(235,155,61,0.08)] transition-all duration-300">
-                  <div className="text-[48px] font-black text-[#EB9B3D] leading-none mb-2">{stat.val}</div>
+                  <div className="text-[30px] lg:text-[48px] font-black text-[#EB9B3D] leading-none mb-2">{stat.val}</div>
                   <div className="text-[12px] font-semibold text-[#555555] uppercase tracking-widest">{stat.label}</div>
                 </div>
               </ScrollReveal>
@@ -787,7 +787,7 @@ function About() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Identity
               </span>
-              <h2 className="text-[36px] font-bold text-[#111111] mb-5">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111111] mb-5">
                 Empowering Digital{" "}
                 <span style={{ background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Success</span>
               </h2>
@@ -850,7 +850,7 @@ function About() {
                 <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white/70 text-[11px] font-bold uppercase tracking-widest mb-5">
                   Our Culture
                 </span>
-                <h2 className="text-[36px] font-bold text-white mb-7">
+                <h2 className="text-[22px] lg:text-[36px] font-bold text-white mb-7">
                   Our Most Valuable{" "}
                   <span style={{ background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Resource</span>
                 </h2>
@@ -875,7 +875,7 @@ function About() {
                 <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Partnerships
                 </span>
-                <h2 className="text-[36px] font-bold text-[#111111] mb-6">
+                <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111111] mb-6">
                   Building{" "}
                   <span style={{ background: "linear-gradient(90deg,#EB9B3D 0%,#DA4D33 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Together</span>
                 </h2>

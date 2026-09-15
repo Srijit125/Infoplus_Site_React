@@ -168,7 +168,7 @@ export default function EverythingDataPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Data for Every Organisation
               </span>
-              <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
+              <h2 className="text-[22px] lg:text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                 Using Data is No Longer
                 <br />
                 <span className="text-[#EB9B3D]">
@@ -259,7 +259,7 @@ export default function EverythingDataPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Technical Experts' Process
               </span>
-              <h2 className="text-[36px] font-bold text-white mt-2">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-white mt-2">
                 8-Step Data Delivery Framework
               </h2>
               <p className="text-[15px] text-white/45 max-w-2xl mx-auto mt-4">
@@ -308,7 +308,7 @@ export default function EverythingDataPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 What We Deliver
               </span>
-              <h2 className="text-[36px] font-bold text-[#111] mt-2">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111] mt-2">
                 Our Data Services
               </h2>
             </div>
@@ -359,7 +359,7 @@ export default function EverythingDataPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Unlock Your Data
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
+                <h2 className="text-[22px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   Better Data.
                   <br className="hidden md:block" />
                   Better Decisions.

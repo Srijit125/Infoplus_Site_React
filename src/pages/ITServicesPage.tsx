@@ -115,7 +115,7 @@ export default function ITServicesPage() {
         <div className="flex flex-col sm:flex-row justify-center gap-3">
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-bold text-[14px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-bold text-[14px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
             style={{ background: "linear-gradient(135deg,#EB9B3D 0%,#DA4D33 100%)" }}
           >
             Discuss Your Project <ChevronRight className="w-4 h-4" />

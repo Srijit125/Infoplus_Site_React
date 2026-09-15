@@ -439,8 +439,8 @@ export default function CookiePolicyPage() {
 
                   <div style={{ marginTop: 22 }}>
                     <Link to="/contact"
-                      style={{ display: "inline-flex", alignItems: "center", gap: 8, background: ACC, borderRadius: 999, padding: "10px 20px", color: "#fff", fontWeight: 600, fontSize: 13, textDecoration: "none", transition: "all 0.2s" }}
-                      className="hover:opacity-85 hover:-translate-y-0.5">
+                      style={{ alignItems: "center", gap: 8, background: ACC, borderRadius: 999, padding: "10px 20px", color: "#fff", fontWeight: 600, fontSize: 13, textDecoration: "none", transition: "all 0.2s" }}
+                      className="w-full sm:w-auto flex items-center justify-center hover:opacity-85 hover:-translate-y-0.5">
                       Get in Touch <ChevronRight style={{ width: 14, height: 14 }} />
                     </Link>
                   </div>

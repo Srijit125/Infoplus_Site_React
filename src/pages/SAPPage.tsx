@@ -197,7 +197,7 @@ export default function SAPPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 About Our SAP Practice
               </span>
-              <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
+              <h2 className="text-[22px] lg:text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                 20+ Years of SAP Excellence
                 <br />
                 <span className="text-[#EB9B3D]">
@@ -270,7 +270,7 @@ export default function SAPPage() {
                 <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   01 ERP Suite
                 </span>
-                <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
+                <h2 className="text-[22px] lg:text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                   SAP All-in-One
                   <br />
                   <span className="text-[#EB9B3D]">ERP Suite</span>
@@ -320,7 +320,7 @@ export default function SAPPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 02 Implementations
               </span>
-              <h2 className="text-[34px] font-bold text-[#111] mt-3">
+              <h2 className="text-[22px] lg:text-[34px] font-bold text-[#111] mt-3">
                 SAP Implementations
               </h2>
               <p className="text-[15px] text-[#555] max-w-2xl mx-auto mt-4 leading-relaxed">
@@ -382,7 +382,7 @@ export default function SAPPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Managed Services
               </span>
-              <h2 className="text-[34px] font-bold text-white mt-3 leading-tight mb-5">
+              <h2 className="text-[22px] lg:text-[34px] font-bold text-white mt-3 leading-tight mb-5">
                 Outsourcing Managed Services
               </h2>
               <p className="text-[15.5px] text-white/60 leading-[1.85]">
@@ -437,7 +437,7 @@ export default function SAPPage() {
                 <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Business Intelligence
                 </span>
-                <h2 className="text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
+                <h2 className="text-[22px] lg:text-[34px] font-bold text-[#111] mt-3 leading-tight mb-5">
                   SAP NetWeaver BI
                 </h2>
                 <p className="text-[15.5px] text-[#555] leading-[1.85] mb-4">
@@ -494,7 +494,7 @@ export default function SAPPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 The Infoplus Advantage
               </span>
-              <h2 className="text-[34px] font-bold text-[#111] mt-2">
+              <h2 className="text-[22px] lg:text-[34px] font-bold text-[#111] mt-2">
                 Why Infoplus for Your SAP Services?
               </h2>
             </div>
@@ -573,7 +573,7 @@ export default function SAPPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Start Your SAP Journey
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
+                <h2 className="text-[22px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   Optimise Your Business with SAP
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">

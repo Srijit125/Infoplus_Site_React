@@ -259,7 +259,7 @@ export default function TestingPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Testing Services
               </span>
-              <h2 className="text-[36px] font-bold text-[#111] mt-2">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111] mt-2">
                 Comprehensive Testing Coverage
               </h2>
             </div>
@@ -317,7 +317,7 @@ export default function TestingPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Why Testing Matters
               </span>
-              <h2 className="text-[36px] font-bold text-white mt-2">
+              <h2 className="text-[22px] lg:text-[36px] font-bold text-white mt-2">
                 Our Solutions
               </h2>
               <p className="text-[15px] text-white/45 max-w-2xl mx-auto mt-4">
@@ -361,7 +361,7 @@ export default function TestingPage() {
                 <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                   Our Process
                 </span>
-                <h2 className="text-[36px] font-bold text-[#111] mt-3 leading-tight">
+                <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111] mt-3 leading-tight">
                   Our Strategy for
                   <br />
                   <span className="text-[#EB9B3D]">Flawless Delivery</span>
@@ -379,7 +379,7 @@ export default function TestingPage() {
                     { value: "100%", label: "Coverage Goal" },
                   ].map(({ value, label }) => (
                     <div key={label}>
-                      <p className="text-[36px] font-black text-[#EB9B3D] leading-none">
+                      <p className="text-[22px] lg:text-[36px] font-black text-[#EB9B3D] leading-none">
                         {value}
                       </p>
                       <p className="text-[12px] text-[#888] mt-1 font-medium">
@@ -449,7 +449,7 @@ export default function TestingPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white/70 mb-6">
                   Ready to Test?
                 </span>
-                <h2 className="text-[36px] md:text-[42px] font-bold mb-4 leading-tight text-white">
+                <h2 className="text-[22px] md:text-[42px] font-bold mb-4 leading-tight text-white">
                   Ship Software You Can Trust
                 </h2>
                 <p className="text-[16px] text-white/55 max-w-2xl mx-auto mb-10 leading-relaxed">

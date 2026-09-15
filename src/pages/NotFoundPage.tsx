@@ -71,7 +71,7 @@ export default function NotFoundPage() {
         <div className="flex flex-wrap gap-3 justify-center mb-8 lg:mb-16">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-[14px] font-bold text-white transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(235,155,61,0.35)]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-[14px] font-bold text-white transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(235,155,61,0.35)]"
             style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
           >
             <Home className="w-4 h-4" />
@@ -79,7 +79,7 @@ export default function NotFoundPage() {
           </Link>
           <button
             onClick={() => navigate(-1)}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-[14px] font-semibold text-white/70 border border-white/15 hover:text-white hover:border-white/35 transition-all duration-200"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-[14px] font-semibold text-white/70 border border-white/15 hover:text-white hover:border-white/35 transition-all duration-200"
           >
             <ArrowLeft className="w-4 h-4" />
             Go Back

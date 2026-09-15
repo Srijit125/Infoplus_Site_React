@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef, Fragment } from "react";
+﻿import { useState, useEffect, useCallback, useRef, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { ImageWithFallback } from "../helpers/ImageWithFallback";
 import {
@@ -301,7 +301,7 @@ function SlideContent({
       </div>
 
       {/* Headline */}
-      <h1 className={`${cin(2)} text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] font-bold text-white leading-[1.1] mb-4 tracking-tight`}>
+      <h1 className={`${cin(2)} text-[20px] lg:text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] font-bold text-white leading-[1.1] mb-4 tracking-tight`}>
         {s.titlePart1}
         <span
           style={{
@@ -352,7 +352,7 @@ function SlideContent({
             className="flex flex-col gap-1 pl-4"
             style={{ borderLeft: `2px solid ${s.accent}55` }}
           >
-            <span className="text-[28px] font-bold text-white leading-none">{st.value}</span>
+            <span className="text-[20px] lg:text-[28px] font-bold text-white leading-none">{st.value}</span>
             <span className="text-[12px] text-white/50 tracking-wide">{st.label}</span>
           </div>
         ))}
