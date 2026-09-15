@@ -589,7 +589,7 @@ export function ContactPage() {
                       title={office.region}
                     />
                     <span className="text-[15px] font-bold text-[#111] leading-snug group-hover:text-[#EB9B3D] transition-colors">
-                      {office.city}
+                      {office.region}
                     </span>
                   </div>
                   <p className="text-[12px] text-[#666] leading-relaxed flex-1 mb-4">
