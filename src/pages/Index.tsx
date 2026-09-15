@@ -1751,7 +1751,7 @@ export default function Index() {
       </section>
 
       {/* ══ 12. Our Team — dark (BG gradient) ══ */}
-      <section className="py-28" style={{ background: BG }}>
+      {false && <section className="py-28" style={{ background: BG }}>
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
             <div className="text-center mb-14">
@@ -1878,7 +1878,7 @@ export default function Index() {
             ))}
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* ══ 13. Global Presence — white ══ */}
       <section className="pt-24 pb-10" style={{ background: "#FFFFFF" }}>

@@ -69,9 +69,9 @@ const OFFICES = [
     code: "IE",
     region: "Ireland",
     city: "Dublin",
-    address: "The Black Church, St. Mary's Place, Dublin 7",
+    address: "28-32 Pembroke Street Upper, Dublin D02 EK84",
     mapUrl:
-      "https://maps.google.com/?q=The+Black+Church+St+Marys+Place+Dublin+7+Ireland",
+      "https://maps.google.com/?q=28-32+Pembroke+Street+Upper+Dublin+D02+EK84+Ireland",
   },
   {
     code: "CH",
