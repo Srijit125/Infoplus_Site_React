@@ -4,38 +4,85 @@ import { ImageWithFallback } from "./helpers/ImageWithFallback";
 import imgInfoplusLogo from "../assets/images/imgInfoplusLogo.png";
 import imgCert1 from "../assets/images/certified-1.png";
 import imgCert2 from "../assets/images/certified-2.png";
-import { socialMediaLinks, type SocialMedia } from "../assets/constants/socialMedia";
+import {
+  socialMediaLinks,
+  type SocialMedia,
+} from "../assets/constants/socialMedia";
+import { useState } from "react";
 
 function SocialSvg({ name }: { name: string }) {
-  if (name === "facebook") return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-    </svg>
-  );
-  if (name === "twitter") return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  );
-  if (name === "linkedin") return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
-      <circle cx="4" cy="4" r="2" />
-    </svg>
-  );
-  if (name === "instagram") return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-    </svg>
-  );
+  if (name === "facebook")
+    return (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+      </svg>
+    );
+  if (name === "twitter")
+    return (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    );
+  if (name === "linkedin")
+    return (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+        <circle cx="4" cy="4" r="2" />
+      </svg>
+    );
+  if (name === "instagram")
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="w-4 h-4"
+      >
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+      </svg>
+    );
   return null;
 }
 
 export function Footer({ bgColor }: { bgColor?: string }) {
+  const [email, setEmail] = useState("");
+  const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Handle subscription logic here
+
+    if (!email) return "Email address is required.";
+    if (email.length > 254) return "Email address is too long.";
+    if (!/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(email))
+      return "Enter a valid email address (e.g. john@company.com).";
+
+    try {
+      const formData = new FormData();
+      formData.append("email", email.trim());
+      const res = await fetch(
+        "https://test.infoplus.co.in/WebMail/api/Email/newsletter",
+        {
+          method: "POST",
+          body: formData,
+        },
+      );
+      const json = await res.json();
+      if (json.success) {
+        setEmail("");
+      } else {
+      }
+    } catch (error) {}
+  };
+
   return (
-    <footer className="text-white pt-20 pb-8" style={{ backgroundColor: bgColor ?? "#141A3D" }}>
+    <footer
+      className="text-white pt-20 pb-8"
+      style={{ backgroundColor: bgColor ?? "#141A3D" }}
+    >
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
@@ -71,12 +118,20 @@ export function Footer({ bgColor }: { bgColor?: string }) {
             </h4>
             <ul className="space-y-4">
               {[
-                { label: "Home",                 href: "/",                              external: false },
-                { label: "About Us",             href: "/about",                         external: false },
-                { label: "Careers",              href: "/careers",                       external: false },
-                { label: "Contact",              href: "/contact",                       external: false },
-                { label: "Carbon Reduction Plan",href: "/carbon-reduction-plan.pdf",     external: true  },
-                { label: "ISO 14001:2015",       href: "/iso-14001-2015.pdf",            external: true  },
+                { label: "Home", href: "/", external: false },
+                { label: "About Us", href: "/about", external: false },
+                { label: "Careers", href: "/careers", external: false },
+                { label: "Contact", href: "/contact", external: false },
+                {
+                  label: "Carbon Reduction Plan",
+                  href: "/carbon-reduction-plan.pdf",
+                  external: true,
+                },
+                {
+                  label: "ISO 14001:2015",
+                  href: "/iso-14001-2015.pdf",
+                  external: true,
+                },
               ].map((item) => (
                 <li key={item.label}>
                   {item.external ? (
@@ -107,11 +162,17 @@ export function Footer({ bgColor }: { bgColor?: string }) {
             </h4>
             <ul className="space-y-4">
               {[
-                { label: "IT Services",            to: "/services/it-services" },
-                { label: "Staffing & Consulting",  to: "/services/staffing-consulting" },
-                { label: "New-Gen Services",        to: "/services/new-generation" },
-                { label: "Artificial Intelligence", to: "/services/it-services/artificial-intelligence" },
-                { label: "Products",               to: "/products" },
+                { label: "IT Services", to: "/services/it-services" },
+                {
+                  label: "Staffing & Consulting",
+                  to: "/services/staffing-consulting",
+                },
+                { label: "New-Gen Services", to: "/services/new-generation" },
+                {
+                  label: "Artificial Intelligence",
+                  to: "/services/it-services/artificial-intelligence",
+                },
+                { label: "Products", to: "/products" },
               ].map((item) => (
                 <li key={item.label}>
                   <Link
@@ -171,17 +232,22 @@ export function Footer({ bgColor }: { bgColor?: string }) {
             <p className="text-[12px] text-white/70 mb-4 font-normal">
               Subscribe to get latest news &amp; updates
             </p>
-            <form className="relative" onSubmit={(e) => e.preventDefault()}>
+            <form className="relative" onSubmit={handleSubscribe}>
               <input
                 type="email"
                 placeholder="Enter Your Email Address"
                 className="w-full bg-white rounded-lg py-3 pl-4 pr-12 text-[14px] text-[#111] focus:outline-none placeholder:text-[#555] transition-colors"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
               <button
                 type="submit"
                 className="absolute right-1 top-1 bottom-1 w-10 rounded-md flex items-center justify-center text-white transition-all duration-200 hover:opacity-90 cursor-pointer"
-                style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
+                style={{
+                  background:
+                    "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)",
+                }}
                 aria-label="Subscribe Now"
               >
                 <ArrowRight className="w-4 h-4" />
@@ -194,15 +260,16 @@ export function Footer({ bgColor }: { bgColor?: string }) {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             {/* Copyright left */}
             <p className="text-white/70 text-[13px] font-normal">
-              © {new Date().getFullYear()} Infoplus Technologies. All rights reserved.
+              © {new Date().getFullYear()} Infoplus Technologies. All rights
+              reserved.
             </p>
 
             {/* Legal links right */}
             <div className="flex flex-wrap items-center gap-x-1 gap-y-2">
               {[
                 { label: "Terms of Service", to: "/terms-of-service" },
-                { label: "Privacy Policy",   to: "/privacy-policy" },
-                { label: "Cookie Policy",    to: "/cookie-policy" },
+                { label: "Privacy Policy", to: "/privacy-policy" },
+                { label: "Cookie Policy", to: "/cookie-policy" },
               ].map((l, i, arr) => (
                 <span key={l.label} className="flex items-center gap-1">
                   <Link
