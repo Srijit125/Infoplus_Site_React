@@ -317,7 +317,7 @@ export default function PrivacyPolicyPage() {
       </section>
 
       {/* ── Questions? ───────────────────────────────────────── */}
-      <section className="py-20 bg-white relative border-t border-[rgba(13,17,45,0.08)]">
+      <section className="py-12 sm:py-20 bg-white relative border-t border-[rgba(13,17,45,0.08)]">
         <div className="absolute top-0 left-0 w-100 h-100 rounded-full bg-[#EB9B3D] opacity-8 blur-[100px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.012] pointer-events-none"
@@ -326,16 +326,16 @@ export default function PrivacyPolicyPage() {
             backgroundSize: "32px 32px",
           }}
         />
-        <div className="container mx-auto px-6 max-w-3xl relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 max-w-3xl relative z-10">
           <ScrollReveal direction="up">
-            <div className="text-center mb-10">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-4">
+            <div className="text-center mb-7 sm:mb-10">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[10px] sm:text-[11px] font-bold uppercase tracking-widest mb-3 sm:mb-4">
                 Questions?
               </span>
-              <h2 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d0517] mb-4">
+              <h2 className="text-[clamp(1.25rem,4vw,2.25rem)] font-bold text-[#0d0517] mb-3 sm:mb-4">
                 Happy to help
               </h2>
-              <p className="text-[15px] text-[#555]">
+              <p className="text-[13px] sm:text-[15px] text-[#555]">
                 Happy to help if anything here needs clarifying, or if you just want to know more
                 about how we handle your information.
               </p>
@@ -343,23 +343,23 @@ export default function PrivacyPolicyPage() {
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={80}>
-            <div className="bg-[#F3F5FF] border border-[rgba(13,17,45,0.08)] rounded-2xl p-8 shadow-[0_4px_24px_rgba(235,155,61,0.06)]">
-              <p className="text-[14.5px] font-bold text-[#0d0517] mb-6">
+            <div className="bg-[#F3F5FF] border border-[rgba(13,17,45,0.08)] rounded-2xl p-5 sm:p-8 shadow-[0_4px_24px_rgba(235,155,61,0.06)]">
+              <p className="text-[13px] sm:text-[14.5px] font-bold text-[#0d0517] mb-4">
                 InfoPlus Technologies UK Ltd
               </p>
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <a
                   href="mailto:contact@infoplusltd.co.uk"
-                  className="flex items-center gap-3 text-[14.5px] text-[#555] hover:text-[#EB9B3D] transition-colors group"
+                  className="flex items-center gap-3 text-[13px] sm:text-[14.5px] text-[#555] hover:text-[#EB9B3D] transition-colors group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <Mail className="w-5 h-5 text-white" strokeWidth={1.6} />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-white" strokeWidth={1.6} />
                   </div>
                   <span>contact@infoplusltd.co.uk</span>
                 </a>
-                <div className="flex items-center gap-3 text-[14.5px] text-[#555]">
-                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5 text-white" strokeWidth={1.6} />
+                <div className="flex items-center gap-3 text-[13px] sm:text-[14.5px] text-[#555]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-white" strokeWidth={1.6} />
                   </div>
                   <span>+44 20 8207 3474</span>
                 </div>
@@ -367,16 +367,16 @@ export default function PrivacyPolicyPage() {
                   href="https://www.infoplusltd.co.uk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-[14.5px] text-[#555] hover:text-[#EB9B3D] transition-colors group"
+                  className="flex items-center gap-3 text-[13px] sm:text-[14.5px] text-[#555] hover:text-[#EB9B3D] transition-colors group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <ExternalLink className="w-5 h-5 text-white" strokeWidth={1.6} />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-white" strokeWidth={1.6} />
                   </div>
                   <span>https://www.infoplusltd.co.uk</span>
                 </a>
               </div>
-              <div className="mt-6 pt-6 border-t border-[rgba(13,17,45,0.08)]">
-                <p className="text-[14px] text-[#888]">
+              <div className="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t border-[rgba(13,17,45,0.08)]">
+                <p className="text-[12px] sm:text-[14px] text-[#888]">
                   We try to get back to privacy queries quickly.
                 </p>
               </div>

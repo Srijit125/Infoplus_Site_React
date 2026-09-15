@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { FAQAccordion } from "../components/shared/FAQAccordion";
 import type { FAQItem } from "../components/shared/FAQAccordion";
 import { useState, useRef, useEffect } from "react";
@@ -299,7 +299,7 @@ export default function AIPage() {
       </PageHero>
 
       {/* ── Our AI Services (overview cards) ──────────────────── */}
-      <section className="py-20 bg-[#ffffff] relative -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-10 lg:py-20 bg-[#ffffff] relative -mt-10 rounded-t-[3rem] z-20">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="fade">
             <div className="text-center mb-4">
@@ -308,7 +308,7 @@ export default function AIPage() {
               </span>
               <h2 className="text-[36px] font-bold text-[#111] mt-2">Our AI Services</h2>
             </div>
-            <p className="text-[16px] text-[#555] text-center max-w-3xl mx-auto mb-14 leading-relaxed">
+            <p className="text-[16px] text-[#555] text-center max-w-3xl mx-auto mb-8 lg:mb-14 leading-relaxed">
               The successful implementation of AI is not just about the technology it is about the
               strategy, the infrastructure, and the experts who can deliver the power of data as a
               significant business outcome.
@@ -360,7 +360,7 @@ export default function AIPage() {
       >
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="fade">
-            <div className="text-center mb-12">
+            <div className="text-center mb-6 lg:mb-12">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 In Depth
               </span>
@@ -501,7 +501,7 @@ export default function AIPage() {
       />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="py-20 bg-[#ffffff]">
+      <section className="py-10 lg:py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
             <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+﻿import { Link, useNavigate } from "react-router-dom";
 import { PageMeta } from "../components/shared/PageMeta";
 import { Home, ArrowLeft, Search, Layers } from "lucide-react";
 
@@ -68,7 +68,7 @@ export default function NotFoundPage() {
         </p>
 
         {/* CTA buttons */}
-        <div className="flex flex-wrap gap-3 justify-center mb-16">
+        <div className="flex flex-wrap gap-3 justify-center mb-8 lg:mb-16">
           <Link
             to="/"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-[14px] font-bold text-white transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(235,155,61,0.35)]"

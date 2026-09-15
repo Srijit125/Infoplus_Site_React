@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+﻿import { useState, useRef, useEffect } from "react";
 import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
@@ -372,7 +372,7 @@ export default function CyberSecurityPage() {
       </PageHero>
 
       {/* About the Service */}
-      <section className="py-28 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-14 lg:py-28 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <style>{`
           @keyframes sonarRing {
             0%   { transform: translate(-50%,-50%) scale(0.4); opacity: 0.6; }
@@ -397,7 +397,7 @@ export default function CyberSecurityPage() {
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
 
           {/* ── Main split: text + shield visual ── */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-16 items-center">
 
             {/* Left — content */}
             <ScrollReveal direction="left">
@@ -527,10 +527,10 @@ export default function CyberSecurityPage() {
       </section>
 
       {/* ── Intro + AI Capabilities ──────────────────────────── */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#ffffff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <ScrollReveal direction="left" duration={720}>
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Security Practice
@@ -602,7 +602,7 @@ export default function CyberSecurityPage() {
       </section>
 
       {/* ── Security Portfolio ───────────────────────────────── */}
-      <section className="py-20 bg-[#0D112D] relative overflow-hidden">
+      <section className="py-10 lg:py-20 bg-[#0D112D] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#EB9B3D]/15 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#F0783A]/8 blur-[100px] pointer-events-none" />
         <div
@@ -616,7 +616,7 @@ export default function CyberSecurityPage() {
 
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8 lg:mb-14">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Security Portfolio
               </span>
@@ -703,7 +703,7 @@ export default function CyberSecurityPage() {
 
           {/* Section header */}
           <ScrollReveal direction="fade">
-            <div className="text-center mb-12">
+            <div className="text-center mb-6 lg:mb-12">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 In Depth
               </span>
@@ -874,7 +874,7 @@ export default function CyberSecurityPage() {
       />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-10 lg:py-20 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
             <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">

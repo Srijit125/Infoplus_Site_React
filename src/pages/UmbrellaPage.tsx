@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Shield, FileText, CheckCircle2, Settings,
@@ -133,10 +133,10 @@ export default function UmbrellaPage() {
       </PageHero>
 
       {/* â"€â"€ What Is an Umbrella Company â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#ffffff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <ScrollReveal direction="left" duration={720}>
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 What We Do
@@ -193,10 +193,10 @@ export default function UmbrellaPage() {
       </section>
 
       {/* â"€â"€ What We Handle 4 Cinematic Cards â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-20 bg-[#ffffff]">
+      <section className="py-10 lg:py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6 max-w-6xl">
           <ScrollReveal direction="fade">
-            <div className="text-center mb-12">
+            <div className="text-center mb-6 lg:mb-12">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 All Handled For You
               </span>
@@ -210,8 +210,8 @@ export default function UmbrellaPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {WHAT_WE_HANDLE.map(({ icon: HIcon, title, desc }, i) => (
-              <ScrollReveal key={i} direction="up" variant="card" delay={i * 90}>
-                <div className="group bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl overflow-hidden hover:border-[#EB9B3D]/25 hover:shadow-[0_16px_48px_-8px_rgba(235,155,61,0.10)] hover:-translate-y-1 transition-all duration-300">
+              <ScrollReveal key={i} direction="up" variant="card" delay={i * 90} className="h-full">
+                <div className="group h-full bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl overflow-hidden hover:border-[#EB9B3D]/25 hover:shadow-[0_16px_48px_-8px_rgba(235,155,61,0.10)] hover:-translate-y-1 transition-all duration-300">
                   <div className="p-8 flex gap-5 items-start">
                     <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
                       <HIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
@@ -231,7 +231,7 @@ export default function UmbrellaPage() {
       </section>
 
       {/* â"€â"€ Why Infoplus Cinematic dark rows â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-[#0D112D] relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-[#0D112D] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-120 h-120 rounded-full bg-[#EB9B3D]/15 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#F0783A]/8 blur-[100px] pointer-events-none" />
         <div
@@ -241,7 +241,7 @@ export default function UmbrellaPage() {
 
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8 lg:mb-14">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 The Infoplus Difference
               </span>
@@ -309,7 +309,7 @@ export default function UmbrellaPage() {
       <FAQAccordion faqs={UMBRELLA_FAQS} badge="FAQs" title="Frequently Asked Questions" subtitle="Common questions about our umbrella company service." />
 
       {/* â"€â"€ CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-20 bg-white">
+      <section className="py-10 lg:py-20 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
             <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">

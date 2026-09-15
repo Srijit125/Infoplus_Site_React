@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Settings,
@@ -185,10 +185,10 @@ export default function TransformationPage() {
       </PageHero>
 
       {/* â"€â"€ Intro â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#ffffff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <ScrollReveal direction="left" duration={720}>
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Generation Z Engineering
@@ -251,7 +251,7 @@ export default function TransformationPage() {
       </section>
 
       {/* â"€â"€ 4 Integration Pillars â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-20 bg-[#0D112D] relative overflow-hidden">
+      <section className="py-10 lg:py-20 bg-[#0D112D] relative overflow-hidden">
         <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#EB9B3D]/20 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#F0783A]/10 blur-[100px] pointer-events-none" />
         <div
@@ -265,7 +265,7 @@ export default function TransformationPage() {
 
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
-            <div className="text-center mb-12">
+            <div className="text-center mb-6 lg:mb-12">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 How We Enable Digital
               </span>
@@ -305,11 +305,11 @@ export default function TransformationPage() {
       </section>
 
       {/* â"€â"€ Top 5 Goals Cinematic numbered cards â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-[#ffffff] relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-[#ffffff] relative overflow-hidden">
         <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-[#FEF0DC]/60 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8 lg:mb-14">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Strategic Goals
               </span>
@@ -352,10 +352,10 @@ export default function TransformationPage() {
       </section>
 
       {/* â"€â"€ Strategy 6-Step Vertical Timeline â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 rounded-full bg-[#ffffff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-5xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             {/* Sticky heading */}
             <div className="lg:sticky lg:top-[120px]">
               <ScrollReveal direction="left" duration={720}>
@@ -422,7 +422,7 @@ export default function TransformationPage() {
       <FAQAccordion faqs={TRANSFORMATION_FAQS} badge="FAQs" title="Frequently Asked Questions" subtitle="Common questions about our enterprise digital transformation services." />
 
       {/* â"€â"€ CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-20 bg-[#ffffff]">
+      <section className="py-10 lg:py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
             <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">

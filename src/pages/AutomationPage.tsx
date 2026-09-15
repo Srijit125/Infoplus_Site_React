@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { Link } from "react-router-dom";
 import {
   Target,
@@ -213,10 +213,10 @@ export default function AutomationPage() {
       </PageHero>
 
       {/* ── Intro ────────────────────────────────────────────── */}
-      <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#ffffff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <ScrollReveal direction="left" duration={720}>
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Automation as a Service
@@ -286,7 +286,7 @@ export default function AutomationPage() {
       </section>
 
       {/* ── Two Outcomes Split Cinematic Cards ─────────────── */}
-      <section className="py-20 bg-[#0D112D] relative overflow-hidden">
+      <section className="py-10 lg:py-20 bg-[#0D112D] relative overflow-hidden">
         <div className="absolute top-0 left-[-10%] w-96 h-96 rounded-full bg-[#EB9B3D]/20 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 right-[-10%] w-80 h-80 rounded-full bg-[#F0783A]/10 blur-[100px] pointer-events-none" />
         <div
@@ -300,7 +300,7 @@ export default function AutomationPage() {
 
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
-            <div className="text-center mb-12">
+            <div className="text-center mb-6 lg:mb-12">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/20 border border-[#EB9B3D]/30 text-[#DA4D33] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Core Business Outcomes
               </span>
@@ -358,11 +358,11 @@ export default function AutomationPage() {
       </section>
 
       {/* ── 4 Pillars ─────────────────────────────────────────── */}
-      <section className="py-24 bg-[#ffffff] relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-[#ffffff] relative overflow-hidden">
         <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-[#FEF0DC]/60 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <ScrollReveal direction="fade">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8 lg:mb-14">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Automation Strategy
               </span>
@@ -384,8 +384,9 @@ export default function AutomationPage() {
                 direction={i % 2 === 0 ? "left" : "right"}
                 duration={700}
                 delay={i * 90}
+                className="h-full"
               >
-                <div className="group flex items-start gap-4 bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-xl p-5 hover:bg-white hover:border-[#EB9B3D]/30 hover:shadow-[0_8px_24px_-4px_rgba(235,155,61,0.10)] transition-all duration-300">
+                <div className="group h-full flex items-start gap-4 bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-xl p-5 hover:bg-white hover:border-[#EB9B3D]/30 hover:shadow-[0_8px_24px_-4px_rgba(235,155,61,0.10)] transition-all duration-300">
                   <div className="w-11 h-11 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
                     <PIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                   </div>
@@ -405,10 +406,10 @@ export default function AutomationPage() {
       </section>
 
       {/* ── Our Services ─────────────────────────────────────── */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-10 lg:py-20 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-6xl">
           <ScrollReveal direction="fade">
-            <div className="text-center mb-12">
+            <div className="text-center mb-6 lg:mb-12">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Automation Capabilities
               </span>
@@ -425,8 +426,9 @@ export default function AutomationPage() {
                 direction={i % 2 === 0 ? "left" : "right"}
                 duration={680}
                 delay={60}
+                className="h-full"
               >
-                <div className="group flex items-start gap-4 bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-xl p-5 hover:bg-white hover:border-[#EB9B3D]/30 hover:shadow-[0_8px_24px_-4px_rgba(235,155,61,0.10)] transition-all duration-300">
+                <div className="group h-full flex items-start gap-4 bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-xl p-5 hover:bg-white hover:border-[#EB9B3D]/30 hover:shadow-[0_8px_24px_-4px_rgba(235,155,61,0.10)] transition-all duration-300">
                   <div className="w-11 h-11 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
                     <SIcon className="w-5 h-5 text-white" strokeWidth={1.6} />
                   </div>
@@ -446,7 +448,7 @@ export default function AutomationPage() {
       </section>
 
       {/* ── Benefits + Tools Dark section ───────────────────── */}
-      <section className="py-20 bg-[#0D112D] relative overflow-hidden">
+      <section className="py-10 lg:py-20 bg-[#0D112D] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#EB9B3D]/15 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#F0783A]/8 blur-[100px] pointer-events-none" />
         <div
@@ -459,7 +461,7 @@ export default function AutomationPage() {
         />
 
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
             {/* Benefits */}
             <div>
               <ScrollReveal direction="left" duration={700}>
@@ -522,7 +524,7 @@ export default function AutomationPage() {
       <FAQAccordion faqs={AUTOMATION_FAQS} badge="FAQs" title="Frequently Asked Questions" subtitle="Common questions about our automation services." />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="py-20 bg-[#ffffff]">
+      <section className="py-10 lg:py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
             <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">

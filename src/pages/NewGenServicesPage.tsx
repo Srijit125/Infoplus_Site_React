@@ -101,10 +101,10 @@ export default function NewGenServicesPage() {
       </PageHero>
 
       {/* â"€â"€ Intro + Why New-Gen â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-[#ffffff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-14 lg:py-24 bg-[#ffffff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#FEF0DC] opacity-50 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
             {/* Text */}
             <ScrollReveal direction="left">
@@ -156,7 +156,7 @@ export default function NewGenServicesPage() {
       </section>
 
       {/* â"€â"€ Why Choose Infoplus â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-10 lg:py-20 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-125 h-125 rounded-full bg-[#ffffff] blur-[100px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.025] pointer-events-none"
@@ -164,7 +164,7 @@ export default function NewGenServicesPage() {
         />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
-            <div className="text-center mb-12">
+            <div className="text-center mb-6 lg:mb-12">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Why Choose Us
               </span>
@@ -175,7 +175,7 @@ export default function NewGenServicesPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {([
               {
                 num: "01", icon: TrendingUp,
@@ -226,7 +226,7 @@ export default function NewGenServicesPage() {
       </section>
 
       {/* â"€â"€ Services Cards â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-[#0D112D] relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-[#0D112D] relative overflow-hidden">
         <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#242E72] opacity-35 blur-[130px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[#EB9B3D] opacity-15 blur-[110px] pointer-events-none" />
         <div
@@ -236,7 +236,7 @@ export default function NewGenServicesPage() {
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 lg:mb-16">
               <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white/70 text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Services
               </span>
@@ -251,7 +251,7 @@ export default function NewGenServicesPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((svc, i) => (
               <ScrollReveal key={svc.title} variant="card" delay={i * 100}>
                 <Link
@@ -304,7 +304,7 @@ export default function NewGenServicesPage() {
       </section>
 
       {/* â"€â"€ Digital CoE spotlight â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-20 bg-[#ffffff] relative overflow-hidden">
+      <section className="py-10 lg:py-20 bg-[#ffffff] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#FEF0DC]/60 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -342,7 +342,7 @@ export default function NewGenServicesPage() {
       <FAQAccordion faqs={NEWGEN_FAQS} badge="FAQs" title="Frequently Asked Questions" subtitle="Common questions about our new generation IT services." />
 
       {/* â"€â"€ CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-[#ffffff] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
           <ScrollReveal variant="card">

@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { useState } from "react";
 import { PageHero } from "../components/shared/PageHero";
 import {
@@ -302,9 +302,9 @@ export function ContactPage() {
       />
 
       {/* ── Get In Touch ─────────────────────────────────────────── */}
-      <section className="py-20 bg-white relative -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-10 lg:py-20 bg-white relative -mt-10 rounded-t-[3rem] z-20">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start">
             {/* Left: Form */}
             <ScrollReveal direction="left" className="lg:col-span-7">
               <div className="bg-[#F3F5FF] border border-[rgba(13,17,45,0.08)] rounded-3xl p-8 md:p-10">
@@ -555,7 +555,7 @@ export function ContactPage() {
       <section id="worldwide-presence" className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="fade">
-            <div className="text-center mb-12">
+            <div className="text-center mb-6 lg:mb-12">
               <div className="inline-flex items-center gap-2 mb-3">
                 <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest">
                   Worldwide Presence

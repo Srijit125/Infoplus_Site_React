@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import {
@@ -131,7 +131,7 @@ export default function CookiePolicyPage() {
       </PageHero>
 
       {/* ── What Are Cookies — white intro ───────────────────────── */}
-      <section className="py-20 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-10 lg:py-20 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 blur-[100px] pointer-events-none" style={{ background: AMB }} />
         <div className="absolute inset-0 opacity-[0.015] pointer-events-none"
           style={{ backgroundImage: `radial-gradient(circle, ${AMB} 1px, transparent 1px)`, backgroundSize: "28px 28px" }} />
@@ -168,13 +168,13 @@ export default function CookiePolicyPage() {
       </section>
 
       {/* ── Why We Rely on Cookies — dark navy ───────────────────── */}
-      <section className="py-24 relative overflow-hidden" style={{ background: NAVY }}>
+      <section className="py-14 lg:py-24 relative overflow-hidden" style={{ background: NAVY }}>
         <div className="absolute inset-0 pointer-events-none opacity-[0.07]"
           style={{ backgroundImage: `radial-gradient(circle, ${AMB} 1px, transparent 1px)`, backgroundSize: "28px 28px" }} />
         <div className="absolute top-0 left-0 w-80 h-80 rounded-full blur-[120px] pointer-events-none opacity-20" style={{ background: AMB }} />
 
         <div className="container mx-auto px-6 max-w-5xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start">
 
             <ScrollReveal direction="left">
               <SectionEyebrow label="Why We Use Cookies" />
@@ -207,13 +207,13 @@ export default function CookiePolicyPage() {
       </section>
 
       {/* ── Cookie Types — 4-col grid ─────────────────────────────── */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
           style={{ backgroundImage: `radial-gradient(circle, ${AMB} 1px, transparent 1px)`, backgroundSize: "28px 28px" }} />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
-            <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="text-center max-w-2xl mx-auto mb-8 lg:mb-14">
               <SectionEyebrow label="Cookie Types" />
               <h2 style={{ color: WH1, fontWeight: 700, fontSize: "clamp(1.75rem,3.5vw,2.4rem)", lineHeight: 1.25 }}>
                 What each type of cookie actually does
@@ -245,7 +245,7 @@ export default function CookiePolicyPage() {
       </section>
 
       {/* ── Third-Party Cookies + Cookie Duration ────────────────── */}
-      <section className="py-24 relative overflow-hidden" style={{ background: "#F8F9FC" }}>
+      <section className="py-14 lg:py-24 relative overflow-hidden" style={{ background: "#F8F9FC" }}>
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
@@ -301,14 +301,14 @@ export default function CookiePolicyPage() {
       </section>
 
       {/* ── Managing Cookies — dark navy ─────────────────────────── */}
-      <section className="py-24 relative overflow-hidden" style={{ background: DARK }}>
+      <section className="py-14 lg:py-24 relative overflow-hidden" style={{ background: DARK }}>
         <div className="absolute inset-0 pointer-events-none opacity-[0.07]"
           style={{ backgroundImage: `radial-gradient(circle, ${AMB} 1px, transparent 1px)`, backgroundSize: "28px 28px" }} />
         <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-[120px] pointer-events-none opacity-15" style={{ background: CORAL }} />
 
         <div className="container mx-auto px-6 max-w-5xl relative z-10">
           <ScrollReveal direction="up">
-            <div className="text-center mb-12">
+            <div className="text-center mb-6 lg:mb-12">
               <SectionEyebrow label="Your Control" />
               <h2 style={{ color: "#FFFFFF", fontWeight: 700, fontSize: "clamp(1.75rem,3.5vw,2.4rem)", lineHeight: 1.25, marginBottom: 16 }}>
                 Managing and Controlling Cookies
@@ -371,7 +371,7 @@ export default function CookiePolicyPage() {
       </section>
 
       {/* ── Changes + Contact — white ─────────────────────────────── */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 rounded-full opacity-10 blur-[100px] pointer-events-none" style={{ background: AMB }} />
 
         <div className="container mx-auto px-6 max-w-5xl relative z-10">

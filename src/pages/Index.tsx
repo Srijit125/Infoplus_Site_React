@@ -1,4 +1,4 @@
-import "@fontsource/lato/400.css";
+﻿import "@fontsource/lato/400.css";
 import "@fontsource/lato/700.css";
 import "@fontsource/lato/900.css";
 import { useState, useEffect, useRef, type FormEvent } from "react";
@@ -662,9 +662,9 @@ export default function Index() {
       <IndexBanner slides={SLIDES_T2} />
 
       {/* ══ 2. About Us — white ══ */}
-      <section className="py-28" style={{ background: "#FFFFFF" }}>
+      <section className="py-14 lg:py-28" style={{ background: "#FFFFFF" }}>
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <ScrollReveal direction="left">
               <Eyebrow label="About Us" />
               <h2
@@ -938,10 +938,10 @@ export default function Index() {
       </section>
 
       {/* ══ 4. Why Choose Us — dark (SRF) ══ */}
-      <section className="py-28" style={{ background: SRF }}>
+      <section className="py-14 lg:py-28" style={{ background: SRF }}>
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8 lg:mb-14">
               <Eyebrow label="Why Choose Us" />
               <h2
                 style={{
@@ -1060,10 +1060,10 @@ export default function Index() {
       </section>
 
       {/* ══ 5. Our Work — white ══ */}
-      <section className="py-28" style={{ background: "#FFFFFF" }}>
+      <section className="py-14 lg:py-28" style={{ background: "#FFFFFF" }}>
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8 lg:mb-14">
               <Eyebrow label="Our Work" />
               <h2
                 style={{
@@ -1195,10 +1195,10 @@ export default function Index() {
       </section>
 
       {/* ══ 6. AI Services — dark (SRF) ══ */}
-      <section className="py-28 ai-section-bg" style={{ background: SRF }}>
+      <section className="py-14 lg:py-28 ai-section-bg" style={{ background: SRF }}>
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8 lg:mb-14">
               <Eyebrow label="Artificial Intelligence" />
               <h2
                 style={{
@@ -1229,7 +1229,7 @@ export default function Index() {
           <ScrollReveal direction="up" delay={80}>
             <div
               ref={statsRef}
-              className="grid grid-cols-3 mb-12 overflow-hidden"
+              className="grid grid-cols-3 mb-6 lg:mb-12 overflow-hidden"
               style={{ border: `1px solid ${BRD}`, borderRadius: 12 }}
             >
               {[
@@ -1388,10 +1388,10 @@ export default function Index() {
       </section>
 
       {/* ══ 7. Our Values — white ══ */}
-      <section className="py-24" style={{ background: "#FFFFFF" }}>
+      <section className="py-12 lg:py-24" style={{ background: "#FFFFFF" }}>
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
-            <div className="text-center mb-12">
+            <div className="text-center mb-6 lg:mb-12">
               <Eyebrow label="Our Values" />
               <h2
                 style={{
@@ -1474,7 +1474,7 @@ export default function Index() {
       <section className="py-20" style={{ background: BG }}>
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
-            <div className="text-center mb-12">
+            <div className="text-center mb-6 lg:mb-12">
               <Eyebrow label="Our Industries" />
               <h2
                 style={{
@@ -1518,10 +1518,10 @@ export default function Index() {
       </section>
 
       {/* ══ 10. Awards & Recognition — dark (SRF) ══ */}
-      <section className="py-24" style={{ background: SRF }}>
+      <section className="py-12 lg:py-24" style={{ background: SRF }}>
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8 lg:mb-14">
               <Eyebrow label="Awards & Recognition" />
               <h2
                 style={{
@@ -1624,10 +1624,10 @@ export default function Index() {
       </section>
 
       {/* ══ 11. Client Testimonials — white ══ */}
-      <section className="py-24" style={{ background: "#FFFFFF" }}>
+      <section className="py-12 lg:py-24" style={{ background: "#FFFFFF" }}>
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8 lg:mb-14">
               <Eyebrow label="Client Testimonials" />
               <h2
                 style={{
@@ -1751,10 +1751,10 @@ export default function Index() {
       </section>
 
       {/* ══ 12. Our Team — dark (BG gradient) ══ */}
-      {false && <section className="py-28" style={{ background: BG }}>
+      {false && <section className="py-14 lg:py-28" style={{ background: BG }}>
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8 lg:mb-14">
               <Eyebrow label="Our Team" />
               <h2
                 style={{
@@ -1884,7 +1884,7 @@ export default function Index() {
       <section className="pt-24 pb-10" style={{ background: "#FFFFFF" }}>
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
-            <div className="text-center mb-12">
+            <div className="text-center mb-6 lg:mb-12">
               <Eyebrow label="Global Reach" />
               <h2
                 style={{
@@ -1924,9 +1924,9 @@ export default function Index() {
       </section>
 
       {/* ══ 15. Get in Touch — light ══ */}
-      <section className="py-28" style={{ background: "#FFFFFF" }}>
+      <section className="py-14 lg:py-28" style={{ background: "#FFFFFF" }}>
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             <ScrollReveal direction="left">
               <Eyebrow label="Get in Touch" />
               <h2
@@ -2017,7 +2017,7 @@ export default function Index() {
 
               <div
                 style={{ ...lcard, padding: "20px 28px", marginTop: 24 }}
-                className="flex flex-col sm:flex-row items-center justify-start gap-8"
+                className="flex flex-col xl:flex-row items-start xl:items-center justify-start gap-5 xl:gap-8"
               >
                 <a
                   href="mailto:info@infoplustechnologies.co.uk"
@@ -2053,12 +2053,13 @@ export default function Index() {
                         fontWeight: 600,
                         letterSpacing: "0.12em",
                         textTransform: "uppercase",
+                        marginTop: 0,
                         marginBottom: 2,
                       }}
                     >
                       Email Us
                     </p>
-                    <p style={{ color: WH1, fontSize: 14, fontWeight: 700 }}>
+                    <p style={{ color: WH1, fontSize: 14, fontWeight: 700, margin: 0 }}>
                       info@infoplustechnologies.co.uk
                     </p>
                   </div>
@@ -2069,7 +2070,7 @@ export default function Index() {
                     height: 40,
                     background: "rgba(13,17,45,0.10)",
                   }}
-                  className="hidden sm:block"
+                  className="hidden xl:block"
                 />
                 <a
                   href="tel:+447853045836"
@@ -2105,12 +2106,13 @@ export default function Index() {
                         fontWeight: 600,
                         letterSpacing: "0.12em",
                         textTransform: "uppercase",
+                        marginTop: 0,
                         marginBottom: 2,
                       }}
                     >
                       Call Us
                     </p>
-                    <p style={{ color: WH1, fontSize: 14, fontWeight: 700 }}>
+                    <p style={{ color: WH1, fontSize: 14, fontWeight: 700, margin: 0 }}>
                       +44 785 304 5836
                     </p>
                   </div>

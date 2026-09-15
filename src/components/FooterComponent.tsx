@@ -239,11 +239,11 @@ export function Footer({ bgColor }: { bgColor?: string }) {
             <form className="relative" onSubmit={handleNewsletter}>
               <input
                 type="email"
-                placeholder="Enter Your Email Address"
+                placeholder="Your email address"
                 value={nlEmail}
                 onChange={(e) => setNlEmail(e.target.value)}
                 disabled={nlStatus === "sending" || nlStatus === "success"}
-                className="w-full bg-white rounded-lg py-3 pl-4 pr-12 text-[14px] text-[#111] focus:outline-none placeholder:text-[#555] transition-colors disabled:opacity-60"
+                className="w-full bg-white rounded-lg py-3 pl-4 pr-12 text-[13px] xl:text-[14px] text-[#111] focus:outline-none placeholder:text-[#555] transition-colors disabled:opacity-60"
                 required
               />
               <button
@@ -275,7 +275,7 @@ export function Footer({ bgColor }: { bgColor?: string }) {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             {/* Copyright left */}
-            <p className="text-white/70 text-[13px] font-normal">
+            <p className="text-white/70 text-[13px] font-normal mb-0">
               © {new Date().getFullYear()} Infoplus Technologies. All rights
               reserved.
             </p>

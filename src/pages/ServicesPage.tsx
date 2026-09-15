@@ -67,9 +67,9 @@ export function ServicesPage() {
         </div>
       </PageHero>
 
-      <section className="py-24 bg-[#ffffff] relative -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-14 lg:py-24 bg-[#ffffff] relative -mt-10 rounded-t-[3rem] z-20">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((srv, idx) => (
               <ScrollReveal key={idx} variant="card" delay={idx * 100} className={srv.span}>
                 <div className="h-full group bg-white rounded-2xl p-8 shadow-sm border border-[rgba(13,17,45,0.10)] hover:border-[#DA4D33]/30 hover:shadow-[0_12px_40px_rgba(235,155,61,0.10)] hover:-translate-y-1.5 transition-all duration-300">

@@ -101,10 +101,10 @@ export default function StaffingConsultingPage() {
       </PageHero>
 
       {/* â"€â"€ Intro + Differentiators â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-[#ffffff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-14 lg:py-24 bg-[#ffffff] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#FEF0DC] opacity-50 blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
             {/* Text */}
             <ScrollReveal direction="left">
@@ -152,7 +152,7 @@ export default function StaffingConsultingPage() {
       </section>
 
       {/* ── Why Choose Infoplus ──────────────────────────────── */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#ffffff] blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#FEF0DC] opacity-50 blur-[100px] pointer-events-none" />
         <div
@@ -162,7 +162,7 @@ export default function StaffingConsultingPage() {
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 lg:mb-16">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Why Choose Us
               </span>
@@ -176,7 +176,7 @@ export default function StaffingConsultingPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {([
               {
                 num: "01",
@@ -259,7 +259,7 @@ export default function StaffingConsultingPage() {
       </section>
 
       {/* â"€â"€ Services Cards â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-[#0D112D] relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-[#0D112D] relative overflow-hidden">
         <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#242E72] opacity-35 blur-[130px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[#EB9B3D] opacity-15 blur-[110px] pointer-events-none" />
         <div
@@ -269,7 +269,7 @@ export default function StaffingConsultingPage() {
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 lg:mb-16">
               <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-white/70 text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Services
               </span>
@@ -283,7 +283,7 @@ export default function StaffingConsultingPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((svc, i) => (
               <ScrollReveal key={svc.title} variant="card" delay={i * 100}>
                 <Link
@@ -343,7 +343,7 @@ export default function StaffingConsultingPage() {
       />
 
       {/* â"€â"€ CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-24 bg-[#ffffff] relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-[#ffffff] relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
           style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "32px 32px" }}

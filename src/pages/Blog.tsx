@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { PageHero } from "../components/shared/PageHero";
@@ -95,7 +95,7 @@ function Blog() {
         variant="centered"
       />
 
-      <section className="py-20 bg-white relative -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-10 lg:py-20 bg-white relative -mt-10 rounded-t-[3rem] z-20">
         <div className="container mx-auto px-6 max-w-7xl">
 
           {/* Filter Panel */}

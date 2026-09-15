@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { useState, useRef } from "react";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
@@ -323,7 +323,7 @@ export default function EducationSolutionsPage() {
       </PageHero>
 
       {/* ── Product Types ────────────────────────────────────── */}
-      <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-125 h-125 rounded-full bg-[#FEF0DC] opacity-50 blur-[100px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.02] pointer-events-none"
@@ -331,7 +331,7 @@ export default function EducationSolutionsPage() {
         />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 lg:mb-16">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Platform
               </span>
@@ -347,7 +347,7 @@ export default function EducationSolutionsPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {PRODUCT_TYPES.map((p, i) => (
               <ScrollReveal key={p.title} variant="card" delay={i * 120}>
                 <div className="group relative h-full bg-white border border-[rgba(13,17,45,0.08)] rounded-3xl p-8 hover:shadow-[0_16px_48px_rgba(235,155,61,0.10)] transition-all duration-400 overflow-hidden">
@@ -372,12 +372,12 @@ export default function EducationSolutionsPage() {
       </section>
 
       {/* ── Our Uniqueness ───────────────────────────────────── */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-10 lg:py-20 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#FEF0DC]/60 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#F3F5FF] blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8 lg:mb-14">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Uniqueness
               </span>
@@ -411,7 +411,7 @@ export default function EducationSolutionsPage() {
       </section>
 
       {/* ── Limitless Learning ───────────────────────────────── */}
-      <section className="py-24 bg-[#141A3D] relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-[#141A3D] relative overflow-hidden">
         <div className="absolute top-0 left-[-10%] w-125 h-125 rounded-full bg-[#0D112D] opacity-60 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 right-[-10%] w-100 h-100 rounded-full bg-[#EB9B3D] opacity-15 blur-[120px] pointer-events-none" />
         <div
@@ -420,7 +420,7 @@ export default function EducationSolutionsPage() {
         />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Text */}
             <ScrollReveal direction="left">
               <div>
@@ -538,7 +538,7 @@ export default function EducationSolutionsPage() {
             {/* ─ APPROACH ─ */}
             {activeTab === "Approach" && (
               <div className="max-w-5xl mx-auto">
-                <div className="text-center mb-12">
+                <div className="text-center mb-6 lg:mb-12">
                   <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d112d] mb-4">Our Approach</h3>
                   <p className="text-[16px] text-[#0d112d]/65 max-w-3xl mx-auto">
                     The solution offered is by combining the best Indian and
@@ -576,7 +576,7 @@ export default function EducationSolutionsPage() {
             {/* ─ MODEL ─ */}
             {activeTab === "Model" && (
               <div className="max-w-5xl mx-auto">
-                <div className="text-center mb-12">
+                <div className="text-center mb-6 lg:mb-12">
                   <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d112d] mb-4">Academic Model</h3>
                   <p className="text-[16px] text-[#0d112d]/65 max-w-3xl mx-auto">
                     The solution offered is by combining the best Indian and
@@ -624,7 +624,7 @@ export default function EducationSolutionsPage() {
             {/* ─ DEPTH OF CONTENT ─ */}
             {activeTab === "Depth of Content" && (
               <div className="max-w-5xl mx-auto">
-                <div className="text-center mb-12">
+                <div className="text-center mb-6 lg:mb-12">
                   <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d112d] mb-4">Depth of Content</h3>
                   <p className="text-[16px] text-[#0d112d]/65 max-w-3xl mx-auto">
                     Our content is structured with precision — from university-aligned hierarchies and 3D/2D visual demonstrations to targeted Q&A examination tools, every layer is designed to deepen understanding and improve outcomes.
@@ -723,7 +723,7 @@ export default function EducationSolutionsPage() {
             {/* ─ FEATURES ─ */}
             {activeTab === "Features" && (
               <div className="max-w-5xl mx-auto">
-                <div className="text-center mb-12">
+                <div className="text-center mb-6 lg:mb-12">
                   <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d112d] mb-4">Platform Features</h3>
                   <p className="text-[16px] text-[#0d112d]/65 max-w-2xl mx-auto">
                     Every feature is designed to deliver a richer, more
@@ -761,7 +761,7 @@ export default function EducationSolutionsPage() {
             {/* ─ BENEFITS ─ */}
             {activeTab === "Benefits" && (
               <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-12">
+                <div className="text-center mb-6 lg:mb-12">
                   <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-[#0d112d] mb-4">
                     Benefits for Every Stakeholder
                   </h3>
@@ -841,7 +841,7 @@ export default function EducationSolutionsPage() {
       <FAQAccordion faqs={EDUCATION_FAQS} badge="FAQs" title="Frequently Asked Questions" subtitle="Common questions about our education solutions." />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.02]"
           style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "28px 28px" }}

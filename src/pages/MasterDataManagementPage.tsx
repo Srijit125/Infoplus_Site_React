@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
@@ -243,14 +243,14 @@ export default function MasterDataManagementPage() {
       </PageHero>
 
       {/* ── Intro section ────────────────────────────────────── */}
-      <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#FEF0DC] opacity-50 blur-[100px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.02] pointer-events-none"
           style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "32px 32px" }}
         />
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <ScrollReveal direction="left">
               <div>
                 <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/25 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
@@ -310,7 +310,7 @@ export default function MasterDataManagementPage() {
       </section>
 
       {/* ── MDM Overview + Solutions Grid ────────────────────── */}
-      <section className="py-24 bg-[#141A3D] relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-[#141A3D] relative overflow-hidden">
         <div className="absolute top-0 left-[-10%] w-[500px] h-[500px] rounded-full bg-[#0D112D] opacity-60 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 right-[-10%] w-[400px] h-[400px] rounded-full bg-[#EB9B3D] opacity-15 blur-[120px] pointer-events-none" />
         <div
@@ -368,7 +368,7 @@ export default function MasterDataManagementPage() {
       </section>
 
       {/* ── Detailed Solutions (alternating) ─────────────────── */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.02] pointer-events-none"
           style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "32px 32px" }}
@@ -393,7 +393,7 @@ export default function MasterDataManagementPage() {
               return (
                 <div
                   key={idx}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${isRtl ? "lg:grid-flow-dense" : ""}`}
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center ${isRtl ? "lg:grid-flow-dense" : ""}`}
                 >
                   {/* Text block */}
                   <ScrollReveal direction={sol.direction} delay={80}>
@@ -453,7 +453,7 @@ export default function MasterDataManagementPage() {
       </section>
 
       {/* ── Benefits ─────────────────────────────────────────── */}
-      <section className="py-24 bg-[#141A3D] relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-[#141A3D] relative overflow-hidden">
         <div className="absolute top-[-15%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#0D112D] opacity-60 blur-[130px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[#EB9B3D] opacity-15 blur-[100px] pointer-events-none" />
         <div
@@ -463,7 +463,7 @@ export default function MasterDataManagementPage() {
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 lg:mb-16">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/15 border border-[#EB9B3D]/30 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Benefits
               </span>
@@ -531,7 +531,7 @@ export default function MasterDataManagementPage() {
       <FAQAccordion faqs={MDM_FAQS} badge="FAQs" title="Frequently Asked Questions" subtitle="Common questions about our master data management services." />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.02]"
           style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "28px 28px" }}

@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { PageHero } from "../components/shared/PageHero";
 import {
   Users, Target, Shield, Globe2,
@@ -96,14 +96,14 @@ function About() {
       </PageHero>
 
       {/* ── 2. WHO WE ARE (NEW) ────────────────────────── */}
-      <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div
           className="absolute inset-0 opacity-[0.025] pointer-events-none"
           style={{ backgroundImage: "radial-gradient(circle, #EB9B3D 1px, transparent 1px)", backgroundSize: "28px 28px" }}
         />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start">
 
             {/* Left decorative year */}
             <ScrollReveal direction="left" className="lg:col-span-4">
@@ -159,7 +159,7 @@ function About() {
       </section>
 
       {/* ── 3. OUR VALUES (NEW) ────────────────────────── */}
-      <section className="py-24 bg-[#141A3D] relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-[#141A3D] relative overflow-hidden">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#EB9B3D] opacity-20 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute -bottom-16 -left-16 w-64 h-64 bg-[#DA4D33] opacity-10 rounded-full blur-[80px] pointer-events-none" />
         <div
@@ -169,7 +169,7 @@ function About() {
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 lg:mb-16">
               <span className="inline-block py-1 px-4 rounded-full bg-white/10 border border-white/20 text-white/70 text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Values
               </span>
@@ -200,7 +200,7 @@ function About() {
       </section>
 
       {/* ══ 3b. IN THE NEWS ══ */}
-      <section className="py-20 bg-[#141A3D] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-10 lg:py-20 bg-[#141A3D] relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <style>{`
           @keyframes tnNodePulse {
             0%   { transform: scale(1);    opacity: 0.55; }
@@ -362,9 +362,9 @@ function About() {
                   </div>
 
                   {/* ═══ MOBILE layout ═══ */}
-                  <div className="lg:hidden flex items-start gap-0 pl-2">
+                  <div className="lg:hidden flex items-start gap-0">
                     {/* Mini node */}
-                    <div className="relative flex items-center justify-center shrink-0 mt-2.5 ml-4">
+                    <div className="relative flex items-center justify-center shrink-0 mt-2.5 ml-3.5">
                       <div
                         className="absolute w-12 h-12 rounded-full pointer-events-none"
                         style={{ border: `1px solid ${m.accent}22`, animation: `tnNodePulse 2.8s ${d1} ease-out infinite` }} />
@@ -416,7 +416,7 @@ function About() {
       </section>
 
       {/* ══ 3c. IN THE NEWS — LITE VARIANT ══ */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden">
         {/* Ambient orbs */}
         <div className="absolute top-[-8%] left-[-5%] w-80 h-80 rounded-full bg-[#FEF0DC] opacity-55 blur-[100px] pointer-events-none" />
         <div className="absolute bottom-[-8%] right-[-4%] w-72 h-72 rounded-full bg-[#DA4D33]/10 blur-[90px] pointer-events-none" />
@@ -426,7 +426,7 @@ function About() {
 
           {/* Header */}
           <ScrollReveal direction="up">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 lg:mb-16">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Journey
               </span>
@@ -552,11 +552,11 @@ function About() {
       </section>
 
       {/* ── 4. FACTS / MISSION / VISION (NEW) ─────────── */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-7xl">
 
           <ScrollReveal direction="up">
-            <div className="mb-14">
+            <div className="mb-8 lg:mb-14">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">Facts</span>
               <h2 className="text-[36px] font-bold text-[#111111] mb-4">
                 Two Decades of{" "}
@@ -569,7 +569,7 @@ function About() {
           </ScrollReveal>
 
           {/* Key stats
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8 lg:mb-14">
             {keyStats.map((stat, i) => (
               <ScrollReveal key={i} variant="card" delay={i * 80}>
                 <div className="text-center p-8 bg-white rounded-2xl border border-[#e5e4e7] shadow-sm hover:border-[#EB9B3D]/30 hover:shadow-[0_8px_24px_rgba(235,155,61,0.08)] transition-all duration-300">
@@ -610,8 +610,8 @@ function About() {
           Fact bullets
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {factBullets.map((fact, i) => (
-              <ScrollReveal key={i} direction="up" delay={i * 80}>
-                <div className="flex items-center gap-4 bg-white border border-[#e5e4e7] px-5 py-4 rounded-xl hover:border-[#EB9B3D]/30 hover:shadow-sm transition-all duration-300">
+              <ScrollReveal key={i} direction="up" delay={i * 80} className="h-full">
+                <div className="h-full flex items-center gap-4 bg-white border border-[#e5e4e7] px-5 py-4 rounded-xl hover:border-[#EB9B3D]/30 hover:shadow-sm transition-all duration-300">
                   <div className="w-7 h-7 rounded-lg bg-[#FEF0DC] flex items-center justify-center shrink-0">
                     <CheckCircle2 className="w-4 h-4 text-[#EB9B3D]" />
                   </div>
@@ -627,7 +627,7 @@ function About() {
       {/* ══════════════════════════════════════════════════════
           4b. Our Team — temporarily hidden
       ══════════════════════════════════════════════════════ */}
-      {false && <section className="py-28 bg-[#141A3D] relative overflow-hidden">
+      {false && <section className="py-14 lg:py-28 bg-[#141A3D] relative overflow-hidden">
         <style>{`
           @keyframes teamDrift {
             0%,100% { transform: translate(0,0) scale(1); }
@@ -660,7 +660,7 @@ function About() {
 
           {/* Header */}
           <ScrollReveal direction="up">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 lg:mb-16">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/15 border border-[#EB9B3D]/25 text-[#DA4D33] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Team
               </span>
@@ -779,11 +779,11 @@ function About() {
       </section>}
 
       {/* ── 5. CULTURE & VISION CARDS (EXISTING kept) ── */}
-      <section className="py-24 bg-white">
+      <section className="py-14 lg:py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
 
           <ScrollReveal direction="up">
-            <div className="mb-14">
+            <div className="mb-8 lg:mb-14">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Our Identity
               </span>
@@ -815,12 +815,12 @@ function About() {
       </section>
 
       {/* ── 6. CULTURE TEXT (NEW) ──────────────────────── */}
-      <section className="py-24 bg-[#141A3D] relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-[#141A3D] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-125 h-125 bg-[#EB9B3D] opacity-15 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#DA4D33] opacity-[0.07] rounded-full blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
             {/* Left decorative card */}
             <ScrollReveal direction="left">
@@ -865,9 +865,9 @@ function About() {
       </section>
 
       {/* ── 7. PARTNERSHIPS (NEW) ──────────────────────── */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
             {/* Left intro */}
             <ScrollReveal direction="left">

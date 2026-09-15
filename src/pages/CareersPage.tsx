@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { useState, useEffect, type ChangeEvent, useRef } from "react";
 import { PageHero } from "../components/shared/PageHero";
 import imgCareerHero from "../assets/images/career_hero.jpg";
@@ -25,7 +25,6 @@ type Job = {
   team: string;
   location: string;
   type: string;
-  salary: string;
   skills: string[];
   desc: string;
 };
@@ -241,7 +240,6 @@ function CareersPage() {
       team: "Engineering",
       location: "Remote / UK",
       type: "Full-time",
-      salary: "£60,000 – £80,000",
       skills: ["React", "TypeScript", "TailwindCSS"],
       desc: "Build and maintain high-performance user interfaces for enterprise clients across multiple industries.",
     },
@@ -251,7 +249,6 @@ function CareersPage() {
       team: "Data Science",
       location: "Germany",
       type: "Full-time",
-      salary: "€70,000 – €90,000",
       skills: ["Python", "Machine Learning", "NLP"],
       desc: "Develop next-generation AI models and solutions for enterprise data intelligence platforms.",
     },
@@ -261,7 +258,6 @@ function CareersPage() {
       team: "Design",
       location: "Remote",
       type: "Full-time",
-      salary: "£50,000 – £70,000",
       skills: ["Figma", "UI/UX", "Prototyping"],
       desc: "Create beautiful, user-centric designs for our growing product portfolio and client applications.",
     },
@@ -271,7 +267,6 @@ function CareersPage() {
       team: "Sales",
       location: "India",
       type: "Full-time",
-      salary: "₹15L – ₹25L",
       skills: ["Client Relations", "SAP", "CRM"],
       desc: "Manage key enterprise client relationships and drive business growth across the South Asia region.",
     },
@@ -281,7 +276,6 @@ function CareersPage() {
       team: "Engineering",
       location: "UK",
       type: "Full-time",
-      salary: "£65,000 – £85,000",
       skills: ["Node.js", "Python", "AWS"],
       desc: "Design and scale cloud-native backend services and APIs for enterprise-grade applications.",
     },
@@ -291,7 +285,6 @@ function CareersPage() {
       team: "Data Science",
       location: "Remote",
       type: "Full-time",
-      salary: "£45,000 – £60,000",
       skills: ["SQL", "Power BI", "Python"],
       desc: "Transform raw data into actionable insights and build dashboards for our global clients.",
     },
@@ -342,7 +335,7 @@ function CareersPage() {
       </PageHero>
 
       {/* ── 2. WHY ARE YOU WAITING ────────────────────── */}
-      <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div
           className="absolute inset-0 opacity-[0.025] pointer-events-none"
           style={{
@@ -353,7 +346,7 @@ function CareersPage() {
         />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
             {/* Left: decorative card */}
             <ScrollReveal direction="left" className="lg:col-span-5">
               <div className="relative rounded-3xl bg-[#141A3D] p-10 overflow-hidden min-h-110 flex flex-col justify-between">
@@ -425,7 +418,7 @@ function CareersPage() {
       </section>
 
       {/* ── 3. WHY WORK WITH US ───────────────────────── */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.025] pointer-events-none"
           style={{
@@ -437,7 +430,7 @@ function CareersPage() {
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
-            <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="text-center max-w-2xl mx-auto mb-8 lg:mb-14">
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Why Us
               </span>
@@ -454,7 +447,7 @@ function CareersPage() {
           </ScrollReveal>
 
           {/* Top 3 perk cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
             {perks.slice(0, 3).map((perk, i) => {
               const PIcon = perk.icon;
               return (
@@ -636,14 +629,11 @@ function CareersPage() {
                         {job.desc}
                       </p>
 
-                      {/* Type + Salary */}
-                      <div className="flex items-center justify-between mb-4">
+                      {/* Job Type */}
+                      <div className="mb-4">
                         <span className="flex items-center gap-1.5 text-[12px] text-[#777777]">
                           <Briefcase className="w-3.5 h-3.5 shrink-0" />
                           {job.type}
-                        </span>
-                        <span className="text-[13px] font-bold text-[#EB9B3D]">
-                          {job.salary}
                         </span>
                       </div>
 

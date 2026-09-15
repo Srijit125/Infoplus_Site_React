@@ -1,4 +1,4 @@
-import { PageMeta } from "../components/shared/PageMeta";
+﻿import { PageMeta } from "../components/shared/PageMeta";
 import { PageHero } from "../components/shared/PageHero";
 import { Link } from "react-router-dom";
 import { Database, GraduationCap, CheckCircle2, ChevronRight } from "lucide-react";
@@ -59,7 +59,7 @@ function ProductsPage() {
         variant="centered"
       />
 
-      <section className="py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
+      <section className="py-14 lg:py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#FEF0DC]/60 blur-[120px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.02] pointer-events-none"
