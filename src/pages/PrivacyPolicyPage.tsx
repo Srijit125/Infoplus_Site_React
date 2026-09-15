@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { PageMeta } from "../components/shared/PageMeta";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
@@ -15,7 +15,6 @@ import {
   Clock,
   UserCheck,
   ExternalLink,
-  ChevronRight,
   Phone,
 } from "lucide-react";
 
@@ -137,23 +136,42 @@ const SECTIONS = [
 ];
 
 export default function PrivacyPolicyPage() {
-  const [activeId, setActiveId] = useState<string>(SECTIONS[0].id);
+  const [activeIdx, setActiveIdx] = useState(0);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const tabListRef = useRef<HTMLDivElement>(null);
+  const detailRef = useRef<HTMLDivElement>(null);
+
+  const goToSection = (idx: number) => {
+    setTimeout(() => sectionRefs.current[idx]?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
+  };
 
   useEffect(() => {
-    const observers: IntersectionObserver[] = [];
-    SECTIONS.forEach((s) => {
-      const el = document.getElementById(s.id);
-      if (!el) return;
-      const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveId(s.id);
-        },
-        { rootMargin: "-15% 0px -75% 0px" }
-      );
-      obs.observe(el);
-      observers.push(obs);
-    });
-    return () => observers.forEach((o) => o.disconnect());
+    const container = tabListRef.current;
+    const tab = tabRefs.current[activeIdx];
+    if (!container || !tab) return;
+    const tabTop = tab.offsetTop;
+    const tabBottom = tabTop + tab.offsetHeight;
+    const containerBottom = container.scrollTop + container.clientHeight;
+    if (tabTop < container.scrollTop) container.scrollTop = tabTop;
+    else if (tabBottom > containerBottom) container.scrollTop = tabBottom - container.clientHeight;
+  }, [activeIdx]);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const OFFSET = 250;
+      if (!detailRef.current) return;
+      const { top, bottom } = detailRef.current.getBoundingClientRect();
+      if (top > OFFSET || bottom <= 0) return;
+      let next = 0;
+      for (let i = 0; i < sectionRefs.current.length; i++) {
+        const el = sectionRefs.current[i];
+        if (el && el.getBoundingClientRect().top <= OFFSET) next = i;
+      }
+      setActiveIdx(next);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -206,53 +224,62 @@ export default function PrivacyPolicyPage() {
           </ScrollReveal>
         </div>
 
-        {/* TOC + Sections — no overflow-hidden so sticky works */}
-        <div className="container mx-auto px-6 max-w-7xl relative z-10 pb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10">
+        {/* TOC + Sections */}
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10 pb-20">
 
-            {/* Sticky TOC */}
-            <aside
-              className="hidden lg:block lg:sticky lg:self-start"
-              style={{ top: "100px" }}
-            >
-              <div className="bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl shadow-[0_4px_24px_rgba(235,155,61,0.08)] flex flex-col overflow-hidden">
-                <div className="shrink-0 px-5 pt-5 pb-4 border-b border-[rgba(13,17,45,0.08)]">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#EB9B3D]">
-                    Contents
-                  </p>
-                </div>
-                <ul className="px-3 py-3 space-y-1">
-                  {SECTIONS.map((s) => (
-                    <li key={s.id}>
-                      <a
-                        href={`#${s.id}`}
-                        className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[12px] transition-all duration-200 hover:bg-[rgba(13,17,45,0.05)] ${activeId === s.id ? "font-bold" : "font-medium text-[#666]"}`}
-                        style={{
-                          backgroundColor: activeId === s.id ? `${s.accent}25` : undefined,
-                          color: activeId === s.id ? s.accent : undefined,
-                        }}
-                      >
-                        <span className="flex-1">{s.title}</span>
-                        {activeId === s.id && (
-                          <ChevronRight
-                            className="w-3 h-3 shrink-0"
-                            style={{ color: s.accent }}
-                          />
-                        )}
-                      </a>
-                    </li>
+          {/* Mobile pill tabs */}
+          <div className="md:hidden flex gap-2 overflow-x-auto pb-3 mb-6" style={{ scrollbarWidth: "none" }}>
+            {SECTIONS.map((s, i) => (
+              <button
+                key={s.id}
+                onClick={() => goToSection(i)}
+                className={`shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all border cursor-pointer ${
+                  activeIdx === i
+                    ? "bg-[#141A3D] text-white border-[#141A3D]"
+                    : "bg-white text-[#555] border-[rgba(13,17,45,0.10)] hover:border-[#EB9B3D]/40"
+                }`}
+              >
+                {s.title.split(" ").slice(0, 3).join(" ")}
+              </button>
+            ))}
+          </div>
+
+          <div ref={detailRef} className="flex flex-col md:flex-row gap-6 items-start">
+
+            {/* Sticky sidebar — tablet+ */}
+            <div className="hidden md:block md:w-52 lg:w-60 shrink-0 sticky top-25 self-start">
+              <div className="bg-white border border-[rgba(13,17,45,0.10)] rounded-xl p-2.5">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-[#aaa] px-2.5 pt-1.5 pb-1">Contents</p>
+                <div ref={tabListRef} className="space-y-1 md:max-h-[60vh] md:overflow-y-auto lg:max-h-none lg:overflow-visible">
+                  {SECTIONS.map((s, i) => (
+                    <button
+                      key={s.id}
+                      ref={(el) => { tabRefs.current[i] = el; }}
+                      onClick={() => goToSection(i)}
+                      className={`w-full flex items-center gap-2 px-2.5 py-2 rounded-lg text-left transition-all duration-200 cursor-pointer ${
+                        activeIdx === i ? "bg-[#141A3D] text-white" : "text-[#555] hover:bg-[rgba(13,17,45,0.04)] hover:text-[#EB9B3D]"
+                      }`}
+                    >
+                      <span className={`w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold shrink-0 ${
+                        activeIdx === i ? "bg-white/20 text-white" : "bg-[#FEF0DC] text-[#EB9B3D]"
+                      }`}>
+                        {i + 1}
+                      </span>
+                      <span className="text-[12.5px] font-medium leading-tight">{s.title}</span>
+                    </button>
                   ))}
-                </ul>
+                </div>
               </div>
-            </aside>
+            </div>
 
             {/* Section cards */}
-            <div className="space-y-6">
-              {SECTIONS.map((s) => (
+            <div className="flex-1 space-y-6">
+              {SECTIONS.map((s, i) => (
                 <div
                   key={s.id}
                   id={s.id}
-                  className="group bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl p-7 hover:border-[#EB9B3D]/30 hover:shadow-[0_8px_40px_rgba(235,155,61,0.09)] transition-all duration-300 scroll-mt-25 relative overflow-hidden"
+                  ref={(el) => { sectionRefs.current[i] = el; }}
+                  className="group bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl p-5 sm:p-7 hover:border-[#EB9B3D]/30 hover:shadow-[0_8px_40px_rgba(235,155,61,0.09)] transition-all duration-300 scroll-mt-25 relative overflow-hidden"
                 >
                   {/* Left accent bar */}
                   <div
@@ -268,7 +295,7 @@ export default function PrivacyPolicyPage() {
                     >
                       <s.icon className="w-4.5 h-4.5" />
                     </div>
-                    <h2 className="text-[17px] font-bold text-[#0d0517] leading-tight mb-0">
+                    <h2 className="text-[15px] sm:text-[17px] font-bold text-[#0d0517] leading-tight mb-0">
                       {s.title}
                     </h2>
                   </div>
@@ -276,7 +303,7 @@ export default function PrivacyPolicyPage() {
                   {/* Body */}
                   <div className="pl-4 space-y-3">
                     {s.paragraphs.map((p, pi) => (
-                      <p key={pi} className="text-[14.5px] text-[#555] leading-relaxed">
+                      <p key={pi} className="text-[13px] sm:text-[14.5px] text-[#555] leading-relaxed">
                         {p}
                       </p>
                     ))}

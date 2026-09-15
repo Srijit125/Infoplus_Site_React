@@ -225,7 +225,7 @@ export default function TestingPage() {
             {/* Right — image panel */}
             <ScrollReveal direction="right" delay={120}>
               <div className="relative">
-                <div className="rounded-3xl overflow-hidden lg:min-h-[500px]">
+                <div className="rounded-3xl overflow-hidden h-64 sm:h-80 lg:h-[500px]">
                   <img
                     src={imgCareerHero}
                     alt="Infoplus Testing team at work"

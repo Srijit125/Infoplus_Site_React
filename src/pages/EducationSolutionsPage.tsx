@@ -1,5 +1,5 @@
 import { PageMeta } from "../components/shared/PageMeta";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { PageHero } from "../components/shared/PageHero";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
@@ -279,6 +279,14 @@ const EDUCATION_FAQS: FAQItem[] = [
 
 export default function EducationSolutionsPage() {
   const [activeTab, setActiveTab] = useState<Tab>("Approach");
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  const handleTabClick = (tab: Tab) => {
+    setActiveTab(tab);
+    setTimeout(() => {
+      contentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  };
 
   return (
     <div className="w-full">
@@ -502,13 +510,13 @@ export default function EducationSolutionsPage() {
         </div>
 
         {/* Sticky tab bar */}
-        <div className="sticky top-16 z-30 bg-white/95 backdrop-blur-sm border-b border-[rgba(13,17,45,0.08)]">
+        <div className="sticky top-20 z-30 bg-white/95 backdrop-blur-sm border-b border-[rgba(13,17,45,0.08)]">
           <div className="container mx-auto px-6 max-w-7xl py-4">
             <div className="flex flex-wrap justify-center gap-2">
               {TABS.map((tab) => (
                 <button
                   key={tab}
-                  onClick={() => setActiveTab(tab)}
+                  onClick={() => handleTabClick(tab)}
                   className={[
                     "px-5 py-2.5 rounded-xl text-[14px] font-semibold transition-all duration-250 cursor-pointer",
                     activeTab === tab
@@ -524,7 +532,7 @@ export default function EducationSolutionsPage() {
           </div>
         </div>
 
-        <div className="pt-12 pb-24 container mx-auto px-6 max-w-7xl relative z-10">
+        <div ref={contentRef} style={{ scrollMarginTop: "160px" }} className="pt-12 pb-24 container mx-auto px-6 max-w-7xl relative z-10">
           <div key={activeTab} style={{ animation: "revealFade 350ms ease both" }}>
 
             {/* ─ APPROACH ─ */}

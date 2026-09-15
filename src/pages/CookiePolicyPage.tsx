@@ -12,7 +12,8 @@ import {
   Globe,
   Monitor,
   MapPin,
-  ExternalLink,
+  Mail,
+  Building2,
   CheckCircle2,
   ChevronRight,
 } from "lucide-react";
@@ -255,7 +256,7 @@ export default function CookiePolicyPage() {
                   <div style={{ background: ACC, borderRadius: 10, width: 44, height: 44, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <Globe style={{ width: 20, height: 20, color: "#fff" }} />
                   </div>
-                  <h3 style={{ color: WH1, fontWeight: 700, fontSize: 19 }}>Third-Party Cookies</h3>
+                  <h3 style={{ color: WH1, fontWeight: 700, fontSize: 19, margin: 0 }}>Third-Party Cookies</h3>
                 </div>
                 <p style={{ color: WH2, fontSize: 14.5, lineHeight: 1.8 }}>
                   There are a few cookies on our site that don't come directly from us. They're set by outside tools we use, like analytics software or social media buttons. These companies handle their own cookies under their own rules, which we don't control. If you'd like the full picture, it's worth checking their privacy pages directly.
@@ -266,8 +267,11 @@ export default function CookiePolicyPage() {
             {/* Cookie Duration */}
             <ScrollReveal direction="right" delay={80} className="h-full">
               <div className="h-full bg-white rounded-2xl p-8 border border-[rgba(13,17,45,0.10)] hover:border-[rgba(235,155,61,0.25)] hover:shadow-[0_8px_32px_rgba(235,155,61,0.10)] transition-all duration-300">
-                <div style={{ marginBottom: 20 }}>
-                  <h3 style={{ color: WH1, fontWeight: 700, fontSize: 19, marginBottom: 4 }}>How Long Do Cookies Last?</h3>
+                <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 20 }}>
+                  <div style={{ background: ACC, borderRadius: 10, width: 44, height: 44, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <Clock style={{ width: 20, height: 20, color: "#fff" }} />
+                  </div>
+                  <h3 style={{ color: WH1, fontWeight: 700, fontSize: 19, margin: 0 }}>How Long Do Cookies Last?</h3>
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                   <div style={{ display: "flex", gap: 14, alignItems: "flex-start", background: "rgba(235,155,61,0.05)", border: "1px solid rgba(235,155,61,0.15)", borderRadius: 12, padding: "16px 18px" }}>
@@ -380,7 +384,7 @@ export default function CookiePolicyPage() {
                   <div style={{ background: ACC, borderRadius: 10, width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <RefreshCw style={{ width: 18, height: 18, color: "#fff" }} />
                   </div>
-                  <h3 style={{ color: WH1, fontWeight: 700, fontSize: 19 }}>Changes to This Policy</h3>
+                  <h3 style={{ color: WH1, fontWeight: 700, fontSize: 19, margin: 0 }}>Changes to This Policy</h3>
                 </div>
                 <p style={{ color: WH2, fontSize: 14.5, lineHeight: 1.8 }}>
                   Things change continuously — technology, regulations, even how we run our business. So we may update this policy every now and then to keep it accurate. Whenever we do, you'll find the latest version right here on this page.
@@ -399,30 +403,36 @@ export default function CookiePolicyPage() {
                     <div style={{ background: ACC, borderRadius: 10, width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                       <MapPin style={{ width: 18, height: 18, color: "#fff" }} />
                     </div>
-                    <h3 style={{ color: "#FFFFFF", fontWeight: 700, fontSize: 19 }}>Contact Us</h3>
+                    <h3 style={{ color: "#FFFFFF", fontWeight: 700, fontSize: 19, margin: 0 }}>Contact Us</h3>
                   </div>
 
                   <p style={{ color: "rgba(169,180,214,0.85)", fontSize: 14.5, lineHeight: 1.8, marginBottom: 20 }}>
                     Got questions about how we use cookies, or anything else on this page? We'd genuinely like to hear from you.
                   </p>
 
-                  <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                    <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
-                      <span style={{ width: 6, height: 6, borderRadius: "50%", background: AMB, flexShrink: 0, marginTop: 7 }} />
+                  <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                      <div style={{ background: ACC, borderRadius: 10, width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                        <Building2 style={{ width: 18, height: 18, color: "#fff" }} />
+                      </div>
                       <p style={{ color: "#FFFFFF", fontWeight: 700, fontSize: 14, margin: 0 }}>Infoplus Technologies UK Limited</p>
                     </div>
-                    <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
-                      <MapPin style={{ width: 14, height: 14, color: AMB, flexShrink: 0, marginTop: 2 }} />
-                      <p style={{ color: "rgba(169,180,214,0.80)", fontSize: 13.5, lineHeight: 1.6, margin: 0 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                      <div style={{ background: ACC, borderRadius: 10, width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                        <MapPin style={{ width: 18, height: 18, color: "#fff" }} />
+                      </div>
+                      <p style={{ color: "rgba(169,180,214,0.85)", fontSize: 13.5, lineHeight: 1.6, margin: 0 }}>
                         6 Capital Business Park, Manor Way,<br />Borehamwood, United Kingdom, WD6 1GW
                       </p>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 6 }}>
-                      <Globe style={{ width: 14, height: 14, color: AMB, flexShrink: 0 }} />
-                      <a href="https://infoplusltd.co.uk" target="_blank" rel="noopener noreferrer"
-                        style={{ color: AMB, fontSize: 13.5, fontWeight: 600, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 4 }}
-                        className="hover:underline">
-                        infoplusltd.co.uk <ExternalLink style={{ width: 11, height: 11 }} />
+                    <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                      <div style={{ background: ACC, borderRadius: 10, width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                        <Mail style={{ width: 18, height: 18, color: "#fff" }} />
+                      </div>
+                      <a href="mailto:contact@infoplusltd.co.uk"
+                        style={{ color: "rgba(169,180,214,0.85)", fontSize: 13.5, textDecoration: "none" }}
+                        className="hover:text-[#EB9B3D] transition-colors">
+                        contact@infoplusltd.co.uk
                       </a>
                     </div>
                   </div>

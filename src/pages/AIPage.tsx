@@ -218,6 +218,8 @@ export default function AIPage() {
   const [activeIdx, setActiveIdx] = useState(0);
   const detailRef = useRef<HTMLDivElement>(null);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const tabListRef = useRef<HTMLDivElement>(null);
 
   const goToDetail = (idx: number) => {
     setTimeout(
@@ -227,11 +229,24 @@ export default function AIPage() {
   };
 
   useEffect(() => {
-    const OFFSET = 140;
+    const container = tabListRef.current;
+    const tab = tabRefs.current[activeIdx];
+    if (!container || !tab) return;
+    const tabTop = tab.offsetTop;
+    const tabBottom = tabTop + tab.offsetHeight;
+    const containerBottom = container.scrollTop + container.clientHeight;
+    if (tabTop < container.scrollTop) {
+      container.scrollTop = tabTop;
+    } else if (tabBottom > containerBottom) {
+      container.scrollTop = tabBottom - container.clientHeight;
+    }
+  }, [activeIdx]);
+
+  useEffect(() => {
     const onScroll = () => {
+      const OFFSET = 250;
       if (!detailRef.current) return;
       const { top, bottom } = detailRef.current.getBoundingClientRect();
-      // Only run spy while the section is actually on screen
       if (top > OFFSET || bottom <= 0) return;
       let next = 0;
       for (let i = 0; i < sectionRefs.current.length; i++) {
@@ -382,10 +397,11 @@ export default function AIPage() {
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#aaa] px-2.5 pt-1.5 pb-1">
                   AI Services
                 </p>
-                <div className="space-y-1">
+                <div ref={tabListRef} className="space-y-1 md:max-h-[60vh] md:overflow-y-auto lg:max-h-none lg:overflow-visible">
                   {SVC.map((s, i) => (
                     <button
                       key={i}
+                      ref={(el) => { tabRefs.current[i] = el; }}
                       onClick={() => goToDetail(i)}
                       className={`w-full flex items-center gap-2 px-2.5 py-2 rounded-lg text-left transition-all duration-200 cursor-pointer ${
                         activeIdx === i
