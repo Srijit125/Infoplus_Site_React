@@ -249,14 +249,18 @@ export function Footer({ bgColor }: { bgColor?: string }) {
               <button
                 type="submit"
                 disabled={nlStatus === "sending" || nlStatus === "success"}
-                className="absolute right-1 top-1 bottom-1 w-10 rounded-md flex items-center justify-center text-white transition-all duration-200 hover:opacity-90 cursor-pointer disabled:opacity-60"
+                className="absolute right-1 top-1 bottom-1 w-10 rounded-md flex items-center justify-center text-white transition-all duration-200 hover:opacity-90 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                 style={{
                   background:
                     "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)",
                 }}
                 aria-label="Subscribe Now"
               >
-                <ArrowRight className="w-4 h-4" />
+                {nlStatus === "sending" ? (
+                  <span className="w-4 h-4 rounded-full border-2 border-white border-t-transparent animate-spin" />
+                ) : (
+                  <ArrowRight className="w-4 h-4" />
+                )}
               </button>
             </form>
             {nlStatus === "success" && (

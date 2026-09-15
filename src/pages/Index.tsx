@@ -586,6 +586,7 @@ function T2ContactForm() {
         </div>
         <button
           type="submit"
+          disabled={status === "sending" || status === "success"}
           style={{
             width: "100%",
             background: ACC,
@@ -595,16 +596,24 @@ function T2ContactForm() {
             fontWeight: 700,
             fontSize: 15,
             border: "none",
-            cursor: "pointer",
+            cursor: status === "sending" || status === "success" ? "not-allowed" : "pointer",
+            opacity: status === "sending" || status === "success" ? 0.7 : 1,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             gap: 8,
             transition: "opacity 0.2s",
           }}
-          className="hover:opacity-85"
+          className="hover:opacity-85 disabled:hover:opacity-70"
         >
-          Send Message <ChevronRight style={{ width: 18, height: 18 }} />
+          {status === "sending" ? (
+            <>
+              <span className="animate-spin" style={{ width: 18, height: 18, borderRadius: "50%", border: "2px solid white", borderTopColor: "transparent", display: "inline-block" }} />
+              Sending…
+            </>
+          ) : (
+            <>Send Message <ChevronRight style={{ width: 18, height: 18 }} /></>
+          )}
         </button>
         <p
           style={{

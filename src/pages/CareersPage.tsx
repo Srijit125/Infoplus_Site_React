@@ -933,9 +933,15 @@ function CareersPage() {
                   )}
                   <button
                     type="submit"
-                    className="w-full py-4 bg-[#EB9B3D] text-white rounded-xl font-semibold text-[15px] hover:bg-[#0D112D] transition-colors cursor-pointer"
+                    disabled={status === "sending" || status === "success"}
+                    className="w-full py-4 bg-[#EB9B3D] text-white rounded-xl font-semibold text-[15px] hover:bg-[#0D112D] transition-colors cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-[#EB9B3D] flex items-center justify-center gap-2"
                   >
-                    Submit Application
+                    {status === "sending" ? (
+                      <>
+                        <span className="w-5 h-5 rounded-full border-2 border-white border-t-transparent animate-spin" />
+                        Submitting…
+                      </>
+                    ) : "Submit Application"}
                   </button>
                   <div className="flex items-start gap-2 text-[12px] text-[#888] mt-2">
                     <Shield className="w-4 h-4 text-[#EB9B3D]/50 shrink-0 mt-0.5" />
