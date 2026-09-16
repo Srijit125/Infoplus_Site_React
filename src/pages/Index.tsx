@@ -337,7 +337,7 @@ function GhostBtn({ to, children }: { to: string; children: React.ReactNode }) {
         transition: "all 0.2s",
         transform: hov ? "translateY(-2px)" : "translateY(0)",
       }}
-      className="w-full sm:w-auto flex items-center justify-center"
+      className="w-full sm:w-auto inline-flex items-center justify-center"
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
     >
@@ -459,7 +459,6 @@ function T2ContactForm() {
     } catch {
       setStatus("error");
     }
-    if (Object.values(errs).every((v) => !v)) setStatus("success");
   };
 
   if (status === "success")
@@ -586,7 +585,7 @@ function T2ContactForm() {
         </div>
         <button
           type="submit"
-          disabled={status === "sending" || status === "success"}
+          disabled={status === "sending"}
           style={{
             width: "100%",
             background: ACC,
@@ -596,8 +595,8 @@ function T2ContactForm() {
             fontWeight: 700,
             fontSize: 15,
             border: "none",
-            cursor: status === "sending" || status === "success" ? "not-allowed" : "pointer",
-            opacity: status === "sending" || status === "success" ? 0.7 : 1,
+            cursor: status === "sending" ? "not-allowed" : "pointer",
+            opacity: status === "sending" ? 0.7 : 1,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -1055,7 +1054,7 @@ export default function Index() {
                     textDecoration: "none",
                     transition: "all 0.2s",
                   }}
-                  className="w-full sm:w-auto flex items-center justify-center hover:-translate-y-0.5 hover:bg-[#1f2d55]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center hover:-translate-y-0.5 hover:bg-[#1f2d55]"
                 >
                   Get in Touch <ArrowRight style={{ width: 16, height: 16 }} />
                 </Link>
@@ -1252,32 +1251,30 @@ export default function Index() {
                 <div
                   key={s.label}
                   style={{
-                    padding: "32px 24px",
                     borderLeft: i > 0 ? `1px solid ${BRD}` : "none",
                     transition: "background 0.2s",
                   }}
-                  className="flex flex-col items-center text-center group hover:bg-[#1f2d55]"
+                  className="flex flex-col items-center text-center group hover:bg-[#1f2d55] px-3 py-5 sm:px-6 sm:py-8"
                 >
                   <p
                     style={{
                       color: "#EB9B3D",
                       fontWeight: 900,
-                      fontSize: 40,
                       lineHeight: 1,
                       marginBottom: 8,
                     }}
-                    className="tabular-nums"
+                    className="tabular-nums text-[26px] sm:text-[36px] lg:text-[40px]"
                   >
                     {s.v}
                   </p>
                   <p
                     style={{
                       color: TS,
-                      fontSize: 11,
                       fontWeight: 600,
                       letterSpacing: "0.14em",
                       textTransform: "uppercase",
                     }}
+                    className="text-[9px] sm:text-[11px]"
                   >
                     {s.label}
                   </p>
@@ -1367,7 +1364,7 @@ export default function Index() {
           </div>
 
           <ScrollReveal direction="up" delay={160}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-center gap-4">
               <Link
                 to="/services/it-services/artificial-intelligence"
                 style={{
@@ -1381,7 +1378,7 @@ export default function Index() {
                   textDecoration: "none",
                   transition: "all 0.2s",
                 }}
-                className="w-full sm:w-auto flex items-center justify-center hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
+                className="w-full sm:w-auto inline-flex items-center justify-center hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
               >
                 Explore AI Services{" "}
                 <ChevronRight style={{ width: 16, height: 16 }} />
@@ -2134,3 +2131,4 @@ export default function Index() {
     </div>
   );
 }
+

@@ -22,7 +22,6 @@ import {
   PenTool,
   Star,
   BookMarked,
-  Brain,
 } from "lucide-react";
 import imgApproachFundamentalLaw from "../assets/images/Approach_Fundamental Law.png";
 import imgApproachWorkingPrinciple from "../assets/images/Approach_Working Principle.png";
@@ -303,24 +302,8 @@ export default function EducationSolutionsPage() {
         title="World's Best E-Learning Solution For Technical Students"
         description="One-step learning solution for every technical student and professional. Learnengg is proud to be part of the NEAT initiative by MHRD & AICTE bringing the best technological products in education on a single platform for the convenience of learners."
         variant="gradient"
-      >
-        <div className="flex flex-col sm:flex-row justify-center gap-3">
-          <a
-            href="https://neat.aicte-india.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-semibold transition-opacity hover:opacity-85"
-            style={{ background: "linear-gradient(135deg,#EB9B3D,#DA4D33)", color: "#fff" }}
-          >
-            <Star className="w-3.5 h-3.5" />
-            NEAT · AICTE India
-          </a>
-          <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/30 text-[#EB9B3D] text-[13px] font-semibold">
-            <Brain className="w-3.5 h-3.5" />
-            AI-Powered Learning
-          </span>
-        </div>
-      </PageHero>
+      />
+
 
       {/* ── Product Types ────────────────────────────────────── */}
       <section className="py-14 lg:py-24 bg-white relative overflow-hidden -mt-10 rounded-t-[3rem] z-20">
@@ -848,7 +831,7 @@ export default function EducationSolutionsPage() {
         />
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
           <ScrollReveal variant="card">
-            <div className="relative bg-linear-to-br from-[#0D112D] via-[#141A3D] to-[#242E72] rounded-3xl p-12 md:p-16 text-center overflow-hidden shadow-[0_32px_80px_rgba(13,17,45,0.35)]">
+            <div className="relative bg-linear-to-br from-[#0D112D] via-[#141A3D] to-[#242E72] rounded-3xl p-6 sm:p-10 md:p-16 text-center overflow-hidden shadow-[0_32px_80px_rgba(13,17,45,0.35)]">
               <div className="absolute top-[-30%] right-[-10%] w-80 h-80 rounded-full bg-[#EB9B3D] opacity-20 blur-[80px] pointer-events-none" />
               <div className="absolute bottom-[-20%] left-[-10%] w-64 h-64 rounded-full bg-[#DA4D33] opacity-15 blur-[80px] pointer-events-none" />
 
@@ -866,7 +849,7 @@ export default function EducationSolutionsPage() {
               <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-bold text-[15px] transition-opacity duration-200 hover:opacity-85 shadow-[0_8px_24px_rgba(235,155,61,0.35)]"
+                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-white font-bold text-[15px] transition-opacity duration-200 hover:opacity-85 shadow-[0_8px_24px_rgba(235,155,61,0.35)]"
                   style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
                 >
                   Contact Us
@@ -874,7 +857,7 @@ export default function EducationSolutionsPage() {
                 </a>
                 <a
                   href="/products"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 text-white font-semibold text-[15px] transition-all duration-200"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 text-white font-semibold text-[15px] transition-all duration-200"
                 >
                   View All Products
                 </a>
@@ -886,3 +869,4 @@ export default function EducationSolutionsPage() {
     </div>
   );
 }
+

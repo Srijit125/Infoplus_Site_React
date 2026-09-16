@@ -43,9 +43,23 @@
   to   { opacity: 1; transform: none; }
 }
 
-@keyframes scroll {
+@keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+/* ── Sub-375px CTA button scale-down ─────────────────────────────
+   Screens narrower than 375px (e.g. 320px) get reduced padding and
+   font size on all px-8 rounded-full buttons/links so text never
+   wraps or overflows on the smallest devices.
+───────────────────────────────────────────────────────────────── */
+@media (max-width: 374px) {
+  a[class*="px-8"][class*="rounded-full"],
+  button[class*="px-8"][class*="rounded-full"] {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    font-size: 0.8125rem;
+  }
 }
 
 /* ── Amber / navy section animation system ────────────────────────

@@ -59,7 +59,7 @@ export function ServicesPage() {
         <div className="flex flex-wrap justify-center gap-4 mt-8">
           <Link
             to="/contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg text-white font-semibold transition-opacity hover:opacity-85"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
             style={{ background: "linear-gradient(135deg,#EB9B3D,#DA4D33)" }}
           >
             Discuss Your Project

@@ -327,7 +327,7 @@ function SlideContent({
       <div className={`${cin(4)} flex flex-col sm:flex-row gap-4 items-center`}>
         <Link
           to="/contact"
-          className="w-full sm:w-auto flex items-center justify-center gap-2 group text-white px-8 py-3.5 rounded-full font-semibold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(235,155,61,0.55)]"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 group text-white px-8 py-3.5 rounded-full font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(235,155,61,0.55)]"
           style={{
             background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)",
             boxShadow: "0 8px 28px rgba(235,155,61,0.35)",
@@ -338,7 +338,7 @@ function SlideContent({
         </Link>
         <Link
           to={s.serviceHref}
-          className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/8 border border-white/20 text-white px-8 py-3.5 rounded-full font-semibold text-[15px] hover:bg-white/15 transition-all backdrop-blur-sm"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/8 border border-white/20 text-white px-8 py-3.5 rounded-full font-semibold text-[15px] hover:bg-white/15 transition-all backdrop-blur-sm"
         >
           {s.serviceLabel}
         </Link>
@@ -495,7 +495,7 @@ function SlideContentB({
       <div className={`${cin(5)} flex flex-col sm:flex-row gap-4 items-start sm:items-center`}>
         <Link
           to={s.ctaHref}
-          className="w-full sm:w-auto flex items-center justify-center gap-2 group text-white px-8 py-3.5 rounded-full font-semibold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(235,155,61,0.55)]"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 group text-white px-8 py-3.5 rounded-full font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(235,155,61,0.55)]"
           style={{
             background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)",
             boxShadow: "0 8px 28px rgba(235,155,61,0.35)",
@@ -506,7 +506,7 @@ function SlideContentB({
         </Link>
         <Link
           to="/contact"
-          className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/8 border border-white/20 text-white px-8 py-3.5 rounded-full font-semibold text-[15px] hover:bg-white/15 transition-all backdrop-blur-sm"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/8 border border-white/20 text-white px-8 py-3.5 rounded-full font-semibold text-[15px] hover:bg-white/15 transition-all backdrop-blur-sm"
         >
           Get Started
         </Link>

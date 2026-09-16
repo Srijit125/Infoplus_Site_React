@@ -115,7 +115,7 @@ export default function ITServicesPage() {
         <div className="flex flex-col sm:flex-row justify-center gap-3">
           <Link
             to="/contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white font-bold text-[14px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
             style={{ background: "linear-gradient(135deg,#EB9B3D 0%,#DA4D33 100%)" }}
           >
             Discuss Your Project <ChevronRight className="w-4 h-4" />
@@ -443,7 +443,7 @@ export default function ITServicesPage() {
         />
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
           <ScrollReveal variant="card">
-            <div className="relative bg-linear-to-br from-[#141A3D] via-[#242E72] to-[#EB9B3D] rounded-3xl p-10 md:p-14 text-center overflow-hidden shadow-[0_32px_80px_rgba(235,155,61,0.35)]">
+            <div className="relative bg-linear-to-br from-[#141A3D] via-[#242E72] to-[#EB9B3D] rounded-3xl p-6 sm:p-10 md:p-14 text-center overflow-hidden shadow-[0_32px_80px_rgba(235,155,61,0.35)]">
               <div className="absolute top-[-30%] right-[-10%] w-80 h-80 rounded-full bg-[#DA4D33] opacity-20 blur-[80px] pointer-events-none" />
               <div className="absolute bottom-[-20%] left-[-10%] w-64 h-64 rounded-full bg-[#F0783A] opacity-12 blur-[80px] pointer-events-none" />
 
@@ -461,7 +461,7 @@ export default function ITServicesPage() {
               <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
+                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)]"
                   style={{
                     background:
                       "linear-gradient(135deg,#EB9B3D 0%,#DA4D33 100%)",
@@ -478,3 +478,4 @@ export default function ITServicesPage() {
     </div>
   );
 }
+

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import {
   Target, Sparkles, Zap, MessageSquare, Network, Bot,
   Package, Users, UserCheck, FileSearch, TrendingUp,
-  CheckCircle2, ArrowRight, ChevronRight,
+  CheckCircle2, ArrowRight, ChevronRight, ChevronLeft,
   type LucideIcon,
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
@@ -220,8 +220,12 @@ export default function AIPage() {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const tabListRef = useRef<HTMLDivElement>(null);
+  const mobileTabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const mobileTabScrollRef = useRef<HTMLDivElement>(null);
+  const mobilePanelRef = useRef<HTMLDivElement>(null);
 
   const goToDetail = (idx: number) => {
+    setActiveIdx(idx);
     setTimeout(
       () => sectionRefs.current[idx]?.scrollIntoView({ behavior: "smooth", block: "start" }),
       50
@@ -242,8 +246,20 @@ export default function AIPage() {
     }
   }, [activeIdx]);
 
+  const hasMounted = useRef(false);
+  useEffect(() => {
+    if (!hasMounted.current) { hasMounted.current = true; return; }
+    mobileTabRefs.current[activeIdx]?.scrollIntoView({
+      behavior: "smooth", block: "nearest", inline: "center",
+    });
+    if (window.innerWidth < 768) {
+      mobilePanelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [activeIdx]);
+
   useEffect(() => {
     const onScroll = () => {
+      if (window.innerWidth < 768) return;
       const OFFSET = 250;
       if (!detailRef.current) return;
       const { top, bottom } = detailRef.current.getBoundingClientRect();
@@ -275,16 +291,16 @@ export default function AIPage() {
         variant="centered"
       >
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-center gap-4 mt-8">
           <button
             onClick={() => goToDetail(0)}
-            className="w-full sm:w-auto flex items-center justify-center px-8 py-3.5 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] cursor-pointer"
           >
             Explore AI Services
           </button>
           <Link
             to="/contact"
-            className="w-full sm:w-auto flex items-center justify-center px-8 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15"
           >
             Talk to Experts
           </Link>
@@ -370,29 +386,100 @@ export default function AIPage() {
             </div>
           </ScrollReveal>
 
-          {/* Mobile pill tabs — visible only below md (tablet+desktop get sidebar) */}
-          <div
-            className="md:hidden flex gap-2 overflow-x-auto pb-3 mb-6"
-            style={{ scrollbarWidth: "none" }}
-          >
-            {SVC.map((s, i) => (
-              <button
-                key={i}
-                onClick={() => goToDetail(i)}
-                className={`shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all border cursor-pointer ${
-                  activeIdx === i
-                    ? "bg-[#141A3D] text-white border-[#141A3D]"
-                    : "bg-white text-[#555] border-[rgba(13,17,45,0.10)] hover:border-[#EB9B3D]/40"
-                }`}
-              >
-                {s.title.split(" ").slice(0, 2).join(" ")}
-              </button>
-            ))}
+          {/* Mobile / Tablet: sticky tab strip + carousel */}
+          <div className="md:hidden">
+            <div className="sticky top-[60px] z-30 bg-white -mx-6 px-6 py-3 border-b border-[rgba(13,17,45,0.08)] shadow-sm mb-8">
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setActiveIdx(i => Math.max(0, i - 1))}
+                  disabled={activeIdx === 0}
+                  className="shrink-0 w-8 h-8 rounded-full border border-[rgba(13,17,45,0.12)] flex items-center justify-center text-[#444] disabled:opacity-25 disabled:cursor-not-allowed hover:bg-[#141A3D] hover:text-white hover:border-[#141A3D] transition-all cursor-pointer"
+                  aria-label="Previous capability"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <div
+                  ref={mobileTabScrollRef}
+                  className="flex-1 flex gap-2 overflow-x-auto"
+                  style={{ scrollbarWidth: "none" }}
+                >
+                  {SVC.map((s, i) => (
+                    <button
+                      key={i}
+                      ref={el => { mobileTabRefs.current[i] = el; }}
+                      onClick={() => setActiveIdx(i)}
+                      className={`shrink-0 px-3 py-1.5 rounded-full text-[11.5px] font-semibold whitespace-nowrap transition-all border cursor-pointer ${
+                        activeIdx === i
+                          ? "bg-[#141A3D] text-white border-[#141A3D]"
+                          : "bg-white text-[#555] border-[rgba(13,17,45,0.12)] hover:border-[#EB9B3D]/50 hover:text-[#EB9B3D]"
+                      }`}
+                    >
+                      {s.title}
+                    </button>
+                  ))}
+                </div>
+                <button
+                  onClick={() => setActiveIdx(i => Math.min(SVC.length - 1, i + 1))}
+                  disabled={activeIdx === SVC.length - 1}
+                  className="shrink-0 w-8 h-8 rounded-full border border-[rgba(13,17,45,0.12)] flex items-center justify-center text-[#444] disabled:opacity-25 disabled:cursor-not-allowed hover:bg-[#141A3D] hover:text-white hover:border-[#141A3D] transition-all cursor-pointer"
+                  aria-label="Next capability"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+
+            <div ref={mobilePanelRef} style={{ scrollMarginTop: "120px" }}>
+              {(() => {
+                const s = SVC[activeIdx];
+                const Icon = s.icon;
+                return (
+                  <div key={activeIdx} style={{ animation: "revealFade 300ms ease both" }}>
+                    <div className="flex items-start gap-4 mb-7 pb-7 border-b border-[#f0eff5]">
+                      <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0">
+                        <Icon className="w-5 h-5 text-white" strokeWidth={1.6} />
+                      </div>
+                      <div>
+                        <h3 className="text-[26px] font-bold text-[#111] leading-tight mb-0">{s.title}</h3>
+                        <p className="text-[14px] text-[#EB9B3D] font-medium italic mt-1">"{s.tagline}"</p>
+                      </div>
+                    </div>
+                    <p className="text-[15.5px] text-[#444] leading-[1.8] mb-8">{s.desc}</p>
+                    <div className="mb-8">
+                      <h4 className="text-[12px] font-bold uppercase tracking-widest text-[#888] mb-4">Services Offered</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        {s.items.map((item, j) => (
+                          <div key={j} className="flex items-center gap-2.5 p-3 bg-[#ffffff] rounded-xl border border-[rgba(13,17,45,0.08)]">
+                            <CheckCircle2 className="w-4 h-4 text-[#EB9B3D] shrink-0" />
+                            <span className="text-[13.5px] text-[#333] font-medium">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="bg-[#0D112D] rounded-2xl p-7">
+                      <h4 className="text-[12px] font-bold uppercase tracking-widest text-[#DA4D33] mb-3">Why Infoplus?</h4>
+                      <p className="text-[14px] text-white/65 leading-relaxed mb-6">{s.why}</p>
+                      <div className="border-t border-white/10 pt-5">
+                        <p className="text-[11px] font-bold uppercase tracking-widest text-white/30 mb-4">{s.featureTitle}</p>
+                        <div className="grid grid-cols-1 gap-2.5">
+                          {s.features.map((f, k) => (
+                            <div key={k} className="flex items-start gap-2 text-[13px] text-white/60">
+                              <ChevronRight className="w-3.5 h-3.5 text-[#DA4D33] shrink-0 mt-0.5" />
+                              {f}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
+            </div>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-6 items-start">
-            {/* Sticky sidebar — visible from tablet up */}
-            <div className="hidden md:block md:w-52 lg:w-60 shrink-0 sticky top-25 self-start">
+          {/* Desktop: sticky sidebar + all panels */}
+          <div className="hidden md:flex gap-6 items-start">
+            <div className="md:w-52 lg:w-60 shrink-0 sticky top-25 self-start">
               <div className="bg-[#ffffff] border border-[rgba(13,17,45,0.10)] rounded-xl p-2.5">
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#aaa] px-2.5 pt-1.5 pb-1">
                   AI Services
@@ -411,9 +498,7 @@ export default function AIPage() {
                     >
                       <span
                         className={`w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold shrink-0 ${
-                          activeIdx === i
-                            ? "bg-white/20 text-white"
-                            : "bg-[#FEF0DC] text-[#EB9B3D]"
+                          activeIdx === i ? "bg-white/20 text-white" : "bg-[#FEF0DC] text-[#EB9B3D]"
                         }`}
                       >
                         {i + 1}
@@ -425,7 +510,6 @@ export default function AIPage() {
               </div>
             </div>
 
-            {/* All content sections rendered vertically */}
             <div className="flex-1 min-w-0">
               {SVC.map((s, i) => {
                 const Icon = s.icon;
@@ -436,7 +520,6 @@ export default function AIPage() {
                     style={{ scrollMarginTop: "140px" }}
                     className={i < SVC.length - 1 ? "mb-20 pb-20 border-b border-[#f0eff5]" : ""}
                   >
-                    {/* Service header */}
                     <div className="flex items-start gap-4 mb-7 pb-7 border-b border-[#f0eff5]">
                       <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0">
                         <Icon className="w-5 h-5 text-white" strokeWidth={1.6} />
@@ -446,15 +529,9 @@ export default function AIPage() {
                         <p className="text-[14px] text-[#EB9B3D] font-medium italic mt-1">"{s.tagline}"</p>
                       </div>
                     </div>
-
-                    {/* Description */}
                     <p className="text-[15.5px] text-[#444] leading-[1.8] mb-8">{s.desc}</p>
-
-                    {/* Services offered */}
                     <div className="mb-8">
-                      <h4 className="text-[12px] font-bold uppercase tracking-widest text-[#888] mb-4">
-                        Services Offered
-                      </h4>
+                      <h4 className="text-[12px] font-bold uppercase tracking-widest text-[#888] mb-4">Services Offered</h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {s.items.map((item, j) => (
                           <div key={j} className="flex items-center gap-2.5 p-3 bg-[#ffffff] rounded-xl border border-[rgba(13,17,45,0.08)]">
@@ -464,17 +541,11 @@ export default function AIPage() {
                         ))}
                       </div>
                     </div>
-
-                    {/* Why Infoplus */}
                     <div className="bg-[#0D112D] rounded-2xl p-7">
-                      <h4 className="text-[12px] font-bold uppercase tracking-widest text-[#DA4D33] mb-3">
-                        Why Infoplus?
-                      </h4>
+                      <h4 className="text-[12px] font-bold uppercase tracking-widest text-[#DA4D33] mb-3">Why Infoplus?</h4>
                       <p className="text-[14px] text-white/65 leading-relaxed mb-6">{s.why}</p>
                       <div className="border-t border-white/10 pt-5">
-                        <p className="text-[11px] font-bold uppercase tracking-widest text-white/30 mb-4">
-                          {s.featureTitle}
-                        </p>
+                        <p className="text-[11px] font-bold uppercase tracking-widest text-white/30 mb-4">{s.featureTitle}</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                           {s.features.map((f, k) => (
                             <div key={k} className="flex items-start gap-2 text-[13px] text-white/60">
@@ -504,7 +575,7 @@ export default function AIPage() {
       <section className="py-10 lg:py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
-            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">
+            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-6 sm:p-10 md:p-14 text-center text-white relative overflow-hidden">
               {/* Orbs */}
               <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#EB9B3D]/25 blur-[100px] pointer-events-none" />
               <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#F0783A]/10 blur-[80px] pointer-events-none" />
@@ -520,17 +591,17 @@ export default function AIPage() {
                   Partner with Infoplus Technologies UK Ltd to unlock the full potential of
                   Artificial Intelligence for your enterprise. Let's build intelligent solutions together.
                 </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-center gap-4">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
                   >
                     Schedule a Consultation
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <a
                     href="mailto:uk@infoplusltd.co.uk"
-                    className="w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15"
+                    className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15"
                   >
                     Email Our Team
                   </a>
@@ -543,3 +614,5 @@ export default function AIPage() {
     </div>
   );
 }
+
+

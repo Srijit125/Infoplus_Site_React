@@ -11,6 +11,7 @@ import {
   CheckCircle2,
   ArrowRight,
   ChevronRight,
+  ChevronLeft,
   type LucideIcon,
 } from "lucide-react";
 import { PageHero } from "../components/shared/PageHero";
@@ -300,8 +301,12 @@ export default function CyberSecurityPage() {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const tabListRef = useRef<HTMLDivElement>(null);
+  const mobileTabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const mobileTabScrollRef = useRef<HTMLDivElement>(null);
+  const mobilePanelRef = useRef<HTMLDivElement>(null);
 
   const goToDetail = (i: number) => {
+    setActiveIdx(i);
     setTimeout(
       () => sectionRefs.current[i]?.scrollIntoView({ behavior: "smooth", block: "start" }),
       50,
@@ -322,8 +327,20 @@ export default function CyberSecurityPage() {
     }
   }, [activeIdx]);
 
+  const hasMounted = useRef(false);
+  useEffect(() => {
+    if (!hasMounted.current) { hasMounted.current = true; return; }
+    mobileTabRefs.current[activeIdx]?.scrollIntoView({
+      behavior: "smooth", block: "nearest", inline: "center",
+    });
+    if (window.innerWidth < 768) {
+      mobilePanelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [activeIdx]);
+
   useEffect(() => {
     const onScroll = () => {
+      if (window.innerWidth < 768) return;
       const OFFSET = 250;
       if (!detailRef.current) return;
       const { top, bottom } = detailRef.current.getBoundingClientRect();
@@ -354,17 +371,17 @@ export default function CyberSecurityPage() {
         badge="IT SERVICES"
         variant="centered"
       >
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-center gap-4 mt-8">
           <Link
             to="/contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
           >
             Secure Your Business
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
             to="/contact"
-            className="w-full sm:w-auto flex items-center justify-center px-8 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15"
           >
             Request a Security Audit
           </Link>
@@ -437,8 +454,8 @@ export default function CyberSecurityPage() {
             </ScrollReveal>
 
             {/* Right — animated shield core */}
-            <ScrollReveal direction="right" delay={150}>
-              <div className="relative mx-auto" style={{ width: 360, height: 360 }}>
+            <ScrollReveal direction="right" delay={150} className="flex justify-center">
+              <div className="relative origin-center max-[375px]:scale-[0.75]" style={{ width: 360, height: 360 }}>
 
                 {/* Sonar rings */}
                 {[0, 1, 2].map((i) => (
@@ -509,8 +526,8 @@ export default function CyberSecurityPage() {
               { icon: Settings,    color: "#F0783A", label: "Secure Digital Transformation",  desc: "Safe adoption of modern technologies at every stage"   },
               { icon: AlertCircle, color: "#f59e0b", label: "Advanced Threat Monitoring",     desc: "24/7 detection and rapid incident response"            },
             ].map(({ icon: Icon, label, desc }, i) => (
-              <ScrollReveal key={label} direction="up" delay={i * 75}>
-                <div className="group bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-2xl p-5 hover:bg-white hover:border-[#EB9B3D]/35 hover:shadow-[0_8px_32px_rgba(235,155,61,0.10)] transition-all duration-300">
+              <ScrollReveal key={label} direction="up" delay={i * 75} className="h-full">
+                <div className="h-full group bg-[#ffffff] border border-[rgba(13,17,45,0.08)] rounded-2xl p-5 hover:bg-white hover:border-[#EB9B3D]/35 hover:shadow-[0_8px_32px_rgba(235,155,61,0.10)] transition-all duration-300">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 rounded-xl bg-[#EB9B3D]/10 flex items-center justify-center shrink-0 text-[#EB9B3D]">
                       <Icon className="w-5 h-5" strokeWidth={1.6} />
@@ -716,32 +733,105 @@ export default function CyberSecurityPage() {
             </div>
           </ScrollReveal>
 
-          {/* Mobile pill tabs */}
-          <div className="flex md:hidden overflow-x-auto gap-2 mb-10 pb-1 -mx-6 px-6">
-            {CYBER_CAPABILITIES.map((svc, i) => {
+          {/* Mobile / Tablet: arrow carousel */}
+          <div className="md:hidden">
+            {/* Sticky horizontal tab strip */}
+            <div className="sticky top-[60px] z-30 bg-white -mx-6 px-6 py-3 border-b border-[rgba(13,17,45,0.08)] shadow-sm mb-8">
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setActiveIdx(i => Math.max(0, i - 1))}
+                  disabled={activeIdx === 0}
+                  className="shrink-0 w-8 h-8 rounded-full border border-[rgba(13,17,45,0.12)] flex items-center justify-center text-[#444] disabled:opacity-25 disabled:cursor-not-allowed hover:bg-[#0D112D] hover:text-white hover:border-[#0D112D] transition-all cursor-pointer"
+                  aria-label="Previous capability"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <div
+                  ref={mobileTabScrollRef}
+                  className="flex-1 flex gap-2 overflow-x-auto"
+                  style={{ scrollbarWidth: "none" }}
+                >
+                  {CYBER_CAPABILITIES.map((svc, i) => (
+                    <button
+                      key={i}
+                      ref={el => { mobileTabRefs.current[i] = el; }}
+                      onClick={() => setActiveIdx(i)}
+                      className={`shrink-0 px-3 py-1.5 rounded-full text-[11.5px] font-semibold whitespace-nowrap transition-all border cursor-pointer ${
+                        activeIdx === i
+                          ? "bg-[#0D112D] text-white border-[#0D112D]"
+                          : "bg-white text-[#555] border-[rgba(13,17,45,0.12)] hover:border-[#EB9B3D]/50 hover:text-[#EB9B3D]"
+                      }`}
+                    >
+                      {svc.title}
+                    </button>
+                  ))}
+                </div>
+                <button
+                  onClick={() => setActiveIdx(i => Math.min(CYBER_CAPABILITIES.length - 1, i + 1))}
+                  disabled={activeIdx === CYBER_CAPABILITIES.length - 1}
+                  className="shrink-0 w-8 h-8 rounded-full border border-[rgba(13,17,45,0.12)] flex items-center justify-center text-[#444] disabled:opacity-25 disabled:cursor-not-allowed hover:bg-[#0D112D] hover:text-white hover:border-[#0D112D] transition-all cursor-pointer"
+                  aria-label="Next capability"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+            <div ref={mobilePanelRef} style={{ scrollMarginTop: "120px" }}>
+            {(() => {
+              const svc = CYBER_CAPABILITIES[activeIdx];
               const Icon = svc.icon;
               return (
-                <button
-                  key={i}
-                  onClick={() => goToDetail(i)}
-                  className={`shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all border cursor-pointer ${
-                    activeIdx === i
-                      ? "bg-[#0D112D] text-white border-[#0D112D]"
-                      : "bg-white text-[#555] border-[rgba(13,17,45,0.10)] hover:border-[#EB9B3D]/40"
-                  }`}
-                >
-                  <Icon className="w-3 h-3 shrink-0" />
-                  {svc.title.split("&")[0].trim()}
-                </button>
+                <div key={activeIdx} style={{ animation: "revealFade 300ms ease both" }}>
+                  <div className="flex items-start gap-5 mb-7">
+                    <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0">
+                      <Icon className="w-5 h-5 text-white" strokeWidth={1.6} />
+                    </div>
+                    <div>
+                      <p className="text-[12px] font-bold uppercase tracking-widest mb-1 text-[#EB9B3D]">
+                        {svc.tagline}
+                      </p>
+                      <h3 className="text-[24px] font-bold text-[#0D112D] leading-tight">
+                        {svc.title}
+                      </h3>
+                    </div>
+                  </div>
+                  <p className="text-[15px] text-[#555] leading-[1.85] mb-8">{svc.desc}</p>
+                  <div className="mb-8">
+                    <p className="text-[12px] font-bold uppercase tracking-widest text-[#0D112D] mb-4">Key Areas</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      {svc.items.map((item, j) => (
+                        <div key={j} className="flex items-center gap-2.5 p-3 rounded-xl bg-[#ffffff] border border-[rgba(13,17,45,0.08)]">
+                          <CheckCircle2 className="w-4 h-4 shrink-0 text-[#EB9B3D]" />
+                          <span className="text-[13px] text-[#444] font-medium">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="rounded-2xl p-6 border-l-4 border-[#EB9B3D] bg-[#0D112D]">
+                    <p className="text-[12px] font-bold uppercase tracking-widest mb-3 text-[#EB9B3D]">
+                      Why Infoplus?
+                    </p>
+                    <p className="text-[14px] text-white/70 leading-[1.8] mb-5">{svc.why}</p>
+                    <div className="grid grid-cols-1 gap-2">
+                      {svc.features.map((feat, j) => (
+                        <div key={j} className="flex items-center gap-2 text-[13px] text-white/60">
+                          <ChevronRight className="w-3.5 h-3.5 shrink-0 text-[#EB9B3D]" />
+                          {feat}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               );
-            })}
+            })()}
+            </div>
           </div>
 
-          {/* Sidebar + content panels */}
-          <div className="flex flex-col md:flex-row gap-6 items-start">
+          {/* Desktop: sticky sidebar + scrollable panels */}
+          <div className="hidden md:flex gap-6 items-start">
 
-            {/* Sticky sidebar (desktop) */}
-            <div className="hidden md:block md:w-52 lg:w-64 shrink-0 sticky top-25 self-start">
+            {/* Sticky sidebar */}
+            <div className="md:w-52 lg:w-64 shrink-0 sticky top-25 self-start">
               <div className="bg-[#ffffff] border border-[rgba(13,17,45,0.10)] rounded-xl p-2.5">
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#aaa] px-2.5 pt-1.5 pb-1">
                   Security Services
@@ -783,7 +873,6 @@ export default function CyberSecurityPage() {
                     style={{ scrollMarginTop: "140px" }}
                     className={i < CYBER_CAPABILITIES.length - 1 ? "mb-20 pb-20 border-b border-[#f0eff5]" : ""}
                   >
-                    {/* Header: icon + title + tagline */}
                     <div className="flex items-start gap-5 mb-7">
                       <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0">
                         <Icon className="w-5 h-5 text-white" strokeWidth={1.6} />
@@ -797,27 +886,18 @@ export default function CyberSecurityPage() {
                         </h3>
                       </div>
                     </div>
-
-                    {/* Description */}
                     <p className="text-[15px] text-[#555] leading-[1.85] mb-8">{svc.desc}</p>
-
-                    {/* Key Areas grid */}
                     <div className="mb-8">
                       <p className="text-[12px] font-bold uppercase tracking-widest text-[#0D112D] mb-4">Key Areas</p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {svc.items.map((item, j) => (
-                          <div
-                            key={j}
-                            className="flex items-center gap-2.5 p-3 rounded-xl bg-[#ffffff] border border-[rgba(13,17,45,0.08)]"
-                          >
+                          <div key={j} className="flex items-center gap-2.5 p-3 rounded-xl bg-[#ffffff] border border-[rgba(13,17,45,0.08)]">
                             <CheckCircle2 className="w-4 h-4 shrink-0 text-[#EB9B3D]" />
                             <span className="text-[13px] text-[#444] font-medium">{item}</span>
                           </div>
                         ))}
                       </div>
                     </div>
-
-                    {/* Why Infoplus? dark card */}
                     <div className="rounded-2xl p-6 border-l-4 border-[#EB9B3D] bg-[#0D112D]">
                       <p className="text-[12px] font-bold uppercase tracking-widest mb-3 text-[#EB9B3D]">
                         Why Infoplus?
@@ -844,15 +924,15 @@ export default function CyberSecurityPage() {
       {/* ── Trust Stats ──────────────────────────────────────── */}
       <section className="py-16 bg-[#ffffff] border-y border-[rgba(13,17,45,0.10)]">
         <div className="container mx-auto px-6 max-w-5xl">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 min-[425px]:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { value: "24/7", label: "SOC monitoring coverage" },
               { value: "AI + ML", label: "Behavioural threat analysis" },
               { value: "100%", label: "Compliance focus" },
               { value: "0", label: "Tolerance for unresolved threats" },
             ].map(({ value, label }, i) => (
-              <ScrollReveal key={i} direction="up" delay={i * 80}>
-                <div className="text-center p-6 rounded-2xl bg-white border border-[rgba(13,17,45,0.10)]">
+              <ScrollReveal key={i} direction="up" delay={i * 80} className="h-full">
+                <div className="h-full text-center p-6 rounded-2xl bg-white border border-[rgba(13,17,45,0.10)]">
                   <p className="text-[32px] font-black text-[#EB9B3D] leading-none mb-2">
                     {value}
                   </p>
@@ -877,7 +957,7 @@ export default function CyberSecurityPage() {
       <section className="py-10 lg:py-20 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
-            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">
+            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-6 sm:p-10 md:p-14 text-center text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#EB9B3D]/25 blur-[100px] pointer-events-none" />
               <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#F0783A]/10 blur-[80px] pointer-events-none" />
               <div className="relative z-10">
@@ -894,17 +974,17 @@ export default function CyberSecurityPage() {
                   proactive security posture. Our expert team is ready to
                   protect your organisation round the clock.
                 </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-center gap-4">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
                   >
                     Request a Security Assessment
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <a
                     href="mailto:uk@infoplusltd.co.uk"
-                    className="w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15"
+                    className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15"
                   >
                     Email Our Security Team
                   </a>
@@ -917,3 +997,5 @@ export default function CyberSecurityPage() {
     </div>
   );
 }
+
+

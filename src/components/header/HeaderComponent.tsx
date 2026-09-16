@@ -12,7 +12,6 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileSections, setOpenMobileSections] = useState<Set<string>>(new Set());
   const location = useLocation();
-  const isServicesActive = location.pathname.startsWith("/services");
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 40);
@@ -51,18 +50,21 @@ export function Header() {
           {navigation.map((item) => (
             <div key={item.label} className="relative group">
 
-              {/* Non-navigable item (Services): button instead of NavLink */}
+              {/* Non-navigable items (Services, Products): button instead of NavLink */}
               {item.noNavigate ? (
                 <button
                   className={[
                     "flex items-center gap-1 px-3 py-2 rounded-lg text-[14px] font-medium transition-all duration-200 cursor-default select-none",
-                    isScrolled
-                      ? isServicesActive
-                        ? "text-[#6128a6] bg-[#f8f5ff] font-semibold"
-                        : "text-[#111111] hover:text-[#f85d37] hover:bg-black/5"
-                      : isServicesActive
-                        ? "text-white bg-white/15 font-semibold"
-                        : "text-white/90 hover:text-white hover:bg-white/10",
+                    (() => {
+                      const isActive = location.pathname.startsWith(item.href);
+                      return isScrolled
+                        ? isActive
+                          ? "text-[#6128a6] bg-[#f8f5ff] font-semibold"
+                          : "text-[#111111] hover:text-[#f85d37] hover:bg-black/5"
+                        : isActive
+                          ? "text-white bg-white/15 font-semibold"
+                          : "text-white/90 hover:text-white hover:bg-white/10";
+                    })(),
                   ].join(" ")}
                 >
                   {item.label}
@@ -172,9 +174,7 @@ export function Header() {
               }
 
               const isOpen = openMobileSections.has(item.label);
-              const isItemActive = item.noNavigate
-                ? isServicesActive
-                : location.pathname.startsWith(item.href);
+              const isItemActive = location.pathname.startsWith(item.href);
 
               return (
                 <div key={item.label}>
@@ -203,8 +203,8 @@ export function Header() {
                     <div className="mt-1 mb-2 ml-2 pl-3 border-l-2 border-[#EB9B3D]/30 flex flex-col gap-0.5">
                       {item.megaMenu.map((category) => (
                         <div key={category.label}>
-                          {/* Category label (Services only — multi-category) */}
-                          {item.megaMenu!.length > 1 && (
+                          {/* Category label — shown for multi-category menus (Services) and single-category noNavigate menus (Products) */}
+                          {(item.megaMenu!.length > 1 || item.noNavigate) && (
                             <Link
                               to={category.href}
                               className="block px-3 py-2 text-[13px] font-bold text-[#EB9B3D]/80 hover:text-[#EB9B3D] hover:bg-white/5 rounded-lg transition-colors"

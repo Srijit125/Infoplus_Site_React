@@ -294,7 +294,7 @@ export function Footer({ bgColor }: { bgColor?: string }) {
                 <span key={l.label} className="flex items-center gap-1">
                   <Link
                     to={l.to}
-                    className="text-white/45 hover:text-white text-[13px] font-normal transition-colors duration-200"
+                    className="text-white/70 hover:text-white text-[14px] font-normal transition-colors duration-200"
                   >
                     {l.label}
                   </Link>

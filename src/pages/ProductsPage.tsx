@@ -79,7 +79,7 @@ function ProductsPage() {
                   <p className="text-[15px] text-[#555] leading-relaxed mb-6">
                     {prod.description}
                   </p>
-                  <div className="grid grid-cols-2 gap-3 mb-8">
+                  <div className="grid grid-cols-1 min-[375px]:grid-cols-2 gap-3 mb-8">
                     {prod.features.map((feat, i) => (
                       <div key={i} className="flex items-center gap-2 bg-[#FEF0DC] border border-[rgba(235,155,61,0.20)] px-4 py-3 rounded-xl">
                         <CheckCircle2 className="w-4 h-4 text-[#EB9B3D] shrink-0" />

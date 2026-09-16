@@ -538,7 +538,7 @@ export default function MasterDataManagementPage() {
         />
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
           <ScrollReveal variant="card">
-            <div className="relative bg-linear-to-br from-[#0D112D] via-[#141A3D] to-[#242E72] rounded-3xl p-12 md:p-16 text-center overflow-hidden shadow-[0_32px_80px_rgba(13,17,45,0.35)]">
+            <div className="relative bg-linear-to-br from-[#0D112D] via-[#141A3D] to-[#242E72] rounded-3xl p-6 sm:p-10 md:p-16 text-center overflow-hidden shadow-[0_32px_80px_rgba(13,17,45,0.35)]">
               <div className="absolute top-[-30%] right-[-10%] w-80 h-80 rounded-full bg-[#EB9B3D] opacity-20 blur-[80px] pointer-events-none" />
               <div className="absolute bottom-[-20%] left-[-10%] w-64 h-64 rounded-full bg-[#DA4D33] opacity-15 blur-[80px] pointer-events-none" />
 
@@ -556,7 +556,7 @@ export default function MasterDataManagementPage() {
               <div className="relative z-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-bold text-[15px] transition-opacity duration-200 hover:opacity-85 shadow-[0_8px_24px_rgba(235,155,61,0.35)]"
+                  className="w-full sm:w-auto group/btn inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-white font-bold text-[15px] transition-opacity duration-200 hover:opacity-85 shadow-[0_8px_24px_rgba(235,155,61,0.35)]"
                   style={{ background: "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)" }}
                 >
                   Talk to Our Experts
@@ -564,7 +564,7 @@ export default function MasterDataManagementPage() {
                 </a>
                 <a
                   href="/services/new-generation/everything-data"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 text-white font-semibold text-[15px] transition-all duration-200"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 text-white font-semibold text-[15px] transition-all duration-200"
                 >
                   Explore Everything Data
                 </a>
@@ -576,3 +576,4 @@ export default function MasterDataManagementPage() {
     </div>
   );
 }
+

@@ -130,6 +130,43 @@ const SECTIONS = [
   },
 ];
 
+type Section = typeof SECTIONS[number];
+
+function SectionCardBody({ s }: { s: Section }) {
+  return (
+    <>
+      <div className="absolute left-0 top-6 bottom-6 w-1 rounded-r-full" style={{ backgroundColor: s.accent }} />
+      <div className="flex items-center gap-3 pl-4 mb-2">
+        <div
+          className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+          style={{ backgroundColor: `${s.accent}15`, color: s.accent }}
+        >
+          <s.icon className="w-4.5 h-4.5" />
+        </div>
+        <h2 className="text-[15px] sm:text-[17px] font-bold text-[#0d0517] leading-tight mb-0">{s.title}</h2>
+      </div>
+      <div className="pl-4 space-y-3">
+        {s.paragraphs.map((p, pi) => (
+          <p key={pi} className="text-[13px] sm:text-[14.5px] text-[#555] leading-relaxed">{p}</p>
+        ))}
+        {"listItems" in s && s.listItems && (
+          <ul className="space-y-2">
+            {s.listItems.map((item, li) => (
+              <li key={li} className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: s.accent }} />
+                <span className="text-[13px] sm:text-[14.5px] text-[#555] leading-snug">{item}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+        {"closing" in s && s.closing && (
+          <p className="text-[13px] sm:text-[14.5px] text-[#555] leading-relaxed">{s.closing}</p>
+        )}
+      </div>
+    </>
+  );
+}
+
 export default function TermsOfServicePage() {
   const [activeIdx, setActiveIdx] = useState(0);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -138,9 +175,11 @@ export default function TermsOfServicePage() {
   const detailRef = useRef<HTMLDivElement>(null);
 
   const goToSection = (idx: number) => {
+    setActiveIdx(idx);
     setTimeout(() => sectionRefs.current[idx]?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
   };
 
+  // Desktop sidebar scroll sync
   useEffect(() => {
     const container = tabListRef.current;
     const tab = tabRefs.current[activeIdx];
@@ -152,6 +191,7 @@ export default function TermsOfServicePage() {
     else if (tabBottom > containerBottom) container.scrollTop = tabBottom - container.clientHeight;
   }, [activeIdx]);
 
+  // Page scroll → sidebar highlight
   useEffect(() => {
     const onScroll = () => {
       const OFFSET = 250;
@@ -204,26 +244,9 @@ export default function TermsOfServicePage() {
 
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10 pt-16 pb-20">
 
-          {/* Mobile pill tabs */}
-          <div className="md:hidden flex gap-2 overflow-x-auto pb-3 mb-6" style={{ scrollbarWidth: "none" }}>
-            {SECTIONS.map((s, i) => (
-              <button
-                key={s.id}
-                onClick={() => goToSection(i)}
-                className={`shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all border cursor-pointer ${
-                  activeIdx === i
-                    ? "bg-[#141A3D] text-white border-[#141A3D]"
-                    : "bg-white text-[#555] border-[rgba(13,17,45,0.10)] hover:border-[#EB9B3D]/40"
-                }`}
-              >
-                {s.title.split(" ").slice(0, 3).join(" ")}
-              </button>
-            ))}
-          </div>
-
           <div ref={detailRef} className="flex flex-col md:flex-row gap-6 items-start">
 
-            {/* Sticky sidebar — tablet+ */}
+            {/* Sticky sidebar — desktop */}
             <div className="hidden md:block md:w-52 lg:w-60 shrink-0 sticky top-25 self-start">
               <div className="bg-white border border-[rgba(13,17,45,0.10)] rounded-xl p-2.5">
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#aaa] px-2.5 pt-1.5 pb-1">Contents</p>
@@ -249,7 +272,7 @@ export default function TermsOfServicePage() {
               </div>
             </div>
 
-            {/* Section cards */}
+            {/* All panels — mobile stacked, desktop beside sidebar */}
             <div className="flex-1 space-y-6">
               {SECTIONS.map((s, i) => (
                 <div
@@ -258,39 +281,7 @@ export default function TermsOfServicePage() {
                   ref={(el) => { sectionRefs.current[i] = el; }}
                   className="group bg-white border border-[rgba(13,17,45,0.10)] rounded-2xl p-5 sm:p-7 hover:border-[#EB9B3D]/30 hover:shadow-[0_8px_40px_rgba(235,155,61,0.09)] transition-all duration-300 scroll-mt-25 relative overflow-hidden"
                 >
-                  {/* Left accent bar */}
-                  <div className="absolute left-0 top-6 bottom-6 w-1 rounded-r-full" style={{ backgroundColor: s.accent }} />
-
-                  {/* Header */}
-                  <div className="flex items-center gap-3 pl-4 mb-2">
-                    <div
-                      className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
-                      style={{ backgroundColor: `${s.accent}15`, color: s.accent }}
-                    >
-                      <s.icon className="w-4.5 h-4.5" />
-                    </div>
-                    <h2 className="text-[15px] sm:text-[17px] font-bold text-[#0d0517] leading-tight mb-0">{s.title}</h2>
-                  </div>
-
-                  {/* Body */}
-                  <div className="pl-4 space-y-3">
-                    {s.paragraphs.map((p, pi) => (
-                      <p key={pi} className="text-[13px] sm:text-[14.5px] text-[#555] leading-relaxed">{p}</p>
-                    ))}
-                    {"listItems" in s && s.listItems && (
-                      <ul className="space-y-2">
-                        {s.listItems.map((item, li) => (
-                          <li key={li} className="flex items-start gap-2.5">
-                            <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: s.accent }} />
-                            <span className="text-[13px] sm:text-[14.5px] text-[#555] leading-snug">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                    {"closing" in s && s.closing && (
-                      <p className="text-[13px] sm:text-[14.5px] text-[#555] leading-relaxed">{s.closing}</p>
-                    )}
-                  </div>
+                  <SectionCardBody s={s} />
                 </div>
               ))}
             </div>

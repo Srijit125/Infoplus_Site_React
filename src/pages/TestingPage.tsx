@@ -151,17 +151,17 @@ export default function TestingPage() {
         badge="IT SERVICES"
         variant="centered"
       >
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-center gap-4 mt-8">
           <Link
             to="/contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
           >
             Get Started
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
             to="/contact"
-            className="w-full sm:w-auto flex items-center justify-center px-8 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15"
           >
             Talk to Experts
           </Link>
@@ -197,17 +197,17 @@ export default function TestingPage() {
                 </p>
 
                 {/* Feature tiles */}
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 min-[425px]:grid-cols-2 gap-3">
                   {[
                     { icon: Target,       label: "Proven expertise in developing Testing strategies and solutions",              color: "#EB9B3D" },
                     { icon: Globe,        label: "Delivers simplified and cost-effective testing solutions across the globe",    color: "#DA4D33" },
                     { icon: Zap,          label: "Adds inspiration and innovation to business",                                  color: "#F0783A" },
                     { icon: Shield,       label: "Commitment to quality, timely delivery, round the clock support",             color: "#14b8a6" },
                     { icon: Users,        label: "Nurtured a winning team that has a passion for excellence",                   color: "#F0783A" },
-                  ].map((f, i) => (
+                  ].map((f) => (
                     <div
                       key={f.label}
-                      className={`flex items-center gap-3 p-4 rounded-2xl border border-[#f0ecf9] hover:border-[#EB9B3D]/25 hover:shadow-[0_4px_16px_rgba(235,155,61,0.08)] transition-all duration-300 bg-[#fafafe]${i === 4 ? " col-span-2" : ""}`}
+                      className="flex items-center gap-3 p-4 rounded-2xl border border-[#f0ecf9] hover:border-[#EB9B3D]/25 hover:shadow-[0_4px_16px_rgba(235,155,61,0.08)] transition-all duration-300 bg-[#fafafe]"
                     >
                       <div
                         className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
@@ -442,7 +442,7 @@ export default function TestingPage() {
       <section className="py-10 lg:py-20 bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
-            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">
+            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-6 sm:p-10 md:p-14 text-center text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#EB9B3D]/25 blur-[100px] pointer-events-none" />
               <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#F0783A]/10 blur-[80px] pointer-events-none" />
               <div className="relative z-10">
@@ -457,17 +457,17 @@ export default function TestingPage() {
                   meets the highest quality standards on time and within
                   budget.
                 </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-center gap-4">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
                   >
                     Start a Testing Engagement
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <a
                     href="mailto:uk@infoplusltd.co.uk"
-                    className="w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15"
+                    className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15"
                   >
                     Email Our Team
                   </a>
@@ -480,4 +480,6 @@ export default function TestingPage() {
     </div>
   );
 }
+
+
 

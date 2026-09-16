@@ -607,7 +607,9 @@ function About() {
             </ScrollReveal>
           </div>
 
-          Fact bullets
+          <h3 className="text-[18px] sm:text-[22px] font-bold text-[#111111] mt-6 sm:mt-8 lg:mt-10 mb-4 sm:mb-6">
+            Fact Bullets
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {factBullets.map((fact, i) => (
               <ScrollReveal key={i} direction="up" delay={i * 80} className="h-full">

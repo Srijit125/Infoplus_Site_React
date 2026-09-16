@@ -327,7 +327,7 @@ function CareersPage() {
                 .getElementById("open-positions")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="w-full sm:w-auto inline-flex items-center justify-center bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white px-8 py-3.5 rounded-full font-bold transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white px-8 py-3.5 rounded-full font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] cursor-pointer"
           >
             View Open Roles
           </button>
@@ -497,7 +497,7 @@ function CareersPage() {
               <span className="inline-block py-1 px-3 rounded-full bg-[#EB9B3D]/10 border border-[#EB9B3D]/20 text-[#EB9B3D] text-[11px] font-bold uppercase tracking-widest mb-5">
                 Join Us
               </span>
-              <div className="flex items-end justify-between flex-wrap gap-4">
+              <div className="flex flex-col min-[376px]:flex-row min-[376px]:items-baseline min-[376px]:justify-between gap-2 min-[376px]:gap-4">
                 <h2 className="text-[22px] lg:text-[36px] font-bold text-[#111111]">
                   Open Positions
                 </h2>
@@ -597,7 +597,7 @@ function CareersPage() {
                     setTeamFilter("All");
                     setLocationFilter("All");
                   }}
-                  className="w-full sm:w-auto px-6 py-3 bg-[#EB9B3D] text-white rounded-xl font-semibold hover:bg-[#0D112D] transition-colors cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#EB9B3D] text-white rounded-full font-bold text-[15px] hover:bg-[#0D112D] transition-colors cursor-pointer"
                 >
                   Clear Filters
                 </button>
@@ -652,7 +652,7 @@ function CareersPage() {
                       {/* Apply CTA */}
                       <button
                         onClick={() => setApplyJob(job)}
-                        className="w-full py-3 rounded-xl bg-[#141A3D] text-white text-[14px] font-semibold hover:bg-[#EB9B3D] transition-colors duration-200 flex items-center justify-center gap-2 group-hover:bg-[#EB9B3D] cursor-pointer"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#141A3D] text-white text-[15px] font-bold hover:bg-[#EB9B3D] transition-colors duration-200 group-hover:bg-[#EB9B3D] cursor-pointer"
                       >
                         Apply Now
                         <ChevronRight className="w-4 h-4" />
@@ -722,7 +722,7 @@ function CareersPage() {
                   </p>
                   <button
                     onClick={closeModal}
-                    className="w-full px-8 py-3.5 bg-[#EB9B3D] text-white rounded-xl font-semibold hover:bg-[#0D112D] transition-colors cursor-pointer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#EB9B3D] text-white rounded-full text-[15px] font-bold hover:bg-[#0D112D] transition-colors cursor-pointer"
                   >
                     Done
                   </button>

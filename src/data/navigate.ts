@@ -68,6 +68,7 @@ export const navigation: NavigationItem[] = [
   {
     label: "Products",
     href: "/products",
+    noNavigate: true,
     megaMenu: [
       {
         label: "Products",

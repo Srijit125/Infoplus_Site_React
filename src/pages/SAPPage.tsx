@@ -151,17 +151,17 @@ export default function SAPPage() {
         badge="IT SERVICES"
         variant="centered"
       >
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-center gap-4 mt-8">
           <Link
             to="/contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
           >
             Consult an SAP Expert
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
           <button
             onClick={() => document.getElementById("erp-suite")?.scrollIntoView({ behavior: "smooth" })}
-            className="w-full sm:w-auto flex items-center justify-center px-8 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15 cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15 cursor-pointer"
           >
             View Our SAP Services
           </button>
@@ -242,13 +242,13 @@ export default function SAPPage() {
                   ].map(({ value, label }, i) => (
                     <div
                       key={i}
-                      className={`flex items-center justify-between py-4 ${i < 2 ? "border-b border-[rgba(13,17,45,0.08)]" : ""}`}
+                      className={`flex items-center justify-between gap-3 py-4 ${i < 2 ? "border-b border-[rgba(13,17,45,0.08)]" : ""}`}
                       style={{
                         animation: `revealFade 500ms ease ${i * 120 + 200}ms both`,
                       }}
                     >
-                      <p className="text-[13px] text-[#888]">{label}</p>
-                      <p className="text-[24px] font-black text-[#111]">
+                      <p className="text-[13px] text-[#888] flex-1 mb-0">{label}</p>
+                      <p className="text-[24px] font-black text-[#111] shrink-0 mb-0">
                         {value}
                       </p>
                     </div>
@@ -566,7 +566,7 @@ export default function SAPPage() {
       <section className="py-10 lg:py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal direction="fade">
-            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-14 text-center text-white relative overflow-hidden">
+            <div className="bg-linear-to-br from-[#0D112D] to-[#242E72] rounded-3xl p-4 min-[376px]:p-6 sm:p-10 md:p-14 text-center text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#EB9B3D]/25 blur-[100px] pointer-events-none" />
               <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#F0783A]/10 blur-[80px] pointer-events-none" />
               <div className="relative z-10">
@@ -581,17 +581,17 @@ export default function SAPPage() {
                   partner with 20+ years of proven expertise and 500+ certified
                   consultants ready to serve you.
                 </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-center gap-4">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white font-bold text-[15px] transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(235,155,61,0.50)] group"
                   >
                     Book a Free SAP Consultation
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <a
                     href="mailto:uk@infoplusltd.co.uk"
-                    className="w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15"
+                    className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15"
                   >
                     Email Our SAP Team
                   </a>
@@ -604,4 +604,6 @@ export default function SAPPage() {
     </div>
   );
 }
+
+
 
