@@ -59,8 +59,8 @@ export function Header() {
                       const isActive = location.pathname.startsWith(item.href);
                       return isScrolled
                         ? isActive
-                          ? "text-[#6128a6] bg-[#f8f5ff] font-semibold"
-                          : "text-[#111111] hover:text-[#f85d37] hover:bg-black/5"
+                          ? "text-[#EB9B3D] bg-[#EB9B3D]/10 font-semibold"
+                          : "text-[#111111] hover:text-[#EB9B3D] hover:bg-black/5"
                         : isActive
                           ? "text-white bg-white/15 font-semibold"
                           : "text-white/90 hover:text-white hover:bg-white/10";
@@ -81,8 +81,8 @@ export function Header() {
                     "flex items-center gap-1 px-3 py-2 rounded-lg text-[14px] font-medium transition-all duration-200",
                     isScrolled
                       ? isActive
-                        ? "text-[#6128a6] bg-[#f8f5ff] font-semibold"
-                        : "text-[#111111] hover:text-[#f85d37] hover:bg-black/5"
+                        ? "text-[#EB9B3D] bg-[#EB9B3D]/10 font-semibold"
+                        : "text-[#111111] hover:text-[#EB9B3D] hover:bg-black/5"
                       : isActive
                         ? "text-white bg-white/15 font-semibold"
                         : "text-white/90 hover:text-white hover:bg-white/10",
