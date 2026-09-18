@@ -94,9 +94,8 @@ function CareersPage() {
   const [errors, setErrors] = useState({ fullName: "", email: "", phone: "" });
   const [fileError, setFileError] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [status, setStatus] = useState<
-    "idle" | "sending" | "success" | "error"
-  >("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [statusMessage, setStatusMessage] = useState("");
 
   /* lock body scroll when modal is open */
   useEffect(() => {
@@ -168,6 +167,7 @@ function CareersPage() {
     }
 
     setStatus("sending");
+    setStatusMessage("");
     try {
       const formData = new FormData();
       formData.append("full_name", form.fullName.trim());
@@ -187,26 +187,27 @@ function CareersPage() {
       formData.append("type", "Infoplus Career Application");
       const res = await fetch(
         "https://test.infoplus.co.in/WebMail/api/Email/career",
-        {
-          method: "POST",
-          body: formData,
-        },
+        { method: "POST", body: formData },
       );
       if (!res.ok) throw new Error(`Request failed: ${res.status}`);
       const json = await res.json();
       if (json.success) {
         setStatus("success");
+        setStatusMessage(json.message || "Application submitted successfully.");
         setForm(EMPTY_FORM);
         setSubmitted(true);
         setErrors({ fullName: "", email: "", phone: "" });
         if (fileInputRef.current) fileInputRef.current.value = "";
       } else {
         setStatus("error");
+        setStatusMessage(json.message || "Something went wrong sending your application. Please try again.");
       }
     } catch (err: unknown) {
       console.error(err instanceof Error ? err.message : err);
       setStatus("error");
+      setStatusMessage("Something went wrong sending your application. Please try again.");
     }
+    setTimeout(() => { setStatus("idle"); setStatusMessage(""); }, 5000);
   };
 
   /* ── Static data ───────────────────────────────── */
@@ -925,10 +926,9 @@ function CareersPage() {
                       className={inputCls + " resize-none"}
                     />
                   </div>
-                  {status === "error" && (
+                  {status === "error" && statusMessage && (
                     <p className="text-[13px] text-red-600">
-                      Something went wrong sending your application. Please try
-                      again.
+                      {statusMessage}
                     </p>
                   )}
                   <button

@@ -224,9 +224,8 @@ export function ContactPage() {
     phone: "",
     message: "",
   });
-  const [status, setStatus] = useState<
-    "idle" | "sending" | "success" | "error"
-  >("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [statusMessage, setStatusMessage] = useState("");
   const [errors, setErrors] = useState<Record<Field, string>>({
     name: "",
     email: "",
@@ -259,6 +258,7 @@ export function ContactPage() {
     if (Object.values(errs).some((v) => v)) return;
 
     setStatus("sending");
+    setStatusMessage("");
     try {
       const formData = new FormData();
       formData.append("name", form.name.trim());
@@ -268,22 +268,23 @@ export function ContactPage() {
       formData.append("type", "Infoplus UK Contact");
       const res = await fetch(
         "https://test.infoplus.co.in/WebMail/api/Email/contact",
-        {
-          method: "POST",
-          body: formData,
-        },
+        { method: "POST", body: formData },
       );
       const json = await res.json();
       if (json.success) {
         setStatus("success");
+        setStatusMessage(json.message || "Thank you for reaching out. We'll get back to you within 24 hours.");
         setForm({ name: "", email: "", phone: "", message: "" });
         setErrors({ name: "", email: "", phone: "" });
       } else {
         setStatus("error");
+        setStatusMessage(json.message || "Something went wrong. Please try again or email us directly.");
       }
     } catch {
       setStatus("error");
+      setStatusMessage("Something went wrong. Please try again or email us directly.");
     }
+    setTimeout(() => { setStatus("idle"); setStatusMessage(""); }, 5000);
   };
 
   return (
@@ -392,10 +393,9 @@ export function ContactPage() {
                     />
                   </div>
 
-                  {status === "error" && (
+                  {status === "error" && statusMessage && (
                     <p className="text-[13px] text-red-600 bg-red-50 border border-red-100 rounded-xl px-4 py-3">
-                      Something went wrong. Please try again or email us
-                      directly.
+                      {statusMessage}
                     </p>
                   )}
 
@@ -422,7 +422,7 @@ export function ContactPage() {
                   </button>
 
                   {/* Success message below button */}
-                  {status === "success" && (
+                  {status === "success" && statusMessage && (
                     <div className="flex items-start gap-3 bg-[#dcfce7] border border-[#bbf7d0] rounded-xl px-4 py-4">
                       <CheckCircle2 className="w-5 h-5 text-[#15803d] shrink-0 mt-0.5" />
                       <div>
@@ -430,8 +430,7 @@ export function ContactPage() {
                           Message Sent!
                         </p>
                         <p className="text-[13px] text-[#166534]">
-                          Thank you for reaching out. We'll get back to you
-                          within 24 hours.
+                          {statusMessage}
                         </p>
                       </div>
                     </div>

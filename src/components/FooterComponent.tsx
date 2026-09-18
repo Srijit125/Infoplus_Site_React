@@ -51,35 +51,35 @@ function SocialSvg({ name }: { name: string }) {
 
 export function Footer({ bgColor }: { bgColor?: string }) {
   const [nlEmail, setNlEmail] = useState("");
-  const [nlStatus, setNlStatus] = useState<
-    "idle" | "sending" | "success" | "error"
-  >("idle");
+  const [nlStatus, setNlStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [nlMessage, setNlMessage] = useState("");
 
   const handleNewsletter = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!nlEmail.trim()) return;
     setNlStatus("sending");
+    setNlMessage("");
     try {
       const fd = new FormData();
       fd.append("email", nlEmail.trim());
       const res = await fetch(
         "https://test.infoplus.co.in/WebMail/api/Email/newsletter",
-        {
-          method: "POST",
-          body: fd,
-        },
+        { method: "POST", body: fd },
       );
       const json = await res.json();
       if (json.success) {
         setNlStatus("success");
+        setNlMessage(json.message || "Subscribed successfully.");
         setNlEmail("");
       } else {
         setNlStatus("error");
+        setNlMessage(json.message || "Something went wrong. Please try again.");
       }
     } catch {
       setNlStatus("error");
+      setNlMessage("Something went wrong. Please try again.");
     }
-    setTimeout(() => setNlStatus("idle"), 4000);
+    setTimeout(() => { setNlStatus("idle"); setNlMessage(""); }, 5000);
   };
 
   return (
@@ -263,14 +263,14 @@ export function Footer({ bgColor }: { bgColor?: string }) {
                 )}
               </button>
             </form>
-            {nlStatus === "success" && (
+            {nlStatus === "success" && nlMessage && (
               <p className="text-[12px] text-[#1bb64a] mt-2 font-medium">
-                Subscribed successfully.
+                {nlMessage}
               </p>
             )}
-            {nlStatus === "error" && (
+            {nlStatus === "error" && nlMessage && (
               <p className="text-[12px] text-red-400 mt-2 font-medium">
-                Something went wrong. Please try again.
+                {nlMessage}
               </p>
             )}
           </div>
