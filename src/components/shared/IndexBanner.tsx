@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { ImageWithFallback } from "../helpers/ImageWithFallback";
 import {
   ChevronRight, ChevronLeft,
-  Code2, Cpu, Shield, Bug, Database, Cloud, Server,
+  Code2, Shield, Bug, Database, Cloud, Server,
   Users2, Briefcase, Umbrella, Building2, Zap,
+  BrainCircuit, Sparkles, Activity, MessageSquare,
 } from "lucide-react";
 import imgSlide1 from "../../assets/images/AI Service Slide 1.png";
+import imgAIHero from "../../assets/images/AI Hero.png";
 import imgSlide2 from "../../assets/images/Global IT Company Slide 2.png";
 import imgSlide3 from "../../assets/images/Product Development Slide 3.png";
 import imgSlide4 from "../../assets/images/IT Services Slide 4.png";
@@ -58,6 +60,7 @@ interface SlideB {
   accent: string;
   sh1: string; sh2: string;
   image: string;
+  imageFit?: "cover" | "contain";
 }
 
 export type AnySlide = SlideA | SlideB;
@@ -163,13 +166,12 @@ export const SLIDES_ALL: AnySlide[] = [
     titlePost: "Under One Roof",
     description: "All the IT Solutions you need – One trusted partner. Simplify, secure, & scale everything.",
     services: [
-      { label: "Software Development",    href: "/services/it-services/software-development",       Icon: Code2    },
-      { label: "Artificial Intelligence", href: "/services/it-services/artificial-intelligence",    Icon: Cpu      },
-      { label: "Cyber Security",          href: "/services/it-services/cyber-security",             Icon: Shield   },
-      { label: "Testing",                 href: "/services/it-services/testing",                    Icon: Bug      },
-      { label: "SAP Consulting",          href: "/services/it-services/sap-consulting",             Icon: Database },
-      { label: "Cloud Portfolio",         href: "/services/it-services/cloud-portfolio",            Icon: Cloud    },
-      { label: "Infrastructure Mgmt",     href: "/services/it-services/infrastructure-management",  Icon: Server   },
+      { label: "Software Development",      href: "/services/it-services/software-development",       Icon: Code2    },
+      { label: "Testing",                   href: "/services/it-services/testing",                    Icon: Bug      },
+      { label: "Infrastructure Management", href: "/services/it-services/infrastructure-management",  Icon: Server   },
+      { label: "SAP Consulting",            href: "/services/it-services/sap-consulting",             Icon: Database },
+      { label: "Cyber Security",            href: "/services/it-services/cyber-security",             Icon: Shield   },
+      { label: "Cloud Portfolio",           href: "/services/it-services/cloud-portfolio",            Icon: Cloud    },
     ],
     stats: [
       { value: "98%",  label: "Client Retention Rate" },
@@ -184,7 +186,34 @@ export const SLIDES_ALL: AnySlide[] = [
     image: imgSlide7,
   },
 
-  /* Slide 8 — Recruitment Agency */
+  /* Slide 8 — Artificial Intelligence */
+  {
+    variant: "b",
+    eyebrow: "AI Centre of Excellence",
+    title:    "Pioneering the Future with ",
+    titleHL:  "Artificial Intelligence",
+    description: "Boost your business with intelligent AI solutions — process automation, smarter decision-making, and continuous innovation powered by machine learning, NLP and generative AI.",
+    services: [
+      { label: "Machine Learning",           href: "/services/it-services/artificial-intelligence", Icon: BrainCircuit  },
+      { label: "Natural Language Processing", href: "/services/it-services/artificial-intelligence", Icon: MessageSquare },
+      { label: "Generative AI",              href: "/services/it-services/artificial-intelligence", Icon: Sparkles      },
+      { label: "AI Automation",              href: "/services/it-services/artificial-intelligence", Icon: Activity      },
+    ],
+    stats: [
+      { value: "40%",  label: "Cost Reduction"  },
+      { value: "24/7", label: "AI Availability" },
+      { value: "120+", label: "Clients Served"  },
+    ],
+    ctaLabel: "Explore AI Services",
+    ctaHref:  "/services/it-services/artificial-intelligence",
+    bg: T2_BG_B, bgEdge: T2_EDGE,
+    orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
+    accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
+    image: imgAIHero,
+    imageFit: "contain",
+  },
+
+  /* Slide 9 — Recruitment Agency */
   {
     variant: "b",
     eyebrow: "Staffing & Consulting",
@@ -211,7 +240,7 @@ export const SLIDES_ALL: AnySlide[] = [
     image: imgSlideRec1,
   },
 
-  /* Slide 9 — New Gen IT Solutions */
+  /* Slide 10 — New Gen IT Solutions */
   {
     variant: "b",
     eyebrow: "Next-Gen Technology",
@@ -769,7 +798,7 @@ function IndexBanner({ slides: slidesProp }: { slides?: AnySlide[] } = {}) {
                 <img
                   src={s.image}
                   alt="Visual"
-                  className="w-full h-64 sm:h-80 lg:h-104 xl:h-120 rounded-3xl shadow-2xl relative z-10 object-cover"
+                  className={`w-full h-64 sm:h-80 lg:h-104 xl:h-120 rounded-3xl shadow-2xl relative z-10 ${s.imageFit === "contain" ? "object-contain" : "object-cover"}`}
                 />
                 <div className="absolute inset-0 rounded-3xl ring-1 ring-white/10 z-20 pointer-events-none" />
               </div>

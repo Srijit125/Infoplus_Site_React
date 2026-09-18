@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronRight, ChevronDown } from "lucide-react";
 import { ImageWithFallback } from "../helpers/ImageWithFallback";
@@ -11,6 +11,8 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileSections, setOpenMobileSections] = useState<Set<string>>(new Set());
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const navRef = useRef<HTMLElement>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -22,7 +24,23 @@ export function Header() {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setOpenMenu(null);
   }, [location.pathname]);
+
+  useEffect(() => {
+    if (!openMenu) return;
+    const handleOutside = (e: MouseEvent | TouchEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setOpenMenu(null);
+      }
+    };
+    document.addEventListener("mousedown", handleOutside);
+    document.addEventListener("touchstart", handleOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleOutside);
+      document.removeEventListener("touchstart", handleOutside);
+    };
+  }, [openMenu]);
 
   return (
     <header
@@ -46,15 +64,18 @@ export function Header() {
         </NavLink>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-1">
-          {navigation.map((item) => (
+        <nav ref={navRef} className="hidden lg:flex items-center gap-1">
+          {navigation.map((item) => {
+            const isMenuOpen = openMenu === item.label;
+            return (
             <div key={item.label} className="relative group">
 
               {/* Non-navigable items (Services, Products): button instead of NavLink */}
               {item.noNavigate ? (
                 <button
+                  onClick={() => setOpenMenu(isMenuOpen ? null : item.label)}
                   className={[
-                    "flex items-center gap-1 px-3 py-2 rounded-lg text-[14px] font-medium transition-all duration-200 cursor-default select-none",
+                    "flex items-center gap-1 px-3 py-2 rounded-lg text-[14px] font-medium transition-all duration-200 cursor-pointer",
                     (() => {
                       const isActive = location.pathname.startsWith(item.href);
                       return isScrolled
@@ -70,7 +91,7 @@ export function Header() {
                   {item.label}
                   <ChevronDown
                     size={14}
-                    className="opacity-60 group-hover:rotate-180 transition-transform duration-200"
+                    className={`opacity-60 transition-transform duration-200 ${isMenuOpen ? "rotate-180" : "group-hover:rotate-180"}`}
                   />
                 </button>
               ) : (
@@ -105,16 +126,19 @@ export function Header() {
 
               {item.megaMenu && (
                 <div
-                  className="absolute top-full left-0 pt-4
-                    invisible opacity-0 translate-y-1
-                    group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
-                    transition-all duration-200"
+                  className={[
+                    "absolute top-full left-0 pt-4 transition-all duration-200",
+                    isMenuOpen
+                      ? "visible opacity-100 translate-y-0"
+                      : "invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0",
+                  ].join(" ")}
                 >
                   <MegaMenu categories={item.megaMenu} />
                 </div>
               )}
             </div>
-          ))}
+            );
+          })}
         </nav>
 
         {/* CTA button */}

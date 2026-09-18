@@ -35,13 +35,19 @@ export const navigation: NavigationItem[] = [
         label: "IT Services",
         href: "/services/it-services",
         items: [
-          { label: "Artificial Intelligence",    href: "/services/it-services/artificial-intelligence" },
           { label: "Software Development",        href: "/services/it-services/software-development" },
           { label: "Testing",                     href: "/services/it-services/testing" },
           { label: "Infrastructure Management",   href: "/services/it-services/infrastructure-management" },
           { label: "SAP Consulting",              href: "/services/it-services/sap-consulting" },
           { label: "Cyber Security",              href: "/services/it-services/cyber-security" },
           { label: "Cloud Portfolio",             href: "/services/it-services/cloud-portfolio" },
+        ],
+      },
+      {
+        label: "Artificial Intelligence",
+        href: "/services/it-services/artificial-intelligence",
+        items: [
+          { label: "Artificial Intelligence", href: "/services/it-services/artificial-intelligence" },
         ],
       },
       {

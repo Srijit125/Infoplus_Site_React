@@ -168,15 +168,33 @@ export function Footer({ bgColor }: { bgColor?: string }) {
               {[
                 { label: "IT Services", to: "/services/it-services" },
                 {
+                  label: "Artificial Intelligence",
+                  to: "/services/it-services/artificial-intelligence",
+                },
+                {
                   label: "Staffing & Consulting",
                   to: "/services/staffing-consulting",
                 },
                 { label: "New-Gen Services", to: "/services/new-generation" },
-                {
-                  label: "Artificial Intelligence",
-                  to: "/services/it-services/artificial-intelligence",
-                },
-                { label: "Products", to: "/products" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link
+                    to={item.to}
+                    className="text-white/70 hover:text-white transition-colors text-[14px] font-normal"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h4 className="text-white font-semibold text-[18px] mt-8 mb-6">
+              Products
+            </h4>
+            <ul className="space-y-4">
+              {[
+                { label: "Master Data Management", to: "/products/master-data-management" },
+                { label: "Education Solutions", to: "/products/education-solutions" },
               ].map((item) => (
                 <li key={item.label}>
                   <Link

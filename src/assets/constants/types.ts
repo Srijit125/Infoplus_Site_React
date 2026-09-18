@@ -160,7 +160,6 @@ export const ourSolutions: Solution[] = [
     description:
       "In order for a business to strive and to meet its planned objectives, supporting IT is not just enough but strategically led and proactively managed IT.",
     features: [
-      "Artificial Intelligence",
       "Software Development",
       "Testing",
       "Infrastructure Management",

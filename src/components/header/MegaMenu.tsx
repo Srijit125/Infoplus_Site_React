@@ -11,10 +11,11 @@ export default function MegaMenu({ categories }: Props) {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
 
   const showLeftPanel = categories.length > 1;
+  const showRightPanel = activeCategory.items.length > 0;
 
   return (
-    <div className="w-[700px] rounded-2xl overflow-hidden shadow-[0_24px_64px_rgba(13,17,45,0.28)] border border-[#EB9B3D]/15">
-      <div className={`grid ${showLeftPanel ? "grid-cols-[220px_1fr]" : "grid-cols-1"}`}>
+    <div className={`${showRightPanel ? "w-[700px]" : "w-[220px]"} rounded-2xl overflow-hidden shadow-[0_24px_64px_rgba(13,17,45,0.28)] border border-[#EB9B3D]/15 transition-all duration-200`}>
+      <div className={`grid ${showLeftPanel && showRightPanel ? "grid-cols-[220px_1fr]" : "grid-cols-1"}`}>
 
         {/* Left panel — shown only for multi-category items (Services) */}
         {showLeftPanel && (
@@ -47,8 +48,8 @@ export default function MegaMenu({ categories }: Props) {
           </div>
         )}
 
-        {/* Right panel */}
-        <div className="bg-white p-6">
+        {/* Right panel — hidden when category has no sub-items (e.g. Artificial Intelligence) */}
+        {showRightPanel && <div className="bg-white p-6">
           {/* Category hub link */}
           <div className="mb-4 pb-3.5 border-b border-[#EB9B3D]/15">
             <NavLink
@@ -71,26 +72,28 @@ export default function MegaMenu({ categories }: Props) {
           </div>
 
           {/* Sub-items */}
-          <div className="grid grid-cols-2 gap-0.5">
-            {activeCategory.items.map((item) => (
-              <NavLink
-                key={item.label}
-                to={item.href}
-                className={({ isActive }) =>
-                  [
-                    "group/item flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-[13px] font-medium transition-all duration-150",
-                    isActive
-                      ? "bg-[#FEF6EC] text-[#EB9B3D]"
-                      : "text-[#3a3a4a] hover:bg-[#FEF6EC] hover:text-[#EB9B3D]",
-                  ].join(" ")
-                }
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#EB9B3D] group-hover/item:bg-[#EB9B3D] transition-colors duration-150 shrink-0" />
-                {item.label}
-              </NavLink>
-            ))}
-          </div>
-        </div>
+          {activeCategory.items.length > 0 && (
+            <div className="grid grid-cols-2 gap-0.5">
+              {activeCategory.items.map((item) => (
+                <NavLink
+                  key={item.label}
+                  to={item.href}
+                  className={({ isActive }) =>
+                    [
+                      "group/item flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-[13px] font-medium transition-all duration-150",
+                      isActive
+                        ? "bg-[#FEF6EC] text-[#EB9B3D]"
+                        : "text-[#3a3a4a] hover:bg-[#FEF6EC] hover:text-[#EB9B3D]",
+                    ].join(" ")
+                  }
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#EB9B3D] group-hover/item:bg-[#EB9B3D] transition-colors duration-150 shrink-0" />
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+          )}
+        </div>}
 
       </div>
     </div>

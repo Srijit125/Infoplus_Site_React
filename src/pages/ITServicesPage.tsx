@@ -8,7 +8,6 @@ import {
   Database,
   ShieldCheck,
   Cloud,
-  BrainCircuit,
   ChevronRight,
   Lightbulb,
   Globe,
@@ -25,13 +24,6 @@ import type { FAQItem } from "../components/shared/FAQAccordion";
 
 /* â"€â"€ Service cards â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */
 const SERVICES = [
-  {
-    icon: BrainCircuit,
-    title: "Artificial Intelligence",
-    href: "/services/it-services/artificial-intelligence",
-    gradient: "from-[#EB9B3D] to-[#DA4D33]",
-    desc: "Boost your business processes by applying artificial intelligence solutions for process automation, better decision-making and innovation.",
-  },
   {
     icon: Code2,
     title: "Software Development",
@@ -79,7 +71,7 @@ const SERVICES = [
 const IT_FAQS: FAQItem[] = [
   {
     q: "What are the IT Services Infoplus Technologies Provide?",
-    a: "We offer End to End IT Solutions including: Software Development, Testing, Artificial Intelligence, Cyber Security, Cloud Portfolios, Infrastructure Management, & SAP Consulting.",
+    a: "We offer End to End IT Solutions including: Software Development, Testing, Cyber Security, Cloud Portfolios, Infrastructure Management, & SAP Consulting.",
   },
   {
     q: "Which Industries Infoplus Technologies serve?",
@@ -110,7 +102,7 @@ export default function ITServicesPage() {
         variant="gradient"
         badge="IT SERVICES"
         title="All Your IT Services Under One Roof"
-        description="Delivering innovative technology solutions including Artificial Intelligence, Software Development, Testing, Infrastructure Management, SAP Consulting, Cyber Security and Cloud Portfolio for businesses worldwide."
+        description="Delivering innovative technology solutions including Software Development, Testing, Infrastructure Management, SAP Consulting, Cyber Security and Cloud Portfolio for businesses worldwide."
       >
         <div className="flex flex-col sm:flex-row justify-center gap-3">
           <Link
