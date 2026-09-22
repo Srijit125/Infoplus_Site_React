@@ -2075,7 +2075,7 @@ export default function Index() {
                   className="hidden xl:block"
                 />
                 <a
-                  href="tel:+447853045836"
+                  href="tel:+442082073474"
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -2115,7 +2115,7 @@ export default function Index() {
                       Call Us
                     </p>
                     <p style={{ color: WH1, fontSize: 14, fontWeight: 700, margin: 0 }}>
-                      +44 785 304 5836
+                      +44 20 8207 3474
                     </p>
                   </div>
                 </a>

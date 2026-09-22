@@ -164,7 +164,7 @@ const CONTACT_FAQS: FAQItem[] = [
   },
   {
     q: "How do I get a quote or discuss a project?",
-    a: "An easier way is to fill out the short form on this page. You can also email us directly at contact@infoplusltd.co.uk. You can also call us on +44 208207 3474 to speak with our team.",
+    a: "An easier way is to fill out the short form on this page. You can also email us directly at contact@infoplusltd.co.uk. You can also call us on +44 20 8207 3474 to speak with our team.",
   },
   {
     q: "How soon will I hear back after submitting an enquiry?",
