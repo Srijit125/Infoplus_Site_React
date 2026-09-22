@@ -402,7 +402,7 @@ export function ContactPage() {
 
                   <button
                     type="submit"
-                    disabled={status === "sending" || status === "success"}
+                    disabled={status === "sending"}
                     className="w-full py-4 rounded-xl text-white font-semibold text-[15px] flex items-center justify-center gap-2 disabled:opacity-70 hover:opacity-90 transition-all duration-300 cursor-pointer"
                     style={{
                       background:

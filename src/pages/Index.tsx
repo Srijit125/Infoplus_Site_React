@@ -408,6 +408,7 @@ function T2ContactForm() {
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
   >("idle");
+  const [statusMessage, setStatusMessage] = useState("");
 
   const handleChange = (field: T2Field | "message", value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -451,43 +452,19 @@ function T2ContactForm() {
       const json = await res.json();
       if (json.success) {
         setStatus("success");
+        setStatusMessage(json.message || "Thank you for reaching out. We'll get back to you within 24 hours.");
         setForm({ name: "", email: "", phone: "", message: "" });
         setErrors({ name: "", email: "", phone: "" });
       } else {
         setStatus("error");
+        setStatusMessage(json.message || "Something went wrong. Please try again or email us directly.");
       }
     } catch {
       setStatus("error");
+      setStatusMessage("Something went wrong. Please try again or email us directly.");
     }
+    setTimeout(() => { setStatus("idle"); setStatusMessage(""); }, 5000);
   };
-
-  if (status === "success")
-    return (
-      <div style={{ ...card, padding: 40, textAlign: "center" }}>
-        <div
-          style={{
-            width: 56,
-            height: 56,
-            borderRadius: "50%",
-            background: "#DCFCE7",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            margin: "0 auto 16px",
-          }}
-        >
-          <CheckCircle2 style={{ width: 28, height: 28, color: "#16A34A" }} />
-        </div>
-        <p
-          style={{ color: TP, fontWeight: 700, fontSize: 20, marginBottom: 8 }}
-        >
-          Message Sent!
-        </p>
-        <p style={{ color: TS, fontSize: 14 }}>
-          We'll get back to you within one business day.
-        </p>
-      </div>
-    );
 
   return (
     <div style={{ ...card, padding: "32px 36px" }}>
@@ -614,6 +591,22 @@ function T2ContactForm() {
             <>Send Message <ChevronRight style={{ width: 18, height: 18 }} /></>
           )}
         </button>
+
+        {status === "success" && statusMessage && (
+          <div className="flex items-start gap-3 bg-[#dcfce7] border border-[#bbf7d0] rounded-xl px-4 py-4">
+            <CheckCircle2 className="w-5 h-5 text-[#15803d] shrink-0 mt-0.5" />
+            <div>
+              <p className="text-[14px] font-bold text-[#14532d] mb-0.5">Message Sent!</p>
+              <p className="text-[13px] text-[#166534]">{statusMessage}</p>
+            </div>
+          </div>
+        )}
+        {status === "error" && statusMessage && (
+          <div className="flex items-start gap-3 bg-[#fee2e2] border border-[#fecaca] rounded-xl px-4 py-4">
+            <p className="text-[13px] text-[#991b1b]">{statusMessage}</p>
+          </div>
+        )}
+
         <p
           style={{
             color: TS,
