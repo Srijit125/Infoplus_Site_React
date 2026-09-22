@@ -719,8 +719,7 @@ function CareersPage() {
                     Application Submitted!
                   </h4>
                   <p className="text-[15px] text-[#555555] mb-8 max-w-sm mx-auto">
-                    Thank you for your interest. We&apos;ll review your
-                    application and get back to you soon.
+                    {statusMessage || "Thank you for your interest. We'll review your application and get back to you soon."}
                   </p>
                   <button
                     onClick={closeModal}
