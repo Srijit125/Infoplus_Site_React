@@ -1519,15 +1519,15 @@ export default function Index() {
         <ClientCarousel />
       </section>
 
-      {/* ══ 10. Awards & Recognition — dark (SRF) ══ */}
-      <section className="py-12 lg:py-24" style={{ background: SRF }}>
+      {/* ══ 10. Awards & Recognition — light ══ */}
+      <section className="py-12 lg:py-24" style={{ background: "#f8f5ff" }}>
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
             <div className="text-center mb-8 lg:mb-14">
               <Eyebrow label="Awards & Recognition" />
               <h2
                 style={{
-                  color: TP,
+                  color: WH1,
                   fontWeight: 700,
                   fontSize: "clamp(1.75rem,3.5vw,2.5rem)",
                   lineHeight: 1.2,
@@ -1538,7 +1538,7 @@ export default function Index() {
               </h2>
               <p
                 style={{
-                  color: TS,
+                  color: WH2,
                   fontSize: 15,
                   maxWidth: 520,
                   margin: "0 auto",
@@ -1559,7 +1559,7 @@ export default function Index() {
                   <div
                     key={i}
                     style={{
-                      ...card,
+                      ...lcard,
                       padding: "24px",
                       height: "100%",
                       transition: "all 0.3s",
@@ -1567,7 +1567,7 @@ export default function Index() {
                       alignItems: "flex-start",
                       gap: 16,
                     }}
-                    className="group hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(235,155,61,0.14)] hover:border-[rgba(235,155,61,0.30)]"
+                    className="group hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(13,17,45,0.10)] hover:border-[rgba(235,155,61,0.30)]"
                   >
                     <div
                       style={{
@@ -1592,14 +1592,14 @@ export default function Index() {
                       <p
                         style={{
                           fontWeight: 700,
-                          color: TP,
+                          color: WH1,
                           fontSize: 15,
                           marginBottom: 2,
                         }}
                       >
                         {a.title}
                       </p>
-                      <p style={{ fontSize: 12, color: TS, marginBottom: 6 }}>
+                      <p style={{ fontSize: 12, color: WH2, marginBottom: 6 }}>
                         {a.org}
                       </p>
                       <span
@@ -1626,7 +1626,7 @@ export default function Index() {
       </section>
 
       {/* ══ 11. Client Testimonials — white ══ */}
-      <section className="py-12 lg:py-24" style={{ background: "#FFFFFF" }}>
+      {false && <section className="py-12 lg:py-24" style={{ background: "#FFFFFF" }}>
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
             <div className="text-center mb-8 lg:mb-14">
@@ -1750,7 +1750,7 @@ export default function Index() {
             ))}
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* ══ 12. Our Team — dark (BG gradient) ══ */}
       {false && <section className="py-14 lg:py-28" style={{ background: BG }}>
