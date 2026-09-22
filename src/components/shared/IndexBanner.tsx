@@ -286,8 +286,8 @@ function SlideContent({
         </Link>
       </div>
 
-      {/* Stats */}
-      <div className={`${cin(5)} mt-8 flex gap-4 sm:gap-8 flex-wrap`}>
+      {/* Stats — hidden */}
+      {false && <div className={`${cin(5)} mt-8 flex gap-4 sm:gap-8 flex-wrap`}>
         {stats.map((st) => (
           <div
             key={st.label}
@@ -298,13 +298,13 @@ function SlideContent({
             <span className="text-[12px] text-white/50 tracking-wide">{st.label}</span>
           </div>
         ))}
-      </div>
+      </div>}
 
       {/* Slide navigation */}
       <div className={`${cin(6)} mt-8 flex items-center gap-3`}>
         <button
           onClick={() => onGoTo((active - 1 + total) % total)}
-          className="flex items-center justify-center w-8 h-8 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-all"
+          className="flex items-center justify-center w-8 h-8 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-all cursor-pointer"
           aria-label="Previous slide"
         >
           <ChevronLeft className="w-4 h-4" />
@@ -329,7 +329,7 @@ function SlideContent({
 
         <button
           onClick={() => onGoTo((active + 1) % total)}
-          className="flex items-center justify-center w-8 h-8 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-all"
+          className="flex items-center justify-center w-8 h-8 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-all cursor-pointer"
           aria-label="Next slide"
         >
           <ChevronRight className="w-4 h-4" />
@@ -454,8 +454,8 @@ function SlideContentB({
         </Link>
       </div>
 
-      {/* Stats — inline after CTA (hidden when using bottom stats bar) */}
-      {!s.statsBar && (
+      {/* Stats — hidden */}
+      {false && !s.statsBar && (
         <div className={`${cin(6)} mt-5 flex flex-wrap gap-6`}>
           {s.stats.map((st) => (
             <div
@@ -470,11 +470,11 @@ function SlideContentB({
         </div>
       )}
 
-      {/* Navigation — cin-6 when using bottom bar, cin-7 when stats are inline */}
-      <div className={`${s.statsBar ? cin(6) : cin(7)} mt-6 flex items-center gap-3`}>
+      {/* Navigation */}
+      <div className={`${cin(6)} mt-6 flex items-center gap-3`}>
         <button
           onClick={() => onGoTo((active - 1 + total) % total)}
-          className="flex items-center justify-center w-8 h-8 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-all"
+          className="flex items-center justify-center w-8 h-8 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-all cursor-pointer"
           aria-label="Previous slide"
         >
           <ChevronLeft className="w-4 h-4" />
@@ -499,7 +499,7 @@ function SlideContentB({
 
         <button
           onClick={() => onGoTo((active + 1) % total)}
-          className="flex items-center justify-center w-8 h-8 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-all"
+          className="flex items-center justify-center w-8 h-8 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-all cursor-pointer"
           aria-label="Next slide"
         >
           <ChevronRight className="w-4 h-4" />
