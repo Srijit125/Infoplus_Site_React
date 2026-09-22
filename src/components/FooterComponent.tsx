@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./helpers/ImageWithFallback";
+import { getApiUrl } from "../config/api";
 import imgInfoplusLogo from "../assets/images/imgInfoplusLogo.png";
 import imgCert1 from "../assets/images/certified-1.png";
 import imgCert2 from "../assets/images/certified-2.png";
@@ -63,7 +64,7 @@ export function Footer({ bgColor }: { bgColor?: string }) {
       const fd = new FormData();
       fd.append("email", nlEmail.trim());
       const res = await fetch(
-        "https://test.infoplus.co.in/WebMail/api/Email/newsletter",
+        getApiUrl("newsletter"),
         { method: "POST", body: fd },
       );
       const json = await res.json();

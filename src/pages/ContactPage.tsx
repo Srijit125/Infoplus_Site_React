@@ -14,6 +14,7 @@ import {
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 import ReactCountryFlag from "react-country-flag";
+import { getApiUrl } from "../config/api";
 
 const OFFICES = [
   {
@@ -267,7 +268,7 @@ export function ContactPage() {
       formData.append("message", form.message.trim());
       formData.append("type", "Infoplus UK Contact");
       const res = await fetch(
-        "https://test.infoplus.co.in/WebMail/api/Email/contact",
+        getApiUrl("contact"),
         { method: "POST", body: formData },
       );
       const json = await res.json();

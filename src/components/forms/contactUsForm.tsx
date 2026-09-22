@@ -1,5 +1,6 @@
 import { Send, Shield } from "lucide-react";
 import { useState, type SubmitEvent } from "react";
+import { getApiUrl } from "../../config/api";
 function contactUsForm() {
   const [result, setResult] = useState<string>("");
 
@@ -9,7 +10,7 @@ function contactUsForm() {
     const formData = new FormData(event.target);
     formData.append("type", "Infoplus UK Contact");
     const response = await fetch(
-      "https://www.infoplus.co.uk/WebMail/api/Email/contact",
+      getApiUrl("contact"),
       {
         method: "POST",
         body: formData,

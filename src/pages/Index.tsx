@@ -27,6 +27,7 @@ import {
   services,
 } from "../assets/constants/types";
 import { PageMeta } from "../components/shared/PageMeta";
+import { getApiUrl } from "../config/api";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import ClientCarousel from "../components/ui/ClientCarousel";
 import { ImageWithFallback } from "../components/helpers/ImageWithFallback";
@@ -442,7 +443,7 @@ function T2ContactForm() {
       formData.append("message", form.message.trim());
       formData.append("type", "Infoplus UK Contact");
       const res = await fetch(
-        "https://test.infoplus.co.in/WebMail/api/Email/contact",
+        getApiUrl("homeContact"),
         {
           method: "POST",
           body: formData,

@@ -17,6 +17,7 @@ import {
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 import { fileToBase64Raw } from "../assets/helpers";
+import { getApiUrl } from "../config/api";
 
 /* ── Types ─────────────────────────────────────────── */
 type Job = {
@@ -186,7 +187,7 @@ function CareersPage() {
       formData.append("job_title", applyJob?.role ?? "");
       formData.append("type", "Infoplus Career Application");
       const res = await fetch(
-        "https://test.infoplus.co.in/WebMail/api/Email/career",
+        getApiUrl("career"),
         { method: "POST", body: formData },
       );
       if (!res.ok) throw new Error(`Request failed: ${res.status}`);
