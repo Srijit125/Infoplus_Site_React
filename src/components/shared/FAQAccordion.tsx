@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export interface FAQItem {
   q: string;
-  a: string;
+  a: React.ReactNode;
 }
 
 interface FAQAccordionProps {
