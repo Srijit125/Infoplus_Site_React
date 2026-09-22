@@ -54,16 +54,16 @@ const OFFICES = [
     code: "NL",
     region: "Netherlands",
     city: "Rotterdam",
-    address: "Hofplein 20, Rotterdam 3032 AC",
+    address: "Ho fplein 20, Rotterdam 3032 AC",
     mapUrl: "https://maps.google.com/?q=Hofplein+20+Rotterdam+3032+AC",
   },
   {
     code: "BE",
     region: "Belgium",
     city: "Brussels",
-    address: "Chemin des Deux Maisons 73-3, 1200 Brussels",
+    address: "SPRL, Bridge Building, 5th floor, 584 Charles-Quint avenue, Brussels, 1082",
     mapUrl:
-      "https://maps.google.com/?q=Chemin+des+Deux+Maisons+73+1200+Bruxelles+Belgium",
+      "https://maps.google.com/?q=584+Avenue+Charles-Quint+1082+Brussels+Belgium",
   },
   {
     code: "IE",
@@ -84,23 +84,23 @@ const OFFICES = [
     code: "PL",
     region: "Poland",
     city: "Krakow",
-    address: "ul. Kamienna 21, 31-403 Krakow",
+    address: "Krakow Froton, ul Kamienna 21 31-403 Krakow",
     mapUrl: "https://maps.google.com/?q=ul+Kamienna+21+31-403+Krakow+Poland",
   },
   {
     code: "CZ",
     region: "Czech Republic",
     city: "Prague",
-    address: "Zeleny pruh 1560/99, Branik, 140 00 Praha 4",
+    address: "S. R. O, Aviatická 1092/8, Prague, 161 00, Czech Republic",
     mapUrl:
-      "https://maps.google.com/?q=Zeleny+pruh+1560+Branik+140+00+Praha+4+Czech+Republic",
+      "https://maps.google.com/?q=Aviatická+1092/8+161+00+Prague+Czech+Republic",
   },
   {
     code: "ES",
     region: "Spain",
-    city: "Barcelona",
-    address: "Cl Paris Num.45, Entresuelo 3, 08029 Barcelona",
-    mapUrl: "https://maps.google.com/?q=Calle+Paris+45+08029+Barcelona+Spain",
+    city: "Madrid",
+    address: "Calle Ribera del Loira, 46, 28042 Madrid España",
+    mapUrl: "https://maps.google.com/?q=Calle+Ribera+del+Loira+46+28042+Madrid+Spain",
   },
   {
     code: "FR",
@@ -131,7 +131,7 @@ const OFFICES = [
     region: "Romania",
     city: "Bucharest",
     address:
-      "B-dul Iuliu Maniu, Nr. 57, Block OD16, Staircase E, Fl. 2, Apt. 188, 061081 Bucharest Sector 6",
+      "B-dul Iuliu Maniu, Nr. 57, Block OD16, Staircase E, Fl. 2, Apt. 188, 61081 Bucharest Sector 6",
     mapUrl:
       "https://maps.google.com/?q=Bdul+Iuliu+Maniu+57+Bucharest+Sector+6+Romania",
   },
@@ -470,8 +470,8 @@ export function ContactPage() {
                 {
                   icon: Mail,
                   label: "Email",
-                  value: "uk@infoplusltd.co.uk",
-                  href: "mailto:uk@infoplusltd.co.uk",
+                  value: "contact@infoplusltd.co.uk",
+                  href: "mailto:contact@infoplusltd.co.uk",
                 },
                 {
                   icon: MapPin,

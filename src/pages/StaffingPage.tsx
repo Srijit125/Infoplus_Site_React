@@ -453,7 +453,7 @@ export default function StaffingPage() {
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <a
-                    href="mailto:uk@infoplusltd.co.uk"
+                    href="mailto:contact@infoplusltd.co.uk"
                     className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-[15px] transition-all duration-200 hover:bg-white/15"
                   >
                     Email Our Staffing Team

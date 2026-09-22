@@ -2022,7 +2022,7 @@ export default function Index() {
                 className="flex flex-col xl:flex-row items-start xl:items-center justify-start gap-5 xl:gap-8"
               >
                 <a
-                  href="mailto:info@infoplustechnologies.co.uk"
+                  href="mailto:contact@infoplusltd.co.uk"
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -2062,7 +2062,7 @@ export default function Index() {
                       Email Us
                     </p>
                     <p style={{ color: WH1, fontSize: 14, fontWeight: 700, margin: 0 }}>
-                      info@infoplustechnologies.co.uk
+                      contact@infoplusltd.co.uk
                     </p>
                   </div>
                 </a>

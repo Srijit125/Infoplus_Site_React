@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Phone, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./helpers/ImageWithFallback";
@@ -215,11 +215,11 @@ export function Footer({ bgColor }: { bgColor?: string }) {
             <ul className="space-y-4 mb-6">
               <li>
                 <a
-                  href="mailto:uk@infoplusltd.co.uk"
+                  href="mailto:contact@infoplusltd.co.uk"
                   className="flex items-center gap-3 text-white/70 hover:text-white transition-colors text-[14px] font-normal"
                 >
                   <Mail className="w-5 h-5 text-white/70" />
-                  uk@infoplusltd.co.uk
+                  contact@infoplusltd.co.uk
                 </a>
               </li>
               <li>
