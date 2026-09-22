@@ -73,3 +73,24 @@ export default defineConfig([
   },
 ])
 ```
+
+## Form API URLs (editable after build)
+
+The four forms — home page contact, contact page, careers application and the
+footer newsletter — get their API URLs from `dist/config.js` at runtime, not
+from the compiled bundle. Hosting can edit that file directly and the change
+takes effect on the next page refresh; **no rebuild is needed**.
+
+```
+dist/
+  config.js   <-- edit API_BASE_URL here
+  index.html
+  assets/
+```
+
+`config.js` holds a shared `API_BASE_URL` plus one path per form. Putting a full
+`https://…` URL in a form's entry points just that form elsewhere.
+
+The source of the file is `public/config.js`, which Vite copies into `dist/` on
+every build — change the committed defaults there. The values in
+`src/config/api.ts` are only a fallback for when `config.js` fails to load.
