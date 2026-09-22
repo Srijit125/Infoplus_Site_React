@@ -7,16 +7,10 @@ import {
   Users2, Briefcase, Umbrella, Building2, Zap,
   BrainCircuit, Sparkles, Activity, MessageSquare,
 } from "lucide-react";
-import imgSlide1 from "../../assets/images/AI Service Slide 1.png";
-import imgAIHero from "../../assets/images/AI Hero.png";
-import imgSlide2 from "../../assets/images/Global IT Company Slide 2.png";
-import imgSlide3 from "../../assets/images/Product Development Slide 3.png";
-import imgSlide4 from "../../assets/images/IT Services Slide 4.png";
-import imgSlide5 from "../../assets/images/Digital Capability Slide 5.png";
-import imgSlide6 from "../../assets/images/Staffing & Consulting Slide 6.png";
-import imgSlideRec1 from "../../assets/images/Info_Landing_AboutSection.jpg";
-import imgSlide7    from "../../assets/images/Image 1.jpg";
-import imgSlide9    from "../../assets/images/Image 2.jpg";
+import imgSlide1 from "../../assets/images/Image 1.jpg";
+import imgSlide2 from "../../assets/images/AI Hero.png";
+import imgSlide3 from "../../assets/images/Info_Landing_AboutSection.jpg";
+import imgSlide4 from "../../assets/images/Image 2.jpg";
 import "./hero-animations.css";
 
 /* ─── Types ──────────────────────────────────────── */
@@ -66,8 +60,6 @@ interface SlideB {
 export type AnySlide = SlideA | SlideB;
 
 /* ─── Slide data ─────────────────────────────────── */
-/* ─── Theme 2 palette shared across all slides ─────── */
-const T2_BG_A  = "linear-gradient(135deg, #0D112D 0%, #242E72 100%)";
 const T2_BG_B  = "linear-gradient(135deg, #0D112D 0%, #1A2444 100%)";
 const T2_EDGE  = "#0D112D";
 const T2_ORB1  = "#EB9B3D";
@@ -78,86 +70,7 @@ const T2_SH1   = "#F5C66A";
 const T2_SH2   = "#F0783A";
 
 export const SLIDES_ALL: AnySlide[] = [
-  /* ── Variant A — 6 slides ── */
-  {
-    variant: "a",
-    titlePart1:  "Artificial ",
-    titleHL:     "Intelligence",
-    titlePart2:  "Services",
-    description: "Harness the power of AI to transform your business.",
-    bg: T2_BG_A,
-    orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
-    accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
-    btnColor: T2_ORB2,
-    serviceHref: "/services/it-services/artificial-intelligence", serviceLabel: "AI Services",
-    image: imgSlide1,
-  },
-  {
-    variant: "a",
-    titlePart1:  "Global IT ",
-    titleHL:     "Company",
-    titlePart2:  "",
-    description: "For Innovative IT Solutions and Service.",
-    bg: T2_BG_A,
-    orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
-    accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
-    serviceHref: "/services/it-services", serviceLabel: "Our Services",
-    image: imgSlide2,
-  },
-  {
-    variant: "a",
-    titlePart1:  "Product ",
-    titleHL:     "Development",
-    titlePart2:  "",
-    description: "More Compelling and Memorable products through simplicity in design.",
-    bg: T2_BG_A,
-    orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
-    accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
-    btnColor: T2_ORB2,
-    serviceHref: "/services/it-services/software-development", serviceLabel: "Product Development",
-    image: imgSlide3,
-  },
-  {
-    variant: "a",
-    titlePart1:  "IT ",
-    titleHL:     "Services",
-    titlePart2:  "",
-    description: "Provides focal point of knowledge management to help the client business to improve.",
-    bg: T2_BG_A,
-    orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
-    accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
-    serviceHref: "/services/it-services", serviceLabel: "IT Services",
-    image: imgSlide4,
-  },
-  {
-    variant: "a",
-    titlePart1:  "Digital ",
-    titleHL:     "Capability",
-    titlePart2:  "",
-    description: "Partner to propel your digital transformation journey.",
-    bg: T2_BG_A,
-    orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
-    accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
-    serviceHref: "/services/new-generation", serviceLabel: "New-Gen Services",
-    image: imgSlide5,
-  },
-  {
-    variant: "a",
-    titlePart1:  "Staffing & ",
-    titleHL:     "Consulting",
-    titlePart2:  "",
-    description: "Connect with pre-vetted IT professionals who deliver from day one permanent placements, contract roles, umbrella services, and specialist consulting for every engagement.",
-    bg: T2_BG_A,
-    orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
-    accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
-    btnColor: T2_ORB2,
-    serviceHref: "/services/staffing-consulting", serviceLabel: "Staffing & Consulting",
-    image: imgSlide6,
-  },
-
-  /* ── Variant B — magazine-split layout ── */
-
-  /* Slide 7 — All IT Services */
+  /* ── Slide 1 — All IT Services ── */
   {
     variant: "b",
     eyebrow: "Managed IT Services",
@@ -183,10 +96,10 @@ export const SLIDES_ALL: AnySlide[] = [
     bg: T2_BG_B, bgEdge: T2_EDGE,
     orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
     accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
-    image: imgSlide7,
+    image: imgSlide1,
   },
 
-  /* Slide 8 — Artificial Intelligence */
+  /* ── Slide 2 — Artificial Intelligence ── */
   {
     variant: "b",
     eyebrow: "AI Centre of Excellence",
@@ -209,11 +122,11 @@ export const SLIDES_ALL: AnySlide[] = [
     bg: T2_BG_B, bgEdge: T2_EDGE,
     orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
     accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
-    image: imgAIHero,
+    image: imgSlide2,
     imageFit: "contain",
   },
 
-  /* Slide 9 — Recruitment Agency */
+  /* ── Slide 3 — Recruitment Agency ── */
   {
     variant: "b",
     eyebrow: "Staffing & Consulting",
@@ -237,10 +150,10 @@ export const SLIDES_ALL: AnySlide[] = [
     bg: T2_BG_B, bgEdge: T2_EDGE,
     orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
     accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
-    image: imgSlideRec1,
+    image: imgSlide3,
   },
 
-  /* Slide 10 — New Gen IT Solutions */
+  /* ── Slide 4 — New Gen IT Solutions ── */
   {
     variant: "b",
     eyebrow: "Next-Gen Technology",
@@ -265,7 +178,7 @@ export const SLIDES_ALL: AnySlide[] = [
     bg: T2_BG_B, bgEdge: T2_EDGE,
     orb1: T2_ORB1, orb2: T2_ORB2, orb3: T2_ORB3,
     accent: T2_ACC, sh1: T2_SH1, sh2: T2_SH2,
-    image: imgSlide9,
+    image: imgSlide4,
   },
 ];
 

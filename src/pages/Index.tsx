@@ -47,7 +47,7 @@ import {
   T2_WH2 as WH2,
   t2Card as card,
   t2LCard as lcard,
-} from "../styles/theme2";
+} from "../styles/brandTokens";
 
 /* ─────────────────────────────────────────────────────────────────
    Data
@@ -109,8 +109,7 @@ const LOCATIONS = [
   },
 ];
 
-/* Hero carousel: slides 8, 9, 10 (the 3 Variant B slides from SLIDES_ALL) */
-const SLIDES_T2 = SLIDES_ALL.slice(6);
+const SLIDES_T2 = SLIDES_ALL;
 
 const AWARDS_T2 = [
   {
