@@ -28,6 +28,7 @@ type Job = {
   type: string;
   skills: string[];
   desc: string;
+  details: string[];
 };
 
 type FormState = {
@@ -88,6 +89,7 @@ const CAREERS_FAQS: FAQItem[] = [
 function CareersPage() {
   const [teamFilter, setTeamFilter] = useState("All");
   const [locationFilter, setLocationFilter] = useState("All");
+  const [viewJob, setViewJob] = useState<Job | null>(null);
   const [applyJob, setApplyJob] = useState<Job | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState<FormState>(EMPTY_FORM);
@@ -98,14 +100,25 @@ function CareersPage() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [statusMessage, setStatusMessage] = useState("");
 
-  /* lock body scroll when modal is open */
+  /* lock body scroll when any modal is open */
   useEffect(() => {
-    document.body.style.overflow = applyJob ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
+    document.body.style.overflow = (applyJob || viewJob) ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [applyJob, viewJob]);
+
+  /* close modals on Escape */
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      if (applyJob) closeModal();
+      else if (viewJob) closeViewModal();
     };
-  }, [applyJob]);
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [applyJob, viewJob]);
+
   type ITField = "fullName" | "email" | "phone";
+  const closeViewModal = () => setViewJob(null);
   const closeModal = () => {
     setApplyJob(null);
     setSubmitted(false);
@@ -238,62 +251,112 @@ function CareersPage() {
   const positions: Job[] = [
     {
       id: 1,
-      role: "Senior Frontend Engineer",
-      team: "Engineering",
-      location: "Remote / UK",
-      type: "Full-time",
-      skills: ["React", "TypeScript", "TailwindCSS"],
-      desc: "Build and maintain high-performance user interfaces for enterprise clients across multiple industries.",
-    },
-    {
-      id: 2,
-      role: "AI Research Scientist",
-      team: "Data Science",
-      location: "Germany",
-      type: "Full-time",
-      skills: ["Python", "Machine Learning", "NLP"],
-      desc: "Develop next-generation AI models and solutions for enterprise data intelligence platforms.",
-    },
-    {
-      id: 3,
-      role: "Product Designer",
-      team: "Design",
-      location: "Remote",
-      type: "Full-time",
-      skills: ["Figma", "UI/UX", "Prototyping"],
-      desc: "Create beautiful, user-centric designs for our growing product portfolio and client applications.",
-    },
-    {
-      id: 4,
-      role: "Technical Account Manager",
-      team: "Sales",
-      location: "India",
-      type: "Full-time",
-      skills: ["Client Relations", "SAP", "CRM"],
-      desc: "Manage key enterprise client relationships and drive business growth across the South Asia region.",
-    },
-    {
-      id: 5,
-      role: "Backend Engineer",
+      role: "Pega Lead Systems Architect",
       team: "Engineering",
       location: "UK",
       type: "Full-time",
-      skills: ["Node.js", "Python", "AWS"],
-      desc: "Design and scale cloud-native backend services and APIs for enterprise-grade applications.",
+      skills: ["Pega PRPC", "CLSA", "BPM/BRE", "Agile", "Cloud"],
+      desc: "Architect and design enterprise business applications using Pega PRPC frameworks, leading teams from inception to transition.",
+      details: [
+        "Should be a Pega Certified Lead System Architect (CLSA) responsible for architecting and designing business applications using Pega PRPC and other Pega frameworks.",
+        "Should have very good hands-on experience in delivering Pega skill based solutions to the customer with high output.",
+        "Should have effective communication and interpretation skills to discuss business and technical implementations with internal teams and clients to deliver user interface requirements like Graphical User Interfaces, Screen, and Interface mock-ups.",
+        "Should be responsible for Design & Technical leadership of Pega PRPC program / application / solution (8.x) — including designing of enterprise class structure, data and application framework model.",
+        "Should provide architecture and design guidance to project teams developing BPM/BRE solutions using Pega.",
+        "Should have a strong technical background and hands-on experience in developing applications and exploring new capabilities of Pega technology.",
+        "Should have experience working with Product Owners to assist in developing requirements, solution concepts and prototypes.",
+        "Should have a good understanding of interface/integration technologies and customers' needs so they can be translated into requirements.",
+        "Should possess the ability to lead requirements conversations and help drive discussions to out-of-the-box capabilities to meet business requirements.",
+        "Should ensure Pega application/solutions are scalable and robust and follow Pega best practices in terms of security, performance and integrations.",
+        "Should possess strong leadership skills to lead a team independently from Inception to Transition.",
+        "Should have very good experience and understanding in Agile methodology.",
+        "Should provide in-depth technical consultation to business partners and IT management/development to ensure efficient application systems.",
+        "Should possess good knowledge of cloud systems and hands-on experience with application servers.",
+      ],
+    },
+    {
+      id: 2,
+      role: "Data / Business Analyst",
+      team: "Data Science",
+      location: "UK",
+      type: "Full-time",
+      skills: ["Business Analysis", "Data Analysis", "GAP Analysis", "Data Visualisation"],
+      desc: "Perform business and data analysis, GAP analysis, and data visualisation for enterprise clients.",
+      details: [
+        "Should have good knowledge in Business Analysis, Data, GAP Analysis, and Data Visualisation.",
+        "Should have 7+ Years of Experience.",
+      ],
+    },
+    {
+      id: 3,
+      role: ".NET Full Stack Developer",
+      team: "Engineering",
+      location: "UK",
+      type: "Full-time",
+      skills: ["C#", ".NET Core", "SQL Server", "Azure"],
+      desc: "Develop full-stack enterprise applications using .NET Core, C#, SQL Server, and Azure cloud services.",
+      details: [
+        "Should have good knowledge in C#, .Net, .NET Core, Microsoft SQL Server, and Azure.",
+        "Should have 6+ Years of Experience.",
+      ],
+    },
+    {
+      id: 4,
+      role: "Test Analyst",
+      team: "Engineering",
+      location: "UK",
+      type: "Full-time",
+      skills: ["Manual Testing", "Automation Testing", "Regression Testing"],
+      desc: "Conduct manual, automation, and regression testing for enterprise-grade applications.",
+      details: [
+        "Should have good knowledge in Manual, Automation, and Regression Testing.",
+        "Should have 6+ Years of Experience.",
+      ],
+    },
+    {
+      id: 5,
+      role: "Front End Developer",
+      team: "Engineering",
+      location: "UK",
+      type: "Full-time",
+      skills: ["Vue.js", "React", "JavaScript"],
+      desc: "Build high-quality user interfaces using Vue.js, React and JavaScript for enterprise clients.",
+      details: [
+        "Should have good knowledge in Vue and React JS, JavaScript.",
+        "Should have 6 Years of Experience.",
+      ],
     },
     {
       id: 6,
-      role: "Data Analyst",
-      team: "Data Science",
-      location: "Remote",
+      role: "Senior Software Engineer",
+      team: "Engineering",
+      location: "UK",
       type: "Full-time",
-      skills: ["SQL", "Power BI", "Python"],
-      desc: "Transform raw data into actionable insights and build dashboards for our global clients.",
+      skills: ["Java/J2EE", "Oracle SQL", "Microservices", "Pega"],
+      desc: "Develop enterprise software solutions using Java/J2EE, Oracle SQL, Microservices, and Pega frameworks.",
+      details: [
+        "Should have good knowledge in Java/J2EE, Oracle SQL, Microservices, JavaScript, and Pega.",
+        "Should have 7+ Years of Experience.",
+      ],
+    },
+    {
+      id: 7,
+      role: "Analyst Programmer",
+      team: "Engineering",
+      location: "UK",
+      type: "Full-time",
+      skills: ["Java", "Spring Boot", "Microservices", "AWS/Azure/GCP"],
+      desc: "Design and develop scalable applications using Java, Spring Boot, Microservices, and cloud platforms.",
+      details: [
+        "Should have good knowledge in Java, Oracle, JavaScript frameworks — preferably Angular, TypeScript, Node.js, NPM, server-side frameworks, Java Spring, Spring Cloud, Hibernate, Spring Boot, Microservices.",
+        "Should have experience with AWS, Azure, and/or GCP cloud platforms.",
+        "Should have 6 Years of Experience.",
+      ],
     },
   ];
 
-  const teams = ["All", "Engineering", "Data Science", "Design", "Sales"];
-  const locs = ["All", "Remote", "UK", "Germany", "India"];
+  const teams = ["All", "Engineering", "Data Science"];
+  const locs = ["All", "UK"];
 
   const filtered = positions.filter((p) => {
     const matchTeam = teamFilter === "All" || p.team === teamFilter;
@@ -624,7 +687,10 @@ function CareersPage() {
                         </span>
                       </div>
 
-                      <h3 className="text-[18px] font-bold text-[#111111] mb-2 group-hover:text-[#EB9B3D] transition-colors">
+                      <h3
+                        className="text-[18px] font-bold text-[#111111] mb-2 group-hover:text-[#EB9B3D] transition-colors cursor-pointer hover:text-[#EB9B3D] hover:underline underline-offset-2"
+                        onClick={() => setViewJob(job)}
+                      >
                         {job.role}
                       </h3>
                       <p className="text-[14px] text-[#555555] leading-relaxed mb-4 flex-1">
@@ -651,14 +717,24 @@ function CareersPage() {
                         ))}
                       </div>
 
-                      {/* Apply CTA */}
-                      <button
-                        onClick={() => setApplyJob(job)}
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#141A3D] text-white text-[15px] font-bold hover:bg-[#EB9B3D] transition-colors duration-200 group-hover:bg-[#EB9B3D] cursor-pointer"
-                      >
-                        Apply Now
-                        <ChevronRight className="w-4 h-4" />
-                      </button>
+                      {/* CTAs */}
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => setViewJob(job)}
+                          className="flex-1 flex items-center justify-center gap-1.5 px-4 py-3 rounded-full bg-[#141A3D] text-white text-[14px] font-bold hover:bg-[#EB9B3D] transition-colors duration-200 group-hover:bg-[#EB9B3D] cursor-pointer whitespace-nowrap"
+                        >
+                          <span className="flex items-center gap-1.5 leading-none">
+                            View Details
+                            <ChevronRight className="w-3.5 h-3.5 shrink-0" />
+                          </span>
+                        </button>
+                        <button
+                          onClick={() => setApplyJob(job)}
+                          className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-full border border-[#141A3D] text-[#141A3D] text-[14px] font-bold hover:bg-[#141A3D] hover:text-white transition-colors duration-200 cursor-pointer"
+                        >
+                          Apply Now
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -674,6 +750,76 @@ function CareersPage() {
         title="Frequently Asked Questions"
         subtitle="Common questions about careers at Infoplus."
       />
+
+      {/* ── VIEW DETAILS MODAL ────────────────────────── */}
+      {viewJob && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          onClick={closeViewModal}
+        >
+          <div
+            className="w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col"
+            style={{ maxHeight: "90vh" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="bg-[#141A3D] px-7 py-6 flex items-start justify-between shrink-0">
+              <div>
+                <p className="text-white/50 text-[11px] font-bold uppercase tracking-widest mb-1">
+                  Job Description
+                </p>
+                <h3 className="text-white text-[20px] font-bold leading-snug">
+                  {viewJob.role}
+                </h3>
+                <p className="text-white/50 text-[13px] mt-1">
+                  {viewJob.team} · {viewJob.location} · {viewJob.type}
+                </p>
+              </div>
+              <button
+                onClick={closeViewModal}
+                className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors shrink-0 mt-0.5 cursor-pointer"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Body */}
+            <div className="overflow-y-auto p-7">
+              {/* Skills */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {viewJob.skills.map((s) => (
+                  <span
+                    key={s}
+                    className="px-3 py-1 rounded-lg bg-[rgba(13,17,45,0.05)] text-[#4A4F63] text-[12px] font-medium border border-[rgba(13,17,45,0.08)]"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
+
+              {/* Requirements */}
+              <h4 className="text-[15px] font-bold text-[#111111] mb-4">Requirements</h4>
+              <ul className="space-y-3 mb-8">
+                {viewJob.details.map((point, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="mt-1.5 w-2 h-2 rounded-full bg-[#EB9B3D] shrink-0" />
+                    <p className="text-[14px] text-[#555555] leading-relaxed">{point}</p>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Apply CTA */}
+              <button
+                onClick={() => { closeViewModal(); setApplyJob(viewJob); }}
+                className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] text-white text-[15px] font-bold hover:brightness-110 transition-all cursor-pointer"
+              >
+                Apply for this Role
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── APPLY MODAL ───────────────────────────────── */}
       {applyJob && (
