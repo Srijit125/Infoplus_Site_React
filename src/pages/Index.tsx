@@ -1513,7 +1513,7 @@ export default function Index() {
       </section>
 
       {/* ══ 10. Awards & Recognition — light ══ */}
-      <section className="py-12 lg:py-24" style={{ background: "#f8f5ff" }}>
+      {false && <section className="py-12 lg:py-24" style={{ background: "#f8f5ff" }}>
         <div className="container mx-auto px-6 max-w-7xl">
           <ScrollReveal direction="up">
             <div className="text-center mb-8 lg:mb-14">
@@ -1616,7 +1616,7 @@ export default function Index() {
             </div>
           </ScrollReveal>
         </div>
-      </section>
+      </section>}
 
       {/* ══ 11. Client Testimonials — white ══ */}
       {false && <section className="py-12 lg:py-24" style={{ background: "#FFFFFF" }}>

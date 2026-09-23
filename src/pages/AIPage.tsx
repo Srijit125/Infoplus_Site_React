@@ -307,11 +307,11 @@ export default function AIPage() {
         </div>
 
         {/* Stats — counter animation */}
-        <div className="grid grid-cols-3 gap-8 mt-14 pt-10 border-t border-white/10 max-w-lg mx-auto">
+        {false && <div className="grid grid-cols-3 gap-8 mt-14 pt-10 border-t border-white/10 max-w-lg mx-auto">
           <CounterStat value="11+" label="AI Service Areas" />
           <CounterStat value="100+" label="AI Implementations" />
           <CounterStat value="120+" label="Enterprise Clients" />
-        </div>
+        </div>}
       </PageHero>
 
       {/* ── Our AI Services (overview cards) ──────────────────── */}
