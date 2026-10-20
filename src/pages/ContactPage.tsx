@@ -1,5 +1,5 @@
 ﻿import { PageMeta } from "../components/shared/PageMeta";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { PageHero } from "../components/shared/PageHero";
 import {
   MapPin,
@@ -15,6 +15,11 @@ import { ScrollReveal } from "../components/ui/ScrollReveal";
 import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 import ReactCountryFlag from "react-country-flag";
 import { getApiUrl } from "../config/api";
+import { useOtpGate } from "../hooks/useOtpGate";
+import { OtpPanel } from "../components/shared/OtpPanel";
+import { VERIFICATION_TOKEN_FIELD } from "../lib/otp";
+
+const FORM_TYPE = "Infoplus UK Contact";
 
 const OFFICES = [
   {
@@ -248,8 +253,49 @@ export function ContactPage() {
       [field]: validateField(field, form[field]),
     }));
 
+  /* Posts the enquiry once the emailed code has been verified. */
+  const sendEnquiry = useCallback(
+    async (verificationToken: string) => {
+      setStatus("sending");
+      setStatusMessage("");
+      try {
+        const formData = new FormData();
+        formData.append("name", form.name.trim());
+        formData.append("email", form.email.trim());
+        formData.append("phone", form.phone.trim());
+        formData.append("message", form.message.trim());
+        formData.append("type", FORM_TYPE);
+        formData.append(VERIFICATION_TOKEN_FIELD, verificationToken);
+        const res = await fetch(
+          getApiUrl("contact"),
+          { method: "POST", body: formData },
+        );
+        const json = await res.json();
+        if (json.success) {
+          setStatus("success");
+          setStatusMessage(json.message || "Thank you for reaching out. We'll get back to you within 24 hours.");
+          setForm({ name: "", email: "", phone: "", message: "" });
+          setErrors({ name: "", email: "", phone: "" });
+        } else {
+          setStatus("error");
+          setStatusMessage(json.message || "Something went wrong. Please try again or email us directly.");
+        }
+      } catch {
+        setStatus("error");
+        setStatusMessage("Something went wrong. Please try again or email us directly.");
+      }
+      setTimeout(() => { setStatus("idle"); setStatusMessage(""); }, 5000);
+    },
+    [form],
+  );
+
+  const otp = useOtpGate({ type: FORM_TYPE, onVerified: sendEnquiry });
+
+  /* Submit emails a code first; the enquiry itself goes out after it checks out. */
   const handleSubmit = async (e: { preventDefault(): void }) => {
     e.preventDefault();
+    if (otp.open) return;
+
     const errs: Record<Field, string> = {
       name: validateField("name", form.name),
       email: validateField("email", form.email),
@@ -260,32 +306,14 @@ export function ContactPage() {
 
     setStatus("sending");
     setStatusMessage("");
-    try {
-      const formData = new FormData();
-      formData.append("name", form.name.trim());
-      formData.append("email", form.email.trim());
-      formData.append("phone", form.phone.trim());
-      formData.append("message", form.message.trim());
-      formData.append("type", "Infoplus UK Contact");
-      const res = await fetch(
-        getApiUrl("contact"),
-        { method: "POST", body: formData },
-      );
-      const json = await res.json();
-      if (json.success) {
-        setStatus("success");
-        setStatusMessage(json.message || "Thank you for reaching out. We'll get back to you within 24 hours.");
-        setForm({ name: "", email: "", phone: "", message: "" });
-        setErrors({ name: "", email: "", phone: "" });
-      } else {
-        setStatus("error");
-        setStatusMessage(json.message || "Something went wrong. Please try again or email us directly.");
-      }
-    } catch {
+    const result = await otp.start(form.email);
+    if (!result.success) {
       setStatus("error");
-      setStatusMessage("Something went wrong. Please try again or email us directly.");
+      setStatusMessage(result.message);
+      setTimeout(() => { setStatus("idle"); setStatusMessage(""); }, 5000);
+      return;
     }
-    setTimeout(() => { setStatus("idle"); setStatusMessage(""); }, 5000);
+    setStatus("idle");
   };
 
   return (
@@ -331,6 +359,7 @@ export function ContactPage() {
                       value={form.name}
                       onChange={(e) => handleChange("name", e.target.value)}
                       onBlur={() => handleBlur("name")}
+                      disabled={otp.open}
                       className={fieldCls(errors.name)}
                     />
                     {errors.name && (
@@ -352,6 +381,7 @@ export function ContactPage() {
                       value={form.email}
                       onChange={(e) => handleChange("email", e.target.value)}
                       onBlur={() => handleBlur("email")}
+                      disabled={otp.open}
                       className={fieldCls(errors.email)}
                     />
                     {errors.email && (
@@ -373,6 +403,7 @@ export function ContactPage() {
                       value={form.phone}
                       onChange={(e) => handleChange("phone", e.target.value)}
                       onBlur={() => handleBlur("phone")}
+                      disabled={otp.open}
                       className={fieldCls(errors.phone)}
                     />
                     {errors.phone && (
@@ -390,6 +421,7 @@ export function ContactPage() {
                       maxLength={2000}
                       value={form.message}
                       onChange={(e) => handleChange("message", e.target.value)}
+                      disabled={otp.open}
                       className={`${fieldCls("")} resize-none`}
                     />
                   </div>
@@ -400,27 +432,35 @@ export function ContactPage() {
                     </p>
                   )}
 
-                  <button
-                    type="submit"
-                    disabled={status === "sending" || status === "success"}
-                    className="w-full py-4 rounded-xl text-white font-semibold text-[15px] flex items-center justify-center gap-2 disabled:opacity-70 hover:opacity-90 transition-all duration-300 cursor-pointer"
-                    style={{
-                      background:
-                        "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)",
-                    }}
-                  >
-                    {status === "sending" ? (
-                      <>
-                        <span className="w-5 h-5 rounded-full border-2 border-white border-t-transparent animate-spin" />
-                        Sending…
-                      </>
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4" />
-                        Send Message
-                      </>
-                    )}
-                  </button>
+                  {otp.open ? (
+                    <OtpPanel
+                      gate={otp}
+                      tone="light"
+                      submitLabel="Verify & Send Message"
+                    />
+                  ) : (
+                    <button
+                      type="submit"
+                      disabled={status === "sending" || status === "success"}
+                      className="w-full py-4 rounded-xl text-white font-semibold text-[15px] flex items-center justify-center gap-2 disabled:opacity-70 hover:opacity-90 transition-all duration-300 cursor-pointer"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)",
+                      }}
+                    >
+                      {status === "sending" ? (
+                        <>
+                          <span className="w-5 h-5 rounded-full border-2 border-white border-t-transparent animate-spin" />
+                          Sending…
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4" />
+                          Send Message
+                        </>
+                      )}
+                    </button>
+                  )}
 
                   {/* Success message below button */}
                   {status === "success" && statusMessage && (

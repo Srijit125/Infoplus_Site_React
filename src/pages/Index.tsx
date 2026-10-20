@@ -1,7 +1,7 @@
 ﻿import "@fontsource/lato/400.css";
 import "@fontsource/lato/700.css";
 import "@fontsource/lato/900.css";
-import { useState, useEffect, useRef, type FormEvent } from "react";
+import { useState, useEffect, useRef, useCallback, type FormEvent } from "react";
 import { Link } from "react-router";
 import {
   ChevronRight,
@@ -28,6 +28,9 @@ import {
 } from "../assets/constants/types";
 import { PageMeta } from "../components/shared/PageMeta";
 import { getApiUrl } from "../config/api";
+import { useOtpGate } from "../hooks/useOtpGate";
+import { OtpPanel } from "../components/shared/OtpPanel";
+import { VERIFICATION_TOKEN_FIELD } from "../lib/otp";
 import { ScrollReveal } from "../components/ui/ScrollReveal";
 import ClientCarousel from "../components/ui/ClientCarousel";
 import { ImageWithFallback } from "../components/helpers/ImageWithFallback";
@@ -394,6 +397,8 @@ function t2ValidateField(field: T2Field, value: string): string {
   return "";
 }
 
+const T2_FORM_TYPE = "Infoplus UK Contact";
+
 function T2ContactForm() {
   const [form, setForm] = useState({
     name: "",
@@ -409,6 +414,7 @@ function T2ContactForm() {
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
   >("idle");
+  const [otpError, setOtpError] = useState("");
 
   const handleChange = (field: T2Field | "message", value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -425,41 +431,64 @@ function T2ContactForm() {
       [field]: t2ValidateField(field, form[field]),
     }));
 
+  /* Posts the enquiry once the emailed code has been verified. */
+  const sendEnquiry = useCallback(
+    async (verificationToken: string) => {
+      setStatus("sending");
+      try {
+        const formData = new FormData();
+        formData.append("name", form.name.trim());
+        formData.append("email", form.email.trim());
+        formData.append("phone", form.phone.trim());
+        formData.append("message", form.message.trim());
+        formData.append("type", T2_FORM_TYPE);
+        formData.append(VERIFICATION_TOKEN_FIELD, verificationToken);
+        const res = await fetch(
+          getApiUrl("homeContact"),
+          {
+            method: "POST",
+            body: formData,
+          },
+        );
+        const json = await res.json();
+        if (json.success) {
+          setStatus("success");
+          setForm({ name: "", email: "", phone: "", message: "" });
+          setErrors({ name: "", email: "", phone: "" });
+        } else {
+          setStatus("error");
+        }
+      } catch {
+        setStatus("error");
+      }
+    },
+    [form],
+  );
+
+  const otp = useOtpGate({ type: T2_FORM_TYPE, onVerified: sendEnquiry });
+
+  /* Submit emails a code first; the enquiry itself goes out after it checks out. */
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (otp.open) return;
+
     const errs: Record<T2Field, string> = {
       name: t2ValidateField("name", form.name),
       email: t2ValidateField("email", form.email),
       phone: t2ValidateField("phone", form.phone),
     };
     setErrors(errs);
+    if (Object.values(errs).some((v) => v)) return;
 
     setStatus("sending");
-    try {
-      const formData = new FormData();
-      formData.append("name", form.name.trim());
-      formData.append("email", form.email.trim());
-      formData.append("phone", form.phone.trim());
-      formData.append("message", form.message.trim());
-      formData.append("type", "Infoplus UK Contact");
-      const res = await fetch(
-        getApiUrl("homeContact"),
-        {
-          method: "POST",
-          body: formData,
-        },
-      );
-      const json = await res.json();
-      if (json.success) {
-        setStatus("success");
-        setForm({ name: "", email: "", phone: "", message: "" });
-        setErrors({ name: "", email: "", phone: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch {
+    const result = await otp.start(form.email);
+    if (!result.success) {
       setStatus("error");
+      setOtpError(result.message);
+      return;
     }
+    setStatus("idle");
+    setOtpError("");
   };
 
   if (status === "success")
@@ -533,6 +562,7 @@ function T2ContactForm() {
               value={form[key]}
               onChange={(e) => handleChange(key, e.target.value)}
               onBlur={() => handleBlur(key)}
+              disabled={otp.open}
               style={{
                 width: "100%",
                 padding: "12px 16px",
@@ -570,6 +600,7 @@ function T2ContactForm() {
             maxLength={2000}
             value={form.message}
             onChange={(e) => handleChange("message", e.target.value)}
+            disabled={otp.open}
             style={{
               width: "100%",
               padding: "12px 16px",
@@ -584,37 +615,49 @@ function T2ContactForm() {
             }}
           />
         </div>
-        <button
-          type="submit"
-          disabled={status === "sending"}
-          style={{
-            width: "100%",
-            background: ACC,
-            color: TP,
-            borderRadius: 999,
-            padding: "14px 24px",
-            fontWeight: 700,
-            fontSize: 15,
-            border: "none",
-            cursor: status === "sending" ? "not-allowed" : "pointer",
-            opacity: status === "sending" ? 0.7 : 1,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 8,
-            transition: "opacity 0.2s",
-          }}
-          className="hover:opacity-85 disabled:hover:opacity-70"
-        >
-          {status === "sending" ? (
-            <>
-              <span className="animate-spin" style={{ width: 18, height: 18, borderRadius: "50%", border: "2px solid white", borderTopColor: "transparent", display: "inline-block" }} />
-              Sending…
-            </>
-          ) : (
-            <>Send Message <ChevronRight style={{ width: 18, height: 18 }} /></>
-          )}
-        </button>
+        {otpError && !otp.open && (
+          <p style={{ color: "#F87171", fontSize: 12, margin: 0 }}>{otpError}</p>
+        )}
+        {otp.open ? (
+          <OtpPanel
+            gate={otp}
+            tone="dark"
+            accent={ACC}
+            submitLabel="Verify & Send Message"
+          />
+        ) : (
+          <button
+            type="submit"
+            disabled={status === "sending"}
+            style={{
+              width: "100%",
+              background: ACC,
+              color: TP,
+              borderRadius: 999,
+              padding: "14px 24px",
+              fontWeight: 700,
+              fontSize: 15,
+              border: "none",
+              cursor: status === "sending" ? "not-allowed" : "pointer",
+              opacity: status === "sending" ? 0.7 : 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 8,
+              transition: "opacity 0.2s",
+            }}
+            className="hover:opacity-85 disabled:hover:opacity-70"
+          >
+            {status === "sending" ? (
+              <>
+                <span className="animate-spin" style={{ width: 18, height: 18, borderRadius: "50%", border: "2px solid white", borderTopColor: "transparent", display: "inline-block" }} />
+                Sending…
+              </>
+            ) : (
+              <>Send Message <ChevronRight style={{ width: 18, height: 18 }} /></>
+            )}
+          </button>
+        )}
         <p
           style={{
             color: TS,

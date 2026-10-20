@@ -1,8 +1,11 @@
-﻿import { useState } from "react";
+﻿import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Phone, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./helpers/ImageWithFallback";
 import { getApiUrl } from "../config/api";
+import { useOtpGate } from "../hooks/useOtpGate";
+import { OtpPanel } from "./shared/OtpPanel";
+import { VERIFICATION_TOKEN_FIELD } from "../lib/otp";
 import imgInfoplusLogo from "../assets/images/imgInfoplusLogo.png";
 import imgCert1 from "../assets/images/certified-1.png";
 import imgCert2 from "../assets/images/certified-2.png";
@@ -50,37 +53,66 @@ function SocialSvg({ name }: { name: string }) {
   return null;
 }
 
+const NEWSLETTER_FORM_TYPE = "Infoplus UK Newsletter";
+
 export function Footer({ bgColor }: { bgColor?: string }) {
   const [nlEmail, setNlEmail] = useState("");
   const [nlStatus, setNlStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [nlMessage, setNlMessage] = useState("");
 
+  /* Subscribes once the emailed code has been verified. */
+  const subscribe = useCallback(
+    async (verificationToken: string) => {
+      setNlStatus("sending");
+      setNlMessage("");
+      try {
+        const fd = new FormData();
+        fd.append("email", nlEmail.trim());
+        fd.append("type", NEWSLETTER_FORM_TYPE);
+        fd.append(VERIFICATION_TOKEN_FIELD, verificationToken);
+        const res = await fetch(
+          getApiUrl("newsletter"),
+          { method: "POST", body: fd },
+        );
+        const json = await res.json();
+        if (json.success) {
+          setNlStatus("success");
+          setNlMessage(json.message || "Subscribed successfully.");
+          setNlEmail("");
+        } else {
+          setNlStatus("error");
+          setNlMessage(json.message || "Something went wrong. Please try again.");
+        }
+      } catch {
+        setNlStatus("error");
+        setNlMessage("Something went wrong. Please try again.");
+      }
+      setTimeout(() => { setNlStatus("idle"); setNlMessage(""); }, 5000);
+    },
+    [nlEmail],
+  );
+
+  const nlOtp = useOtpGate({
+    type: NEWSLETTER_FORM_TYPE,
+    onVerified: subscribe,
+  });
+
+  /* Subscribing emails a code first; the signup goes through after it checks out. */
   const handleNewsletter = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (nlOtp.open) return;
     if (!nlEmail.trim()) return;
+
     setNlStatus("sending");
     setNlMessage("");
-    try {
-      const fd = new FormData();
-      fd.append("email", nlEmail.trim());
-      const res = await fetch(
-        getApiUrl("newsletter"),
-        { method: "POST", body: fd },
-      );
-      const json = await res.json();
-      if (json.success) {
-        setNlStatus("success");
-        setNlMessage(json.message || "Subscribed successfully.");
-        setNlEmail("");
-      } else {
-        setNlStatus("error");
-        setNlMessage(json.message || "Something went wrong. Please try again.");
-      }
-    } catch {
+    const result = await nlOtp.start(nlEmail);
+    if (!result.success) {
       setNlStatus("error");
-      setNlMessage("Something went wrong. Please try again.");
+      setNlMessage(result.message);
+      setTimeout(() => { setNlStatus("idle"); setNlMessage(""); }, 5000);
+      return;
     }
-    setTimeout(() => { setNlStatus("idle"); setNlMessage(""); }, 5000);
+    setNlStatus("idle");
   };
 
   return (
@@ -255,33 +287,42 @@ export function Footer({ bgColor }: { bgColor?: string }) {
             <p className="text-[12px] text-white/70 mb-4 font-normal">
               Subscribe to get latest news &amp; updates
             </p>
-            <form className="relative" onSubmit={handleNewsletter}>
-              <input
-                type="email"
-                placeholder="Your email address"
-                value={nlEmail}
-                onChange={(e) => setNlEmail(e.target.value)}
-                disabled={nlStatus === "sending" || nlStatus === "success"}
-                className="w-full bg-white rounded-lg py-3 pl-4 pr-12 text-[13px] xl:text-[14px] text-[#111] focus:outline-none placeholder:text-[#555] transition-colors disabled:opacity-60"
-                required
+            {nlOtp.open ? (
+              <OtpPanel
+                gate={nlOtp}
+                tone="dark"
+                compact
+                submitLabel="Verify & Subscribe"
               />
-              <button
-                type="submit"
-                disabled={nlStatus === "sending" || nlStatus === "success"}
-                className="absolute right-1 top-1 bottom-1 w-10 rounded-md flex items-center justify-center text-white transition-all duration-200 hover:opacity-90 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)",
-                }}
-                aria-label="Subscribe Now"
-              >
-                {nlStatus === "sending" ? (
-                  <span className="w-4 h-4 rounded-full border-2 border-white border-t-transparent animate-spin" />
-                ) : (
-                  <ArrowRight className="w-4 h-4" />
-                )}
-              </button>
-            </form>
+            ) : (
+              <form className="relative" onSubmit={handleNewsletter}>
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  value={nlEmail}
+                  onChange={(e) => setNlEmail(e.target.value)}
+                  disabled={nlStatus === "sending" || nlStatus === "success"}
+                  className="w-full bg-white rounded-lg py-3 pl-4 pr-12 text-[13px] xl:text-[14px] text-[#111] focus:outline-none placeholder:text-[#555] transition-colors disabled:opacity-60"
+                  required
+                />
+                <button
+                  type="submit"
+                  disabled={nlStatus === "sending" || nlStatus === "success"}
+                  className="absolute right-1 top-1 bottom-1 w-10 rounded-md flex items-center justify-center text-white transition-all duration-200 hover:opacity-90 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #EB9B3D 0%, #DA4D33 100%)",
+                  }}
+                  aria-label="Subscribe Now"
+                >
+                  {nlStatus === "sending" ? (
+                    <span className="w-4 h-4 rounded-full border-2 border-white border-t-transparent animate-spin" />
+                  ) : (
+                    <ArrowRight className="w-4 h-4" />
+                  )}
+                </button>
+              </form>
+            )}
             {nlStatus === "success" && nlMessage && (
               <p className="text-[12px] text-[#1bb64a] mt-2 font-medium">
                 {nlMessage}

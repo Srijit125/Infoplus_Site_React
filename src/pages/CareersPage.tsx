@@ -1,5 +1,5 @@
 ﻿import { PageMeta } from "../components/shared/PageMeta";
-import { useState, useEffect, type ChangeEvent, useRef } from "react";
+import { useState, useEffect, useCallback, type ChangeEvent, useRef } from "react";
 import { PageHero } from "../components/shared/PageHero";
 import imgCareerHero from "../assets/images/career_hero.jpg";
 import {
@@ -18,6 +18,9 @@ import { ScrollReveal } from "../components/ui/ScrollReveal";
 import { FAQAccordion, type FAQItem } from "../components/shared/FAQAccordion";
 import { fileToBase64Raw } from "../assets/helpers";
 import { getApiUrl } from "../config/api";
+import { useOtpGate } from "../hooks/useOtpGate";
+import { OtpPanel } from "../components/shared/OtpPanel";
+import { VERIFICATION_TOKEN_FIELD } from "../lib/otp";
 
 /* ── Types ─────────────────────────────────────────── */
 type Job = {
@@ -41,6 +44,8 @@ type FormState = {
   coverLetter: string;
   file: File | null;
 };
+
+const CAREER_FORM_TYPE = "Infoplus Career Application";
 
 const EMPTY_FORM: FormState = {
   fullName: "",
@@ -154,8 +159,72 @@ function CareersPage() {
     setForm((prev) => ({ ...prev, file }));
   };
 
+  /* Sends the application once the emailed code has been verified. */
+  const sendApplication = useCallback(
+    async (verificationToken: string) => {
+      setStatus("sending");
+      setStatusMessage("");
+      try {
+        const formData = new FormData();
+        formData.append("full_name", form.fullName.trim());
+        formData.append("email", form.email.trim());
+        formData.append("phone", form.phone.trim());
+        formData.append("cover_letter", form.coverLetter.trim());
+        formData.append("location", form.currentLocation.trim());
+        formData.append("experience", form.experience.trim());
+        formData.append("notice_period", form.noticePeriod.trim());
+        formData.append("linkedin", form.linkedin.trim());
+        if (form.file) {
+          const base64 = await fileToBase64Raw(form.file);
+          formData.append("filename", form.file.name);
+          formData.append("base64", base64);
+        }
+        formData.append("job_title", applyJob?.role ?? "");
+        formData.append("type", CAREER_FORM_TYPE);
+        formData.append(VERIFICATION_TOKEN_FIELD, verificationToken);
+        const res = await fetch(
+          getApiUrl("career"),
+          { method: "POST", body: formData },
+        );
+        if (!res.ok) throw new Error(`Request failed: ${res.status}`);
+        const json = await res.json();
+        if (json.success) {
+          setStatus("success");
+          setStatusMessage(json.message || "Application submitted successfully.");
+          setForm(EMPTY_FORM);
+          setSubmitted(true);
+          setErrors({ fullName: "", email: "", phone: "" });
+          if (fileInputRef.current) fileInputRef.current.value = "";
+        } else {
+          setStatus("error");
+          setStatusMessage(json.message || "Something went wrong sending your application. Please try again.");
+        }
+      } catch (err: unknown) {
+        console.error(err instanceof Error ? err.message : err);
+        setStatus("error");
+        setStatusMessage("Something went wrong sending your application. Please try again.");
+      }
+      setTimeout(() => { setStatus("idle"); setStatusMessage(""); }, 5000);
+    },
+    [applyJob, form],
+  );
+
+  const otp = useOtpGate({
+    type: CAREER_FORM_TYPE,
+    onVerified: sendApplication,
+  });
+
+  /* Closing the modal or switching jobs drops any half-finished verification. */
+  const cancelOtp = otp.cancel;
+  useEffect(() => {
+    cancelOtp();
+  }, [applyJob, cancelOtp]);
+
+  /* Submit emails a code first; the application goes out after it checks out. */
   const handleSubmit = async (e: { preventDefault(): void }) => {
     e.preventDefault();
+    if (otp.open) return;
+
     const errs: Record<ITField, string> = {
       fullName: validateField("fullName", form.fullName),
       email: validateField("email", form.email),
@@ -169,46 +238,14 @@ function CareersPage() {
 
     setStatus("sending");
     setStatusMessage("");
-    try {
-      const formData = new FormData();
-      formData.append("full_name", form.fullName.trim());
-      formData.append("email", form.email.trim());
-      formData.append("phone", form.phone.trim());
-      formData.append("cover_letter", form.coverLetter.trim());
-      formData.append("location", form.currentLocation.trim());
-      formData.append("experience", form.experience.trim());
-      formData.append("notice_period", form.noticePeriod.trim());
-      formData.append("linkedin", form.linkedin.trim());
-      if (form.file) {
-        const base64 = await fileToBase64Raw(form.file);
-        formData.append("filename", form.file.name);
-        formData.append("base64", base64);
-      }
-      formData.append("job_title", applyJob?.role ?? "");
-      formData.append("type", "Infoplus Career Application");
-      const res = await fetch(
-        getApiUrl("career"),
-        { method: "POST", body: formData },
-      );
-      if (!res.ok) throw new Error(`Request failed: ${res.status}`);
-      const json = await res.json();
-      if (json.success) {
-        setStatus("success");
-        setStatusMessage(json.message || "Application submitted successfully.");
-        setForm(EMPTY_FORM);
-        setSubmitted(true);
-        setErrors({ fullName: "", email: "", phone: "" });
-        if (fileInputRef.current) fileInputRef.current.value = "";
-      } else {
-        setStatus("error");
-        setStatusMessage(json.message || "Something went wrong sending your application. Please try again.");
-      }
-    } catch (err: unknown) {
-      console.error(err instanceof Error ? err.message : err);
+    const result = await otp.start(form.email);
+    if (!result.success) {
       setStatus("error");
-      setStatusMessage("Something went wrong sending your application. Please try again.");
+      setStatusMessage(result.message);
+      setTimeout(() => { setStatus("idle"); setStatusMessage(""); }, 5000);
+      return;
     }
-    setTimeout(() => { setStatus("idle"); setStatusMessage(""); }, 5000);
+    setStatus("idle");
   };
 
   /* ── Static data ───────────────────────────────── */
@@ -752,6 +789,7 @@ function CareersPage() {
                           setForm({ ...form, fullName: e.target.value })
                         }
                         placeholder="John Doe"
+                        disabled={otp.open}
                         className={inputCls}
                       />
                       {errors.fullName && (
@@ -774,6 +812,7 @@ function CareersPage() {
                           setForm({ ...form, email: e.target.value })
                         }
                         placeholder="john@example.com"
+                        disabled={otp.open}
                         className={inputCls}
                       />
                       {errors.email && (
@@ -796,6 +835,7 @@ function CareersPage() {
                           setForm({ ...form, phone: e.target.value })
                         }
                         placeholder="+44 7700 000000"
+                        disabled={otp.open}
                         className={inputCls}
                       />
                       {errors.phone && (
@@ -817,6 +857,7 @@ function CareersPage() {
                           setForm({ ...form, currentLocation: e.target.value })
                         }
                         placeholder="London, UK"
+                        disabled={otp.open}
                         className={inputCls}
                       />
                     </div>
@@ -832,6 +873,7 @@ function CareersPage() {
                         onChange={(e) =>
                           setForm({ ...form, experience: e.target.value })
                         }
+                        disabled={otp.open}
                         className={inputCls + " bg-white"}
                       >
                         <option value="">Select years</option>
@@ -854,6 +896,7 @@ function CareersPage() {
                         onChange={(e) =>
                           setForm({ ...form, noticePeriod: e.target.value })
                         }
+                        disabled={otp.open}
                         className={inputCls + " bg-white"}
                       >
                         <option value="">Select period</option>
@@ -884,6 +927,7 @@ function CareersPage() {
                       </span>
                       <input
                         type="file"
+                        disabled={otp.open}
                         accept=".pdf,.doc,.docx"
                         onChange={handleFileChange}
                         className="sr-only"
@@ -908,6 +952,7 @@ function CareersPage() {
                         setForm({ ...form, linkedin: e.target.value })
                       }
                       placeholder="https://linkedin.com/in/yourname"
+                      disabled={otp.open}
                       className={inputCls}
                     />
                   </div>
@@ -924,6 +969,7 @@ function CareersPage() {
                         setForm({ ...form, coverLetter: e.target.value })
                       }
                       placeholder="Tell us why you're the perfect fit for this role..."
+                      disabled={otp.open}
                       className={inputCls + " resize-none"}
                     />
                   </div>
@@ -932,18 +978,27 @@ function CareersPage() {
                       {statusMessage}
                     </p>
                   )}
-                  <button
-                    type="submit"
-                    disabled={status === "sending" || status === "success"}
-                    className="w-full py-4 bg-[#EB9B3D] text-white rounded-xl font-semibold text-[15px] hover:bg-[#0D112D] transition-colors cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-[#EB9B3D] flex items-center justify-center gap-2"
-                  >
-                    {status === "sending" ? (
-                      <>
-                        <span className="w-5 h-5 rounded-full border-2 border-white border-t-transparent animate-spin" />
-                        Submitting…
-                      </>
-                    ) : "Submit Application"}
-                  </button>
+                  {otp.open ? (
+                    <OtpPanel
+                      gate={otp}
+                      tone="light"
+                      accent="#EB9B3D"
+                      submitLabel="Verify & Submit Application"
+                    />
+                  ) : (
+                    <button
+                      type="submit"
+                      disabled={status === "sending" || status === "success"}
+                      className="w-full py-4 bg-[#EB9B3D] text-white rounded-xl font-semibold text-[15px] hover:bg-[#0D112D] transition-colors cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-[#EB9B3D] flex items-center justify-center gap-2"
+                    >
+                      {status === "sending" ? (
+                        <>
+                          <span className="w-5 h-5 rounded-full border-2 border-white border-t-transparent animate-spin" />
+                          Submitting…
+                        </>
+                      ) : "Submit Application"}
+                    </button>
+                  )}
                   <div className="flex items-start gap-2 text-[12px] text-[#888] mt-2">
                     <Shield className="w-4 h-4 text-[#EB9B3D]/50 shrink-0 mt-0.5" />
                     <span>

@@ -88,8 +88,14 @@ dist/
   assets/
 ```
 
-`config.js` holds a shared `API_BASE_URL` plus one path per form. Putting a full
-`https://…` URL in a form's entry points just that form elsewhere.
+`config.js` holds a shared `API_BASE_URL` plus one path per endpoint. Putting a
+full `https://…` URL in an entry points just that one elsewhere.
+
+It also holds the two email-verification endpoints, `sendOtp` and `verifyOtp`.
+Every form now emails a 6-digit code before it submits: the form calls
+`/otp/send`, the visitor types the code, `/otp/verify` returns a
+`verificationToken`, and the form endpoint is then called with that token added
+to its FormData as `verificationToken`.
 
 The source of the file is `public/config.js`, which Vite copies into `dist/` on
 every build — change the committed defaults there. The values in

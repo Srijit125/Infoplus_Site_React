@@ -6,9 +6,9 @@
  *  page refresh — NO REBUILD REQUIRED.
  *
  *  HOW IT WORKS
- *    Each form URL = API_BASE_URL + its path below.
- *    To point a single form somewhere else, put a full URL (starting with
- *    "http://" or "https://") in its entry and API_BASE_URL is ignored for it.
+ *    Each URL = API_BASE_URL + its path below.
+ *    To point a single entry somewhere else, put a full URL (starting with
+ *    "http://" or "https://") in it and API_BASE_URL is ignored for that one.
  *
  *  RULES
  *    - Keep the quotes and the commas exactly as they are.
@@ -17,10 +17,15 @@
  * ========================================================================== */
 
 window.__APP_CONFIG__ = {
-  /* Base URL shared by all four forms — usually the only line you need to change. */
+  /* Base URL shared by every endpoint — usually the only line you need to change. */
   API_BASE_URL: "https://test.infoplus.co.in/WebMail/api/Email",
 
   API_ENDPOINTS: {
+    /* ---- The four forms -------------------------------------------------
+     * Each is called only after the visitor's email has been verified, and
+     * receives the `verificationToken` from /otp/verify as a form field.
+     */
+
     /* 1. Home page  — "Get in touch" contact form   (src/pages/Index.tsx)        */
     homeContact: "/contact",
 
@@ -32,5 +37,13 @@ window.__APP_CONFIG__ = {
 
     /* 4. Footer — newsletter subscription form      (src/components/FooterComponent.tsx) */
     newsletter: "/newsletter",
+
+    /* ---- Email verification --------------------------------------------
+     * Every one of the four forms above calls these two first:
+     *   sendOtp   — POST { email, type }      -> { success, message }
+     *   verifyOtp — POST { email, otp }       -> { success, message, verificationToken }
+     */
+    sendOtp: "/otp/send",
+    verifyOtp: "/otp/verify",
   },
 };

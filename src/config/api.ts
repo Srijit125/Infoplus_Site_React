@@ -14,7 +14,9 @@ export type FormEndpoint =
   | "homeContact"
   | "contact"
   | "career"
-  | "newsletter";
+  | "newsletter"
+  | "sendOtp"
+  | "verifyOtp";
 
 type RuntimeConfig = {
   API_BASE_URL?: string;
@@ -34,6 +36,8 @@ const FALLBACK_ENDPOINTS: Record<FormEndpoint, string> = {
   contact: "/contact",
   career: "/career",
   newsletter: "/newsletter",
+  sendOtp: "/otp/send",
+  verifyOtp: "/otp/verify",
 };
 
 const trimTrailingSlash = (value: string) => value.replace(/\/+$/, "");
