@@ -488,6 +488,7 @@ function T2ContactForm() {
     if (!result.success) {
       setStatus("error");
       setOtpError(result.message);
+      setStatusMessage(result.message)
       return;
     }
     setStatus("idle");
@@ -675,8 +676,8 @@ function T2ContactForm() {
             )}
           </button>
         )}
-
-        {status === "success" && statusMessage && (
+      
+        { statusMessage && (
           <div className="flex items-start gap-3 bg-[#dcfce7] border border-[#bbf7d0] rounded-xl px-4 py-4">
             <CheckCircle2 className="w-5 h-5 text-[#15803d] shrink-0 mt-0.5" />
             <div>
