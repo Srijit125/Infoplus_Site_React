@@ -1,7 +1,13 @@
 ﻿import "@fontsource/lato/400.css";
 import "@fontsource/lato/700.css";
 import "@fontsource/lato/900.css";
-import { useState, useEffect, useRef, useCallback, type FormEvent } from "react";
+import {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  type FormEvent,
+} from "react";
 import { Link } from "react-router";
 import {
   ChevronRight,
@@ -51,7 +57,7 @@ import {
   T2_WH2 as WH2,
   t2Card as card,
   t2LCard as lcard,
-} from "../styles/theme2";
+} from "../styles/brandTokens";
 
 /* ─────────────────────────────────────────────────────────────────
    Data
@@ -113,8 +119,7 @@ const LOCATIONS = [
   },
 ];
 
-/* Hero carousel: slides 8, 9, 10 (the 3 Variant B slides from SLIDES_ALL) */
-const SLIDES_T2 = SLIDES_ALL.slice(6);
+const SLIDES_T2 = SLIDES_ALL;
 
 const AWARDS_T2 = [
   {
@@ -415,6 +420,7 @@ function T2ContactForm() {
     "idle" | "sending" | "success" | "error"
   >("idle");
   const [otpError, setOtpError] = useState("");
+  const [statusMessage, setStatusMessage] = useState("");
 
   const handleChange = (field: T2Field | "message", value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -443,13 +449,10 @@ function T2ContactForm() {
         formData.append("message", form.message.trim());
         formData.append("type", T2_FORM_TYPE);
         formData.append(VERIFICATION_TOKEN_FIELD, verificationToken);
-        const res = await fetch(
-          getApiUrl("homeContact"),
-          {
-            method: "POST",
-            body: formData,
-          },
-        );
+        const res = await fetch(getApiUrl("homeContact"), {
+          method: "POST",
+          body: formData,
+        });
         const json = await res.json();
         if (json.success) {
           setStatus("success");
@@ -616,7 +619,9 @@ function T2ContactForm() {
           />
         </div>
         {otpError && !otp.open && (
-          <p style={{ color: "#F87171", fontSize: 12, margin: 0 }}>{otpError}</p>
+          <p style={{ color: "#F87171", fontSize: 12, margin: 0 }}>
+            {otpError}
+          </p>
         )}
         {otp.open ? (
           <OtpPanel
@@ -650,14 +655,44 @@ function T2ContactForm() {
           >
             {status === "sending" ? (
               <>
-                <span className="animate-spin" style={{ width: 18, height: 18, borderRadius: "50%", border: "2px solid white", borderTopColor: "transparent", display: "inline-block" }} />
+                <span
+                  className="animate-spin"
+                  style={{
+                    width: 18,
+                    height: 18,
+                    borderRadius: "50%",
+                    border: "2px solid white",
+                    borderTopColor: "transparent",
+                    display: "inline-block",
+                  }}
+                />
                 Sending…
               </>
             ) : (
-              <>Send Message <ChevronRight style={{ width: 18, height: 18 }} /></>
+              <>
+                Send Message <ChevronRight style={{ width: 18, height: 18 }} />
+              </>
             )}
           </button>
         )}
+
+        {status === "success" && statusMessage && (
+          <div className="flex items-start gap-3 bg-[#dcfce7] border border-[#bbf7d0] rounded-xl px-4 py-4">
+            <CheckCircle2 className="w-5 h-5 text-[#15803d] shrink-0 mt-0.5" />
+            <div>
+              <p className="text-[14px] font-bold text-[#14532d] mb-0.5">
+                Message Sent!
+              </p>
+              <p className="text-[13px] text-[#166534]">{statusMessage}</p>
+            </div>
+          </div>
+        )}
+        {status === "error" && statusMessage && (
+          <div className="flex items-start gap-3 bg-[#fee2e2] border border-[#fecaca] rounded-xl px-4 py-4">
+            <p className="text-[13px] text-[#991b1b]">{statusMessage}</p>
+          </div>
+        )}
+
         <p
           style={{
             color: TS,
@@ -1244,7 +1279,10 @@ export default function Index() {
       </section>
 
       {/* ══ 6. AI Services — dark (SRF) ══ */}
-      <section className="py-14 lg:py-28 ai-section-bg" style={{ background: SRF }}>
+      <section
+        className="py-14 lg:py-28 ai-section-bg"
+        style={{ background: SRF }}
+      >
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <ScrollReveal direction="up">
             <div className="text-center mb-8 lg:mb-14">
@@ -1563,368 +1601,376 @@ export default function Index() {
         <ClientCarousel />
       </section>
 
-      {/* ══ 10. Awards & Recognition — dark (SRF) ══ */}
-      <section className="py-12 lg:py-24" style={{ background: SRF }}>
-        <div className="container mx-auto px-6 max-w-7xl">
-          <ScrollReveal direction="up">
-            <div className="text-center mb-8 lg:mb-14">
-              <Eyebrow label="Awards & Recognition" />
-              <h2
-                style={{
-                  color: TP,
-                  fontWeight: 700,
-                  fontSize: "clamp(1.75rem,3.5vw,2.5rem)",
-                  lineHeight: 1.2,
-                  marginBottom: 12,
-                }}
-              >
-                Recognised for Excellence &amp; Trust
-              </h2>
-              <p
-                style={{
-                  color: TS,
-                  fontSize: 15,
-                  maxWidth: 520,
-                  margin: "0 auto",
-                  lineHeight: 1.7,
-                }}
-              >
-                Accreditations and recognitions that reflect our commitment to
-                quality, security, and world-class IT delivery.
-              </p>
-            </div>
-          </ScrollReveal>
+      {/* ══ 10. Awards & Recognition — light ══ */}
+      {false && (
+        <section className="py-12 lg:py-24" style={{ background: "#f8f5ff" }}>
+          <div className="container mx-auto px-6 max-w-7xl">
+            <ScrollReveal direction="up">
+              <div className="text-center mb-8 lg:mb-14">
+                <Eyebrow label="Awards & Recognition" />
+                <h2
+                  style={{
+                    color: WH1,
+                    fontWeight: 700,
+                    fontSize: "clamp(1.75rem,3.5vw,2.5rem)",
+                    lineHeight: 1.2,
+                    marginBottom: 12,
+                  }}
+                >
+                  Recognised for Excellence &amp; Trust
+                </h2>
+                <p
+                  style={{
+                    color: WH2,
+                    fontSize: 15,
+                    maxWidth: 520,
+                    margin: "0 auto",
+                    lineHeight: 1.7,
+                  }}
+                >
+                  Accreditations and recognitions that reflect our commitment to
+                  quality, security, and world-class IT delivery.
+                </p>
+              </div>
+            </ScrollReveal>
 
-          <ScrollReveal direction="up" delay={80}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {AWARDS_T2.map((a, i) => {
-                const Icon = a.icon;
-                return (
-                  <div
-                    key={i}
-                    style={{
-                      ...card,
-                      padding: "24px",
-                      height: "100%",
-                      transition: "all 0.3s",
-                      display: "flex",
-                      alignItems: "flex-start",
-                      gap: 16,
-                    }}
-                    className="group hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(235,155,61,0.14)] hover:border-[rgba(235,155,61,0.30)]"
-                  >
+            <ScrollReveal direction="up" delay={80}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {AWARDS_T2.map((a, i) => {
+                  const Icon = a.icon;
+                  return (
                     <div
+                      key={i}
                       style={{
-                        flexShrink: 0,
-                        background:
-                          "linear-gradient(135deg,#EB9B3D22,#DA4D3322)",
-                        borderRadius: "50%",
-                        width: 52,
-                        height: 52,
+                        ...lcard,
+                        padding: "24px",
+                        height: "100%",
+                        transition: "all 0.3s",
                         display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        transition: "transform 0.3s",
+                        alignItems: "flex-start",
+                        gap: 16,
                       }}
-                      className="group-hover:scale-110"
+                      className="group hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(13,17,45,0.10)] hover:border-[rgba(235,155,61,0.30)]"
                     >
-                      <Icon
-                        style={{ width: 24, height: 24, color: "#EB9B3D" }}
-                      />
-                    </div>
-                    <div>
-                      <p
+                      <div
                         style={{
-                          fontWeight: 700,
-                          color: TP,
-                          fontSize: 15,
-                          marginBottom: 2,
+                          flexShrink: 0,
+                          background:
+                            "linear-gradient(135deg,#EB9B3D22,#DA4D3322)",
+                          borderRadius: "50%",
+                          width: 52,
+                          height: 52,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          transition: "transform 0.3s",
                         }}
+                        className="group-hover:scale-110"
                       >
-                        {a.title}
-                      </p>
-                      <p style={{ fontSize: 12, color: TS, marginBottom: 6 }}>
-                        {a.org}
-                      </p>
-                      <span
-                        style={{
-                          background: "rgba(235,155,61,0.12)",
-                          color: "#EB9B3D",
-                          borderRadius: 999,
-                          padding: "2px 10px",
-                          fontSize: 10,
-                          fontWeight: 700,
-                          letterSpacing: "0.08em",
-                          textTransform: "uppercase",
-                        }}
-                      >
-                        {a.tag}
-                      </span>
+                        <Icon
+                          style={{ width: 24, height: 24, color: "#EB9B3D" }}
+                        />
+                      </div>
+                      <div>
+                        <p
+                          style={{
+                            fontWeight: 700,
+                            color: WH1,
+                            fontSize: 15,
+                            marginBottom: 2,
+                          }}
+                        >
+                          {a.title}
+                        </p>
+                        <p
+                          style={{ fontSize: 12, color: WH2, marginBottom: 6 }}
+                        >
+                          {a.org}
+                        </p>
+                        <span
+                          style={{
+                            background: "rgba(235,155,61,0.12)",
+                            color: "#EB9B3D",
+                            borderRadius: 999,
+                            padding: "2px 10px",
+                            fontSize: 10,
+                            fontWeight: 700,
+                            letterSpacing: "0.08em",
+                            textTransform: "uppercase",
+                          }}
+                        >
+                          {a.tag}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+                  );
+                })}
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+      )}
 
       {/* ══ 11. Client Testimonials — white ══ */}
-      <section className="py-12 lg:py-24" style={{ background: "#FFFFFF" }}>
-        <div className="container mx-auto px-6 max-w-7xl">
-          <ScrollReveal direction="up">
-            <div className="text-center mb-8 lg:mb-14">
-              <Eyebrow label="Client Testimonials" />
-              <h2
-                style={{
-                  color: WH1,
-                  fontWeight: 700,
-                  fontSize: "clamp(1.75rem,3.5vw,2.5rem)",
-                  lineHeight: 1.2,
-                  marginBottom: 12,
-                }}
-              >
-                What Our Clients Say
-              </h2>
-              <p
-                style={{
-                  color: WH2,
-                  fontSize: 15,
-                  maxWidth: 500,
-                  margin: "0 auto",
-                  lineHeight: 1.7,
-                }}
-              >
-                Real stories from businesses we&rsquo;ve helped transform with
-                technology, talent, and trust.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {TESTIMONIALS_T2.map((t, i) => (
-              <ScrollReveal
-                key={t.name}
-                variant="card"
-                delay={i * 90}
-                className="h-full"
-              >
-                <div
+      {false && (
+        <section className="py-12 lg:py-24" style={{ background: "#FFFFFF" }}>
+          <div className="container mx-auto px-6 max-w-7xl">
+            <ScrollReveal direction="up">
+              <div className="text-center mb-8 lg:mb-14">
+                <Eyebrow label="Client Testimonials" />
+                <h2
                   style={{
-                    ...lcard,
-                    padding: "28px",
-                    position: "relative",
-                    overflow: "hidden",
-                    height: "100%",
+                    color: WH1,
+                    fontWeight: 700,
+                    fontSize: "clamp(1.75rem,3.5vw,2.5rem)",
+                    lineHeight: 1.2,
+                    marginBottom: 12,
                   }}
-                  className="flex flex-col hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(13,17,45,0.10)] hover:border-[rgba(235,155,61,0.30)] transition-all duration-300"
                 >
-                  <Quote
-                    style={{
-                      position: "absolute",
-                      top: 20,
-                      right: 20,
-                      width: 36,
-                      height: 36,
-                      color: "rgba(13,17,45,0.06)",
-                    }}
-                  />
-                  <div style={{ display: "flex", gap: 4, marginBottom: 16 }}>
-                    {Array.from({ length: 5 }).map((_, s) => (
-                      <Star
-                        key={s}
-                        style={{
-                          width: 14,
-                          height: 14,
-                          color: "#EB9B3D",
-                          fill: "#EB9B3D",
-                        }}
-                      />
-                    ))}
-                  </div>
-                  <p
-                    style={{
-                      color: WH2,
-                      fontSize: 15,
-                      lineHeight: 1.8,
-                      fontStyle: "italic",
-                      flex: 1,
-                      marginBottom: 20,
-                    }}
-                  >
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
+                  What Our Clients Say
+                </h2>
+                <p
+                  style={{
+                    color: WH2,
+                    fontSize: 15,
+                    maxWidth: 500,
+                    margin: "0 auto",
+                    lineHeight: 1.7,
+                  }}
+                >
+                  Real stories from businesses we&rsquo;ve helped transform with
+                  technology, talent, and trust.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {TESTIMONIALS_T2.map((t, i) => (
+                <ScrollReveal
+                  key={t.name}
+                  variant="card"
+                  delay={i * 90}
+                  className="h-full"
+                >
                   <div
-                    style={{ display: "flex", alignItems: "center", gap: 12 }}
+                    style={{
+                      ...lcard,
+                      padding: "28px",
+                      position: "relative",
+                      overflow: "hidden",
+                      height: "100%",
+                    }}
+                    className="flex flex-col hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(13,17,45,0.10)] hover:border-[rgba(235,155,61,0.30)] transition-all duration-300"
                   >
-                    <div
+                    <Quote
                       style={{
-                        background: ACC,
-                        borderRadius: "50%",
-                        width: 44,
-                        height: 44,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        flexShrink: 0,
+                        position: "absolute",
+                        top: 20,
+                        right: 20,
+                        width: 36,
+                        height: 36,
+                        color: "rgba(13,17,45,0.06)",
+                      }}
+                    />
+                    <div style={{ display: "flex", gap: 4, marginBottom: 16 }}>
+                      {Array.from({ length: 5 }).map((_, s) => (
+                        <Star
+                          key={s}
+                          style={{
+                            width: 14,
+                            height: 14,
+                            color: "#EB9B3D",
+                            fill: "#EB9B3D",
+                          }}
+                        />
+                      ))}
+                    </div>
+                    <p
+                      style={{
+                        color: WH2,
+                        fontSize: 15,
+                        lineHeight: 1.8,
+                        fontStyle: "italic",
+                        flex: 1,
+                        marginBottom: 20,
                       }}
                     >
-                      <span
-                        style={{ color: TP, fontWeight: 800, fontSize: 14 }}
-                      >
-                        {t.initials}
-                      </span>
-                    </div>
-                    <div>
-                      <p
+                      &ldquo;{t.quote}&rdquo;
+                    </p>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 12 }}
+                    >
+                      <div
                         style={{
-                          color: WH1,
-                          fontWeight: 700,
-                          fontSize: 14,
-                          marginBottom: 2,
+                          background: ACC,
+                          borderRadius: "50%",
+                          width: 44,
+                          height: 44,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          flexShrink: 0,
                         }}
                       >
-                        {t.name}
-                      </p>
-                      <p style={{ color: WH2, fontSize: 12 }}>{t.role}</p>
+                        <span
+                          style={{ color: TP, fontWeight: 800, fontSize: 14 }}
+                        >
+                          {t.initials}
+                        </span>
+                      </div>
+                      <div>
+                        <p
+                          style={{
+                            color: WH1,
+                            fontWeight: 700,
+                            fontSize: 14,
+                            marginBottom: 2,
+                          }}
+                        >
+                          {t.name}
+                        </p>
+                        <p style={{ color: WH2, fontSize: 12 }}>{t.role}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ══ 12. Our Team — dark (BG gradient) ══ */}
-      {false && <section className="py-14 lg:py-28" style={{ background: BG }}>
-        <div className="container mx-auto px-6 max-w-7xl">
-          <ScrollReveal direction="up">
-            <div className="text-center mb-8 lg:mb-14">
-              <Eyebrow label="Our Team" />
-              <h2
-                style={{
-                  color: TP,
-                  fontWeight: 700,
-                  fontSize: "clamp(1.75rem,3.5vw,2.5rem)",
-                  lineHeight: 1.2,
-                  marginBottom: 14,
-                }}
-              >
-                Meet the People Behind Infoplus
-              </h2>
-              <p
-                style={{
-                  color: TS,
-                  fontSize: 15,
-                  maxWidth: 540,
-                  margin: "0 auto",
-                  lineHeight: 1.7,
-                }}
-              >
-                Experienced professionals united by a passion for technology and
-                delivering real-world impact.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
-            {TEAM_T2.map((member, i) => (
-              <ScrollReveal
-                key={member.name}
-                variant="card"
-                delay={i * 70}
-                className="h-full"
-              >
-                <div
+      {false && (
+        <section className="py-14 lg:py-28" style={{ background: BG }}>
+          <div className="container mx-auto px-6 max-w-7xl">
+            <ScrollReveal direction="up">
+              <div className="text-center mb-8 lg:mb-14">
+                <Eyebrow label="Our Team" />
+                <h2
                   style={{
-                    ...card,
-                    padding: "28px",
-                    height: "100%",
-                    transition: "all 0.3s",
+                    color: TP,
+                    fontWeight: 700,
+                    fontSize: "clamp(1.75rem,3.5vw,2.5rem)",
+                    lineHeight: 1.2,
+                    marginBottom: 14,
                   }}
-                  className="hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.30)] hover:border-[rgba(235,155,61,0.30)]"
                 >
-                  <div className="flex items-start justify-between mb-5">
-                    <div
-                      style={{
-                        background: ACC,
-                        borderRadius: "50%",
-                        width: 56,
-                        height: 56,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        flexShrink: 0,
-                      }}
-                    >
-                      <span
-                        style={{ color: TP, fontWeight: 800, fontSize: 18 }}
+                  Meet the People Behind Infoplus
+                </h2>
+                <p
+                  style={{
+                    color: TS,
+                    fontSize: 15,
+                    maxWidth: 540,
+                    margin: "0 auto",
+                    lineHeight: 1.7,
+                  }}
+                >
+                  Experienced professionals united by a passion for technology
+                  and delivering real-world impact.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+              {TEAM_T2.map((member, i) => (
+                <ScrollReveal
+                  key={member.name}
+                  variant="card"
+                  delay={i * 70}
+                  className="h-full"
+                >
+                  <div
+                    style={{
+                      ...card,
+                      padding: "28px",
+                      height: "100%",
+                      transition: "all 0.3s",
+                    }}
+                    className="hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.30)] hover:border-[rgba(235,155,61,0.30)]"
+                  >
+                    <div className="flex items-start justify-between mb-5">
+                      <div
+                        style={{
+                          background: ACC,
+                          borderRadius: "50%",
+                          width: 56,
+                          height: 56,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          flexShrink: 0,
+                        }}
                       >
-                        {member.initials}
-                      </span>
+                        <span
+                          style={{ color: TP, fontWeight: 800, fontSize: 18 }}
+                        >
+                          {member.initials}
+                        </span>
+                      </div>
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          width: 34,
+                          height: 34,
+                          borderRadius: "50%",
+                          background: "rgba(255,255,255,0.08)",
+                          border: "1px solid rgba(255,255,255,0.15)",
+                          color: TS,
+                          textDecoration: "none",
+                          transition: "all 0.2s",
+                          flexShrink: 0,
+                        }}
+                        className="hover:bg-[rgba(255,255,255,0.18)] hover:border-[rgba(235,155,61,0.50)] hover:text-white"
+                      >
+                        <svg
+                          width="15"
+                          height="15"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                      </a>
                     </div>
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <p
                       style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        width: 34,
-                        height: 34,
-                        borderRadius: "50%",
-                        background: "rgba(255,255,255,0.08)",
-                        border: "1px solid rgba(255,255,255,0.15)",
-                        color: TS,
-                        textDecoration: "none",
-                        transition: "all 0.2s",
-                        flexShrink: 0,
+                        color: "#EB9B3D",
+                        fontWeight: 600,
+                        fontSize: 11,
+                        letterSpacing: "0.14em",
+                        textTransform: "uppercase",
+                        marginBottom: 6,
                       }}
-                      className="hover:bg-[rgba(255,255,255,0.18)] hover:border-[rgba(235,155,61,0.50)] hover:text-white"
                     >
-                      <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                      </svg>
-                    </a>
+                      {member.role}
+                    </p>
+                    <h3
+                      style={{
+                        color: TP,
+                        fontWeight: 700,
+                        fontSize: 18,
+                        marginBottom: 10,
+                      }}
+                    >
+                      {member.name}
+                    </h3>
+                    <p style={{ color: TS, fontSize: 13, lineHeight: 1.7 }}>
+                      {member.bio}
+                    </p>
                   </div>
-                  <p
-                    style={{
-                      color: "#EB9B3D",
-                      fontWeight: 600,
-                      fontSize: 11,
-                      letterSpacing: "0.14em",
-                      textTransform: "uppercase",
-                      marginBottom: 6,
-                    }}
-                  >
-                    {member.role}
-                  </p>
-                  <h3
-                    style={{
-                      color: TP,
-                      fontWeight: 700,
-                      fontSize: 18,
-                      marginBottom: 10,
-                    }}
-                  >
-                    {member.name}
-                  </h3>
-                  <p style={{ color: TS, fontSize: 13, lineHeight: 1.7 }}>
-                    {member.bio}
-                  </p>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>}
+        </section>
+      )}
 
       {/* ══ 13. Global Presence — white ══ */}
       <section className="pt-24 pb-10" style={{ background: "#FFFFFF" }}>
@@ -2105,7 +2151,14 @@ export default function Index() {
                     >
                       Email Us
                     </p>
-                    <p style={{ color: WH1, fontSize: 14, fontWeight: 700, margin: 0 }}>
+                    <p
+                      style={{
+                        color: WH1,
+                        fontSize: 14,
+                        fontWeight: 700,
+                        margin: 0,
+                      }}
+                    >
                       contact@infoplusltd.co.uk
                     </p>
                   </div>
@@ -2158,7 +2211,14 @@ export default function Index() {
                     >
                       Call Us
                     </p>
-                    <p style={{ color: WH1, fontSize: 14, fontWeight: 700, margin: 0 }}>
+                    <p
+                      style={{
+                        color: WH1,
+                        fontSize: 14,
+                        fontWeight: 700,
+                        margin: 0,
+                      }}
+                    >
                       +44 20 8207 3474
                     </p>
                   </div>
@@ -2175,4 +2235,3 @@ export default function Index() {
     </div>
   );
 }
-

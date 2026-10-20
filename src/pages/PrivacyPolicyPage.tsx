@@ -349,7 +349,7 @@ export default function PrivacyPolicyPage() {
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-linear-to-br from-[#EB9B3D] to-[#DA4D33] flex items-center justify-center shrink-0">
                     <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-white" strokeWidth={1.6} />
                   </div>
-                  <span>+44 20 8207 3474</span>
+                  <a href="tel:+442082073474" className="hover:text-[#EB9B3D] transition-colors">+44 20 8207 3474</a>
                 </div>
                 <a
                   href="https://www.infoplusltd.co.uk"

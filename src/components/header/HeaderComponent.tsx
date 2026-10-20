@@ -12,7 +12,10 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileSections, setOpenMobileSections] = useState<Set<string>>(new Set());
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [rightDropdownWidth, setRightDropdownWidth] = useState(0);
   const navRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const rightItemRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -42,6 +45,19 @@ export function Header() {
     };
   }, [openMenu]);
 
+  useEffect(() => {
+    const measure = () => {
+      if (rightItemRef.current && containerRef.current) {
+        const cr = containerRef.current.getBoundingClientRect();
+        const ir = rightItemRef.current.getBoundingClientRect();
+        setRightDropdownWidth(cr.right - ir.left);
+      }
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -50,7 +66,7 @@ export function Header() {
           : "bg-transparent py-3"
       }`}
     >
-      <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between gap-4">
+      <div ref={containerRef} className="container mx-auto px-6 max-w-7xl flex items-center justify-between gap-4">
 
         {/* Logo — responsive height: grows with screen width */}
         <NavLink to="/" className="flex items-center shrink-0">
@@ -68,7 +84,11 @@ export function Header() {
           {navigation.map((item) => {
             const isMenuOpen = openMenu === item.label;
             return (
-            <div key={item.label} className="relative group">
+            <div
+              key={item.label}
+              ref={item.dropdownAlign === "right" ? rightItemRef : undefined}
+              className="relative group"
+            >
 
               {/* Non-navigable items (Services, Products): button instead of NavLink */}
               {item.noNavigate ? (
@@ -132,6 +152,7 @@ export function Header() {
                       ? "visible opacity-100 translate-y-0"
                       : "invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0",
                   ].join(" ")}
+                  style={item.dropdownAlign === "right" ? { left: 0, width: rightDropdownWidth } : undefined}
                 >
                   <MegaMenu categories={item.megaMenu} />
                 </div>

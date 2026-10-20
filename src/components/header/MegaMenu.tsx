@@ -14,7 +14,7 @@ export default function MegaMenu({ categories }: Props) {
   const showRightPanel = activeCategory.items.length > 0;
 
   return (
-    <div className={`${showRightPanel ? "w-[700px]" : "w-[220px]"} rounded-2xl overflow-hidden shadow-[0_24px_64px_rgba(13,17,45,0.28)] border border-[#EB9B3D]/15 transition-all duration-200`}>
+    <div className={`${showRightPanel ? (showLeftPanel ? "w-[700px]" : "w-full") : "w-[220px]"} rounded-2xl overflow-hidden shadow-[0_24px_64px_rgba(13,17,45,0.28)] border border-[#EB9B3D]/15 transition-all duration-200`}>
       <div className={`grid ${showLeftPanel && showRightPanel ? "grid-cols-[220px_1fr]" : "grid-cols-1"}`}>
 
         {/* Left panel — shown only for multi-category items (Services) */}

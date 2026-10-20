@@ -77,11 +77,11 @@ const DEVICES = [
 
 /* ── Uniqueness Stats ──────────────────────────────────────── */
 const UNIQUENESS_STATS = [
-  { value: "4.5K",  label: "Lecture Hours of Digital Content",  accent: "#EB9B3D" },
-  { value: "1.00L", label: "3D/2D Demonstrations",              accent: "#DA4D33" },
-  { value: "6.75L", label: "Page of Content",                   accent: "#F0783A" },
-  { value: "8.25K", label: "Solved Tutorial Problems",          accent: "#EB9B3D" },
-  { value: "1.80L", label: "Multiple Choice Questions",         accent: "#DA4D33" },
+  { value: "50K+",  label: "Lecture Hours of Digital Content",  accent: "#EB9B3D" },
+  { value: "1L+", label: "3D/2D Demonstrations",              accent: "#DA4D33" },
+  { value: "7L+", label: "Page of Content",                   accent: "#F0783A" },
+  { value: "82.5K+", label: "Solved Tutorial Problems",          accent: "#EB9B3D" },
+  { value: "2L+", label: "Multiple Choice Questions",         accent: "#DA4D33" },
   { value: "250",   label: "Question & Answers APPs",           accent: "#F0783A" },
 ];
 

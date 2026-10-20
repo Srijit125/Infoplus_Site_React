@@ -14,6 +14,7 @@ export interface NavigationItem {
   href: string;
   megaMenu?: MenuCategory[];
   noNavigate?: boolean;
+  dropdownAlign?: "left" | "right";
 }
 
 export const navigation: NavigationItem[] = [
@@ -75,6 +76,7 @@ export const navigation: NavigationItem[] = [
     label: "Products",
     href: "/products",
     noNavigate: true,
+    dropdownAlign: "right",
     megaMenu: [
       {
         label: "Products",

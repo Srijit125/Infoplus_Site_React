@@ -85,14 +85,14 @@ function About() {
         variant="split"
         image={imgAboutHero}
       >
-        <div className="grid grid-cols-2 gap-8 mt-12">
+        {false && <div className="grid grid-cols-2 gap-8 mt-12">
           {stats.map((stat, i) => (
             <div key={i} className="border-l-2 border-[#DA4D33] pl-4">
               <div className="text-3xl font-black text-white mb-1">{stat.value}</div>
               <div className="text-sm font-medium text-white/50 uppercase tracking-wider">{stat.label}</div>
             </div>
           ))}
-        </div>
+        </div>}
       </PageHero>
 
       {/* ── 2. WHO WE ARE (NEW) ────────────────────────── */}

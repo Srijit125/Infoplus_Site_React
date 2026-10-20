@@ -67,7 +67,8 @@ const OFFICES = [
     code: "BE",
     region: "Belgium",
     city: "Brussels",
-    address: "SPRL, Bridge Building, 5th floor, 584 Charles-Quint avenue, Brussels, 1082",
+    address:
+      "SPRL, Bridge Building, 5th floor, 584 Charles-Quint avenue, Brussels, 1082",
     mapUrl:
       "https://maps.google.com/?q=584+Avenue+Charles-Quint+1082+Brussels+Belgium",
   },
@@ -106,7 +107,8 @@ const OFFICES = [
     region: "Spain",
     city: "Madrid",
     address: "Calle Ribera del Loira, 46, 28042 Madrid España",
-    mapUrl: "https://maps.google.com/?q=Calle+Ribera+del+Loira+46+28042+Madrid+Spain",
+    mapUrl:
+      "https://maps.google.com/?q=Calle+Ribera+del+Loira+46+28042+Madrid+Spain",
   },
   {
     code: "FR",
@@ -170,7 +172,23 @@ const CONTACT_FAQS: FAQItem[] = [
   },
   {
     q: "How do I get a quote or discuss a project?",
-    a: "An easier way is to fill out the short form on this page. You can also email us directly at contact@infoplusltd.co.uk. You can also call us on +44 20 8207 3474 to speak with our team.",
+    a: (
+      <>
+        An easier way is to fill out the short form on this page. You can also
+        email us directly at{" "}
+        <a
+          href="mailto:contact@infoplusltd.co.uk"
+          className="text-[#EB9B3D] hover:underline"
+        >
+          contact@infoplusltd.co.uk
+        </a>
+        . You can also call us on{" "}
+        <a href="tel:+442082073474" className="text-[#EB9B3D] hover:underline">
+          +44 20 8207 3474
+        </a>{" "}
+        to speak with our team.
+      </>
+    ),
   },
   {
     q: "How soon will I hear back after submitting an enquiry?",
@@ -230,7 +248,9 @@ export function ContactPage() {
     phone: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
   const [statusMessage, setStatusMessage] = useState("");
   const [errors, setErrors] = useState<Record<Field, string>>({
     name: "",
@@ -266,25 +286,36 @@ export function ContactPage() {
         formData.append("message", form.message.trim());
         formData.append("type", FORM_TYPE);
         formData.append(VERIFICATION_TOKEN_FIELD, verificationToken);
-        const res = await fetch(
-          getApiUrl("contact"),
-          { method: "POST", body: formData },
-        );
+        const res = await fetch(getApiUrl("contact"), {
+          method: "POST",
+          body: formData,
+        });
         const json = await res.json();
         if (json.success) {
           setStatus("success");
-          setStatusMessage(json.message || "Thank you for reaching out. We'll get back to you within 24 hours.");
+          setStatusMessage(
+            json.message ||
+              "Thank you for reaching out. We'll get back to you within 24 hours.",
+          );
           setForm({ name: "", email: "", phone: "", message: "" });
           setErrors({ name: "", email: "", phone: "" });
         } else {
           setStatus("error");
-          setStatusMessage(json.message || "Something went wrong. Please try again or email us directly.");
+          setStatusMessage(
+            json.message ||
+              "Something went wrong. Please try again or email us directly.",
+          );
         }
       } catch {
         setStatus("error");
-        setStatusMessage("Something went wrong. Please try again or email us directly.");
+        setStatusMessage(
+          "Something went wrong. Please try again or email us directly.",
+        );
       }
-      setTimeout(() => { setStatus("idle"); setStatusMessage(""); }, 5000);
+      setTimeout(() => {
+        setStatus("idle");
+        setStatusMessage("");
+      }, 5000);
     },
     [form],
   );
@@ -310,7 +341,10 @@ export function ContactPage() {
     if (!result.success) {
       setStatus("error");
       setStatusMessage(result.message);
-      setTimeout(() => { setStatus("idle"); setStatusMessage(""); }, 5000);
+      setTimeout(() => {
+        setStatus("idle");
+        setStatusMessage("");
+      }, 5000);
       return;
     }
     setStatus("idle");
