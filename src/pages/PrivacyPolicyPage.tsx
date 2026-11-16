@@ -246,7 +246,7 @@ export default function PrivacyPolicyPage() {
           <ScrollReveal direction="up">
             <div className="bg-white border border-[rgba(13,17,45,0.08)] rounded-2xl px-8 py-7 shadow-[0_4px_24px_rgba(235,155,61,0.06)]">
               <p className="text-[15px] text-[#555] leading-relaxed">
-                We, Infoplus Technologies UK Pvt ltd know privacy policies aren't the most exciting
+                We, InfoPlus Technologies UK Ltd know privacy policies aren't the most exciting
                 thing to read, but this one matters, so please take a few minutes to go through it.
                 It explains what InfoPlus Technologies UK Ltd does with your personal information
                 when you visit our site, reach out to us, or work with us in any capacity.

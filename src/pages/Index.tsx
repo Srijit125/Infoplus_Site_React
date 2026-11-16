@@ -535,6 +535,7 @@ function T2ContactForm() {
         {(["name", "email", "phone"] as const).map((key) => (
           <div key={key}>
             <label
+              htmlFor={`enquiry-${key}`}
               style={{
                 display: "block",
                 fontSize: 13,
@@ -553,6 +554,7 @@ function T2ContactForm() {
               <span style={{ color: "#EB9B3D" }}>*</span>
             </label>
             <input
+              id={`enquiry-${key}`}
               type={{ name: "text", email: "email", phone: "tel" }[key]}
               placeholder={
                 {
@@ -588,6 +590,7 @@ function T2ContactForm() {
         ))}
         <div>
           <label
+            htmlFor="enquiry-message"
             style={{
               display: "block",
               fontSize: 13,
@@ -599,6 +602,7 @@ function T2ContactForm() {
             Message
           </label>
           <textarea
+            id="enquiry-message"
             rows={4}
             placeholder="Tell us about your project…"
             maxLength={2000}

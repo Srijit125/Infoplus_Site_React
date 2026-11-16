@@ -5,7 +5,7 @@ const BASE_URL   = "https://www.infoplustechnologies.co.uk"; // update before go
 const OG_IMAGE   = "/og-image.jpg";
 
 interface PageMetaProps {
-  title: string;
+  title?: string;
   description: string;
   path: string;
   keywords?: string;
@@ -24,13 +24,13 @@ export function PageMeta({
   jsonLd,
 }: PageMetaProps) {
   /* If title already contains the brand name, use it as-is; otherwise append */
-  const fullTitle    = title.toLowerCase().includes("infoplus") ? title : `${title} | ${SITE_NAME}`;
+  const fullTitle    = title ? (title.toLowerCase().includes("infoplus") ? title : `${title} | ${SITE_NAME}`) : undefined;
   const canonicalUrl = `${BASE_URL}${path}`;
   const ogImageUrl   = `${BASE_URL}${ogImage}`;
 
   return (
     <Helmet>
-      <title>{fullTitle}</title>
+      {fullTitle && <title>{fullTitle}</title>}
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={canonicalUrl} />
@@ -40,13 +40,13 @@ export function PageMeta({
       <meta property="og:type"        content="website" />
       <meta property="og:site_name"   content={SITE_NAME} />
       <meta property="og:url"         content={canonicalUrl} />
-      <meta property="og:title"       content={fullTitle} />
+      {fullTitle && <meta property="og:title" content={fullTitle} />}
       <meta property="og:description" content={description} />
       <meta property="og:image"       content={ogImageUrl} />
 
       {/* Twitter Card */}
       <meta name="twitter:card"        content="summary_large_image" />
-      <meta name="twitter:title"       content={fullTitle} />
+      {fullTitle && <meta name="twitter:title" content={fullTitle} />}
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image"       content={ogImageUrl} />
 

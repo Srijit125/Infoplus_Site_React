@@ -72,7 +72,7 @@ export const ourValues: OurValue[] = [
   },
   {
     title: "Quality",
-    description: "I/We put quality first to deliver WOW services.",
+    description: "We put quality first to deliver WOW services.",
     icon: Shield,
   },
   {
@@ -177,9 +177,9 @@ export const ourSolutions: Solution[] = [
     icon: Shield,
   },
   {
-    title: "Staffing & Consultings",
+    title: "Staffing & Consulting",
     description:
-      "Having worked with clients from a wide range of services and domains globally over the last two decades, our Staffing and Consulting teams.",
+      "Our Staffing and Consulting teams help clients find the right talent and expert technology guidance to achieve their business goals.",
     features: [
       "IT Staffing Solutions",
       "IT Consulting Solutions",

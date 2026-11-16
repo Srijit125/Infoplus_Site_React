@@ -60,7 +60,7 @@ const OFFICES = [
     code: "NL",
     region: "Netherlands",
     city: "Rotterdam",
-    address: "Ho fplein 20, Rotterdam 3032 AC",
+    address: "Hofplein 20, Rotterdam 3032 AC",
     mapUrl: "https://maps.google.com/?q=Hofplein+20+Rotterdam+3032+AC",
   },
   {
@@ -381,10 +381,11 @@ export function ContactPage() {
 
                 <form onSubmit={handleSubmit} noValidate className="space-y-5">
                   <div>
-                    <label className={labelCls}>
+                    <label htmlFor="contact-name" className={labelCls}>
                       Your Name <span className="text-[#DA4D33]">*</span>
                     </label>
                     <input
+                      id="contact-name"
                       type="text"
                       name="name"
                       placeholder="John Smith"
@@ -403,10 +404,11 @@ export function ContactPage() {
                     )}
                   </div>
                   <div>
-                    <label className={labelCls}>
+                    <label htmlFor="contact-email" className={labelCls}>
                       Email Address <span className="text-[#DA4D33]">*</span>
                     </label>
                     <input
+                      id="contact-email"
                       type="email"
                       name="email"
                       placeholder="john@company.com"
@@ -425,10 +427,11 @@ export function ContactPage() {
                     )}
                   </div>
                   <div>
-                    <label className={labelCls}>
+                    <label htmlFor="contact-phone" className={labelCls}>
                       Contact Number <span className="text-[#DA4D33]">*</span>
                     </label>
                     <input
+                      id="contact-phone"
                       type="tel"
                       name="phone"
                       placeholder="+44 20 0000 0000"
@@ -447,8 +450,9 @@ export function ContactPage() {
                     )}
                   </div>
                   <div>
-                    <label className={labelCls}>Message</label>
+                    <label htmlFor="contact-message" className={labelCls}>Message</label>
                     <textarea
+                      id="contact-message"
                       name="message"
                       rows={5}
                       placeholder="Tell us about your project, challenge, or what you'd like to achieve…"

@@ -138,12 +138,12 @@ export function Footer({ bgColor }: { bgColor?: string }) {
             <div className="flex items-center gap-4">
               <ImageWithFallback
                 src={imgCert1}
-                alt="Certification 1"
+                alt="TÜV SÜD ISO 9001 Quality Management System Certification – Infoplus Technologies"
                 className="h-16 w-auto object-contain"
               />
               <ImageWithFallback
                 src={imgCert2}
-                alt="Certification 2"
+                alt="TÜV SÜD ISO 27001 Information Security Management System Certification – Infoplus Technologies"
                 className="h-16 w-auto object-contain"
               />
             </div>
@@ -284,7 +284,7 @@ export function Footer({ bgColor }: { bgColor?: string }) {
             <h4 className="text-white font-semibold text-[18px] mb-4">
               Newsletter
             </h4>
-            <p className="text-[12px] text-white/70 mb-4 font-normal">
+            <p className="text-[12px] text-white/70 mb-2 font-normal">
               Subscribe to get latest news &amp; updates
             </p>
             {nlOtp.open ? (
@@ -295,8 +295,16 @@ export function Footer({ bgColor }: { bgColor?: string }) {
                 submitLabel="Verify & Subscribe"
               />
             ) : (
-              <form className="relative" onSubmit={handleNewsletter}>
+              <form onSubmit={handleNewsletter}>
+                <label
+                  htmlFor="footer-newsletter-email"
+                  className="block text-[12px] font-semibold text-white/80 mb-2"
+                >
+                  Your Email Address
+                </label>
+                <div className="relative">
                 <input
+                  id="footer-newsletter-email"
                   type="email"
                   placeholder="Your email address"
                   value={nlEmail}
@@ -321,6 +329,7 @@ export function Footer({ bgColor }: { bgColor?: string }) {
                     <ArrowRight className="w-4 h-4" />
                   )}
                 </button>
+                </div>
               </form>
             )}
             {nlStatus === "success" && nlMessage && (

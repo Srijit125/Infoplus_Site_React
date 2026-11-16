@@ -48,7 +48,6 @@ const SERVICES: Service[] = [
       "E-Commerce",
       "Content Management System",
       "Animated Web Applications",
-      "Define analytics culture for overall success",
     ],
     techLabel: "Technologies & Frameworks",
     techStack: [

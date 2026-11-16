@@ -81,7 +81,7 @@ const SOLUTIONS: SolutionItem[] = [
   {
     icon: Users,
     title: "Test So That Customers Do Not Lose Confidence",
-    tagline: "In The Software.",
+    tagline: "Software testing ensures quality and customer confidence.",
   },
   {
     icon: Search,

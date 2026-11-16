@@ -35,7 +35,7 @@ function About() {
   ];
 
   const factBullets = [
-    "Operating in 11 Countries.",
+    "Operating in 17 Countries.",
     "Preferred IT partner for many leading organizations.",
     "2 Decades with 120+ customers.",
     "State-of-art infrastructure in the UK and India.",
@@ -71,7 +71,7 @@ function About() {
   return (
     <div className="w-full">
       <PageMeta
-        title="About Infoplus Technologies UK Limited"
+        title="About | Infoplus Technologies UK"
         description="Started in 2000, Infoplus runs on a performance–pricing model most IT firms don't offer – you pay for outcomes, not just hours logged."
         keywords="About us"
         path="/about"
@@ -883,7 +883,7 @@ function About() {
                 </h2>
                 <div className="space-y-5">
                   <p className="text-[16px] text-[#555555] leading-[1.8] text-justify">
-                    Right from the inception, we have been identifying and craving for the right partners to drive our next-generation strategy and to answer prevalent business needs. Our service offerings and products across the industries are complimented by our partners.
+                    Right from the inception, we have been identifying and craving for the right partners to drive our next-generation strategy and to answer prevalent business needs. Our service offerings and products across the industries are complemented by our partners.
                   </p>
                   <p className="text-[16px] text-[#555555] leading-[1.8] text-justify">
                     Our partner ecosystem includes go-to-market alliances, specialist partnerships for niche technologies, and partnerships for specific customer requirements; this system allows us to provide best-in-class solutions for our customers&apos; specific requirements.

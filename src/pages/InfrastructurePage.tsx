@@ -81,7 +81,7 @@ const INFRA_SERVICES: InfraService[] = [
   {
     icon: Layers,
     gradient: "from-[#242E72] to-[#EB9B3D]",
-    title: "SIAM System Integration & Asset Management",
+    title: "Service Integration and Management (SIAM)",
     desc: "We bring together your different systems and vendors into one coordinated approach, so nothing falls through the cracks.",
   },
   {

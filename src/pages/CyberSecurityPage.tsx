@@ -32,7 +32,7 @@ const CYBER_SERVICES: CyberService[] = [
     icon: Eye,
     gradient: "from-[#242E72] to-[#EB9B3D]",
     accentColor: "#DA4D33",
-    title: "Security Management Center (SOC) & Managed Detection Response (MDR)",
+    title: "Security Operations Centre (SOC) & Managed Detection Response (MDR)",
     desc: "Protect your business with 24/7 threat monitoring, advanced analytics, and rapid incident response to stop cyber threats before they impact operations. Infoplus ensures continuous security visibility across networks, endpoints, and applications to keep your digital environment safe.",
     features: [
       "24/7 threat monitoring",
@@ -123,7 +123,7 @@ const CYBER_CAPABILITIES: CyberCapability[] = [
     icon: Eye,
     gradient: "from-[#242E72] to-[#EB9B3D]",
     accentColor: "#DA4D33",
-    title: "Security Management Center (SOC) & MDR",
+    title: "Security Operations Centre (SOC) & MDR",
     shortDesc: "Protect your business with 24/7 threat monitoring and rapid incident response.",
     tagline: "Security That Never Sleeps",
     desc: "Cyber threats are evolving every minute, making continuous monitoring essential for businesses of all sizes. Infoplus provides advanced Security Operations Center services designed to detect, analyse, and respond to cyber threats instantly. Our SOC operates around the clock, ensuring your IT infrastructure is constantly protected. We combine AI-driven monitoring with human expertise to identify suspicious activities before they escalate, enabling businesses to operate securely without interruption.",
