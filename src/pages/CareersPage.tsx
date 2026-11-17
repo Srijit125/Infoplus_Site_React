@@ -23,6 +23,10 @@ import { OtpPanel } from "../components/shared/OtpPanel";
 import { VERIFICATION_TOKEN_FIELD } from "../lib/otp";
 
 /* ── Types ─────────────────────────────────────────── */
+type DetailSection = { heading: string; items: string[]; mainBullets?: boolean; noBullet?: boolean };
+type IndentedItem = { indented: string };
+type DetailItem = string | DetailSection | IndentedItem;
+
 type Job = {
   id: number;
   role: string;
@@ -31,7 +35,7 @@ type Job = {
   type: string;
   skills: string[];
   desc: string;
-  details: string[];
+  details: DetailItem[];
 };
 
 type FormState = {
@@ -68,6 +72,10 @@ const TEAM_BADGE: Record<string, string> = {
   Design:
     "bg-[rgba(235,155,61,0.10)] text-[#A06010] border border-[rgba(235,155,61,0.22)]",
   Sales:
+    "bg-[rgba(235,155,61,0.10)] text-[#A06010] border border-[rgba(235,155,61,0.22)]",
+  Education:
+    "bg-[rgba(235,155,61,0.10)] text-[#A06010] border border-[rgba(235,155,61,0.22)]",
+  Operations:
     "bg-[rgba(235,155,61,0.10)] text-[#A06010] border border-[rgba(235,155,61,0.22)]",
 };
 
@@ -287,6 +295,231 @@ function CareersPage() {
 
   const positions: Job[] = [
     {
+      id: 8,
+      role: "Instructional Designer – Civil, ECE & CSE",
+      team: "Engineering",
+      location: "India",
+      type: "Full-time",
+      skills: ["Instructional Design", "E-Learning", "Storyboarding", "2D/3D Animation", "LMS"],
+      desc: "Design and develop high-quality instructional content for technical education in Civil, ECE, and CSE disciplines.",
+      details: [
+        "Design and develop high-quality instructional content for technical education (Engineering, Polytechnic, ITI trades, etc.).",
+        "Leverage 2 to 4 years of teaching experience as a Professor, Assistant Professor, or HOD — preferably in Engineering, Polytechnic, or ITI — to create impactful learning materials.",
+        "As per the syllabus, develop content based on university standards for Engineering, Polytechnic, and ITI trades, including:",
+        { indented: "(i) Theory Content: Preparing detailed textual content and explanations." },
+        { indented: "(ii) Storyboards: Creating scripts and interactive visual plans for video lessons." },
+        { indented: "(iii) Graphics: Designing 2D and 3D images/animations." },
+        { indented: "(iv) Assessments: Developing quizzes and question-answer banks." },
+        "Create visual-rich e-learning modules, including 2D/3D animations (Storyboard & Audio script), simulations, and interactive elements.",
+        "Develop virtual lab activities, practical demonstrations, and skill-based learning content aligned with curriculum.",
+        "Collaborate closely with Subject Matter Experts (SMEs) to ensure technical accuracy and relevance.",
+        "Work with graphic designers, 3D animators, and multimedia teams to convert concepts into engaging visuals.",
+        "Coordinate with project managers to ensure timely delivery of instructional assets and modules.",
+        "Develop e-Learning content and storyboards with excellent writing and communication skills.",
+        "Review, refine, and update existing modules based on feedback, syllabus changes, or quality audits.",
+        "Integrate content into LMS or platform and ensure usability, accessibility, and learner engagement.",
+        "You will be responsible for preparing the technical and educational content in accordance with the university syllabus and its core objectives.",
+        { heading: "Preferred Skills / Added Advantages (E-Learning & Multimedia Tools):", noBullet: true, items: [] },
+        "Experience with e-learning authoring tools such as Articulate Storyline, Adobe Captivate, or iSpring.",
+        "Familiarity with LMS platforms, SCORM packaging, and digital learning delivery standards.",
+        "Ability to use tools for storyboarding, scripting, wireframing (e.g., MS PowerPoint, Figma, Miro).",
+        "Comfort working with multimedia teams using tools like Adobe Animate CC, After Effects, Blender, Maya, or similar.",
+        "Teaching experience in Engineering, Polytechnic, or ITI is preferred.",
+      ],
+    },
+    {
+      id: 9,
+      role: "Contract Administrator Executive",
+      team: "Engineering",
+      location: "India",
+      type: "Full-time",
+      skills: ["Contract Management", "Legal Documentation", "Negotiation", "Risk Analysis"],
+      desc: "Negotiate and manage company contracts to ensure favourable terms, regulatory compliance, and effective vendor relationships.",
+      details: [
+        "Negotiates and manages all the contracts of the company to ensure that the business signs favourable terms and conditions. They understand the requirements of any contract or agreement their employer is entering and advise on how to get the most favourable terms and conditions.",
+        { heading: "Other duties and responsibilities include:", items: [] },
+        "Developing and maintaining relationships with independent contractors, vendors, suppliers, and customers.",
+        "Creating standard contracts for the company's dealings with internal and external partners.",
+        "Studying the requirements, duties, and obligations under contracts to ensure alignment with company goals and industry regulations.",
+        "Supervising contract execution to ensure compliance with regulatory guidelines.",
+        "Researching business partners and their history prior to writing contracts.",
+        "Monitoring the implementation of signed contracts.",
+        "Training, supervising, and managing the contract team.",
+        "Maintaining, updating, and improving contractual records.",
+        "The role will involve reviewing and issuing commercial contracts and will be required to liaise internally with the business and support functions, as well as externally with clients, third parties and external advisors to follow a contract review through to completion.",
+        "Reviewing and amending various third-party agreements through to execution.",
+        "Advising the business on risks within any contractual provisions, including research into resolving contract issues.",
+        "Conducting and supporting negotiations with clients to achieve the best position for the business.",
+        "Analyzing the legal issues, identifying risks involved in the agreements and capture the same in excel sheets and informing team as well as sales & presales teams on the same.",
+        "Coordinating with sales/business functional teams to effectively address customer's insurance requirements.",
+        "Responding to internal queries from business team with regards to rights and obligations under the existing agreements. To ensure appropriate processes are followed and required approvals received.",
+        "Maintaining efficient, complete, auditable filing in line with department's filing policies for all documentation and correspondence.",
+        "Dealing promptly with any contractual queries and/or requests from the business and internal support teams.",
+        "Responding to client, consultant, and supplier emails; liaising between UK/EU offices and offshore locations.",
+        "Generating internal reports and management information; ensuring contract lists are kept up-to-date.",
+        "Reviewing insurance requirements in agreements before finalisation and informing project and business teams.",
+        "Maintaining all legal records and files, coordinating with the Billings department for timely payments, and providing daily contractual correspondence.",
+        "Checking background clauses in finalised agreements and initiating the same with background agencies.",
+        { heading: "You will need to have:", mainBullets: true, noBullet: true, items: [
+          "Experience of reviewing and negotiating a variety of commercial contracts.",
+          "Good understanding of key contractual terms and conditions, including experience interpreting complex documents.",
+          "Experience of managing competing deadlines and priorities.",
+          "Meticulous attention to detail with excellent written and verbal communication skills.",
+          "Ability to prioritise and manage a high volume of work.",
+          "Ability to work effectively under pressure.",
+          "Demonstrable approach to problem solving and decision making.",
+        ]},
+      ],
+    },
+    {
+      id: 10,
+      role: "3D Asset Artist",
+      team: "Engineering",
+      location: "India",
+      type: "Full-time",
+      skills: ["Blender", "Maya", "Substance Painter", "Unity", "PBR Texturing"],
+      desc: "Create high-quality 3D models and assets, and set up production-ready scenes within Unity Engine.",
+      details: [
+        "We are looking for a skilled and creative 3D Asset Artist with strong experience in creating high-quality 3D models and assets based on concepts, drawings, photographs, and real-world references.",
+        "The candidate will be responsible for the complete 3D asset creation workflow, including modeling, UV mapping, texturing, material creation, optimization, and preparation of production-ready assets.",
+        "The candidate should also have hands-on knowledge of Unity Engine and be capable of taking completed 3D assets into Unity, setting up the stage/scene, applying materials, arranging assets, setting up lighting and cameras, and preparing the final scene for presentation or further development.",
+        { heading: "Key Responsibilities:", noBullet: true, items: [] },
+        "Create high-quality 3D models and assets based on concepts, drawings, photographs, and real-world references.",
+        "Create high-poly and low-poly models according to project requirements.",
+        "Perform retopology and mesh optimization while maintaining the required visual quality.",
+        "Create clean and efficient UV layouts and UV maps.",
+        "Create realistic PBR materials and textures.",
+        "Perform texture baking and prepare required texture maps.",
+        "Optimize geometry, textures, and materials for the intended application.",
+        "Maintain proper scale, proportions, topology, naming conventions, pivots, and file organization.",
+        "Prepare finished assets for integration and further production.",
+        "Import completed assets into Unity.",
+        "Set up and organize the Unity stage/scene using the finished 3D assets.",
+        "Apply and configure materials and textures within Unity.",
+        "Set up basic lighting, cameras, environment elements, and scene composition.",
+        "Create and manage Unity prefabs where required.",
+        "Ensure the final Unity scene represents the intended quality and appearance of the completed 3D assets.",
+        "Make revisions and improvements based on feedback.",
+        "Work closely with designers, developers, and other artists to meet project requirements.",
+        { heading: "Key Requirements:", noBullet: true, items: [] },
+        "Strong proficiency in Blender and/or Autodesk Maya.",
+        "Strong understanding of 3D modeling, topology, edge flow, and mesh optimization.",
+        "Experience with high-poly and low-poly modeling workflows.",
+        "Good knowledge of UV unwrapping and UV optimization.",
+        "Experience with Substance Painter and/or other texturing software.",
+        "Strong understanding of PBR materials and texturing workflows.",
+        "Knowledge of Base Color, Roughness, Metallic, Normal, and Ambient Occlusion maps.",
+        "Good understanding of materials, shaders, and texture application.",
+        "Ability to create accurate and detailed models from references.",
+        "Strong understanding of proportion, scale, form, and visual detail.",
+        "Ability to optimize assets without compromising the required visual quality.",
+        "Hands-on experience with Unity Engine.",
+        "Ability to import and integrate completed 3D assets into Unity.",
+        "Ability to set up a complete stage/scene in Unity using finished assets.",
+        "Basic knowledge of Unity lighting, materials, cameras, prefabs, and scene organization.",
+        "Good understanding of real-time asset workflows.",
+        "Strong attention to detail and ability to maintain consistent quality.",
+        { heading: "Good to Have:", noBullet: true, items: [] },
+        "Experience in product, prop, environment, architectural, or character modeling.",
+        "Basic knowledge of rigging, skinning, and animation.",
+        "Experience with V-Ray, Arnold, Cycles, or other rendering engines.",
+        "Experience with ZBrush or other sculpting tools.",
+        "Knowledge of Photoshop for texture editing and post-processing.",
+        "Understanding of LOD, texture optimization, draw calls, and real-time performance.",
+        "Knowledge of Unity URP/HDRP.",
+        "Basic knowledge of Shader Graph.",
+        "Experience creating complete Unity environments or scenes.",
+        "Experience working with large 3D asset libraries and maintaining asset pipelines.",
+        { heading: "Preferred Candidate Profile:", noBullet: true, items: [] },
+        "Candidates with practical experience in 3D asset creation along with Unity scene/stage setup would be preferred.",
+        "The candidate should be capable of handling the complete workflow: Reference → 3D Modeling → High Poly → Low Poly/Retopology → UV → Baking → Texturing → Materials → Final 3D Asset → Unity Import → Material Setup → Prefab → Stage/Scene Setup → Lighting & Camera → Final Output.",
+        "A portfolio or demo reel showcasing high-quality 3D assets, materials, environments, and Unity scenes will be an advantage.",
+      ],
+    },
+    {
+      id: 11,
+      role: "Instructional Designer (E&I)",
+      team: "Engineering",
+      location: "India",
+      type: "Full-time",
+      skills: ["Instructional Design", "E-Learning", "SCORM", "Storyboarding", "LMS"],
+      desc: "Design and develop instructional content for Electrical & Instrumentation technical education programmes.",
+      details: [
+        "Design and develop high-quality instructional content for technical education (Engineering, Polytechnic, ITI trades, etc.).",
+        "Leverage 2 to 4 years of teaching experience as a Professor, Assistant Professor, or HOD — preferably in Engineering, Polytechnic, or ITI — to create impactful learning materials.",
+        "As per the syllabus, develop content based on university standards for Engineering, Polytechnic, and ITI trades, including:",
+        { indented: "(i) Theory Content: Preparing detailed textual content and explanations." },
+        { indented: "(ii) Storyboards: Creating scripts and interactive visual plans for video lessons." },
+        { indented: "(iii) Graphics: Designing 2D and 3D images/animations." },
+        { indented: "(iv) Assessments: Developing quizzes and question-answer banks." },
+        "Create visual-rich e-learning modules, including 2D/3D animations (Storyboard & Audio script), simulations, and interactive elements.",
+        "Develop virtual lab activities, practical demonstrations, and skill-based learning content aligned with curriculum.",
+        "Collaborate closely with Subject Matter Experts (SMEs) to ensure technical accuracy and relevance.",
+        "Work with graphic designers, 3D animators, and multimedia teams to convert concepts into engaging visuals.",
+        "Coordinate with project managers to ensure timely delivery of instructional assets and modules.",
+        "Develop e-Learning content and storyboards with excellent writing and communication skills.",
+        "Review, refine, and update existing modules based on feedback, syllabus changes, or quality audits.",
+        "Integrate content into LMS or platform and ensure usability, accessibility, and learner engagement.",
+        "You will be responsible for preparing the technical and educational content in accordance with the university syllabus and its core objectives.",
+        { heading: "Preferred Skills / Added Advantages (E-Learning & Multimedia Tools):", noBullet: true, items: [] },
+        "Experience with e-learning authoring tools such as Articulate Storyline, Adobe Captivate, or iSpring.",
+        "Familiarity with LMS platforms, SCORM packaging, and digital learning delivery standards.",
+        "Ability to use tools for storyboarding, scripting, wireframing (e.g., MS PowerPoint, Figma, Miro).",
+        "Comfort working with multimedia teams using tools like Adobe Animate CC, After Effects, Blender, Maya, or similar.",
+        "Teaching experience in Engineering, Polytechnic, or ITI is preferred.",
+      ],
+    },
+    {
+      id: 12,
+      role: "Unity Developer",
+      team: "Engineering",
+      location: "India",
+      type: "Full-time",
+      skills: ["Unity", "C#", "OOP", "WebGL", "Android"],
+      desc: "Develop and maintain interactive real-time applications using Unity Engine and C#, working closely with 3D asset teams.",
+      details: [
+        "We are looking for skilled Unity Developers with strong experience in Unity Engine and C# to develop and maintain interactive real-time applications.",
+        "The candidates will be responsible for developing, integrating, testing, and optimizing Unity applications while working closely with the 3D Asset and Unity Artist teams to integrate 3D assets and create interactive experiences.",
+        { heading: "Key Responsibilities:", noBullet: true, items: [] },
+        "Develop interactive applications and experiences using Unity and C#.",
+        "Implement gameplay/application logic, UI, interactions, animations, and other required functionality.",
+        "Integrate 3D assets, animations, materials, and environments into Unity.",
+        "Work closely with 3D Artists and Unity Artists to ensure proper asset integration.",
+        "Set up and manage Unity scenes, prefabs, lighting, cameras, and interactive elements.",
+        "Optimize applications for performance, memory usage, loading time, and overall stability.",
+        "Debug and resolve technical issues within Unity projects.",
+        "Build and deploy applications for Windows, Android, WebGL, and other required platforms.",
+        "Maintain clean, organized, and reusable C# code.",
+        "Collaborate with the development and creative teams to deliver projects according to requirements.",
+        "Test applications and ensure functionality and visual quality before final delivery.",
+        { heading: "Key Requirements:", noBullet: true, items: [] },
+        "Strong proficiency in C# and Unity Engine.",
+        "Good understanding of Object-Oriented Programming (OOP).",
+        "Hands-on experience developing applications using Unity.",
+        "Strong understanding of Unity scenes, Game Objects, Components, Prefabs, UI, Animations, and Asset Management.",
+        "Experience integrating 3D models, materials, textures, animations, and other assets into Unity.",
+        "Good understanding of Unity physics, colliders, ray casting, and interactions.",
+        "Experience with performance optimization and debugging.",
+        "Experience with Git or other version-control systems.",
+        "Ability to work with existing Unity projects and understand established project structures.",
+        "Good problem-solving and debugging skills.",
+        { heading: "Good to Have:", noBullet: true, items: [] },
+        "Experience developing VR/AR/XR applications.",
+        "Knowledge of OpenXR and XR Interaction Toolkit.",
+        "Experience with Meta Quest, HTC Vive, or other XR devices.",
+        "Experience with AR Foundation.",
+        "Experience with WebGL and Android deployment.",
+        "Knowledge of Unity URP/HDRP.",
+        "Experience with Unity Addressables or other asset management systems.",
+        "Basic understanding of 3D modeling tools such as Blender or Maya.",
+        "Experience working with interactive simulations, training applications, or real-time 3D applications.",
+        { heading: "Preferred Candidate Profile:", noBullet: true, items: [] },
+        "Candidates with strong hands-on experience in Unity development, C#, real-time 3D applications, and project deployment would be preferred.",
+        "Candidates with previous experience working closely with 3D Artists and Unity Artists will be an added advantage.",
+        "Portfolio or demos showcasing previous Unity projects is an advantage.",
+      ],
+    },
+    {
       id: 1,
       role: "Pega Lead Systems Architect",
       team: "Engineering",
@@ -393,7 +626,7 @@ function CareersPage() {
   ];
 
   const teams = ["All", "Engineering", "Data Science"];
-  const locs = ["All", "UK"];
+  const locs = ["All", "UK", "India"];
 
   const filtered = positions.filter((p) => {
     const matchTeam = teamFilter === "All" || p.team === teamFilter;
@@ -837,12 +1070,36 @@ function CareersPage() {
               {/* Requirements */}
               <h4 className="text-[15px] font-bold text-[#111111] mb-4">Requirements</h4>
               <ul className="space-y-3 mb-8">
-                {viewJob.details.map((point, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="mt-1.5 w-2 h-2 rounded-full bg-[#EB9B3D] shrink-0" />
-                    <p className="text-[14px] text-[#555555] leading-relaxed">{point}</p>
-                  </li>
-                ))}
+                {viewJob.details.map((entry, i) =>
+                  typeof entry === "string" ? (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="mt-1.5 w-2 h-2 rounded-full bg-[#EB9B3D] shrink-0" />
+                      <p className="text-[14px] text-[#555555] leading-relaxed">{entry}</p>
+                    </li>
+                  ) : "indented" in entry ? (
+                    <li key={i} className="flex items-start gap-3 ml-6">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#EB9B3D]/70 shrink-0" />
+                      <p className="text-[14px] text-[#555555] leading-relaxed">{entry.indented}</p>
+                    </li>
+                  ) : (
+                    <li key={i}>
+                      <div className="flex items-start gap-3">
+                        {entry.items.length > 0 && !entry.noBullet && <span className="mt-1.5 w-2 h-2 rounded-full bg-[#EB9B3D] shrink-0" />}
+                        <p className="text-[14px] font-semibold text-[#333333] leading-relaxed">{entry.heading}</p>
+                      </div>
+                      {entry.items.length > 0 && (
+                        <ul className="mt-2 ml-5 space-y-2">
+                          {entry.items.map((sub, j) => (
+                            <li key={j} className="flex items-start gap-2.5">
+                              <span className={`mt-1.5 shrink-0 rounded-full ${entry.mainBullets ? "w-2 h-2 bg-[#EB9B3D]" : "w-1.5 h-1.5 bg-[#EB9B3D]/60"}`} />
+                              <p className="text-[14px] text-[#555555] leading-relaxed">{sub}</p>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  )
+                )}
               </ul>
 
               {/* Apply CTA */}
